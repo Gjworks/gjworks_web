@@ -10,34 +10,45 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-    id     Int          @id @default(autoincrement())
-    email     String    @unique
-    phone     String    @unique
-    name      String?
-    createdAt DateTime  @default(now())
+model Users {
+    id          Int            @id @default(autoincrement())
+    email       String         @unique
+    nickname    String         @unique
+    password    String
+    createdAt   DateTime       @default(now())
+    updateAt    DateTime       @updatedAt
+    isAdmin     Boolean?
+    isManagers  Boolean?
+    posts       Posts[]        @relation("Posts")
+    profiles    Profiles[]     @relation("Profiles")
 }
 
-model Profile {
-    id     Int          @id @default(autoincrement())
-    user   Users        @relation(fields: [userId], references: [id])
-    userId Int
+model Profiles {
+    id          Int            @id @default(autoincrement())
+    phone       String         @unique
+    author      Users          @relation("Profiles", fields: [authorId], references: [id])
+    authorId    Int
 }
 
-model Document {
-    id          Int       @id @default(autoincrement())
-    createdAt   DateTime  @default(now())
-    updatedAt   DateTime  @updatedAt
-    published   Boolean   @default(false)
-    author      User?     @relation(fields: [authorId], references: [id])
-    authorId    Int?
-    title       String    @db.VarChar(255)
-    description String 
-    read_count Int
-    comment_count Int
+model Posts {
+    id            Int          @id @default(autoincrement())
+    module        Modules      @relation(fields: [moduleId], references: [id])
+    moduleId      Int
+    createdAt     DateTime     @default(now())
+    updatedAt     DateTime     @updatedAt
+    published     Boolean      @default(false)
+    author        Users        @relation("Posts", fields: [authorId], references: [id])
+    authorId      Int
+    title         String       @db.VarChar(255)
+    description   String 
+    readCount     Int
+    commentCount  Int
+    voteCount     Int
 }
 
-model Post {
-    id          Int     @id @default(autoincrement())
-    createdAt   DateTime  @default(now())
+model Modules {
+    id            Int          @id @default(autoincrement())
+    createdAt     DateTime     @default(now())
+    updatedAt     DateTime     @updatedAt
+    posts         Posts[]
 }

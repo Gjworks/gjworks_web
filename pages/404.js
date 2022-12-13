@@ -1,4 +1,4 @@
-import NotFound from "../components/notfound/NotFound";
+import NotFound from "../components/message/NotFound";
 
 const Custom404 = () => {
   return (

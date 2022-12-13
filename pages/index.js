@@ -1,42 +1,73 @@
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
+import SafariBrower from '../components/viewer/SafariBrower';
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const parentVariants = {
+    onscreen : {
+      transition: { staggerChildren: 0.3 } 
+    },
+    offscreen : {
+      transition: { staggerChildren: 0.3, staggerDirection: -1 } 
+    }
+  }
+  const variants = {
+    onscreen: { 
+      opacity: [0,1], 
+      transition : {
+        duration: 0.6,
+      }
+    },
+    offscreen: { 
+      opacity: 0
+    }
+  }
   return (
     <>
-      <div className="">
-        <div className="max-w-screen-xl mx-auto px-3 lg:px-8 pt-8">
-          <div className="max-w-lg mx-auto py-20">
-            <div className="text-base font-bold text-dark-400 mb-4 text-center">
-              FULL STACTK DEVELOPER
+      <div className="-mt-20">
+        <div className="relative pt-20 lg:pt-10">
+          <div className="absolute inset-0 overflow-hidden bg-black bg-opacity-75">
+          </div>
+          <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} className="relative flex justify-center items-center max-w-screen-2xl mx-auto px-3 lg:px-8 py-20 h-auto lg:h-[80vh] ">
+            <div>
+              <motion.div variants={variants} className="text-base font-bold text-dark-300 mb-2 text-center">
+                TEAM THAT MAKES THE SERVICE
+              </motion.div>
+              <motion.div variants={variants} className="text-6xl font-semibold mb-10 text-white text-center">
+                Build web and app <br></br>quickly and simply
+              </motion.div>
+              <motion.div variants={variants} className="text-dark-100 text-base text-center">서비스에 도움이 되는 제품을 만들어 드리겠습니다.</motion.div>
+              <motion.div variants={variants} className="text-center block pt-10">
+                <span className="inline-block border border-dark-50 py-2 px-5 text-white hover:bg-white hover:text-black rounded">Contact us</span>
+              </motion.div>
             </div>
-            <div className="text-4xl font-semibold mb-5 text-white text-center">
-              React.js + Next.js 로 웹을 제작 합니다.
-            </div>
-            <div className="text-dark-200 text-xs text-center">제작의뢰는 Contact us 를 통해서만 받고 있습니다.</div>
-            <div className="pt-10 lg:pt-20">
-              <Image alt="MacbookPro"  width="100%" height="100%" layout="responsive" objectFit="contain" src="/assets/images/MacbookPro.png" />
+          </motion.div>
+        </div>
+        <div className="bg-dark-800 bg-opacity-75 py-20">
+          <div className="max-w-screen-2xl mx-auto px-3 lg:px-8">
+            <div className="w-full">
+              <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}  className="w-full lg:w-2/3">
+                <motion.div className="text-primary-400 mb-5" variants={variants}>
+                  Constraint-based
+                </motion.div>
+                <motion.div variants={variants} className="text-2xl font-bold text-white mb-7">
+                  An API for your design system.
+                </motion.div>
+                <motion.div variants={variants} className="text-base text-dark-300 mb-6">
+                  지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모 개발팀입니다. 
+                  우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
+                </motion.div>
+                <motion.div variants={variants} className="inline rounded-full bg-dark-600 py-2 px-5 text-sm text-dark-200 hover:text-white hover:bg-dark-400">
+                  Read more
+                </motion.div>
+              </motion.div>
             </div>
           </div>
         </div>
-        <div className="bg-dark-800 py-20">
-          <div className="max-w-screen-xl mx-auto  px-3 lg:px-8">
-            <div className="flex flex-wrap items-center gap-10">
-              <div className="w-full lg:flex-1">
-                <span className="text-bold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-lime-400 to-green-600">
-                  개발자와 디자이너와 함께
-                </span>
-              </div>
-              <div className="w-full lg:flex-1">
-                <div className="text-base text-dark-300">
-                  최신 FrontEnd 기술 도입과 발맞춰 저희만의 Simple하고 깔끔한 디자인과 Component를 제공하고 다른 디자이너와 협업을 하더라도 통일된 컨셉과 디자인 결과물을 함께 만들기 때문에 만족스러운 결과물과 Perfermance를 기대하실 수 있습니다.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="py-20">
-          <div className="max-w-screen-xl mx-auto  px-3 lg:px-8">
+        <div className="hidden py-20">
+          <div className="max-w-screen-2xl mx-auto  px-3 lg:px-8">
             <div className="flex justify-center mb-6">
               <div className="inline font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-indigo-200 to-orange-300 text-center pt-20">
                 항상 최신 기술과 트랜드<br></br>
@@ -53,8 +84,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="py-20">
-          <div className="max-w-screen-xl mx-auto  px-3 lg:px-8">
+        <div className="py-20 hidden">
+          <div className="max-w-screen-2xl mx-auto  px-3 lg:px-8">
             <div className="grid grid-cols-2 gap-8">
               <div className="col-span-2 lg:col-span-1">
                 <div className="flex justify-center">
@@ -62,27 +93,80 @@ export default function Home() {
                     Full Stack
                   </div>
                 </div>
-                <div className="font-thin text-3xl text-dark-100 text-center -mt-6">최종 목표는 풀 스택 개발자<br /> 가리지 않고 배움에 있어 낮은자세로</div>
+                <div className="font-thin text-3xl text-dark-100 text-center -mt-6">Responsive everything.</div>
               </div>
               <div className="col-span-2 lg:col-span-1">
                 <div className="text-sm text-dark-300 mb-3">
-                  현재 PHP, NodeJS, ReactJS, Tailwindcss등 프론트와 백앤드를 현재 모두 개발을 하고 있습니다. 다음 목표는 React Native가 될지 Flutter가 될지는 잘 모르겠습니다만 현재 단계의 완성도를 끌어 올린다음에 모바일 애플리케이션 개발에 조금 더 많은 시간을 둘려고 합니다.
+                  Wrestling with a bunch of complex media queries in your CSS sucks, so Tailwind lets you build responsive designs right in your HTML instead.
                 </div>
-                <div className="text-sm text-dark-300">UI/UX와 디자인에도 많은 관심을 가지고 있습니다. 지난 10년간의 개발노하우와 경험과 트렌드를 반영한 저희만의 디자인을 감상해보세요.</div>
+                <div className="text-sm text-dark-300">Throw a screen size in front of literally any utility class and watch it magically apply at a specific breakpoint.</div>
               </div>
             </div>
           </div>
         </div>
-
         <div className="py-20">
-          <div className="max-w-screen-xl mx-auto px-3 lg:px-8 overflow-hidden">
-            <div className="flex justify-center">
-              <div className="inline font-black text-5xl lg:text-7xl text-dark-500 text-center">
-                fast perfermance
+          <div className="max-w-screen-2xl mx-auto px-3">
+            <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}   className="grid grid-cols-2 gap-10 py-20">
+              <div className="col-span-2 lg:col-span-1">
+                <motion.div variants={variants} className="text-3xl font-semibold mb-8 text-white">
+                  One based system
+                </motion.div>
+                <motion.div variants={variants} className="text-dark-400 text-base">
+                  Next.js, React 그리고 React Native를 기반으로 하나의 통합된 웹과 앱서비스를 동시에 할 수 있도록 제작하였습니다. UI는 tailwindcss 그리고 Framer를 통해서 화면을 그리고 동작시키고 있습니다.
+                </motion.div>
               </div>
-            </div>
-            <div className="font-thin text-xl lg:text-3xl text-dark-100 text-center -mt-6">Development, Design, Operation</div>
+              <div className="col-span-2 lg:col-span-1">
+                
+              </div>
+            </motion.div>
+            <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="grid grid-cols-2 gap-10 py-20">
+              <motion.div variants={variants} className="col-span-2 lg:col-span-1">
+                <SafariBrower />
+              </motion.div>
+              <div className="col-span-2 lg:col-span-1">
+                <motion.div variants={variants} className="text-3xl font-semibold mb-8 text-white">
+                  UI Components Animation
+                </motion.div>
+                <motion.div variants={variants} className="text-dark-400 text-base mb-10">
+                  Framer를 활용하여 Components각각의 애니메이션을 감성까지 고려하여 개발하였습니다. 컴포넌트 별로 구현하여 UI를 변경하거나 import만 하면 쓸 수 있으므로 굉장히 편리합니다. React 환경이면 됩니다. <br></br> Modal, Accodian, Dropdown등 기본적인 UI 뿐만아니라 Form과 Button등 기본적인 element 까지 고려하여 작업하였습니다.
+                </motion.div>
+                <motion.div variants={variants} className="inline-block px-5 text-sm py-2 rounded-sm border border-dark-300 text-dark-300 hover:bg-white hover:text-dark-900">Component 구매하기</motion.div>
+              </div>
+            </motion.div>
+            <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="grid grid-cols-2 gap-10 py-20">
+              <div className="col-span-2 lg:col-span-1">
+                <motion.div variants={variants} className="text-3xl font-semibold mb-8 text-white">
+                  Mobile UI/UX
+                </motion.div>
+                <motion.div variants={variants} className="text-dark-400 text-base">
+                  Mobile, Tablet, Web Browser 의 크기와 상관없이 UI를 항상 최적의 상태로 사용성 좋게 개발 및 연구하고 있습니다.
+                </motion.div>
+              </div>
+              <div className="col-span-2 lg:col-span-1">
+                .
+              </div>
+            </motion.div>
           </div>
+        </div>
+        <div className="py-20 w-full overflow-hidden">
+          <div className="max-w-screen-2xl mx-auto px-3">
+            <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="flex gap-8 w-full">
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-700 h-[550px]">
+                {/* <Image src="/assets/images/MacbookPro.png" quality={100} layout="responsive" width="100%" height="100%" alt=""></Image> */}
+              </motion.div>
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-700 h-[550px]"></motion.div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="py-20">
+          <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="max-w-screen-2xl mx-auto px-3 lg:px-8 overflow-hidden">
+            <div className="flex justify-center">
+              <motion.div variants={variants} className="inline font-black text-5xl lg:text-7xl text-dark-500 text-center">
+                Fast perfermance
+              </motion.div>
+            </div>
+            <motion.div variants={variants} className="font-thin text-xl lg:text-3xl text-dark-100 text-center -mt-6">Responsive everything.</motion.div>
+          </motion.div>
         </div>
       </div>
     </>
