@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <div className="-mt-20">
         <div className="relative pt-20 lg:pt-10">
-          <div className="absolute inset-0 overflow-hidden bg-black bg-opacity-75">
+          <div className="absolute inset-0 overflow-hidden bg-dark-800">
           </div>
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} className="relative flex justify-center items-center max-w-screen-2xl mx-auto px-3 lg:px-8 py-20 h-auto lg:h-[80vh] ">
             <div>
@@ -45,7 +45,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-        <div className="bg-dark-800 bg-opacity-75 py-20">
+        <div className="bg-dark-600 bg-opacity-75 py-20">
           <div className="max-w-screen-2xl mx-auto px-3 lg:px-8">
             <div className="w-full">
               <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}  className="w-full lg:w-2/3">
@@ -59,7 +59,7 @@ export default function Home() {
                   지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모 개발팀입니다. 
                   우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
                 </motion.div>
-                <motion.div variants={variants} className="inline rounded-full bg-dark-600 py-2 px-5 text-sm text-dark-200 hover:text-white hover:bg-dark-400">
+                <motion.div variants={variants} className="inline rounded-full bg-dark-500 py-2 px-5 text-sm text-dark-200 hover:text-white hover:bg-dark-400 cursor-pointer">
                   Read more
                 </motion.div>
               </motion.div>
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="grid grid-cols-2 gap-8">
               <div className="col-span-2 lg:col-span-1">
                 <div className="flex justify-center">
-                  <div className="inline font-black text-7xl text-dark-500 text-center">
+                  <div className="inline font-black text-7xl text-dark-500 text-center" >
                     Full Stack
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Home() {
                 <motion.div variants={variants} className="text-3xl font-semibold mb-8 text-white">
                   One based system
                 </motion.div>
-                <motion.div variants={variants} className="text-dark-400 text-base">
+                <motion.div variants={variants} className="text-dark-300 text-base">
                   Next.js, React 그리고 React Native를 기반으로 하나의 통합된 웹과 앱서비스를 동시에 할 수 있도록 제작하였습니다. UI는 tailwindcss 그리고 Framer를 통해서 화면을 그리고 동작시키고 있습니다.
                 </motion.div>
               </div>
@@ -127,7 +127,7 @@ export default function Home() {
                 <motion.div variants={variants} className="text-3xl font-semibold mb-8 text-white">
                   UI Components Animation
                 </motion.div>
-                <motion.div variants={variants} className="text-dark-400 text-base mb-10">
+                <motion.div variants={variants} className="text-dark-300 text-base mb-10">
                   Framer를 활용하여 Components각각의 애니메이션을 감성까지 고려하여 개발하였습니다. 컴포넌트 별로 구현하여 UI를 변경하거나 import만 하면 쓸 수 있으므로 굉장히 편리합니다. React 환경이면 됩니다. <br></br> Modal, Accodian, Dropdown등 기본적인 UI 뿐만아니라 Form과 Button등 기본적인 element 까지 고려하여 작업하였습니다.
                 </motion.div>
                 <motion.div variants={variants} className="inline-block px-5 text-sm py-2 rounded-sm border border-dark-300 text-dark-300 hover:bg-white hover:text-dark-900">Component 구매하기</motion.div>
@@ -138,7 +138,7 @@ export default function Home() {
                 <motion.div variants={variants} className="text-3xl font-semibold mb-8 text-white">
                   Mobile UI/UX
                 </motion.div>
-                <motion.div variants={variants} className="text-dark-400 text-base">
+                <motion.div variants={variants} className="text-dark-300 text-base">
                   Mobile, Tablet, Web Browser 의 크기와 상관없이 UI를 항상 최적의 상태로 사용성 좋게 개발 및 연구하고 있습니다.
                 </motion.div>
               </div>
@@ -151,17 +151,17 @@ export default function Home() {
         <div className="py-20 w-full overflow-hidden">
           <div className="max-w-screen-2xl mx-auto px-3">
             <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="flex gap-8 w-full">
-              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-700 h-[550px]">
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-500 h-[550px]">
                 {/* <Image src="/assets/images/MacbookPro.png" quality={100} layout="responsive" width="100%" height="100%" alt=""></Image> */}
               </motion.div>
-              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-700 h-[550px]"></motion.div>
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-500 h-[550px]"></motion.div>
             </motion.div>
           </div>
         </div>
         <div className="py-20">
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="max-w-screen-2xl mx-auto px-3 lg:px-8 overflow-hidden">
             <div className="flex justify-center">
-              <motion.div variants={variants} className="inline font-black text-5xl lg:text-7xl text-dark-500 text-center">
+              <motion.div variants={variants} className="inline font-black text-5xl lg:text-7xl text-dark-400 text-center">
                 Fast perfermance
               </motion.div>
             </div>

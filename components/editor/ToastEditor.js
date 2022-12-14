@@ -1,18 +1,20 @@
+import React , {useRef} from'react';
 import { Editor } from '@toast-ui/react-editor';
 
 import '@toast-ui/editor/dist/toastui-editor.css';
 import '@toast-ui/editor/dist/theme/toastui-editor-dark.css'
 
-const ToastEditor = () => {
+const ToastEditor = ({getDescription, ...props}) => {
+  const editorRef = useRef();
+  const onDescriptionChange = (event) => {
+    getDescription(editorRef.current?.getInstance().getMarkdown())
+  };
   return(
     <>
       <Editor
-        initialValue="hello react Editor World!"
-        previewStyle="tab"
-        height="600px"
-        theme="dark"
-        initialEditType="markdown"
-        useCommandShortcut={true}
+      onChange={onDescriptionChange}
+      ref={editorRef}
+      {...props}
       />
     </>
   )

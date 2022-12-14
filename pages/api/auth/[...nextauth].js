@@ -57,7 +57,6 @@ const option = {
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
       account.access_token = user.access_token
-      console.log('signIn', account)
       return true
     },
     async session({ session, token, user }) {
@@ -65,9 +64,6 @@ const option = {
       return Promise.resolve(session)
     },
     async jwt({ token, user, account }) {
-      console.log('jwt account')
-      console.log(account)
-      console.log(account.access_token)
       if (user) {
         // token = user;
         token.accessToken = account.access_token

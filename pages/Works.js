@@ -38,6 +38,38 @@ const Works = () => {
         <div className="py-5">
           <div className="rounded-lg bg-dark-500 bg-opacity-25 p-10"></div>
         </div>
+        <div className="flex gap-1">
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-50 text-dark-900">
+            50
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-100 text-dark-900">
+            100
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-200 text-dark-900">
+            200
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-300 text-dark-900">
+            300
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-400 text-dark-900">
+            400
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-500">
+            500
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-600">
+            600
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-700">
+            700
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-800">
+            800
+          </div>
+          <div className="flex items-center justify-center h-96 flex-1 rounded-lg bg-dark-900">
+            900
+          </div>
+        </div>
         
       </div>
     </div>

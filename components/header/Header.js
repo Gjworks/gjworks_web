@@ -25,7 +25,7 @@ const Header = () => {
 
   return(
       <>
-      <div className="hidden relative bg-primary-400 shadow-black z-20">
+      <div className="flex relative bg-dark-900 shadow-black z-20">
         <div className="max-w-screen-2xl mx-auto px-3 py-3 text-black text-sm text-center">
           홈페이지가 리뉴얼 중입니다. 🎗️
         </div>
@@ -63,13 +63,11 @@ const Header = () => {
             </div>
             
             <div className="flex items-center pl-3">
-            {console.log(router.pathname)}
-            
               <Link href="/Works">
                 <a className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (router.pathname === "/Works" ? "text-white" : "text-dark-200 hover:text-white")}>Works</a>
               </Link>
-              <Link href="/posts/[mid]" as="/posts/Blog">
-                <a className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (mid === "Blog" ? "text-white" : "text-dark-200 hover:text-white")}>Blog</a>
+              <Link href="/posts/[mid]" as="/posts/blog">
+                <a className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (mid === "blog" ? "text-white" : "text-dark-200 hover:text-white")}>Blog</a>
               </Link>
               <Link href="/Contact">
                 <a className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (router.pathname === "/Contact" ? "text-white" : "text-dark-200 hover:text-white")}>Contact</a>

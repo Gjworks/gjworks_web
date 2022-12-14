@@ -20,8 +20,8 @@ const Signin = ({ providers }) => {
       redirect : false,
       email : userEmail,
       password : userPassword,
+      callbackUrl: `${window.location.origin}/user/Account`
     });
-    console.log(userEmail)
     if(!result.error) {
       router.replace('/');
     }else{
@@ -30,7 +30,6 @@ const Signin = ({ providers }) => {
   }
 
   if (status === "authenticated") {
-    console.log(session)
     router.replace("/");
     return (
       <div>

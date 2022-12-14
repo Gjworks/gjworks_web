@@ -1,12 +1,16 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { PrismaClient } from '@prisma/client'
 import BoardList from "../../../components/list/BoardList";
+import { useSession, getSession } from "next-auth/react";
 
-const Posts = () => {
+const prisma = new PrismaClient();
+
+const Posts = ({data}) => {
   const router = useRouter();
   const { mid } = router.query;
 
-  console.log(mid)
+  console.log(data)
   return (
     <>
       <div className="flex flex-wrap max-w-screen-2xl mx-auto py-20 px-3">
@@ -20,7 +24,7 @@ const Posts = () => {
               <input type="" className="rounded-sm w-56 text-dark-300 bg-transparent border border-dark-500 focus:border-primary-400 focus:text-primary-400 hover:border-dark-200 py-2 px-3 outline-none text-sm" />
             </div>
             <div className="flex-1 flex justify-end">
-              <Link href="/posts/[mid]/Write" as={`/posts/${mid}/Write`}>
+              <Link href="/posts/[mid]/Edit" as={`/posts/${mid}/Edit`}>
                 <a className="inline-block rounded-sm px-5 py-2 border border-dark-400 text-dark-200 text-sm hover:text-primary-400 hover:border-primary-400">Write</a>
               </Link>
             </div>
@@ -64,5 +68,26 @@ const Posts = () => {
       </div>
     </>
   )
+}
+export async function getServerSideProps({ req, res }) {
+  const session = await getSession({ req });
+  const user = await prisma.users.findUnique({
+    where: {
+      email: 'gjworks@kakao.com'
+    },
+    select: {
+      id:true,
+      nickname : true,
+      email: true,
+      password: true,
+    }
+  });
+  console.log('posts list')
+  console.log(session)
+  return {
+      props: {
+        data : 'data Fetching server side!!'
+      },
+    }
 }
 export default Posts
