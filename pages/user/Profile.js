@@ -1,5 +1,5 @@
 import { useSession } from "next-auth/react"
-
+import Layout from "../../components/layouts/Layout";
 
 const Profile = (props) => {
   console.log(props)
@@ -7,7 +7,7 @@ const Profile = (props) => {
 
   console.log(session.data?.user)
   return(
-    <>
+    <Layout>
       <div className="max-w-screen-2xl mx-auto px-3 py-20">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-3">
@@ -23,7 +23,7 @@ const Profile = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

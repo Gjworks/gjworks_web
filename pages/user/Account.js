@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useSession } from "next-auth/react"
 import Access from "../../components/message/Access";
 import Nav from "./Nav";
+import Layout from "../../components/layouts/Layout";
 
 const Myinfo = (props) => {
   console.log(props)
@@ -17,7 +18,7 @@ const Myinfo = (props) => {
   //   )
   // }
   return(
-    <>
+    <Layout>
       <div className="max-w-screen-2xl mx-auto px-3 py-20">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-3">
@@ -28,7 +29,7 @@ const Myinfo = (props) => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

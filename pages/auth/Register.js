@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import axios from 'axios';
 import Warning from '../../components/message/Warning';
+import Layout from "../../components/layouts/Layout";
 
 const Register = () => {
   const [nickName, setNickName] = useState('');
@@ -90,7 +91,7 @@ const Register = () => {
     );
   }
   return (
-    <>
+    <Layout>
       <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
         <div className="max-w-xl mx-auto p-5">
           <div className="py-10 text-center">
@@ -160,7 +161,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

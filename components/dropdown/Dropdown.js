@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from 'next/link';
 import { useRouter } from "next/router";
@@ -11,6 +11,15 @@ const Dropdown = (props) => {
   const initial = {
     opacity: 0
   }
+  const handleClickOutside = () => {
+    setIsOpen(false);
+  };
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, []);
   const variants = {
     open: { 
       opacity: 1, 
@@ -55,7 +64,7 @@ const Dropdown = (props) => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
             </svg>
           </div>
-          <div className="hidden lg:block text-black group-hover:text-black text-xs">Request Access</div>
+          <div className="hidden lg:block text-black group-hover:text-black text-xs">Access</div>
         </div>
         
       </button>

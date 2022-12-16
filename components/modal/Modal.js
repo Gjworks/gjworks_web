@@ -42,8 +42,6 @@ const Modal = ({ state, close, children }) => {
     }, 
   }
   const handleCloseModal = () =>{
-    console.log('action')
-    // setModalState(false)
     close(false)
   }
   return (
@@ -52,9 +50,9 @@ const Modal = ({ state, close, children }) => {
     {state &&
       <>
         <ModalPortal>
-          <motion.div animate={modalState===true ? "openModal" : "closeModal"} variants={variants} exit={APExit} className="fixed inset-0 transform overflow-auto bg-dark-900 bg-opacity-25 z-90 backdrop-blur">
+          <motion.div animate={modalState===true ? "openModal" : "closeModal"} variants={variants} exit={APExit} className="fixed inset-0 transform overflow-auto bg-dark-900 bg-opacity-75 z-90 backdrop-blur-sm">
             <div className="absolute inset-0 z-99" onClick={handleCloseModal}></div>
-            <motion.div initial={{opacity:0, y:"-10%"}} animate={{opacity:1, y:"0%", transition:{duration:0.5}}} className="relative top-20 bottom-10 px-3 z-100 bg-dark-700 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-white backdrop-blur bg-opacity-90">
+            <motion.div initial={{opacity:0, y:"-10%"}} animate={{opacity:1, y:"0%", transition:{duration:0.5}}} className="relative top-20 bottom-10 px-3 z-100 bg-dark-600 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-white backdrop-blur bg-opacity-90">
               {children}
             </motion.div>
           </motion.div>

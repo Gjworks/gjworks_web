@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PrismaClient } from '@prisma/client'
 import BoardList from "../../../components/list/BoardList";
 import { useSession, getSession } from "next-auth/react";
+import Layout from "../../../components/layouts/Layout";
 
 const prisma = new PrismaClient();
 
@@ -12,7 +13,7 @@ const Posts = ({data}) => {
 
   console.log(data)
   return (
-    <>
+    <Layout>
       <div className="flex flex-wrap max-w-screen-2xl mx-auto py-20 px-3">
         <div className="flex-1">
           <div className="text-2xl mb-10 text-white">블로그</div>
@@ -66,7 +67,7 @@ const Posts = ({data}) => {
         </div>
         
       </div>
-    </>
+    </Layout>
   )
 }
 export async function getServerSideProps({ req, res }) {

@@ -1,17 +1,18 @@
 import { SessionProvider } from "next-auth/react"
+import { motion, AnimatePresence } from "framer-motion";
 import "../styles/globals.css"
 import "../styles/tailwindcss.css"
-import Layout from "../components/layouts/Layout";
 
 function App({ 
   Component, 
+  router,
   pageProps : { session, ...pageProps },
   }) {
   return (
     <SessionProvider session={session}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <AnimatePresence initial={false} mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
+        <Component key={router.route} {...pageProps} />
+      </AnimatePresence>
     </SessionProvider>
   )
 }

@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { useRouter } from "next/router";
+import Layout from "../../components/layouts/Layout";
 
 const RegisterResult = () => {
   const router = useRouter();
   if (router.query.status == 'success') {
     return (
-      <>
+      <Layout>
       <div className="px-3 py-10 lg:py-20">
         <div className="max-w-screen-sm mx-auto p-3 lg:p-8 rounded-lg bg-dark-600">
           <div className="flex justify-center mb-4 pt-5 text-lime-400">
@@ -43,7 +44,7 @@ const RegisterResult = () => {
         </div>
       </div>
         
-      </>
+      </Layout>
     )
   }else{
     // router.replace('/Warning')

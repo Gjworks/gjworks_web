@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SafariBrower from '../components/viewer/SafariBrower';
 import { motion } from "framer-motion";
+import Layout from "../components/layouts/Layout";
 
 export default function Home() {
   const parentVariants = {
@@ -26,6 +27,7 @@ export default function Home() {
   }
   return (
     <>
+    <Layout>
       <div className="-mt-20">
         <div className="relative pt-20 lg:pt-10">
           <div className="absolute inset-0 overflow-hidden bg-dark-800">
@@ -169,6 +171,7 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
+      </Layout>
     </>
   )
 }

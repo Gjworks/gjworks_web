@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Layout from "../components/layouts/Layout";
+
 const Works = () => {
   return (
-    <>
+    <Layout>
     <div className="flex flex-wrap gap-8 max-w-screen-2xl mx-auto py-8 lg:py-20 px-3">
       <div className="w-64 h-full">
         <div className="">
@@ -74,7 +76,7 @@ const Works = () => {
       </div>
     </div>
     
-    </>
+    </Layout>
   )
 }
 

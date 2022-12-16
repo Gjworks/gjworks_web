@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { useSession, getProviders, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/router';
+import Layout from "../../components/layouts/Layout";
 
 const Signin = ({ providers }) => {
   const { data: session } = useSession()
@@ -40,7 +41,7 @@ const Signin = ({ providers }) => {
     );
   }
   return (
-    <>
+    <Layout>
     <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
       <div className="max-w-md mx-auto p-5">
         <form onSubmit={submitHandler}>
@@ -119,7 +120,7 @@ const Signin = ({ providers }) => {
         </div>
       </div>
     </div>
-    </>
+    </Layout>
   )
 }
 

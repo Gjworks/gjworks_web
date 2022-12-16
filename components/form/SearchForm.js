@@ -4,7 +4,7 @@ const SearchForm = () => {
   return(
     <>
       <div className="">
-        <div className="flex border-b border-dark-600 p-3">
+        <div className="flex border-b border-dark-500 p-3">
           <input type="text" className="flex-1 text-base text-dark-300 py-2 bg-transparent px-3 outline-none" placeholder="Search Text..."></input>
           <button className="text-dark-300">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -14,8 +14,8 @@ const SearchForm = () => {
         </div>
         <motion.div className="pt-3 pb-4 px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:0.8, delay:0.5}}}>
           <div className="flex items-center gap-4">
-            <div className="text-dark-400 text-sm pr-4">인기</div>
-            <div className="flex bg-dark-600 py-1 px-1 text-xs rounded-sm hover:bg-primary-400 hover:text-black">
+            <div className="text-dark-100 text-sm pr-4">인기</div>
+            <div className="flex bg-dark-400 py-1 px-1 text-xs rounded-sm hover:bg-primary-400 hover:text-black">
               <div className="px-2">
                 React
               </div>
@@ -25,7 +25,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-dark-600 py-1 px-3 text-xs rounded-sm hover:bg-primary-400 hover:text-black">
+            <div className="flex bg-dark-400 py-1 px-3 text-xs rounded-sm hover:bg-primary-400 hover:text-black">
               <div className="px-2">
                 Framer Motion
               </div>
@@ -38,20 +38,20 @@ const SearchForm = () => {
           </div>
         </motion.div>
         <motion.div className="pt-2 pb-5 px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:0.9, delay:0.5}}}>
-          <div className="text-sm font-semibold mb-3 text-dark-400">검색기록</div>
-          <div className="flex text-sm border-b border-dark-600 text-dark-400 py-3 hover:bg-dark-500 hover:text-dark-100 px-3 rounded-sm cursor-pointer">
+          <div className="text-sm font-semibold mb-3 text-dark-200">검색기록</div>
+          <div className="flex text-sm border-b border-dark-500 text-dark-300 py-3 hover:bg-dark-500 hover:text-dark-100 px-3 rounded-sm cursor-pointer">
             <div className="flex-1">
               tailwind 설정하는 방법
             </div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-dark-600 text-dark-400 py-3 hover:bg-dark-500 hover:text-dark-100 px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-dark-500 text-dark-300 py-3 hover:bg-dark-500 hover:text-dark-100 px-3 rounded-sm cursor-pointer">
             <div className="flex-1">
               Prisma Create Schemas
             </div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-dark-600 text-dark-400 py-3 hover:bg-dark-500 hover:text-dark-100 px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-dark-500 text-dark-300 py-3 hover:bg-dark-500 hover:text-dark-100 px-3 rounded-sm cursor-pointer">
             <div className="flex-1">
               postfix 메일 설정
             </div>
