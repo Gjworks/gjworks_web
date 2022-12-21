@@ -111,7 +111,7 @@ const Register = () => {
               <div className="flex">
                 <label className="flex w-24 text-dark-300 text-xs px-3 py-3">NickName</label>
                 <div className="flex-1">
-                  <input type="text" value={nickName} onChange={nickNameHandler} placeholder="User nick name" className="bg-dark-900 text-sm text-dark-300 focus:text-white py-2 px-3 focus:outline-none w-full border-b border-dark-500 focus:border-primary-500 placeholder-gray-600" required />
+                  <input type="text" value={nickName} onChange={nickNameHandler} placeholder="User nick name" className="bg-dark-900 text-sm text-dark-300 focus:text-white py-2 px-3 focus:outline-none w-full border-b border-dark-500 focus:border-primary-600 placeholder-gray-600" required />
                 </div>
               </div>
             </div>
@@ -119,7 +119,7 @@ const Register = () => {
               <div className="flex">
                 <label className="flex w-24 text-dark-300 text-xs px-3 py-3">Email</label>
                 <div className="flex-1">
-                  <input type="text" value={email} onChange={emailHandler} placeholder="example@mail.com" className="bg-dark-900 text-sm text-dark-300 focus:text-white py-2 px-3 focus:outline-none w-full border-b border-dark-500 focus:border-primary-500 placeholder-gray-600" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+                  <input type="text" value={email} onChange={emailHandler} placeholder="example@mail.com" className="bg-dark-900 text-sm text-dark-300 focus:text-white py-2 px-3 focus:outline-none w-full border-b border-dark-500 focus:border-primary-600 placeholder-gray-600" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
                   <div></div>
                 </div>
               </div>
@@ -129,15 +129,15 @@ const Register = () => {
               <div className="flex">
                 <label className="flex w-24 text-dark-300 text-xs px-3 py-3">Password</label>
                 <div className="flex-1">
-                  <input type="password" value={password} onChange={passwordHandler} placeholder="User Password" className="bg-dark-900 text-sm text-dark-300 focus:text-white py-2 px-3 mb-3 focus:outline-none w-full border-b border-dark-500 focus:border-primary-500 placeholder-gray-600" required />
-                  <div className="text-sm text-dark-400">비밀번호는 안전하게 암호화 되어 저장됩니다.</div>
+                  <input type="password" value={password} onChange={passwordHandler} placeholder="User Password" className="bg-dark-900 text-sm text-dark-300 focus:text-white py-2 px-3 mb-3 focus:outline-none w-full border-b border-dark-500 focus:border-primary-600 placeholder-gray-600" required />
+                  <div className="text-sm text-dark-300">비밀번호는 안전하게 암호화 되어 저장됩니다.</div>
                 </div>
                 
               </div>
               
             </div>
             <div className="flex mb-2">
-              <button className="block w-full border border-primary-400 bg-primary-400  hover:bg-primary-500 text-black py-2 px-5 rounded-sm transition duration-300">Register Completed</button>
+              <button className="block w-full border border-primary-700 bg-primary-700  hover:bg-primary-600 text-white py-2 px-5 rounded-sm transition duration-300">Register Completed</button>
             </div>
           </form>
           <div className="divider">
@@ -154,7 +154,7 @@ const Register = () => {
             <div className="flex flex-wrap">
               <div className="w-full">
                 <Link href="/auth/Sginin">
-                  <a className="group text-sm text-dark-300">계정이 이미 있으시다면 <span className="group-hover:text-primary-300 text-primary-400 underline">Sign In</span></a>
+                  <a className="group text-sm text-dark-300">계정이 이미 있으시다면 <span className="group-hover:text-primary-300 text-secondary-500 underline">Sign In</span></a>
                 </Link>
               </div>
             </div>

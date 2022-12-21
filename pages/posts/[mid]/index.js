@@ -72,7 +72,7 @@ const Posts = ({data}) => {
 }
 export async function getServerSideProps({ req, res }) {
   const session = await getSession({ req });
-  const user = await prisma.users.findUnique({
+  const user = await prisma.user.findUnique({
     where: {
       email: 'gjworks@kakao.com'
     },

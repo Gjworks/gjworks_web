@@ -15,7 +15,7 @@ const SearchForm = () => {
         <motion.div className="pt-3 pb-4 px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:0.8, delay:0.5}}}>
           <div className="flex items-center gap-4">
             <div className="text-dark-100 text-sm pr-4">인기</div>
-            <div className="flex bg-dark-400 py-1 px-1 text-xs rounded-sm hover:bg-primary-400 hover:text-black">
+            <div className="flex bg-dark-400 py-1 px-1 text-xs rounded-sm hover:bg-primary-700 hover:text-white">
               <div className="px-2">
                 React
               </div>
@@ -25,7 +25,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-dark-400 py-1 px-3 text-xs rounded-sm hover:bg-primary-400 hover:text-black">
+            <div className="flex bg-dark-400 py-1 px-3 text-xs rounded-sm hover:bg-primary-700 hover:text-white">
               <div className="px-2">
                 Framer Motion
               </div>

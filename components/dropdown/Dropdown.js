@@ -58,13 +58,13 @@ const Dropdown = (props) => {
   return (
     <>
       <button className="group relative flex items-center" onClick={() => setIsOpen(!isOpen)}>
-        <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-400 group-hover:bg-primary-500 transition duration-300">
-          <div className="text-black group-hover:text-black p-0 lg:pr-2">
+        <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-700 group-hover:bg-primary-600 transition duration-300">
+          <div className="text-white group-hover:text-white p-0 lg:pr-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
             </svg>
           </div>
-          <div className="hidden lg:block text-black group-hover:text-black text-xs">Access</div>
+          <div className="hidden lg:block text-white group-hover:text-white text-xs">Access</div>
         </div>
         
       </button>
@@ -73,7 +73,7 @@ const Dropdown = (props) => {
             <>
               <motion.div variants={innerAnimation}>
                 <Link href="/auth/Signin">
-                  <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-400 hover:text-black focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                  <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-700 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -87,7 +87,7 @@ const Dropdown = (props) => {
               </motion.div>
               <motion.div variants={innerAnimation}>
                 <Link href="/auth/Register">
-                  <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-400 hover:text-black focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                  <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-700 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -106,7 +106,7 @@ const Dropdown = (props) => {
             <>
               <motion.div variants={innerAnimation}>
                 <Link href="/user/Account">
-                    <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-400 hover:text-black focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                    <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-700 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                       <div className="flex justify-between">
                         <div className="flex items-center">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -121,12 +121,12 @@ const Dropdown = (props) => {
             </>
             }
             <div className="block border-b border-dark-500 my-2 mx-3"></div>
-            {/* <div className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-400 hover:text-black focus:outline-none focus:bg-dark-800 focus:text-dark-300"></div> */}
+            {/* <div className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-700 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300"></div> */}
             {status === "authenticated" ?
               <>
               <motion.div variants={innerAnimation}>
                 <Link href="#" >
-                  <a onClick={() => signOut()} className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-400 hover:text-black focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                  <a onClick={() => signOut()} className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-700 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -144,7 +144,7 @@ const Dropdown = (props) => {
               <>
               <motion.div variants={innerAnimation}>
                 <Link href="/info" >
-                  <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-400 hover:text-black focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                  <a className="block rounded px-4 py-2 text-sm text-dark-200 hover:bg-primary-700 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">

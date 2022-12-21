@@ -9,7 +9,7 @@ export default async (req, res) => {
     const {nickname, email, password} = req.body.body;
     try
     {
-      const existEmail = await prisma.users.findUnique({
+      const existEmail = await prisma.user.findUnique({
         where: {
           email: email,
         }
@@ -17,7 +17,7 @@ export default async (req, res) => {
       if (existEmail) {
         return res.status(422).json({ message: 'User Email already exists!', error: true });
       }
-      const existNickname = await prisma.users.findUnique({
+      const existNickname = await prisma.user.findUnique({
         where: {
           nickname: nickname,
         }
@@ -28,7 +28,7 @@ export default async (req, res) => {
       
 
       const hashPassword = await bcrypt.hash(password, 0);
-      await prisma.users.create({
+      await prisma.user.create({
         data: {
           nickname: nickname,
           email: email,

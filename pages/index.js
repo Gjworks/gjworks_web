@@ -51,7 +51,7 @@ export default function Home() {
           <div className="max-w-screen-2xl mx-auto px-3 lg:px-8">
             <div className="w-full">
               <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}  className="w-full lg:w-2/3">
-                <motion.div className="text-primary-400 mb-5" variants={variants}>
+                <motion.div className="text-secondary-500 mb-5" variants={variants}>
                   Constraint-based
                 </motion.div>
                 <motion.div variants={variants} className="text-2xl font-bold text-white mb-7">
@@ -150,13 +150,13 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-        <div className="py-20 w-full overflow-hidden">
+        <div className="py-20 w-full overflow-hidden bg-dark-900">
           <div className="max-w-screen-2xl mx-auto px-3">
             <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="flex gap-8 w-full">
-              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-500 h-[550px]">
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-600 h-[550px] cursor-pointer">
                 {/* <Image src="/assets/images/MacbookPro.png" quality={100} layout="responsive" width="100%" height="100%" alt=""></Image> */}
               </motion.div>
-              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-500 h-[550px]"></motion.div>
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-dark-600 h-[550px] cursor-pointer"></motion.div>
             </motion.div>
           </div>
         </div>

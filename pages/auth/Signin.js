@@ -64,7 +64,7 @@ const Signin = ({ providers }) => {
             <input type="password" ref={passwordInputRef} name="password" id="password" className="bg-dark-900 text-sm text-dark-300 focus:text-white py-2 px-3 focus:outline-none w-full border-b border-dark-500 focus:border-primary-500 placeholder-gray-600" placeholder="Password" />
           </div>
           <div className="flex mb-4">
-            <button type="submit" className="flex justify-center items-center w-full border border-primary-400 bg-primary-400 hover:bg-primary-500 text-black py-2 px-5 rounded-sm transition duration-300">
+            <button type="submit" className="flex justify-center items-center w-full border border-primary-700 bg-primary-700 hover:bg-primary-600 text-white py-2 px-5 rounded-sm transition duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
               </svg>
@@ -78,7 +78,7 @@ const Signin = ({ providers }) => {
               <div className="w-full border-b border-dark-500"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-dark-900 px-4 text-xs text-dark-400">OR</span>
+              <span className="bg-dark-800 px-4 text-xs text-dark-400">OR</span>
             </div>
           </div>
         </div>
@@ -108,12 +108,12 @@ const Signin = ({ providers }) => {
           <div className="flex flex-wrap">
             <div className="w-full">
               <Link href="/auth/Register">
-                <a className="group text-sm text-dark-300">회원가입을 하시려면 <span className="group-hover:text-primary-300 text-primary-400 underline">회원가입 하기</span></a>
+                <a className="group text-sm text-dark-300">회원가입을 하시려면 <span className="group-hover:text-secondary-400 text-secondary-500 underline">회원가입 하기</span></a>
               </Link>
             </div>
             <div className="w-full">
               <Link href="/">
-                <a className="group text-sm text-dark-300">이메일과 비밀번호를 잊어버리 셨나요? <span className="group-hover:text-primary-300 text-primary-400 underline">Email/비밀번호 찾기</span></a>
+                <a className="group text-sm text-dark-400">이메일과 비밀번호를 잊어버리 셨나요? <span className="group-hover:text-secondary-300 text-secondary-500 underline">Email/비밀번호 찾기</span></a>
               </Link>
             </div>
           </div>

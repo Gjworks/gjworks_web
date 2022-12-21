@@ -11,7 +11,7 @@ import Footer from '../footer/Footer';
 
 const Layout = ({ children }) =>{
   const variants = {
-    hidden: { opacity: 0, x: 0, y: 25 },
+    hidden: { opacity: 0, x: 0, y: 25},
     enter: { 
       opacity: 1, x: 0, y: 0,
       transition : {
@@ -25,20 +25,17 @@ const Layout = ({ children }) =>{
 }
   return(
     <>
-      <motion.div variants={variants} initial="hidden" animate="enter" exit="exit" className="selection:text-black selection:bg-primary-400">
+      <motion.div className="selection:text-white selection:bg-primary-500">
         <div className="relative z-20">
           <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
-        <div className="fixed inset-0 hidden justify-between px-3">
-          <div className="border-r border-gray-800 opacity-50 h-full"></div>
-          <div className="border-r border-gray-800 opacity-50 h-full"></div>
-          <div className="border-r border-gray-800 opacity-50 h-full"></div>
-          <div className="border-r border-gray-800 opacity-50 h-full"></div>
-          <div className="border-r border-gray-800 opacity-50 h-full"></div>
-          <div className="border-r border-gray-800 opacity-50 h-full"></div>
-          <div className="border-r border-gray-800 opacity-50 h-full"></div>
+          <motion.main variants={variants} initial="hidden" animate="enter" exit="exit">{children}</motion.main>
+          <motion.footer initial={{opacity:0, y: 25}} animate={{opacity:1, y:0, transition: {duration:0.7, delay:0.3}}} exit={{ opacity: 0, x: 0, y: 25,
+      transition : {
+        duration: 0.4
+    }}}>
+            <Footer />
+          </motion.footer>
+          
         </div>
       </motion.div>
     </>

@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Users {
+model User {
     id          Int            @id @default(autoincrement())
     email       String         @unique
     nickname    String         @unique
@@ -19,25 +19,25 @@ model Users {
     updateAt    DateTime       @updatedAt
     isAdmin     Boolean?
     isManagers  Boolean?
-    posts       Posts[]        @relation("Posts")
-    profiles    Profiles[]     @relation("Profiles")
+    posts       Document[]        @relation("Posts")
+    profiles    Profile[]     @relation("Profiles")
 }
 
-model Profiles {
+model Profile {
     id          Int            @id @default(autoincrement())
     phone       String         @unique
-    author      Users          @relation("Profiles", fields: [authorId], references: [id])
+    author      User          @relation("Profiles", fields: [authorId], references: [id])
     authorId    Int
 }
 
-model Posts {
+model Document {
     id            Int          @id @default(autoincrement())
-    module        Modules      @relation(fields: [moduleId], references: [id])
+    module        Module      @relation(fields: [moduleId], references: [id])
     moduleId      Int
     createdAt     DateTime     @default(now())
     updatedAt     DateTime     @updatedAt
     published     Boolean      @default(false)
-    author        Users        @relation("Posts", fields: [authorId], references: [id])
+    author        User        @relation("Posts", fields: [authorId], references: [id])
     authorId      Int
     title         String       @db.VarChar(255)
     description   String 
@@ -46,9 +46,9 @@ model Posts {
     voteCount     Int
 }
 
-model Modules {
+model Module {
     id            Int          @id @default(autoincrement())
     createdAt     DateTime     @default(now())
     updatedAt     DateTime     @updatedAt
-    posts         Posts[]
+    posts         Document[]
 }
