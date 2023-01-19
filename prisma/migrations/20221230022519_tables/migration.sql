@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `Document` MODIFY `createdAt` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3),
+    MODIFY `published` BOOLEAN NULL DEFAULT false,
+    MODIFY `authorId` INTEGER NULL,
+    MODIFY `title` VARCHAR(255) NULL;

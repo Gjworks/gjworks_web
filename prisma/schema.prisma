@@ -2,53 +2,69 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
 model User {
-    id          Int            @id @default(autoincrement())
-    email       String         @unique
-    nickname    String         @unique
-    password    String
-    createdAt   DateTime       @default(now())
-    updateAt    DateTime       @updatedAt
-    isAdmin     Boolean?
-    isManagers  Boolean?
-    posts       Document[]        @relation("Posts")
-    profiles    Profile[]     @relation("Profiles")
+    id               Int               @id @default(autoincrement())
+    email            String            @unique
+    nickname         String            @unique
+    password         String
+    createdAt        DateTime          @default(now())
+    updateAt         DateTime          @updatedAt
+    isAdmin          Boolean?
+    isManagers       Boolean?
+    document         Document[]
+    profile          Profile?
 }
 
 model Profile {
-    id          Int            @id @default(autoincrement())
-    phone       String         @unique
-    author      User          @relation("Profiles", fields: [authorId], references: [id])
-    authorId    Int
+    id               Int               @id @default(autoincrement())
+    phone            String            @unique
+    author           User              @relation(fields: [authorId], references: [id])
+    authorId         Int               @unique
 }
 
 model Document {
-    id            Int          @id @default(autoincrement())
-    module        Module      @relation(fields: [moduleId], references: [id])
-    moduleId      Int
-    createdAt     DateTime     @default(now())
-    updatedAt     DateTime     @updatedAt
-    published     Boolean      @default(false)
-    author        User        @relation("Posts", fields: [authorId], references: [id])
-    authorId      Int
-    title         String       @db.VarChar(255)
-    description   String 
-    readCount     Int
-    commentCount  Int
-    voteCount     Int
+    id               Int               @id @default(autoincrement())
+    module           Module            @relation(fields: [moduleId], references: [id])
+    moduleId         Int               
+    category         Category?         @relation(fields: [categoryId], references: [id])
+    categoryId       Int?
+    createdAt        DateTime?         @default(now())
+    updatedAt        DateTime?         @updatedAt
+    published        Boolean?          @default(false)
+    author           User?             @relation(fields: [authorId], references: [id])
+    authorId         Int?
+    title            String?           @db.VarChar(255)
+    description      String?           @db.LongText
+    isNotice         Boolean?          @default(false)
+    isSecrets        Boolean?          @default(false)
+    readCount        Int?              @default(0)
+    commentCount     Int?              @default(0)
+    voteCount        Int?              @default(0)
+}
+
+model Category {
+    id               Int               @id @default(autoincrement())
+    title            String            @db.VarChar(45)
+    document         Document[]
 }
 
 model Module {
-    id            Int          @id @default(autoincrement())
-    createdAt     DateTime     @default(now())
-    updatedAt     DateTime     @updatedAt
-    posts         Document[]
+    id               Int               @id @default(autoincrement())
+    createdAt        DateTime          @default(now())
+    updatedAt        DateTime          @updatedAt
+    moduleType       String
+    moduleName       String            @unique
+    moduleDesc       String?
+    grant            Json              @db.Json
+    config           Json              @db.Json
+    status           String?           @db.VarChar(45)
+    document         Document[]
 }

@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth';
 import { PrismaClient } from '@prisma/client'
 import CredentialsProvider from "next-auth/providers/credentials";
-import { verifyPassword } from '../../../lib/auth/auth';
+import { verifyPassword } from 'lib/auth/auth';
 
 const prisma = new PrismaClient();
 
@@ -44,12 +44,12 @@ const option = {
         if(user) {
           return user;
         }
-        return null;
-        // return {
-        //   id : user.id,
-        //   nickname : user.nickname,
-        //   email: user.email
-        // }
+        // return null;
+        return {
+          id : user.id,
+          nickname : user.nickname,
+          email: user.email
+        }
       }
     })
   ],
@@ -74,7 +74,7 @@ const option = {
   },
   database : process.env.DATABASE_URL,
   pages: {
-    signIn: "/auth/Account",
+    signIn: "/auth/Signin",
     signOut: "/auth/Signout",
     error: "/auth/Error",
   }
