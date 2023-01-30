@@ -7,7 +7,7 @@ const SearchForm = () => {
     <>
       <div className="px-3">
         <div className="flex border-b border-gray-300 dark:border-dark-500 p-3">
-          <input type="text" className="flex-1 text-base text-dark-300 py-2 bg-transparent px-3 outline-none" placeholder="Search Text..."></input>
+          <input type="text" className="flex-1 text-base text-dark-300 py-2 bg-transparent px-3 outline-none focus:text-white " placeholder="Search Text..."></input>
           <button className="text-gray-400 hover:text-gray-900 dark:text-dark-300 dark:hover:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
