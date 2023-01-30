@@ -25,7 +25,7 @@ const Layout = ({ children }) =>{
   }
   return(
     <motion.div className="selection:text-white selection:bg-primary-500">
-      <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800">1</div>
+      {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <Header />
         <motion.main variants={variants} initial="hidden" animate="enter" exit="exit">{children}</motion.main>

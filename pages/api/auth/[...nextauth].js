@@ -26,6 +26,8 @@ const option = {
             nickname : true,
             email: true,
             password: true,
+            isAdmin:true,
+            isManagers:true
           }
         })
         
@@ -48,7 +50,9 @@ const option = {
         return {
           id : user.id,
           nickname : user.nickname,
-          email: user.email
+          email: user.email,
+          isAdmin : user.isAdmin,
+          isManagers : user.isManagers
         }
       }
     })

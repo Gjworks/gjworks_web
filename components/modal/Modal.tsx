@@ -42,9 +42,9 @@ const Modal = ({ state, close, children }) => {
     {state &&
       <>
         <ModalPortal>
-          <motion.div initial={{opacity:0}} animate={modalState===true ? "openModal" : "closeModal"} variants={variants} exit={exit} className="fixed inset-0 transform overflow-auto bg-dark-900 bg-opacity-75 z-90 backdrop-blur-sm">
+          <motion.div initial={{opacity:0}} animate={modalState===true ? "openModal" : "closeModal"} variants={variants} exit={exit} className="fixed inset-0 transform overflow-auto bg-gray-600 dark:bg-dark-900 bg-opacity-25 dark:bg-opacity-25 z-90 backdrop-blur-md dark:backdrop-blur-sm">
             <div className="absolute inset-0 z-99" onClick={handleCloseModal}></div>
-            <motion.div initial={{opacity:0, y:"-10%"}} animate={{opacity:1, y:"0%", transition:{duration:0.5}}} exit={{opacity:1, y:"-10%", transition:{duration:0.5}}} className="relative mt-20 mb-10 px-3 z-100 bg-dark-600 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-white backdrop-blur bg-opacity-90">
+            <motion.div initial={{opacity:0, y:"-10%"}} animate={{opacity:1, y:"0%", transition:{duration:0.5}}} exit={{opacity:1, y:"-10%", transition:{duration:0.5}}} className="relative mt-20 mb-10 z-100 bg-gray-50 dark:bg-dark-600 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white bg-backdrop-sm dark:backdrop-blur bg-opacity-75 dark:bg-opacity-90">
               {children}
             </motion.div>
           </motion.div>

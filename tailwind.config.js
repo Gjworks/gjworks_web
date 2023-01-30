@@ -6,6 +6,7 @@ module.exports = {
     "app/**/**/**/*.{js,ts,jsx,tsx}", // <-- Add this line
     "pages/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {},
     zIndex: {
@@ -32,7 +33,7 @@ module.exports = {
       white: '#fff',
       primary: colors.blue,
       secondary: colors.sky,
-      gray: colors.gray,
+      gray: colors.slate,
       gray2: colors.gray,
       slate: colors.slate,
       neutral: colors.neutral,

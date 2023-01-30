@@ -27,39 +27,41 @@ export default function Page() {
   }
   return (
       <div className="-mt-20">
-        <div className="relative pt-20 lg:pt-10 bg-gradient-to-br from-dark-500 via-dark-800 to-dark-800">
-          <div className="absolute inset-0 overflow-hidden">
+        <motion.div className="relative pt-20 lg:pt-10 overflow-hidden">
+          <motion.div className="absolute inset-0 bg-[url('/assets/images/bg.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
+          </motion.div>
+          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-800/25 via-dark-900/25 to-dark-900">
           </div>
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} className="relative flex justify-center items-center max-w-screen-2xl mx-auto px-3 lg:px-8 py-20 h-auto lg:h-[80vh] ">
             <div>
-              <motion.div variants={variants} className="text-base font-bold text-dark-300 mb-2 text-center">
+              <motion.div className="text-base font-bold text-black dark:text-white mb-2 text-center">
                 TEAM THAT MAKES THE SERVICE
               </motion.div>
-              <motion.div variants={variants} className="text-6xl font-semibold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-sky-500">
+              <motion.div className="text-6xl font-semibold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-sky-500">
                 Build web and app <br></br>quickly and simply
               </motion.div>
-              <motion.div variants={variants} className="text-dark-100 text-base text-center">서비스에 도움이 되는 제품을 만들어 드리겠습니다.</motion.div>
-              <motion.div variants={variants} className="text-center block pt-10">
-                <span className="inline-block border border-dark-50 py-2 px-5 text-white hover:bg-white hover:text-black rounded">Contact us</span>
+              <motion.div className="text-gray-600 dark:text-dark-50 text-base text-center">서비스에 도움이 되는 제품을 만들어 드리겠습니다.</motion.div>
+              <motion.div className="text-center block pt-10">
+                <span className="inline-block border border-gray-700 dark:border-dark-50 py-2 px-5 text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded cursor-pointer">Contact us</span>
               </motion.div>
             </div>
           </motion.div>
-        </div>
-        <div className="bg-dark-800 bg-opacity-75 py-20">
+        </motion.div>
+        <div className="bg-gray-50 dark:bg-dark-900 bg-opacity-75 py-20">
           <div className="max-w-screen-2xl mx-auto px-3 lg:px-8">
             <div className="w-full">
               <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}  className="w-full lg:w-2/3">
                 <motion.div className="text-secondary-500 mb-5" variants={variants}>
                   Constraint-based
                 </motion.div>
-                <motion.div variants={variants} className="text-2xl font-bold text-white mb-7">
+                <motion.div variants={variants} className="text-2xl font-bold text-black dark:text-white mb-7">
                   An API for your design system.
                 </motion.div>
-                <motion.div variants={variants} className="text-base text-dark-300 mb-6">
+                <motion.div variants={variants} className="text-base text-gray-400 dark:text-dark-300 mb-6">
                   지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모 개발팀입니다. 
                   우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
                 </motion.div>
-                <motion.div variants={variants} className="inline rounded-full bg-dark-500 py-2 px-5 text-sm text-dark-200 hover:text-white hover:bg-dark-400 cursor-pointer">
+                <motion.div variants={variants} className="inline rounded-full bg-dark-500 py-2 px-5 text-sm text-gray-300 dark:text-dark-200 hover:text-white hover:bg-dark-400 cursor-pointer">
                   Read more
                 </motion.div>
               </motion.div>
@@ -102,7 +104,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="py-20 bg-dark-700">
+        <div className="py-20 bg-dark-800">
           <div className="max-w-screen-2xl mx-auto px-3">
             <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}   className="grid grid-cols-2 gap-10 py-20">
               <div className="col-span-2 lg:col-span-1">
@@ -146,24 +148,24 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="py-20 w-full overflow-hidden bg-dark-700">
+        <div className="py-20 w-full overflow-hidden bg-dark-900">
           <div className="max-w-screen-2xl mx-auto px-3">
             <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="flex gap-8 w-full">
-              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-500 via-dark-600 to-dark-600 h-[550px] cursor-pointer shadow-xl shadow-dark-800 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0">
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-700 via-dark-800 to-dark-800 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0">
                 {/* <Image src="/assets/images/MacbookPro.png" quality={100} layout="responsive" width="100%" height="100%" alt=""></Image> */}
               </motion.div>
-              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-500 via-dark-600 to-dark-600 h-[550px] cursor-pointer shadow-xl shadow-dark-800 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"></motion.div>
+              <motion.div variants={variants} className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-700 via-dark-800 to-dark-800 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"></motion.div>
             </motion.div>
           </div>
         </div>
         <div className="py-20">
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="max-w-screen-2xl mx-auto px-3 lg:px-8 overflow-hidden">
             <div className="flex justify-center">
-              <motion.div variants={variants} className="inline font-black text-5xl lg:text-7xl text-dark-400 text-center">
+              <motion.div variants={variants} className="inline font-black text-5xl lg:text-7xl text-gray-700 dark:text-dark-400 text-center">
                 Fast perfermance
               </motion.div>
             </div>
-            <motion.div variants={variants} className="font-thin text-xl lg:text-3xl text-dark-100 text-center -mt-6">Responsive everything.</motion.div>
+            <motion.div variants={variants} className="font-thin text-xl lg:text-3xl text-gray-400 dark:text-dark-100 text-center -mt-6">Responsive everything.</motion.div>
           </motion.div>
         </div>
       </div>

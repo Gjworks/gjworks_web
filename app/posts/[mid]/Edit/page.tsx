@@ -15,7 +15,9 @@ declare module 'next-auth' {
       name: string
       email: string
       image: string
-      nickname: string
+      nickname: string,
+      isManagers: boolean,
+      isAdmin: boolean
     }
   }
 }
@@ -126,11 +128,11 @@ const Edit = (props) => {
           </div>
         </div>
         <ToastEditor
-          initialValue="hello react Editor World!"
           previewStyle="tab"
           height="600px"
           theme="dark"
-          initialEditType="markdown"
+          // initialEditType="markdown"
+          initialEditType="wysiwyg"
           useCommandShortcut={true}
           getDescription={getDescription}
         />
