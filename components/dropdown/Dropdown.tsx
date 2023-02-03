@@ -92,7 +92,7 @@ const Dropdown = (props) => {
             {session.status !== "authenticated" ?
             <>
               <motion.div variants={innerAnimation}>
-                <Link href="/auth/Signin" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                <Link href="/auth/Signin" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                   <div className="flex justify-between">
                     <div className="flex items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -104,7 +104,7 @@ const Dropdown = (props) => {
                 </Link>
               </motion.div>
               <motion.div variants={innerAnimation}>
-                <Link href="/auth/Register" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                <Link href="/auth/Register" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -121,7 +121,7 @@ const Dropdown = (props) => {
             :
             <>
               <motion.div variants={innerAnimation}>
-                <Link href="/user/Account" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                <Link href="/user/Account" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -135,11 +135,11 @@ const Dropdown = (props) => {
             </>
             }
             <div className="block border-b border-gray-300 dark:border-dark-500 my-2 mx-3"></div>
-            {/* <div className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300"></div> */}
+            {/* <div className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300"></div> */}
             {session.status === "authenticated" ?
               <>
               <motion.div variants={innerAnimation}>
-                <Link href="#" onClick={() => signOut()} className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                <Link href="#" onClick={() => signOut()} className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
@@ -155,7 +155,7 @@ const Dropdown = (props) => {
               :
               <>
               <motion.div variants={innerAnimation}>
-                <Link href="#" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                <Link href="#" className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">

@@ -26,20 +26,32 @@ const SafariBrower = () => {
               </div>
             </div>
             <div className="grid grid-cols-3 text-xs leading-5 overflow-hidden">
-              <div className="pointer-events-none select-none rounded-tr border border-dark-800/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 bg-dark-800 text-dark-300">
+              <div className="pointer-events-none select-none rounded-tr border border-dark-800/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 bg-dark-800 text-dark-400">
                 <div className="truncate">Components</div>
               </div>
-              <div className="pointer-events-none select-none font-medium px-4 py-1.5 flex items-center justify-center space-x-2 text-dark-50">
+              <div className="pointer-events-none select-none font-medium px-4 py-1.5 flex items-center justify-center space-x-2 text-dark-200">
                 <div className="truncate">Workspace</div>
               </div>
-              <div className="pointer-events-none select-none rounded-tl border border-dark-800/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 bg-dark-800 text-dark-300">
+              <div className="pointer-events-none select-none rounded-tl border border-dark-800/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 bg-dark-800 text-dark-400">
                 <div className="truncate">UI</div>
               </div>
             </div>
           </div>
         </div>
-        <div className="relative border-t  border-dark-800 rounded-b-xl pb-8 -mb-8 bg-dark-600">
-          code
+        <div className="relative border-t  border-dark-800 rounded-b-xl bg-dark-600">
+          <div className="w-full h-full p-5">
+            <div className="flex justify-center gap-8">
+              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg shadow-dark-900 text-white">
+                Modal Example
+              </div>
+              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-lime-400 via-lime-500 to-lime-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg shadow-dark-900">
+                DropDown
+              </div>
+              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-rose-400 via-rose-500 to-rose-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg shadow-dark-900 text-white">
+                Panel
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

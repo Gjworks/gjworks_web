@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link'
 import SafariBrower from 'components/viewer/SafariBrower';
 import { motion } from "framer-motion";
+import DefaultLayout from "components/layout/Layout";
 
 export default function Page() {
   const parentVariants = {
@@ -26,6 +27,7 @@ export default function Page() {
     }
   }
   return (
+    <DefaultLayout>
       <div className="-mt-20">
         <motion.div className="relative pt-20 lg:pt-10 overflow-hidden">
           <motion.div className="absolute inset-0 bg-[url('/assets/images/bg.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
@@ -112,7 +114,7 @@ export default function Page() {
                   One based system
                 </motion.div>
                 <motion.div variants={variants} className="text-dark-300 text-base">
-                  Next.js, React 그리고 React Native를 기반으로 하나의 통합된 웹과 앱서비스를 동시에 할 수 있도록 제작하였습니다. UI는 tailwindcss 그리고 Framer를 통해서 화면을 그리고 동작시키고 있습니다.
+                  최신 Front-end 기술을 기반으로 하나의 통합된 웹과 앱서비스를 동시에 할 수 있도록 제작하였습니다.
                 </motion.div>
               </div>
               <div className="col-span-2 lg:col-span-1">
@@ -136,10 +138,10 @@ export default function Page() {
             <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="grid grid-cols-2 gap-10 py-20">
               <div className="col-span-2 lg:col-span-1">
                 <motion.div variants={variants} className="text-3xl font-semibold mb-8 text-white">
-                  Mobile UI/UX
+                  Metaverse Platform
                 </motion.div>
                 <motion.div variants={variants} className="text-dark-300 text-base">
-                  Mobile, Tablet, Web Browser 의 크기와 상관없이 UI를 항상 최적의 상태로 사용성 좋게 개발 및 연구하고 있습니다.
+                  Playcanvas를 활용하여 메타버스를 직접 구현하고 서비스와 연계하여 활용 할 수 있도록 개발 합니다.
                 </motion.div>
               </div>
               <div className="col-span-2 lg:col-span-1">
@@ -169,5 +171,6 @@ export default function Page() {
           </motion.div>
         </div>
       </div>
+      </DefaultLayout>
   )
 }

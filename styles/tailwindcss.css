@@ -7,12 +7,12 @@
   *{
     @apply tracking-wide;
   }
-  html, body, #root {
+  html {
     -webkit-overflow-scrolling: touch;
     @apply min-h-full;
     @apply bg-white
   }
-  html.dark, body, #root {
+  html.dark {
     -webkit-overflow-scrolling: touch;
     @apply min-h-full;
     @apply bg-dark-800
