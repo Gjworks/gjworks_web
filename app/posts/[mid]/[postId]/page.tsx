@@ -60,7 +60,7 @@ const Page = ()=> {
         <div className="col-span-12 lg:col-span-12 xl:col-span-10">
           <motion.div className="mb-16 max-w-5xl space-y-8" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:0, transition: {duration:0.5}}}>
             <div className="space-y-4">
-              <div className="text-secondary-500">Blog post</div>
+              <div className="text-primary-500">Blog post</div>
               <h1 className="text-white font-light text-3xl">{documentInfo?.data.title}</h1>
               <motion.div className="text-scale-500 flex space-x-2 text-sm text-dark-300 font-normal" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:0, transition: {duration:0.6}}}>
                 <div></div>
@@ -97,7 +97,7 @@ const Page = ()=> {
             <motion.div className="col-span-12 space-y-8 lg:col-span-5 xl:col-span-3 xl:col-start-9 text-dark-100 text-sm" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:0, transition: {duration:.95}}}>
               <div className="space-y-8 lg:sticky lg:top-20 lg:mb-16">
                 <div className="flex">
-                  <div className="text-secondary-500 border border-secondary-500 bg-secondary-800 bg-opacity-25 text-xs rounded-full py-1 px-3">React</div>
+                  <div className="text-primary-500 border border-primary-500 bg-primary-800 bg-opacity-25 text-xs rounded-full py-1 px-3">React</div>
                 </div>
                 <div className="">
                   <div className="text-scale-1200 mb-6 text-white text-base">On this page</div>

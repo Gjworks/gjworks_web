@@ -58,14 +58,14 @@ const Signin = () => {
           }
           <div className="flex px-3 mb-5 w-full">
             <label className="flex items-center w-24 text-dark-300 text-xs">Email</label>
-            <input type="text" ref={emailInputRef} name="email" id="email" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-600 placeholder-gray-400 dark:placeholder-gray-600" placeholder="What's your Email" />
+            <input type="text" ref={emailInputRef} name="email" id="email" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-500 placeholder-gray-400 dark:placeholder-gray-600" placeholder="What's your Email" />
           </div>
           <div className="flex px-3 mb-5 w-full">
             <label className="flex items-center w-24 text-dark-300 text-xs">Password</label>
-            <input type="password" ref={passwordInputRef} name="password" id="password" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-600 placeholder-gray-400 dark:placeholder-gray-600" placeholder="Password" />
+            <input type="password" ref={passwordInputRef} name="password" id="password" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-500 placeholder-gray-400 dark:placeholder-gray-600" placeholder="Password" />
           </div>
           <div className="flex mb-4">
-            <button type="submit" className="flex justify-center items-center w-full bg-primary-700 hover:bg-primary-600 text-white py-3 px-5 rounded-sm transition duration-300">
+            <button type="submit" className="flex justify-center items-center w-full bg-primary-600 hover:bg-primary-500 text-white py-3 px-5 rounded-sm transition duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-4 h-4">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
               </svg>
@@ -79,7 +79,7 @@ const Signin = () => {
               <div className="w-full border-b border-gray-300 dark:border-dark-500"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="bg-white dark:bg-dark-800 px-4 text-xs text-dark-400">OR</span>
+              <span className="bg-white dark:bg-dark-900 px-4 text-xs text-dark-400">OR</span>
             </div>
           </div>
         </div>

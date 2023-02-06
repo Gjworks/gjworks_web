@@ -30,7 +30,7 @@ export default function Page() {
     <DefaultLayout>
       <div className="-mt-20">
         <motion.div className="relative pt-20 lg:pt-10 overflow-hidden">
-          <motion.div className="absolute inset-0 bg-[url('/assets/images/bg.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
+          <motion.div className="absolute inset-0 bg-[url('/assets/images/bg2.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
           </motion.div>
           <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-800/25 via-dark-900/25 to-dark-900">
           </div>
@@ -39,7 +39,7 @@ export default function Page() {
               <motion.div className="text-base font-bold text-black dark:text-white mb-2 text-center">
                 TEAM THAT MAKES THE SERVICE
               </motion.div>
-              <motion.div className="text-6xl font-semibold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-sky-500">
+              <motion.div className="text-6xl font-semibold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-primary-600">
                 Build web and app <br></br>quickly and simply
               </motion.div>
               <motion.div className="text-gray-600 dark:text-dark-50 text-base text-center">서비스에 도움이 되는 제품을 만들어 드리겠습니다.</motion.div>
@@ -53,7 +53,7 @@ export default function Page() {
           <div className="max-w-screen-2xl mx-auto px-3 lg:px-8">
             <div className="w-full">
               <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}  className="w-full lg:w-2/3">
-                <motion.div className="text-secondary-500 mb-5" variants={variants}>
+                <motion.div className="text-primary-400 mb-5" variants={variants}>
                   Constraint-based
                 </motion.div>
                 <motion.div variants={variants} className="text-2xl font-bold text-black dark:text-white mb-7">
@@ -106,7 +106,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="py-20 bg-dark-800">
+        <div className="py-20 bg-dark-800/50">
           <div className="max-w-screen-2xl mx-auto px-3">
             <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}   className="grid grid-cols-2 gap-10 py-20">
               <div className="col-span-2 lg:col-span-1">

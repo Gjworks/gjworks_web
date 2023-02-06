@@ -41,13 +41,13 @@ const SafariBrower = () => {
         <div className="relative border-t  border-dark-800 rounded-b-xl bg-dark-600">
           <div className="w-full h-full p-5">
             <div className="flex justify-center gap-8">
-              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg shadow-dark-900 text-white">
+              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg hover:shadow-xs shadow-dark-900/50">
                 Modal Example
               </div>
-              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-lime-400 via-lime-500 to-lime-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg shadow-dark-900">
+              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg hover:shadow-xs shadow-dark-900/50">
                 DropDown
               </div>
-              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-rose-400 via-rose-500 to-rose-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg shadow-dark-900 text-white">
+              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg hover:shadow-xs shadow-dark-900/50">
                 Panel
               </div>
             </div>

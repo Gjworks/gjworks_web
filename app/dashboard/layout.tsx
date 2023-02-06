@@ -30,8 +30,8 @@ export default function DashboardLayout({
 }) {
   const session = useSession();
   return (
-    <>
-    <div className="sticky flex items-center top-0 w-full bg-dark-900/25 backdrop-blur-lg">
+    <div className="bg-white">
+    <div className="sticky flex items-center top-0 w-full bg-dark-800 backdrop-blur-lg">
       <div className="flex">
         <div className="bg-white p-2">
           <Link href={process.env.NEXT_PUBLIC_DEFAULT_URL} className="flex items-center">
@@ -42,10 +42,7 @@ export default function DashboardLayout({
       
     </div>
     <div className="">
-      <div className="fixed w-[320px] bg-dark-600 h-screen overflow-hidden overflow-y-auto">
-        <div className="flex text-center text-xl font-semibold items-center justify-center bg-lime-400 py-8">
-          DASHBOARD
-        </div>
+      <div className="fixed w-[320px] bg-dark-800 h-screen overflow-hidden overflow-y-auto">
         <div className="py-10 px-5">
           <div className="mb-10">
             <div className="mb-5">
@@ -67,7 +64,7 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <motion.div className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-800 bg-opacity-75 backdrop-blur-sm py-5 w-[320px] px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
+        <motion.div className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-700/25 bg-opacity-75 backdrop-blur-sm py-5 w-[320px] px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
         <div className="flex">
           <div className="flex items-center pr-3">
             <div className="block w-8 h-8 rounded-full bg-gray-300 dark:bg-dark-400"></div>
@@ -103,11 +100,11 @@ export default function DashboardLayout({
         </div>
       </motion.div>
       </div>
-      <div className="fixed w-full left-[320px] bg-dark-700 h-screen overflow-hidden overflow-y-auto">
+      <div className="fixed w-full left-[320px] bg-dark-900 h-screen overflow-hidden overflow-y-auto">
         {children}
       </div>
     </div>
       
-    </>
+    </div>
   );
 }

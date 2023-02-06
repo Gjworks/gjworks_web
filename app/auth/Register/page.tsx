@@ -104,7 +104,7 @@ const Register = () => {
               <div className="flex">
                 <label className="flex w-24 text-dark-300 text-xs px-3 py-3">NickName</label>
                 <div className="flex-1">
-                  <input type="text" value={nickName} onChange={nickNameHandler} placeholder="User nick name" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-600 placeholder-gray-400 dark:placeholder-gray-600" required />
+                  <input type="text" value={nickName} onChange={nickNameHandler} placeholder="User nick name" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-500 placeholder-gray-400 dark:placeholder-gray-600" required />
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ const Register = () => {
               <div className="flex">
                 <label className="flex w-24 text-dark-300 text-xs px-3 py-3">Email</label>
                 <div className="flex-1">
-                  <input type="text" value={email} onChange={emailHandler} placeholder="example@mail.com" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-600 placeholder-gray-400 dark:placeholder-gray-600" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+                  <input type="text" value={email} onChange={emailHandler} placeholder="example@mail.com" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-500 placeholder-gray-400 dark:placeholder-gray-600" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
                   <div></div>
                 </div>
               </div>
@@ -122,7 +122,7 @@ const Register = () => {
               <div className="flex">
                 <label className="flex w-24 text-dark-300 text-xs px-3 py-3">Password</label>
                 <div className="flex-1">
-                  <input type="password" value={password} onChange={passwordHandler} placeholder="User Password" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 mb-2 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-600 placeholder-gray-400 dark:placeholder-gray-600" required />
+                  <input type="password" value={password} onChange={passwordHandler} placeholder="User Password" className="bg-gray-50 dark:bg-dark-900 text-sm text-gray-500 dark:text-dark-300 focus:text-white py-3 px-3 mb-2 focus:outline-none w-full border-b border-gray-400 dark:border-dark-500 focus:border-primary-500 placeholder-gray-400 dark:placeholder-gray-600" required />
                   <div className="text-sm text-dark-300">비밀번호는 안전하게 암호화 되어 저장됩니다.</div>
                 </div>
                 
@@ -130,7 +130,7 @@ const Register = () => {
               
             </div>
             <div className="flex mb-2">
-              <button className="block w-full bg-primary-700 hover:bg-primary-600 text-sm text-white py-3 px-5 rounded-sm transition duration-300">Register Completed</button>
+              <button className="block w-full bg-primary-600 hover:bg-primary-500 text-sm text-white py-3 px-5 rounded-sm transition duration-300">Register Completed</button>
             </div>
           </form>
           <div className="divider">
