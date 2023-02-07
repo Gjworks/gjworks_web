@@ -59,10 +59,10 @@ const Header = () => {
               
               <div className="hidden md:flex items-center pl-3">
                 <Link href="/Works" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname === "/Works" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-200 hover:text-black dark:hover:text-white")}>
-                  Works
+                  Web
                 </Link>
                 <Link href="/Docs" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname  === "/Docs" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-200 hover:text-black dark:hover:text-white")}>
-                  Docs
+                  Metaverse
                 </Link>
                 <Link href="/posts/[mid]" as="/posts/blog" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname  === "/posts/blog" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-200 hover:text-black dark:hover:text-white")}>
                   Blog
