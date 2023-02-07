@@ -6,8 +6,8 @@ const SearchForm = () => {
   return(
     <>
       <div className="px-3">
-        <div className="flex border-b border-gray-300 dark:border-dark-500 p-3">
-          <input type="text" className="flex-1 text-base text-dark-300 py-2 bg-transparent px-3 outline-none focus:text-white " placeholder="Search Text..."></input>
+        <div className="flex border-b border-gray-300 dark:border-dark-600 p-3">
+          <input type="text" className="flex-1 text-base text-dark-300 py-2 bg-transparent px-3 outline-none focus:text-white placeholder-dark-400" placeholder="Search Text..."></input>
           <button className="text-gray-400 hover:text-gray-900 dark:text-dark-300 dark:hover:text-white">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -17,7 +17,7 @@ const SearchForm = () => {
         <motion.div className="pt-3 pb-4 px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:0.8, delay:0.5}}}>
           <div className="flex items-center gap-4">
             <div className="text-gray-700 dark:text-dark-100 text-xs pr-4">인기</div>
-            <div className="flex bg-gray-300/50 dark:bg-dark-400 py-1 px-1 text-xs rounded-sm hover:bg-primary-700 hover:text-white">
+            <div className="flex bg-gray-300/50 dark:bg-dark-600 py-1 px-1 text-xs rounded-sm hover:bg-primary-400 dark:hover:bg-primary-400 hover:text-black cursor-pointer">
               <div className="px-2">
                 React
               </div>
@@ -27,7 +27,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-gray-300/50 dark:bg-dark-400 py-1 px-3 text-xs rounded-sm hover:bg-primary-700 hover:text-white">
+            <div className="flex bg-gray-300/50 dark:bg-dark-600 py-1 px-3 text-xs rounded-sm hover:bg-primary-400 dark:hover:bg-primary-400 hover:text-black cursor-pointer">
               <div className="px-2">
                 Framer Motion
               </div>
@@ -41,19 +41,19 @@ const SearchForm = () => {
         </motion.div>
         <motion.div className="pt-2 pb-5 px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:0.9, delay:0.5}}}>
           <div className="text-sm font-semibold mb-3 text-dark-200">검색기록</div>
-          <div className="flex text-sm border-b border-gray-300 dark:border-dark-500 text-dark-300 py-3 hover:bg-gray-300 dark:hover:bg-dark-500 hover:text-gray-900 dark:hover:text-dark-100 px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-gray-300 dark:border-dark-600 text-dark-300 py-3 hover:bg-gray-300 dark:hover:bg-primary-400 hover:text-gray-900 dark:hover:text-black px-3 rounded-sm cursor-pointer">
             <div className="flex-1">
               tailwind 설정하는 방법
             </div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-gray-300 dark:border-dark-500 text-dark-300 py-3 hover:bg-gray-300 dark:hover:bg-dark-500 hover:text-gray-900 dark:hover:text-dark-100 px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-gray-300 dark:border-dark-600 text-dark-300 py-3 hover:bg-gray-300 dark:hover:bg-primary-400 hover:text-gray-900 dark:hover:text-black px-3 rounded-sm cursor-pointer">
             <div className="flex-1">
               Prisma Create Schemas
             </div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm text-dark-300 py-3 hover:bg-gray-300 dark:hover:bg-dark-500 hover:text-gray-900 dark:hover:text-dark-100 px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm text-dark-300 py-3 hover:bg-gray-300 dark:hover:bg-primary-400 hover:text-gray-900 dark:hover:text-black px-3 rounded-sm cursor-pointer">
             <div className="flex-1">
               postfix 메일 설정
             </div>
@@ -61,7 +61,7 @@ const SearchForm = () => {
           </div>
         </motion.div>
       </div>
-      <div className="px-3 pt-2 bg-gray-200 dark:bg-dark-600">
+      <div className="px-3 pt-2 bg-gray-200 dark:bg-dark-900/50">
         <motion.div className="pt-2 pb-5 px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:1.1, delay:0.5}}}>
           <div className="flex">
             <div className="text-gray-500 dark:text-dark-300 hover:text-gray-800 dark:hover:text-dark-50">

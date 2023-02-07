@@ -32,7 +32,7 @@ export default function Page() {
         <motion.div className="relative pt-20 xl:pt-10 overflow-hidden">
           <motion.div className="absolute inset-0 bg-[url('/assets/images/bg2.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
           </motion.div>
-          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-800/25 via-dark-900/25 to-dark-900">
+          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-700/25 via-dark-800/25 to-dark-800">
           </div>
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} className="relative flex justify-center items-center max-w-screen-2xl mx-auto px-3 xl:px-8 py-20 h-auto xl:h-[80vh] ">
             <div>
@@ -49,7 +49,7 @@ export default function Page() {
             </div>
           </motion.div>
         </motion.div>
-        <div className="bg-dark-50 dark:bg-dark-900 bg-opacity-75 py-20">
+        <div className="bg-dark-50 dark:bg-dark-800 bg-opacity-75 py-20">
           <div className="max-w-screen-2xl mx-auto px-3 xl:px-8">
             <div className="w-full">
               <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}  className="w-full xl:w-2/3">
@@ -63,7 +63,7 @@ export default function Page() {
                   지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모 개발팀입니다. 
                   우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
                 </motion.div>
-                <motion.div variants={variants} className="inline rounded-full bg-dark-500 py-2 px-5 text-sm text-dark-300 dark:text-dark-200 hover:text-white hover:bg-dark-400 cursor-pointer">
+                <motion.div variants={variants} className="inline rounded-full bg-dark-500 py-2 px-5 text-sm text-dark-300 dark:text-dark-200 dark:hover:text-white hover:bg-primary-500 cursor-pointer">
                   Read more
                 </motion.div>
               </motion.div>
@@ -106,7 +106,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="py-20 bg-dark-800/50">
+        <div className="py-20 bg-dark-900/50">
           <div className="max-w-screen-2xl mx-auto px-3">
             <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants}   className="grid grid-cols-2 gap-10 py-20">
               <div className="col-span-2 xl:col-span-1">
@@ -163,7 +163,7 @@ export default function Page() {
         <div className="py-20">
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} variants={parentVariants} className="max-w-screen-2xl mx-auto px-3 xl:px-8 overflow-hidden">
             <div className="flex justify-center">
-              <motion.div variants={variants} className="inline font-black text-5xl xl:text-7xl text-dark-700 dark:text-dark-400/25 text-center">
+              <motion.div variants={variants} className="inline font-black text-5xl xl:text-7xl text-dark-700 dark:text-dark-500/25 text-center">
                 WE ARE CRATEIVE
               </motion.div>
             </div>
