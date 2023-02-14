@@ -17,7 +17,7 @@ const PageWrap = ({ children }) => {
     }},
   }
   return(
-    <motion.div variants={variants} initial="hidden" animate="enter" exit="exit">
+    <motion.div className="w-full h-full" variants={variants} initial="hidden" animate="enter" exit="exit">
       {children}
     </motion.div>
   )

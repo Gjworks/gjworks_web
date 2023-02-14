@@ -74,7 +74,7 @@ const Dropdown = (props) => {
   return (
     <>
       <button className="group relative flex items-center" onClick={() => setIsOpen(!isOpen)}>
-        <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-600 hover:bg-primary-500 transition duration-300">
+        <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-500 hover:bg-primary-600 transition duration-300">
           <div className="text-white group-hover:text-white p-0 lg:pr-2">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />

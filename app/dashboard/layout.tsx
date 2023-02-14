@@ -8,6 +8,9 @@ import { useSession, signOut } from "next-auth/react";
 import "styles/globals.css"
 import "styles/tailwindcss.css"
 
+import DashboardSideNav from 'components/nav/DashboardSideNav';
+import PageWrap from 'components/page/PageWrap';
+
 declare module 'next-auth' {
   interface Session {
     user: {
@@ -22,89 +25,63 @@ declare module 'next-auth' {
   }
 }
 
-
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
   children: React.ReactNode,
 }) {
   const session = useSession();
+  if (session?.data?.user?.isManagers !== true) {
+    return (
+      <PageWrap>
+        <div className="flex items-center justify-center text-white h-full w-full">
+          <div className="border border-dark-600 rounded-lg mx-auto max-w-screen-md w-full p-10 bg-dark-800/25 backdrop-blur-lg shadow-lg shadow-dark-900">
+            <div className="flex justify-center mb-5 text-red-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-16 h-16">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div className="text-center font-semibold text-xl text-red-500">
+              Access denied for user
+            </div>
+            <div className="text-dark-50 text-center pt-5">
+              접근 권한이 없습니다. 관리자에게 문의하시기 바랍니다.
+            </div>
+            <div className="flex justify-center gap-4 pt-5">
+              <Link href="/" className="flex gap-4 px-5 py-3 bg-dark-900 hover:bg-black rounded-md text-sm text-dark-100">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                </span>
+                <span>HOME</span>
+              </Link>
+              <Link href="/auth/Signin" className="flex gap-4 px-10 py-3 bg-blue-600 hover:bg-blue-700 rounded-md text-sm text-dark-100 hover">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                  </svg>
+                </span>
+                <span>Sign In</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </PageWrap>
+    )
+  }
   return (
-    <div className="bg-white">
-    <div className="sticky flex items-center top-0 w-full bg-dark-800 backdrop-blur-lg">
-      <div className="flex">
-        <div className="bg-white p-2">
-          <Link href={process.env.NEXT_PUBLIC_DEFAULT_URL} className="flex items-center">
-            <Image src="/assets/images/brand/gjworks.svg" alt="gjworks logo" width="32" height="32" className="block w-8 h-8" />
-          </Link>
+    <div className="selection:text-white selection:bg-primary-400">
+      <div className="">
+        <div className="fixed w-[300px] bg-dark-900 backdrop-blur-lg bg-opacity-50 h-screen overflow-hidden overflow-y-auto border-r border-dark-800">
+          <DashboardSideNav />
+        </div>
+        <div className="fixed top-0 right-0 bottom-0 left-[300px] bg-dark-900 h-screen overflow-hidden overflow-y-auto">
+          {children}
         </div>
       </div>
-      
-    </div>
-    <div className="">
-      <div className="fixed w-[320px] bg-dark-800 h-screen overflow-hidden overflow-y-auto">
-        <div className="py-10 px-5">
-          <div className="mb-10">
-            <div className="mb-5">
-              <div className="text-xs uppercase font-bold text-dark-400">MEMBERS</div>
-            </div>
-            <div className="pl-5">
-              <Link href="/dashboard/member/list" className="block text-base text-dark-300 hover:text-white mb-3">회원목록</Link>
-              <Link href="/dashboard/member/list" className="block text-base text-dark-300 hover:text-white mb-3">그룹설정</Link>
-              <Link href="/dashboard/member/list" className="block text-base text-dark-300 hover:text-white mb-3">회원가입 설정</Link>
-            </div>
-          </div>
-          <div>
-            <div className="mb-5">
-              <div className="text-xs uppercase font-bold text-dark-400">Board</div>
-            </div>
-            <div className="pl-5">
-              <Link href="/dashboard/member/list" className="block text-base text-dark-300 hover:text-white mb-3">게시판 목록</Link>
-              <Link href="/dashboard/member/list" className="block text-base text-dark-300 hover:text-white mb-3">게시판 설정</Link>
-            </div>
-          </div>
-        </div>
-        <motion.div className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-700/25 bg-opacity-75 backdrop-blur-sm py-5 w-[320px] px-3" initial={{opacity:0, y:"20%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
-        <div className="flex">
-          <div className="flex items-center pr-3">
-            <div className="block w-8 h-8 rounded-full bg-gray-300 dark:bg-dark-400"></div>
-          </div>
-          <div className="flex-1">
-          {session.status === "authenticated" ?
-          <>
-            <div className="text-sm font-semibold mb-1 text-gray-500 dark:text-dark-100">{session.data?.user.nickname}</div>
-            <div className="text-xs text-gray-400 dark:text-dark-300">{session.data?.user.email}</div>
-          </>
-            :
-            <>
-            <div className="text-sm font-semibold mb-1 text-gray-500 dark:text-dark-100">Account</div>
-            <div className="text-xs text-gray-400 dark:text-dark-300">Sign in or Sign up</div>
-            </>
-            }
-          </div>
-          {session.status === "authenticated" ?
-          <Link href="/user/Account" className="flex items-center px-3 rounded-lg dark:text-white bg-gray-300 hover:bg-gray-200 dark:bg-dark-600 dark:hover:bg-lime-500  cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </Link>
-          :
-          <Link href="/auth/Signin" className="flex items-center px-3 rounded-lg dark:text-white bg-gray-300 hover:bg-gray-200 dark:bg-dark-600 dark:hover:bg-lime-500 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </Link>
-          }
-        </div>
-      </motion.div>
-      </div>
-      <div className="fixed w-full left-[320px] bg-dark-900 h-screen overflow-hidden overflow-y-auto">
-        {children}
-      </div>
-    </div>
       
     </div>
   );
+  
 }

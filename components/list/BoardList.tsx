@@ -22,7 +22,7 @@ function BoardList({ document }: ListProps){
       
       <table className="w-full">
         <thead>
-          <tr className="bg-black bg-opacity-50 backdrop-blur-lg border-b border-dark-600">
+          <tr className="bg-black bg-opacity-50 backdrop-blur-lg">
             <th scope="col" className="text-xs text-dark-300 uppercase py-2 px-3 w-32">No</th>
             <th scope="col" className="text-xs text-dark-300 uppercase py-2 px-3 w-32">Category</th>
             <th scope="col" className="w-auto text-xs text-dark-300 uppercase py-2 px-3">Title</th>
@@ -52,7 +52,7 @@ function BoardList({ document }: ListProps){
           documentList &&
           Object.entries(documentList).map( (item, index) => {
             return (
-              <tr key={index} className="border-b border-dark-600 hover:bg-dark-500 hover:bg-opacity-25">
+              <tr key={index} className="border-b border-dark-700 hover:bg-dark-500 hover:bg-opacity-25">
                 <td className="text-dark-300 text-xs py-3 px-3 text-center">34333</td>
                 <td className="text-dark-300 text-xs py-3 px-3 text-center">Update</td>
                 <td className="py-3 px-3">
