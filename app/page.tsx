@@ -31,7 +31,7 @@ export default function Page() {
     <DefaultLayout>
       <div className="-mt-20">
         <motion.div className="relative pt-20 xl:pt-10 overflow-hidden">
-          <motion.div className="absolute inset-0 bg-[url('/assets/images/bg2.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
+          <motion.div className="absolute inset-0 bg-[url('/assets/images/photo.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
           </motion.div>
           <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/25 to-dark-900">
           </div>

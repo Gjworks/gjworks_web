@@ -58,16 +58,16 @@ const Header = () => {
               </div>
               
               <div className="hidden md:flex items-center pl-3">
-                <Link href="/Works" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname === "/Works" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
+                <Link href="/web" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname === "/web" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
                   Web
                 </Link>
-                <Link href="/Docs" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname  === "/Docs" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
+                <Link href="/metaverse" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname  === "/metaverse" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
                   Metaverse
                 </Link>
                 <Link href="/posts/[mid]" as="/posts/blog" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname  === "/posts/blog" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
                   Blog
                 </Link>
-                <Link href="/Contact" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname === "/Contact" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
+                <Link href="/contact" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname === "/contact" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
                   Contact
                 </Link>
               </div>

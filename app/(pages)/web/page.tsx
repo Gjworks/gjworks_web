@@ -29,7 +29,7 @@ const Page = (props) => {
     <>
     <PageWrap>
       <div className="max-w-screen-2xl mx-auto py-8 xl:py-20 px-3">
-        <motion.div className="text-white text-5xl font-semibold">Works</motion.div>
+        <motion.div className="text-white text-5xl font-semibold">Web</motion.div>
         
       </div>
       </PageWrap>

@@ -2,14 +2,8 @@
 
 const PageNavigation = () => {
   return (
-    <div className="flex items-center justify-between py-3">
-      <div className="flex flex-1 justify-between sm:hidden">
-        <a href="#" className="relative inline-flex items-center rounded-md border border-dark-600 px-4 py-2 text-sm font-medium text-dark-700 hover:bg-dark-500 hover:text-primary-400">Previous</a>
-        <a href="#" className="relative ml-3 inline-flex items-center rounded-md border border-dark-600 px-4 py-2 text-sm font-medium text-dark-700 hover:bg-dark-500 hover:text-primary-400">Next</a>
-      </div>
+    <div className="flex items-center">
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-        <div>
-        </div>
         <div>
           <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
             <a href="#" className="relative inline-flex items-center rounded-l-md border border-dark-600 px-2 py-2 text-sm font-medium text-dark-500 hover:bg-dark-500 hover:text-primary-400 focus:z-20">
