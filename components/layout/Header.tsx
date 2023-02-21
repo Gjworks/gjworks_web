@@ -58,8 +58,8 @@ const Header = () => {
               </div>
               
               <div className="hidden md:flex items-center pl-3">
-                <Link href="/web" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname === "/web" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
-                  Web
+                <Link href="/docs" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname === "/docs" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
+                  Docs
                 </Link>
                 <Link href="/metaverse" className={"block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal " + (pathname  === "/metaverse" ? "text-black dark:text-white" : "text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white")}>
                   Metaverse
