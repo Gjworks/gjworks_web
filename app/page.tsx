@@ -31,10 +31,11 @@ export default function Page() {
     <DefaultLayout>
       <div className="-mt-20">
         <motion.div className="relative pt-20 xl:pt-10 overflow-hidden">
-          <motion.div className="absolute inset-0 bg-[url('/assets/images/photo.jpg')] bg-no-repeat bg-cover bg-top" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
+          <motion.div className="absolute inset-0" initial={{opacity:0, y:"3%"}} animate={{opacity:1, y:"0%", transition:{duration:1}}}>
+            <div className="max-w-[2560px] mx-auto bg-[url('/assets/images/photo.jpg')] bg-no-repeat bg-cover bg-top h-full">
+            </div>
           </motion.div>
-          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900">
-          </div>
+          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900"></div>
           <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: false, amount: 0.3 }} className="relative flex justify-center items-center max-w-screen-2xl mx-auto px-3 xl:px-8 py-20 h-auto xl:h-[80vh] ">
             <div>
               <motion.div className="text-sm lg:text-base font-bold text-black dark:text-white mb-2 text-center">
