@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `Document` MODIFY `description` VARCHAR(191) NULL,
+    MODIFY `readCount` INTEGER NULL DEFAULT 0,
+    MODIFY `commentCount` INTEGER NULL DEFAULT 0,
+    MODIFY `voteCount` INTEGER NULL DEFAULT 0;

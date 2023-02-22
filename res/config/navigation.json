@@ -1,0 +1,37 @@
+{
+    "header" : {
+        "works" : {
+            "name": "works",
+            "title": "Works",
+            "description": "회사소개 문구가 들어갈 예정입니다.",
+            "route": "/about/Company",
+            "image_name": "",
+            "subMenu": [
+                {
+                    "title": "비전",
+                    "name": "Company",
+                    "image_name": "",
+                    "parent": "works",
+                    "description": "Create React",
+                    "route": "/about/Company",
+                    "subMenu" : []
+                },
+                {
+                    "title": "Core Competency",
+                    "name": "Core",
+                    "image_name": "",
+                    "parent": "works",
+                    "description": "Create React"
+                }
+            ]
+        }
+    },
+    "footer" : {
+        "terms" : {
+        },
+        "privacy" : {
+        },
+        "about" : {
+        }
+    }
+}

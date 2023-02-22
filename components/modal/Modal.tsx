@@ -1,0 +1,59 @@
+"use client"
+import React, { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion";
+import ModalPortal from "components/modal/ModalPortal";
+
+const Modal = ({ state, close, children }) => {
+  const [modalState, setModalState] = useState(false);
+  useEffect( ()=> {
+    setModalState(state)
+  }, [state])
+
+
+  useEffect(() => {
+    if(modalState === true) {
+      const $body = document.querySelector("body");
+      const overflow = $body.style.overflow;
+      $body.style.overflow = "hidden";
+      return () => {
+        $body.style.overflow = overflow
+      };
+    }
+    
+  }, [modalState]);
+
+  const variants = {
+    openModal: { 
+      opacity:1, transition:{duration:0.3},
+    },
+    closeModal: { 
+      opacity:0,transition:{duration:0.3, delay:0.1},
+    }
+  }
+  const exit = {
+    opacity:0,transition:{duration:0.3, delay:0.1},
+  }
+  const handleCloseModal = () =>{
+    close(false)
+  }
+  return (
+    <>
+    <AnimatePresence>
+    {state &&
+      <>
+        <ModalPortal>
+          <motion.div initial={{opacity:0}} animate={modalState===true ? "openModal" : "closeModal"} variants={variants} exit={exit} className="fixed inset-0 transform overflow-auto bg-gray-600/50 dark:bg-dark-900/40  z-90 bg-backdrop-sm px-3">
+            <div className="absolute inset-0 z-99" onClick={handleCloseModal}></div>
+            <motion.div initial={{opacity:0, y:"-10%"}} animate={{opacity:1, y:"0%", transition:{duration:0.5}}} exit={{opacity:1, y:"-10%", transition:{duration:0.5}}} className="relative mt-20 mb-10 z-100 bg-gray-50 dark:bg-dark-900/50 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white bg-backdrop-sm dark:backdrop-blur-lg">
+              {children}
+            </motion.div>
+          </motion.div>
+        </ModalPortal>
+      </>
+    }
+    </AnimatePresence>
+    </>
+  )
+}
+
+export default Modal;
