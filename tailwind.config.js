@@ -63,8 +63,8 @@ module.exports = {
         500: '#9d8675',
         600: '#7c6a5d',
         700: '#5c4f46',
-        800: '#3e3530',
-        900: '#221e1b',
+        800: '#232932',
+        900: '#181c21',
       },
       // 'dark': {
       //   50: '#b6bfd2',
@@ -112,7 +112,7 @@ module.exports = {
         900 : '#1B1D21',
       },
       // 'dark' : colors.gray,
-      // primary: colors.rose,
+      // primary: colors.indigo,
       secondary: colors.sky,
     }
   },
