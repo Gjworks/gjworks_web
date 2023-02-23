@@ -88,7 +88,7 @@ const Dropdown = (props) => {
         </div>
         
       </button>
-      <motion.div initial={initial} animate={isOpen===true ? "open" : "close"} variants={variants} transition={{ duration: 0.5 }} className="absolute top-8 right-0 mt-2 mr-2 w-56 rounded-md backdrop-blur-lg  shadow-lg bg-white/90 dark:bg-dark-700/25 dark:shadow-black/50 border border-gray-200 dark:border-dark-600 overflow-hidden shadow-xs p-2">
+      <motion.div initial={initial} animate={isOpen===true ? "open" : "close"} variants={variants} transition={{ duration: 0.5 }} className="absolute top-8 right-0 mt-2 mr-2 w-56 rounded-md backdrop-blur-lg  shadow-lg bg-white/90 dark:bg-dark-700/25 dark:shadow-black/50 border border-gray-200 dark:border-dark-800 overflow-hidden shadow-xs p-2">
             {session.status !== "authenticated" ?
             <>
               <motion.div variants={innerAnimation}>
@@ -134,7 +134,7 @@ const Dropdown = (props) => {
               </motion.div>
             </>
             }
-            <div className="block border-b border-gray-300 dark:border-dark-500 my-2 mx-3"></div>
+            <div className="block border-b border-gray-300 dark:border-dark-700 my-2 mx-3"></div>
             {/* <div className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-primary-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300"></div> */}
             {session.status === "authenticated" ?
               <>
