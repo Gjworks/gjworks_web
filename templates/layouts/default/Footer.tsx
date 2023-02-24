@@ -11,7 +11,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import PageWrap from 'components/page/PageWrap'
+import PageWrap from 'components/sections/PageWrap'
 
 class Footer extends React.Component {
   render() {

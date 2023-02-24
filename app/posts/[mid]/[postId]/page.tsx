@@ -9,7 +9,7 @@ import Loading from 'components/loading/loading'
 
 import Description from './description'
 
-import PageWrap from 'components/page/PageWrap'
+import PageWrap from 'components/sections/PageWrap'
 
 //
 const Page = () => {

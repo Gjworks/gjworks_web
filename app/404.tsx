@@ -1,6 +1,6 @@
-"use client"
-import NotFound from "components/message/NotFound";
-import PageWrap from "components/page/PageWrap";
+'use client'
+import NotFound from 'components/message/NotFound'
+import PageWrap from 'components/sections/PageWrap'
 
 const Custom404 = () => {
   return (
@@ -12,4 +12,4 @@ const Custom404 = () => {
   )
 }
 
-export default Custom404;
+export default Custom404

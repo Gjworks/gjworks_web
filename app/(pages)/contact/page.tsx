@@ -1,6 +1,6 @@
 'use client'
 
-import PageWrap from 'components/page/PageWrap'
+import PageWrap from 'components/sections/PageWrap'
 
 const Page = () => {
   return (

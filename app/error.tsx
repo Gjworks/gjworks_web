@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import React, { useEffect } from "react";
-import PageWrap from "components/page/PageWrap";
+import React, { useEffect } from 'react'
+import PageWrap from 'components/sections/PageWrap'
 
-const Error = (statusCode) => {
+const Error = statusCode => {
   useEffect(() => {
     console.error(statusCode)
   }, [statusCode])
@@ -15,7 +15,6 @@ const Error = (statusCode) => {
           : 'An error occurred on client'}
       </div>
     </PageWrap>
-
   )
 }
 

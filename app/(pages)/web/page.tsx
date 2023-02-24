@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-import PageWrap from 'components/page/PageWrap'
+import PageWrap from 'components/sections/PageWrap'
 
 const Page = props => {
   const parentVariants = {

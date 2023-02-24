@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import Warning from 'components/message/Warning'
-import PageWrap from 'components/page/PageWrap'
+import PageWrap from 'components/sections/PageWrap'
 
 const Register = () => {
   const [nickName, setNickName] = useState('')

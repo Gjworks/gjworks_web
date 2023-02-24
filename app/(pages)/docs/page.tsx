@@ -1,29 +1,26 @@
 'use client'
 
-import React, { useState } from 'react'
 import Link from 'next/link'
 
-import PageWrap from 'components/page/PageWrap'
-import Right from 'components/panel/Right'
-import Bottom from 'components/panel/Bottom'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import PageWrap from 'components/sections/PageWrap'
 
-const Page = props => {
-  const [showRight, setShowRight] = useState(false)
-  const [showBottom, setShowBottom] = useState(false)
-
-  const closeRight = close => {
-    setShowRight(close)
-  }
-  const closeBottom = close => {
-    setShowBottom(close)
-  }
+const Page = () => {
+  const code1: string = `# NEXTAUTH_SECRET, NEXT_PUBLIC_SECRET 시크릿 키 값 생성하기
+openssl rand -base64 32`
+  const code2: string = `NEXTAUTH_URL = http://localhost:3000 
+NEXT_PUBLIC_DEFAULT_URL = "http://localhost:3000/"`
+  const code3: string = `NEXTAUTH_URL = https://gjworks.dev/
+NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
+  const code4: string = `git remote set-url origin https://github.com/your_team/your_project.git`
   return (
     <>
       <PageWrap>
         <div className="text-primary-400 text-base">Documentation</div>
-        <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white pt-10 pb-5">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white pt-10 pb-5">
           Installation
-        </div>
+        </h1>
         <div className="text-base text-dark-300 mb-1">
           Esther의 Github 저장소에 접근권한이 있다면 해당 프레임워크를 사용할 수
           있고 설치 할 수 있습니다. Next.js + Framer Motion + Prisma +
@@ -65,9 +62,17 @@ const Page = props => {
             을 하여 자신의 로컬에 복제를 합니다.
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
-            <pre className="relative p-5">
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
               git clone 'Esther remote repository'
-            </pre>
+            </SyntaxHighlighter>
           </div>
 
           <div className="text-base text-dark-300 mb-1">
@@ -102,10 +107,17 @@ const Page = props => {
             )으로 작성 되었습니다.
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
-            <pre className="relative p-5">
-              git remote set-url origin
-              https://github.com/your_team/your_project.git
-            </pre>
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
+              {code4}
+            </SyntaxHighlighter>
           </div>
 
           <div className="text-base text-dark-300 mb-1">
@@ -134,7 +146,17 @@ const Page = props => {
             명령어를 통해서 설치 할 수 있습니다.
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
-            <pre className="relative p-5">npm install</pre>
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
+              npm install
+            </SyntaxHighlighter>
           </div>
 
           <div className="text-base text-dark-300 mb-1">
@@ -191,21 +213,33 @@ const Page = props => {
             Next.js 공식문서에도 있습니다. 참고하셔서 해당 값을 넣어 둡니다.
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
-            <pre className="relative p-5">
-              <span className="text-primary-600">
-                # NEXTAUTH_SECRET, NEXT_PUBLIC_SECRET 시크릿 키 값 생성하기
-              </span>
-              <br></br>
-              openssl rand -base64 32
-            </pre>
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
+              {code1}
+            </SyntaxHighlighter>
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env
             </span>
-            <pre className="relative p-5">
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
               NEXTAUTH_SECRET = "위에서 생성된 값을 넣어주세요.";
-            </pre>
+            </SyntaxHighlighter>
           </div>
           <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
             개발환경 env 설정
@@ -219,10 +253,17 @@ const Page = props => {
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.develoment
             </span>
-            <pre className="relative p-5">
-              NEXTAUTH_URL = http://localhost:3000<br></br>
-              NEXT_PUBLIC_DEFAULT_URL = "http://localhost:3000/"
-            </pre>
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
+              {code2}
+            </SyntaxHighlighter>
           </div>
           <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
             배포 env 설정
@@ -231,10 +272,17 @@ const Page = props => {
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.production
             </span>
-            <pre className="relative p-5">
-              NEXTAUTH_URL = https://gjworks.dev/<br></br>
-              NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"
-            </pre>
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
+              {code3}
+            </SyntaxHighlighter>
           </div>
           <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
             Prisma
@@ -249,25 +297,49 @@ const Page = props => {
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.develoment
             </span>
-            <pre className="relative p-5">
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
               DATABASE_URL="mysql://db_id:db_password@localhost:3306/db_name"
-            </pre>
+            </SyntaxHighlighter>
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env
             </span>
-            <pre className="relative p-5">
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
               DATABASE_URL="mysql://db_id:db_password@db_host:db_port/db_name"
-            </pre>
+            </SyntaxHighlighter>
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.production
             </span>
-            <pre className="relative p-5">
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
               DATABASE_URL="mysql://db_id:db_password@db_host:db_port/db_name"
-            </pre>
+            </SyntaxHighlighter>
           </div>
 
           <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
@@ -280,9 +352,17 @@ const Page = props => {
             입력하세요.
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
-            <pre className="relative p-5">
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
               npx prisma migrate dev --name tables
-            </pre>
+            </SyntaxHighlighter>
           </div>
 
           <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
@@ -293,7 +373,20 @@ const Page = props => {
             났습니다. 이제 아래 명령어를 통해서 웹사이트가 보인다면 끝입니다.
           </div>
           <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
-            <pre className="relative p-5">npm run dev</pre>
+            <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
+              terminal
+            </span>
+            <SyntaxHighlighter
+              language="bash"
+              style={gruvboxDark}
+              wrapLongLines={true}
+              customStyle={{
+                backgroundColor: 'transparent',
+                padding: '1rem',
+              }}
+            >
+              npm run dev
+            </SyntaxHighlighter>
           </div>
         </div>
       </PageWrap>

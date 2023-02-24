@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from 'components/viewer/SafariBrower'
 import { motion } from 'framer-motion'
-import DefaultLayout from 'components/layout/Layout'
+import DefaultLayout from 'templates/layouts/default/Layout'
 
 export default function Page() {
   const parentVariants = {

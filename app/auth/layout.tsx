@@ -1,11 +1,7 @@
-import DefaultLayout from "components/layout/Layout";
+import DefaultLayout from 'templates/layouts/Layout'
 
 const PageLayout = ({ children }) => {
-  return(
-    <DefaultLayout>
-      {children}
-    </DefaultLayout>
-  )
+  return <DefaultLayout>{children}</DefaultLayout>
 }
 
-export default PageLayout;
+export default PageLayout

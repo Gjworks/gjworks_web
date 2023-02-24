@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, Suspense } from 'react'
 
-import PageWrap from 'components/page/PageWrap'
+import PageWrap from 'components/sections/PageWrap'
 import BoardList from 'components/list/BoardList'
 import PageNavigation from 'components/nav/PageNavigation'
 import { getData } from './server'

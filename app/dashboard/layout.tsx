@@ -9,7 +9,7 @@ import 'styles/globals.css'
 import 'styles/tailwindcss.css'
 
 import DashboardSideNav from 'components/nav/DashboardSideNav'
-import PageWrap from 'components/page/PageWrap'
+import PageWrap from 'components/sections/PageWrap'
 
 declare module 'next-auth' {
   interface Session {

@@ -4,29 +4,41 @@
  * @brief 설정 및 환경변수등이 저장되는 파일
  **/
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Dropdown from 'components/dropdown/Dropdown'
 import Modal from 'components/modal/Modal'
 import Left from 'components/panel/Left'
-import SearchForm from 'components/form/SearchForm'
+import SearchForm from 'templates/forms/SearchForm'
+import AccountDropwdown from 'templates/forms/AccountDropwdown'
 import SideNav from 'components/nav/SideNav'
 
 const Header = () => {
   const pathname = usePathname()
   const [showModal, setShowModal] = useState(false)
   const [showLeft, setShowLeft] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(false)
   const closeModal = close => {
     setShowModal(close)
+  }
+  const closeDropdown = close => {
+    setShowDropdown(close)
   }
   const closeLeft = close => {
     setShowLeft(close)
   }
-
+  const handleClickOutside = () => {
+    setShowDropdown(false)
+  }
   // const { mid } = router?.query;
-
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true)
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true)
+    }
+  }, [])
   return (
     <>
       <header className="sticky top-0 bg-dark-900 bg-opacity-25 backdrop-blur-lg px-0 z-[90]">
@@ -153,7 +165,35 @@ const Header = () => {
                   />
                 </svg>
               </button>
-              <Dropdown></Dropdown>
+              <button
+                className="group relative flex items-center"
+                onClick={() => setShowDropdown(!showDropdown)}
+              >
+                <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-500 hover:bg-primary-600 transition duration-300">
+                  <div className="text-white group-hover:text-white p-0 lg:pr-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="hidden lg:block text-white group-hover:text-white text-xs">
+                    Account
+                  </div>
+                </div>
+              </button>
+              <Dropdown state={showDropdown} close={closeDropdown}>
+                <AccountDropwdown />
+              </Dropdown>
             </div>
           </div>
         </div>

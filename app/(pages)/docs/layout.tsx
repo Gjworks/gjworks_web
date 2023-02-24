@@ -1,12 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-
+import { usePathname } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 const PageLayout = ({ children }) => {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  console.log(searchParams)
+  console.log(pathname)
   return (
     <>
-      <div className="flex flex-wrap gap-12 max-w-screen-2xl mx-auto pt-8 pb-20 px-3">
-        <div className="w-64">
+      <div className="flex flex-wrap xl:flex-nowrap gap-12 max-w-screen-2xl mx-auto pt-8 pb-20 px-3">
+        <div className="w-64 flex-none">
           <div className="">
             <div className="flex items-center flex-wrap gap-4 mb-3 group">
               <div className="flex justify-center items-center w-6 h-6 rounded-md bg-primary-400 group-hover:bg-primary-400 group-hover:text-black">
@@ -25,14 +30,21 @@ const PageLayout = ({ children }) => {
                   />
                 </svg>
               </div>
-              <div className="flex items-center justify-between">
-                <div className=" text-base font-normal text-white cursor-pointer group-hover:text-white">
+              <Link href="/docs" className="flex items-center justify-between">
+                <div
+                  className={
+                    'text-base font-normal cursor-pointer group-hover:text-white ' +
+                    (pathname === '/docs'
+                      ? 'text-white'
+                      : 'text-dark-300 hover:text-white')
+                  }
+                >
                   Installation
-                </div>{' '}
-                <div className="ml-2 text-white py-[1px] px-[3px] rounded bg-primary-700 text-[10px]">
+                </div>
+                <div className="ml-2 text-black py-[1px] px-[3px] rounded bg-primary-200 text-[10px]">
                   New
                 </div>
-              </div>
+              </Link>
               <div className="w-full pb-2 pl-12">
                 <div className="flex items-center text-sm font-normal text-dark-300 cursor-pointer hover:text-white mb-3">
                   Git
@@ -92,9 +104,24 @@ const PageLayout = ({ children }) => {
                 <div className="flex items-center text-sm font-normal text-dark-300 cursor-pointer hover:text-white mb-3">
                   Accodion
                 </div>
-                <div className="flex items-center text-sm font-normal text-dark-300 cursor-pointer hover:text-white mb-3">
-                  Dropdown
-                </div>
+                <Link
+                  href="/docs/components/dropdown"
+                  className="flex items-center mb-3"
+                >
+                  <div
+                    className={
+                      ' text-sm font-normal cursor-pointer ' +
+                      (pathname === '/docs/components/dropdown'
+                        ? 'text-white'
+                        : 'text-dark-300 hover:text-white')
+                    }
+                  >
+                    Dropdown
+                  </div>
+                  <div className="ml-2 text-black py-[1px] px-[3px] rounded bg-primary-200 text-[10px]">
+                    New
+                  </div>
+                </Link>
                 <div className="flex items-center text-sm font-normal text-dark-300 cursor-pointer hover:text-white mb-3">
                   Modal
                 </div>
@@ -114,55 +141,55 @@ const PageLayout = ({ children }) => {
             </div>
           </div>
         </div>
-        <div className="flex-1 text-dark-100">
-          <div className="flex gap-12 flex-wrap">
-            <div className="w-full xl:flex-1">{children}</div>
-          </div>
-        </div>
-        <div className="w-full xl:w-80">
-          <div className="sticky top-24">
-            <Link
-              href="#"
-              className="flex text-dark-300 hover:text-white mb-2 text-sm"
-            >
-              Top
-            </Link>
-            <Link
-              href="#"
-              className="flex text-dark-300 hover:text-white mb-2 text-sm"
-            >
-              Installation
-            </Link>
-            <Link
-              href="#"
-              className="flex text-dark-300 hover:text-white mb-2 text-sm"
-            >
-              시스템 요구사항
-            </Link>
-            <Link
-              href="#"
-              className="flex text-dark-300 hover:text-white mb-2 text-sm"
-            >
-              Git 설정
-            </Link>
-            <Link
-              href="#"
-              className="flex text-dark-300 hover:text-white mb-2 text-sm"
-            >
-              Package
-            </Link>
-            <Link
-              href="#"
-              className="flex text-dark-300 hover:text-white mb-2 text-sm"
-            >
-              env 설정
-            </Link>
-            <Link
-              href="#"
-              className="flex text-dark-300 hover:text-white mb-2 text-sm"
-            >
-              bottom
-            </Link>
+        <div className="grow text-dark-100">
+          <div className="flex gap-12 flex-wrap xl:flex-nowrap">
+            <div className="grow">{children}</div>
+            <div className="w-full xl:w-80 flex-none">
+              <div className="sticky top-24">
+                <Link
+                  href="#"
+                  className="flex text-dark-300 hover:text-white mb-2 text-sm"
+                >
+                  Top
+                </Link>
+                <Link
+                  href="#"
+                  className="flex text-dark-300 hover:text-white mb-2 text-sm"
+                >
+                  Installation
+                </Link>
+                <Link
+                  href="#"
+                  className="flex text-dark-300 hover:text-white mb-2 text-sm"
+                >
+                  시스템 요구사항
+                </Link>
+                <Link
+                  href="#"
+                  className="flex text-dark-300 hover:text-white mb-2 text-sm"
+                >
+                  Git 설정
+                </Link>
+                <Link
+                  href="#"
+                  className="flex text-dark-300 hover:text-white mb-2 text-sm"
+                >
+                  Package
+                </Link>
+                <Link
+                  href="#"
+                  className="flex text-dark-300 hover:text-white mb-2 text-sm"
+                >
+                  env 설정
+                </Link>
+                <Link
+                  href="#"
+                  className="flex text-dark-300 hover:text-white mb-2 text-sm"
+                >
+                  bottom
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
