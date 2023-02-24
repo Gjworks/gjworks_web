@@ -1,5 +1,5 @@
-import React from "react"
-import { createPortal } from "react-dom";
+import React from 'react'
+import { createPortal } from 'react-dom'
 
 const LeftPortal = ({ children }) => {
   // const [element, setElement] = useState()
@@ -11,10 +11,10 @@ const LeftPortal = ({ children }) => {
   // if (!element) {
   //   return <></>;
   // }
-  
+
   // return createPortal(children, element)
-  if (typeof window === 'undefined') return <></>;
-  const element = document.getElementById("left")
+  if (typeof window === 'undefined') return <></>
+  const element = document.getElementById('left')
   return createPortal(children, element)
 }
 

@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
-import { SessionProvider } from "next-auth/react"
-import React, { Suspense } from "react";
+import { SessionProvider } from 'next-auth/react'
+import React, { Suspense } from 'react'
 
-import "styles/globals.css"
-import "styles/tailwindcss.css"
+import 'styles/globals.css'
+import 'styles/tailwindcss.css'
 
 export default function RootLayout({ children }) {
   return (
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
       <head />
       <body>
         <SessionProvider>
-            {children}
+          {children}
           <div id="toast"></div>
           <div id="left"></div>
           <div id="right"></div>

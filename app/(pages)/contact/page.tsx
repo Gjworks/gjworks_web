@@ -1,15 +1,12 @@
-"use client";
+'use client'
 
-import PageWrap from "components/page/PageWrap";
+import PageWrap from 'components/page/PageWrap'
 
 const Page = () => {
   return (
-      <>
-      <PageWrap>
-        pageContainer
-      </PageWrap>
-        
-      </>
+    <>
+      <PageWrap>pageContainer</PageWrap>
+    </>
   )
 }
-export default Page;
+export default Page

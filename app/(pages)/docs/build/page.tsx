@@ -1,8 +1,4 @@
 const Page = () => {
-  return(
-    <>
-    
-    </>
-  )
+  return <></>
 }
-export default Page;
+export default Page

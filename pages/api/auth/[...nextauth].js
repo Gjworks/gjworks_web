@@ -1,17 +1,17 @@
-import NextAuth from 'next-auth';
+import NextAuth from 'next-auth'
 import { PrismaClient } from '@prisma/client'
-import CredentialsProvider from "next-auth/providers/credentials";
-import { verifyPassword } from 'lib/auth/auth';
+import CredentialsProvider from 'next-auth/providers/credentials'
+import { verifyPassword } from 'lib/auth/auth'
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 const option = {
   session: {
-    strategy: "jwt",
+    strategy: 'jwt',
     maxAge: 60 * 60 * 24 * 30,
   },
   secret: process.env.NEXTAUTH_SECRET,
-  providers : [
+  providers: [
     CredentialsProvider({
       id: 'credentials',
       name: 'Credentials',
@@ -19,20 +19,20 @@ const option = {
       async authorize(credentials, req) {
         const user = await prisma.user.findUnique({
           where: {
-            email: credentials.email
+            email: credentials.email,
           },
           select: {
-            id:true,
-            nickname : true,
+            id: true,
+            nickname: true,
             email: true,
             password: true,
-            isAdmin:true,
-            isManagers:true
-          }
+            isAdmin: true,
+            isManagers: true,
+          },
         })
-        
-        if(!user) {
-          throw new new Error('No user found for credentials');
+
+        if (!user) {
+          throw new new Error('No user found for credentials')()
         }
 
         const isValid = await verifyPassword(
@@ -40,22 +40,22 @@ const option = {
           user.password
         )
 
-        if(!isValid) {
-          throw new Error('Could not log you in!');
+        if (!isValid) {
+          throw new Error('Could not log you in!')
         }
-        if(user) {
-          return user;
+        if (user) {
+          return user
         }
         // return null;
         return {
-          id : user.id,
-          nickname : user.nickname,
+          id: user.id,
+          nickname: user.nickname,
           email: user.email,
-          isAdmin : user.isAdmin,
-          isManagers : user.isManagers
+          isAdmin: user.isAdmin,
+          isManagers: user.isManagers,
         }
-      }
-    })
+      },
+    }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
@@ -64,25 +64,23 @@ const option = {
       return true
     },
     async session({ session, token, user }) {
-      session.user = token.user;
+      session.user = token.user
       return Promise.resolve(session)
     },
     async jwt({ token, user, account }) {
       if (user) {
         // token = user;
         token.accessToken = account.access_token
-        token.user=user
+        token.user = user
       }
-      return Promise.resolve(token);
+      return Promise.resolve(token)
     },
   },
-  database : process.env.DATABASE_URL,
+  database: process.env.DATABASE_URL,
   pages: {
-    signIn: "/auth/Signin",
-    signOut: "/auth/Signout",
-    error: "/auth/Error",
-  }
+    signIn: '/auth/Signin',
+    signOut: '/auth/Signout',
+    error: '/auth/Error',
+  },
 }
-export default (req,res) => NextAuth(req,res, option);
-
-  
+export default (req, res) => NextAuth(req, res, option)

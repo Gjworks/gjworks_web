@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
-export default function description( props: any) {
-  const [desc, setDesc] = useState<{[key: string]: any}>()
+export default function description(props: any) {
+  const [desc, setDesc] = useState<{ [key: string]: any }>()
 
   useEffect(() => {
     props.desc && setDesc(desc)
