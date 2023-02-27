@@ -43,7 +43,7 @@ const Page = () => {
           Dropdown
         </div>
         <div className="text-base text-dark-300 mb-1">
-          드랍다운 메뉴를 사용할 수 있습니다.
+          드랍다운 메뉴를 사용할 수 있습니다.!!!!
         </div>
         <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
           <SyntaxHighlighter
