@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import RightPortal from 'components/panel/RightPortal'
+import BottomPortal from 'src/components/panel/BottomPortal'
 
-const Right = ({ state, close, children, title }) => {
+const Bottom = ({ state, close, children, title }) => {
   const [panelState, setPanelState] = useState(false)
   useEffect(() => {
     setPanelState(state)
@@ -22,28 +22,29 @@ const Right = ({ state, close, children, title }) => {
 
   const variants = {
     openPanel: {
-      marginLeft: '0vw',
+      marginTop: '0vw',
       transition: { duration: 0.3 },
     },
     closePanel: {
-      marginLeft: '100vw',
+      marginTop: '100vw',
       transition: { duration: 0.5 },
     },
   }
   const exit = {
-    marginLeft: '100vw',
+    marginTop: '100vw',
     transition: { duration: 0.5 },
   }
   const handleClosePanel = () => {
     close(false)
   }
+
   return (
     <>
       <AnimatePresence>
         {state && (
-          <RightPortal>
+          <BottomPortal>
             <motion.div
-              initial={{ marginLeft: '100vw' }}
+              initial={{ marginTop: '100vw' }}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
@@ -82,10 +83,10 @@ const Right = ({ state, close, children, title }) => {
                 {children}
               </motion.div>
             </motion.div>
-          </RightPortal>
+          </BottomPortal>
         )}
       </AnimatePresence>
     </>
   )
 }
-export default Right
+export default Bottom

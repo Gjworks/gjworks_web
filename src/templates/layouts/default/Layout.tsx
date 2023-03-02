@@ -6,8 +6,8 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
-import Header from 'templates/layouts/default/Header'
-import Footer from 'templates/layouts/default/Footer'
+import Header from 'src/templates/layouts/default/Header'
+import Footer from 'src/templates/layouts/default/Footer'
 
 const Layout = ({ children }) => {
   const variants = {

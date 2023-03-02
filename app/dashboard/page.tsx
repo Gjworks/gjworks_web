@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import PageWrap from 'components/sections/PageWrap'
+import PageWrap from 'src/components/sections/PageWrap'
 import { useSession, signOut } from 'next-auth/react'
 
 declare module 'next-auth' {

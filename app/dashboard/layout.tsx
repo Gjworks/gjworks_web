@@ -8,8 +8,8 @@ import { useSession, signOut } from 'next-auth/react'
 import 'styles/globals.css'
 import 'styles/tailwindcss.css'
 
-import DashboardSideNav from 'components/nav/DashboardSideNav'
-import PageWrap from 'components/sections/PageWrap'
+import DashboardSideNav from 'src/components/nav/DashboardSideNav'
+import PageWrap from 'src/components/sections/PageWrap'
 
 declare module 'next-auth' {
   interface Session {

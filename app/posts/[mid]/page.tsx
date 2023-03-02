@@ -2,21 +2,27 @@
 
 import React, { useEffect, useState, Suspense } from 'react'
 
-import PageWrap from 'components/sections/PageWrap'
-import BoardList from 'components/list/BoardList'
-import PageNavigation from 'components/nav/PageNavigation'
+import PageWrap from 'src/components/sections/PageWrap'
+import BoardList from 'src/components/list/BoardList'
+import PageNavigation from 'src/components/nav/PageNavigation'
 import { getData } from './server'
 
-const Page = props => {
-  const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>()
+interface PageProps {
+  params: {
+    mid: string
+  }
+}
 
+const Page: React.FC<PageProps> = ({ params }) => {
+  const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>()
+  console.log(params.mid)
   let items
-  const fetchData = async () => {
-    items = await getData()
+  const fetchData = async mid => {
+    items = await getData(mid)
     setDocumentInfo(items.data)
   }
   useEffect(() => {
-    fetchData()
+    fetchData(params.mid)
   }, [])
 
   return (

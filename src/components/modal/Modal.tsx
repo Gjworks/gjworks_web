@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import ModalPortal from 'components/modal/ModalPortal'
+import ModalPortal from 'src/components/modal/ModalPortal'
 
 const Modal = ({ state, close, children }) => {
   const [modalState, setModalState] = useState(false)

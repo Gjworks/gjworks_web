@@ -1,13 +1,12 @@
-export const getData = async () => {
+export const getData = async mid => {
   const data = {
-    documentId: 1,
+    mid: mid,
   }
 
   const response = await fetch('/api/posts/List', {
     method: 'POST',
     body: JSON.stringify(data),
   })
-  console.log(response)
   const result = await response.json()
   return result
 }

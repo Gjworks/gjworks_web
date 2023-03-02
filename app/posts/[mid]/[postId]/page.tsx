@@ -5,17 +5,23 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { getData } from './server'
 
-import Loading from 'components/loading/loading'
+import Loading from 'src/components/loading/loading'
 
 import Description from './description'
 
-import PageWrap from 'components/sections/PageWrap'
+import PageWrap from 'src/components/sections/PageWrap'
 
 //
-const Page = () => {
+interface PageProps {
+  params: {
+    postId: string
+  }
+}
+const Page: React.FC<PageProps> = ({ params }) => {
   const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>()
 
   let items
+  console.log(params.postId)
   const fetchData = async () => {
     items = await getData()
     console.log(items)

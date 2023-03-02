@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/react'
-import PageWrap from 'components/sections/PageWrap'
+import PageWrap from 'src/components/sections/PageWrap'
 
 declare module 'next-auth/react' {
   interface User {

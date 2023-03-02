@@ -8,12 +8,12 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import Dropdown from 'components/dropdown/Dropdown'
-import Modal from 'components/modal/Modal'
-import Left from 'components/panel/Left'
-import SearchForm from 'templates/forms/SearchForm'
-import AccountDropwdown from 'templates/forms/AccountDropwdown'
-import SideNav from 'components/nav/SideNav'
+import Dropdown from 'src/components/dropdown/Dropdown'
+import Modal from 'src/components/modal/Modal'
+import Left from 'src/components/panel/Left'
+import SearchForm from 'src/templates/forms/SearchForm'
+import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
+import SideNav from 'src/components/nav/SideNav'
 
 const Header = () => {
   const pathname = usePathname()

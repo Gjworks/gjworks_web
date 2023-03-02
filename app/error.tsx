@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import PageWrap from 'components/sections/PageWrap'
+import PageWrap from 'src/components/sections/PageWrap'
 
 const Error = statusCode => {
   useEffect(() => {

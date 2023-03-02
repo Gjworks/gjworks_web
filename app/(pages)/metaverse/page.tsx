@@ -3,8 +3,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-import PageWrap from 'components/sections/PageWrap'
-import Sectionbox from 'components/sections/Sectionbox'
+import PageWrap from 'src/components/sections/PageWrap'
+import Sectionbox from 'src/components/sections/Sectionbox'
 
 const Page = props => {
   const parentVariants = {

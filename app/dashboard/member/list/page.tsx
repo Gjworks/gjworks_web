@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import PageNavigation from 'components/nav/PageNavigation'
+import PageNavigation from 'src/components/nav/PageNavigation'
 
 const getData = async () => {
   const params = {}

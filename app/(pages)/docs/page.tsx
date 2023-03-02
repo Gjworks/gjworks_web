@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import PageWrap from 'components/sections/PageWrap'
+import PageWrap from 'src/components/sections/PageWrap'
 
 const Page = () => {
   const code1: string = `# NEXTAUTH_SECRET, NEXT_PUBLIC_SECRET 시크릿 키 값 생성하기

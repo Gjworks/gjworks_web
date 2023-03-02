@@ -2,7 +2,7 @@
 
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-import PageWrap from 'components/sections/PageWrap'
+import PageWrap from 'src/components/sections/PageWrap'
 
 const Page = () => {
   const codeString = `<button

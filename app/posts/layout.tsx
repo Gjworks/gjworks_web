@@ -1,4 +1,4 @@
-import DefaultLayout from 'templates/layouts/default/Layout'
+import DefaultLayout from 'src/templates/layouts/default/Layout'
 
 const PageLayout = ({ children }) => {
   return <DefaultLayout>{children}</DefaultLayout>

@@ -3,9 +3,9 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import SafariBrower from 'components/viewer/SafariBrower'
+import SafariBrower from 'src/components/viewer/SafariBrower'
 import { motion } from 'framer-motion'
-import DefaultLayout from 'templates/layouts/default/Layout'
+import DefaultLayout from 'src/templates/layouts/default/Layout'
 
 export default function Page() {
   const parentVariants = {
