@@ -1,7 +1,7 @@
 'use client'
 
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { srcery } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import PageWrap from 'src/components/sections/PageWrap'
 
 const Page = () => {
@@ -45,10 +45,10 @@ const Page = () => {
         <div className="text-base text-dark-300 mb-1">
           드랍다운 메뉴를 사용할 수 있습니다.!!!!
         </div>
-        <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+        <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
           <SyntaxHighlighter
             language="javascript"
-            style={gruvboxDark}
+            style={srcery}
             wrapLongLines={true}
             customStyle={{
               backgroundColor: 'transparent',

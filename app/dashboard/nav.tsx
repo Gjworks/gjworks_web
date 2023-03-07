@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
+// import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 import { motion } from 'framer-motion'
 
@@ -19,10 +20,14 @@ declare module 'next-auth' {
     }
   }
 }
-
-const DashboardSideNav = props => {
+interface PageProps {
+  // Page 컴포넌트의 다른 속성들을 정의합니다.
+}
+const DashboardSideNav: React.FC<PageProps> = ({ ...props }: PageProps) => {
   const pathname = usePathname()
-  console.log(props)
+  const router = useRouter()
+  console.log(pathname)
+
   const session = useSession()
 
   return (
@@ -83,9 +88,9 @@ const DashboardSideNav = props => {
             <Link
               href="/dashboard/member/list"
               className={
-                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-500 dark:hover:text-white py-2 px-4 rounded ' +
+                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-700 dark:hover:text-white py-2 px-4 rounded ' +
                 (pathname === '/dashboard/member/list'
-                  ? 'bg-sky-500 text-black dark:text-white'
+                  ? 'bg-sky-600 text-black dark:text-white'
                   : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
               }
             >
@@ -110,7 +115,7 @@ const DashboardSideNav = props => {
             <Link
               href="/dashboard/member/group"
               className={
-                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-500 dark:hover:text-white py-2 px-4 rounded ' +
+                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-600 dark:hover:text-white py-2 px-4 rounded ' +
                 (pathname === '/dashboard/member/group'
                   ? 'text-black dark:text-white'
                   : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
@@ -137,7 +142,7 @@ const DashboardSideNav = props => {
             <Link
               href="/dashboard/member/signup"
               className={
-                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-500 dark:hover:text-white py-2 px-4 rounded ' +
+                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-600 dark:hover:text-white py-2 px-4 rounded ' +
                 (pathname === '/dashboard/member/signup'
                   ? 'text-black dark:text-white'
                   : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
@@ -173,7 +178,7 @@ const DashboardSideNav = props => {
             <Link
               href="/dashboard/posts/list"
               className={
-                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-500 dark:hover:text-white py-2 px-4 rounded ' +
+                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-600 dark:hover:text-white py-2 px-4 rounded ' +
                 (pathname === '/dashboard/posts/lis'
                   ? 'text-black dark:text-white'
                   : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
@@ -200,7 +205,7 @@ const DashboardSideNav = props => {
             <Link
               href="/dashboard/posts/settings"
               className={
-                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-500 dark:hover:text-white py-2 px-4 rounded ' +
+                'flex text-sm text-dark-300 hover:text-white mb-1 hover:bg-sky-600 dark:hover:text-white py-2 px-4 rounded ' +
                 (pathname === '/dashboard/posts/settings'
                   ? 'text-black dark:text-white'
                   : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
@@ -260,7 +265,7 @@ const DashboardSideNav = props => {
           {session.status === 'authenticated' ? (
             <Link
               href="/user/Account"
-              className="flex items-center px-3 rounded-lg dark:text-white bg-gray-300 hover:bg-gray-200 dark:bg-dark-600 dark:hover:bg-sky-500  cursor-pointer"
+              className="flex items-center px-3 rounded-lg dark:text-white bg-gray-300 hover:bg-gray-200 dark:bg-dark-600 dark:hover:bg-sky-600  cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -285,7 +290,7 @@ const DashboardSideNav = props => {
           ) : (
             <Link
               href="/auth/Signin"
-              className="flex items-center px-3 rounded-lg dark:text-white bg-gray-300 hover:bg-gray-200 dark:bg-dark-600 dark:hover:bg-sky-500 cursor-pointer"
+              className="flex items-center px-3 rounded-lg dark:text-white bg-gray-300 hover:bg-gray-200 dark:bg-dark-600 dark:hover:bg-sky-600 cursor-pointer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -7,12 +7,14 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { mid } = JSON.parse(req.body)
+  let module
+  let document
 
   if (mid) {
-    const module = await prisma.module.findMany({})
+    module = await prisma.module.findMany({})
   }
   if (module) {
-    const document = await prisma.document.findMany({})
+    document = await prisma.document.findMany({})
   }
 
   res.status(200).json({ data: document })

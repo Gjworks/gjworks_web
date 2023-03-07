@@ -14,7 +14,7 @@ const PageLayout = ({ children }) => {
         <div className="w-64 flex-none">
           <div className="">
             <div className="flex items-center flex-wrap gap-4 mb-3 group">
-              <div className="flex justify-center items-center w-6 h-6 rounded-md bg-primary-400 group-hover:bg-primary-400 group-hover:text-black">
+              <div className="flex justify-center items-center w-6 h-6 rounded-md text-white bg-primary-600 group-hover:bg-primary-700 group-hover:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -41,7 +41,7 @@ const PageLayout = ({ children }) => {
                 >
                   Installation
                 </div>
-                <div className="ml-2 text-black py-[1px] px-[3px] rounded bg-primary-200 text-[10px]">
+                <div className="ml-2 text-white py-[1px] px-[3px] rounded bg-rose-600 text-[10px]">
                   New
                 </div>
               </Link>
@@ -56,7 +56,7 @@ const PageLayout = ({ children }) => {
             </div>
 
             <div className="flex items-center flex-wrap gap-4 mb-3 group">
-              <div className="flex justify-center items-center w-6 h-6 rounded-md bg-dark-600 text-white group-hover:bg-primary-400 group-hover:text-black">
+              <div className="flex justify-center items-center w-6 h-6 rounded-md text-white bg-primary-600 group-hover:bg-primary-700 group-hover:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -78,7 +78,7 @@ const PageLayout = ({ children }) => {
             </div>
 
             <div className="flex items-center flex-wrap gap-4 mb-3 group">
-              <div className="flex justify-center items-center w-6 h-6 rounded-md bg-dark-600 text-white group-hover:bg-primary-400 group-hover:text-black">
+              <div className="flex justify-center items-center w-6 h-6 rounded-md text-white bg-primary-600 group-hover:bg-primary-700 group-hover:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -118,7 +118,7 @@ const PageLayout = ({ children }) => {
                   >
                     Dropdown
                   </div>
-                  <div className="ml-2 text-black py-[1px] px-[3px] rounded bg-primary-200 text-[10px]">
+                  <div className="ml-2 text-white py-[1px] px-[3px] rounded bg-rose-600 text-[10px]">
                     New
                   </div>
                 </Link>

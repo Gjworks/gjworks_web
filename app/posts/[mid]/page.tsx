@@ -31,7 +31,9 @@ const Page: React.FC<PageProps> = ({ params }) => {
         <div className="max-w-screen-2xl mx-auto px-3">
           <div className="py-10 text-2xl font-semibold text-white">Blog</div>
           {documentInfo && <BoardList document={documentInfo}></BoardList>}
-          <PageNavigation></PageNavigation>
+          <div className="py-10">
+            <PageNavigation></PageNavigation>
+          </div>
         </div>
       </PageWrap>
     </>

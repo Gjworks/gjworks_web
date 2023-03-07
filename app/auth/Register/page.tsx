@@ -171,7 +171,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex mb-2">
-              <button className="block w-full bg-primary-600 hover:bg-primary-500 text-sm text-white py-3 px-5 rounded-sm transition duration-300">
+              <button className="block w-full bg-primary-600 hover:bg-primary-700 text-sm text-white py-3 px-5 rounded-sm transition duration-300">
                 Register Completed
               </button>
             </div>

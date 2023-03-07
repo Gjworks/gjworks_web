@@ -3,27 +3,27 @@
 import Link from 'next/link'
 
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { gruvboxDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { srcery } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 import PageWrap from 'src/components/sections/PageWrap'
 
 const Page = () => {
   const code1: string = `# NEXTAUTH_SECRET, NEXT_PUBLIC_SECRET 시크릿 키 값 생성하기
-openssl rand -base64 32`
-  const code2: string = `NEXTAUTH_URL = http://localhost:3000 
-NEXT_PUBLIC_DEFAULT_URL = "http://localhost:3000/"`
-  const code3: string = `NEXTAUTH_URL = https://gjworks.dev/
-NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
-  const code4: string = `git remote set-url origin https://github.com/your_team/your_project.git`
+$ openssl rand -base64 32`
+  const code2: string = `NEXTAUTH_URL=http://localhost:3000 
+NEXT_PUBLIC_DEFAULT_URL="http://localhost:3000/"`
+  const code3: string = `NEXTAUTH_URL=https://gjworks.dev/
+NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
+  const code4: string = ``
   return (
     <>
       <PageWrap>
-        <div className="text-primary-400 text-base">Documentation</div>
+        <div className="text-primary-300 text-base">Documentation</div>
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white pt-10 pb-5">
           Installation
         </h1>
         <div className="text-base text-dark-300 mb-1">
           Esther의 Github 저장소에 접근권한이 있다면 해당 프레임워크를 사용할 수
-          있고 설치 할 수 있습니다. Next.js + Framer Motion + Prisma +
+          있고 설치 할 수 있습니다. Next.js + Framer Motion + srcerya +
           Tailwindcss등을 활용하여 웹 서비스를 개발하고 구축을 손쉽게 할 수
           있도록 제작되었습니다.
         </div>
@@ -61,17 +61,17 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             </code>
             을 하여 자신의 로컬에 복제를 합니다.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
                 padding: '1rem',
               }}
             >
-              git clone 'Esther remote repository'
+              $ git clone 'Esther remote repository'
             </SyntaxHighlighter>
           </div>
 
@@ -106,17 +106,18 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             </Link>
             )으로 작성 되었습니다.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
                 padding: '1rem',
               }}
             >
-              {code4}
+              $ git remote set-url origin
+              https://github.com/your_team/your_project.git
             </SyntaxHighlighter>
           </div>
 
@@ -145,17 +146,17 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             </code>{' '}
             명령어를 통해서 설치 할 수 있습니다.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
                 padding: '1rem',
               }}
             >
-              npm install
+              $ npm install
             </SyntaxHighlighter>
           </div>
 
@@ -212,10 +213,10 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             NEXT_PUBLIC_SECRET 의 환경 변수 값을 넣어야 합니다. 해당 시크릿 키는
             Next.js 공식문서에도 있습니다. 참고하셔서 해당 값을 넣어 둡니다.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
@@ -225,20 +226,20 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
               {code1}
             </SyntaxHighlighter>
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env
             </span>
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
                 padding: '1rem',
               }}
             >
-              NEXTAUTH_SECRET = "위에서 생성된 값을 넣어주세요.";
+              NEXTAUTH_SECRET="위에서 생성된 값을 넣어주세요.";
             </SyntaxHighlighter>
           </div>
           <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
@@ -249,13 +250,13 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             주소라던지 데이터베이스 접속같은 개발 테스트만 하기 위한 환경과
             로컬에서 작업하기에 필요한 환경 설정들을 따로 관리 할 수 있습니다.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.develoment
             </span>
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
@@ -268,13 +269,13 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
           <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
             배포 env 설정
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.production
             </span>
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
@@ -285,21 +286,21 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             </SyntaxHighlighter>
           </div>
           <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
-            Prisma
+            srcerya
           </div>
           <div className="text-base text-dark-300 mb-1">
-            esther에서는 Prisma라는 ORM 라이브러리에 의존하여 데이터베이스를
+            esther에서는 srcerya라는 ORM 라이브러리에 의존하여 데이터베이스를
             활용 합니다. 로컬 환경에서 데이터베이스를 설치하여 개발 할 수 있는
             환경을 만들어야 합니다. Docker를 강력하게 추천드립니다. 그리고 위의
             env 환경설정에서 아래 환경변수를 추가 합니다.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.develoment
             </span>
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
@@ -309,13 +310,13 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
               DATABASE_URL="mysql://db_id:db_password@localhost:3306/db_name"
             </SyntaxHighlighter>
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env
             </span>
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
@@ -325,13 +326,13 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
               DATABASE_URL="mysql://db_id:db_password@db_host:db_port/db_name"
             </SyntaxHighlighter>
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               .env.production
             </span>
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
@@ -343,7 +344,7 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
           </div>
 
           <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
-            Prisma Mrgration
+            srcerya Mrgration
           </div>
           <div className="text-base text-dark-300 mb-1">
             데이터베이스 설치가 끝나면 Schema를 생성해야 합니다. 그리고
@@ -351,17 +352,17 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             데이터베이스 구조를 변경할 수 있습니다. 터미널에서 아래 명령어를
             입력하세요.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
                 padding: '1rem',
               }}
             >
-              npx prisma migrate dev --name tables
+              npx srcerya migrate dev --name tables
             </SyntaxHighlighter>
           </div>
 
@@ -372,20 +373,20 @@ NEXT_PUBLIC_DEFAULT_URL = "https://gjworks.dev/"`
             위의 작업들이 무사히 완료가 되면 개발할 수 있는 환경설정이 끝이
             났습니다. 이제 아래 명령어를 통해서 웹사이트가 보인다면 끝입니다.
           </div>
-          <div className="relative bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
             <span className="absolute bottom-0 right-0 py-1 px-4 text-xs bg-dark-700/50 rounded-tl-md ml-2 text-dark-400">
               terminal
             </span>
             <SyntaxHighlighter
               language="bash"
-              style={gruvboxDark}
+              style={srcery}
               wrapLongLines={true}
               customStyle={{
                 backgroundColor: 'transparent',
                 padding: '1rem',
               }}
             >
-              npm run dev
+              $ npm run dev
             </SyntaxHighlighter>
           </div>
         </div>

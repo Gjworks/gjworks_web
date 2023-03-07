@@ -6,11 +6,14 @@ import { verifyPassword } from 'src/lib/auth/auth'
 const prisma = new PrismaClient()
 
 const option = {
-  session: {
-    strategy: 'jwt',
-    maxAge: 60 * 60 * 24 * 30,
+  // session: {
+  //   strategy: 'jwt',
+  //   maxAge: 60 * 60 * 24 * 30,
+  // },
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET,
   },
-  secret: process.env.NEXTAUTH_SECRET,
+
   providers: [
     CredentialsProvider({
       id: 'credentials',
@@ -57,23 +60,17 @@ const option = {
       },
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
+  // secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
-    async signIn({ user, account, profile, email, credentials }) {
-      account.access_token = user.access_token
-      return true
+    // async signIn({ user, account, profile, email, credentials }) {
+    //   account.access_token = user.access_token
+    //   return true
+    // },
+    async session({ session }) {
+      console.log(session)
     },
-    async session({ session, token, user }) {
-      session.user = token.user
-      return Promise.resolve(session)
-    },
-    async jwt({ token, user, account }) {
-      if (user) {
-        // token = user;
-        token.accessToken = account.access_token
-        token.user = user
-      }
-      return Promise.resolve(token)
+    async jwt({ token }) {
+      return token
     },
   },
   database: process.env.DATABASE_URL,
