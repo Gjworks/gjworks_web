@@ -3,19 +3,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useSession, signOut } from 'next-auth/react'
 // import { unstable_getServerSession } from "next-auth/next";
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: Number
-      name: string
-      email: string
-      image: string
-      nickname: string
-      isManagers: boolean
-      isAdmin: boolean
-    }
-  }
-}
+
 const AccountDropwdown = () => {
   const session = useSession()
   const innerAnimation = {

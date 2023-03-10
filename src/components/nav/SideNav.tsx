@@ -6,20 +6,6 @@ import { usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
 import { motion } from 'framer-motion'
 
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: Number
-      name: string
-      email: string
-      image: string
-      nickname: string
-      isManagers: boolean
-      isAdmin: boolean
-    }
-  }
-}
-
 const SideNav = props => {
   const pathname = usePathname()
   console.log(props)

@@ -4,19 +4,6 @@ import React, { useState, useEffect } from 'react'
 import PageWrap from 'src/components/sections/PageWrap'
 import { useSession, signOut } from 'next-auth/react'
 
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: Number
-      name: string
-      email: string
-      image: string
-      nickname: string
-      isManagers: boolean
-      isAdmin: boolean
-    }
-  }
-}
 const Page = () => {
   // const { data: session } = useSession();
   const session = useSession()

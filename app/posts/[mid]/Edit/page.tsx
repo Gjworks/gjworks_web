@@ -8,20 +8,6 @@ import { usePathname } from 'next/navigation'
 import { useRouter } from 'next/router'
 import { useSession, signOut } from 'next-auth/react'
 
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: Number
-      name: string
-      email: string
-      image: string
-      nickname: string
-      isManagers: boolean
-      isAdmin: boolean
-    }
-  }
-}
-
 const ToastEditor = dynamic(() => import('src/components/editor/ToastEditor'), {
   ssr: false,
   loading: () => <p>Loading...</p>,
