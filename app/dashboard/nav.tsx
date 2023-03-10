@@ -7,19 +7,6 @@ import { useRouter, usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
 import { motion } from 'framer-motion'
 
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: Number
-      name: string
-      email: string
-      image: string
-      nickname: string
-      isManagers: boolean
-      isAdmin: boolean
-    }
-  }
-}
 interface PageProps {
   // Page 컴포넌트의 다른 속성들을 정의합니다.
 }
