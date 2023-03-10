@@ -125,7 +125,7 @@ const Register = () => {
                     value={nickName}
                     onChange={nickNameHandler}
                     placeholder="User nick name"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600"
+                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
                     required
                   />
                 </div>
@@ -142,7 +142,7 @@ const Register = () => {
                     value={email}
                     onChange={emailHandler}
                     placeholder="example@mail.com"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600"
+                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     required
                   />
@@ -161,7 +161,7 @@ const Register = () => {
                     value={password}
                     onChange={passwordHandler}
                     placeholder="User Password"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 mb-2 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600"
+                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 mb-2 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
                     required
                   />
                   <div className="text-sm text-dark-300">
@@ -171,7 +171,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex mb-2">
-              <button className="block w-full bg-primary-600 hover:bg-primary-700 text-sm text-white py-3 px-5 rounded-sm transition duration-300">
+              <button className="block w-full bg-primary-700 hover:bg-primary-600 text-sm text-white py-3 px-5 rounded-sm transition duration-300">
                 Register Completed
               </button>
             </div>
@@ -179,7 +179,7 @@ const Register = () => {
           <div className="divider">
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"></div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
                 <span className="bg-white dark:bg-dark-900 px-4 text-xs text-dark-400">

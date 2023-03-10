@@ -169,7 +169,7 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-500 hover:bg-primary-600 transition duration-300">
+                <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-700 hover:bg-primary-600 transition duration-300">
                   <div className="text-white group-hover:text-white p-0 lg:pr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

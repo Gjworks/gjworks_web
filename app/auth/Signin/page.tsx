@@ -11,7 +11,9 @@ const Signin = () => {
   const [formMessage, setFormMessage] = useState<string>()
   const emailInputRef = useRef(null)
   const passwordInputRef = useRef(null)
-  const { status } = useSession()
+
+  const { data, status } = useSession()
+  console.log(data)
 
   const submitHandler = async e => {
     e.preventDefault()
@@ -22,25 +24,30 @@ const Signin = () => {
       redirect: false,
       email: userEmail,
       password: userPassword,
-      callbackUrl: process.env.NEXT_PUBLIC_DEFAULT_URL,
+      // callbackUrl: process.env.NEXT_PUBLIC_DEFAULT_URL,
     })
-    if (!result.error) {
-      router.replace(result.url)
-    } else {
-      setFormMessage(result.error)
-    }
+
+    if (result?.error) return setFormMessage(result.error)
+    console.log('로그인 성공. 메인 페이지로 이동합니다.')
+    // router.push('/')
+    //   if (!result.error) {
+    //     router.replace(result.url)
+    //   } else {
+    //     setFormMessage(result.error)
+    //   }
+    // }
+
+    // if (status === "authenticated") {
+    //   router.replace(process.env.NEXT_PUBLIC_DEFAULT_URL);
+    //   return (
+    //     <div>
+    //       <h1>Log in</h1>
+    //       <div>You are already logged in.</div>
+    //       <div>Now redirect to main page.</div>
+    //     </div>
+    //   );
   }
 
-  // if (status === "authenticated") {
-  //   router.replace(process.env.NEXT_PUBLIC_DEFAULT_URL);
-  //   return (
-  //     <div>
-  //       <h1>Log in</h1>
-  //       <div>You are already logged in.</div>
-  //       <div>Now redirect to main page.</div>
-  //     </div>
-  //   );
-  // }
   return (
     <PageWrap>
       <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
@@ -67,7 +74,7 @@ const Signin = () => {
                 ref={emailInputRef}
                 name="email"
                 id="email"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600"
+                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
                 placeholder="What's your Email"
               />
             </div>
@@ -80,14 +87,14 @@ const Signin = () => {
                 ref={passwordInputRef}
                 name="password"
                 id="password"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600"
+                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
                 placeholder="Password"
               />
             </div>
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-primary-600 hover:bg-primary-700 text-white py-3 px-5 rounded-sm transition duration-300"
+                className="flex justify-center items-center w-full bg-primary-700 hover:bg-primary-600 text-white py-3 px-5 rounded-sm transition duration-300"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +117,7 @@ const Signin = () => {
           <div className="divider">
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent"></div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
                 <span className="bg-white dark:bg-dark-900 px-4 text-xs text-dark-400">

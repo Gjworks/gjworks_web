@@ -49,7 +49,7 @@ export default function Page() {
               <motion.div className="text-sm lg:text-base font-bold text-black dark:text-white mb-2 text-center">
                 TEAM THAT MAKES THE SERVICE
               </motion.div>
-              <motion.div className="text-3xl sm:text-4xl lg:text-6xl font-medium mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-primary-500">
+              <motion.div className="text-3xl sm:text-4xl lg:text-6xl font-medium mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-primary-600">
                 Build web and app <br></br>quickly and simply
               </motion.div>
               <motion.div className="text-dark-400 dark:text-dark-50 text-sm lg:text-base text-center">
@@ -73,10 +73,7 @@ export default function Page() {
                 variants={parentVariants}
                 className=" col-span-5 lg:col-span-3"
               >
-                <motion.div
-                  className="text-primary-400 mb-5"
-                  variants={variants}
-                >
+                <motion.div className="text-sky-500 mb-5" variants={variants}>
                   CREATIVE PLATFORM
                 </motion.div>
                 <motion.div
