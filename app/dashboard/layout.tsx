@@ -11,20 +11,6 @@ import 'styles/tailwindcss.css'
 import DashboardSideNav from './nav'
 import PageWrap from 'src/components/sections/PageWrap'
 
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: Number
-      name: string
-      email: string
-      image: string
-      nickname: string
-      isManagers: boolean
-      isAdmin: boolean
-    }
-  }
-}
-
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
