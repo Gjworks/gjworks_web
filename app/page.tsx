@@ -63,9 +63,9 @@ export default function Page() {
             </div>
           </motion.div>
         </motion.div>
-        <div className="bg-dark-50 dark:bg-dark-900 py-20 ">
+        <div className="bg-white dark:bg-dark-900 py-20 ">
           <div className="max-w-screen-2xl mx-auto px-3">
-            <div className="grid grid-cols-5 gap-8 w-full">
+            <div className="grid grid-cols-5 gap-10 lg:gap-8 w-full">
               <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
@@ -73,8 +73,11 @@ export default function Page() {
                 variants={parentVariants}
                 className=" col-span-5 lg:col-span-3"
               >
-                <motion.div className="text-sky-500 mb-5" variants={variants}>
-                  CREATIVE PLATFORM
+                <motion.div
+                  className="text-primary-500 mb-5"
+                  variants={variants}
+                >
+                  Front End Platform
                 </motion.div>
                 <motion.div
                   variants={variants}
@@ -86,20 +89,27 @@ export default function Page() {
                   variants={variants}
                   className="text-base text-dark-400 dark:text-dark-300 mb-6"
                 >
-                  {/* 지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모 개발팀입니다. 
-                  우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다. */}
-                  Front-end 기술을 기반으로 서비스를 제작하고 배포 합니다. React
+                  지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모
+                  개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업, 신생 기업
+                  및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
+                  {/* Front-end 기술을 기반으로 서비스를 제작하고 배포 합니다. React
                   + Next.js를 기반으로 웹 개발을 진행하고 그 노하우를 활용하여
-                  다양한 자원들과 Components등 더 나은 제품을 개발하고 있습니다.
+                  다양한 자원들과 Components등 더 나은 제품을 개발하고 있습니다. */}
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="inline rounded-full bg-dark-500 py-2 px-5 text-sm text-dark-300 dark:text-dark-200 dark:hover:text-white hover:bg-primary-500 cursor-pointer"
+                  className="inline rounded-full bg-slate-500 dark:bg-primary-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-white hover:bg-primary-500 dark:hover:bg-primary-500 cursor-pointer"
                 >
                   Read more
                 </motion.div>
               </motion.div>
-              <motion.div className=" flex gap-10 justify-center items-center col-span-5 lg:col-span-2">
+              <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.3 }}
+                variants={parentVariants}
+                className=" flex gap-10 justify-center items-center col-span-5 lg:col-span-2"
+              >
                 <div className="flex justify-center w-12 md:w-20 h-12 md:h-20 stroke-dark-500 fill-dark-500">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z" />
@@ -287,7 +297,40 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="hidden py-20 w-full overflow-hidden bg-dark-800">
+        <div className="py-20">
+          <div className="max-w-screen-2xl mx-auto px-3">
+            <div className="grid grid-cols-3">
+              <div className="col-span-3 lg:col-span-1 border-t border-primary-500 py-10 px-3 hover:border-primary-500 cursor-pointer">
+                <div className="font-medium text-primary-500 text-base mb-3">
+                  Web Application Ui
+                </div>
+                <div className="text-dark-300 text-sm">
+                  Form layouts, tables, modal dialogs... everyting you need to
+                  build beautiful responsive web applications.
+                </div>
+              </div>
+              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-primary-500 cursor-pointer">
+                <div className="font-medium text-white text-base mb-3">
+                  Web Application Ui
+                </div>
+                <div className="text-dark-300 text-sm">
+                  Form layouts, tables, modal dialogs... everyting you need to
+                  build beautiful responsive web applications.
+                </div>
+              </div>
+              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-primary-500 cursor-pointer">
+                <div className="font-medium text-white text-base mb-3">
+                  Web Application Ui
+                </div>
+                <div className="text-dark-300 text-sm">
+                  Form layouts, tables, modal dialogs... everyting you need to
+                  build beautiful responsive web applications.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="hidden py-20 w-full overflow-hidden">
           <div className="max-w-screen-2xl mx-auto px-3">
             <motion.div
               initial="offscreen"
@@ -298,13 +341,13 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-700 via-dark-800 to-dark-800 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"
+                className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-800/70 via-dark-800/50 to-dark-800/25 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"
               >
                 {/* <Image src="/assets/images/MacbookPro.png" quality={100} layout="responsive" width="100%" height="100%" alt=""></Image> */}
               </motion.div>
               <motion.div
                 variants={variants}
-                className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-700 via-dark-800 to-dark-800 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"
+                className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-800 via-dark-900/50 to-dark-900/75 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"
               ></motion.div>
             </motion.div>
           </div>
@@ -315,19 +358,19 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
             variants={parentVariants}
-            className="max-w-screen-2xl mx-auto px-3 xl:px-8 overflow-hidden"
+            className="max-w-screen-2xl mx-auto px-3 xl:px-8 overflow-hidden pt-0 lg:py-20"
           >
             <div className="flex justify-center">
               <motion.div
                 variants={variants}
-                className="inline font-black text-5xl md:text-7xl text-dark-700 dark:text-dark-500/25 text-center"
+                className="inline font-black text-5xl md:text-7xl text-slate-700 dark:text-dark-500/25 text-center"
               >
                 WE ARE CRATEIVE
               </motion.div>
             </div>
             <motion.div
               variants={variants}
-              className="font-thin text-xl xl:text-3xl text-dark-400 dark:text-dark-100 text-center -mt-6"
+              className="font-thin text-xl xl:text-3xl text-slate-400 dark:text-dark-100 text-center -mt-6"
             >
               Responsive everything.
             </motion.div>

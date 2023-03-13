@@ -57,7 +57,7 @@ const SideNav = props => {
                 'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
                 (pathname === '/Works'
                   ? 'text-black dark:text-white'
-                  : 'text-gray-400 hover:text-black dark:text-dark-200 dark:hover:text-white')
+                  : 'text-gray-700 hover:text-black dark:text-dark-200 dark:hover:text-black')
               }
             >
               Works
@@ -71,10 +71,10 @@ const SideNav = props => {
                 transition: { duration: 0.6 },
               }}
               className={
-                'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
+                'block py-2 px-3 mx-2 text-sm lg:text-base font-normal ' +
                 (pathname === '/posts/blog'
                   ? 'text-black dark:text-white'
-                  : 'text-gray-400 hover:text-black dark:text-dark-200 dark:hover:text-white')
+                  : 'text-gray-700 hover:text-black dark:text-dark-200 dark:hover:text-black')
               }
             >
               Blog
@@ -91,7 +91,7 @@ const SideNav = props => {
                 'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
                 (pathname === '/Contact'
                   ? 'text-white'
-                  : 'text-gray-400 hover:text-black dark:text-dark-200 dark:hover:text-white')
+                  : 'text-gray-700 hover:text-black dark:text-dark-200 dark:hover:text-black')
               }
             >
               Contact
@@ -99,7 +99,7 @@ const SideNav = props => {
           </Link>
         </motion.div>
         <motion.div
-          className="text-xs text-gray-500 dark:text-dark-200 text-center lg:text-left px-3 pb-[120px]"
+          className="text-xs text-gray-900 dark:text-dark-200 text-center lg:text-left px-3 pb-[120px]"
           initial={{ opacity: 0, x: '-50%' }}
           animate={{ opacity: 1, x: '0%', transition: { duration: 0.9 } }}
         >

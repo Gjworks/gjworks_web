@@ -81,7 +81,7 @@ module.exports = {
       },
       // 'dark' : colors.gray,
       primary: colors.blue,
-      secondary: colors.sky,
+      secondary: colors.red,
     },
   },
   plugins: [],

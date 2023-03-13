@@ -41,7 +41,7 @@ const Header = () => {
   }, [])
   return (
     <>
-      <header className="sticky top-0 bg-dark-900 bg-opacity-25 backdrop-blur-lg px-0 z-[90]">
+      <header className="sticky top-0 bg-dark-900/25 backdrop-blur-lg px-0 z-[90]">
         <div className=" max-w-screen-2xl mx-auto">
           <div className="flex justify-between items-center py-3 pr-3">
             <div className="flex items-center justify-center">
@@ -77,7 +77,7 @@ const Header = () => {
                   <div className="text-black dark:text-white pl-2 text-sm lg:text-sm font-bold mr-4">
                     지제이웍스
                   </div>
-                  <div className="flex text-gray-500 dark:text-dark-100 text-xs lg:text-xs bg-gray-100/25 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-gray-300/25 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
+                  <div className="flex text-slate-500 dark:text-dark-100 text-xs lg:text-xs bg-slate-100/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/25 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

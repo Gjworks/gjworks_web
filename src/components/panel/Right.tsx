@@ -47,9 +47,9 @@ const Right = ({ state, close, children, title }) => {
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed inset-0 transform overflow-auto bg-dark-900 z-90"
+              className="fixed inset-0 transform overflow-auto bg-slate-900 z-90"
             >
-              <div className="flex gap-4 border-b border-dark-600 py-3">
+              <div className="flex gap-4 border-b border-slate-600 py-3">
                 <button
                   onClick={handleClosePanel}
                   className="flex text-white px-4"
@@ -69,7 +69,7 @@ const Right = ({ state, close, children, title }) => {
                     />
                   </svg>
                 </button>
-                <button onClick={handleClosePanel} className="text-dark-50">
+                <button onClick={handleClosePanel} className="text-slate-50">
                   {title}
                 </button>
               </div>
@@ -77,7 +77,7 @@ const Right = ({ state, close, children, title }) => {
                 initial={{ opacity: 0, x: '-10%' }}
                 animate={{ opacity: 1, x: '0%', transition: { duration: 0.3 } }}
                 exit={{ opacity: 0, x: '-10%', transition: { duration: 0.3 } }}
-                className="relative mt-20 mb-10 px-3 z-100 bg-dark-600 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-white backdrop-blur bg-opacity-90"
+                className="relative mt-20 mb-10 px-3 z-100 bg-slate-600 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-white backdrop-blur bg-opacity-90"
               >
                 {children}
               </motion.div>

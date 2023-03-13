@@ -1,17 +1,19 @@
-import NextAuth from 'next-auth'
-import { PrismaClient } from '@prisma/client'
+import NextAuth, {NextAuthOptions} from 'next-auth'
+import { PrismaClient, User as UserModel} from '@prisma/client'
 import CredentialsProvider from 'next-auth/providers/credentials'
+// import credentials from 'next-auth/providers/credentials'
 import { verifyPassword } from 'src/lib/auth/auth'
 import { log } from 'console'
 
 const prisma = new PrismaClient()
 
-interface Credentials {
-  email: string,
-  password: string
-}
+// declare module 'next-auth' {
+//   interface User extends UserModel {
+//     // id: number; // <- here it is
+//   }
+// }
 
-const option = {
+const option:NextAuthOptions = {
   jwt: {
     secret: process.env.NEXTAUTH_SECRET,
   },
@@ -21,25 +23,21 @@ const option = {
       id: 'credentials',
       name: 'Credentials',
       credentials: {
-        id: {
-          label: "아이디",
-          type: "text",
-          placeholder: "아이디를 입력하세요.",
-        },
-        password: {
-          label: "비밀번호",
-          type: "password",
-          placeholder: "비밀번호를 입력하세요.",
-        },
+        id: { label: "ID", type: "number", placeholder: "Enter your ID" },
+        nickname: { label: "Nickname", type: "string", placeholder: "Enter your nickname" },
+        email: { label: "Email", type: "string", placeholder: "Enter your email" },
+        isAdmin: { label: "Admin", type: "checkbox", placeholder: "Are you an admin?" },
+        isManagers: { label: "Manager", type: "checkbox", placeholder: "Are you a manager?" },
+        password: { label: "Password", type: "string", placeholder: "Enter your password" },
       },
-      async authorize(credentials:Credentials) {
+      async authorize(credentials ,request) {
         console.log(credentials)
         const { email, password } = credentials;
 
         console.log('credentials authorize', credentials)
         const user = await prisma.user.findUnique({
           where: {
-            email: email,
+            email: credentials.email,
           },
           select: {
             id: true,
@@ -68,12 +66,13 @@ const option = {
         // }
         // return null;
         return {
-          id: user.id,
-          nickname: user.nickname,
-          email: user.email,
-          isAdmin: user.isAdmin,
-          isManagers: user.isManagers,
-        }
+          id: 1,
+          nickname: 'John',
+          password: '',
+          email: 'john@example.com',
+          isAdmin: false,
+          isManagers: true
+        }as any;
       },
     }),
   ],
@@ -91,9 +90,7 @@ const option = {
     async jwt({ token, user }) {
       
       if (user) {
-        // token = user;
-        // token = user;
-        token.user=user
+        token.user = user;
       }
       console.log('callback jwt account', user)
       console.log('callback jwt token', token)
@@ -112,11 +109,11 @@ const option = {
       //   },
       // })
       // session.user = exUser
-      session.user = token.user;
+      // session.user = token.user;
       return Promise.resolve(session)
     },
   },
-  database: process.env.DATABASE_URL,
+  // database: process.env.DATABASE_URL,
   pages: {
     signIn: '/auth/Signin',
     signOut: '/auth/Signout',
