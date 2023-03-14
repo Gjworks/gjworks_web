@@ -66,7 +66,7 @@ const Modal = ({ state, close, children }) => {
                     y: '-10%',
                     transition: { duration: 0.5 },
                   }}
-                  className="relative mt-20 mb-10 z-100 bg-white/90 dark:bg-dark-800/90 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white dark:backdrop-blur-md"
+                  className="relative mt-20 mb-10 z-100 bg-white/90 dark:bg-dark-800/80 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white dark:backdrop-blur-md"
                 >
                   {children}
                 </motion.div>

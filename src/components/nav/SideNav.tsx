@@ -46,7 +46,7 @@ const SideNav = props => {
             },
           }}
         >
-          <Link href="/Works">
+          <Link href="/docs">
             <motion.span
               animate={{
                 opacity: [0, 1],
@@ -55,12 +55,29 @@ const SideNav = props => {
               }}
               className={
                 'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
-                (pathname === '/Works'
+                (pathname === '/docs'
                   ? 'text-black dark:text-white'
-                  : 'text-gray-700 hover:text-black dark:text-dark-200 dark:hover:text-black')
+                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
               }
             >
-              Works
+              Docs
+            </motion.span>
+          </Link>
+          <Link href="/metaverse">
+            <motion.span
+              animate={{
+                opacity: [0, 1],
+                x: '0%',
+                transition: { duration: 0.6 },
+              }}
+              className={
+                'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
+                (pathname === '/metaverse'
+                  ? 'text-black dark:text-white'
+                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
+              }
+            >
+              Metaverse
             </motion.span>
           </Link>
           <Link href="/posts/[mid]" as="/posts/blog">
@@ -74,7 +91,7 @@ const SideNav = props => {
                 'block py-2 px-3 mx-2 text-sm lg:text-base font-normal ' +
                 (pathname === '/posts/blog'
                   ? 'text-black dark:text-white'
-                  : 'text-gray-700 hover:text-black dark:text-dark-200 dark:hover:text-black')
+                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
               }
             >
               Blog
@@ -91,7 +108,7 @@ const SideNav = props => {
                 'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
                 (pathname === '/Contact'
                   ? 'text-white'
-                  : 'text-gray-700 hover:text-black dark:text-dark-200 dark:hover:text-black')
+                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
               }
             >
               Contact
@@ -106,7 +123,7 @@ const SideNav = props => {
           ⓒ 지제이웍스 All rights reserved.
         </motion.div>
         <motion.div
-          className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-800/25 backdrop-blur-lg py-5 w-[320px] px-3"
+          className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-700/25 backdrop-blur-lg py-5 w-[320px] px-3"
           initial={{ opacity: 0, y: '20%' }}
           animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
         >
@@ -138,7 +155,7 @@ const SideNav = props => {
             {session.status === 'authenticated' ? (
               <Link
                 href="/user/Account"
-                className="flex items-center px-3 rounded-lg bg-gray-300 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-700 cursor-pointer"
+                className="flex items-center px-3 rounded-lg bg-gray-300 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-800 dark:text-dark-400 dark:hover:text-white cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
