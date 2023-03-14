@@ -40,7 +40,7 @@ const Sectionbox: React.FC<SectionData> = props => {
               y: '0%',
               transition: { duration: 0.5, delay: 0.3 },
             }}
-            className="text-lg font-medium text-secondary-400 mb-2"
+            className="text-lg font-medium text-primary-600 mb-2"
           >
             {props.title}
           </motion.div>

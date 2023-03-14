@@ -39,13 +39,13 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
           <div className="pl-5 py-5">
             <Link
               href="#"
-              className="flex mb-2 text-primary-400 hover:underline hover:text-primary-500"
+              className="flex mb-2 text-primary-600 hover:underline hover:text-primary-500"
             >
               ⏺ Git 설치 및 기본설정
             </Link>
             <Link
               href="#"
-              className="flex mb-2 text-primary-400 hover:underline hover:text-primary-500"
+              className="flex mb-2 text-primary-600 hover:underline hover:text-primary-500"
             >
               ⏺ Docker에서 MySQL 환경설정하기
             </Link>
@@ -56,7 +56,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
           </div>
           <div className="text-base text-dark-300 mb-1">
             Esther 가 있는 저장소에서{' '}
-            <code className="text-xs bg-primary-500/25 rounded-md text-primary-400 italic py-[2px] px-1">
+            <code className="text-xs bg-fuchsia-500/25 rounded-md text-fuchsia-400 italic py-[2px] px-1">
               clone
             </code>
             을 하여 자신의 로컬에 복제를 합니다.
@@ -76,7 +76,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
           </div>
 
           <div className="text-base text-dark-300 mb-1">
-            <code className="text-xs bg-primary-500/25 rounded-md text-primary-400 italic py-[2px] px-1">
+            <code className="text-xs bg-fuchsia-500/25 rounded-md text-fuchsia-400 italic py-[2px] px-1">
               clone
             </code>
             에 성공한 저장소는 자신의 원격 저장소로 연결을 합니다.{' '}
@@ -86,7 +86,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
             <Link
               href="https://github.com"
               target="_blank"
-              className="flex text-primary-400 hover:underline hover:text-primary-500"
+              className="flex text-primary-600 hover:underline hover:text-primary-500"
             >
               https://github.com
               <svg
@@ -123,7 +123,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
 
           <div className="text-base text-dark-300 mb-1">
             그 후에{' '}
-            <code className="text-xs bg-primary-500/25 rounded-md text-primary-400 italic py-[2px] px-1">
+            <code className="text-xs bg-fuchsia-500/25 rounded-md text-fuchsia-400 italic py-[2px] px-1">
               branch
             </code>
             를 생성하고 작업을 진행 합니다. 되도록이면 'devel' 혹은 'test'
@@ -133,15 +133,15 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
             Package
           </div>
           <div className="text-base text-dark-300 mb-1">
-            <code className="text-xs bg-primary-500/25 rounded-md text-primary-400 italic py-[2px] px-1">
+            <code className="text-xs bg-fuchsia-500/25 rounded-md text-fuchsia-400 italic py-[2px] px-1">
               clone
             </code>{' '}
             한 파일중에{' '}
-            <code className="text-xs bg-primary-500/25 rounded-md text-primary-400 italic py-[2px] px-1">
+            <code className="text-xs bg-fuchsia-500/25 rounded-md text-fuchsia-400 italic py-[2px] px-1">
               package.json
             </code>
             이란 파일에 사이트 제작에 필요한 다양한 패키지들이 들어 있고 간단한{' '}
-            <code className="text-xs bg-primary-500/25 rounded-md text-primary-400 italic py-[2px] px-1">
+            <code className="text-xs bg-fuchsia-500/25 rounded-md text-fuchsia-400 italic py-[2px] px-1">
               npm
             </code>{' '}
             명령어를 통해서 설치 할 수 있습니다.
@@ -168,7 +168,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
           <div className="pl-5 py-5">
             <Link
               href="#"
-              className="flex mb-2 text-primary-400 hover:underline hover:text-primary-500"
+              className="flex mb-2 text-primary-600 hover:underline hover:text-primary-500"
             >
               ⏺ package 설치 오류 해결하기
             </Link>

@@ -66,7 +66,7 @@ const Signin = () => {
               </div>
             )}
             <div className="flex px-3 mb-5 w-full">
-              <label className="flex items-center w-24 text-dark-300 text-xs">
+              <label className="flex items-center w-24 text-dark-500 text-xs">
                 Email
               </label>
               <input
@@ -74,12 +74,12 @@ const Signin = () => {
                 ref={emailInputRef}
                 name="email"
                 id="email"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
+                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
                 placeholder="What's your Email"
               />
             </div>
             <div className="flex px-3 mb-5 w-full">
-              <label className="flex items-center w-24 text-dark-300 text-xs">
+              <label className="flex items-center w-24 text-dark-500 text-xs">
                 Password
               </label>
               <input
@@ -87,7 +87,7 @@ const Signin = () => {
                 ref={passwordInputRef}
                 name="password"
                 id="password"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-500 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
+                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
                 placeholder="Password"
               />
             </div>
@@ -117,7 +117,7 @@ const Signin = () => {
           <div className="divider">
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
                 <span className="bg-white dark:bg-dark-900 px-4 text-xs text-dark-400">
@@ -196,7 +196,7 @@ const Signin = () => {
               <div className="w-full">
                 <Link
                   href="/auth/Register"
-                  className="group text-sm text-dark-300"
+                  className="group text-sm text-dark-500"
                 >
                   회원가입을 하시려면{' '}
                   <span className="group-hover:text-primary-400 text-primary-500 underline">
@@ -205,7 +205,7 @@ const Signin = () => {
                 </Link>
               </div>
               <div className="w-full">
-                <Link href="/" className="group text-sm text-dark-400">
+                <Link href="/" className="group text-sm text-dark-500">
                   이메일과 비밀번호를 잊어버리 셨나요?{' '}
                   <span className="group-hover:text-primary-300 text-primary-500 underline">
                     Email/비밀번호 찾기
