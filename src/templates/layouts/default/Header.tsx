@@ -147,7 +147,7 @@ const Header = () => {
             </div>
             <div className="relative flex items-center">
               <button
-                className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white pr-5"
+                className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-5 py-2"
                 onClick={() => setShowModal(!showModal)}
               >
                 <svg
@@ -169,7 +169,7 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-2 px-3 lg:px-5 rounded-full bg-primary-700 hover:bg-primary-600 transition duration-300">
+                <div className="flex py-2 px-3 lg:px-5 rounded-full transition duration-300">
                   <div className="text-white group-hover:text-white p-0 lg:pr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +177,7 @@ const Header = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-4 h-4"
+                      className="w-5 h-5"
                     >
                       <path
                         strokeLinecap="round"
@@ -186,7 +186,7 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="hidden lg:block text-white group-hover:text-white text-xs">
+                  <div className="hidden text-white group-hover:text-white text-xs">
                     Account
                   </div>
                 </div>

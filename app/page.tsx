@@ -29,16 +29,16 @@ export default function Page() {
   }
   return (
     <DefaultLayout>
-      <div className="-mt-20">
+      <div className="-mt-[60px]">
         <motion.div className="relative pt-20 xl:pt-10 overflow-hidden">
           <motion.div
             className="absolute inset-0"
             initial={{ opacity: 0, y: '3%' }}
             animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
           >
-            <div className="max-w-[2560px] mx-auto bg-[url('/assets/images/photo.jpg')] bg-no-repeat bg-cover bg-top h-full"></div>
+            {/* <div className="max-w-[2560px] mx-auto bg-[url('/assets/images/photo.jpg')] bg-no-repeat bg-cover bg-top h-full"></div> */}
           </motion.div>
-          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900"></div>
+          {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900"></div> */}
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -363,7 +363,7 @@ export default function Page() {
             <div className="flex justify-center">
               <motion.div
                 variants={variants}
-                className="inline font-black text-5xl md:text-7xl text-slate-700 dark:text-dark-500/25 text-center"
+                className="inline font-bold text-5xl md:text-7xl text-slate-700 dark:text-dark-500/25 text-center"
               >
                 WE ARE CRATEIVE
               </motion.div>

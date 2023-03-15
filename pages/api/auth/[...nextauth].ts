@@ -56,17 +56,22 @@ const option:NextAuthOptions = {
   },
   secret: process.env.NEXT_PUBLIC_SECRET,
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user, account, profile }) {
+      // if (user) {
+      //   const userData = {
+      //     id: user.id,
+      //     email :user.email,
+      //   }
+      //   // JWT 토큰 발급
+      //   const accessToken = sign( userData , process.env.NEXTAUTH_SECRET, { expiresIn: "1h" });
+      //   token.accessToken = accessToken;
+      // }
+      // return Promise.resolve(token);
       if (user) {
-        const userData = {
-          id: user.id,
-          email :user.email,
-        }
-        // JWT 토큰 발급
-        const accessToken = sign( userData , process.env.NEXTAUTH_SECRET, { expiresIn: "1h" });
-        token.accessToken = accessToken;
+        token.userId = user.id;
       }
-      return Promise.resolve(token);
+
+      return token;
     },
     async session({ session,token }) {
       return session;
