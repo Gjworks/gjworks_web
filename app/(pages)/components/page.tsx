@@ -17,7 +17,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
   return (
     <>
       <PageWrap>
-        <div className="text-primary-300 text-base">Documentation</div>
+        <div className="text-primary-500 text-base">Documentation</div>
         <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white pt-10 pb-5">
           Installation
         </h1>

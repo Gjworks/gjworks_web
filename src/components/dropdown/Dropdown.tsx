@@ -38,9 +38,9 @@ const Dropdown = ({ state, close, children }) => {
         animate={dropdownState === true ? 'open' : 'close'}
         variants={variants}
         transition={{ duration: 0.5 }}
-        className="absolute top-8 right-0 mt-2 mr-2 w-56 rounded-md backdrop-blur-lg  shadow-lg bg-white/90 dark:bg-dark-700/25 dark:shadow-black/50 border border-gray-200 dark:border-dark-800 overflow-hidden shadow-xs p-2"
+        className="absolute top-8 right-0 mt-2 mr-2 w-56 rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-700/25 dark:shadow-black/50 border border-gray-200 dark:border-dark-800 overflow-hidden shadow-xs p-2"
       >
-        {children}
+        <div className="relative z-[100]">{children}</div>
       </motion.div>
     </>
   )

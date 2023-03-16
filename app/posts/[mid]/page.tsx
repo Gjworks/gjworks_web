@@ -15,7 +15,7 @@ interface PageProps {
 
 const Page: React.FC<PageProps> = ({ params }) => {
   const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>()
-  console.log(params.mid)
+  // console.log(params.mid)
   let items
   const fetchData = async mid => {
     items = await getData(mid)

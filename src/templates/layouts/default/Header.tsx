@@ -14,6 +14,7 @@ import Left from 'src/components/panel/Left'
 import SearchForm from 'src/templates/forms/SearchForm'
 import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
+import nav from 'src/res/config/navigation.json'
 
 const Header = () => {
   const pathname = usePathname()
@@ -41,7 +42,13 @@ const Header = () => {
   }, [])
   return (
     <>
-      <header className="sticky top-0 bg-dark-900/25 backdrop-blur-lg px-0 z-[90]">
+      <div className="flex justify-center bg-primary-700 py-3 px-3 text-white text-xs text-center">
+        <div>
+          홈페이지가 원활히 작동이 되지 않을 수 있습니다. 긴급 문의는
+          gjworks2@gmail.com로 주세요.
+        </div>
+      </div>
+      <header className="sticky top-0 bg-dark-900/25 backdrop-blur-lg px-0 z-[100]">
         <div className=" max-w-screen-2xl mx-auto">
           <div className="flex justify-between items-center py-3 pr-3">
             <div className="flex items-center justify-center">
@@ -98,16 +105,33 @@ const Header = () => {
               </div>
 
               <div className="hidden md:flex items-center pl-3">
-                <Link
-                  href="/docs"
+                {nav.header &&
+                  Object.entries(nav.header).map((data, index) => {
+                    return (
+                      <Link
+                        href={data[1].route}
+                        key={data[1].name}
+                        className={
+                          'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal ' +
+                          (pathname === data[1].route
+                            ? 'text-black dark:text-white'
+                            : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
+                        }
+                      >
+                        {data[1].title}
+                      </Link>
+                    )
+                  })}
+                {/* <Link
+                  href="/components"
                   className={
                     'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal ' +
-                    (pathname === '/docs'
+                    (pathname === '/components'
                       ? 'text-black dark:text-white'
                       : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
                   }
                 >
-                  Docs
+                  Components
                 </Link>
                 <Link
                   href="/metaverse"
@@ -142,12 +166,12 @@ const Header = () => {
                   }
                 >
                   Contact
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className="relative flex items-center">
               <button
-                className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-5 py-2"
+                className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-3 py-2"
                 onClick={() => setShowModal(!showModal)}
               >
                 <svg
@@ -169,8 +193,8 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-2 px-3 lg:px-5 rounded-full transition duration-300">
-                  <div className="text-white group-hover:text-white p-0 lg:pr-2">
+                <div className="flex py-2 px-3 rounded-full bg-dark-800 hover:bg-dark-700 transition duration-300">
+                  <div className="text-white group-hover:text-white p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

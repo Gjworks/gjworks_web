@@ -46,7 +46,7 @@ const SideNav = props => {
             },
           }}
         >
-          <Link href="/docs">
+          <Link href="/compnents">
             <motion.span
               animate={{
                 opacity: [0, 1],
@@ -55,12 +55,12 @@ const SideNav = props => {
               }}
               className={
                 'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
-                (pathname === '/docs'
+                (pathname === '/compnents'
                   ? 'text-black dark:text-white'
                   : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
               }
             >
-              Docs
+              Compnents
             </motion.span>
           </Link>
           <Link href="/metaverse">

@@ -8,6 +8,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Header from 'src/templates/layouts/default/Header'
 import Footer from 'src/templates/layouts/default/Footer'
+import SubNav from 'src/templates/layouts/default/SubNav'
 
 const Layout = ({ children }) => {
   const variants = {
@@ -34,6 +35,7 @@ const Layout = ({ children }) => {
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <Header />
+        <SubNav />
         <motion.main
           variants={variants}
           initial="hidden"

@@ -30,11 +30,14 @@ const PageLayout = ({ children }) => {
                   />
                 </svg>
               </div>
-              <Link href="/docs" className="flex items-center justify-between">
+              <Link
+                href="/components"
+                className="flex items-center justify-between"
+              >
                 <div
                   className={
                     'text-base font-normal cursor-pointer group-hover:text-white ' +
-                    (pathname === '/docs'
+                    (pathname === '/components'
                       ? 'text-white'
                       : 'text-dark-300 hover:text-white')
                   }
@@ -105,13 +108,13 @@ const PageLayout = ({ children }) => {
                   Accodion
                 </div>
                 <Link
-                  href="/docs/components/dropdown"
+                  href="/components/components/dropdown"
                   className="flex items-center mb-3"
                 >
                   <div
                     className={
                       ' text-sm font-normal cursor-pointer ' +
-                      (pathname === '/docs/components/dropdown'
+                      (pathname === '/components/components/dropdown'
                         ? 'text-white'
                         : 'text-dark-300 hover:text-white')
                     }
