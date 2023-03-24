@@ -65,7 +65,7 @@ const Left = ({ state, close, children, width }) => {
                   marginLeft: '-320px',
                   transition: { duration: 0.3 },
                 }}
-                className="fixed h-screen z-100 bg-white/50 dark:bg-dark-800/80 overflow-hidden overflow-y-auto text-slate-900 dark:text-white backdrop-blur-md dark:backdrop-blur-md shadow-xl shadow-slate-900"
+                className="fixed h-screen z-100 bg-white/50 dark:bg-dark-900/80 overflow-hidden overflow-y-auto text-slate-900 dark:text-white backdrop-blur-md dark:backdrop-blur-md shadow-xl shadow-slate-900"
               >
                 {children}
               </motion.div>

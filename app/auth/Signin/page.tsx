@@ -66,7 +66,7 @@ const Signin = () => {
               </div>
             )}
             <div className="flex px-3 mb-5 w-full">
-              <label className="flex items-center w-24 text-dark-500 text-xs">
+              <label className="flex items-center w-24 text-dark-400 text-xs">
                 Email
               </label>
               <input
@@ -74,12 +74,12 @@ const Signin = () => {
                 ref={emailInputRef}
                 name="email"
                 id="email"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
+                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
                 placeholder="What's your Email"
               />
             </div>
             <div className="flex px-3 mb-5 w-full">
-              <label className="flex items-center w-24 text-dark-500 text-xs">
+              <label className="flex items-center w-24 text-dark-400 text-xs">
                 Password
               </label>
               <input
@@ -87,14 +87,14 @@ const Signin = () => {
                 ref={passwordInputRef}
                 name="password"
                 id="password"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
+                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
                 placeholder="Password"
               />
             </div>
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-primary-700 hover:bg-primary-600 text-white py-3 px-5 rounded-sm transition duration-300"
+                className="flex justify-center items-center w-full bg-white hover:bg-dark-800 hover:text-white text-black py-3 px-5 rounded-sm transition duration-300 border border-dark-900 hover:border-dark-400"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +120,7 @@ const Signin = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white dark:bg-dark-900 px-4 text-xs text-dark-400">
+                <span className="bg-white dark:bg-dark-800 px-4 text-xs text-dark-400">
                   OR
                 </span>
               </div>
@@ -130,7 +130,7 @@ const Signin = () => {
             <div className="flex gap-4">
               <button
                 onClick={() => signIn()}
-                className="group flex-1 flex justify-center bg-dark-100 dark:bg-dark-800 hover:bg-dark-200 dark:hover:bg-primary-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
+                className="group flex-1 flex justify-center bg-dark-100 dark:bg-dark-700 hover:bg-dark-200 dark:hover:bg-dark-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
               >
                 <div className="pr-3">
                   <svg
@@ -151,7 +151,7 @@ const Signin = () => {
               </button>
               <button
                 onClick={() => signIn()}
-                className="group flex-1 flex justify-center bg-dark-100 dark:bg-dark-800 hover:bg-dark-200 dark:hover:bg-primary-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
+                className="group flex-1 flex justify-center bg-dark-100 dark:bg-dark-700 hover:bg-dark-200 dark:hover:bg-dark-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
               >
                 <div className="pr-3">
                   <svg
@@ -171,7 +171,7 @@ const Signin = () => {
               </button>
               <button
                 onClick={() => signIn('github')}
-                className="group flex-1 flex justify-center bg-dark-100 dark:bg-dark-800 hover:bg-dark-200 dark:hover:bg-primary-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
+                className="group flex-1 flex justify-center bg-dark-100 dark:bg-dark-700 hover:bg-dark-200 dark:hover:bg-dark-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
               >
                 <div className="pr-3">
                   <svg

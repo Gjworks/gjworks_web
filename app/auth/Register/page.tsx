@@ -116,7 +116,7 @@ const Register = () => {
           <form onSubmit={registerUser}>
             <div className="px-3 mb-5 w-full">
               <div className="flex">
-                <label className="flex w-24 text-dark-500 text-xs px-3 py-3">
+                <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
                   NickName
                 </label>
                 <div className="flex-1">
@@ -125,7 +125,7 @@ const Register = () => {
                     value={nickName}
                     onChange={nickNameHandler}
                     placeholder="User nick name"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
+                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
                     required
                   />
                 </div>
@@ -133,7 +133,7 @@ const Register = () => {
             </div>
             <div className="px-3 mb-5 w-full">
               <div className="flex">
-                <label className="flex w-24 text-dark-500 text-xs px-3 py-3">
+                <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
                   Email
                 </label>
                 <div className="flex-1">
@@ -142,7 +142,7 @@ const Register = () => {
                     value={email}
                     onChange={emailHandler}
                     placeholder="example@mail.com"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
+                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                     required
                   />
@@ -152,7 +152,7 @@ const Register = () => {
             </div>
             <div className="px-3 mb-5 w-full">
               <div className="flex">
-                <label className="flex w-24 text-dark-500 text-xs px-3 py-3">
+                <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
                   Password
                 </label>
                 <div className="flex-1">
@@ -161,17 +161,17 @@ const Register = () => {
                     value={password}
                     onChange={passwordHandler}
                     placeholder="User Password"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-primary-600"
+                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
                     required
                   />
-                  <div className="text-sm text-dark-500">
+                  <div className="text-sm text-dark-400">
                     비밀번호는 안전하게 암호화 되어 저장됩니다.
                   </div>
                 </div>
               </div>
             </div>
             <div className="flex mb-2">
-              <button className="block w-full bg-primary-700 hover:bg-primary-600 text-sm text-white py-3 px-5 rounded-sm transition duration-300">
+              <button className="flex justify-center items-center w-full bg-white hover:bg-dark-800 hover:text-white text-black py-3 px-5 rounded-sm transition duration-300 border border-dark-900 hover:border-dark-400">
                 Register Completed
               </button>
             </div>
@@ -182,7 +182,7 @@ const Register = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white dark:bg-dark-900 px-4 text-xs text-dark-400">
+                <span className="bg-white dark:bg-dark-800 px-4 text-xs text-dark-400">
                   OR
                 </span>
               </div>

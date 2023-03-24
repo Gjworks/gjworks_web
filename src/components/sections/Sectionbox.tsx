@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 type SectionData = {
-  img: string
+  thumb: string
   title: string
   desc: string
   date: string
@@ -25,11 +25,11 @@ const Sectionbox: React.FC<SectionData> = props => {
           <div className="absolute inset-0">
             <div
               className={
-                "bg-[url('" + props.img + "')] bg-no-repeat bg-cover h-full"
+                "bg-[url('" + props.thumb + "')] bg-no-repeat bg-cover h-full"
               }
             ></div>
           </div>
-          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900"></div>
+          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-800/25 via-dark-800/50 to-dark-800"></div>
           <div className="relative h-40"></div>
         </div>
         <div className="relative px-5 -mt-10">
@@ -61,7 +61,7 @@ const Sectionbox: React.FC<SectionData> = props => {
               opacity: 1,
               transition: { duration: 0.5, delay: 0.7 },
             }}
-            className="text-xs text-dark-600"
+            className="text-xs text-dark-400"
           >
             Date : {props.date}
           </motion.div>

@@ -29,7 +29,7 @@ export default function Page() {
   }
   return (
     <DefaultLayout>
-      <div className="-mt-[60px]">
+      <div className="">
         <motion.div className="relative pt-20 xl:pt-10 overflow-hidden">
           <motion.div
             className="absolute inset-0"
@@ -38,24 +38,24 @@ export default function Page() {
           >
             {/* <div className="max-w-[2560px] mx-auto bg-[url('/assets/images/photo.jpg')] bg-no-repeat bg-cover bg-top h-full"></div> */}
           </motion.div>
-          {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900"></div> */}
+          {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-800/25 via-dark-800/50 to-dark-800"></div> */}
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="relative flex justify-center items-center max-w-screen-2xl mx-auto px-3 xl:px-8 py-20 h-auto xl:h-[80vh] "
+            className="relative max-w-screen-2xl mx-auto px-3 xl:px-8 py-20"
           >
             <div>
-              <motion.div className="text-sm lg:text-base font-bold text-black dark:text-white mb-2 text-center">
+              <motion.div className="text-sm lg:text-base font-bold text-black dark:text-white mb-2">
                 TEAM THAT MAKES THE SERVICE
               </motion.div>
-              <motion.div className="text-3xl sm:text-4xl lg:text-6xl font-medium mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-primary-600">
+              <motion.div className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-white">
                 Build web and app <br></br>quickly and simply
               </motion.div>
-              <motion.div className="text-dark-400 dark:text-dark-50 text-sm lg:text-base text-center">
+              <motion.div className="text-dark-400 dark:text-dark-200 text-sm lg:text-xl">
                 서비스에 도움이 되는 제품을 만들어 드리겠습니다.
               </motion.div>
-              <motion.div className="text-center block pt-10">
+              <motion.div className="block pt-10">
                 <span className="inline-block text-sm border border-dark-700 dark:border-dark-50 py-2 px-5 text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded cursor-pointer">
                   Contact us
                 </span>
@@ -63,7 +63,43 @@ export default function Page() {
             </div>
           </motion.div>
         </motion.div>
-        <div className="bg-white dark:bg-dark-900 py-20 ">
+        <div className="py-20 w-full overflow-hidden">
+          <div className="max-w-screen-2xl mx-auto px-3">
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: false, amount: 0.1 }}
+              variants={parentVariants}
+              className="flex gap-8 w-full"
+            >
+              <motion.div
+                variants={variants}
+                className="relative w-[80%] flex-none aspect-[1216/640] rounded-xl cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-dark-900/25 via-dark-900/50 to-dark-900/90 z-10"></div>
+                <Image
+                  src="/assets/images/playcanvas.png"
+                  quality={100}
+                  fill
+                  alt=""
+                ></Image>
+              </motion.div>
+              <motion.div
+                variants={variants}
+                className="relative w-[80%] flex-none aspect-[1216/640] rounded-xl cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-dark-900/25 via-dark-900/50 to-dark-900/90 z-10"></div>
+                <Image
+                  src="/assets/images/photo.jpg"
+                  quality={100}
+                  fill
+                  alt=""
+                ></Image>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="py-20 ">
           <div className="max-w-screen-2xl mx-auto px-3">
             <div className="grid grid-cols-5 gap-10 lg:gap-8 w-full">
               <motion.div
@@ -73,10 +109,7 @@ export default function Page() {
                 variants={parentVariants}
                 className=" col-span-5 lg:col-span-3"
               >
-                <motion.div
-                  className="text-primary-500 mb-5"
-                  variants={variants}
-                >
+                <motion.div className="text-dark-300 mb-5" variants={variants}>
                   Front End Platform
                 </motion.div>
                 <motion.div
@@ -98,7 +131,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="inline rounded-full bg-slate-500 dark:bg-primary-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-white hover:bg-primary-500 dark:hover:bg-primary-500 cursor-pointer"
+                  className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-primary-500 dark:hover:bg-white cursor-pointer"
                 >
                   Read more
                 </motion.div>
@@ -300,8 +333,8 @@ export default function Page() {
         <div className="py-20">
           <div className="max-w-screen-2xl mx-auto px-3">
             <div className="grid grid-cols-3">
-              <div className="col-span-3 lg:col-span-1 border-t border-primary-500 py-10 px-3 hover:border-primary-500 cursor-pointer">
-                <div className="font-medium text-primary-500 text-base mb-3">
+              <div className="col-span-3 lg:col-span-1 border-t border-dark-100 py-10 px-3 hover:border-dark-100 cursor-pointer">
+                <div className="font-medium text-white text-lg mb-3">
                   Web Application Ui
                 </div>
                 <div className="text-dark-300 text-sm">
@@ -309,8 +342,8 @@ export default function Page() {
                   build beautiful responsive web applications.
                 </div>
               </div>
-              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-primary-500 cursor-pointer">
-                <div className="font-medium text-white text-base mb-3">
+              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-dark-200 cursor-pointer">
+                <div className="font-medium text-white text-lg mb-3">
                   Web Application Ui
                 </div>
                 <div className="text-dark-300 text-sm">
@@ -318,8 +351,8 @@ export default function Page() {
                   build beautiful responsive web applications.
                 </div>
               </div>
-              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-primary-500 cursor-pointer">
-                <div className="font-medium text-white text-base mb-3">
+              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-dark-200 cursor-pointer">
+                <div className="font-medium text-white text-lg mb-3">
                   Web Application Ui
                 </div>
                 <div className="text-dark-300 text-sm">
@@ -330,29 +363,8 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="hidden py-20 w-full overflow-hidden">
-          <div className="max-w-screen-2xl mx-auto px-3">
-            <motion.div
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: false, amount: 0.3 }}
-              variants={parentVariants}
-              className="flex gap-8 w-full"
-            >
-              <motion.div
-                variants={variants}
-                className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-800/70 via-dark-800/50 to-dark-800/25 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"
-              >
-                {/* <Image src="/assets/images/MacbookPro.png" quality={100} layout="responsive" width="100%" height="100%" alt=""></Image> */}
-              </motion.div>
-              <motion.div
-                variants={variants}
-                className="w-[80%] flex-none aspect-[1216/640] rounded-xl bg-gradient-to-br from-dark-800 via-dark-900/50 to-dark-900/75 h-[550px] cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0"
-              ></motion.div>
-            </motion.div>
-          </div>
-        </div>
-        <div className="py-20 bg-dark-900">
+
+        <div className="py-20">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -363,7 +375,7 @@ export default function Page() {
             <div className="flex justify-center">
               <motion.div
                 variants={variants}
-                className="inline font-bold text-5xl md:text-7xl text-slate-700 dark:text-dark-500/25 text-center"
+                className="inline font-black text-5xl md:text-7xl text-slate-700 dark:text-dark-600/75 text-center"
               >
                 WE ARE CRATEIVE
               </motion.div>

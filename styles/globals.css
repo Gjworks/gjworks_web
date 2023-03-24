@@ -1,6 +1,82 @@
-/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css"); */
-@import url(https://cdn.jsdelivr.net/gh/sunn-us/SUITE/fonts/variable/woff2/SUIT-Variable.css);
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css");
+/* @import url(https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css); */
 /* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard-dynamic-subset.css"); */
 *{
-  font-family:'SUIT Variable' ,Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+
+
+  /*Editor.js*/
+  .ce-block__content,
+    .ce-toolbar__content {
+        max-width: unset;
+    }
+  .cdx-block {
+    @apply text-dark-100;
+  }
+  h1.ce-header{
+    @apply text-white
+  }
+  h2.ce-header {
+    @apply text-dark-100
+  }
+  h3.ce-header {
+    @apply text-dark-200
+  }
+  .ce-inline-tool {
+    @apply px-2
+  }
+  .ce-inline-toolbar  {
+    @apply bg-dark-500/25 backdrop-blur-lg border-dark-500 text-dark-50
+  }
+  .ce-inline-tool:hover, .ce-inline-tool:focus, .ce-inline-tool:active {
+    @apply bg-dark-400/25 backdrop-blur-lg
+  }
+  .ce-inline-toolbar__dropdown {
+    @apply overflow-hidden
+  }
+  .ce-inline-toolbar__dropdown:hover {
+    @apply bg-dark-400/25 backdrop-blur-lg
+  }
+  .ce-inline-toolbar--active {
+    @apply bg-dark-300/25 backdrop-blur-lg
+  }
+  .ce-toolbar__plus, .ce-toolbar__settings-btn {
+    @apply bg-dark-500/25 backdrop-blur-lg text-white
+  }
+  .ce-toolbar__plus:hover, .ce-toolbar__settings-btn:hover {
+    @apply bg-dark-600/25 backdrop-blur-lg text-white
+  }
+  .ce-conversion-tool:hover, .ce-conversion-tool:focus, .ce-popover__item:hover .ce-popover__item:focus {
+    @apply bg-dark-500/25 shadow-dark-900 backdrop-blur-lg
+  }
+  .ce-conversion-toolbar {
+    @apply bg-dark-900/25 backdrop-blur-lg border-dark-700
+  }
+  .ce-conversion-tool--focused, .ce-popover__item--focused {
+    @apply !bg-dark-500/25 shadow-dark-900 backdrop-blur-lg
+  }
+  .ce-conversion-tool__icon, .ce-popover__item-icon {
+    @apply bg-dark-900/25 backdrop-blur-lg border-0 text-white shadow-none
+  }
+  .cdx-marker {
+    @apply bg-blue-200/25 text-blue-300/75
+  }
+  .ce-popover {
+    @apply bg-dark-900/25 backdrop-blur-lg border-dark-700
+  }
+  .ce-popover__item-label {
+    @apply text-dark-100
+  }
+  .cdx-search-field {
+    @apply bg-dark-900/25 backdrop-blur-lg
+  }
+  .cdx-search-field__input {
+    @apply text-white
+  }
+  .ce-popover__item:hover:not(.ce-popover__item--no-visible-hover), .ce-popover__item--focused:not(.ce-popover__item--no-visible-focus) {
+    @apply bg-dark-400/25 backdrop-blur-lg
+  }
+  .ce-block--selected .ce-block__content [contenteditable] {
+    @apply bg-cyan-600/50 text-dark-900
+  }

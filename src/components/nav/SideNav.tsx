@@ -123,7 +123,7 @@ const SideNav = props => {
           ⓒ 지제이웍스 All rights reserved.
         </motion.div>
         <motion.div
-          className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-900/25 backdrop-blur-lg py-5 w-[320px] px-3"
+          className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-700/25 backdrop-blur-lg py-5 w-[320px] px-3"
           initial={{ opacity: 0, y: '20%' }}
           animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
         >
@@ -180,7 +180,7 @@ const SideNav = props => {
             ) : (
               <Link
                 href="/auth/Signin"
-                className="flex items-center px-3 rounded-lg bg-gray-300 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-700 cursor-pointer"
+                className="flex items-center px-3 rounded-lg bg-gray-300 hover:bg-gray-200 dark:bg-dark-700 dark:hover:bg-dark-600 cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

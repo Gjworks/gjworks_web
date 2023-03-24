@@ -94,11 +94,11 @@ const SearchForm = () => {
           <div className="text-sm font-semibold mb-3 text-slate-700 dark:text-primary-500">
             검색기록
           </div>
-          <div className="flex text-sm border-b border-slate-300 dark:border-dark-800 text-slate-500 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-500 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">tailwind 설정하는 방법</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-slate-300 dark:border-dark-800 text-slate-500 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-500 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">Prisma Create Schemas</div>
             <div>22.05.23</div>
           </div>
@@ -108,7 +108,7 @@ const SearchForm = () => {
           </div>
         </motion.div>
       </div>
-      <div className="px-3 pt-2 bg-slate-100 dark:bg-dark-700/20 backdrop-blur-lg">
+      <div className="px-3 pt-2 bg-slate-100 dark:bg-dark-700/40 backdrop-blur-lg">
         <motion.div
           className="pt-2 pb-5 px-3"
           initial={{ opacity: 0, y: '20%' }}

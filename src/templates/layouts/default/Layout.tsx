@@ -31,11 +31,13 @@ const Layout = ({ children }) => {
     },
   }
   return (
-    <motion.div className="selection:text-white selection:bg-primary-600">
+    <motion.div className="selection:text-black selection:bg-white">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
-        <Header />
-        <SubNav />
+        <div className="sticky top-0 bg-dark-900/25 backdrop-blur-lg px-0 z-[100]">
+          <Header />
+          <SubNav />
+        </div>
         <motion.main
           variants={variants}
           initial="hidden"
