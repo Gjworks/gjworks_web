@@ -68,19 +68,19 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-primary-600 p-5 rounded-xl flex-1 h-[360px] gap-8px transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-dark-700 p-5 rounded-xl w-full lg:flex-1  gap-8px transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-bold text-white mb-5">
                   Web UI Components
                 </div>
-                <div className="text-sm text-primary-300 mb-10">
+                <div className="text-sm text-dark-300 mb-10">
                   Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
                   SSR 홈페이지를 구축 하기 쉽도록 제작하였습니다.
                 </div>
               </motion.div>
               <motion.div
                 variants={variants}
-                className="bg-dark-800 p-5 rounded-xl flex-1 h-[360px] transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-dark-800 p-5 rounded-xl w-full lg:flex-1  transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-bold text-white mb-5">
                   Metaverse Platform
@@ -116,13 +116,13 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-dark-700 p-5 rounded-xl flex-1 h-[360px]transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-primary-600 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
                     Next<br></br>Project??
                   </div>
-                  <div className="w-full text-sm text-dark-300 mb-10 text-center">
+                  <div className="w-full text-sm text-primary-300 mb-10 text-center">
                     저희는 현재 개발에서 멈추지 않고 미래를 위한 개발과 투자를
                     하고 있습니다. 다음 프로젝트에 대해 의견을 주시면
                     감사하겠습니다.
