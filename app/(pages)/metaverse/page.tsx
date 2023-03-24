@@ -29,11 +29,11 @@ const Page = props => {
   return (
     <>
       <PageWrap>
-        <div className="max-w-screen-2xl mx-auto py-8 xl:py-20 px-3">
+        <div className="max-w-screen-xl mx-auto py-8 xl:py-20 px-3">
           <motion.div className="text-white text-5xl font-semibold mb-16">
             Metaverse
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <Sectionbox
               thumb="/assets/images/MackbookPro.png"
               title="Web Metaverse를 VR로 즐겨보세요."

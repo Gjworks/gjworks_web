@@ -18,7 +18,7 @@ class Footer extends React.Component {
     return (
       <PageWrap>
         <footer className="border-t border-dark-800 bg-dark-800/25 backdrop-blur-lg">
-          <div className="max-w-screen-2xl mx-auto pt-5 pb-20">
+          <div className="max-w-screen-xl mx-auto pt-5 pb-10">
             <div className="px-3">
               <div className="grid grid-cols-3 gap-8">
                 <motion.div

@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <>
       <header className="">
-        <div className=" max-w-screen-2xl mx-auto">
+        <div className=" max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center py-3 pr-3">
             <div className="flex items-center justify-center">
               <button
@@ -61,7 +61,7 @@ const Header = () => {
               <div className="flex items-center">
                 <Link
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex items-center"
+                  className="hidden items-center"
                 >
                   <Image
                     src="/assets/images/brand/gjworks_white.svg"
@@ -73,12 +73,12 @@ const Header = () => {
                 </Link>
                 <Link
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="hidden lg:flex items-center"
+                  className="flex items-center"
                 >
-                  <div className="text-black dark:text-white pl-2 text-sm lg:text-sm font-bold mr-4">
+                  <div className="text-black dark:text-white pl-2 text-base lg:text-base font-bold mr-4">
                     지제이웍스
                   </div>
-                  <div className="flex text-slate-500 dark:text-dark-100 text-xs lg:text-xs bg-slate-100/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/25 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
+                  <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs lg:text-xs bg-slate-100/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/25 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -93,12 +93,11 @@ const Header = () => {
                         d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"
                       />
                     </svg>
-                    <span>PROJECT G 0.1.10.BETA</span>
+                    <span>Project 0.1.10.beta</span>
                   </div>
                 </Link>
               </div>
-
-              <div className="hidden md:flex items-center pl-3">
+              <div className="hidden items-center pl-3">
                 {nav.header &&
                   Object.entries(nav.header).map((data, index) => {
                     return (

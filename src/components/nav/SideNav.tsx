@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useSession, signOut } from 'next-auth/react'
 import { motion } from 'framer-motion'
+import nav from 'src/res/config/navigation.json'
 
 const SideNav = props => {
   const pathname = usePathname()
@@ -46,74 +47,23 @@ const SideNav = props => {
             },
           }}
         >
-          <Link href="/compnents">
-            <motion.span
-              animate={{
-                opacity: [0, 1],
-                x: '0%',
-                transition: { duration: 0.6 },
-              }}
-              className={
-                'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
-                (pathname === '/compnents'
-                  ? 'text-black dark:text-white'
-                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
-              }
-            >
-              Compnents
-            </motion.span>
-          </Link>
-          <Link href="/metaverse">
-            <motion.span
-              animate={{
-                opacity: [0, 1],
-                x: '0%',
-                transition: { duration: 0.6 },
-              }}
-              className={
-                'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
-                (pathname === '/metaverse'
-                  ? 'text-black dark:text-white'
-                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
-              }
-            >
-              Metaverse
-            </motion.span>
-          </Link>
-          <Link href="/posts/[mid]" as="/posts/blog">
-            <motion.span
-              animate={{
-                opacity: [0, 1],
-                x: '0%',
-                transition: { duration: 0.6 },
-              }}
-              className={
-                'block py-2 px-3 mx-2 text-sm lg:text-base font-normal ' +
-                (pathname === '/posts/blog'
-                  ? 'text-black dark:text-white'
-                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
-              }
-            >
-              Blog
-            </motion.span>
-          </Link>
-          <Link href="/Contact">
-            <motion.span
-              animate={{
-                opacity: [0, 1],
-                x: '0%',
-                transition: { duration: 0.6 },
-              }}
-              className={
-                'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal ' +
-                (pathname === '/Contact'
-                  ? 'text-white'
-                  : 'text-gray-700 hover:text-black dark:text-dark-400 dark:hover:text-white')
-              }
-            >
-              Contact
-            </motion.span>
-          </Link>
+          {nav.header &&
+            Object.entries(nav.header).map((data, index) => {
+              return (
+                <Link
+                  href={data[1].route}
+                  key={data[1].name}
+                  className={
+                    'block py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal uppercase ' +
+                    (pathname === data[1].route
+                      ? 'text-black dark:text-white'
+                      : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
+                  }
+                >
+                  {data[1].title}
+                </Link>
+              )
+            })}
         </motion.div>
         <motion.div
           className="text-xs text-gray-900 dark:text-dark-200 text-center lg:text-left px-3 pb-[120px]"

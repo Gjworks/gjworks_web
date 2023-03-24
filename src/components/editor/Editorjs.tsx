@@ -23,7 +23,7 @@ const Editor = ({ data, onChange, holder }: Props) => {
         // config: {
         //   minHeight: 100,
         // },
-        placeholder: 'Let`s write an awesome story!',
+        placeholder: '내용을 입력해주세요.',
         // theme: 'dark',
         data,
         async onChange(api, event) {

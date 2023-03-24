@@ -43,7 +43,7 @@ export default function Page() {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="relative max-w-screen-2xl mx-auto px-3 xl:px-8 py-20"
+            className="relative max-w-screen-xl mx-auto px-3 xl:px-8 py-20"
           >
             <div>
               <motion.div className="text-sm lg:text-base font-bold text-black dark:text-white mb-2">
@@ -55,16 +55,11 @@ export default function Page() {
               <motion.div className="text-dark-400 dark:text-dark-200 text-sm lg:text-xl">
                 서비스에 도움이 되는 제품을 만들어 드리겠습니다.
               </motion.div>
-              <motion.div className="block pt-10">
-                <span className="inline-block text-sm border border-dark-700 dark:border-dark-50 py-2 px-5 text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded cursor-pointer">
-                  Contact us
-                </span>
-              </motion.div>
             </div>
           </motion.div>
         </motion.div>
         <div className="py-20 w-full overflow-hidden">
-          <div className="max-w-screen-2xl mx-auto px-3">
+          <div className="max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
@@ -99,8 +94,8 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="py-20 ">
-          <div className="max-w-screen-2xl mx-auto px-3">
+        <div className="py-20 hidden">
+          <div className="max-w-screen-xl mx-auto px-3">
             <div className="grid grid-cols-5 gap-10 lg:gap-8 w-full">
               <motion.div
                 initial="offscreen"
@@ -162,12 +157,12 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="hidden py-20">
-          <div className="max-w-screen-2xl mx-auto  px-3 xl:px-8">
+        <div className="py-20">
+          <div className="max-w-screen-xl mx-auto  px-3 xl:px-8">
             <div className="flex justify-center mb-6">
-              <div className="inline font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-indigo-200 to-orange-300 text-center pt-20">
-                항상 최신 기술과 트랜드<br></br>
-                모바일과 PC의 컨셉을 하나로
+              <div className="inline font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-indigo-300 to-orange-300 text-center pt-20">
+                WE ARE CRATEIVE<br></br>
+                Responsive everything.
               </div>
             </div>
             <div className="flex justify-center mb-10">
@@ -182,7 +177,7 @@ export default function Page() {
         </div>
 
         <div className="py-20 hidden">
-          <div className="max-w-screen-2xl mx-auto  px-3 xl:px-8">
+          <div className="max-w-screen-xl mx-auto  px-3 xl:px-8">
             <div className="grid grid-cols-2 gap-8">
               <div className="col-span-2 xl:col-span-1">
                 <div className="flex justify-center">
@@ -209,7 +204,7 @@ export default function Page() {
           </div>
         </div>
         <div className="hidden py-20 bg-dark-900">
-          <div className="max-w-screen-2xl mx-auto px-3">
+          <div className="max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
@@ -330,47 +325,13 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="py-20">
-          <div className="max-w-screen-2xl mx-auto px-3">
-            <div className="grid grid-cols-3">
-              <div className="col-span-3 lg:col-span-1 border-t border-dark-100 py-10 px-3 hover:border-dark-100 cursor-pointer">
-                <div className="font-medium text-white text-lg mb-3">
-                  Web Application Ui
-                </div>
-                <div className="text-dark-300 text-sm">
-                  Form layouts, tables, modal dialogs... everyting you need to
-                  build beautiful responsive web applications.
-                </div>
-              </div>
-              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-dark-200 cursor-pointer">
-                <div className="font-medium text-white text-lg mb-3">
-                  Web Application Ui
-                </div>
-                <div className="text-dark-300 text-sm">
-                  Form layouts, tables, modal dialogs... everyting you need to
-                  build beautiful responsive web applications.
-                </div>
-              </div>
-              <div className="col-span-3 lg:col-span-1 border-t border-dark-700 py-10 px-3 hover:border-dark-200 cursor-pointer">
-                <div className="font-medium text-white text-lg mb-3">
-                  Web Application Ui
-                </div>
-                <div className="text-dark-300 text-sm">
-                  Form layouts, tables, modal dialogs... everyting you need to
-                  build beautiful responsive web applications.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="py-20">
+        <div className="py-20 hidden">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
             variants={parentVariants}
-            className="max-w-screen-2xl mx-auto px-3 xl:px-8 overflow-hidden pt-0 lg:py-20"
+            className="max-w-screen-xl mx-auto px-3 xl:px-8 overflow-hidden pt-0 lg:py-20"
           >
             <div className="flex justify-center">
               <motion.div

@@ -33,8 +33,8 @@ const Page: React.FC<PageProps> = ({ params }) => {
 
   return (
     <PageWrap>
-      <div className="max-w-screen-2xl mx-auto px-3 py-16 lg:py-20">
-        <div className="grid grid-cols-12 gap-4">
+      <div className="max-w-screen-xl mx-auto px-3 py-16 lg:py-20">
+        <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 mb-2 lg:col-span-2 text-sm">
             <div className="lg:sticky lg:top-20 lg:mb-16 flex justify-between lg:block">
               <div className="mb-10">
@@ -142,8 +142,8 @@ const Page: React.FC<PageProps> = ({ params }) => {
                 </motion.div>
               </div>
             </motion.div>
-            <div className="grid grid-cols-12 lg:gap-16 xl:gap-8">
-              <div className="col-span-12">
+            <div className="grid grid-cols-12 gap-8">
+              <div className="hidden col-span-12">
                 <div className=" flex items-center justify-center max-w-screen-lg w-full h-[480px] rounded-lg shadow-lg shadow-dark-900 bg-dark-800 mb-8 text-3xl font-extrabold text-dark-400/25">
                   <div>
                     <div className="flex justify-center w-full mb-1">
@@ -167,7 +167,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
                 </div>
               </div>
               <motion.div
-                className="col-span-12 lg:col-span-7 xl:col-span-7 text-dark-300 text-base leading-7"
+                className="col-span-12 lg:col-span-8 xl:col-span-9 text-dark-300 text-base leading-7"
                 initial={{ opacity: 0, y: '20%' }}
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
               >
@@ -179,7 +179,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
                 <div className="pt-8 pb-16 border-t border-dark-500"></div>
               </motion.div>
               <motion.div
-                className="col-span-12 space-y-8 lg:col-span-5 xl:col-span-3 xl:col-start-9 text-dark-100 text-sm"
+                className="col-span-12 space-y-8 lg:col-span-4 xl:col-span-3 text-dark-100 text-sm"
                 initial={{ opacity: 0, y: '20%' }}
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.95 } }}
               >

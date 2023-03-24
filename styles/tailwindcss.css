@@ -10,7 +10,7 @@
   html {
     -webkit-overflow-scrolling: touch;
     @apply min-h-full;
-    @apply bg-white
+    @apply bg-dark-800
   }
   html.dark, html.dark body {
     -webkit-overflow-scrolling: touch;

@@ -147,7 +147,7 @@ const PageLayout = ({ children }) => {
         <div className="grow text-dark-100">
           <div className="flex gap-12 flex-wrap xl:flex-nowrap">
             <div className="grow">{children}</div>
-            <div className="w-full xl:w-80 flex-none">
+            <div className="w-full xl:w-64 flex-none">
               <div className="sticky top-24">
                 <Link
                   href="#"

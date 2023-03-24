@@ -15,29 +15,31 @@ const SubNav = ({}) => {
 
   return (
     <>
-      <div className="sticky top-[60px] border-b border-dark-700 z-[90] bg-dark-800/50 backdrop-blur-lg">
-        <div className="max-w-screen-2xl mx-auto">
+      <div className="sticky top-[60px] z-[90] bg-dark-900/25 backdrop-blur-lg">
+        <div className="max-w-screen-xl mx-auto">
           <div className="flex gap-8 px-3">
             {nav.header &&
               Object.entries(nav.header).map((data, index) => {
                 return (
-                  pathname === data[1].route &&
-                  Object.entries(data[1].subMenu).map((data2, index2) => {
-                    return (
-                      <Link
-                        href={data2[1].route}
-                        key={index2}
-                        className={
-                          'text-white hover:text-white text-sm px-1 py-4 flex border-b-2 ' +
-                          (pathname === data2[1].route
-                            ? 'text-black dark:text-white border-dark-100'
-                            : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white border-transparent')
-                        }
-                      >
-                        {data2[1].title}
-                      </Link>
-                    )
-                  })
+                  <>
+                    {pathname === data[1].route &&
+                      Object.entries(data[1].subMenu).map((data2, index2) => {
+                        return (
+                          <Link
+                            href={data2[1].route}
+                            key={index2}
+                            className={
+                              'text-white hover:text-white text-sm px-1 py-4 flex border-b-2 ' +
+                              (pathname === data2[1].route
+                                ? 'text-black dark:text-white border-dark-100'
+                                : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white border-transparent')
+                            }
+                          >
+                            {data2[1].title}
+                          </Link>
+                        )
+                      })}
+                  </>
                 )
               })}
           </div>

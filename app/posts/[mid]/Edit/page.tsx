@@ -91,14 +91,10 @@ const Edit = props => {
 
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto px-3 py-20">
-        <div className="max-w-screen-2xl mx-auto px-3 py-16 lg:py-20">
-          <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-12 mb-2 lg:col-span-2 text-sm">
-              <div className="lg:sticky lg:top-20 lg:mb-16 flex justify-between lg:block"></div>
-            </div>
-
-            <div className="col-span-12 lg:col-span-12 xl:col-span-10">
+      <div className="">
+        <div className="max-w-screen-xl mx-auto px-3 py-16 lg:py-20">
+          <div className="flex justify-center">
+            <div className="max-w-[773px] w-full mx-auto">
               <motion.div
                 className="mb-8 max-w-5xl"
                 initial={{ opacity: 0, y: '20%' }}
