@@ -139,13 +139,13 @@ const Edit = props => {
                     <div className="col-span-2 flex justify-end gap-2">
                       <button
                         onClick={event => console.log(event)}
-                        className="bg-dark-800 rounded-sm px-8 py-2 border border-dark-300 text-dark-300 text-sm hover:text-dark-50 hover:border-dark-100 hover:bg-dark-100 hover:bg-opacity-25 w-full lg:w-auto"
+                        className="bg-dark-700 rounded-sm px-8 py-2 text-dark-300 text-sm hover:text-white hover:bg-dark-600 w-full lg:w-auto"
                       >
                         Back
                       </button>
                       <button
                         onClick={handleDocumentSubmit}
-                        className="bg-dark-800 rounded-sm px-8 py-2 border border-primary-600 text-primary-600 text-sm hover:text-primary-600 hover:border-primary-600 hover:bg-primary-500 hover:bg-opacity-25 w-full lg:w-auto"
+                        className="rounded-sm px-8 py-2 bg-primary-600 text-primary-100 text-sm hover:text-white hover:bg-primary-500 w-full lg:w-auto"
                       >
                         Submit
                       </button>

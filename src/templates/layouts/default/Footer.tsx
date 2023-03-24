@@ -17,7 +17,7 @@ class Footer extends React.Component {
   render() {
     return (
       <PageWrap>
-        <footer className="border-t border-dark-800 bg-dark-800/25 backdrop-blur-lg">
+        <footer className="backdrop-blur-lg">
           <div className="max-w-screen-xl mx-auto pt-5 pb-10">
             <div className="px-3">
               <div className="grid grid-cols-3 gap-8">
@@ -83,19 +83,19 @@ class Footer extends React.Component {
                   <div className="flex">
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-200 hover:text-black dark:hover:text-white text-xs px-3"
+                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs px-3"
                     >
                       Terms of service
                     </Link>
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-200 hover:text-black dark:hover:text-white text-xs px-3"
+                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs px-3"
                     >
                       Privacy policy
                     </Link>
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-200 hover:text-black dark:hover:text-white text-xs px-3"
+                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs px-3"
                     >
                       License
                     </Link>

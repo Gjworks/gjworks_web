@@ -58,7 +58,81 @@ export default function Page() {
             </div>
           </motion.div>
         </motion.div>
-        <div className="py-20 w-full overflow-hidden">
+        <div className="py-20">
+          <div className="max-w-screen-xl mx-auto px-3">
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex flex-wrap gap-8"
+            >
+              <motion.div
+                variants={variants}
+                className="bg-primary-600 p-5 rounded-xl flex-1 h-[360px] gap-8px transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+              >
+                <div className="text-2xl font-bold text-white mb-5">
+                  Web UI Components
+                </div>
+                <div className="text-sm text-primary-300 mb-10">
+                  Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
+                  SSR 홈페이지를 구축 하기 쉽도록 제작하였습니다.
+                </div>
+              </motion.div>
+              <motion.div
+                variants={variants}
+                className="bg-dark-800 p-5 rounded-xl flex-1 h-[360px] transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+              >
+                <div className="text-2xl font-bold text-white mb-5">
+                  Metaverse Platform
+                </div>
+                <div className="text-sm text-dark-300 mb-10">
+                  Playcanvas를 활용하여 가상의 공간에 나만의 캐릭터가 움직이며
+                  온라인으로 다양한 사람들과 커뮤니케이션을 하며 상호작용을
+                  통해서 데이터를 주고 받을 수 있습니다.
+                </div>
+                <div className="">
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="text-xs text-white w-12">DB</div>
+                    <div className="relative flex-1 bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-primary-500 rounded-full"></div>
+                    </div>
+                    <div className="text-xs text-white"> 60%</div>
+                  </div>
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="text-xs text-white w-12">Front</div>
+                    <div className="relative flex-1 bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-primary-500 rounded-full"></motion.div>
+                    </div>
+                    <div className="text-xs text-white"> 20%</div>
+                  </div>
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="text-xs text-white w-12">Server</div>
+                    <div className="relative flex-1 bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-primary-500 rounded-full"></div>
+                    </div>
+                    <div className="text-xs text-white"> 30%</div>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={variants}
+                className="flex flex-wrap items-center gap-8 bg-dark-700 p-5 rounded-xl flex-1 h-[360px]transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+              >
+                <div>
+                  <div className="text-2xl font-bold text-white mb-5 text-center">
+                    Next<br></br>Project??
+                  </div>
+                  <div className="w-full text-sm text-dark-300 mb-10 text-center">
+                    저희는 현재 개발에서 멈추지 않고 미래를 위한 개발과 투자를
+                    하고 있습니다. 다음 프로젝트에 대해 의견을 주시면
+                    감사하겠습니다.
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="hidden py-20 w-full overflow-hidden">
           <div className="max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
@@ -158,22 +232,41 @@ export default function Page() {
           </div>
         </div>
         <div className="py-20">
-          <div className="max-w-screen-xl mx-auto  px-3 xl:px-8">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={parentVariants}
+            className="max-w-screen-xl mx-auto  px-3 xl:px-8"
+          >
             <div className="flex justify-center mb-6">
-              <div className="inline font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-indigo-300 to-orange-300 text-center pt-20">
-                WE ARE CRATEIVE<br></br>
-                Responsive everything.
+              <div>
+                <motion.div
+                  variants={variants}
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-indigo-300 to-orange-300 text-center pt-20 mb-3"
+                >
+                  WE ARE CRATEIVE
+                </motion.div>
+                <motion.div
+                  variants={variants}
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-indigo-300 to-orange-300 text-center mb-10"
+                >
+                  Responsive everything.
+                </motion.div>
               </div>
             </div>
-            <div className="flex justify-center mb-10">
+            <motion.div
+              variants={variants}
+              className="flex justify-center mb-10"
+            >
               <Link
                 href="/Contact"
                 className="border border-white rounded-full py-1 px-10 text-white text-base hover:bg-white hover:text-black"
               >
                 Contact us
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         <div className="py-20 hidden">
