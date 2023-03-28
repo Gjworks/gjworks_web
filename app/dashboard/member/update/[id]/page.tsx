@@ -79,25 +79,25 @@ const Page = () => {
             <div className="flex pt-3">
               <Link
                 href="#"
-                className="text-sm py-2 px-5 cursor-pointer border-b border-sky-500 text-white -mb-[1px]"
+                className="text-sm py-2 px-5 cursor-pointer border-b border-indigo-500 text-white -mb-[1px]"
               >
                 기본정보
               </Link>
               <Link
                 href="#"
-                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-sky-500 hover:text-white -mb-[1px]"
+                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-indigo-500 hover:text-white -mb-[1px]"
               >
                 작성 글
               </Link>
               <Link
                 href="#"
-                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-sky-500 hover:text-white -mb-[1px]"
+                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-indigo-500 hover:text-white -mb-[1px]"
               >
                 댓글
               </Link>
               <Link
                 href="#"
-                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-sky-500 hover:text-white -mb-[1px]"
+                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-indigo-500 hover:text-white -mb-[1px]"
               >
                 소셜정보
               </Link>
@@ -135,10 +135,10 @@ const Page = () => {
                             type="email"
                             onBlur={inputMemberEmail}
                             className={
-                              'bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 rounded-tl rounded-tr focus:border-sky-500 focus:from-sky-500/25' +
+                              'bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 rounded-tl rounded-tr focus:border-indigo-500 focus:from-indigo-500/25' +
                               (emailExist
                                 ? ' border-rose-500 from-rose-500/25 focus:border-rose-500 focus:from-rose-500/25'
-                                : ' focus:border-sky-500 focus:from-sky-500/25')
+                                : ' focus:border-indigo-500 focus:from-indigo-500/25')
                             }
                             defaultValue={memberInfo.email}
                           ></input>
@@ -159,7 +159,7 @@ const Page = () => {
                           <input
                             type="text"
                             onChange={inputMemberNickname}
-                            className="bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-sky-500 focus:from-sky-500/25 rounded-tl rounded-tr"
+                            className="bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-indigo-500 focus:from-indigo-500/25 rounded-tl rounded-tr"
                             defaultValue={memberInfo.nickname}
                           ></input>
                           <div className="text-sm text-dark-400 pt-2">
@@ -177,7 +177,7 @@ const Page = () => {
                           <input
                             type="password"
                             onChange={inputMemberPassword}
-                            className="bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-sky-500 focus:from-sky-500/25 rounded-tl rounded-tr"
+                            className="bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-indigo-500 focus:from-indigo-500/25 rounded-tl rounded-tr"
                           ></input>
                           <div className="text-sm text-dark-400 pt-2">
                             비밀번호는 암호화 되어 저장됩니다.
@@ -216,7 +216,7 @@ const Page = () => {
                                 memberInfo.isAdmin === true ? true : false
                               }
                             />
-                            <div className="block relative rounded-full cursor-pointer bg-dark-600 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-dark-500 dark:after:bg-dark-100 after:transition-all peer-checked:bg-sky-500 after:peer-checked:translate-x-6 "></div>
+                            <div className="block relative rounded-full cursor-pointer bg-dark-600 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-dark-500 dark:after:bg-dark-100 after:transition-all peer-checked:bg-indigo-500 after:peer-checked:translate-x-6 "></div>
                           </label>
                           <div className="text-sm text-dark-400 pt-3">
                             ⚠ 체크시 관리자로 인식합니다. 해당 Dashboard에
@@ -260,7 +260,7 @@ const Page = () => {
                           <label>
                             <div className="text-sm text-white mb-3">메모</div>
                           </label>
-                          <textarea className="bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-sky-500 focus:from-sky-500/25 rounded-tl rounded-tr"></textarea>
+                          <textarea className="bg-gradient-to-r text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-indigo-500 focus:from-indigo-500/25 rounded-tl rounded-tr"></textarea>
                         </div>
                       </div>
                     </div>
@@ -273,7 +273,7 @@ const Page = () => {
                 </div>
                 <button
                   type="submit"
-                  className="px-5 py-2 text-sm text-white bg-sky-500 rounded-md"
+                  className="px-5 py-2 text-sm text-white bg-indigo-500 rounded-md"
                 >
                   저장하기
                 </button>

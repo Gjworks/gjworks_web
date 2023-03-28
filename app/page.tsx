@@ -43,21 +43,79 @@ export default function Page() {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="relative max-w-screen-xl mx-auto px-3 xl:px-8 py-20"
+            className="relative max-w-screen-xl mx-auto px-3 py-20"
           >
             <div>
-              <motion.div className="text-sm lg:text-base font-bold text-black dark:text-white mb-2">
+              <motion.div
+                variants={variants}
+                className="text-sm lg:text-base font-bold text-black dark:text-white mb-2"
+              >
                 TEAM THAT MAKES THE SERVICE
               </motion.div>
-              <motion.div className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-white">
+              <motion.div
+                variants={variants}
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-white"
+              >
                 Build web and app <br></br>quickly and simply
               </motion.div>
-              <motion.div className="text-dark-400 dark:text-dark-200 text-sm lg:text-xl">
+              <motion.div
+                variants={variants}
+                className="text-dark-400 dark:text-dark-200 text-sm lg:text-lg"
+              >
                 서비스에 도움이 되는 제품을 만들어 드리겠습니다.
               </motion.div>
             </div>
           </motion.div>
         </motion.div>
+        <div className="py-20 bg-dark-900">
+          <div className="relative max-w-screen-xl mx-auto px-3">
+            <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 via-indigo-700 to-indigo-800 text-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-8 h-8"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 6v12m6-6H6"
+                />
+              </svg>
+            </div>
+
+            <motion.div className="relative max-w-screen-lg mx-auto">
+              <div className="relative">
+                <SafariBrower />
+              </div>
+              <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900"></div>
+            </motion.div>
+          </div>
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={parentVariants}
+            className="max-w-screen-md mx-auto text-center"
+          >
+            <motion.div
+              variants={variants}
+              className="text-xl font-medium text-white mb-8"
+            >
+              심플하면서도 강력한 관리자 화면을 제공합니다.
+            </motion.div>
+            <motion.div
+              variants={variants}
+              className="text-base text-dark-300 text-center"
+            >
+              회원관리와 게시판관리 문의하기.. 그리고 채팅과 앱과의 연동등
+              다양한 기능을 제공을 기본적으로 제공하고 있습니다. 최신 트렌드에
+              맞는 관리자 디자인과 편리함을 한번에 느껴보시기 바랍니다.
+            </motion.div>
+          </motion.div>
+        </div>
         <div className="py-20">
           <div className="max-w-screen-xl mx-auto px-3">
             <motion.div
@@ -68,7 +126,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-dark-700 p-5 rounded-xl w-full lg:flex-1  gap-8px transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-dark-700 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-bold text-white mb-5">
                   Web UI Components
@@ -80,7 +138,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="bg-dark-800 p-5 rounded-xl w-full lg:flex-1  transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-dark-800 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-bold text-white mb-5">
                   Metaverse Platform

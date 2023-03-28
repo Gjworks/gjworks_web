@@ -1,3 +1,4 @@
+import Image from 'next/image'
 const SafariBrower = () => {
   return (
     <>
@@ -59,18 +60,14 @@ const SafariBrower = () => {
           </div>
         </div>
         <div className="relative border-t border-dark-900 rounded-b-xl bg-dark-700">
-          <div className="w-full h-full p-5">
-            <div className="flex justify-center gap-8">
-              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-primary-300 via-primary-400 to-primary-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg hover:shadow-xs shadow-dark-900/50">
-                Modal Example
-              </div>
-              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-primary-300 via-primary-400 to-primary-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg hover:shadow-xs shadow-dark-900/50">
-                DropDown
-              </div>
-              <div className="flex justify-center items-center w-56 bg-gradient-to-br from-primary-300 via-primary-400 to-primary-600 h-[260px] rounded-xl p-5 cursor-pointer shadow-lg hover:shadow-xs shadow-dark-900/50">
-                Panel
-              </div>
-            </div>
+          <div className="w-full h-full p-[1px]">
+            <Image
+              src="/assets/images/dashboard.png"
+              alt="dashboard image"
+              width={1024}
+              height={100}
+              className="rounded-b-xl"
+            ></Image>
           </div>
         </div>
       </div>
