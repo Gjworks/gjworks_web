@@ -14,64 +14,67 @@ const SideNav = props => {
 
   return (
     <>
-      <motion.div className="relative">
-        <motion.div
-          className="flex justify-center items-center py-12"
-          initial={{ opacity: 0, x: '-50%' }}
-          animate={{ opacity: 1, x: '0%', transition: { duration: 0.5 } }}
-        >
-          <Link
-            href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-            className="flex items-center"
+      <motion.div className="relative overflow-hidden h-full">
+        <div className="absolute top-0 w-[320px] bottom-0 overflow-y-auto h-full pb-[80px]">
+          <motion.div
+            className="flex justify-center items-center py-12"
+            initial={{ opacity: 0, x: '-50%' }}
+            animate={{ opacity: 1, x: '0%', transition: { duration: 0.5 } }}
           >
-            <Image
-              src="/assets/images/brand/gjworks_white.svg"
-              alt="gjworks logo"
-              width="64"
-              height="64"
-              className="block w-20 h-20 fill-white stroke-white"
-            />
-          </Link>
-        </motion.div>
-        <motion.div className="mb-5 text-xl font-extralight text-gray-900 dark:text-white px-3"></motion.div>
-        <motion.div
-          className="pl-3 pb-12"
-          initial={{ opacity: 0, x: '-50%' }}
-          animate={{
-            opacity: 1,
-            x: '0%',
-            transition: {
-              duration: 0.7,
-              staggerChildren: 0.3,
-              staggerDirection: -1,
-            },
-          }}
-        >
-          {nav.header &&
-            Object.entries(nav.header).map((data, index) => {
-              return (
-                <Link
-                  href={data[1].route}
-                  key={data[1].name}
-                  className={
-                    'block py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal uppercase ' +
-                    (pathname === data[1].route
-                      ? 'text-black dark:text-white'
-                      : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
-                  }
-                >
-                  {data[1].title}
-                </Link>
-              )
-            })}
-        </motion.div>
-        <motion.div
-          className="text-xs text-gray-900 dark:text-dark-200 text-center lg:text-left px-3 pb-[120px]"
-          initial={{ opacity: 0, x: '-50%' }}
-          animate={{ opacity: 1, x: '0%', transition: { duration: 0.9 } }}
-        >
-          ⓒ 지제이웍스 All rights reserved.
-        </motion.div>
+            <Link
+              href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+              className="flex items-center"
+            >
+              <Image
+                src="/assets/images/brand/gjworks_white.svg"
+                alt="gjworks logo"
+                width="64"
+                height="64"
+                className="block w-20 h-20 fill-white stroke-white"
+              />
+            </Link>
+          </motion.div>
+          <motion.div className="mb-5 text-xl font-extralight text-gray-900 dark:text-white px-3"></motion.div>
+          <motion.div
+            className="pl-3 pb-12"
+            initial={{ opacity: 0, x: '-50%' }}
+            animate={{
+              opacity: 1,
+              x: '0%',
+              transition: {
+                duration: 0.7,
+                staggerChildren: 0.3,
+                staggerDirection: -1,
+              },
+            }}
+          >
+            {nav.header &&
+              Object.entries(nav.header).map((data, index) => {
+                return (
+                  <Link
+                    href={data[1].route}
+                    key={data[1].name}
+                    className={
+                      'block py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal uppercase ' +
+                      (pathname === data[1].route
+                        ? 'text-black dark:text-white'
+                        : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
+                    }
+                  >
+                    {data[1].title}
+                  </Link>
+                )
+              })}
+          </motion.div>
+          <motion.div
+            className="text-xs text-gray-900 dark:text-dark-200 text-center lg:text-left px-3 pb-10"
+            initial={{ opacity: 0, x: '-50%' }}
+            animate={{ opacity: 1, x: '0%', transition: { duration: 0.9 } }}
+          >
+            ⓒ 지제이웍스 All rights reserved.
+          </motion.div>
+        </div>
+
         <motion.div
           className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-600/25 backdrop-blur-lg py-5 w-[320px] px-3"
           initial={{ opacity: 0, y: '20%' }}

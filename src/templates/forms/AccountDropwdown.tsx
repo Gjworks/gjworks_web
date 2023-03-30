@@ -26,7 +26,7 @@ const AccountDropwdown = () => {
     <>
       {session.status !== 'authenticated' ? (
         <>
-          <motion.div variants={innerAnimation}>
+          <motion.div className="w-56" variants={innerAnimation}>
             <Link
               href="/auth/Signin"
               className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-white hover:bg-dark-600 hover:text-white focus:outline-none focus:bg-dark-800 focus:text-dark-300"

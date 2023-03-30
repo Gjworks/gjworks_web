@@ -17,7 +17,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="selection:text-white selection:bg-sky-400">
+    <div className="selection:text-white selection:bg-indigo-500">
       <div className="">
         <div className="fixed w-[300px] bg-dark-900 backdrop-blur-lg bg-opacity-50 h-screen overflow-hidden overflow-y-auto border-r border-dark-800">
           <DashboardSideNav />

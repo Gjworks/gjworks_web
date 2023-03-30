@@ -29,16 +29,16 @@ export default function Page() {
   }
   return (
     <DefaultLayout>
-      <div className="">
+      {/* <motion.div
+        className="absolute inset-0"
+        initial={{ opacity: 0, y: '3%' }}
+        animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
+      >
+        <div className="max-w-[2560px] mx-auto bg-[url('https://images.unsplash.com/photo-1637952112301-6090dca83ccb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')] bg-no-repeat bg-cover bg-top h-full"></div>
+      </motion.div>
+      <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
+      <div className="relative">
         <motion.div className="relative pt-20 xl:pt-10 overflow-hidden">
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 0, y: '3%' }}
-            animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
-          >
-            {/* <div className="max-w-[2560px] mx-auto bg-[url('/assets/images/photo.jpg')] bg-no-repeat bg-cover bg-top h-full"></div> */}
-          </motion.div>
-          {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-800/25 via-dark-800/50 to-dark-800"></div> */}
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -67,7 +67,7 @@ export default function Page() {
             </div>
           </motion.div>
         </motion.div>
-        <div className="py-20 bg-dark-900">
+        <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 via-indigo-700 to-indigo-800 text-white">
               <svg
@@ -102,7 +102,7 @@ export default function Page() {
           >
             <motion.div
               variants={variants}
-              className="text-xl font-medium text-white mb-8"
+              className="text-3xl font-medium text-white mb-8"
             >
               심플하면서도 강력한 관리자 화면을 제공합니다.
             </motion.div>

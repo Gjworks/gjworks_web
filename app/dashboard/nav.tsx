@@ -48,7 +48,7 @@ const DashboardSideNav: React.FC<PageProps> = ({ ...props }: PageProps) => {
           <div className="text-dark-500 text-xs">Dashboard Ma</div>
         </div>
         <div className="mb-10">
-          <div className="flex items-center bg-dark-800/50 rounded-md h-10 w-full text-white px-5">
+          <div className="flex items-center bg-dark-700/75 rounded-md h-10 w-full text-white px-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

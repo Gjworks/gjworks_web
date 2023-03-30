@@ -15,40 +15,62 @@ import SearchForm from 'src/templates/forms/SearchForm'
 import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
 import nav from 'src/res/config/navigation.json'
+import { motion } from 'framer-motion'
 
 const Header = () => {
   const pathname = usePathname()
   const [showModal, setShowModal] = useState(false)
   const [showLeft, setShowLeft] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
+  const [showNavigation, setShowNavigation] = useState(false)
   const closeModal = close => {
     setShowModal(close)
-  }
-  const closeDropdown = close => {
-    setShowDropdown(close)
   }
   const closeLeft = close => {
     setShowLeft(close)
   }
   const handleClickOutside = () => {
-    setShowDropdown(false)
+    setShowNavigation(false)
   }
-  // const { mid } = router?.query;
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true)
     return () => {
       document.removeEventListener('click', handleClickOutside, true)
     }
   }, [])
+
+  const initial = {
+    opacity: 0,
+  }
+
+  const variants = {
+    open: {
+      opacity: 1,
+      y: 0,
+      display: 'block',
+      transition: {
+        duration: 0.5,
+        delayChildren: 0.1,
+        staggerChildren: 0.1,
+      },
+    },
+    close: {
+      opacity: 0,
+      y: '-5%',
+      transitionEnd: {
+        display: 'none',
+      },
+    },
+  }
   return (
     <>
-      <header className="">
+      <header className="relative bg-dark-900/90 backdrop-blur-lg z-101">
         <div className=" max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center py-3 pr-3">
             <div className="flex items-center justify-center">
               <button
                 onClick={() => setShowLeft(!showLeft)}
-                className="group flex items-center justify-center mx-auto px-3"
+                className="group flex lg:hidden items-center justify-center mx-auto px-3"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
@@ -58,6 +80,20 @@ const Header = () => {
                   </span>
                 </div>
               </button>
+
+              <button
+                onClick={() => setShowNavigation(!showNavigation)}
+                className="group hidden lg:flex items-center justify-center mx-auto px-3"
+              >
+                <div className="flex relative w-5 h-5 cursor-pointer">
+                  <span>
+                    <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div>
+                    <div className="transition-all absolute left-0 top-[9px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
+                    <div className="transition-all absolute left-0 top-[15px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
+                  </span>
+                </div>
+              </button>
+
               <div className="flex items-center">
                 <Link
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
@@ -75,7 +111,7 @@ const Header = () => {
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="flex items-center"
                 >
-                  <div className="text-black dark:text-white pl-2 text-base lg:text-base font-bold mr-4">
+                  <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-bold mr-4">
                     지제이웍스
                   </div>
                   <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs lg:text-xs bg-slate-100/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/25 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
@@ -97,6 +133,7 @@ const Header = () => {
                   </div>
                 </Link>
               </div>
+
               <div className="hidden items-center pl-3">
                 {nav.header &&
                   Object.entries(nav.header).map((data, index) => {
@@ -115,54 +152,9 @@ const Header = () => {
                       </Link>
                     )
                   })}
-                {/* <Link
-                  href="/components"
-                  className={
-                    'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal ' +
-                    (pathname === '/components'
-                      ? 'text-black dark:text-white'
-                      : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
-                  }
-                >
-                  Components
-                </Link>
-                <Link
-                  href="/metaverse"
-                  className={
-                    'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal ' +
-                    (pathname === '/metaverse'
-                      ? 'text-black dark:text-white'
-                      : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
-                  }
-                >
-                  Metaverse
-                </Link>
-                <Link
-                  href="/posts/[mid]"
-                  as="/posts/blog"
-                  className={
-                    'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal ' +
-                    (pathname === '/posts/blog'
-                      ? 'text-black dark:text-white'
-                      : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
-                  }
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/contact"
-                  className={
-                    'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal ' +
-                    (pathname === '/contact'
-                      ? 'text-black dark:text-white'
-                      : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
-                  }
-                >
-                  Contact
-                </Link> */}
               </div>
             </div>
-            <div className="relative flex items-center">
+            <div className="relative flex gap-3 items-center">
               <button
                 className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-3 py-2"
                 onClick={() => setShowModal(!showModal)}
@@ -186,8 +178,8 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-2 px-3 rounded-full bg-dark-800 hover:bg-dark-700 transition duration-300">
-                  <div className="text-dark-200 group-hover:text-white p-0">
+                <div className="flex py-2 px-3 rounded-full border border-dark-900 hover:border-dark-300 bg-white hover:bg-dark-900 transition duration-300">
+                  <div className="text-dark-900 group-hover:text-white p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -203,12 +195,12 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="hidden text-white group-hover:text-white text-xs">
+                  <div className="flex items-center px-3 text-dark-900 group-hover:text-white text-xs">
                     Account
                   </div>
                 </div>
               </button>
-              <Dropdown state={showDropdown} close={closeDropdown}>
+              <Dropdown state={showDropdown}>
                 <AccountDropwdown />
               </Dropdown>
             </div>
@@ -221,6 +213,113 @@ const Header = () => {
       <Left state={showLeft} close={closeLeft} width="320px">
         <SideNav />
       </Left>
+      <motion.div
+        initial={initial}
+        animate={showNavigation === true ? 'open' : 'close'}
+        variants={variants}
+        transition={{ duration: 0.5 }}
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-dark-900/25 backdrop-blur-lg"
+      >
+        <div className="bg-dark-900/90 z-100 mt-[60px]">
+          <div className="max-w-screen-xl mx-auto px-3">
+            <div className="grid grid-cols-12">
+              <div className="col-span-12 lg:col-span-3">
+                <div className="py-5">
+                  <div className="text-dark-400 text-sm mb-5">Navigation</div>
+                  <Link
+                    href="/components"
+                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                  >
+                    Components
+                  </Link>
+                  <Link
+                    href="/metaverse"
+                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                  >
+                    Metaverse
+                  </Link>
+                  <Link
+                    href="/posts/blog"
+                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                  >
+                    Blog
+                  </Link>
+                </div>
+              </div>
+              <div className="col-span-12 lg:col-span-9">
+                <div className="flex flex-wrap gap-10">
+                  <div className="py-3 lg:py-5  px-3 lg:px-5">
+                    <div className="text-dark-400 text-sm mb-5">Social</div>
+                    <a
+                      href=""
+                      target="_blank"
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      Github
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      Facebook
+                    </a>
+                    <a
+                      href=""
+                      target="_blank"
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      Twitter
+                    </a>
+                  </div>
+                  <div className="py-3 lg:py-5  px-3 lg:px-5">
+                    <div className="text-dark-400 text-sm mb-5">
+                      Family Site
+                    </div>
+                    <a
+                      href=""
+                      target="_blank"
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      Rhymix Store
+                    </a>
+                    <a
+                      href="http://xeant.com"
+                      target="_blank"
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      XEANT
+                    </a>
+                  </div>
+                  <div className="py-3 lg:py-5  px-3 lg:px-5">
+                    <div className="text-dark-400 text-sm mb-5">
+                      Gjworks.dev?
+                    </div>
+                    <Link
+                      href=""
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      공지사항
+                    </Link>
+                    <Link
+                      href=""
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      소개
+                    </Link>
+                    <Link
+                      href=""
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      License
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
     </>
   )
 }

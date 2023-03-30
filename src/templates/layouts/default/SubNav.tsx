@@ -17,11 +17,11 @@ const SubNav = ({}) => {
     <>
       <div className="sticky top-[60px] z-[90] bg-dark-900/25 backdrop-blur-lg">
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex gap-8 px-3">
+          <div>
             {nav.header &&
               Object.entries(nav.header).map((data, index) => {
                 return (
-                  <>
+                  <div className="flex gap-8 px-3" key={index}>
                     {pathname === data[1].route &&
                       Object.entries(data[1].subMenu).map((data2, index2) => {
                         return (
@@ -39,7 +39,7 @@ const SubNav = ({}) => {
                           </Link>
                         )
                       })}
-                  </>
+                  </div>
                 )
               })}
           </div>

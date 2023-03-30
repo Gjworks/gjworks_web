@@ -33,8 +33,8 @@ const Layout = ({ children }) => {
   return (
     <motion.div className="selection:text-black selection:bg-white">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
-      <div className="relative z-20 py-2 lg:py-5">
-        <div className="sticky top-0 backdrop-blur-lg px-0 z-[100]">
+      <div className="relative z-20">
+        <div className="sticky top-0 px-0 z-101">
           <Header />
           <SubNav />
         </div>

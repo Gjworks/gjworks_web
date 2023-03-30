@@ -32,7 +32,7 @@ const Page = () => {
   return (
     <>
       <div className="relative">
-        <div className="sticky top-0 pt-10 border-b border-dark-800 bg-dark-900/25 backdrop-blur-lg">
+        <div className="sticky top-0 pt-10 border-b border-dark-700 bg-dark-900/25 backdrop-blur-lg">
           <div className="max-w-screen-2xl mx-auto px-3">
             <div className="">
               <div className="flex flex-wrap items-center gap-4 mb-5">
