@@ -17,16 +17,16 @@ const Page = () => {
               </div>
             </div>
             <div className="flex pt-3">
-              <div className="text-sm py-2 px-5 cursor-pointer border-b border-indigo-500 text-white -mb-[1px]">
+              <div className="text-sm py-2 px-5 cursor-pointer border-b border-orange-500 text-white -mb-[1px]">
                 기본정보
               </div>
-              <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-indigo-500 hover:text-white -mb-[1px]">
+              <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-white -mb-[1px]">
                 작성 글
               </div>
-              <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-indigo-500 hover:text-white -mb-[1px]">
+              <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-white -mb-[1px]">
                 댓글
               </div>
-              <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-indigo-500 hover:text-white -mb-[1px]">
+              <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-white -mb-[1px]">
                 소셜정보
               </div>
             </div>
@@ -58,7 +58,7 @@ const Page = () => {
                         </label>
                         <input
                           type="email"
-                          className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-indigo-500"
+                          className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-orange-500"
                         ></input>
                         <div className="text-sm text-dark-400 pt-2">
                           기본로그인이며 계정정보를 찾을 때 사용됩니다.
@@ -72,7 +72,7 @@ const Page = () => {
                         </label>
                         <input
                           type=""
-                          className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-indigo-500"
+                          className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-orange-500"
                         ></input>
                         <div className="text-sm text-dark-400 pt-2">
                           닉네임은 중복될 수 없는 이름입니다.
@@ -88,7 +88,7 @@ const Page = () => {
                         </label>
                         <input
                           type=""
-                          className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-indigo-500"
+                          className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-orange-500"
                         ></input>
                         <div className="text-sm text-dark-400 pt-2">
                           비밀번호는 암호화 되어 저장됩니다.
@@ -121,7 +121,7 @@ const Page = () => {
                         </label>
                         <label className="m-0">
                           <input type="checkbox" className="peer hidden" />
-                          <div className="block relative rounded-full cursor-pointer bg-dark-600 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-dark-500 dark:after:bg-dark-500 after:transition-all peer-checked:bg-indigo-500 after:peer-checked:translate-x-6 "></div>
+                          <div className="block relative rounded-full cursor-pointer bg-dark-600 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-dark-500 dark:after:bg-dark-500 after:transition-all peer-checked:bg-orange-500 after:peer-checked:translate-x-6 "></div>
                         </label>
                         <div className="text-sm text-dark-400 pt-2">
                           기본로그인이며 계정정보를 찾을 때 사용됩니다.
@@ -163,7 +163,7 @@ const Page = () => {
                         <label>
                           <div className="text-sm text-white mb-3">메모</div>
                         </label>
-                        <textarea className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-indigo-500"></textarea>
+                        <textarea className="text-white outline-none py-2 px-4 text-sm border-b border-dark-700 w-full bg-dark-800/25 focus:border-orange-500"></textarea>
                       </div>
                     </div>
                   </div>
@@ -174,7 +174,7 @@ const Page = () => {
               <div className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md">
                 뒤로가기
               </div>
-              <div className="px-5 py-2 text-sm text-white bg-indigo-500 rounded-md">
+              <div className="px-5 py-2 text-sm text-white bg-orange-500 rounded-md">
                 저장하기
               </div>
             </div>

@@ -44,13 +44,13 @@ const Page = () => {
             <div className="flex pt-3">
               <Link
                 href="#"
-                className="text-sm py-2 px-5 cursor-pointer border-b border-indigo-500 text-white -mb-[1px]"
+                className="text-sm py-2 px-5 cursor-pointer border-b border-orange-500 text-white -mb-[1px]"
               >
                 회원 목록
               </Link>
               <Link
                 href="#"
-                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-indigo-500 hover:text-white -mb-[1px]"
+                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-white -mb-[1px]"
               >
                 관리자 계정
               </Link>
@@ -168,7 +168,7 @@ const Page = () => {
                             <td className="text-dark-300 text-xs py-3 px-3 text-center">
                               <Link
                                 href={`/dashboard/member/update/${item[1].id}`}
-                                className="text-indigo-500 underline"
+                                className="text-orange-500 underline"
                               >
                                 조회/수정
                               </Link>
@@ -191,7 +191,7 @@ const Page = () => {
                 </div>
                 <div className="col-span-2 xl:col-span-1 flex items-center justify-end gap-2 ">
                   <Link
-                    className="py-2 px-5 text-white rounded text-sm bg-indigo-500 hover:bg-indigo-600"
+                    className="py-2 px-5 text-white rounded text-sm bg-orange-500 hover:bg-orange-600"
                     href="/dashboard/member/create"
                   >
                     회원추가

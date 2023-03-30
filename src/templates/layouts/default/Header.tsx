@@ -244,41 +244,18 @@ const Header = () => {
                   >
                     Blog
                   </Link>
+                  <Link
+                    href="/contact"
+                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                  >
+                    Contact us
+                  </Link>
                 </div>
               </div>
               <div className="col-span-12 lg:col-span-9">
                 <div className="flex flex-wrap gap-10">
                   <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-dark-400 text-sm mb-5">Social</div>
-                    <a
-                      href=""
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
-                    >
-                      Github
-                    </a>
-                    <a
-                      href=""
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
-                    >
-                      Facebook
-                    </a>
-                    <a
-                      href=""
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
-                    >
-                      Twitter
-                    </a>
-                  </div>
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-dark-400 text-sm mb-5">
-                      Family Site
-                    </div>
+                    <div className="text-dark-400 text-sm mb-5">Service</div>
                     <a
                       href=""
                       target="_blank"
@@ -287,30 +264,30 @@ const Header = () => {
                     >
                       Rhymix Store
                     </a>
-                    <a
-                      href="http://xeant.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
-                    >
-                      XEANT
-                    </a>
-                  </div>
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-dark-400 text-sm mb-5">
-                      Gjworks.dev?
-                    </div>
                     <Link
                       href=""
                       className="block text-white text-sm mb-3 hover:text-dark-200"
                     >
-                      공지사항
+                      Documentations
+                    </Link>
+                    <Link
+                      href=""
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    ></Link>
+                  </div>
+                  <div className="py-3 lg:py-5  px-3 lg:px-5">
+                    <div className="text-dark-400 text-sm mb-5">&#x2004;</div>
+                    <Link
+                      href=""
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      Notice
                     </Link>
                     <Link
                       href=""
                       className="block text-white text-sm mb-3 hover:text-dark-200"
                     >
-                      소개
+                      History
                     </Link>
                     <Link
                       href=""
@@ -318,6 +295,25 @@ const Header = () => {
                     >
                       License
                     </Link>
+                  </div>
+                  <div className="py-3 lg:py-5  px-3 lg:px-5">
+                    <div className="text-dark-400 text-sm mb-5">Projects</div>
+                    <a
+                      href="https://github.com/gjworks"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                    >
+                      Github
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-12 pt-3 pb-4 border-t border-dark-700">
+                <div className="flex flex-wrap gap-4">
+                  <div className="font-bold text-sm text-white">Notice!!</div>
+                  <div className="text-dark-300 text-sm">
+                    React, Next버전 및 라이믹스 전용 레이아웃 출시!
                   </div>
                 </div>
               </div>

@@ -38,7 +38,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative">
-        <motion.div className="relative pt-20 xl:pt-10 overflow-hidden">
+        <motion.div className="relative pt-20 xl:py-20 overflow-hidden">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -56,7 +56,8 @@ export default function Page() {
                 variants={variants}
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-white"
               >
-                Build web and app <br></br>quickly and simply
+                <span className="text-dark-900 bg-white">Build</span> web and
+                app <br></br>quickly and simply
               </motion.div>
               <motion.div
                 variants={variants}
