@@ -64,7 +64,7 @@ const Header = () => {
   }
   return (
     <>
-      <header className="relative bg-dark-900/90 backdrop-blur-lg z-101">
+      <header className="relative bg-dark-900/75 backdrop-blur-lg z-101">
         <div className=" max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center py-3 pr-3">
             <div className="flex items-center justify-center">
@@ -178,15 +178,15 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-2 px-3 rounded-full border border-dark-900 hover:border-dark-300 bg-white hover:bg-dark-900 transition duration-300">
+                <div className="flex py-[6px] px-3 rounded-full border border-dark-900 hover:border-dark-300 bg-white hover:bg-transparent transition duration-300">
                   <div className="text-dark-900 group-hover:text-white p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      strokeWidth={1.5}
+                      strokeWidth={1}
                       stroke="currentColor"
-                      className="w-5 h-5"
+                      className="w-4 h-4"
                     >
                       <path
                         strokeLinecap="round"
@@ -220,7 +220,7 @@ const Header = () => {
         transition={{ duration: 0.5 }}
         className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-dark-900/25 backdrop-blur-lg"
       >
-        <div className="bg-dark-900/90 z-100 mt-[60px]">
+        <div className="bg-dark-900/75 z-100 mt-[60px]">
           <div className="max-w-screen-xl mx-auto px-3">
             <div className="grid grid-cols-12">
               <div className="col-span-12 lg:col-span-3">
