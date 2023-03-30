@@ -253,6 +253,7 @@ const Header = () => {
                     <a
                       href=""
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="block text-white text-sm mb-3 hover:text-dark-200"
                     >
                       Github
@@ -260,6 +261,7 @@ const Header = () => {
                     <a
                       href=""
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="block text-white text-sm mb-3 hover:text-dark-200"
                     >
                       Facebook
@@ -267,6 +269,7 @@ const Header = () => {
                     <a
                       href=""
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="block text-white text-sm mb-3 hover:text-dark-200"
                     >
                       Twitter
@@ -279,6 +282,7 @@ const Header = () => {
                     <a
                       href=""
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="block text-white text-sm mb-3 hover:text-dark-200"
                     >
                       Rhymix Store
@@ -286,6 +290,7 @@ const Header = () => {
                     <a
                       href="http://xeant.com"
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="block text-white text-sm mb-3 hover:text-dark-200"
                     >
                       XEANT
