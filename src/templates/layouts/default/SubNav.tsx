@@ -15,7 +15,7 @@ const SubNav = ({}) => {
 
   return (
     <>
-      <div className="sticky top-[60px] z-[90] bg-dark-900/25 backdrop-blur-lg">
+      <div className="hidden sticky top-[60px] z-[50] bg-dark-700/50 backdrop-blur-lg border-b border-dark-600">
         <div className="max-w-screen-xl mx-auto">
           <div>
             {nav.header &&

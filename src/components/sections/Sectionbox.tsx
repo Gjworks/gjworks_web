@@ -29,7 +29,7 @@ const Sectionbox: React.FC<SectionData> = props => {
               }
             ></div>
           </div>
-          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-800/25 via-dark-800/50 to-dark-800"></div>
+          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-700/25 via-dark-800/50 to-dark-900"></div>
           <div className="relative h-40"></div>
         </div>
         <div className="relative px-5 -mt-10">

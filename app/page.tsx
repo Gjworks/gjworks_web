@@ -104,15 +104,15 @@ export default function Page() {
               variants={variants}
               className="text-3xl font-medium text-white mb-8"
             >
-              심플하면서도 강력한 관리자 화면을 제공합니다.
+              심플하면서도 강력한 기능을 제공합니다.
             </motion.div>
             <motion.div
               variants={variants}
               className="text-base text-dark-300 text-center"
             >
-              회원관리와 게시판관리 문의하기.. 그리고 채팅과 앱과의 연동등
-              다양한 기능을 제공을 기본적으로 제공하고 있습니다. 최신 트렌드에
-              맞는 관리자 디자인과 편리함을 한번에 느껴보시기 바랍니다.
+              회원관리와 게시판관리 문의하기 그리고 채팅과 앱과의 연동등 다양한
+              기능을 제공을 기본적으로 제공하고 있습니다. 최신 트렌드에 맞는
+              관리자 디자인과 편리함을 한번에 느껴보시기 바랍니다.
             </motion.div>
           </motion.div>
         </div>

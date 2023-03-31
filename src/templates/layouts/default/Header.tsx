@@ -49,24 +49,31 @@ const Header = () => {
       y: 0,
       display: 'block',
       transition: {
-        duration: 0.5,
+        duration: 0.3,
         delayChildren: 0.1,
         staggerChildren: 0.1,
       },
     },
     close: {
       opacity: 0,
-      y: '-5%',
+      duration: 0.5,
       transitionEnd: {
+        y: '-2%',
         display: 'none',
       },
     },
   }
   return (
     <>
-      <header className="relative bg-dark-900/75 backdrop-blur-lg z-101">
+      <motion.header
+        transition={{ duration: 0.3 }}
+        className={
+          'relative backdrop-blur-lg z-101' +
+          (showNavigation === true ? ' bg-dark-800/80 ' : 'bg-dark-900/80')
+        }
+      >
         <div className=" max-w-screen-xl mx-auto">
-          <div className="flex justify-between items-center py-3 pr-3">
+          <div className="flex justify-between items-center py-2 pr-3">
             <div className="flex items-center justify-center">
               <button
                 onClick={() => setShowLeft(!showLeft)}
@@ -206,7 +213,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
       <Modal state={showModal} close={closeModal}>
         <SearchForm />
       </Modal>
@@ -217,10 +224,10 @@ const Header = () => {
         initial={initial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={variants}
-        transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-dark-900/25 backdrop-blur-lg"
+        transition={{ duration: 0.3 }}
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg"
       >
-        <div className="bg-dark-900/75 z-100 mt-[60px]">
+        <div className="bg-dark-800/80 z-100 mt-[52px] border-b border-dark-700">
           <div className="max-w-screen-xl mx-auto px-3">
             <div className="grid grid-cols-12">
               <div className="col-span-12 lg:col-span-3">
@@ -306,14 +313,6 @@ const Header = () => {
                     >
                       Github
                     </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-span-12 pt-3 pb-4 border-t border-dark-700">
-                <div className="flex flex-wrap gap-4">
-                  <div className="font-bold text-sm text-white">Notice!!</div>
-                  <div className="text-dark-300 text-sm">
-                    React, Next버전 및 라이믹스 전용 레이아웃 출시!
                   </div>
                 </div>
               </div>

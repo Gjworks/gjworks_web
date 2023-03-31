@@ -9,16 +9,11 @@
   }
   html {
     -webkit-overflow-scrolling: touch;
-    @apply min-h-full;
     @apply bg-dark-900
   }
   html.dark, html.dark body {
     -webkit-overflow-scrolling: touch;
-    @apply min-h-full;
     @apply bg-dark-900
-  }
-  html, body {
-    @apply h-full
   }
   h1 {
     @apply text-5xl;
