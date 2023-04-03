@@ -53,9 +53,9 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-white"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-gray-900 dark:text-white"
               >
-                <span className="text-dark-900 bg-white">Build</span> web and
+                <span className="text-white bg-gray-900">Build</span> web and
                 app <br></br>quickly and simply
               </motion.div>
               <motion.div
@@ -90,7 +90,7 @@ export default function Page() {
               <div className="relative">
                 <SafariBrower />
               </div>
-              <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-dark-900/25 via-dark-900/50 to-dark-900"></div>
+              <div className="absolute inset-0 overflow-hidden bg-gradient-to-b dark:from-dark-900/25 dark:via-dark-900/50 dark:to-dark-900"></div>
             </motion.div>
           </div>
           <motion.div
@@ -102,13 +102,13 @@ export default function Page() {
           >
             <motion.div
               variants={variants}
-              className="text-3xl font-medium text-white mb-8"
+              className="text-3xl font-medium text-black dark:text-white mb-8"
             >
               심플하면서도 강력한 기능을 제공합니다.
             </motion.div>
             <motion.div
               variants={variants}
-              className="text-base text-dark-300 text-center"
+              className="text-base text-gray-500 dark:text-dark-300 text-center"
             >
               회원관리와 게시판관리 문의하기 그리고 채팅과 앱과의 연동등 다양한
               기능을 제공을 기본적으로 제공하고 있습니다. 최신 트렌드에 맞는
@@ -126,9 +126,9 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-dark-700 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-slate-100 dark:bg-dark-700 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
-                <div className="text-2xl font-bold text-white mb-5">
+                <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Web UI Components
                 </div>
                 <div className="text-sm text-dark-300 mb-10">
@@ -138,9 +138,9 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="bg-dark-800 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-white border border-slate-200 dark:bg-dark-800 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
-                <div className="text-2xl font-bold text-white mb-5">
+                <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Metaverse Platform
                 </div>
                 <div className="text-sm text-dark-300 mb-10">
@@ -150,22 +150,28 @@ export default function Page() {
                 </div>
                 <div className="">
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="text-xs text-white w-12">DB</div>
-                    <div className="relative flex-1 bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                    <div className="text-xs text-black dark:text-white w-12">
+                      DB
+                    </div>
+                    <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
                       <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-primary-500 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 60%</div>
                   </div>
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="text-xs text-white w-12">Front</div>
-                    <div className="relative flex-1 bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                    <div className="text-xs text-black dark:text-white w-12">
+                      Front
+                    </div>
+                    <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
                       <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-primary-500 rounded-full"></motion.div>
                     </div>
                     <div className="text-xs text-white"> 20%</div>
                   </div>
                   <div className="flex items-center gap-4 mb-5">
-                    <div className="text-xs text-white w-12">Server</div>
-                    <div className="relative flex-1 bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                    <div className="text-xs text-black dark:text-white w-12">
+                      Server
+                    </div>
+                    <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
                       <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-primary-500 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 30%</div>
@@ -319,7 +325,7 @@ export default function Page() {
             >
               <Link
                 href="/contact"
-                className="border border-white rounded-full py-1 px-10 text-white text-base hover:bg-white hover:text-black"
+                className="border border-gray-900 dark:border-white rounded-full py-1 px-10 text-black dark:text-white text-base hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black"
               >
                 Contact us
               </Link>

@@ -57,7 +57,7 @@ class Footer extends React.Component {
                 >
                   <Link href="/" className="flex items-center">
                     <Image
-                      src="/assets/images/brand/gjworks_white.svg"
+                      src="/assets/images/brand/gjworks.svg"
                       alt="gjworks logo"
                       width="32"
                       height="32"

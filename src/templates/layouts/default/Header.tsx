@@ -69,7 +69,9 @@ const Header = () => {
         transition={{ duration: 0.3 }}
         className={
           'relative backdrop-blur-lg z-101' +
-          (showNavigation === true ? ' bg-dark-800/80 ' : 'bg-dark-900/80')
+          (showNavigation === true
+            ? ' bg-white/80 dark:bg-dark-900/80 '
+            : ' dark:bg-dark-900/80 bg-white/80')
         }
       >
         <div className=" max-w-screen-xl mx-auto">
@@ -185,8 +187,8 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-[6px] px-3 rounded-full border border-dark-900 hover:border-dark-300 bg-white hover:bg-transparent transition duration-300">
-                  <div className="text-dark-900 group-hover:text-white p-0">
+                <div className="flex py-[6px] px-3 rounded-full border border-gray-900 dark:border-dark-900 hover:border-dark-300 bg-gray-900 dark:bg-white hover:bg-white transition duration-300">
+                  <div className="text-white dark:text-dark-900 group-hover:text-gray-900 dark:group-hover:text-white p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -202,7 +204,7 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="flex items-center px-3 text-dark-900 group-hover:text-white text-xs">
+                  <div className="flex items-center px-3 text-white dark:text-dark-900 group-hover:text-gray-900 dark:group-hover:text-white text-xs">
                     Account
                   </div>
                 </div>
@@ -225,35 +227,37 @@ const Header = () => {
         animate={showNavigation === true ? 'open' : 'close'}
         variants={variants}
         transition={{ duration: 0.3 }}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-gray-400/25"
       >
-        <div className="bg-dark-800/80 z-100 mt-[52px] border-b border-dark-700">
+        <div className="bg-white/80 dark:bg-dark-800/80 z-100 mt-[52px] border-b border-gray-50 dark:border-dark-700 pb-8">
           <div className="max-w-screen-xl mx-auto px-3">
             <div className="grid grid-cols-12">
               <div className="col-span-12 lg:col-span-3">
                 <div className="py-5">
-                  <div className="text-dark-400 text-sm mb-5">Navigation</div>
+                  <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                    Navigation
+                  </div>
                   <Link
                     href="/components"
-                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
                   >
                     Components
                   </Link>
                   <Link
                     href="/metaverse"
-                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
                   >
                     Metaverse
                   </Link>
                   <Link
                     href="/posts/blog"
-                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
                   >
                     Blog
                   </Link>
                   <Link
                     href="/contact"
-                    className="text-white text-2xl font-medium mb-3 w-full block hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
                   >
                     Contact us
                   </Link>
@@ -262,54 +266,68 @@ const Header = () => {
               <div className="col-span-12 lg:col-span-9">
                 <div className="flex flex-wrap gap-10">
                   <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-dark-400 text-sm mb-5">Service</div>
+                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                      Sitemap
+                    </div>
+                    <Link
+                      href=""
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                    >
+                      개발문서
+                    </Link>
+                    <Link
+                      href=""
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                    >
+                      교육
+                    </Link>
+                    <Link
+                      href=""
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                    >
+                      유지보수/관리
+                    </Link>
+                  </div>
+                  <div className="py-3 lg:py-5  px-3 lg:px-5">
+                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                      Store
+                    </div>
                     <a
                       href=""
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                     >
-                      Rhymix Store
+                      XE/라이믹스 스토어
                     </a>
                     <Link
                       href=""
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                     >
-                      Documentations
+                      도메인 등록
                     </Link>
                     <Link
                       href=""
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
-                    ></Link>
-                  </div>
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-dark-400 text-sm mb-5">&#x2004;</div>
-                    <Link
-                      href=""
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                     >
-                      Notice
+                      세금계산서 신청
                     </Link>
                     <Link
                       href=""
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                     >
-                      History
-                    </Link>
-                    <Link
-                      href=""
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
-                    >
-                      License
+                      파트너 신청
                     </Link>
                   </div>
                   <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-dark-400 text-sm mb-5">Projects</div>
+                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                      Projects
+                    </div>
                     <a
                       href="https://github.com/gjworks"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-white text-sm mb-3 hover:text-dark-200"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                     >
                       Github
                     </a>

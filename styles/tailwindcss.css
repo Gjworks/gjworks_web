@@ -7,9 +7,9 @@
   *{
     @apply tracking-wide;
   }
-  html {
+  html, html body {
     -webkit-overflow-scrolling: touch;
-    @apply bg-dark-900
+    @apply bg-white;
   }
   html.dark, html.dark body {
     -webkit-overflow-scrolling: touch;

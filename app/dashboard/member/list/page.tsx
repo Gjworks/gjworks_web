@@ -32,11 +32,11 @@ const Page = () => {
   return (
     <>
       <div className="relative">
-        <div className="sticky top-0 pt-10 border-b border-dark-700 bg-dark-900/25 backdrop-blur-lg">
+        <div className="sticky top-0 pt-10 border-b bg-slate-200 dark:border-dark-700 bg-white/80 dark:bg-dark-900/25 backdrop-blur-lg">
           <div className="max-w-screen-2xl mx-auto px-3">
             <div className="">
               <div className="flex flex-wrap items-center gap-4 mb-5">
-                <div className="text-white text-2xl font-semibold">
+                <div className="text-black dark:text-white text-2xl font-semibold">
                   회원 설정
                 </div>
               </div>
@@ -44,19 +44,20 @@ const Page = () => {
             <div className="flex pt-3">
               <Link
                 href="#"
-                className="text-sm py-2 px-5 cursor-pointer border-b border-orange-500 text-white -mb-[1px]"
+                className="text-sm py-2 px-5 cursor-pointer border-b border-orange-500 text-black dark:text-white -mb-[1px]"
               >
                 회원 목록
               </Link>
               <Link
                 href="#"
-                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-white -mb-[1px]"
+                className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-slate-600 dark:hover:text-white -mb-[1px]"
               >
                 관리자 계정
               </Link>
             </div>
           </div>
         </div>
+        <div></div>
         <div className="py-10">
           <div className="max-w-screen-2xl mx-auto px-3">
             <div className="">
@@ -66,8 +67,8 @@ const Page = () => {
                 </div>
                 <div className="flex-1"></div>
                 <div className="flex items-center w-full lg:w-auto">
-                  <div className="flex items-center bg-dark-800 focus:bg-dark-700 hover:bg-dark-700 rounded-md overflow-hidden w-full lg:w-auto px-3">
-                    <select className="bg-transparent py-2 text-dark-200 px-3 outline-none text-sm rounded-md">
+                  <div className="flex items-center bg-slate-100 dark:bg-dark-800 dark:focus:bg-dark-700 dark:hover:bg-dark-700 rounded-md overflow-hidden w-full lg:w-auto px-3">
+                    <select className="bg-transparent py-2 text-slate-600 dark:text-dark-200 px-3 outline-none text-sm rounded-md">
                       <option value="">이메일</option>
                       <option value="">닉네임</option>
                     </select>
@@ -97,7 +98,7 @@ const Page = () => {
               <div className="">
                 <table className="w-full">
                   <thead>
-                    <tr className="bg-black bg-opacity-50 backdrop-blur-lg">
+                    <tr className="bg-slate-200 dark:bg-black bg-opacity-50 backdrop-blur-lg">
                       <th
                         scope="col"
                         className="text-xs text-dark-300 uppercase py-2 px-3 w-32"
@@ -148,7 +149,7 @@ const Page = () => {
                         return (
                           <tr
                             key={index}
-                            className="border-b border-dark-700 hover:bg-dark-500 hover:bg-opacity-25"
+                            className="border-b border-slate-200 dark:border-dark-700 hover:bg-slate-200 dark:hover:bg-dark-500 hover:bg-opacity-25"
                           >
                             <td className="text-dark-300 text-xs py-3 px-3 text-center">
                               1

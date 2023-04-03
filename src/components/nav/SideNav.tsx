@@ -15,7 +15,7 @@ const SideNav = props => {
   return (
     <>
       <motion.div className="relative overflow-hidden h-full">
-        <div className="absolute top-0 w-[320px] bottom-0 overflow-y-auto h-full pb-[80px]">
+        <div className="absolute top-0 w-[320px] bottom-0 overflow-y-auto h-full pb-[80px] bg-white/80 dark:bg-dark-800/80">
           <motion.div
             className="flex justify-center items-center py-12"
             initial={{ opacity: 0, x: '-50%' }}
@@ -26,7 +26,7 @@ const SideNav = props => {
               className="flex items-center"
             >
               <Image
-                src="/assets/images/brand/gjworks_white.svg"
+                src="/assets/images/brand/gjworks.svg"
                 alt="gjworks logo"
                 width="64"
                 height="64"
@@ -55,7 +55,7 @@ const SideNav = props => {
                     href={data[1].route}
                     key={data[1].name}
                     className={
-                      'block py-2 px-1 lg:px-3 mx-2 text-sm lg:text-base font-normal uppercase ' +
+                      'block py-2 px-1 lg:px-3 mx-2 text-base font-normal uppercase ' +
                       (pathname === data[1].route
                         ? 'text-black dark:text-white'
                         : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
@@ -67,7 +67,7 @@ const SideNav = props => {
               })}
           </motion.div>
           <motion.div
-            className="text-xs text-gray-900 dark:text-dark-200 text-center lg:text-left px-3 pb-10"
+            className="text-xs text-slate-500 dark:text-dark-200 text-center lg:text-left px-3 pb-10"
             initial={{ opacity: 0, x: '-50%' }}
             animate={{ opacity: 1, x: '0%', transition: { duration: 0.9 } }}
           >
@@ -76,30 +76,30 @@ const SideNav = props => {
         </div>
 
         <motion.div
-          className="fixed bottom-0 bg-gray-300/25 dark:bg-dark-600/25 backdrop-blur-lg py-5 w-[320px] px-3"
+          className="fixed bottom-0 bg-slate-300/25 dark:bg-dark-600/25 backdrop-blur-lg py-5 w-[320px] px-3"
           initial={{ opacity: 0, y: '20%' }}
           animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
         >
           <div className="flex">
             <div className="flex items-center pr-3">
-              <div className="block w-8 h-8 rounded-full bg-gray-300 dark:bg-dark-400"></div>
+              <div className="block w-8 h-8 rounded-full bg-slate-300 dark:bg-dark-400"></div>
             </div>
             <div className="flex-1">
               {session.status === 'authenticated' ? (
                 <>
-                  <div className="text-sm font-semibold mb-1 text-gray-500 dark:text-dark-100">
+                  <div className="text-sm font-semibold mb-1 text-slate-500 dark:text-dark-100">
                     {session.data?.user.nickname}
                   </div>
-                  <div className="text-xs text-gray-400 dark:text-dark-300">
+                  <div className="text-xs text-slate-400 dark:text-dark-300">
                     {session.data?.user.email}
                   </div>
                 </>
               ) : (
                 <>
-                  <div className="text-sm font-semibold mb-1 text-gray-500 dark:text-dark-100">
+                  <div className="text-sm font-semibold mb-1 text-slate-500 dark:text-dark-100">
                     Account
                   </div>
-                  <div className="text-xs text-gray-400 dark:text-dark-300">
+                  <div className="text-xs text-slate-400 dark:text-dark-300">
                     Sign in or Sign up
                   </div>
                 </>
@@ -108,7 +108,7 @@ const SideNav = props => {
             {session.status === 'authenticated' ? (
               <Link
                 href="/user/Account"
-                className="flex items-center px-3 rounded-lg bg-gray-300 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-800 dark:text-dark-400 dark:hover:text-white cursor-pointer"
+                className="flex items-center px-3 rounded-lg bg-slate-300 hover:bg-slate-200 dark:bg-dark-900 dark:hover:bg-dark-800 dark:text-dark-400 dark:hover:text-white cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ const SideNav = props => {
             ) : (
               <Link
                 href="/auth/Signin"
-                className="flex items-center px-3 rounded-lg bg-gray-300 hover:bg-gray-200 dark:bg-dark-600 dark:hover:bg-dark-500 cursor-pointer"
+                className="flex items-center px-3 rounded-lg bg-slate-300 hover:bg-slate-200 dark:bg-dark-600 dark:hover:bg-dark-500 cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
