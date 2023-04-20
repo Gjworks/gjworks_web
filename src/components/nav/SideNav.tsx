@@ -9,7 +9,6 @@ import nav from 'src/res/config/navigation.json'
 
 const SideNav = props => {
   const pathname = usePathname()
-  console.log(props)
   const session = useSession()
 
   return (

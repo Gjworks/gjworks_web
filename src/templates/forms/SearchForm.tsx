@@ -39,10 +39,21 @@ const SearchForm = () => {
           }}
         >
           <div className="flex items-center gap-4">
-            <div className="text-slate-700 dark:text-dark-100 text-xs pr-4">
-              인기
+            <div className="text-slate-500 dark:text-dark-100 text-xs">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.25 2.25a3 3 0 00-3 3v4.318a3 3 0 00.879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 005.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 00-2.122-.879H5.25zM6.375 7.5a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z"
+                  clipRule="evenodd"
+                />
+              </svg>
             </div>
-            <div className="flex bg-slate-200 dark:bg-dark-600 py-1 px-1 text-xs rounded-sm hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
+            <div className="flex bg-slate-300 dark:bg-dark-600 py-1 px-1 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -61,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-slate-200 dark:bg-dark-600 py-1 px-3 text-xs rounded-sm hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
+            <div className="flex bg-slate-300 dark:bg-dark-600 py-1 px-3 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
@@ -94,21 +105,21 @@ const SearchForm = () => {
           <div className="text-sm font-semibold mb-3 text-slate-700 dark:text-primary-500">
             검색기록
           </div>
-          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-500 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-400 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">tailwind 설정하는 방법</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-500 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-400 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">Prisma Create Schemas</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm text-slate-500 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm text-slate-400 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">postfix 메일 설정</div>
             <div>22.05.23</div>
           </div>
         </motion.div>
       </div>
-      <div className="px-3 pt-2 bg-slate-200/75 dark:bg-dark-600/40 backdrop-blur-lg">
+      <div className="px-3 pt-2 bg-slate-200 dark:bg-dark-600/40 backdrop-blur-lg">
         <motion.div
           className="pt-2 pb-5 px-3"
           initial={{ opacity: 0, y: '20%' }}

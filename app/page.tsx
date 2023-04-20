@@ -180,13 +180,13 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-primary-600 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-indigo-400 to-sky-500 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
                     Next<br></br>Project??
                   </div>
-                  <div className="w-full text-sm text-primary-300 mb-10 text-center">
+                  <div className="w-full text-sm text-white mb-10 text-center">
                     저희는 현재 개발에서 멈추지 않고 미래를 위한 개발과 투자를
                     하고 있습니다. 다음 프로젝트에 대해 의견을 주시면
                     감사하겠습니다.
@@ -307,13 +307,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-indigo-300 to-orange-300 text-center pt-20 mb-3"
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-pink-400 via-indigo-400 to-sky-400 text-center pt-20 mb-3"
                 >
                   WE ARE CRATEIVE
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-indigo-300 to-orange-300 text-center mb-10"
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-pink-400 via-indigo-400 to-sky-400 text-center mb-10"
                 >
                   Responsive everything.
                 </motion.div>

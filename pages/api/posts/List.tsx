@@ -17,7 +17,7 @@ export default async function handler(
   //   document = await prisma.document.findMany({})
   // }
 
-  document = await prisma.document.findMany({})
+  // document = await prisma.document.findMany({})
 
   res.status(200).json({ data: document })
 }

@@ -48,7 +48,7 @@ const Modal = ({ state, close, children }) => {
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
-                className="fixed inset-0 transform overflow-auto bg-slate-600/25 dark:bg-dark-700/30 z-90 backdrop-blur-sm px-3"
+                className="fixed inset-0 transform overflow-auto bg-slate-600/50 dark:bg-dark-700/30 z-90 px-3"
               >
                 <div
                   className="absolute inset-0 z-99"

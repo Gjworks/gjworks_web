@@ -103,7 +103,7 @@ const Edit = props => {
                 <div className="space-y-4">
                   <div className="flex text-primary-400">
                     <div className="flex items-center pr-3">
-                      <select className="bg-dark-700 text-white outline-none focus:border-primary-400 border border-dark-600 mb-3 w-full">
+                      <select className="bg-gray-50 border border-gray-300 text-gray-400 outline-none focus:border-primary-400 mb-3 w-full">
                         <option value="">분류</option>
                         <option value="">Developer</option>
                         <option value="">분류</option>
@@ -117,7 +117,7 @@ const Edit = props => {
                       name="title"
                       defaultValue=""
                       placeholder="제목을 입력해주세요."
-                      className="text-white font-light text-3xl w-full bg-transparent border-b border-dark-600 focus:border-dark-500 outline-none p-3"
+                      className="text-black dark:bg-white font-light text-3xl w-full bg-transparent border-b border-gray-300 focus:border-gray-500 outline-none p-3"
                       onChange={onChange}
                       required
                     />
@@ -126,7 +126,7 @@ const Edit = props => {
               </motion.div>
               <div className="grid grid-cols-12 lg:gap-16 xl:gap-8 max-w-5xl">
                 <motion.div
-                  className="col-span-12 lg:col-span-12 xl:col-span-12 text-dark-300 text-base leading-7"
+                  className="col-span-12 lg:col-span-12 xl:col-span-12 text-gray-600 text-base leading-7"
                   initial={{ opacity: 0, y: '20%' }}
                   animate={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
                 >
@@ -135,17 +135,17 @@ const Edit = props => {
                     onChange={setData}
                     holder="editorjs-container"
                   />
-                  <div className="pt-8 border-t border-dark-700">
+                  <div className="pt-8 border-t border-gray-300">
                     <div className="col-span-2 flex justify-end gap-2">
                       <button
                         onClick={event => console.log(event)}
-                        className="bg-dark-700 rounded-sm px-8 py-2 text-dark-300 text-sm hover:text-white hover:bg-dark-600 w-full lg:w-auto"
+                        className="bg-gray-50 rounded-sm px-8 py-2 border border-gray-300 text-gray-400 text-sm hover:text-gray-600 hover:bg-gray-100 w-full lg:w-auto"
                       >
                         Back
                       </button>
                       <button
                         onClick={handleDocumentSubmit}
-                        className="rounded-sm px-8 py-2 bg-primary-600 text-primary-100 text-sm hover:text-white hover:bg-primary-500 w-full lg:w-auto"
+                        className="rounded-sm px-8 py-2 border border-primary-600 bg-primary-600 text-primary-100 text-sm hover:text-white hover:bg-primary-500 w-full lg:w-auto"
                       >
                         Submit
                       </button>

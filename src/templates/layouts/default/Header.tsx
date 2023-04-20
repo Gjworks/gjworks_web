@@ -39,26 +39,75 @@ const Header = () => {
     }
   }, [])
 
+  const headerInitial = {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
+  }
   const initial = {
     opacity: 0,
+    y: '-5%',
+    transition: {
+      duration: 0.5,
+    },
   }
-
-  const variants = {
+  const headerVariants = {
     open: {
       opacity: 1,
-      y: 0,
       display: 'block',
       transition: {
-        duration: 0.3,
-        delayChildren: 0.1,
-        staggerChildren: 0.1,
+        duration: 0.5,
       },
     },
     close: {
       opacity: 0,
-      duration: 0.5,
+      transition: {
+        duration: 0.5,
+      },
       transitionEnd: {
-        y: '-2%',
+        display: 'none',
+      },
+    },
+  }
+  const wrapVariants = {
+    open: {
+      opacity: 1,
+      display: 'block',
+      transition: {
+        duration: 0.5,
+        delay: 0.3,
+      },
+    },
+    close: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.1,
+      },
+      transitionEnd: {
+        display: 'none',
+      },
+    },
+  }
+  const variants = {
+    open: {
+      opacity: 1,
+      y: '5%',
+      display: 'block',
+      transition: {
+        duration: 0.5,
+        delay: 0.3,
+      },
+    },
+    close: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        delay: 0.1,
+        y: '-5%',
+      },
+      transitionEnd: {
         display: 'none',
       },
     },
@@ -223,120 +272,130 @@ const Header = () => {
         <SideNav />
       </Left>
       <motion.div
-        initial={initial}
+        initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
-        variants={variants}
-        transition={{ duration: 0.3 }}
+        variants={headerVariants}
         className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-gray-400/25"
       >
-        <div className="bg-white/80 dark:bg-dark-800/80 z-100 mt-[52px] border-b border-gray-50 dark:border-dark-700 pb-8">
-          <div className="max-w-screen-xl mx-auto px-3">
-            <div className="grid grid-cols-12">
-              <div className="col-span-12 lg:col-span-3">
-                <div className="py-5">
-                  <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
-                    Navigation
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={showNavigation === true ? 'open' : 'close'}
+          variants={wrapVariants}
+          className="bg-white/80 dark:bg-dark-800/80 z-100 mt-[52px] border-b border-gray-50 dark:border-dark-700 pb-8"
+        >
+          <motion.div
+            initial={initial}
+            variants={variants}
+            animate={showNavigation === true ? 'open' : 'close'}
+          >
+            <div className="max-w-screen-xl mx-auto px-3">
+              <div className="grid grid-cols-12">
+                <div className="col-span-12 lg:col-span-3">
+                  <div className="py-5">
+                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                      Navigation
+                    </div>
+                    <Link
+                      href="/components"
+                      className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    >
+                      Components
+                    </Link>
+                    <Link
+                      href="/metaverse"
+                      className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    >
+                      Metaverse
+                    </Link>
+                    <Link
+                      href="/posts/blog"
+                      className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    >
+                      Blog
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    >
+                      Contact us
+                    </Link>
                   </div>
-                  <Link
-                    href="/components"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
-                  >
-                    Components
-                  </Link>
-                  <Link
-                    href="/metaverse"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
-                  >
-                    Metaverse
-                  </Link>
-                  <Link
-                    href="/posts/blog"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
-                  >
-                    Contact us
-                  </Link>
                 </div>
-              </div>
-              <div className="col-span-12 lg:col-span-9">
-                <div className="flex flex-wrap gap-10">
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
-                      Sitemap
+                <div className="col-span-12 lg:col-span-9">
+                  <div className="flex flex-wrap gap-10">
+                    <div className="py-3 lg:py-5  px-3 lg:px-5">
+                      <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                        Sitemap
+                      </div>
+                      <Link
+                        href=""
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        개발문서
+                      </Link>
+                      <Link
+                        href=""
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        교육
+                      </Link>
+                      <Link
+                        href=""
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        유지보수/관리
+                      </Link>
                     </div>
-                    <Link
-                      href=""
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      개발문서
-                    </Link>
-                    <Link
-                      href=""
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      교육
-                    </Link>
-                    <Link
-                      href=""
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      유지보수/관리
-                    </Link>
-                  </div>
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
-                      Store
+                    <div className="py-3 lg:py-5  px-3 lg:px-5">
+                      <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                        Store
+                      </div>
+                      <a
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        XE/라이믹스 스토어
+                      </a>
+                      <Link
+                        href=""
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        도메인 등록
+                      </Link>
+                      <Link
+                        href=""
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        세금계산서 신청
+                      </Link>
+                      <Link
+                        href=""
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        파트너 신청
+                      </Link>
                     </div>
-                    <a
-                      href=""
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      XE/라이믹스 스토어
-                    </a>
-                    <Link
-                      href=""
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      도메인 등록
-                    </Link>
-                    <Link
-                      href=""
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      세금계산서 신청
-                    </Link>
-                    <Link
-                      href=""
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      파트너 신청
-                    </Link>
-                  </div>
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
-                      Projects
+                    <div className="py-3 lg:py-5  px-3 lg:px-5">
+                      <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                        Projects
+                      </div>
+                      <a
+                        href="https://github.com/gjworks"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      >
+                        Github
+                      </a>
                     </div>
-                    <a
-                      href="https://github.com/gjworks"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
-                    >
-                      Github
-                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </motion.div>
     </>
   )
