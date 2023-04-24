@@ -138,7 +138,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="bg-white border border-slate-200 dark:bg-dark-800 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-white border border-slate-200 dark:border-dark-700 dark:bg-dark-800 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Metaverse Platform
@@ -180,7 +180,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-indigo-400 to-sky-500 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-indigo-500 to-sky-500 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">

@@ -76,14 +76,12 @@ const Header = () => {
       display: 'block',
       transition: {
         duration: 0.5,
-        delay: 0.3,
       },
     },
     close: {
       opacity: 0,
       transition: {
         duration: 0.5,
-        delay: 0.1,
       },
       transitionEnd: {
         display: 'none',
@@ -104,7 +102,6 @@ const Header = () => {
       opacity: 0,
       transition: {
         duration: 0.5,
-        delay: 0.1,
         y: '-5%',
       },
       transitionEnd: {
@@ -119,8 +116,8 @@ const Header = () => {
         className={
           'relative backdrop-blur-lg z-101' +
           (showNavigation === true
-            ? ' bg-white/80 dark:bg-dark-900/80 '
-            : ' dark:bg-dark-900/80 bg-white/80')
+            ? ' bg-white/80 dark:bg-dark-900/75 '
+            : ' dark:bg-dark-900/75 bg-white/80')
         }
       >
         <div className=" max-w-screen-xl mx-auto">
@@ -236,7 +233,7 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-[6px] px-3 rounded-full border border-gray-900 dark:border-dark-900 hover:border-dark-300 bg-gray-900 dark:bg-white hover:bg-white transition duration-300">
+                <div className="flex py-[6px] px-3 rounded-full border border-gray-900 dark:border-dark-900 hover:border-dark-300 bg-gray-900 dark:bg-white hover:bg-white dark:hover:bg-transparent dark:hover:border-dark-100 transition duration-300">
                   <div className="text-white dark:text-dark-900 group-hover:text-gray-900 dark:group-hover:text-white p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -275,13 +272,13 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-gray-400/25"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-gray-400/25 dark:bg-dark-700/50"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="bg-white/80 dark:bg-dark-800/80 z-100 mt-[52px] border-b border-gray-50 dark:border-dark-700 pb-8"
+          className="bg-white/80 dark:bg-dark-900/75 z-100 mt-[52px] border-b border-gray-50 dark:border-dark-700 pb-8"
         >
           <motion.div
             initial={initial}

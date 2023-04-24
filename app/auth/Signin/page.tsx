@@ -54,47 +54,92 @@ const Signin = () => {
         <div className="max-w-lg mx-auto p-5">
           <form onSubmit={submitHandler}>
             <div className="py-10 text-center">
-              <div className="text-lg text-dark-500 dark:text-dark-50">
-                Sign in
+              <div className="text-2xl font-semibold text-dark-500 dark:text-dark-50">
+                Request access
+              </div>
+              <div className="dark:text-dark-500 pt-10 text-sm">
+                소셜로그인은 추후에 지원 됩니다. <br></br>일반 회원가입을
+                이용하셔도 모든 서비스를 이용 할 수 있습니다.
               </div>
             </div>
             {formMessage && (
               <div className="py-5">
-                <div className=" text-rose-500 bg-rose-700 bg-opacity-25 py-3 px-3 rounded-sm text-sm">
+                <div className=" text-rose-500 bg-rose-700 bg-opacity-25 py-3 px-3 rounded-sm text-sm ">
                   {formMessage}
                 </div>
               </div>
             )}
-            <div className="flex px-3 mb-5 w-full">
-              <label className="flex items-center w-24 text-dark-400 text-xs">
-                Email
-              </label>
-              <input
-                type="text"
-                ref={emailInputRef}
-                name="email"
-                id="email"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
-                placeholder="What's your Email"
-              />
+            <div className="relative flex mb-5 w-full">
+              <div className="flex items-center w-full text-xs">
+                <div className="relative flex-1">
+                  <input
+                    type="text"
+                    ref={emailInputRef}
+                    name="email"
+                    id="email"
+                    className="text-sm bg-transparent text-dark-500 dark:text-dark-300 focus:text-white py-4 focus:outline-none w-full placeholder-dark-400 dark:placeholder-dark-500 dark:focus:border-dark-300 rounded-lg border border-dark-400 dark:border-dark-600 pr-3 pl-12 appearance-none focus:ring-0 peer"
+                    placeholder=" "
+                  />
+                  <label className="absolute text-sm top-0 bg-dark-900 px-3 left-8 scale-75 -translate-y-3 duration-300 transform text-dark-300 peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-10 peer-placeholder-shown:text-dark-500 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3">
+                    What's your Email
+                  </label>
+                  <div className="absolute top-4 left-4 text-dark-400 peer-focus:text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex px-3 mb-5 w-full">
-              <label className="flex items-center w-24 text-dark-400 text-xs">
-                Password
-              </label>
-              <input
-                type="password"
-                ref={passwordInputRef}
-                name="password"
-                id="password"
-                className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
-                placeholder="Password"
-              />
+            <div className="relative flex mb-5 w-full">
+              <div className="flex items-center w-full text-xs">
+                <div className="relative flex-1">
+                  <input
+                    type="password"
+                    ref={passwordInputRef}
+                    name="password"
+                    id="password"
+                    className="text-sm bg-transparent text-dark-500 dark:text-dark-300 focus:text-white py-4 focus:outline-none w-full placeholder-dark-400 dark:placeholder-dark-500 dark:focus:border-dark-300 rounded-lg border border-dark-400 dark:border-dark-600 pr-3 pl-12 appearance-none focus:ring-0 peer"
+                    placeholder=" "
+                  />
+                  <label className="absolute text-sm top-0 bg-dark-900 px-3 left-8 scale-75 -translate-y-3 duration-300 transform text-dark-300 peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-10 peer-placeholder-shown:text-dark-500 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3">
+                    Password
+                  </label>
+                  <div className="absolute top-4 left-4 text-dark-400 peer-focus:text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-white hover:bg-dark-800 hover:text-white text-black py-3 px-5 rounded-sm transition duration-300 border border-dark-900 hover:border-dark-400"
+                className="flex justify-center items-center w-full bg-white hover:bg-transparent hover:text-white text-black py-4 px-5 rounded-lg transition duration-300 border border-dark-900 hover:border-dark-400"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
