@@ -15,7 +15,7 @@ const SubNav = ({}) => {
 
   return (
     <>
-      <div className="hidden sticky top-[60px] z-[50] bg-dark-700/50 backdrop-blur-lg border-b border-dark-600">
+      <div className="sticky top-[60px] z-[50] bg-white/80 backdrop-blur-lg border-b border-slate-100">
         <div className="max-w-screen-xl mx-auto">
           <div>
             {nav.header &&
@@ -29,10 +29,10 @@ const SubNav = ({}) => {
                             href={data2[1].route}
                             key={index2}
                             className={
-                              'text-white hover:text-white text-sm px-1 py-4 flex border-b-2 ' +
+                              'text-black hover:text-black text-sm px-1 py-4 flex border-b-2 ' +
                               (pathname === data2[1].route
-                                ? 'text-black dark:text-white border-dark-100'
-                                : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white border-transparent')
+                                ? 'text-black dark:text-white border-slate-800'
+                                : 'text-slate-500 dark:text-dark-400 hover:text-black dark:hover:text-white border-transparent')
                             }
                           >
                             {data2[1].title}

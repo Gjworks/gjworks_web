@@ -18,7 +18,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
     <>
       <PageWrap>
         <div className="text-primary-500 text-base">Documentation</div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white pt-10 pb-5">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black pt-10 pb-5">
           Installation
         </h1>
         <div className="text-base text-dark-300 mb-1">
@@ -28,7 +28,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
           있도록 제작되었습니다.
         </div>
         <div>
-          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-black pt-10 pb-5">
             시스템 요구사항
           </div>
           <div className="text-base text-dark-300 mb-1">
@@ -51,7 +51,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
             </Link>
           </div>
           <div className="text-base text-dark-300 mb-1"></div>
-          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-black pt-10 pb-5">
             Git 설정
           </div>
           <div className="text-base text-dark-300 mb-1">
@@ -129,7 +129,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
             를 생성하고 작업을 진행 합니다. 되도록이면 'devel' 혹은 'test'
             브랜치를 생성하여 작업하는 것을 적극 권장드립니다.
           </div>
-          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-black pt-10 pb-5">
             Package
           </div>
           <div className="text-base text-dark-300 mb-1">
@@ -204,7 +204,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
               </div>
             </div>
           </div>
-          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-black pt-10 pb-5">
             env 설정
           </div>
           <div className="text-base text-dark-300 mb-1">
@@ -242,7 +242,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
               NEXTAUTH_SECRET="위에서 생성된 값을 넣어주세요.";
             </SyntaxHighlighter>
           </div>
-          <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-lg sm:text-xl font-extrabold tracking-tight text-black pt-10 pb-5">
             개발환경 env 설정
           </div>
           <div className="text-base text-dark-300 mb-1">
@@ -266,7 +266,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
               {code2}
             </SyntaxHighlighter>
           </div>
-          <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-lg sm:text-xl font-extrabold tracking-tight text-black pt-10 pb-5">
             배포 env 설정
           </div>
           <div className="relative bg-gradient-to-br bg-dark-800 rounded-lg mb-10 text-sm overflow-hidden">
@@ -285,7 +285,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
               {code3}
             </SyntaxHighlighter>
           </div>
-          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-black pt-10 pb-5">
             srcerya
           </div>
           <div className="text-base text-dark-300 mb-1">
@@ -343,7 +343,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
             </SyntaxHighlighter>
           </div>
 
-          <div className="text-lg sm:text-xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-lg sm:text-xl font-extrabold tracking-tight text-black pt-10 pb-5">
             srcerya Mrgration
           </div>
           <div className="text-base text-dark-300 mb-1">
@@ -366,7 +366,7 @@ NEXT_PUBLIC_DEFAULT_URL="https://gjworks.dev/"`
             </SyntaxHighlighter>
           </div>
 
-          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-white pt-10 pb-5">
+          <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-black pt-10 pb-5">
             실행하기
           </div>
           <div className="text-base text-dark-300 mb-1">

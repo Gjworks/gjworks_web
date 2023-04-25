@@ -10,7 +10,7 @@ const PageLayout = ({ children }) => {
   console.log(pathname)
   return (
     <>
-      <div className="flex flex-wrap xl:flex-nowrap gap-12 max-w-screen-2xl mx-auto pt-8 pb-20 px-3">
+      <div className="flex flex-wrap xl:flex-nowrap gap-12 max-w-screen-xl mx-auto pt-8 pb-20 px-3">
         <div className="w-64 flex-none">
           <div className="">
             <div className="flex items-center flex-wrap gap-4 mb-3 group">

@@ -154,7 +154,7 @@ export default function Page() {
                       DB
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-primary-500 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-black rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 60%</div>
                   </div>
@@ -163,7 +163,7 @@ export default function Page() {
                       Front
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-primary-500 rounded-full"></motion.div>
+                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-black rounded-full"></motion.div>
                     </div>
                     <div className="text-xs text-white"> 20%</div>
                   </div>
@@ -172,7 +172,7 @@ export default function Page() {
                       Server
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-primary-500 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-black rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 30%</div>
                   </div>
