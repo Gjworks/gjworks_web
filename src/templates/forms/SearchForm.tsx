@@ -6,10 +6,10 @@ const SearchForm = () => {
   return (
     <>
       <div className="px-3">
-        <div className="flex border-b border-slate-300 dark:border-dark-700 p-3">
+        <div className="flex border-b border-slate-200 dark:border-dark-700 p-3">
           <input
             type="text"
-            className="group flex-1 text-base text-dark-300 py-2 bg-transparent px-3 outline-none focus:text-black placeholder-dark-400 dark:text-dark-200"
+            className="group flex-1 text-base text-dark-300 py-2 bg-transparent px-3 outline-none focus:text-black placeholder-dark-400 dark:text-dark-200 placeholder:text-slate-300"
             placeholder="Search Text..."
           ></input>
           <button className="text-slate-400 hover:text-slate-900 dark:text-dark-300 dark:hover:text-white group-focus:text-white">
@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="flex bg-slate-300 dark:bg-dark-600 py-1 px-1 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
+            <div className="flex bg-slate-200 dark:bg-dark-600 py-1 px-1 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-slate-300 dark:bg-dark-600 py-1 px-3 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
+            <div className="flex bg-slate-200 dark:bg-dark-600 py-1 px-3 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-600 hover:text-white cursor-pointer">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
@@ -105,21 +105,21 @@ const SearchForm = () => {
           <div className="text-sm font-semibold mb-3 text-slate-700 dark:text-primary-500">
             검색기록
           </div>
-          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-400 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-slate-300/50 dark:border-dark-700 text-slate-400 py-3 hover:bg-slate-300/50 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">tailwind 설정하는 방법</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-slate-300 dark:border-dark-700 text-slate-400 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-slate-300/50 dark:border-dark-700 text-slate-400 py-3 hover:bg-slate-300/50 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">Prisma Create Schemas</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm text-slate-400 py-3 hover:bg-slate-300/25 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm text-slate-400 py-3 hover:bg-slate-300/50 dark:hover:bg-primary-600 hover:text-slate-900 dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">postfix 메일 설정</div>
             <div>22.05.23</div>
           </div>
         </motion.div>
       </div>
-      <div className="px-3 pt-2 bg-slate-200 dark:bg-dark-600/40 backdrop-blur-lg">
+      <div className="px-3 pt-2 bg-slate-200/80 dark:bg-dark-600/40 backdrop-blur-lg">
         <motion.div
           className="pt-2 pb-5 px-3"
           initial={{ opacity: 0, y: '20%' }}

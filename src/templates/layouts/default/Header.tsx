@@ -169,7 +169,7 @@ const Header = () => {
                   <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-bold mr-4">
                     지제이웍스
                   </div>
-                  <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs lg:text-xs bg-slate-100/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/25 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
+                  <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs lg:text-xs bg-slate-200/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/75 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -272,7 +272,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-gray-400/25 dark:bg-dark-700/50"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-slate-600/50 dark:bg-dark-700/50"
       >
         <motion.div
           initial={{ opacity: 0 }}
