@@ -55,7 +55,7 @@ const Header = () => {
   const headerVariants = {
     open: {
       opacity: 1,
-      display: 'block',
+      // display: 'block',
       transition: {
         duration: 0.5,
       },
@@ -65,44 +65,39 @@ const Header = () => {
       transition: {
         duration: 0.5,
       },
-      transitionEnd: {
-        display: 'none',
-      },
+      // transitionEnd: {
+      //   display: 'none',
+      // },
     },
   }
   const wrapVariants = {
     open: {
       opacity: 1,
-      display: 'block',
+      y: '0%',
       transition: {
         duration: 0.5,
       },
     },
     close: {
       opacity: 0,
+      y: '-100%',
       transition: {
         duration: 0.5,
-      },
-      transitionEnd: {
-        display: 'none',
       },
     },
   }
   const variants = {
     open: {
       opacity: 1,
-      y: '5%',
       display: 'block',
       transition: {
-        duration: 0.5,
-        delay: 0.3,
+        duration: 1.5,
       },
     },
     close: {
       opacity: 0,
       transition: {
         duration: 0.5,
-        y: '-5%',
       },
       transitionEnd: {
         display: 'none',
@@ -272,20 +267,26 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-slate-600/50 dark:bg-dark-700/50"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg"
+      ></motion.div>
+      <motion.div
+        initial={headerInitial}
+        animate={showNavigation === true ? 'open' : 'close'}
+        variants={headerVariants}
+        className="fixed top-0 left-0 right-0 z-99"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="bg-white/80 dark:bg-dark-900/75 z-100 mt-[52px] border-b border-gray-50 dark:border-dark-700 pb-8"
+          className="bg-white/80 backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/75 z-100 border-b border-slate-100"
         >
           <motion.div
             initial={initial}
             variants={variants}
             animate={showNavigation === true ? 'open' : 'close'}
           >
-            <div className="max-w-screen-xl mx-auto px-3">
+            <div className="max-w-screen-xl mx-auto px-3 py-10 mt-[52px]">
               <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-3">
                   <div className="py-5">

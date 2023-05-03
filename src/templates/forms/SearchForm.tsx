@@ -119,7 +119,7 @@ const SearchForm = () => {
           </div>
         </motion.div>
       </div>
-      <div className="px-3 pt-2 bg-slate-200/80 dark:bg-dark-600/40 backdrop-blur-lg">
+      <div className="px-3 pt-2 bg-slate-200/80 dark:bg-dark-700/40 backdrop-blur-lg">
         <motion.div
           className="pt-2 pb-5 px-3"
           initial={{ opacity: 0, y: '20%' }}

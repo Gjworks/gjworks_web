@@ -17,7 +17,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className=" selection:text-white selection:bg-orange-500">
+    <div className="selection:text-white selection:bg-orange-500">
       <div className="h-full">
         <div className="fixed w-full top-0 bg-dark-900/90 backdrop-blur-lg h-[60px] z-101">
           <div className="flex">
