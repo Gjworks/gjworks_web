@@ -52,6 +52,24 @@ const Header = () => {
       duration: 0.5,
     },
   }
+  const fixedVariants = {
+    open: {
+      opacity: 1,
+      display: 'block',
+      transition: {
+        duration: 0.5,
+      },
+    },
+    close: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+      },
+      transitionEnd: {
+        display: 'none',
+      },
+    },
+  }
   const headerVariants = {
     open: {
       opacity: 1,
@@ -266,7 +284,7 @@ const Header = () => {
       <motion.div
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
-        variants={headerVariants}
+        variants={fixedVariants}
         className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg"
       ></motion.div>
       <motion.div
