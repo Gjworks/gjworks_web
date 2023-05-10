@@ -7,43 +7,49 @@ import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import Warning from 'src/components/message/Warning'
 import PageWrap from 'src/components/sections/PageWrap'
+import TextInput from 'src/components/form/TextInput'
 
 const Register = () => {
   const [nickName, setNickName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<{ [key: string]: any }>()
   const router = useRouter()
   const { status } = useSession()
   const strSpace = /\s/
 
-  const nickNameHandler = e => {
-    if (strSpace.exec(e.target.value)) {
-      setError('공백은 넣으실 수 없습니다.')
-      return false
-    } else {
-      setError(false)
-      setNickName(e.target.value)
-    }
+  // const nickNameHandler = e => {
+  //   if (strSpace.exec(e.target.value)) {
+  //     return false
+  //   } else {
+  //     setNickName(e.target.value)
+  //   }
+  // }
+  // const emailHandler = e => {
+  //   if (strSpace.exec(e.target.value)) {
+  //     return false
+  //   } else {
+  //     setEmail(e.target.value)
+  //   }
+  // }
+  // const passwordHandler = e => {
+  //   if (strSpace.exec(e.target.value)) {
+  //     return false
+  //   } else {
+  //     setPassword(e.target.value)
+  //   }
+  // }
+
+  const getNickname = (msg: string) => {
+    setNickName(msg)
   }
-  const emailHandler = e => {
-    if (strSpace.exec(e.target.value)) {
-      setError('공백은 넣으실 수 없습니다.')
-      return false
-    } else {
-      setError(false)
-      setEmail(e.target.value)
-    }
+  const getEmail = (msg: string) => {
+    setEmail(msg)
   }
-  const passwordHandler = e => {
-    if (strSpace.exec(e.target.value)) {
-      setError('공백은 넣으실 수 없습니다.')
-      return false
-    } else {
-      setError(false)
-      setPassword(e.target.value)
-    }
+  const getPassword = (msg: string) => {
+    setPassword(msg)
   }
+
   const registerUser = async e => {
     e.preventDefault()
     const userData = await axios
@@ -114,7 +120,44 @@ const Register = () => {
           </div>
           {error && <Warning message={error} />}
           <form onSubmit={registerUser}>
-            <div className="px-3 mb-5 w-full">
+            <div className="relative flex mb-5 w-full">
+              <div className="flex items-center w-full text-xs">
+                <TextInput
+                  inputType="text"
+                  inputName="nickName"
+                  inputTitle="닉네임"
+                  getData={getNickname}
+                  placeholder="User nick name"
+                  value=""
+                ></TextInput>
+              </div>
+            </div>
+            <div className="relative flex mb-5 w-full">
+              <div className="flex items-center w-full text-xs">
+                <TextInput
+                  inputType="email"
+                  inputName="email"
+                  inputTitle="이메일"
+                  getData={getEmail}
+                  placeholder="example@mail.com"
+                  value=""
+                ></TextInput>
+              </div>
+            </div>
+
+            <div className="relative flex mb-5 w-full">
+              <div className="flex items-center w-full text-xs">
+                <TextInput
+                  inputType="password"
+                  inputName="password"
+                  inputTitle="비밀번호"
+                  getData={getPassword}
+                  placeholder="User Password"
+                  value=""
+                ></TextInput>
+              </div>
+            </div>
+            {/* <div className="px-3 mb-5 w-full">
               <div className="flex">
                 <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
                   NickName
@@ -130,8 +173,8 @@ const Register = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div className="px-3 mb-5 w-full">
+            </div> */}
+            {/* <div className="px-3 mb-5 w-full">
               <div className="flex">
                 <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
                   Email
@@ -168,8 +211,8 @@ const Register = () => {
                     비밀번호는 안전하게 암호화 되어 저장됩니다.
                   </div>
                 </div>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
             <div className="flex mb-2">
               <button className="flex justify-center items-center w-full bg-white hover:bg-dark-800 hover:text-white text-black py-3 px-5 rounded-sm transition duration-300 border border-dark-900 hover:border-dark-400">
                 Register Completed

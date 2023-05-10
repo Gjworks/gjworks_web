@@ -47,7 +47,7 @@ const Header = () => {
   }
   const initial = {
     opacity: 0,
-    y: '-5%',
+    y: '0%',
     transition: {
       duration: 0.5,
     },
@@ -126,14 +126,9 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className={
-          'relative backdrop-blur-lg z-101' +
-          (showNavigation === true
-            ? ' bg-white/80 dark:bg-dark-900/75 '
-            : ' dark:bg-dark-900/75 bg-white/80')
-        }
+        className="backdrop-blur-lg before:backdrop-blur-lg bg-white/80 relative z-101"
       >
-        <div className=" max-w-screen-xl mx-auto">
+        <div className="max-w-screen-lg mx-auto">
           <div className="flex justify-between items-center py-2 pr-3">
             <div className="flex items-center justify-center">
               <button
@@ -179,27 +174,27 @@ const Header = () => {
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="flex items-center"
                 >
-                  <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-bold mr-4">
+                  <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-medium mr-4">
                     지제이웍스
                   </div>
-                  <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs lg:text-xs bg-slate-200/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/75 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1}
-                      stroke="currentColor"
-                      className="w-4 h-4 mr-2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"
-                      />
-                    </svg>
-                    <span>Project 0.1.10.beta</span>
-                  </div>
                 </Link>
+                <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs bg-slate-200/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/75 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1}
+                    stroke="currentColor"
+                    className="w-4 h-4 mr-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"
+                    />
+                  </svg>
+                  <span>Project 0.1.10.beta</span>
+                </div>
               </div>
 
               <div className="hidden items-center pl-3">
@@ -222,7 +217,7 @@ const Header = () => {
                   })}
               </div>
             </div>
-            <div className="relative flex gap-3 items-center">
+            <div className="relative flex items-center">
               <button
                 className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-3 py-2"
                 onClick={() => setShowModal(!showModal)}
@@ -246,15 +241,15 @@ const Header = () => {
                 className="group relative flex items-center"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-[6px] px-3 rounded-full border border-gray-900 dark:border-dark-900 hover:border-dark-300 bg-gray-900 dark:bg-white hover:bg-white dark:hover:bg-transparent dark:hover:border-dark-100 transition duration-300">
-                  <div className="text-white dark:text-dark-900 group-hover:text-gray-900 dark:group-hover:text-white p-0">
+                <div className="flex py-[6px] px-3">
+                  <div className="text-gray-900 p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1}
                       stroke="currentColor"
-                      className="w-4 h-4"
+                      className="w-5 h-5"
                     >
                       <path
                         strokeLinecap="round"
@@ -263,7 +258,7 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="flex items-center px-3 text-white dark:text-dark-900 group-hover:text-gray-900 dark:group-hover:text-white text-xs">
+                  <div className="hidden items-center px-3 text-gray-900 text-xs">
                     Account
                   </div>
                 </div>
@@ -285,7 +280,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-900/25 w-screen h-screen"
       ></motion.div>
       <motion.div
         initial={headerInitial}
@@ -297,14 +292,14 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="bg-white/80 backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/75 z-100 border-b border-slate-100"
+          className="bg-white/80 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/75 z-100 border-b border-slate-100 dark:border-dark-800"
         >
           <motion.div
             initial={initial}
             variants={variants}
             animate={showNavigation === true ? 'open' : 'close'}
           >
-            <div className="max-w-screen-xl mx-auto px-3 py-10 mt-[52px]">
+            <div className="max-w-screen-lg mx-auto px-3 pt-5 mt-[52px]">
               <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-3">
                   <div className="py-5">

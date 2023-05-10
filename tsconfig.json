@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl" : ".",
+    "baseUrl": ".",
     "target": "es6",
     "lib": [
       "dom",
@@ -23,7 +23,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "types/next-auth.d.ts",

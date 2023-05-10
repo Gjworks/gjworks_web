@@ -37,7 +37,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative">
-        <motion.div className="relative pt-20 xl:py-20 overflow-hidden">
+        <motion.div className="relative pt-20 xl:py-20 overflow-hidden bg-slate-50">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"

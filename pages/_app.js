@@ -5,7 +5,7 @@ import '../styles/tailwindcss.css'
 
 function App({ Component, router, pageProps: { session, ...pageProps } }) {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={session} refetchInterval={5 * 60}>
       <AnimatePresence
         initial={false}
         mode="wait"

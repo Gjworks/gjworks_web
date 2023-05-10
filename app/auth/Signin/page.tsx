@@ -1,24 +1,30 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { useSession, signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import PageWrap from 'src/components/sections/PageWrap'
+import TextInput from 'src/components/form/TextInput'
 
 const Signin = () => {
   const router = useRouter()
   const [formMessage, setFormMessage] = useState<string>()
-  const emailInputRef = useRef(null)
+  // const emailInputRef = useRef(null)
+  const [emailInput, setEmailInput] = useState<string>()
   const passwordInputRef = useRef(null)
 
   const { data, status } = useSession()
   console.log(data)
 
+  const getData = (x: string) => {
+    setEmailInput(x)
+  }
   const submitHandler = async e => {
     e.preventDefault()
-    const userEmail = emailInputRef.current?.value
-    const userPassword = passwordInputRef.current?.value
+    console.log(setEmailInput)
+    const userEmail = emailInput
+    const userPassword = passwordInputRef.current
 
     const result = await signIn('credentials', {
       redirect: false,
@@ -29,24 +35,24 @@ const Signin = () => {
 
     if (result?.error) return setFormMessage(result.error)
     console.log('로그인 성공. 메인 페이지로 이동합니다.')
-    // router.push('/')
-    //   if (!result.error) {
-    //     router.replace(result.url)
-    //   } else {
-    //     setFormMessage(result.error)
-    //   }
+    router.push('/')
+    // if (!result?.error) {
+    //   router.replace(process.env.NEXT_PUBLIC_DEFAULT_URL)
+    // } else {
+    //   setFormMessage(result?.error)
     // }
-
-    // if (status === "authenticated") {
-    //   router.replace(process.env.NEXT_PUBLIC_DEFAULT_URL);
-    //   return (
-    //     <div>
-    //       <h1>Log in</h1>
-    //       <div>You are already logged in.</div>
-    //       <div>Now redirect to main page.</div>
-    //     </div>
-    //   );
   }
+
+  // if (status === 'authenticated') {
+  //   router.replace(process.env.NEXT_PUBLIC_DEFAULT_URL)
+  //   return (
+  //     <div>
+  //       <h1>Log in</h1>
+  //       <div>You are already logged in.</div>
+  //       <div>Now redirect to main page.</div>
+  //     </div>
+  //   )
+  // }
 
   return (
     <PageWrap>
@@ -71,7 +77,15 @@ const Signin = () => {
             )}
             <div className="relative flex mb-5 w-full">
               <div className="flex items-center w-full text-xs">
-                <div className="relative flex-1">
+                <TextInput
+                  inputType="email"
+                  inputName="email"
+                  inputTitle="Email"
+                  placeholder="What's your Email"
+                  getData={getData}
+                  value=""
+                ></TextInput>
+                {/* <div className="relative flex-1">
                   <input
                     type="text"
                     ref={emailInputRef}
@@ -99,7 +113,7 @@ const Signin = () => {
                       />
                     </svg>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="relative flex mb-5 w-full">

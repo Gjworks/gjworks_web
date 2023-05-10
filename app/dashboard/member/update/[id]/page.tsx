@@ -49,7 +49,7 @@ const Page = () => {
   const inputMemberEmail = async e => {
     console.log(1)
     const params = {
-      id: memberInfo.id,
+      id: memberInfo?.id,
       type: 'email',
       email: e.target.value,
     }
