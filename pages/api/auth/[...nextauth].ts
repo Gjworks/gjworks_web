@@ -14,14 +14,15 @@ const option:NextAuthOptions = {
       id: 'credentials',
       name: 'Credentials',
       credentials: {
-        email: { label: "Email", type: "string", placeholder: "Enter your email" },
-        password: { label: "Password", type: "string", placeholder: "Enter your password" },
+        email: { label: "Email", type: "text", placeholder: "Enter your email" },
+        password: { label: "Password", type: "password", placeholder: "Enter your password" },
       },
       async authorize(credentials ,request) {
-        const { email, password } = credentials;
+        console.log(credentials);
+        // const { email, password } = credentials;
         const user = await prisma.user.findUnique({
           where: {
-            email: email,
+            email: credentials?.email,
           },
           select: {
             id: true,
@@ -39,7 +40,7 @@ const option:NextAuthOptions = {
           throw new Error('No user found for credentials')
         }
         const isValid = await verifyPassword(
-          password,
+          credentials?.password,
           user.password
         )
         if (!isValid) {

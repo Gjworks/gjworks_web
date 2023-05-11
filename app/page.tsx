@@ -37,7 +37,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative">
-        <motion.div className="relative pt-20 xl:py-20 overflow-hidden bg-slate-50">
+        <motion.div className="relative pt-20 xl:py-20 overflow-hidden bg-primary-600">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -53,10 +53,12 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-gray-900 dark:text-white"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-gray-500 dark:text-white"
               >
-                <span className="text-white bg-gray-900">Build</span> web and
-                app <br></br>quickly and simply
+                <span className="text-white bg-dark-950 px-1">
+                  Build web and app{' '}
+                </span>{' '}
+                <br></br>quickly and simply
               </motion.div>
               <motion.div
                 variants={variants}
@@ -90,7 +92,7 @@ export default function Page() {
               <div className="relative">
                 <SafariBrower />
               </div>
-              <div className="absolute inset-0 overflow-hidden bg-gradient-to-b dark:from-dark-900/25 dark:via-dark-900/50 dark:to-dark-900"></div>
+              <div className="absolute inset-0 overflow-hidden bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950"></div>
             </motion.div>
           </div>
           <motion.div
@@ -180,7 +182,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-indigo-500 to-sky-500 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-700 to-secondary-700 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">

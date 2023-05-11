@@ -126,7 +126,7 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="backdrop-blur-lg before:backdrop-blur-lg bg-white/80 relative z-101"
+        className="backdrop-blur-lg before:backdrop-blur-lg bg-white/80 dark:bg-dark-950/80 relative z-101"
       >
         <div className="max-w-screen-lg mx-auto">
           <div className="flex justify-between items-center py-2 pr-3">
@@ -158,7 +158,7 @@ const Header = () => {
               </button>
 
               <div className="flex items-center">
-                <Link
+                <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="hidden items-center"
                 >
@@ -169,15 +169,15 @@ const Header = () => {
                     height="32"
                     className="block w-8 h-8"
                   />
-                </Link>
-                <Link
+                </a>
+                <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="flex items-center"
                 >
                   <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-medium mr-4">
                     지제이웍스
                   </div>
-                </Link>
+                </a>
                 <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs bg-slate-200/75 dark:bg-dark-500/25 bg-opacity-75 px-4 py-1 rounded-full hover:bg-slate-300/75 dark:hover:bg-dark-400/25 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +242,7 @@ const Header = () => {
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-3">
-                  <div className="text-gray-900 p-0">
+                  <div className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -258,7 +258,7 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="hidden items-center px-3 text-gray-900 text-xs">
+                  <div className="hidden items-center px-3 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white text-xs">
                     Account
                   </div>
                 </div>
@@ -280,7 +280,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-900/25 w-screen h-screen"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-950/25 w-screen h-screen"
       ></motion.div>
       <motion.div
         initial={headerInitial}

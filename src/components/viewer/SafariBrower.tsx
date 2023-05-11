@@ -60,7 +60,7 @@ const SafariBrower = () => {
           </div>
         </div>
         <div className="relative border-t border-slate-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-700">
-          <div className="w-full h-full pl-[1px] pr-[1px] pb-[1px]">
+          <div className="w-full h-full">
             <Image
               src="/assets/images/dashboard.png"
               alt="dashboard image"

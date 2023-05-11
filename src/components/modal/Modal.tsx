@@ -9,13 +9,21 @@ const Modal = ({ state, close, children }) => {
     setModalState(state)
   }, [state])
 
+  // useEffect(() => {
+  //   if (modalState === true) {
+  //     let $body = document.querySelector('body')
+  //     const overflow = $body?.style.overflow
+  //     if ($body instanceof Element) $body?.style.overflow = 'hidden'
+  //     return () => {
+  //       $body.style.overflow = overflow
+  //     }
+  //   }
+  // }, [modalState])
   useEffect(() => {
     if (modalState === true) {
-      const $body = document.querySelector('body')
-      const overflow = $body.style.overflow
-      $body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden'
       return () => {
-        $body.style.overflow = overflow
+        document.body.style.overflow = 'unset'
       }
     }
   }, [modalState])
@@ -48,7 +56,7 @@ const Modal = ({ state, close, children }) => {
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
-                className="fixed inset-0 transform overflow-auto bg-slate-600/25 dark:bg-dark-700/30 z-90 px-3 backdrop-blur-lg"
+                className="fixed inset-0 transform overflow-auto bg-slate-600/25 dark:bg-dark-950/25 z-90 px-3 backdrop-blur-lg"
               >
                 <div
                   className="absolute inset-0 z-99"
@@ -66,7 +74,7 @@ const Modal = ({ state, close, children }) => {
                     y: '-10%',
                     transition: { duration: 0.5 },
                   }}
-                  className="relative mt-20 mb-10 z-100 bg-white/80 dark:bg-dark-900/80 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white"
+                  className="relative mt-20 mb-10 z-100 bg-white/80 dark:bg-dark-950/80 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white"
                 >
                   {children}
                 </motion.div>

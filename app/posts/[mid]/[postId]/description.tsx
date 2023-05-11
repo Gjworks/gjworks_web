@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-export default function description(props: any) {
+const Description = (props: any) => {
   const [desc, setDesc] = useState<{ [key: string]: any }>()
 
   useEffect(() => {
@@ -16,3 +16,4 @@ export default function description(props: any) {
     </>
   )
 }
+export default Description

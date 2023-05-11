@@ -20,7 +20,7 @@ const SideNav = props => {
             initial={{ opacity: 0, x: '-50%' }}
             animate={{ opacity: 1, x: '0%', transition: { duration: 0.5 } }}
           >
-            <Link
+            <a
               href={process.env.NEXT_PUBLIC_DEFAULT_URL}
               className="flex items-center"
             >
@@ -31,7 +31,7 @@ const SideNav = props => {
                 height="64"
                 className="block w-20 h-20 fill-white stroke-white"
               />
-            </Link>
+            </a>
           </motion.div>
           <motion.div className="mb-5 text-xl font-extralight text-gray-900 dark:text-white px-3"></motion.div>
           <motion.div

@@ -9,13 +9,22 @@ const Right = ({ state, close, children, title }) => {
   useEffect(() => {
     setPanelState(state)
   }, [state])
+  // useEffect(() => {
+  //   if (panelState === true) {
+  //     const $body = document.querySelector('body')
+  //     const overflow = $body.style.overflow
+  //     $body.style.overflow = 'hidden'
+  //     return () => {
+  //       $body.style.overflow = overflow
+  //     }
+  //   }
+  // }, [panelState])
+
   useEffect(() => {
     if (panelState === true) {
-      const $body = document.querySelector('body')
-      const overflow = $body.style.overflow
-      $body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden'
       return () => {
-        $body.style.overflow = overflow
+        document.body.style.overflow = 'unset'
       }
     }
   }, [panelState])
