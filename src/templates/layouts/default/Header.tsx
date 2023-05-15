@@ -292,7 +292,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="bg-white/80 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/75 z-100 border-b border-slate-100 dark:border-dark-800"
+          className="bg-white/80 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/80 z-100 border-b border-slate-100 dark:border-dark-900"
         >
           <motion.div
             initial={initial}

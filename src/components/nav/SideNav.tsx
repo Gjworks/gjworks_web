@@ -14,7 +14,7 @@ const SideNav = props => {
   return (
     <>
       <motion.div className="relative overflow-hidden h-full">
-        <div className="absolute top-0 w-[320px] bottom-0 overflow-y-auto h-full pb-[80px] bg-white/80 dark:bg-dark-800/80">
+        <div className="absolute top-0 w-[320px] bottom-0 overflow-y-auto h-full pb-[80px] bg-white/80 dark:bg-dark-900/80">
           <motion.div
             className="flex justify-center items-center py-12"
             initial={{ opacity: 0, x: '-50%' }}
@@ -25,7 +25,7 @@ const SideNav = props => {
               className="flex items-center"
             >
               <Image
-                src="/assets/images/brand/gjworks.svg"
+                src="/assets/images/brand/gjworks_white.svg"
                 alt="gjworks logo"
                 width="64"
                 height="64"

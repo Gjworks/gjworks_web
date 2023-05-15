@@ -153,7 +153,7 @@ const Signin = () => {
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-gray-900 dark:bg-dark-600 dark:hover:bg-dark-500 hover:text-white dark:hover:text-white text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-gray-600"
+                className="flex justify-center items-center w-full bg-primary-400 dark:bg-primary-600 dark:hover:bg-primary-500 hover:text-white dark:hover:text-white dark:text-white text-dark-100 py-4 px-5 rounded-lg transition duration-300 hover:bg-gray-600"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +189,7 @@ const Signin = () => {
             <div className="flex gap-4">
               <button
                 onClick={() => signIn()}
-                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
+                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer"
               >
                 <div className="pr-3">
                   <svg
@@ -210,7 +210,7 @@ const Signin = () => {
               </button>
               <button
                 onClick={() => signIn()}
-                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
+                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer"
               >
                 <div className="pr-3">
                   <svg
@@ -230,7 +230,7 @@ const Signin = () => {
               </button>
               <button
                 onClick={() => signIn('github')}
-                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-white rounded-md px-3 py-3 mb-2 cursor-pointer"
+                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer"
               >
                 <div className="pr-3">
                   <svg
@@ -258,7 +258,7 @@ const Signin = () => {
                   className="group text-sm text-dark-500"
                 >
                   회원가입을 하시려면{' '}
-                  <span className="group-hover:text-primary-400 text-primary-500 underline">
+                  <span className="group-hover:text-primary-400 text-primary-300 hover:text-secondary-400 underline">
                     회원가입 하기
                   </span>
                 </Link>
@@ -266,7 +266,7 @@ const Signin = () => {
               <div className="w-full">
                 <Link href="/" className="group text-sm text-dark-500">
                   이메일과 비밀번호를 잊어버리 셨나요?{' '}
-                  <span className="group-hover:text-primary-300 text-primary-500 underline">
+                  <span className="group-hover:text-primary-300 text-primary-300 hover:text-secondary-400 underline">
                     Email/비밀번호 찾기
                   </span>
                 </Link>

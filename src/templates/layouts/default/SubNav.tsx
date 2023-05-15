@@ -12,7 +12,7 @@ const SubNav = () => {
   return (
     <>
       {snav && (
-        <div className="sticky top-[60px] z-[50] bg-white/80 backdrop-blur-lg dark:backdrop-blur-lg border-b border-slate-100 dark:bg-dark-950/80 dark:border-dark-900">
+        <div className="sticky top-[60px] z-[50] bg-white/80 backdrop-blur-lg dark:backdrop-blur-lg border-b border-slate-100 dark:bg-dark-950/80 dark:border-dark-950">
           <div className="max-w-screen-xl mx-auto">
             <div>
               {nav.header &&
@@ -43,7 +43,7 @@ const SubNav = () => {
           </div>
         </div>
       )}
-      <div className="sticky backdrop-blur-lg bg-white/80 top-0 z-[50] border-b border-slate-100 dark:bg-dark-950/80 dark:border-dark-800">
+      <div className="sticky backdrop-blur-lg bg-white/80 top-0 z-[50] border-b border-slate-100 dark:bg-dark-950/80 dark:border-dark-900 pb-2">
         <div className="max-w-screen-lg mx-auto px-3">
           <div className="flex justify-between">
             <Link

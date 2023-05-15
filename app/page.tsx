@@ -37,7 +37,8 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative">
-        <motion.div className="relative pt-20 xl:py-20 overflow-hidden bg-primary-600">
+        <motion.div className="relative pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg3.jpg')] bg-no-repeat bg-cover">
+          <div className="absolute inset-0 overflow-hidden bg-dark-950/50"></div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -55,7 +56,7 @@ export default function Page() {
                 variants={variants}
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-gray-500 dark:text-white"
               >
-                <span className="text-white bg-dark-950 px-1">
+                <span className="text-primary-300 px-1">
                   Build web and app{' '}
                 </span>{' '}
                 <br></br>quickly and simply
@@ -100,7 +101,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
             variants={parentVariants}
-            className="max-w-screen-md mx-auto text-center"
+            className="max-w-screen-md mx-auto text-center px-3"
           >
             <motion.div
               variants={variants}
@@ -182,13 +183,13 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-700 to-secondary-700 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-600 to-secondary-600 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
                     Next<br></br>Project??
                   </div>
-                  <div className="w-full text-sm text-white mb-10 text-center">
+                  <div className="w-full text-sm text-dark-200 mb-10 text-center">
                     저희는 현재 개발에서 멈추지 않고 미래를 위한 개발과 투자를
                     하고 있습니다. 다음 프로젝트에 대해 의견을 주시면
                     감사하겠습니다.
