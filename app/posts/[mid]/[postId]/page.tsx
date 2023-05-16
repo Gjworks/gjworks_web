@@ -24,7 +24,6 @@ const Page: React.FC<PageProps> = ({ params }) => {
   console.log(params.postId)
   const fetchData = async () => {
     items = await getData()
-    console.log(items)
     setDocumentInfo(items)
   }
   useEffect(() => {
