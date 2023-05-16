@@ -37,18 +37,18 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative -mt-[112px]">
-        <motion.div className="relative pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg_beach.jpg')] bg-no-repeat bg-cover bg-center">
+        <motion.div className="relative max-w-[2560px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg_phone.jpg')] bg-no-repeat bg-cover bg-top">
           <div className="absolute inset-0 overflow-hidden bg-dark-950/60"></div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="relative max-w-screen-xl mx-auto px-3 py-20"
+            className="relative max-w-screen-lg mx-auto px-3 py-20"
           >
             <div className="pt-[112px]">
               <motion.div
                 variants={variants}
-                className="text-sm lg:text-base font-bold text-black dark:text-white mb-2"
+                className="text-sm lg:text-base font-bold text-black dark:text-primary-400 mb-3"
               >
                 TEAM THAT MAKES THE SERVICE
               </motion.div>
