@@ -89,7 +89,7 @@ module.exports = {
         700: '#21262d',
         800: '#161b22',
         900: '#12161c',
-        950: '#0d1117',
+        950: '#080a0f',
       },
       // dark: colors.gray,
       primary: colors.sky,
