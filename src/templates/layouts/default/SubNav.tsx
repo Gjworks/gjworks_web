@@ -43,7 +43,7 @@ const SubNav = () => {
           </div>
         </div>
       )}
-      <div className="sticky backdrop-blur-lg bg-white/80 top-0 z-[50] dark:bg-dark-950/60 pb-2">
+      <div className="sticky backdrop-blur-lg bg-white/80 top-0 z-[50] dark:bg-dark-950/60 pb-1">
         <div className="max-w-screen-lg mx-auto px-3">
           <div className="flex justify-between">
             <Link
