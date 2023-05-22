@@ -1,43 +1,67 @@
 'use client'
 
+import React, { useEffect, useRef, useState } from 'react'
+
 interface Props {
   inputType: string
   inputName: string
   inputTitle: string
   getData: (message: string) => void
   value: any
+  theme: string
   placeholder: string
 }
 
 const TextInput: React.FC<Props> = props => {
-  const handleChange = (event: any) => {
+  const nameInput = useRef<HTMLInputElement | null>(null)
+  const [nameInputText, setNameInputText] = useState<string>()
+  useEffect(() => {
+    setNameInputText(nameInput.current?.offsetWidth.toString())
+  }, [])
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     props?.getData(event.target?.value)
   }
 
   return (
     <>
       <div className="w-full">
-        <div className="flex dark:focus:border-dark-500 rounded-lg border border-slate-200 focus:border-slate-600 dark:border-dark-600">
-          <div className="flex items-center text-slate-400 dark:text-dark-400 peer-focus:text-slate-900 dark:peer-focus:text-white px-3 w-auto min-w-[70px] max-w-32">
+        <div className="relative flex">
+          <input
+            type={props?.inputType}
+            name={props?.inputName}
+            id={props?.inputName}
+            className={
+              'flex-1 text-sm bg-transparent py-4 focus:outline-none w-full px-3 appearance-none focus:ring-0 peer order-1 rounded-r-lg border-t border-b border-r' +
+              (props.theme === 'light'
+                ? ' text-primary-400 border-primary-400 focus:border-primary-400 placeholder-shown:border-dark-500 placeholder-shown:text-slate-400 '
+                : ' text-primary-400 border-primary-400 focus:border-primary-400 placeholder-shown:border-dark-500 placeholder-shown:text-slate-400 ')
+            }
+            placeholder=" "
+            defaultValue={props?.value}
+            onChange={handleChange}
+          />
+          <div
+            ref={nameInput}
+            className={
+              `flex items-center px-3 w-auto min-w-[${nameInputText}px] max-w-32 text-sm order-0 rounded-l-lg border-t border-b border-l` +
+              (props.theme === 'light'
+                ? ' text-primary-400 peer-focus:text-primary-400 border-primary-400 peer-focus:border-primary-400 peer-placeholder-shown:text-slate-400 peer-placeholder-shown:border-slate-500 '
+                : ' text-primary-400 peer-focus:text-primary-400 border-primary-400 peer-focus:border-primary-400 peer-placeholder-shown:text-dark-400 peer-placeholder-shown:border-dark-500 ')
+            }
+          >
             {props?.inputTitle}
           </div>
-          <div className="relative flex-1">
-            <input
-              type={props?.inputType}
-              name={props?.inputName}
-              id={props?.inputName}
-              className="text-sm bg-transparent text-dark-500 dark:text-dark-300 focus:text-slate-700 dark:focus:text-white py-4 focus:outline-none w-full placeholder-dark-400 dark:placeholder-dark-500 px-3 appearance-none focus:ring-0 peer"
-              placeholder=" "
-              defaultValue={props?.value}
-              onChange={handleChange}
-            />
-            <label
-              htmlFor={props.inputName}
-              className="absolute text-sm top-0 bg-white dark:bg-dark-900 px-3 -left-8 scale-75 -translate-y-3 duration-300 transform text-slate-400 dark:text-dark-300 peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-0 peer-placeholder-shown:text-slate-400 dark:peer-placeholder-shown:text-dark-500 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3 cursor-text"
-            >
-              {props?.placeholder}
-            </label>
-          </div>
+          <label
+            htmlFor={props.inputName}
+            className={
+              `absolute text-sm top-0 px-3 left-4 scale-75 -translate-y-3 duration-300 transform peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-20 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3 cursor-text` +
+              (props.theme === 'light'
+                ? ' bg-white text-primary-400 peer-placeholder-shown:text-slate-300 peer-focus:text-primary-400 '
+                : ' dark:bg-dark-950 dark:text-primary-400 peer-placeholder-shown:text-dark-500 peer-focus:text-primary-400')
+            }
+          >
+            {props?.placeholder}
+          </label>
         </div>
       </div>
     </>

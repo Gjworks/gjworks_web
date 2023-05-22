@@ -92,9 +92,9 @@ const Edit = props => {
   return (
     <>
       <div className="">
-        <div className="max-w-screen-xl mx-auto px-3 py-16 lg:py-20">
+        <div className="max-w-screen-lg mx-auto px-3 py-16 lg:py-20">
           <div className="flex justify-center">
-            <div className="max-w-[773px] w-full mx-auto">
+            <div className="w-full mx-auto">
               <motion.div
                 className="mb-8 max-w-5xl"
                 initial={{ opacity: 0, y: '20%' }}
@@ -103,7 +103,7 @@ const Edit = props => {
                 <div className="space-y-4">
                   <div className="flex text-primary-400">
                     <div className="flex items-center pr-3">
-                      <select className="bg-gray-50 border border-gray-300 text-gray-400 outline-none focus:border-primary-400 mb-3 w-full">
+                      <select className="bg-dark-700 border border-dark-500 text-dark-400 outline-none focus:border-primary-400 mb-3 w-full">
                         <option value="">분류</option>
                         <option value="">Developer</option>
                         <option value="">분류</option>
@@ -117,7 +117,7 @@ const Edit = props => {
                       name="title"
                       defaultValue=""
                       placeholder="제목을 입력해주세요."
-                      className="text-black dark:bg-white font-light text-3xl w-full bg-transparent border-b border-gray-300 focus:border-gray-500 outline-none p-3"
+                      className="text-white dark:bg-transparent font-light text-3xl w-full bg-transparent border-b border-dark-700 focus:border-dark-500 outline-none p-3"
                       onChange={onChange}
                       required
                     />
@@ -135,7 +135,7 @@ const Edit = props => {
                     onChange={setData}
                     holder="editorjs-container"
                   />
-                  <div className="pt-8 border-t border-gray-300">
+                  <div className="pt-8 border-t border-dark-700">
                     <div className="col-span-2 flex justify-end gap-2">
                       <button
                         onClick={event => console.log(event)}

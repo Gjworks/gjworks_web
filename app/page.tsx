@@ -37,8 +37,8 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative -mt-[112px]">
-        <motion.div className="relative max-w-[2560px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg_phone.jpg')] bg-no-repeat bg-cover bg-top">
-          <div className="absolute inset-0 overflow-hidden bg-dark-950/60"></div>
+        <motion.div className="relative max-w-[2560px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg_phone.jpg')] bg-no-repeat bg-cover bg-top h-[80vh]">
+          <div className="absolute inset-0 overflow-hidden bg-dark-950/25"></div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -186,10 +186,10 @@ export default function Page() {
                 className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-400 to-secondary-600 p-5 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div>
-                  <div className="text-2xl font-bold text-black mb-5 text-center">
+                  <div className="text-2xl font-bold text-white mb-5 text-center">
                     Projects
                   </div>
-                  <div className="w-full text-sm text-dark-700 mb-10 text-center">
+                  <div className="w-full text-sm text-white mb-10 text-center">
                     저희는 현재 개발에서 멈추지 않고 미래를 위한 개발과 투자를
                     하고 있습니다. 다음 프로젝트에 대해 의견을 주시면
                     감사하겠습니다.

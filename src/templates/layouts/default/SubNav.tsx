@@ -44,11 +44,11 @@ const SubNav = () => {
         </div>
       )}
       <div className="sticky backdrop-blur-lg bg-white/80 top-0 z-[50] dark:bg-dark-950/60 pb-1">
-        <div className="max-w-screen-lg mx-auto px-3">
-          <div className="flex justify-between">
+        <div className="max-w-screen-lg mx-auto px-3 overflow-hidden overflow-scroll-hide overflow-x-auto">
+          <div className="flex gap-8 justify-between">
             <Link
               href="/"
-              className="font-semibold text-xl py-3 text-black dark:text-white"
+              className="block font-semibold text-xl py-3 text-black dark:text-white"
             >
               Discovery
             </Link>
@@ -70,6 +70,12 @@ const SubNav = () => {
                     </Link>
                   )
                 })}
+              <Link
+                href="#"
+                className="whitespace-nowrap block ml-2 text-xs text-primary-100 px-3 py-1 rounded-full bg-primary-600 hover:bg-primary-500"
+              >
+                Contact us
+              </Link>
             </div>
           </div>
         </div>

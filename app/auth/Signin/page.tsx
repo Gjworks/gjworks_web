@@ -83,6 +83,7 @@ const Signin = () => {
                   inputTitle="Email"
                   placeholder="What's your Email"
                   getData={getData}
+                  theme="dark"
                   value=""
                 ></TextInput>
                 {/* <div className="relative flex-1">
