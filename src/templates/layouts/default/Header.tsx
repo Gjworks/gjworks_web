@@ -126,7 +126,7 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="backdrop-blur-lg before:backdrop-blur-lg bg-white/80 dark:bg-dark-950/60 relative z-101"
+        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/80 dark:bg-dark-950/60 z-101"
       >
         <div className="max-w-screen-lg mx-auto">
           <div className="flex justify-between items-center py-1 pr-3">
