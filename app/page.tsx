@@ -37,7 +37,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative -mt-[112px]">
-        <motion.div className="relative max-w-[2560px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center h-[80vh]">
+        <motion.div className="relative max-w-[1920px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/yellow/yellow_bg2.jpg')] bg-no-repeat bg-cover bg-center h-[660px]">
           <div className="absolute inset-0 overflow-hidden bg-dark-950/40"></div>
           <motion.div
             initial="offscreen"
@@ -485,7 +485,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="relative py-20 bg-[url('/assets/images/yellow/yellow_bg2.jpg')] bg-no-repeat bg-cover bg-center">
+        <div className="relative py-20 bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center">
           <div className="absolute inset-0 overflow-hidden bg-dark-950/40"></div>
           <motion.div
             initial="offscreen"
