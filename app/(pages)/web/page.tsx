@@ -28,10 +28,13 @@ const Page = props => {
   return (
     <>
       <PageWrap>
-        <div className="max-w-screen-2xl mx-auto py-8 xl:py-20 px-3">
-          <motion.div className="text-white text-5xl font-semibold">
+        <div className="max-w-screen-lg mx-auto py-8 xl:py-20 px-3">
+          <motion.div className="text-primary-400 text-5xl font-semibold">
             Web
           </motion.div>
+        </div>
+        <div className="relative max-w-screen-xl mx-auto px-3">
+          <div className="relative h-[445px] bg-[url('/assets/images/yellow/yellow_bg3.jpg')] bg-no-repeat bg-cover bg-center rounded"></div>
         </div>
       </PageWrap>
     </>

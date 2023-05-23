@@ -63,7 +63,7 @@ const SubNav = () => {
                         'block py-0 lg:py-2 px-1 lg:px-3 mx-1 text-xs lg:text-xs font-normal ' +
                         (pathname === data[1].route
                           ? 'text-gray-400 dark:text-white'
-                          : 'text-gray-800 dark:text-dark-400 hover:text-gray-400 dark:hover:text-white')
+                          : 'text-gray-800 dark:text-dark-200 hover:text-gray-400 dark:hover:text-white')
                       }
                     >
                       {data[1].title}
@@ -72,7 +72,7 @@ const SubNav = () => {
                 })}
               <Link
                 href="#"
-                className="whitespace-nowrap block ml-2 text-xs text-primary-100 px-3 py-1 rounded-full bg-primary-600 hover:bg-primary-500"
+                className="whitespace-nowrap block ml-2 text-xs text-dark-900 px-3 py-1 rounded-full bg-primary-400 hover:bg-dark-700 hover:text-primary-400"
               >
                 Contact us
               </Link>

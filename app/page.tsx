@@ -37,13 +37,13 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative -mt-[112px]">
-        <motion.div className="relative max-w-[2560px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg_phone.jpg')] bg-no-repeat bg-cover bg-top h-[80vh]">
-          <div className="absolute inset-0 overflow-hidden bg-dark-950/25"></div>
+        <motion.div className="relative max-w-[2560px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center h-[80vh]">
+          <div className="absolute inset-0 overflow-hidden bg-dark-950/40"></div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="relative max-w-screen-lg mx-auto px-3 py-20"
+            className="relative max-w-screen-lg mx-auto px-3 py-20 z-10"
           >
             <div className="pt-[112px]">
               <motion.div
@@ -69,7 +69,151 @@ export default function Page() {
               </motion.div>
             </div>
           </motion.div>
+          <div className="w-full absolute left-0 right-0 bottom-0 h-[440px] bg-gradient-to-b from-transparent via-dark-900/50 to-dark-950"></div>
         </motion.div>
+
+        <div className="py-20">
+          <div className="relative max-w-screen-xl mx-auto px-3">
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex flex-wrap gap-4"
+            >
+              <motion.div
+                variants={variants}
+                className="bg-slate-100 dark:bg-dark-700 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+              >
+                <div className="text-2xl font-bold text-black dark:text-white mb-5">
+                  Rhymix 제작 및 유지보수를 해드립니다.
+                </div>
+                <div className="text-sm text-dark-300 mb-10">
+                  라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지 모든
+                  부분의 제작을 의뢰를 통해 하고 있습니다. 결제 모듈과 카카오톡
+                  메세지 전송까지 다양한 서드파티 모듈을 가지고 있으며
+                  라이믹스의 모든 부분에 해당 기능을 추가하여 코어 수정 없이
+                  지원합니다.
+                </div>
+              </motion.div>
+              <motion.div
+                variants={variants}
+                className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-secondary-500 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+              >
+                <div className="text-2xl font-bold text-black dark:text-black mb-5">
+                  Web UI Components
+                </div>
+                <div className="text-sm text-dark-800 mb-10">
+                  Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
+                  프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
+                  제작합니다.
+                </div>
+                <div className="flex flex-wrap gap-8 justify-between">
+                  <div>
+                    <div className="w-[240px] rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800 dark:shadow-black border border-gray-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]">
+                      <div className="relative z-[100]">
+                        <div className="w-56">
+                          <a
+                            className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:text-dark-900 hover:bg-dark-600 hover:text-white dark:bg-primary-400 focus:outline-none focus:bg-dark-800 focus:text-dark-300"
+                            href="/auth/Signin"
+                          >
+                            <div className="flex justify-between">
+                              <div className="flex items-center">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1"
+                                  stroke="currentColor"
+                                  className="w-4 h-4"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
+                                  ></path>
+                                </svg>
+                                <div className="pl-2">Sign In</div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div>
+                          <a
+                            className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300"
+                            href="/auth/Register"
+                          >
+                            <div className="flex justify-between">
+                              <div className="flex items-center">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1"
+                                  stroke="currentColor"
+                                  className="w-4 h-4"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+                                  ></path>
+                                </svg>
+                                <div className="pl-2">Register</div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                        <div className="block border-b border-gray-300 dark:border-dark-700 my-2 mx-3"></div>
+                        <div>
+                          <a
+                            className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300"
+                            href="#"
+                          >
+                            <div className="flex justify-between">
+                              <div className="flex items-center">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1"
+                                  stroke="currentColor"
+                                  className="w-4 h-4"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                                  ></path>
+                                </svg>
+                                <div className="pl-2">Infomation</div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="w-[240px]">
+                      <div className="relative bg-dark-900 rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                        <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                        <div className="ml-16">Example</div>
+                      </div>
+                      <div className="relative bg-dark-600 rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                        <div className="absolute bg-primary-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                        <div className="ml-16">Data Fetching</div>
+                      </div>
+                      <div className="relative bg-dark-900 rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                        <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                        <div className="ml-16">Network</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 via-indigo-700 to-indigo-800 text-white">
@@ -107,19 +251,59 @@ export default function Page() {
               variants={variants}
               className="text-3xl font-medium text-black dark:text-white mb-8"
             >
-              심플하면서도 강력한 기능을 제공합니다.
+              라이믹스 전용 레이아웃 출시 예정
             </motion.div>
             <motion.div
               variants={variants}
-              className="text-base text-gray-500 dark:text-dark-300 text-center"
+              className="text-base text-gray-500 dark:text-dark-300 text-center mb-5"
             >
-              회원관리와 게시판관리 문의하기 그리고 채팅과 앱과의 연동등 다양한
-              기능을 제공을 기본적으로 제공하고 있습니다. 최신 트렌드에 맞는
-              관리자 디자인과 편리함을 한번에 느껴보시기 바랍니다.
+              최근 데스크탑 환경에서 모바일 UI를 적극 활용한 디자인들을 많이
+              선보이고 있습니다. 그에 맞춰 그전에는 없는 느낌의 레이아웃을 출시
+              하려고 합니다. 현재 작업중에 있으며 6월중에 출시 예정입니다.
             </motion.div>
+            <motion.a
+              href="#"
+              variants={variants}
+              className="text-base text-primary-500 dark:text-primary-400 text-center hover:underline"
+            >
+              자세히 보기
+            </motion.a>
           </motion.div>
         </div>
         <div className="py-20">
+          <div className="relative max-w-screen-xl mx-auto px-3">
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex flex-wrap gap-4"
+            >
+              <motion.div
+                variants={variants}
+                className="bg-slate-100 dark:bg-dark-700 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+              >
+                <div className="text-3xl text-white font-bold mb-8">Store</div>
+                <div className="text-base text-dark-300 mb-10">
+                  React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
+                  있습니다.
+                </div>
+              </motion.div>
+              <motion.div
+                variants={variants}
+                className="bg-slate-100 dark:bg-dark-800 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+              >
+                <div className="text-3xl text-white font-bold mb-8">
+                  Partners
+                </div>
+                <div className="text-base text-dark-300 mb-10">
+                  저희 파트너사가 된다면 20% 할인된 금액으로 모든 상품을
+                  다운로드 받을 수 있습니다.
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+        <div className="hidden py-20">
           <div className="max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
@@ -235,7 +419,7 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="py-20 hidden">
+        <div className="hidden py-20">
           <div className="max-w-screen-xl mx-auto px-3">
             <div className="grid grid-cols-5 gap-10 lg:gap-8 w-full">
               <motion.div
@@ -245,7 +429,10 @@ export default function Page() {
                 variants={parentVariants}
                 className=" col-span-5 lg:col-span-3"
               >
-                <motion.div className="text-dark-300 mb-5" variants={variants}>
+                <motion.div
+                  className="text-primary-400 mb-5"
+                  variants={variants}
+                >
                   Front End Platform
                 </motion.div>
                 <motion.div
@@ -258,16 +445,16 @@ export default function Page() {
                   variants={variants}
                   className="text-base text-dark-400 dark:text-dark-300 mb-6"
                 >
-                  지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모
+                  {/* 지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모
                   개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업, 신생 기업
-                  및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
+                  및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다. */}
                   {/* Front-end 기술을 기반으로 서비스를 제작하고 배포 합니다. React
                   + Next.js를 기반으로 웹 개발을 진행하고 그 노하우를 활용하여
                   다양한 자원들과 Components등 더 나은 제품을 개발하고 있습니다. */}
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-primary-500 dark:hover:bg-white cursor-pointer"
+                  className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-primary-500 dark:hover:bg-primary-500 cursor-pointer"
                 >
                   Read more
                 </motion.div>
@@ -298,25 +485,26 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="py-20">
+        <div className="relative py-20 bg-[url('/assets/images/yellow/yellow_bg2.jpg')] bg-no-repeat bg-cover bg-center">
+          <div className="absolute inset-0 overflow-hidden bg-dark-950/40"></div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
             variants={parentVariants}
-            className="max-w-screen-xl mx-auto  px-3 xl:px-8"
+            className="relative max-w-screen-xl mx-auto  px-3 xl:px-8"
           >
             <div className="flex justify-center mb-6">
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-pink-400 via-indigo-400 to-sky-400 text-center pt-20 mb-3"
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 text-center pt-20 mb-3"
                 >
                   WE ARE CRATEIVE
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-pink-400 via-indigo-400 to-sky-400 text-center mb-10"
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 text-center mb-10"
                 >
                   Responsive everything.
                 </motion.div>

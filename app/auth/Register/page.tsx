@@ -228,7 +228,7 @@ const Register = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white dark:bg-dark-800 px-4 text-xs text-dark-400">
+                <span className="bg-white dark:bg-dark-950 px-4 text-xs text-dark-400">
                   OR
                 </span>
               </div>

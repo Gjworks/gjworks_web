@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
     })
   }
   return (
-    <motion.div className="selection:text-black selection:bg-primary-500">
+    <motion.div className="selection:text-primary-400 selection:bg-dark-950">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <Header />

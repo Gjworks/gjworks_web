@@ -42,11 +42,11 @@
                 }
             ]
         },
-        "Metaverse" : {
-            "name": "metaverse",
-            "title": "Metaverse",
+        "web" : {
+            "name": "web",
+            "title": "Web",
             "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/metaverse",
+            "route": "/web",
             "image_name": "",
             "subMenu": []
         },
