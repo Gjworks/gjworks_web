@@ -50,7 +50,7 @@ const Dropdown = props => {
         variants={variants}
         transition={{ duration: 0.5 }}
         className={
-          'absolute top-8 right-0 mt-2 mr-2 rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800/50 dark:shadow-black/50 border border-gray-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]'
+          'absolute top-8 right-0 mt-2 mr-2 rounded-md backdrop-blur-lg dark:backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-950/60 dark:shadow-black/50 border border-gray-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]'
         }
       >
         <div className="relative z-[100]">{props.children}</div>

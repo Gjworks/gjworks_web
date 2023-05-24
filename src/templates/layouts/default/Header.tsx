@@ -339,19 +339,19 @@ const Header = () => {
                         Sitemap
                       </div>
                       <Link
-                        href=""
+                        href="#"
                         className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                       >
                         개발문서
                       </Link>
                       <Link
-                        href=""
+                        href="#"
                         className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                       >
                         교육
                       </Link>
                       <Link
-                        href=""
+                        href="#"
                         className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                       >
                         유지보수/관리
@@ -362,7 +362,7 @@ const Header = () => {
                         Store
                       </div>
                       <a
-                        href=""
+                        href="#"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
@@ -370,19 +370,19 @@ const Header = () => {
                         XE/라이믹스 스토어
                       </a>
                       <Link
-                        href=""
+                        href="#"
                         className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                       >
                         도메인 등록
                       </Link>
                       <Link
-                        href=""
+                        href="#"
                         className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                       >
                         세금계산서 신청
                       </Link>
                       <Link
-                        href=""
+                        href="#"
                         className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
                       >
                         파트너 신청

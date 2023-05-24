@@ -8,8 +8,7 @@ import dynamic from 'next/dynamic'
 import { usePathname } from 'next/navigation'
 
 import { useSession, signOut } from 'next-auth/react'
-
-let editorInstance
+import TextInput from 'src/components/form/TextInput'
 
 // const loadDocumentEdit = async () => {
 //   const result = fetch
@@ -61,6 +60,7 @@ const Edit = props => {
     })
   }
 
+  const getData = () => {}
   // 에디터에 있는 글을 가져오기 위함
 
   const handleDocumentSubmit = e => {
@@ -112,7 +112,7 @@ const Edit = props => {
                     </div>
                   </div>
                   <h1 className="">
-                    <input
+                    {/* <input
                       type="text"
                       name="title"
                       defaultValue=""
@@ -120,8 +120,19 @@ const Edit = props => {
                       className="text-white dark:bg-transparent font-light text-3xl w-full bg-transparent border-b border-dark-700 focus:border-dark-500 outline-none p-3"
                       onChange={onChange}
                       required
-                    />
+                    /> */}
                   </h1>
+                  <div>
+                    <TextInput
+                      inputType="text"
+                      inputName="title"
+                      inputTitle="제목"
+                      placeholder="제목을 입력하세요."
+                      getData={getData}
+                      theme="dark"
+                      value=""
+                    ></TextInput>
+                  </div>
                 </div>
               </motion.div>
               <div className="grid grid-cols-12 lg:gap-16 xl:gap-8 max-w-5xl">

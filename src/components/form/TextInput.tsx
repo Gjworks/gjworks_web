@@ -7,9 +7,9 @@ interface Props {
   inputName: string
   inputTitle: string
   getData: (message: string) => void
-  value: any
-  theme: string
-  placeholder: string
+  value: any | null
+  theme: string | null
+  placeholder: string | null
 }
 
 const TextInput: React.FC<Props> = props => {

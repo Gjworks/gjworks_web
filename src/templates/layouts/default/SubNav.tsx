@@ -1,13 +1,36 @@
 'use client'
 
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import nav from 'src/res/config/navigation.json'
-import { usePathname, useSearchParams } from 'next/navigation'
+import {
+  usePathname,
+  useRouter,
+  useSearchParams,
+  useParams,
+} from 'next/navigation'
 
 const SubNav = () => {
+  const [firstParams, setFirstParams] = useState<string[] | undefined>()
+  const [firstNav, setFirstNav] = useState<string>()
+  const [firstNavTitle, setFirstNavTitle] = useState<string>()
   const pathname = usePathname()
-  const searchParams = useSearchParams()
-  console.log(searchParams)
+
+  useEffect(() => {
+    // const firstNav =
+    setFirstParams(pathname?.split('/'))
+    setFirstNav(firstParams?.[1])
+    console.log(firstParams)
+    if (firstNav !== undefined) {
+      console.log(nav.header[firstNav].title)
+      setFirstNavTitle(nav.header[firstNav].title)
+    } else {
+      // 'firstNav'가 'undefined'인 경우에 대한 처리 또는 기본값 설정
+    }
+
+    console.log(firstNavTitle)
+  }, [pathname, firstNav, firstNavTitle])
+
   const snav = null
   return (
     <>
@@ -50,7 +73,7 @@ const SubNav = () => {
               href="/"
               className="block font-semibold text-xl py-3 text-black dark:text-white"
             >
-              Discovery
+              {firstNavTitle ? firstNavTitle : 'Discovery'}
             </Link>
             <div className="flex items-center">
               {nav.header &&
