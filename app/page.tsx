@@ -113,7 +113,7 @@ export default function Page() {
                       <div className="relative z-[100]">
                         <div className="w-56">
                           <a
-                            className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:text-dark-900 hover:bg-dark-600 hover:text-white dark:bg-primary-400 focus:outline-none focus:bg-dark-800 focus:text-dark-300"
+                            className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-900 hover:bg-dark-600 hover:text-white dark:bg-primary-400 focus:outline-none focus:bg-dark-800 focus:text-dark-300"
                             href="/auth/Signin"
                           >
                             <div className="flex justify-between">

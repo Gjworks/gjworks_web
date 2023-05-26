@@ -25,14 +25,6 @@
                     "description": "Create React"
                 },
                 {
-                    "title": "Price",
-                    "name": "price",
-                    "image_name": "",
-                    "parent": "components",
-                    "route": "/components/price",
-                    "description": "Create React"
-                },
-                {
                     "title": "License",
                     "name": "license",
                     "image_name": "",
@@ -50,18 +42,27 @@
             "image_name": "",
             "subMenu": []
         },
-        "blog" : {
-            "name": "blog",
-            "title": "Blog",
+        "forum" : {
+            "name": "forum",
+            "title": "Forum",
             "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/posts/blog",
+            "route": "/posts/forum",
             "image_name": "",
             "subMenu": [
+                {
+                    "title": "Forum",
+                    "name": "forum",
+                    "image_name": "",
+                    "parent": "forum",
+                    "description": "Create React",
+                    "route": "/posts/forum",
+                    "subMenu" : []
+                },
                 {
                     "title": "Blog",
                     "name": "blog",
                     "image_name": "",
-                    "parent": "blog",
+                    "parent": "forum",
                     "description": "Create React",
                     "route": "/posts/blog",
                     "subMenu" : []
@@ -70,7 +71,7 @@
                     "title": "News",
                     "name": "news",
                     "image_name": "",
-                    "parent": "blog",
+                    "parent": "forum",
                     "route": "/posts/news",
                     "description": "Create React"
                 }

@@ -3,81 +3,70 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import nav from 'src/res/config/navigation.json'
-import {
-  usePathname,
-  useRouter,
-  useSearchParams,
-  useParams,
-} from 'next/navigation'
+import page from 'src/res/config/page.json'
+import { usePathname } from 'next/navigation'
 
+interface page {
+  name: string
+  title: string
+  parent: string
+  route: string
+}
 const SubNav = () => {
-  const [firstParams, setFirstParams] = useState<string[] | undefined>()
-  const [firstNav, setFirstNav] = useState<string>()
-  const [firstNavTitle, setFirstNavTitle] = useState<string>()
+  const [currentPage, setCurrentPage] = useState<page>()
+  const [subMenu, setSubMenu] = useState<any[] | undefined>()
+  // const [lastParam, setLastParam] = useState<any | undefined>()
+
+  // const [firstNavTitle, setFirstNavTitle] = useState<string>()
   const pathname = usePathname()
 
   useEffect(() => {
-    // const firstNav =
-    setFirstParams(pathname?.split('/'))
-    setFirstNav(firstParams?.[1])
-    console.log(firstParams)
-    if (firstNav !== undefined) {
-      console.log(nav.header[firstNav].title)
-      setFirstNavTitle(nav.header[firstNav].title)
-    } else {
-      // 'firstNav'가 'undefined'인 경우에 대한 처리 또는 기본값 설정
+    const params = pathname?.split('/')
+
+    let _subMenu
+
+    if (params?.length) {
+      if (params?.length > 2) {
+        setCurrentPage(page[params?.[2]])
+      } else {
+        setCurrentPage(page[params?.[1]])
+      }
     }
 
-    console.log(firstNavTitle)
-  }, [pathname, firstNav, firstNavTitle])
+    if (currentPage?.parent && nav.header[currentPage?.parent]) {
+      _subMenu = nav.header[currentPage?.parent]?.subMenu
+      if (_subMenu) {
+        if (_subMenu.length > 0) {
+          setSubMenu(_subMenu)
+        } else {
+          _subMenu = Array('')
+          setSubMenu(_subMenu)
+        }
+      }
+    } else {
+      _subMenu = null
+      setSubMenu(_subMenu)
+    }
+  }, [pathname, currentPage, subMenu])
 
   const snav = null
   return (
     <>
-      {snav && (
-        <div className="sticky top-[60px] z-[50] bg-white/80 backdrop-blur-lg dark:backdrop-blur-lg border-b border-slate-100 dark:bg-dark-950/80 dark:border-dark-950">
-          <div className="max-w-screen-xl mx-auto">
-            <div>
-              {nav.header &&
-                Object.entries(nav.header).map((data, index) => {
-                  return (
-                    <div className="flex gap-8 px-3" key={index}>
-                      {pathname === data[1].route &&
-                        Object.entries(data[1].subMenu).map((data2, index2) => {
-                          return (
-                            <Link
-                              href={data2[1].route}
-                              key={index2}
-                              className={
-                                'text-black hover:text-black text-sm px-1 py-4 flex border-b-2' +
-                                (pathname === data2[1].route
-                                  ? 'text-black dark:text-white border-slate-800 dark:border-dark-100 '
-                                  : 'text-slate-500 dark:text-dark-400 hover:text-black dark:hover:text-white border-transparent')
-                              }
-                            >
-                              {data2[1].title}
-                            </Link>
-                          )
-                        })}
-                    </div>
-                  )
-                })}
-            </div>
-          </div>
-        </div>
-      )}
-      <div className="sticky backdrop-blur-lg bg-white/80 top-[44px] z-[50] dark:bg-dark-950/60 pb-1">
+      <div className="sticky backdrop-blur-lg bg-white/80 top-[44px] z-[50] dark:bg-dark-950/60 pb-1 border-b dark:border-dark-800/75">
         <div className="max-w-screen-lg mx-auto px-3 overflow-hidden overflow-scroll-hide overflow-x-auto">
-          <div className="flex gap-8 justify-between">
-            <Link
-              href="/"
-              className="block font-semibold text-xl py-3 text-black dark:text-white"
-            >
-              {firstNavTitle ? firstNavTitle : 'Discovery'}
-            </Link>
+          <div className="flex gap-8 justify-between h-[52px]">
+            {currentPage && (
+              <Link
+                href={currentPage?.route}
+                className="block font-semibold text-xl py-3 text-black dark:text-white"
+              >
+                {currentPage ? currentPage?.title : ''}
+              </Link>
+            )}
+
             <div className="flex items-center">
-              {nav.header &&
-                Object.entries(nav.header).map((data, index) => {
+              {subMenu &&
+                Object.entries(subMenu).map((data, index) => {
                   return (
                     <Link
                       href={data[1].route}

@@ -1,0 +1,92 @@
+{
+    "" : {
+        "name": "index",
+        "title": "Discovery",
+        "description": "",
+        "route": "/web",
+        "image_name": ""
+    },
+    "web" : {
+        "name": "web",
+        "title": "Web Create",
+        "description": "",
+        "route": "/web",
+        "image_name": ""
+    },
+    "components" : {
+        "name": "components",
+        "title": "Components",
+        "description": "",
+        "route": "/web",
+        "parent": "components",
+        "image_name": ""
+    },
+    "documentation" : {
+        "name": "documentation",
+        "title": "Documentation",
+        "description": "",
+        "parent" : "components",
+        "route": "/web",
+        "image_name": ""
+    },
+    "metaverse" : {
+        "name": "metaverse",
+        "title": "Metaverse Platform",
+        "description": "",
+        "route": "/metaverse",
+        "image_name": ""
+    },
+    "contact" : {
+        "name": "contact",
+        "title": "Contact us",
+        "description": "",
+        "route": "/contact",
+        "parent" : "",
+        "image_name": ""
+    },
+    "blog" : {
+        "name": "blog",
+        "title": "Blog Posts",
+        "description": "",
+        "route": "/posts/blog",
+        "parent" : "forum",
+        "image_name": ""
+    },
+    "news" : {
+        "name": "news",
+        "title": "News",
+        "description": "",
+        "route": "/posts/news",
+        "parent" : "forum",
+        "image_name": ""
+    },
+    "forum" : {
+        "name": "forum",
+        "title": "Forum",
+        "description": "",
+        "route": "/posts/forum",
+        "parent" : "forum",
+        "image_name": ""
+    },
+    "Signin" : {
+        "name": "signin",
+        "title": "Login",
+        "description": "",
+        "route": "/auth/Signin",
+        "image_name": ""
+    },
+    "Register" : {
+        "name": "register",
+        "title": "Register",
+        "description": "",
+        "route": "/auth/Register",
+        "image_name": ""
+    },
+    "user" : {
+        "name": "user",
+        "title": "Mypage",
+        "description": "",
+        "route": "/user",
+        "image_name": ""
+    }
+}
