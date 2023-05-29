@@ -60,7 +60,7 @@ const SubNav = () => {
                 href={currentPage?.route}
                 className="block font-semibold text-xl py-3 text-black dark:text-white"
               >
-                {currentPage ? currentPage?.title : ''}
+                {currentPage ? currentPage?.title : 'Discovery'}
               </Link>
             )}
 

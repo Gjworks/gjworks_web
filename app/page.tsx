@@ -37,13 +37,13 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative">
-        <motion.div className="relative max-w-[1920px] mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/yellow/yellow_bg2.jpg')] bg-no-repeat bg-cover bg-center h-[660px]">
-          <div className="absolute inset-0 overflow-hidden bg-dark-950/40"></div>
+        <motion.div className="relative mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg5.jpg')] bg-no-repeat bg-cover bg-center h-[660px]">
+          <div className="absolute inset-0 overflow-hidden bg-dark-950/60"></div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="relative max-w-screen-lg mx-auto px-3 py-20 z-10"
+            className="relative max-w-screen-xl mx-auto px-3 py-20 z-10"
           >
             <div className="">
               <motion.div
@@ -57,7 +57,7 @@ export default function Page() {
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-gray-500 dark:text-white"
               >
                 <span className="text-black bg-primary-400 px-1">
-                  Build web and app{' '}
+                  Build web and app
                 </span>{' '}
                 <br></br>quickly and simply
               </motion.div>
@@ -97,12 +97,12 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="relative overflow-hidden bg-gradient-to-br from-primary-500 to-secondary-500 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="relative overflow-hidden bg-gradient-to-br bg-dark-900 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
-                <div className="text-2xl font-bold text-black dark:text-black mb-5">
+                <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Web UI Components
                 </div>
-                <div className="text-sm text-dark-800 mb-10">
+                <div className="text-sm text-dark-100 mb-10">
                   Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
                   프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
                   제작합니다.
@@ -195,15 +195,15 @@ export default function Page() {
                   </div>
                   <div>
                     <div className="w-[240px]">
-                      <div className="relative bg-dark-900 rounded-lg p-2 textWhite text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                      <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
                         <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
                         <div className="ml-16">Example</div>
                       </div>
-                      <div className="relative bg-dark-600 rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                      <div className="relative bg-dark-500 rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
                         <div className="absolute bg-primary-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
                         <div className="ml-16">Data Fetching</div>
                       </div>
-                      <div className="relative bg-dark-900 rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                      <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
                         <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
                         <div className="ml-16">Network</div>
                       </div>
@@ -485,7 +485,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="relative py-20 bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center">
+        <div className="relative py-20 bg-dark-800 bg-no-repeat bg-cover bg-center">
           <div className="absolute inset-0 overflow-hidden bg-dark-950/40"></div>
           <motion.div
             initial="offscreen"
@@ -498,13 +498,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 text-center pt-20 mb-3"
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 text-center pt-20 mb-3"
                 >
                   WE ARE CRATEIVE
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 text-center mb-10"
+                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 text-center mb-10"
                 >
                   Responsive everything.
                 </motion.div>
