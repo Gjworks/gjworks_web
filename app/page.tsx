@@ -37,7 +37,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative">
-        <motion.div className="relative mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg5.jpg')] bg-no-repeat bg-cover bg-center h-[660px]">
+        <motion.div className="relative mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/yellow/yellow_bg4.jpg')] bg-no-repeat bg-cover bg-center h-[660px]">
           <div className="absolute inset-0 overflow-hidden bg-dark-950/60"></div>
           <motion.div
             initial="offscreen"
@@ -97,12 +97,12 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="relative overflow-hidden bg-gradient-to-br bg-dark-900 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="relative overflow-hidden bg-gradient-to-br bg-gray-300 dark:bg-dark-900 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Web UI Components
                 </div>
-                <div className="text-sm text-dark-100 mb-10">
+                <div className="text-sm text-slate-400 dark:text-dark-100 mb-10">
                   Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
                   프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
                   제작합니다.
@@ -282,7 +282,9 @@ export default function Page() {
                 variants={variants}
                 className="bg-slate-100 dark:bg-dark-700 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
-                <div className="text-3xl text-white font-bold mb-8">Store</div>
+                <div className="text-3xl text-black dark:text-white font-bold mb-8">
+                  Store
+                </div>
                 <div className="text-base text-dark-300 mb-10">
                   React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
                   있습니다.
@@ -292,7 +294,7 @@ export default function Page() {
                 variants={variants}
                 className="bg-slate-100 dark:bg-dark-800 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
-                <div className="text-3xl text-white font-bold mb-8">
+                <div className="text-3xl text-black dark:text-white font-bold mb-8">
                   Partners
                 </div>
                 <div className="text-base text-dark-300 mb-10">
@@ -485,8 +487,9 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="relative py-20 bg-dark-800 bg-no-repeat bg-cover bg-center">
-          <div className="absolute inset-0 overflow-hidden bg-dark-950/40"></div>
+        <div className="relative py-20 bg-slate-50 dark:bg-dark-700 bg-no-repeat bg-cover bg-center">
+          <div className="w-full absolute left-0 right-0 top-0 h-[440px] bg-gradient-to-t from-transparent via-dark-900/50 to-dark-950"></div>
+          <div className="w-full absolute left-0 right-0 bottom-0 h-[440px] bg-gradient-to-b from-transparent via-dark-900/50 to-dark-950"></div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
