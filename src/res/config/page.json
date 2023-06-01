@@ -6,6 +6,13 @@
         "route": "/web",
         "image_name": ""
     },
+    "about" : {
+        "name": "about",
+        "title": "ABOUT",
+        "description": "",
+        "route": "/about",
+        "image_name": ""
+    },
     "web" : {
         "name": "web",
         "title": "Web Create",

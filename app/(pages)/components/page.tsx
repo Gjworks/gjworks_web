@@ -116,18 +116,18 @@ const Page = () => {
         <div className="py-20">
           <div className="bg-dark-800/80 py-8 px-8 rounded-lg">
             <div className="text-2xl mb-5 text-white">Dark color palette</div>
-            <div className="flex flex-wrap gap-4">
-              <div className="bg-dark-50 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-100 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-200 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-300 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-400 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-500 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-600 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-700 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-800 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-900 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
-              <div className="bg-dark-950 flex-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+            <div className="grid grid-cols-4 gap-4">
+              <div className="bg-dark-50 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-100 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-200 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-300 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-400 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-500 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-600 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-700 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-800 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-900 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
+              <div className="bg-dark-950 col-span-1 h-24 rounded-lg shadow-lg shadow-dark-950"></div>
             </div>
           </div>
         </div>

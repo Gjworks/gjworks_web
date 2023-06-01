@@ -2,7 +2,7 @@ import NextAuth, {NextAuthOptions} from 'next-auth'
 import { PrismaClient, User as UserModel} from '@prisma/client'
 import CredentialsProvider from 'next-auth/providers/credentials'
 // import credentials from 'next-auth/providers/credentials'
-import { verifyPassword } from 'src/lib/auth/auth'
+import { verifyPassword } from 'src/lib/auth/password'
 import { sign } from 'jsonwebtoken'
 
 const prisma = new PrismaClient()

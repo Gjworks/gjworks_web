@@ -117,10 +117,13 @@ const Register = () => {
             <div className="text-2xl text-dark-500 dark:text-dark-50">
               Register
             </div>
+            <div className="text-dark-300 text-sm pt-5">
+              회원가입을 해주셔서 감사드립니다.
+            </div>
           </div>
           {error && <Warning message={error} />}
           <form onSubmit={registerUser}>
-            <div className="relative flex mb-5 w-full">
+            <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput
                   inputType="text"
@@ -133,7 +136,7 @@ const Register = () => {
                 ></TextInput>
               </div>
             </div>
-            <div className="relative flex mb-5 w-full">
+            <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput
                   inputType="email"
@@ -147,7 +150,7 @@ const Register = () => {
               </div>
             </div>
 
-            <div className="relative flex mb-5 w-full">
+            <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput
                   inputType="password"
@@ -158,6 +161,9 @@ const Register = () => {
                   theme="dark"
                   value=""
                 ></TextInput>
+              </div>
+              <div className="text-dark-400 text-sm pt-2 px-2">
+                비밀번호는 암호화 되어 안전하게 저장됩니다.
               </div>
             </div>
             {/* <div className="px-3 mb-5 w-full">

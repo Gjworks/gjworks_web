@@ -2,9 +2,9 @@ import Image from 'next/image'
 const SafariBrower = () => {
   return (
     <>
-      <div className="shadow-xl shadow-gray-100 dark:shadow-dark-950 sm:rounded-xl min-w-full max-w-full mb-10">
+      <div className="shadow-xl shadow-gray-100 dark:shadow-black sm:rounded-xl min-w-full max-w-full mb-10">
         <div className="sm:rounded-xl ring-1 ring-slate-900/5">
-          <div className="sm:rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-600 dark:to-dark-700">
+          <div className="sm:rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-700 dark:to-dark-800">
             <div className="py-2.5 flex px-4 gap-6">
               <div className="flex items-center">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
@@ -12,7 +12,7 @@ const SafariBrower = () => {
                 <div className="ml-1.5 w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
               </div>
               <div className="flex-1">
-                <div className="bg-slate-100 rounded-md font-medium text-xs leading-6 py-1 flex items-center justify-center ring-1 ring-inset text-slate-400 ring-slate-900/5 mx-auto w-4/5 dark:bg-dark-900/90 dark:text-dark-500">
+                <div className="bg-slate-100 rounded-md font-medium text-xs leading-6 py-1 flex items-center justify-center ring-1 ring-inset text-slate-400 ring-slate-900/5 mx-auto w-4/5 dark:bg-dark-950/90 dark:text-dark-400">
                   <svg
                     viewBox="0 0 20 20"
                     fill="currentColor"
@@ -28,7 +28,7 @@ const SafariBrower = () => {
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="flex justify-center items-center rounded-md shadow-dark-800 text-slate-500 dark:text-dark-100 bg-slate-100 dark:bg-dark-500 w-[1.965rem] h-[1.965rem] cursor-pointer">
+                <div className="flex justify-center items-center rounded-md shadow-dark-800 text-slate-500 dark:text-dark-100 bg-slate-100 dark:bg-dark-700 w-[1.965rem] h-[1.965rem] cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -47,20 +47,20 @@ const SafariBrower = () => {
               </div>
             </div>
             <div className="grid grid-cols-3 text-xs leading-5 overflow-hidden">
-              <div className="pointer-events-none select-none rounded-tr border border-gray-200/5 dark:border-dark-900/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 bg-slate-100 dark:bg-dark-800/75 text-slate-400 dark:text-dark-400">
+              <div className="pointer-events-none select-none rounded-tr border border-gray-200/5 dark:border-dark-900/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 bg-slate-100 dark:bg-dark-900/90 text-slate-400 dark:text-dark-400">
                 <div className="truncate">Components</div>
               </div>
               <div className="pointer-events-none select-none font-medium px-4 py-1.5 flex items-center justify-center space-x-2 text-slate-500 dark:text-dark-200">
                 <div className="truncate">Workspace</div>
               </div>
-              <div className="pointer-events-none select-none rounded-tl border border-slate-200/5 dark:border-dark-900/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 bg-slate-100 dark:bg-dark-800/75 text-slate-400 dark:text-dark-400">
+              <div className="pointer-events-none select-none rounded-tl border border-slate-200/5 dark:border-dark-900/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 bg-slate-100 dark:bg-dark-900/90 text-slate-400 dark:text-dark-400">
                 <div className="truncate">UI</div>
               </div>
             </div>
           </div>
         </div>
         <div className="relative border-t border-slate-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-700">
-          <div className="w-full h-full"></div>
+          <div className="w-full h-20"></div>
         </div>
       </div>
     </>

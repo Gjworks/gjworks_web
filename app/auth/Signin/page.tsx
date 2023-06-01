@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useSession, signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
@@ -12,7 +12,7 @@ const Signin = () => {
   const [formMessage, setFormMessage] = useState<string>()
   // const emailInputRef = useRef(null)
   const [emailInput, setEmailInput] = useState<string>()
-  const passwordInputRef = useRef(null)
+  const [passwordInput, setPasswordInput] = useState<string>()
 
   const { data, status } = useSession()
   console.log(data)
@@ -20,11 +20,14 @@ const Signin = () => {
   const getData = (x: string) => {
     setEmailInput(x)
   }
+  const getPassword = (msg: string) => {
+    setPasswordInput(msg)
+  }
   const submitHandler = async e => {
     e.preventDefault()
     console.log(setEmailInput)
     const userEmail = emailInput
-    const userPassword = passwordInputRef.current
+    const userPassword = passwordInput
 
     const result = await signIn('credentials', {
       redirect: false,
@@ -61,7 +64,7 @@ const Signin = () => {
           <form onSubmit={submitHandler}>
             <div className="py-10 text-center">
               <div className="text-2xl font-semibold text-dark-500 dark:text-dark-50">
-                Request access
+                Request Access
               </div>
               <div className="text-slate-400 dark:text-dark-500 pt-10 text-sm">
                 소셜로그인은 추후에 지원 됩니다. <br></br>일반 회원가입을
@@ -119,42 +122,22 @@ const Signin = () => {
             </div>
             <div className="relative flex mb-5 w-full">
               <div className="flex items-center w-full text-xs">
-                <div className="relative flex-1">
-                  <input
-                    type="password"
-                    ref={passwordInputRef}
-                    name="password"
-                    id="password"
-                    className="text-sm bg-transparent text-dark-500 dark:text-dark-300 focus:text-slate-700 dark:focus:text-white py-4 focus:outline-none w-full placeholder-dark-400 dark:placeholder-dark-500 dark:focus:border-dark-500 rounded-lg border border-slate-200 focus:border-slate-600 dark:border-dark-600 pr-3 pl-12 appearance-none focus:ring-0 peer"
-                    placeholder=" "
-                  />
-                  <label className="absolute text-sm top-0 bg-white dark:bg-dark-900 px-3 left-8 scale-75 -translate-y-3 duration-300 transform text-slate-400 dark:text-dark-300 peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-10 peer-placeholder-shown:text-slate-400 dark:peer-placeholder-shown:text-dark-500 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3">
-                    Password
-                  </label>
-                  <div className="absolute top-4 left-4 text-slate-400 dark:text-dark-400 peer-focus:text-slate-900 dark:peer-focus:text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1}
-                      stroke="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33"
-                      />
-                    </svg>
-                  </div>
-                </div>
+                <TextInput
+                  inputType="password"
+                  inputName="password"
+                  inputTitle="비밀번호"
+                  getData={getPassword}
+                  placeholder="Your Password"
+                  theme="dark"
+                  value=""
+                ></TextInput>
               </div>
             </div>
 
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-primary-400 dark:bg-primary-600 dark:hover:bg-primary-500 hover:text-white dark:hover:text-white dark:text-white text-dark-100 py-4 px-5 rounded-lg transition duration-300 hover:bg-gray-600"
+                className="flex justify-center items-center w-full bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-500 hover:text-black dark:hover:text-black dark:text-black text-dark-900 py-4 px-5 rounded-lg transition duration-300 hover:bg-gray-600"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

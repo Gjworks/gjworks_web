@@ -178,7 +178,7 @@ class Footer extends React.Component {
                 >
                   <div className="flex flex-wrap gap-4">
                     <Link
-                      href="/"
+                      href="/about"
                       className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                     >
                       ABOUT
