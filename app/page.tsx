@@ -37,7 +37,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
       <div className="relative">
-        <motion.div className="relative mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/bg4.jpg')] bg-no-repeat bg-cover bg-center h-[660px]">
+        <motion.div className="relative mx-auto pt-20 xl:py-20 overflow-hidden bg-[url('/assets/images/MacBookPro.png')] bg-no-repeat bg-cover bg-center h-[660px]">
           <div className="absolute inset-0 overflow-hidden bg-dark-950/50"></div>
           <motion.div
             initial="offscreen"
