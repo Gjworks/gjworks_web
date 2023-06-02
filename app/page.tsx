@@ -57,7 +57,7 @@ export default function Page() {
                 variants={variants}
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-slate-700 dark:text-white"
               >
-                <div className="text-black bg-primary-400 px-1">
+                <div className="text-black bg-primary-400 px-1 mb-2">
                   <div>Build web and app</div>
                   <div className="absolute -top-3 -right-16">
                     <svg
@@ -96,7 +96,7 @@ export default function Page() {
                     </svg>
                   </div>
                 </div>
-                <br></br>quickly and simply
+                <div>quickly and simply</div>
               </motion.div>
               <motion.div
                 variants={variants}
