@@ -30,7 +30,7 @@
     },
     "documentation" : {
         "name": "documentation",
-        "title": "Documentation",
+        "title": "문서",
         "description": "",
         "parent" : "components",
         "route": "/web",
@@ -94,6 +94,14 @@
         "title": "Mypage",
         "description": "",
         "route": "/user",
+        "image_name": ""
+    },
+    "license" : {
+        "name": "license",
+        "title": "라이센스",
+        "description": "",
+        "parent": "components",
+        "route": "/license",
         "image_name": ""
     }
 }

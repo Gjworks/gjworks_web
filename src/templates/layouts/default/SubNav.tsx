@@ -52,18 +52,19 @@ const SubNav = () => {
   const snav = null
   return (
     <>
-      <div className="sticky backdrop-blur-lg bg-white/80 top-[44px] z-[50] dark:bg-dark-950/60 pb-1 border-b dark:border-dark-800/75">
+      <div className="sticky backdrop-blur-lg bg-slate-50/90 top-[44px] z-[50] dark:bg-dark-950/60 pb-1 border-b border-slate-100 dark:border-dark-800">
         <div className="max-w-screen-lg mx-auto px-3 overflow-hidden overflow-scroll-hide overflow-x-auto">
           <div className="flex gap-8 justify-between h-[52px]">
-            {currentPage && (
-              <Link
-                href={currentPage?.route}
-                className="block font-semibold text-xl py-3 text-black dark:text-white"
-              >
-                {currentPage ? currentPage?.title : 'Discovery'}
-              </Link>
-            )}
-
+            <div>
+              {currentPage && (
+                <Link
+                  href={currentPage?.route}
+                  className="block font-semibold text-xl py-3 text-black dark:text-white"
+                >
+                  {currentPage ? currentPage?.title : 'Discovery'}
+                </Link>
+              )}
+            </div>
             <div className="flex items-center">
               {subMenu &&
                 Object.entries(subMenu).map((data, index) => {
@@ -84,7 +85,7 @@ const SubNav = () => {
                 })}
               <Link
                 href="#"
-                className="whitespace-nowrap block ml-2 text-xs text-dark-900 px-3 py-1 rounded-full bg-primary-400 hover:bg-dark-700 hover:text-primary-400"
+                className="whitespace-nowrap block ml-2 text-xs text-dark-100 px-3 py-1 rounded-full bg-gray-900 dark:bg-primary-500 dark:text-black dark:hover:bg-primary-400 dark:hover:text-black hover:bg-dark-700 hover:text-gray-100"
               >
                 Contact us
               </Link>

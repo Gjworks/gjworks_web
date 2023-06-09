@@ -56,7 +56,7 @@ const TextInput: React.FC<Props> = props => {
             className={
               `absolute text-sm top-0 px-3 left-4 scale-75 -translate-y-3 duration-300 transform peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-20 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3 cursor-text` +
               (props.theme === 'light'
-                ? ' bg-white text-primary-400 peer-placeholder-shown:text-slate-300 peer-focus:text-primary-400 '
+                ? ' bg-slate-50 text-primary-400 peer-placeholder-shown:text-slate-300 peer-focus:text-primary-400 '
                 : ' dark:bg-dark-950 dark:text-primary-400 peer-placeholder-shown:text-dark-500 peer-focus:text-primary-400')
             }
           >

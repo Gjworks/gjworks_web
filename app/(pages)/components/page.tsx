@@ -3,10 +3,10 @@
 const Page = () => {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto px-3 py-10 lg:py-20 h-[2400px]">
+      <div className="max-w-screen-lg mx-auto px-3 py-10 lg:py-20">
         <div className="grid grid-cols-4 gap-8">
-          <div className="col-span-4 sm:col-span-2 lg:col-span-1">
-            <div className="rounded-xl p-5 border bg-white hover:border-primary-600 border-gray-200 dark:border-dark-600 dark:hover:border-primary-600 dark:bg-dark-900 h-full">
+          <div className="col-span-4 sm:col-span-2">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -32,8 +32,8 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="col-span-4 sm:col-span-2 lg:col-span-1">
-            <div className="rounded-xl p-5 border bg-white hover:border-primary-600 border-gray-200 dark:border-dark-600 dark:hover:border-primary-600 dark:bg-dark-900 h-full">
+          <div className="col-span-4 sm:col-span-2">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,8 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="col-span-4 sm:col-span-2 lg:col-span-1">
-            <div className="rounded-xl p-5 border bg-white hover:border-primary-600 border-gray-200 dark:border-dark-600 dark:hover:border-primary-600 dark:bg-dark-900 h-full">
+          <div className="col-span-4 sm:col-span-2">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -86,8 +86,8 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="col-span-4 sm:col-span-2 lg:col-span-1">
-            <div className="rounded-xl p-5 border bg-white hover:border-primary-600 border-gray-200 dark:border-dark-600 dark:hover:border-primary-600 dark:bg-dark-900 h-full">
+          <div className="col-span-4 sm:col-span-2">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

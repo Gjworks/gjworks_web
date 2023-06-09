@@ -137,7 +137,7 @@ const Signin = () => {
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-500 hover:text-black dark:hover:text-black dark:text-black text-dark-900 py-4 px-5 rounded-lg transition duration-300 hover:bg-gray-600"
+                className="flex justify-center items-center w-full bg-secondary-600 dark:bg-secondary-600 dark:hover:bg-secondary-500 hover:text-white dark:hover:text-white dark:text-white text-slate-100 py-4 px-5 rounded-lg transition duration-300 hover:bg-secondary-500"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +242,7 @@ const Signin = () => {
                   className="group text-sm text-dark-500"
                 >
                   회원가입을 하시려면{' '}
-                  <span className="group-hover:text-primary-400 text-primary-300 hover:text-secondary-400 underline">
+                  <span className="group-hover:text-primary-400 text-primary-500 hover:text-secondary-400 underline">
                     회원가입 하기
                   </span>
                 </Link>
@@ -250,7 +250,7 @@ const Signin = () => {
               <div className="w-full">
                 <Link href="/" className="group text-sm text-dark-500">
                   이메일과 비밀번호를 잊어버리 셨나요?{' '}
-                  <span className="group-hover:text-primary-300 text-primary-300 hover:text-secondary-400 underline">
+                  <span className="group-hover:text-primary-400 text-primary-500 hover:text-secondary-400 underline">
                     Email/비밀번호 찾기
                   </span>
                 </Link>

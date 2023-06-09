@@ -22,7 +22,9 @@ class Footer extends React.Component {
             <div className="flex flex-wrap gap-8 mb-6">
               <div className="flex gap-4 flex-wrap w-full lg:flex-1 order-1 lg:order-0">
                 <div className="flex gap-4 w-full">
-                  <div className="text-white text-xs w-16">Partners</div>
+                  <div className="text-black dark:text-white text-xs w-16">
+                    Partners
+                  </div>
                   <motion.div
                     className="flex items-center col-span-3 lg:col-span-1"
                     initial={{ opacity: 0, y: 25 }}
@@ -55,7 +57,9 @@ class Footer extends React.Component {
                   </motion.div>
                 </div>
                 <div className="flex gap-4 w-full">
-                  <div className="text-white text-xs w-16">Developer</div>
+                  <div className="text-black dark:text-white text-xs w-16">
+                    Developer
+                  </div>
                   <motion.div
                     className="flex items-center col-span-3 lg:col-span-1"
                     initial={{ opacity: 0, y: 25 }}
@@ -109,7 +113,7 @@ class Footer extends React.Component {
                   <div className="pr-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
+                      className="w-6 h-6 stroke-1 fill-gray-900 group-hover:fill-gray-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
                       width="512"
                       height="512"
                       viewBox="0 0 512 512"
@@ -127,7 +131,7 @@ class Footer extends React.Component {
                   <div className="pr-3">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
+                      className="w-6 h-6 stroke-1 fill-gray-900 group-hover:fill-gray-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
                       width="512"
                       height="512"
                       viewBox="0 0 512 512"
