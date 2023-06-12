@@ -143,7 +143,7 @@ class Footer extends React.Component {
                 </a>
               </div>
             </div>
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-dark-600 to-transparent"></div>
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-dark-700 to-transparent"></div>
             <div className="pt-8 lg:pt-5 pb-8">
               <div className="flex flex-wrap justify-center gap-8">
                 <motion.div

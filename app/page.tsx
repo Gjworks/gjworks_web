@@ -39,24 +39,24 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className="relative -mt-[111px]">
-          <motion.div className=" px-3 mx-auto pt-20 xl:py-20 bg-[url('/assets/images/bg8.jpg')] bg-no-repeat bg-cover bg-center h-[660px]">
-            <div className="absolute inset-0 overflow-hidden bg-dark-950/60"></div>
+          <motion.div className=" px-3 mx-auto pt-20 xl:py-20 bg-[url('/assets/images/bg9.jpg')] bg-no-repeat bg-cover bg-top h-auto lg:h-[660px]">
+            <div className="absolute inset-0 overflow-hidden bg-dark-950/20 dark:bg-dark-950/40"></div>
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
-              className="flex relative max-w-screen-lg mx-auto px-3 pt-[222px] z-10"
+              className="flex relative max-w-screen-lg mx-auto px-3 pt-[111px] lg:pt-[222px] z-10"
             >
               <div className="relative">
                 <motion.div
                   variants={variants}
-                  className="text-sm lg:text-base font-bold text-black dark:text-primary-400 mb-3"
+                  className="text-sm lg:text-base font-bold text-white dark:text-primary-400 mb-3"
                 >
                   TEAM THAT MAKES THE SERVICE
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-slate-700 dark:text-white"
+                  className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-white dark:text-white"
                 >
                   <div className="text-white bg-secondary-600 px-1 mb-2">
                     <div>Build web and app</div>
@@ -66,7 +66,7 @@ export default function Page() {
                         width="62.63443"
                         height="48.83955"
                         viewBox="0 0 62.63443 48.83955"
-                        className="fill-primary-500 stroke-1"
+                        className="fill-secondary-500 stroke-1"
                       >
                         <path
                           d="M44.98697,17.27072c3.02152-4.51246,6.04304-9.02491,9.06455-13.53737h-4.31735c2.40533,3.96877,4.81066,7.93755,7.216,11.90632,.34353,.56682,.68706,1.13365,1.03059,1.70047,.69922,1.15371,2.24206,1.58614,3.42047,.89688,1.15413-.67506,1.59935-2.2614,.89688-3.42047-2.40533-3.96877-4.81066-7.93755-7.216-11.90632-.34353-.56682-.68706-1.13365-1.03059-1.70047-1.01399-1.67307-3.27826-1.55182-4.31735,0-3.02152,4.51246-6.04304,9.02491-9.06455,13.53737-.75151,1.12234-.21797,2.7684,.89688,3.42047,1.22766,.71806,2.66719,.22811,3.42047-.89688h0Z"
@@ -81,7 +81,7 @@ export default function Page() {
                         width="50.23402"
                         height="58.64887"
                         viewBox="0 0 50.23402 58.64887"
-                        className="fill-primary-500 stroke-[2px]"
+                        className="fill-secondary-500 stroke-[2px]"
                       >
                         <g>
                           <path
@@ -100,13 +100,13 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="text-dark-400 dark:text-dark-200 text-sm lg:text-lg"
+                  className="text-gray-100 dark:text-dark-200 text-sm lg:text-lg"
                 >
                   서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                 </motion.div>
               </div>
             </motion.div>
-            <div className="w-full absolute left-0 right-0 bottom-0 h-[440px] bg-gradient-to-b from-transparent via-dark-900/50 to-dark-950"></div>
+            <div className="w-full absolute left-0 right-0 bottom-0 h-[440px] bg-gradient-to-b from-transparent via-white/50 to-white dark:via-dark-900/50 dark:to-dark-950"></div>
           </motion.div>
         </div>
         <div className="py-20">
@@ -119,7 +119,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className=" bg-gradient-to-b from-slate-100 dark:from-dark-700 via-slate-200/30 dark:via-dark-700/30 to-slate-200/60 dark:to-dark-800/60 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className=" bg-gradient-to-b from-slate-100 dark:from-dark-800 via-slate-200/30 dark:via-dark-800/30 to-slate-200/60 dark:to-dark-800/60 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-medium text-black dark:text-white mb-5">
                   Rhymix 제작 및 유지보수를 해드립니다.
@@ -134,7 +134,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="relative overflow-hidden bg-gradient-to-b from-slate-100 dark:from-dark-700 via-slate-200 dark:via-dark-800 to-slate-200 dark:to-dark-900 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="relative overflow-hidden bg-gradient-to-b from-slate-100 dark:from-dark-700/70 via-slate-200 dark:via-dark-800/40 to-slate-200 dark:to-dark-800/20 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
                 <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Web UI Components
@@ -310,9 +310,9 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-b from-slate-100 dark:from-primary-600 via-slate-200 dark:via-primary-700 to-slate-300 dark:to-primary-800 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
+                className="bg-gradient-to-b from-primary-500 dark:from-primary-600 via-primary-600 dark:via-primary-700 to-primary-700 dark:to-primary-800 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-4 hover:translate-y-0 "
               >
-                <div className="text-3xl text-black dark:text-white font-bold mb-8">
+                <div className="text-3xl text-white dark:text-white font-bold mb-8">
                   Store
                 </div>
                 <div className="text-base text-primary-300 mb-10">

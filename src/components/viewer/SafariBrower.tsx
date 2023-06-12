@@ -28,7 +28,7 @@ const SafariBrower = () => {
                 </div>
               </div>
               <div className="flex items-center">
-                <div className="flex justify-center items-center rounded-md shadow-dark-800 text-slate-500 dark:text-dark-100 bg-slate-100 dark:bg-dark-700 w-[1.965rem] h-[1.965rem] cursor-pointer">
+                <div className="flex justify-center items-center rounded-md shadow-dark-800 text-slate-500 dark:text-dark-100 bg-slate-100 dark:bg-dark-600 w-[1.965rem] h-[1.965rem] cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
