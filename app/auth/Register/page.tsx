@@ -131,7 +131,7 @@ const Register = () => {
                   inputTitle="닉네임"
                   getData={getNickname}
                   placeholder="User nick name"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -144,7 +144,7 @@ const Register = () => {
                   inputTitle="이메일"
                   getData={getEmail}
                   placeholder="example@mail.com"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -158,7 +158,7 @@ const Register = () => {
                   inputTitle="비밀번호"
                   getData={getPassword}
                   placeholder="User Password"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -234,7 +234,7 @@ const Register = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white dark:bg-dark-950 px-4 text-xs text-dark-400">
+                <span className="bg-slate-50 dark:bg-dark-950 px-4 text-xs text-dark-400">
                   OR
                 </span>
               </div>
