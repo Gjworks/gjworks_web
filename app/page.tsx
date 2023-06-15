@@ -38,9 +38,10 @@ export default function Page() {
       >
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
-        <div className="relative pt-20">
+        <div className="relative pt-20 bg-[url('/assets/images/bg10.jpg')] bg-no-repeat bg-cover bg-center h-auto lg:h-[700px]">
           <motion.div className=" px-3 mx-auto pt-20 xl:py-20 ">
-            {/* <div className="absolute inset-0 overflow-hidden bg-dark-950/20 dark:bg-dark-950/40"></div> */}
+            <div className="absolute inset-0 overflow-hidden bg-dark-950/40 dark:bg-dark-950/50"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-auto lg:h-[400px] bg-gradient-to-b from-transparent via-dark-950/60 to-dark-950"></div>
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
@@ -56,7 +57,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-10 text-black dark:text-white"
+                  className="text-3xl sm:text-4xl lg:text-6xl font-semibold mb-10 text-black dark:text-white"
                 >
                   <div className="text-black bg-primary-400 px-1 mb-2">
                     <div>Build web and app</div>
@@ -96,7 +97,9 @@ export default function Page() {
                       </svg>
                     </div>
                   </div>
-                  <div>Quickly and simply</div>
+                  <div>
+                    Quickly <span className="text-gray-400">and</span> simply
+                  </div>
                 </motion.div>
                 <motion.div
                   variants={variants}
@@ -106,6 +109,27 @@ export default function Page() {
                 </motion.div>
               </div>
             </motion.div>
+            <div className="hidden lg:flex flex-wrap absolute left-0 right-0 bottom-0">
+              <div className="w-full flex flex-wrap justify-center mb-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1}
+                  stroke="currentColor"
+                  className="w-10 h-10 text-dark-500"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <div className="w-full text-center text-gray-500 text-xs font-light">
+                Scroll Down
+              </div>
+            </div>
           </motion.div>
         </div>
         <div className="py-20">
@@ -297,6 +321,28 @@ export default function Page() {
             >
               자세히 보기
             </motion.a>
+          </motion.div>
+        </div>
+        <div className="py-20 hidden">
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={parentVariants}
+            className="max-w-screen-xl mx-auto px-3 xl:px-8 overflow-hidden pt-0 lg:py-20"
+          >
+            <div className="flex justify-center">
+              <div className="relative mx-auto bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-800 shadow-xl shadow-black dark:to-dark-900 flex justify-center items-center rounded-[2.5rem] h-[600px] w-[300px]">
+                <div className="h-[32px] w-[3px] bg-dark-800 dark:bg-dark-800 absolute -left-[3px] top-[72px] rounded-l-lg"></div>
+                <div className="h-[46px] w-[3px] bg-dark-800 dark:bg-dark-800 absolute -left-[3px] top-[124px] rounded-l-lg"></div>
+                <div className="h-[46px] w-[3px] bg-dark-800 dark:bg-dark-800 absolute -left-[3px] top-[178px] rounded-l-lg"></div>
+                <div className="h-[64px] w-[3px] bg-dark-800 dark:bg-dark-800 absolute -right-[3px] top-[142px] rounded-r-lg"></div>
+                <div className="relative rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-dark-950">
+                  <div className="bg-black h-8 absolute top-4 left-16 right-16 rounded-full"></div>
+                  1
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
         <div className="py-20">

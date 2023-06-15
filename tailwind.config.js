@@ -93,7 +93,7 @@ module.exports = {
       },
       // dark: colors.gray,
       primary: colors.yellow,
-      secondary: colors.yellow,
+      secondary: colors.amber,
     },
   },
   plugins: [],
