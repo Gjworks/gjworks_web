@@ -19,27 +19,41 @@ const Bottom = ({ state, close, children, title }) => {
   //     }
   //   }
   // }, [panelState])
-  useEffect(() => {
-    if (panelState === true) {
-      document.body.style.overflow = 'hidden'
-      return () => {
-        document.body.style.overflow = 'unset'
-      }
-    }
-  }, [panelState])
+  // useEffect(() => {
+  //   if (panelState === true) {
+  //     document.body.style.overflow = 'hidden'
+  //     return () => {
+  //       document.body.style.overflow = 'unset'
+  //     }
+  //   }
+  // }, [panelState])
 
   const variants = {
     openPanel: {
-      marginTop: '0vw',
+      bottom: '0%',
       transition: { duration: 0.3 },
     },
     closePanel: {
-      marginTop: '100vw',
+      bottom: '-100%',
+      transition: { duration: 0.3 },
+    },
+  }
+  const variants2 = {
+    openPanel: {
+      opacity: 1,
+      transition: { duration: 0.5 },
+    },
+    closePanel: {
+      opacity: 0,
       transition: { duration: 0.5 },
     },
   }
   const exit = {
-    marginTop: '100vw',
+    bottom: '-100%',
+    transition: { duration: 0.5 },
+  }
+  const exit2 = {
+    opacity: 0,
     transition: { duration: 0.5 },
   }
   const handleClosePanel = () => {
@@ -51,46 +65,56 @@ const Bottom = ({ state, close, children, title }) => {
       <AnimatePresence>
         {state && (
           <BottomPortal>
+            {/* <motion.div
+              onClick={handleClosePanel}
+              className="fixed w-screen h-screen transform overflow-auto z-100 flex justify-center items-end px-1"
+            > */}
             <motion.div
-              initial={{ marginTop: '100vw' }}
+              initial={{ bottom: '-100%' }}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed inset-0 transform overflow-auto bg-dark-900 z-90"
+              className="fixed bootom-1 mb-2 left-1/2 -translate-x-1/2 lg:mb-10 p-8 lg:p-10 z-101 bg-dark-800/90 rounded-xl max-w-[560px] w-full shadow-md mx-auto overflow-hidden text-white backdrop-blur-lg"
             >
-              <div className="flex gap-4 border-b border-dark-600 py-3">
+              <div className=" w-full flex">
+                <div className="text-white text-xl lg:text-3xl font-semibold">
+                  {title}
+                </div>
                 <button
                   onClick={handleClosePanel}
-                  className="flex text-white px-4"
+                  className="absolute right-3 top-3 rounded-full bg-dark-950 hover:bg-dark-900 p-2"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 19.5L8.25 12l7.5-7.5"
-                    />
-                  </svg>
-                </button>
-                <button onClick={handleClosePanel} className="text-dark-50">
-                  {title}
+                  <span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6 text-white "
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>
-              <motion.div
-                initial={{ opacity: 0, x: '-10%' }}
-                animate={{ opacity: 1, x: '0%', transition: { duration: 0.3 } }}
-                exit={{ opacity: 0, x: '-10%', transition: { duration: 0.3 } }}
-                className="relative mt-20 mb-10 px-3 z-100 bg-dark-600 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-white backdrop-blur bg-opacity-90"
-              >
+              <div className="flex justify-center items-center pt-8 min-h-[200px]">
                 {children}
-              </motion.div>
+              </div>
             </motion.div>
+            {/* </motion.div> */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={panelState === true ? 'openPanel' : 'closePanel'}
+              variants={variants2}
+              exit={exit2}
+              onClick={handleClosePanel}
+              className="fixed inset-0 bg-dark-950/40 z-90"
+            ></motion.div>
           </BottomPortal>
         )}
       </AnimatePresence>

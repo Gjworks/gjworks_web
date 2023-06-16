@@ -1,14 +1,19 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from 'src/components/viewer/SafariBrower'
 import { motion } from 'framer-motion'
 import DefaultLayout from 'src/templates/layouts/default/Layout'
-import RocketSVG from 'assets/svg/undraw_rocket.svg'
+import Bottom from 'src/components/panel/Bottom'
 
 export default function Page() {
+  const [showBottom, setShowBottom] = useState(false)
+
+  const closeBottom = close => {
+    setShowBottom(close)
+  }
   const parentVariants = {
     onscreen: {
       transition: { staggerChildren: 0.3 },
@@ -314,13 +319,12 @@ export default function Page() {
               선보이고 있습니다. 그에 맞춰 그전에는 없는 느낌의 레이아웃을 출시
               하려고 합니다. 현재 작업중에 있으며 6월중에 출시 예정입니다.
             </motion.div>
-            <motion.a
-              href="#"
-              variants={variants}
+            <button
+              onClick={() => setShowBottom(!showBottom)}
               className="text-base text-primary-500 dark:text-primary-400 text-center hover:underline"
             >
               자세히 보기
-            </motion.a>
+            </button>
           </motion.div>
         </div>
         <div className="py-20 hidden">
@@ -641,6 +645,15 @@ export default function Page() {
           </motion.div>
         </div>
       </div>
+      <Bottom
+        state={showBottom}
+        close={closeBottom}
+        title="현재 미출시 제품입니다."
+      >
+        <div className="text-dark-300 text-base text-center">
+          빠른시일내에 출시 할 수 있도록 하겠습니다.
+        </div>
+      </Bottom>
     </DefaultLayout>
   )
 }
