@@ -64,7 +64,7 @@ export default function Page() {
                   variants={variants}
                   className="text-3xl sm:text-4xl lg:text-6xl font-semibold mb-10 text-white dark:text-white"
                 >
-                  <div className="text-black bg-primary-600 px-1 mb-2">
+                  <div className="text-black bg-primary-400 px-1 mb-2">
                     <div>Build web and app</div>
                     <div className="absolute -top-3 -right-16">
                       <svg

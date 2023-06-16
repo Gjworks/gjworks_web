@@ -178,7 +178,7 @@ const Header = () => {
                     지제이웍스
                   </div>
                 </a>
-                <div className="hidden lg:flex text-slate-500 dark:text-dark-100 text-xs bg-slate-200/75 dark:bg-gray-50/10 px-4 py-1 rounded-full hover:bg-slate-300/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer">
+                <div className="hidden lg:flex text-gray-500 dark:text-dark-100 text-xs bg-gray-100/90 dark:bg-gray-50/10 px-4 py-1 rounded-full hover:bg-gray-200/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
