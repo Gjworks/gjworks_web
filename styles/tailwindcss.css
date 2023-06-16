@@ -9,7 +9,7 @@
   }
   html, html body {
     -webkit-overflow-scrolling: touch;
-    @apply bg-slate-50;
+    @apply bg-white;
   }
   html.dark, html.dark body {
     -webkit-overflow-scrolling: touch;
