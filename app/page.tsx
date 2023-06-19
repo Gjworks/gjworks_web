@@ -44,7 +44,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className="relative">
-          <motion.div className="flex items-center bg-[url('/assets/images/bg10.jpg')] bg-no-repeat bg-cover bg-center px-3 mx-auto py-20 lg:py-0 lg:h-[calc(100vh-111px)]">
+          <motion.div className="flex items-center bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-cover bg-center px-3 mx-auto py-20 lg:py-0 lg:h-[calc(100vh-111px)]">
             <div className="absolute inset-0 overflow-hidden bg-dark-950/40 dark:bg-dark-950/50"></div>
             <div className="absolute bottom-0 left-0 right-0 h-auto lg:h-[400px] bg-gradient-to-b from-transparent via-dark-950/60 to-dark-950"></div>
             <motion.div
@@ -73,7 +73,7 @@ export default function Page() {
                           width="62.63443"
                           height="48.83955"
                           viewBox="0 0 62.63443 48.83955"
-                          className="fill-primary-400 stroke-1"
+                          className="fill-sky-500 stroke-1"
                         >
                           <path
                             d="M44.98697,17.27072c3.02152-4.51246,6.04304-9.02491,9.06455-13.53737h-4.31735c2.40533,3.96877,4.81066,7.93755,7.216,11.90632,.34353,.56682,.68706,1.13365,1.03059,1.70047,.69922,1.15371,2.24206,1.58614,3.42047,.89688,1.15413-.67506,1.59935-2.2614,.89688-3.42047-2.40533-3.96877-4.81066-7.93755-7.216-11.90632-.34353-.56682-.68706-1.13365-1.03059-1.70047-1.01399-1.67307-3.27826-1.55182-4.31735,0-3.02152,4.51246-6.04304,9.02491-9.06455,13.53737-.75151,1.12234-.21797,2.7684,.89688,3.42047,1.22766,.71806,2.66719,.22811,3.42047-.89688h0Z"
@@ -88,7 +88,7 @@ export default function Page() {
                           width="50.23402"
                           height="58.64887"
                           viewBox="0 0 50.23402 58.64887"
-                          className="fill-primary-400 stroke-[2px]"
+                          className="fill-sky-500 stroke-[2px]"
                         >
                           <g>
                             <path
@@ -179,7 +179,7 @@ export default function Page() {
                     <div className="w-[240px] rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800 dark:shadow-black border border-slate-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]">
                       <div className="relative z-[100]">
                         <div className="w-56">
-                          <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-black hover:text-white text-white bg-primary-600 dark:bg-primary-500 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                          <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-white hover:text-white text-white bg-sky-600 dark:bg-sky-500 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                             <div className="flex justify-between">
                               <div className="flex items-center">
                                 <svg
@@ -258,10 +258,8 @@ export default function Page() {
                         <div className="ml-16">Example</div>
                       </div>
                       <div className="relative bg-black rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                        <div className="absolute bg-primary-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                        <div className="ml-16 text-primary-600">
-                          Data Fetching
-                        </div>
+                        <div className="absolute bg-sky-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                        <div className="ml-16 text-sky-600">Data Fetching</div>
                       </div>
                       <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
                         <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
@@ -361,7 +359,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-primary-600 to-secondary-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="bg-gradient-to-br from-blue-600 to-sky-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Store
