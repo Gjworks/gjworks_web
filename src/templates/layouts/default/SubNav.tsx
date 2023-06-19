@@ -85,7 +85,7 @@ const SubNav = () => {
                 })}
               <Link
                 href="#"
-                className="whitespace-nowrap block ml-2 text-xs text-dark-100 px-3 py-1 rounded-full bg-gray-900 dark:bg-primary-400 dark:text-black dark:hover:bg-primary-400 dark:hover:text-black hover:bg-dark-700 hover:text-gray-100"
+                className="whitespace-nowrap block ml-2 text-xs text-dark-100 px-3 py-1 rounded-full bg-black dark:bg-dark-700 dark:text-white dark:hover:bg-white dark:hover:text-black"
               >
                 Contact us
               </Link>

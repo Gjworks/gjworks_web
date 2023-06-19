@@ -29,7 +29,7 @@ const AccountDropwdown = () => {
           <motion.div className="w-56" variants={innerAnimation}>
             <Link
               href="/auth/Signin"
-              className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-dark-900 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 focus:outline-none focus:bg-primary-500 focus:text-dark-300"
+              className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black"
             >
               <div className="flex justify-between">
                 <div className="flex items-center">
@@ -55,7 +55,7 @@ const AccountDropwdown = () => {
           <motion.div variants={innerAnimation}>
             <Link
               href="/auth/Register"
-              className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-dark-900 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 focus:outline-none focus:bg-primary-500 focus:text-dark-300"
+              className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black"
             >
               <div className="flex justify-between">
                 <div className="flex items-center">
@@ -85,7 +85,7 @@ const AccountDropwdown = () => {
           <motion.div variants={innerAnimation}>
             <Link
               href="/user/Account"
-              className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-dark-900 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 focus:outline-none focus:bg-primary-500 focus:text-dark-300"
+              className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black"
             >
               <div className="flex justify-between">
                 <div className="flex items-center">
@@ -111,14 +111,14 @@ const AccountDropwdown = () => {
         </>
       )}
       <div className="block border-b border-gray-300 dark:border-dark-700 my-2 mx-3"></div>
-      {/* <div className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-dark-900 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 focus:outline-none focus:bg-primary-500 focus:text-dark-300"></div> */}
+      {/* <div className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black"></div> */}
       {session.status === 'authenticated' ? (
         <>
           <motion.div variants={innerAnimation}>
             <Link
               href="#"
               onClick={() => signOut()}
-              className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-dark-900 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 focus:outline-none focus:bg-primary-500 focus:text-dark-300"
+              className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black"
             >
               <div className="flex justify-between">
                 <div className="flex items-center">
@@ -152,7 +152,7 @@ const AccountDropwdown = () => {
           <motion.div variants={innerAnimation}>
             <Link
               href="#"
-              className="block rounded px-4 py-2 text-xs text-gray-500 dark:text-dark-200 dark:hover:text-dark-900 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-400 focus:outline-none focus:bg-primary-500 focus:text-dark-300"
+              className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-white dark:text-white dark:hover:text-black"
             >
               <div className="flex justify-between">
                 <div className="flex items-center">
