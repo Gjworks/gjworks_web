@@ -44,7 +44,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className="relative">
-          <motion.div className="flex items-center bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-cover bg-center px-3 mx-auto py-20 lg:py-0 lg:h-[calc(100vh-111px)]">
+          <motion.div className="flex items-center bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-cover bg-center px-3 mx-auto py-20 h-[400px] lg:h-[660px]">
             <div className="absolute inset-0 overflow-hidden bg-dark-950/40 dark:bg-dark-950/50"></div>
             <div className="absolute bottom-0 left-0 right-0 h-auto lg:h-[400px] bg-gradient-to-b from-transparent via-dark-950/60 to-dark-950"></div>
             <motion.div
@@ -70,10 +70,8 @@ export default function Page() {
                       <div className="hidden md:flex absolute -top-12 md:-top-3 right-0 md:-right-16">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="62.63443"
-                          height="48.83955"
                           viewBox="0 0 62.63443 48.83955"
-                          className="fill-sky-500 stroke-1"
+                          className="fill-sky-500 stroke-1 w-16 h-16"
                         >
                           <path
                             d="M44.98697,17.27072c3.02152-4.51246,6.04304-9.02491,9.06455-13.53737h-4.31735c2.40533,3.96877,4.81066,7.93755,7.216,11.90632,.34353,.56682,.68706,1.13365,1.03059,1.70047,.69922,1.15371,2.24206,1.58614,3.42047,.89688,1.15413-.67506,1.59935-2.2614,.89688-3.42047-2.40533-3.96877-4.81066-7.93755-7.216-11.90632-.34353-.56682-.68706-1.13365-1.03059-1.70047-1.01399-1.67307-3.27826-1.55182-4.31735,0-3.02152,4.51246-6.04304,9.02491-9.06455,13.53737-.75151,1.12234-.21797,2.7684,.89688,3.42047,1.22766,.71806,2.66719,.22811,3.42047-.89688h0Z"
@@ -85,10 +83,8 @@ export default function Page() {
                       <div className="absolute -top-20 md:-top-20 right-0 md:-right-24">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="50.23402"
-                          height="58.64887"
                           viewBox="0 0 50.23402 58.64887"
-                          className="fill-sky-500 stroke-[2px]"
+                          className="fill-sky-500 stroke-[2px] w-16 h-16"
                         >
                           <g>
                             <path
@@ -139,6 +135,7 @@ export default function Page() {
             </div>
           </motion.div>
         </div>
+
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
@@ -149,7 +146,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="relative overflow-hidden bg-gray-100 dark:bg-dark-800 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0"
+                className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0"
               >
                 <div className="text-2xl font-light text-center text-black dark:text-white mb-5">
                   Rhymix 제작 및 유지보수를 해드립니다.
@@ -359,7 +356,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-blue-600 to-sky-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="bg-gradient-to-br from-sky-400 via-blue-500 to-blue-700 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Store
@@ -371,7 +368,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className=" bg-gray-100 dark:bg-dark-700 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className=" bg-gray-100 dark:bg-dark-800 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Partners
