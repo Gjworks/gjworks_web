@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <>
-      <div className="relative h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-center">
+      <div className="relative h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-top">
         <div className="absolute top-0 left-0 right-0 bg-orange-500 text-white">
           <div className="max-w-screen-lg mx-auto px-3 text-sm py-3 text-center">
             스토어 기능 업데이트 중 <strong>Coming soon!!</strong>
@@ -16,7 +16,7 @@ const Page = () => {
             <div className="text-white text-3xl font-bold mb-4">
               1앱 또는 1도메인 <br></br>1개의 제품만 적용됩니다.
             </div>
-            <div className="py-2 px-8 rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:bg-orange-600">
+            <div className="text-white bg-orange-500 backdrop-blur-lg border border-orange-500 shadow-lg shadow-orange-500/40 py-3 px-8 rounded-lg hover:bg-orange-600 hover:text-white cursor-pointer">
               구매내역
             </div>
           </div>

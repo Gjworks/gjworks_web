@@ -51,7 +51,7 @@ export default function Page() {
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
-              className="relative w-full z-10 pt-[111px]"
+              className="relative w-full z-10"
             >
               <div className="flex max-w-screen-lg mx-auto px-3">
                 <div className="relative">
@@ -105,10 +105,16 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="text-gray-400 dark:text-dark-200 text-sm lg:text-lg"
+                    className="text-gray-400 dark:text-dark-200 text-sm lg:text-lg mb-6"
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
+                  <Link
+                    href="/auth/Signin"
+                    className="inline-block text-sky-400 bg-dark-950/80 backdrop-blur-lg border border-sky-400 shadow-lg shadow-sky-400/40 py-3 px-5 rounded-lg hover:bg-sky-400 hover:text-white"
+                  >
+                    Sign in & Sign up
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -318,7 +324,7 @@ export default function Page() {
             </motion.div>
             <button
               onClick={() => setShowBottom(!showBottom)}
-              className="text-base text-primary-500 dark:text-primary-400 text-center hover:underline"
+              className="inline-block text-sky-400 bg-dark-950/80 backdrop-blur-lg border border-sky-400 shadow-lg shadow-sky-400/40 py-3 px-5 rounded-lg hover:bg-sky-400 hover:text-white"
             >
               자세히 보기
             </button>
