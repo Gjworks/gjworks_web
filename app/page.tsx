@@ -35,7 +35,7 @@ export default function Page() {
   }
   return (
     <DefaultLayout>
-      <div className="relative ">
+      <div className="relative -mt-[111px]">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -44,14 +44,14 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className="relative">
-          <motion.div className="flex items-center bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-cover bg-center px-3 mx-auto py-20 h-[400px] lg:h-[660px]">
+          <motion.div className="flex items-center bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-center h-[600px] lg:h-[860px]">
             <div className="absolute inset-0 overflow-hidden bg-dark-950/40 dark:bg-dark-950/50"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-auto lg:h-[400px] bg-gradient-to-b from-transparent via-dark-950/60 to-dark-950"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-gradient-to-b from-transparent via-dark-950/60 to-dark-950"></div>
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
-              className="relative w-full z-10"
+              className="relative w-full z-10 pt-[111px]"
             >
               <div className="flex max-w-screen-lg mx-auto px-3">
                 <div className="relative">

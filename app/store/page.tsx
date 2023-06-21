@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <>
-      <div className="relative h-[400px] lg:h-[600px] bg-[url('/assets/images/bg_beach.jpg')] bg-no-repeat bg-cover bg-center">
+      <div className="relative h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-center">
         <div className="absolute top-0 left-0 right-0 bg-orange-500 text-white">
           <div className="max-w-screen-lg mx-auto px-3 text-sm py-3 text-center">
             스토어 기능 업데이트 중 <strong>Coming soon!!</strong>
@@ -42,15 +42,14 @@ const Page = () => {
                 <div className="w-10 h-10 bg-dark-700 rounded-lg"></div>
                 <div className="flex-1">
                   <div className="text-base text-white line-clamp-1">
-                    SNOW 스노우 - AI 프로필 & 고화질 카메라 애플리케이션
+                    지제이웍스 웹애플리케이션 디자인
                   </div>
                   <div className="text-sm text-dark-400 line-clamp-1">
-                    AI 아바타, AI 프로필, AI 카툰, AI펫 등 고화질 카메라
-                    애플리케이션을 사용해보세요.
+                    Web Components를 최신 UI/UX 트렌드에 맞게 제공하고 있습니다.
                   </div>
                 </div>
                 <div className="flex items-center bg-dark-700 text-orange-400 text-sm py-1 px-5 rounded-full">
-                  80,000
+                  120,000
                 </div>
               </div>
             </div>
@@ -73,15 +72,14 @@ const Page = () => {
                 <div className="w-10 h-10 bg-dark-700 rounded-lg"></div>
                 <div className="flex-1">
                   <div className="text-base text-white line-clamp-1">
-                    SNOW 스노우 - AI 프로필 & 고화질 카메라 애플리케이션
+                    지제이웍스 웹애플리케이션 플러그인
                   </div>
                   <div className="text-sm text-dark-400 line-clamp-1">
-                    AI 아바타, AI 프로필, AI 카툰, AI펫 등 고화질 카메라
-                    애플리케이션을 사용해보세요.
+                    Web Components를 최신 UI/UX 트렌드에 맞게 제공하고 있습니다.
                   </div>
                 </div>
                 <div className="flex items-center bg-dark-700 text-orange-400 text-sm py-1 px-5 rounded-full">
-                  80,000
+                  180,000
                 </div>
               </div>
             </div>
@@ -104,11 +102,10 @@ const Page = () => {
                 <div className="w-10 h-10 bg-dark-700 rounded-lg"></div>
                 <div className="flex-1">
                   <div className="text-base text-white line-clamp-1">
-                    SNOW 스노우 - AI 프로필 & 고화질 카메라 애플리케이션
+                    지제이웍스 웹애플리케이션 애드온
                   </div>
                   <div className="text-sm text-dark-400 line-clamp-1">
-                    AI 아바타, AI 프로필, AI 카툰, AI펫 등 고화질 카메라
-                    애플리케이션을 사용해보세요.
+                    Web Components를 최신 UI/UX 트렌드에 맞게 제공하고 있습니다.
                   </div>
                 </div>
                 <div className="flex items-center bg-dark-700 text-orange-400 text-sm py-1 px-5 rounded-full">
