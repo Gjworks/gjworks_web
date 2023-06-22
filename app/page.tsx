@@ -109,6 +109,21 @@ export default function Page() {
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
+                  <div className="hidden">
+                    <div className="bg-dark-950/80 backdrop-blur-lg rounded-lg border border-dark-800 py-3 px-5">
+                      <div className="flex gap-4">
+                        <div className="w-10 h-10 rounded-full bg-black backdrop-blur-lg"></div>
+                        <div className="flex-1">
+                          <div className="text-white text-sm font-bold">
+                            Github Repository
+                          </div>
+                          <div className="text-dark-500 text-sm font-medium">
+                            $git clone gjworks
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <Link
                     href="/auth/Signin"
                     className="inline-block text-sky-400 bg-dark-950/80 backdrop-blur-lg border border-sky-400 shadow-lg shadow-sky-400/40 py-3 px-5 rounded-lg hover:bg-sky-400 hover:text-white"
@@ -556,7 +571,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="relative bg-no-repeat bg-cover bg-center">
+        <div className="relative flex items-center justify-center h-[calc(100vh-312px)]">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -568,13 +583,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-600 to-secondary-600 text-center pt-20 mb-3"
+                  className="block font-thin text-transparent text-5xl bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-rose-600 text-center pt-20 mb-3"
                 >
                   WE ARE CRATEIVE
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-bold text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-600 to-secondary-600 text-center mb-10 leading-normal"
+                  className="block font-thin text-transparent text-5xl bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-rose-600 text-center mb-10 leading-normal"
                 >
                   Responsive everything.
                 </motion.div>
@@ -586,7 +601,7 @@ export default function Page() {
             >
               <Link
                 href="/contact"
-                className="border border-slate-900 dark:border-white rounded-full py-1 px-10 text-black dark:text-white text-base hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-black"
+                className="border dark:bg-dark-950/40 border-slate-900 dark:border-dark-300 rounded-full py-1 px-10 text-black dark:text-dark-300 text-base hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black dark:shadow-lg dark:shadow-dark-600"
               >
                 Contact us
               </Link>

@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <>
-      <div className="relative h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-top">
+      <div className="relative h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-center">
         <div className="absolute top-0 left-0 right-0 bg-orange-500 text-white">
           <div className="max-w-screen-lg mx-auto px-3 text-sm py-3 text-center">
             스토어 기능 업데이트 중 <strong>Coming soon!!</strong>
