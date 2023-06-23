@@ -1,12 +1,8 @@
 'use client'
 
 import PageWrap from 'src/components/sections/PageWrap'
-import { useSession, signOut } from 'next-auth/react'
 
 const Page = () => {
-  // const { data: session } = useSession();
-  const session = useSession()
-
   return (
     <PageWrap>
       <div className="flex items-center justify-center text-white h-full w-full">

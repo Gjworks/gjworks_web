@@ -15,7 +15,6 @@ const Page = () => {
     fetchData()
   }, [])
 
-  // const { data: session } = useSession();
   const documentInfo = ''
   return (
     <>

@@ -1,22 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { useSession } from 'next-auth/react'
 import PageWrap from 'src/components/sections/PageWrap'
 
 const Account = (props: any) => {
-  console.log(props)
-  const { data: session } = useSession()
-
-  useEffect(() => {
-    console.log(session)
-  }, [session?.user])
-
-  // if(!!session && session.status === "unauthenticated") {
-  //   return (
-  //     <Access />
-  //   )
-  // }
   return (
     <>
       <PageWrap>
@@ -24,9 +11,7 @@ const Account = (props: any) => {
           <div className="grid grid-cols-12 gap-10">
             <div className="col-span-3"></div>
             <div className="col-span-9">
-              <h1 className="text-3xl font-bold text-white">
-                Hello, {session?.user?.email}
-              </h1>
+              <h1 className="text-3xl font-bold text-white">Hello</h1>
             </div>
           </div>
         </div>

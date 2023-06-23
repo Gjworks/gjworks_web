@@ -367,6 +367,40 @@ export default function Page() {
             </div>
           </motion.div>
         </div>
+        <div className="py-20 hidden">
+          <div className="relative max-w-screen-lg mx-auto px-3">
+            <div className="grid grid-cols-4 gap-8">
+              <div className="col-span-2 grid grid-cols-2 gap-8">
+                <div className="flex flex-wrap gap-8 col-span-1 h-full">
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-cyan-500">
+                    <div className="text-white text-lg">Store</div>
+                  </div>
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-indigo-500">
+                    <div className="text-white text-lg">Store</div>
+                  </div>
+                </div>
+                <div className="col-span-1 h-full">
+                  <div className="w-full h-full rounded-lg shadow-lg shadow-black p-5 bg-lime-400">
+                    <div className="text-white text-lg">Store</div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-2 grid grid-cols-2 gap-8">
+                <div className="col-span-1 h-full">
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-dark-500">
+                    <div className="text-white text-lg">Store</div>
+                  </div>
+                </div>
+
+                <div className="col-span-2 h-full">
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-rose-600">
+                    <div className="text-white text-lg">Store</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div

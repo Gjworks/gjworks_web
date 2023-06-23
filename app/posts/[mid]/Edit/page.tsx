@@ -7,7 +7,6 @@ import { OutputData } from '@editorjs/editorjs'
 import dynamic from 'next/dynamic'
 import { usePathname } from 'next/navigation'
 
-import { useSession, signOut } from 'next-auth/react'
 import TextInput from 'src/components/form/TextInput'
 
 // const loadDocumentEdit = async () => {
@@ -41,8 +40,6 @@ const Edit = props => {
   const [data, setData] = useState<OutputData>()
   const [inputs, setInputs] = useState<{ [key: string]: any }>()
   const [editorInstance, setEditorInstance] = useState({})
-  const session = useSession()
-  console.log(session)
   // const  query  = router.query;
   // console.log(query)
   useEffect(() => {
@@ -66,27 +63,6 @@ const Edit = props => {
   const handleDocumentSubmit = e => {
     e.preventDefault()
     console.log(data)
-    // Object.assign(inputs, description)
-    // const postData = async () => {
-    //   const data = {
-    //     // mid : mid,
-    //     moduleId: 1,
-    //     published: true,
-    //     authorId: session.data.user.id,
-    //     title: inputs.title,
-    //     description: inputs.description,
-    //   }
-
-    //   const response = await fetch('/api/posts/Post', {
-    //     method: 'POST',
-    //     body: JSON.stringify(data),
-    //   })
-    //   return response.json()
-    // }
-    // postData().then(data => {
-    //   alert(data.message)
-    // })
-    // router.push(`/editor?mid=${mid}`);
   }
 
   return (

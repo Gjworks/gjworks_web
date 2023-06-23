@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import Warning from 'src/components/message/Warning'
@@ -15,7 +14,6 @@ const Register = () => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState<{ [key: string]: any }>()
   const router = useRouter()
-  const { status } = useSession()
   const strSpace = /\s/
 
   // const nickNameHandler = e => {
@@ -82,16 +80,6 @@ const Register = () => {
     // });
   }
 
-  if (status === 'authenticated') {
-    router.replace('/')
-    return (
-      <div>
-        <h1>Log in</h1>
-        <div>You are already logged in.</div>
-        <div>Now redirect to main page.</div>
-      </div>
-    )
-  }
   return (
     <PageWrap>
       <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
@@ -166,64 +154,8 @@ const Register = () => {
                 비밀번호는 암호화 되어 안전하게 저장됩니다.
               </div>
             </div>
-            {/* <div className="px-3 mb-5 w-full">
-              <div className="flex">
-                <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
-                  NickName
-                </label>
-                <div className="flex-1">
-                  <input
-                    type="text"
-                    value={nickName}
-                    onChange={nickNameHandler}
-                    placeholder="User nick name"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
-                    required
-                  />
-                </div>
-              </div>
-            </div> */}
-            {/* <div className="px-3 mb-5 w-full">
-              <div className="flex">
-                <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
-                  Email
-                </label>
-                <div className="flex-1">
-                  <input
-                    type="text"
-                    value={email}
-                    onChange={emailHandler}
-                    placeholder="example@mail.com"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                    required
-                  />
-                  <div></div>
-                </div>
-              </div>
-            </div>
-            <div className="px-3 mb-5 w-full">
-              <div className="flex">
-                <label className="flex w-24 text-dark-400 text-xs px-3 py-3">
-                  Password
-                </label>
-                <div className="flex-1">
-                  <input
-                    type="password"
-                    value={password}
-                    onChange={passwordHandler}
-                    placeholder="User Password"
-                    className="bg-dark-50 dark:bg-dark-900 text-sm text-dark-500 dark:text-dark-300 focus:text-white py-3 px-3 focus:outline-none w-full border-b border-dark-400 dark:border-dark-700 focus:border-primary-500 placeholder-dark-400 dark:placeholder-dark-600 dark:focus:border-dark-300"
-                    required
-                  />
-                  <div className="text-sm text-dark-400">
-                    비밀번호는 안전하게 암호화 되어 저장됩니다.
-                  </div>
-                </div>
-              </div> */}
-            {/* </div> */}
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-white hover:bg-transparent hover:text-primary-400 text-black py-3 px-5 rounded-sm transition duration-300 border border-dark-900 hover:border-dark-400">
+              <button className="flex justify-center items-center w-full bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500">
                 Register Completed
               </button>
             </div>

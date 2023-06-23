@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useSession, signOut } from 'next-auth/react'
 
 import 'styles/globals.css'
 import 'styles/tailwindcss.css'

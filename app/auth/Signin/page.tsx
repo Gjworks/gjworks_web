@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useSession, signIn } from 'next-auth/react'
+
 import { useRouter } from 'next/navigation'
 import PageWrap from 'src/components/sections/PageWrap'
 import TextInput from 'src/components/form/TextInput'
@@ -13,9 +13,6 @@ const Signin = () => {
   // const emailInputRef = useRef(null)
   const [emailInput, setEmailInput] = useState<string>()
   const [passwordInput, setPasswordInput] = useState<string>()
-
-  const { data, status } = useSession()
-  console.log(data)
 
   const getData = (x: string) => {
     setEmailInput(x)
@@ -28,35 +25,7 @@ const Signin = () => {
     console.log(setEmailInput)
     const userEmail = emailInput
     const userPassword = passwordInput
-
-    const result = await signIn('credentials', {
-      redirect: false,
-      email: userEmail,
-      password: userPassword,
-      // callbackUrl: process.env.NEXT_PUBLIC_DEFAULT_URL,
-    })
-
-    if (result?.error) return setFormMessage(result.error)
-    console.log('로그인 성공. 메인 페이지로 이동합니다.')
-    router.push('/')
-    // if (!result?.error) {
-    //   router.replace(process.env.NEXT_PUBLIC_DEFAULT_URL)
-    // } else {
-    //   setFormMessage(result?.error)
-    // }
   }
-
-  // if (status === 'authenticated') {
-  //   router.replace(process.env.NEXT_PUBLIC_DEFAULT_URL)
-  //   return (
-  //     <div>
-  //       <h1>Log in</h1>
-  //       <div>You are already logged in.</div>
-  //       <div>Now redirect to main page.</div>
-  //     </div>
-  //   )
-  // }
-
   return (
     <PageWrap>
       <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
@@ -89,35 +58,6 @@ const Signin = () => {
                   theme="dark"
                   value=""
                 ></TextInput>
-                {/* <div className="relative flex-1">
-                  <input
-                    type="text"
-                    ref={emailInputRef}
-                    name="email"
-                    id="email"
-                    className="text-sm bg-transparent text-dark-500 dark:text-dark-300 focus:text-slate-700 dark:focus:text-white py-4 focus:outline-none w-full placeholder-dark-400 dark:placeholder-dark-500 dark:focus:border-dark-500 rounded-lg border border-slate-200 focus:border-slate-600 dark:border-dark-600 pr-3 pl-12 appearance-none focus:ring-0 peer"
-                    placeholder=" "
-                  />
-                  <label className="absolute text-sm top-0 bg-white dark:bg-dark-900 px-3 left-8 scale-75 -translate-y-3 duration-300 transform text-slate-400 dark:text-dark-300 peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-10 peer-placeholder-shown:text-slate-400 dark:peer-placeholder-shown:text-dark-500 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3">
-                    What's your Email
-                  </label>
-                  <div className="absolute top-4 left-4 text-slate-400 dark:text-dark-400 peer-focus:text-slate-900 dark:peer-focus:text-white">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1}
-                      stroke="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                      />
-                    </svg>
-                  </div>
-                </div> */}
               </div>
             </div>
             <div className="relative flex mb-5 w-full">
@@ -171,10 +111,7 @@ const Signin = () => {
           </div>
           <div className="py-5">
             <div className="flex gap-4">
-              <button
-                onClick={() => signIn()}
-                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer"
-              >
+              <button className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -192,10 +129,7 @@ const Signin = () => {
                   Apple
                 </div>
               </button>
-              <button
-                onClick={() => signIn()}
-                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer"
-              >
+              <button className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -212,10 +146,7 @@ const Signin = () => {
                   Github
                 </div>
               </button>
-              <button
-                onClick={() => signIn('github')}
-                className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer"
-              >
+              <button className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
