@@ -57,7 +57,7 @@ export default function Page() {
                 <div className="relative">
                   <motion.div
                     variants={variants}
-                    className="text-sm lg:text-base font-bold text-primary-600 dark:text-primary-400 mb-3"
+                    className="text-sm lg:text-base font-bold text-sky-600 dark:text-sky-400 mb-3"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -65,7 +65,7 @@ export default function Page() {
                     variants={variants}
                     className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-10 text-white dark:text-white"
                   >
-                    <div className="text-primary-100">
+                    <div className="text-sky-100">
                       <div>Build web and app</div>
                       <div className="hidden md:flex absolute -top-12 md:-top-3 right-0 md:-right-16">
                         <svg
@@ -382,7 +382,7 @@ export default function Page() {
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Store
                 </div>
-                <div className="text-base text-gray-400 dark:text-primary-300 mb-10 text-center">
+                <div className="text-base text-gray-400 dark:text-sky-300 mb-10 text-center">
                   React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
                   있습니다.
                 </div>
@@ -440,7 +440,7 @@ export default function Page() {
                       DB
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-primary-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-sky-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 60%</div>
                   </div>
@@ -449,7 +449,7 @@ export default function Page() {
                       Front
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-primary-600 rounded-full"></motion.div>
+                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-sky-600 rounded-full"></motion.div>
                     </div>
                     <div className="text-xs text-white"> 20%</div>
                   </div>
@@ -458,7 +458,7 @@ export default function Page() {
                       Server
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-primary-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-sky-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 30%</div>
                   </div>
@@ -466,7 +466,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-sky-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
@@ -529,10 +529,7 @@ export default function Page() {
                 className="flex items-center col-span-5 lg:col-span-3"
               >
                 <motion.div className="flex-1">
-                  <motion.div
-                    className="text-primary-600 mb-5"
-                    variants={variants}
-                  >
+                  <motion.div className="text-sky-600 mb-5" variants={variants}>
                     Front End Platform
                   </motion.div>
                   <motion.div
@@ -555,7 +552,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-primary-500 dark:hover:bg-primary-500 cursor-pointer"
+                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-sky-500 dark:hover:bg-sky-500 cursor-pointer"
                   >
                     Read more
                   </motion.div>
