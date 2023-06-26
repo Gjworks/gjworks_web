@@ -128,7 +128,7 @@ const Header = () => {
         transition={{ duration: 0.3 }}
         className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-950/60 z-101"
       >
-        <div className="max-w-screen-lg mx-auto">
+        <div className="max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center py-1 pr-3">
             <div className="flex items-center justify-center">
               <button
@@ -299,7 +299,7 @@ const Header = () => {
             variants={variants}
             animate={showNavigation === true ? 'open' : 'close'}
           >
-            <div className="max-w-screen-lg mx-auto px-3 pt-5 mt-[44px]">
+            <div className="max-w-screen-xl mx-auto px-3 pt-5 mt-[44px]">
               <div className="grid grid-cols-12">
                 <div className="col-span-12 lg:col-span-3">
                   <div className="py-5">

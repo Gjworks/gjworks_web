@@ -3,7 +3,7 @@
 const Page = () => {
   return (
     <>
-      <div className="max-w-screen-lg mx-auto px-3 py-10 lg:py-20">
+      <div className="max-w-screen-xl mx-auto px-3 py-10 lg:py-20">
         <div className="grid grid-cols-4 gap-8">
           <div className="col-span-4 sm:col-span-2">
             <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">

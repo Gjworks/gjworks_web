@@ -7,6 +7,7 @@ import axios from 'axios'
 import Warning from 'src/components/message/Warning'
 import PageWrap from 'src/components/sections/PageWrap'
 import TextInput from 'src/components/form/TextInput'
+import registerUser from './server'
 
 const Register = () => {
   const [nickName, setNickName] = useState('')
@@ -15,28 +16,6 @@ const Register = () => {
   const [error, setError] = useState<{ [key: string]: any }>()
   const router = useRouter()
   const strSpace = /\s/
-
-  // const nickNameHandler = e => {
-  //   if (strSpace.exec(e.target.value)) {
-  //     return false
-  //   } else {
-  //     setNickName(e.target.value)
-  //   }
-  // }
-  // const emailHandler = e => {
-  //   if (strSpace.exec(e.target.value)) {
-  //     return false
-  //   } else {
-  //     setEmail(e.target.value)
-  //   }
-  // }
-  // const passwordHandler = e => {
-  //   if (strSpace.exec(e.target.value)) {
-  //     return false
-  //   } else {
-  //     setPassword(e.target.value)
-  //   }
-  // }
 
   const getNickname = (msg: string) => {
     setNickName(msg)
@@ -47,38 +26,43 @@ const Register = () => {
   const getPassword = (msg: string) => {
     setPassword(msg)
   }
-
-  const registerUser = async e => {
+  const submitHandler = async e => {
     e.preventDefault()
-    const userData = await axios
-      .post('/api/auth/register', {
-        method: 'POST',
-        body: {
-          nickname: nickName.trim(),
-          email: email.trim(),
-          password: password.trim(),
-        },
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-      .then(res => {
-        router.replace('/auth/Signin')
-      })
-      .catch(error => {
-        console.log(error)
-        console.log('Error >> ' + error.code, error.response.data.message)
-        setError(error.response.data.message)
-        return error.response
-      })
-    // signIn("credentials", {
-    //   email, password, callbackUrl: `${window.location.origin}/Account`, redirect: false }
-    // ).then(function(result) {
-    //   router.push(result.url)
-    // }).catch(err => {
-    //   alert("Failed to register: " + err.toString())
-    // });
+    console.log(e)
+    registerUser(e)
   }
+
+  // const registerUser = async e => {
+  //   e.preventDefault()
+  //   const userData = await axios
+  //     .post('/api/auth/register', {
+  //       method: 'POST',
+  //       body: {
+  //         nickname: nickName.trim(),
+  //         email: email.trim(),
+  //         password: password.trim(),
+  //       },
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     })
+  //     .then(res => {
+  //       router.replace('/auth/Signin')
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //       console.log('Error >> ' + error.code, error.response.data.message)
+  //       setError(error.response.data.message)
+  //       return error.response
+  //     })
+  //   // signIn("credentials", {
+  //   //   email, password, callbackUrl: `${window.location.origin}/Account`, redirect: false }
+  //   // ).then(function(result) {
+  //   //   router.push(result.url)
+  //   // }).catch(err => {
+  //   //   alert("Failed to register: " + err.toString())
+  //   // });
+  // }
 
   return (
     <PageWrap>
@@ -110,7 +94,7 @@ const Register = () => {
             </div>
           </div>
           {error && <Warning message={error} />}
-          <form onSubmit={registerUser}>
+          <form onSubmit={submitHandler}>
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput

@@ -29,7 +29,7 @@ const Page = props => {
   return (
     <>
       <PageWrap>
-        <div className="max-w-screen-lg mx-auto py-8 xl:py-20 px-3">
+        <div className="max-w-screen-xl mx-auto py-8 xl:py-20 px-3">
           <motion.div className="text-black dark:text-white text-5xl font-semibold mb-16">
             Metaverse
           </motion.div>

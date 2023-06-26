@@ -53,25 +53,25 @@ export default function Page() {
               viewport={{ once: false, amount: 0.3 }}
               className="relative w-full z-10"
             >
-              <div className="flex max-w-screen-lg mx-auto px-3">
+              <div className="flex max-w-screen-xl mx-auto px-3">
                 <div className="relative">
                   <motion.div
                     variants={variants}
-                    className="text-sm lg:text-base font-bold text-sky-600 dark:text-sky-400 mb-3"
+                    className="text-sm lg:text-base font-bold text-yellow-600 dark:text-yellow-400 mb-3"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-10 text-white dark:text-white"
+                    className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-300 to-yellow-600"
                   >
-                    <div className="text-sky-100">
+                    <div className="">
                       <div>Build web and app</div>
                       <div className="hidden md:flex absolute -top-12 md:-top-3 right-0 md:-right-16">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 62.63443 48.83955"
-                          className="fill-sky-500 stroke-1 w-16 h-16"
+                          className="fill-yellow-500 stroke-1 w-16 h-16"
                         >
                           <path
                             d="M44.98697,17.27072c3.02152-4.51246,6.04304-9.02491,9.06455-13.53737h-4.31735c2.40533,3.96877,4.81066,7.93755,7.216,11.90632,.34353,.56682,.68706,1.13365,1.03059,1.70047,.69922,1.15371,2.24206,1.58614,3.42047,.89688,1.15413-.67506,1.59935-2.2614,.89688-3.42047-2.40533-3.96877-4.81066-7.93755-7.216-11.90632-.34353-.56682-.68706-1.13365-1.03059-1.70047-1.01399-1.67307-3.27826-1.55182-4.31735,0-3.02152,4.51246-6.04304,9.02491-9.06455,13.53737-.75151,1.12234-.21797,2.7684,.89688,3.42047,1.22766,.71806,2.66719,.22811,3.42047-.89688h0Z"
@@ -84,7 +84,7 @@ export default function Page() {
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 50.23402 58.64887"
-                          className="fill-sky-500 stroke-[2px] w-16 h-16"
+                          className="fill-yellow-500 stroke-[2px] w-16 h-16"
                         >
                           <g>
                             <path
@@ -99,9 +99,7 @@ export default function Page() {
                         </svg>
                       </div>
                     </div>
-                    <div>
-                      Quickly <span className="text-gray-400">and</span> simply
-                    </div>
+                    <div>Quickly and simply</div>
                   </motion.div>
                   <motion.div
                     variants={variants}
@@ -126,7 +124,7 @@ export default function Page() {
                   </div>
                   <Link
                     href="/auth/Signin"
-                    className="inline-block text-sky-400 bg-dark-950/80 backdrop-blur-lg border border-sky-400 shadow-lg shadow-sky-400/40 py-3 px-5 rounded-lg hover:bg-sky-400 hover:text-white"
+                    className="inline-block text-yellow-400 bg-transparent backdrop-blur-lg border border-yellow-400 shadow-lg shadow-yellow-400/40 py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-white"
                   >
                     Sign in & Sign up
                   </Link>
@@ -197,7 +195,7 @@ export default function Page() {
                     <div className="w-[240px] rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800 dark:shadow-black border border-slate-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]">
                       <div className="relative z-[100]">
                         <div className="w-56">
-                          <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-white hover:text-white text-white bg-sky-600 dark:bg-sky-500 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                          <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-black hover:text-white text-black bg-yellow-400 dark:bg-yellow-500 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                             <div className="flex justify-between">
                               <div className="flex items-center">
                                 <svg
@@ -276,8 +274,10 @@ export default function Page() {
                         <div className="ml-16">Example</div>
                       </div>
                       <div className="relative bg-black rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                        <div className="absolute bg-sky-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                        <div className="ml-16 text-sky-600">Data Fetching</div>
+                        <div className="absolute bg-yellow-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                        <div className="ml-16 text-yellow-400">
+                          Data Fetching
+                        </div>
                       </div>
                       <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
                         <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
@@ -339,7 +339,7 @@ export default function Page() {
             </motion.div>
             <button
               onClick={() => setShowBottom(!showBottom)}
-              className="inline-block text-sky-400 bg-dark-950/80 backdrop-blur-lg border border-sky-400 shadow-lg shadow-sky-400/40 py-3 px-5 rounded-lg hover:bg-sky-400 hover:text-white"
+              className="inline-block text-yellow-400 bg-transparent backdrop-blur-lg border border-yellow-400 shadow-lg shadow-yellow-400/40 py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black"
             >
               자세히 보기
             </button>
@@ -368,7 +368,7 @@ export default function Page() {
           </motion.div>
         </div>
         <div className="py-20 hidden">
-          <div className="relative max-w-screen-lg mx-auto px-3">
+          <div className="relative max-w-screen-xl mx-auto px-3">
             <div className="grid grid-cols-4 gap-8">
               <div className="col-span-2 grid grid-cols-2 gap-8">
                 <div className="flex flex-wrap gap-8 col-span-1 h-full">
@@ -411,12 +411,12 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-sky-400 via-blue-500 to-blue-700 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
-                <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
+                <div className="text-2xl text-black dark:text-black font-light text-center mb-8">
                   Store
                 </div>
-                <div className="text-base text-gray-400 dark:text-sky-300 mb-10 text-center">
+                <div className="text-base text-yellow-900 dark:text-dark-800 mb-10 text-center">
                   React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
                   있습니다.
                 </div>
@@ -474,7 +474,7 @@ export default function Page() {
                       DB
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-sky-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-yellow-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 60%</div>
                   </div>
@@ -483,7 +483,7 @@ export default function Page() {
                       Front
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-sky-600 rounded-full"></motion.div>
+                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-yellow-600 rounded-full"></motion.div>
                     </div>
                     <div className="text-xs text-white"> 20%</div>
                   </div>
@@ -492,7 +492,7 @@ export default function Page() {
                       Server
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-sky-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-yellow-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 30%</div>
                   </div>
@@ -500,7 +500,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-sky-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-yellow-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
@@ -563,7 +563,10 @@ export default function Page() {
                 className="flex items-center col-span-5 lg:col-span-3"
               >
                 <motion.div className="flex-1">
-                  <motion.div className="text-sky-600 mb-5" variants={variants}>
+                  <motion.div
+                    className="text-yellow-600 mb-5"
+                    variants={variants}
+                  >
                     Front End Platform
                   </motion.div>
                   <motion.div
@@ -586,7 +589,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-sky-500 dark:hover:bg-sky-500 cursor-pointer"
+                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-yellow-500 dark:hover:bg-yellow-500 cursor-pointer"
                   >
                     Read more
                   </motion.div>
@@ -614,13 +617,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-thin text-transparent text-5xl bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-rose-600 text-center pt-20 mb-3"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-center pt-20 mb-3"
                 >
-                  WE ARE CRATEIVE
+                  We Are Creative
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-thin text-transparent text-5xl bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-rose-600 text-center mb-10 leading-normal"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 text-center mb-10 leading-normal"
                 >
                   Responsive everything.
                 </motion.div>
@@ -632,7 +635,7 @@ export default function Page() {
             >
               <Link
                 href="/contact"
-                className="border dark:bg-dark-950/40 border-slate-900 dark:border-dark-300 rounded-full py-1 px-10 text-black dark:text-dark-300 text-base hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black dark:shadow-lg dark:shadow-dark-600"
+                className="border bg-transparent backdrop-blur-lg border-slate-900 dark:border-dark-300 rounded-full py-1 px-10 text-black dark:text-dark-300 text-base hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black dark:shadow-lg dark:shadow-dark-600"
               >
                 Contact us
               </Link>
