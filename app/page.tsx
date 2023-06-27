@@ -45,8 +45,8 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className="relative">
           <motion.div className="flex items-center bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-center h-[600px] lg:h-[860px]">
-            <div className="absolute inset-0 overflow-hidden bg-dark-950/40 dark:bg-dark-950/50"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-gradient-to-b from-transparent via-dark-950/60 to-dark-950"></div>
+            <div className="absolute inset-0 overflow-hidden bg-dark-900/40 dark:bg-dark-900/50"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-gradient-to-b from-transparent via-dark-900/60 to-dark-900"></div>
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
@@ -63,7 +63,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-300 to-yellow-600"
+                    className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600"
                   >
                     <div className="">
                       <div>Build web and app</div>
@@ -84,7 +84,7 @@ export default function Page() {
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 50.23402 58.64887"
-                          className="fill-yellow-500 stroke-[2px] w-16 h-16"
+                          className="fill-yellow-400 stroke-[2px] w-16 h-16"
                         >
                           <g>
                             <path
@@ -124,7 +124,7 @@ export default function Page() {
                   </div>
                   <Link
                     href="/auth/Signin"
-                    className="inline-block text-yellow-400 bg-transparent backdrop-blur-lg border border-yellow-400 shadow-lg shadow-yellow-400/40 py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-white"
+                    className="inline-block text-yellow-400 bg-transparent backdrop-blur-lg border border-yellow-400 shadow-lg shadow-yellow-400/40 py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black"
                   >
                     Sign in & Sign up
                   </Link>
@@ -605,7 +605,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="relative flex items-center justify-center h-[calc(100vh-312px)]">
+        <div className="relative flex items-center justify-center h-auto lg:h-[calc(100vh-312px)]">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"

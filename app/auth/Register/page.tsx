@@ -139,7 +139,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500">
+              <button className="flex justify-center items-center w-full bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-500 hover:text-black dark:hover:text-black dark:text-black text-black py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500">
                 Register Completed
               </button>
             </div>
@@ -150,7 +150,7 @@ const Register = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-slate-50 dark:bg-dark-950 px-4 text-xs text-dark-400">
+                <span className="bg-slate-50 dark:bg-dark-900 px-4 text-xs text-dark-400">
                   OR
                 </span>
               </div>
