@@ -35,7 +35,7 @@ export default function Page() {
   }
   return (
     <DefaultLayout>
-      <div className="relative -mt-[111px]">
+      <div className="relative">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -43,10 +43,9 @@ export default function Page() {
       >
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
-        <div className="relative">
-          <motion.div className="flex items-center bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-center h-[600px] lg:h-[860px]">
-            <div className="absolute inset-0 overflow-hidden bg-dark-900/40 dark:bg-dark-900/50"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-[400px] bg-gradient-to-b from-transparent via-dark-900/60 to-dark-900"></div>
+        <div className=" relative bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-bottom">
+          <div className="absolute inset-0 h-full bg-gradient-to-t dark:from-dark-900/30 dark:via-dark-900/60 dark:to-dark-900/90"></div>
+          <motion.div className="relative flex items-center pb-20 pt-[111px] lg:pt-[211px]">
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
@@ -107,21 +106,6 @@ export default function Page() {
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
-                  <div className="hidden">
-                    <div className="bg-dark-950/80 backdrop-blur-lg rounded-lg border border-dark-800 py-3 px-5">
-                      <div className="flex gap-4">
-                        <div className="w-10 h-10 rounded-full bg-black backdrop-blur-lg"></div>
-                        <div className="flex-1">
-                          <div className="text-white text-sm font-bold">
-                            Github Repository
-                          </div>
-                          <div className="text-dark-500 text-sm font-medium">
-                            $git clone gjworks
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                   <Link
                     href="/auth/Signin"
                     className="inline-block text-yellow-400 bg-transparent backdrop-blur-lg border border-yellow-400 shadow-lg shadow-yellow-400/40 py-3 px-5 rounded-lg hover:bg-yellow-400 hover:text-black"
@@ -131,28 +115,69 @@ export default function Page() {
                 </div>
               </div>
             </motion.div>
-            <div className="hidden lg:flex flex-wrap absolute left-0 right-0 bottom-10">
-              <div className="w-full flex flex-wrap justify-center mb-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                  className="w-10 h-10 text-dark-500"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+          </motion.div>
+          <div className="relative">
+            <div className="flex flex-wrap">
+              <div className="flex items-center flex-wrap w-full md:flex-1 h-full order-0 md:order-1 backdrop-blur-lg dark:backdrop-blur-lg">
+                <div className="flex items-stretch flex-wrap w-full h-full lg:max-w-screen-sm ml-auto px-5 py-5">
+                  <div className="flex items-center flex-wrap gap-8 w-full">
+                    <div className="flex items-center justify-center text-yellow-400 w-12 h-12 rounded-lg shadow-md shadow-dark-950 bg-dark-700/40 backdrop-blur-lg">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0112 12.75zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 01-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 002.248-2.354M12 12.75a2.25 2.25 0 01-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 00-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 01.4-2.253M12 8.25a2.25 2.25 0 00-2.248 2.146M12 8.25a2.25 2.25 0 012.248 2.146M8.683 5a6.032 6.032 0 01-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0115.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 00-.575-1.752M4.921 6a24.048 24.048 0 00-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 01-5.223 1.082"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-white text-lg font-semibold">
+                        버그 제보
+                      </div>
+                      <div className="text-dark-400 text-sm">
+                        <span>0</span>개중에 <span>0</span>개 수정완료
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="w-full text-center text-gray-500 text-xs font-light">
-                Scroll Down
+              <div className="w-full md:flex-1 bg-yellow-400 order-0 md:order-1">
+                <div className="flex items-center flex-wrap w-full lg:max-w-screen-sm mr-auto px-5 py-5 h-full">
+                  <div className="flex-1">
+                    <div className="text-black text-lg font-semibold">
+                      Store
+                    </div>
+                    <div className="text-dark-900 text-sm">
+                      Store에서 제품 구매하기
+                    </div>
+                  </div>
+                  <div className="text-black">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="py-20">
