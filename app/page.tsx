@@ -45,7 +45,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className=" relative bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-bottom">
           <div className="absolute inset-0 h-full bg-gradient-to-t dark:from-dark-900/30 dark:via-dark-900/60 dark:to-dark-900/90"></div>
-          <motion.div className="relative flex items-center pb-20 pt-[111px] lg:pt-[211px]">
+          <motion.div className="relative flex items-center pb-20 lg:h-[800px] ">
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
