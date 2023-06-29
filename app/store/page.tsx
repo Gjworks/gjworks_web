@@ -1,8 +1,8 @@
 const Page = () => {
   return (
     <>
-      <div className="relative flex items-end h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-bottom">
-        <div className="absolute bottom-0 left-0 right-0 h-[400px] lg:h-[600px] bg-gradient-to-b from-dark-800/10 via-dark-900/50 to-dark-900"></div>
+      <div className="relative flex items-end h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-center">
+        <div className="absolute bottom-0 left-0 right-0 h-[400px] lg:h-[600px] bg-gradient-to-b from-dark-600/10 via-dark-800/50 to-dark-900 dark:from-dark-800/10 dark:via-dark-900/50 dark:to-dark-900"></div>
         <div className="relative flex justify-center h-full items-end max-w-screen-sm mx-auto py-10">
           <div className="bg-dark-800/60 backdrop-blur-lg rounded-lg text-center p-10">
             <div className="text-dark-400 font-semibold text-xl mb-1">
@@ -20,7 +20,7 @@ const Page = () => {
       <div className="max-w-screen-xl mx-auto px-3 py-20">
         <div className="grid grid-cols-3 gap-8">
           <div className="col-span-3 md:col-span-1">
-            <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-dark-950 bg-[url('/assets/images/bg9.jpg')] bg-no-repeat bg-cover bg-center ">
+            <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950 bg-[url('/assets/images/bg9.jpg')] bg-no-repeat bg-cover bg-center ">
               <div className="absolute inset-0 backdrop-blur-lg bg-dark-900/60"></div>
               <div className="relative h-[200px] overflow-hidden">
                 <div className="group relative h-[200px]">
@@ -50,7 +50,7 @@ const Page = () => {
             </div>
           </div>
           <div className="col-span-3 md:col-span-1">
-            <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-dark-950 bg-[url('/assets/images/bg10.jpg')] bg-no-repeat bg-cover bg-center ">
+            <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950 bg-[url('/assets/images/bg10.jpg')] bg-no-repeat bg-cover bg-center ">
               <div className="absolute inset-0 backdrop-blur-lg bg-dark-900/60"></div>
               <div className="relative h-[200px] overflow-hidden">
                 <div className="group relative h-[200px]">
@@ -80,7 +80,7 @@ const Page = () => {
             </div>
           </div>
           <div className="col-span-3 md:col-span-1">
-            <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-dark-950 bg-[url('/assets/images/yellow/yellow_bg3.jpg')] bg-no-repeat bg-cover bg-center ">
+            <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950 bg-[url('/assets/images/yellow/yellow_bg3.jpg')] bg-no-repeat bg-cover bg-center ">
               <div className="absolute inset-0 backdrop-blur-lg bg-dark-900/60"></div>
               <div className="relative h-[200px] overflow-hidden">
                 <div className="group relative h-[200px]">

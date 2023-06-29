@@ -43,9 +43,9 @@ export default function Page() {
       >
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
-        <div className=" relative bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-bottom">
+        <div className=" relative bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-bottom pt-[111px] lg:pt-0">
           <div className="absolute inset-0 h-full bg-gradient-to-t dark:from-dark-900/30 dark:via-dark-900/60 dark:to-dark-900/90"></div>
-          <motion.div className="relative flex items-center pb-20 lg:h-[800px] ">
+          <motion.div className="relative flex items-center pb-20 lg:h-[760px] ">
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
@@ -106,12 +106,35 @@ export default function Page() {
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
-                  <Link
-                    href="/auth/Signin"
-                    className="inline-block text-cyan-400 bg-transparent backdrop-blur-lg border border-cyan-400 shadow-lg shadow-cyan-400/40 py-3 px-5 rounded-lg hover:bg-cyan-400 hover:text-black"
-                  >
-                    Sign in & Sign up
-                  </Link>
+                  <div className="relative flex gap-8 bg-dark-500/10 backdrop-blur-lg rounded-full p-3">
+                    <div className="flex-1 flex items-center px-3">
+                      <div className="text-sm text-dark-500 line-clamp-1">
+                        Launch Your Service.
+                      </div>
+                    </div>
+                    <Link
+                      href="/auth/Signin"
+                      className="flex gap-2 bg-cyan-700 text-cyan-200 text-sm p-3 px-5 rounded-full hover:bg-cyan-600 hover:text-white"
+                    >
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                          />
+                        </svg>
+                      </span>
+                      <span className="hidden lg:flex">Get Started!</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -158,7 +181,7 @@ export default function Page() {
                       Store에서 제품 구매하기
                     </div>
                   </div>
-                  <div className="text-black">
+                  <div className="text-white">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -179,7 +202,6 @@ export default function Page() {
             </div>
           </div>
         </div>
-
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
@@ -336,7 +358,7 @@ export default function Page() {
               <div className="relative">
                 <SafariBrower />
               </div>
-              <div className="absolute inset-0 overflow-hidden bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950"></div>
+              {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950"></div> */}
             </motion.div>
           </div>
           <motion.div
@@ -362,7 +384,7 @@ export default function Page() {
             </motion.div>
             <button
               onClick={() => setShowBottom(!showBottom)}
-              className="inline-block text-cyan-400 bg-transparent backdrop-blur-lg border border-cyan-600 shadow-lg shadow-cyan-600/40 py-3 px-5 rounded-lg hover:bg-cyan-600 hover:text-white"
+              className="inline-block text-cyan-400 bg-transparent backdrop-blur-lg border border-cyan-600 shadow-lg shadow-cyan-600/40 hover:shadow-dark-950 py-2 px-5 rounded-lg hover:bg-cyan-600 hover:text-white"
             >
               자세히 보기
             </button>
