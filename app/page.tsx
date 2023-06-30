@@ -43,7 +43,8 @@ export default function Page() {
       >
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
-        <div className=" relative">
+        <div className=" relative bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-bottom">
+          <div className="absolute inset-0 overflow-hidden bg-dark-950/90 backdrop-blur-sm"></div>
           <motion.div className="relative flex items-center py-20">
             <motion.div
               initial="offscreen"
