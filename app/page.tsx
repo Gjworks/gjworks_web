@@ -35,6 +35,7 @@ export default function Page() {
   }
   return (
     <DefaultLayout>
+      <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div>
       <div className="relative">
         {/* <motion.div
         className="absolute inset-0"
