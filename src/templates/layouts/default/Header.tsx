@@ -129,7 +129,7 @@ const Header = () => {
         className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/60 z-101"
       >
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex justify-between items-center py-1 pr-3">
+          <div className="flex justify-between items-center py-2 pr-3">
             <div className="flex items-center justify-center">
               <button
                 onClick={() => setShowLeft(!showLeft)}
@@ -217,39 +217,60 @@ const Header = () => {
                   })}
               </div>
             </div>
-            <div className="relative flex items-center">
+            <div className="relative flex gap-2 items-center">
+              <div className="flex gap-1 items-center">
+                <button
+                  className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-2"
+                  onClick={() => setShowModal(!showModal)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                    />
+                  </svg>
+                </button>
+              </div>
               <button
-                className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-3 py-2"
-                onClick={() => setShowModal(!showModal)}
+                className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md bg-dark-800"
+                onClick={() => {}}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  strokeWidth={1}
                   stroke="currentColor"
                   className="w-5 h-5"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
                   />
                 </svg>
               </button>
               <button
-                className="group relative flex items-center"
+                className="group relative flex items-center rounded-md bg-primary-600 text-gray-500 hover:text-gray-900 dark:text-primary-200 dark:hover:text-white text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-3">
-                  <div className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white p-0">
+                  <div className="p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth={1}
                       stroke="currentColor"
-                      className="w-5 h-5"
+                      className="w-4 h-4"
                     >
                       <path
                         strokeLinecap="round"
@@ -258,9 +279,7 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="hidden items-center px-3 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white text-xs">
-                    Account
-                  </div>
+                  <div className="flex items-center px-3">Account</div>
                 </div>
               </button>
               <Dropdown state={showDropdown}>

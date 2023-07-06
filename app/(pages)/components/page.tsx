@@ -6,7 +6,7 @@ const Page = () => {
       <div className="max-w-screen-xl mx-auto px-3 py-10 lg:py-20">
         <div className="grid grid-cols-4 gap-8">
           <div className="col-span-4 sm:col-span-2">
-            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-800 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -26,14 +26,14 @@ const Page = () => {
               <div className="text-black dark:text-white font-bold mb-3 text-xl text-center">
                 Modal
               </div>
-              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3">
+              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3 text-center">
                 애니메이션 모달을 사용 할 수 있습니다.
               </div>
             </div>
           </div>
 
           <div className="col-span-4 sm:col-span-2">
-            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-800 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -53,14 +53,14 @@ const Page = () => {
               <div className="text-black dark:text-white font-bold mb-3 text-xl text-center">
                 Dropdown
               </div>
-              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3">
+              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3 text-center">
                 애니메이션 모달을 사용 할 수 있습니다.
               </div>
             </div>
           </div>
 
           <div className="col-span-4 sm:col-span-2">
-            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-800 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -80,14 +80,14 @@ const Page = () => {
               <div className="text-black dark:text-white font-bold mb-3 text-xl text-center">
                 Side Navigation
               </div>
-              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3">
+              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3 text-center">
                 애니메이션 모달을 사용 할 수 있습니다.
               </div>
             </div>
           </div>
 
           <div className="col-span-4 sm:col-span-2">
-            <div className="rounded-xl p-5 bg-white dark:bg-dark-900 h-full">
+            <div className="rounded-xl p-5 bg-white dark:bg-dark-800 h-full">
               <div className="flex justify-center text-black dark:text-white mb-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ const Page = () => {
               <div className="text-black dark:text-white font-bold mb-3 text-xl text-center">
                 Editor
               </div>
-              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3">
+              <div className="text-sm text-gray-500 dark:text-dark-200 mb-3 text-center">
                 애니메이션 모달을 사용 할 수 있습니다.
               </div>
             </div>

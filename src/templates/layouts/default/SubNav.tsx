@@ -52,7 +52,7 @@ const SubNav = () => {
   const snav = null
   return (
     <>
-      <div className="sticky backdrop-blur-lg bg-white/90 top-[44px] z-[50] dark:bg-dark-900/60 pb-1 border-b border-gray-100 dark:border-dark-800 shadow-lg shadow-slate-200/40 dark:shadow-slate-950/20">
+      <div className="sticky backdrop-blur-lg bg-white/90 top-[52px] z-[50] dark:bg-dark-900/60 pb-1 border-b border-gray-100 dark:border-dark-800 shadow-lg shadow-slate-200/40 dark:shadow-slate-950/20">
         <div className="max-w-screen-xl mx-auto px-3 overflow-hidden overflow-scroll-hide overflow-x-auto">
           <div className="flex gap-8 justify-between h-[52px]">
             <div>
@@ -85,7 +85,7 @@ const SubNav = () => {
                 })}
               <Link
                 href="#"
-                className="whitespace-nowrap block ml-2 text-gray-500 dark:text-dark-100 text-xs bg-gray-100/90 dark:bg-gray-50/10 px-4 py-1 rounded-full hover:bg-gray-200/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer"
+                className="whitespace-nowrap block ml-2 text-gray-500 dark:text-dark-200 text-xs px-4 py-1 rounded-full hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer"
               >
                 Contact us
               </Link>
