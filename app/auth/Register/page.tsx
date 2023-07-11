@@ -103,7 +103,7 @@ const Register = () => {
                   inputTitle="닉네임"
                   getData={getNickname}
                   placeholder="User nick name"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -116,7 +116,7 @@ const Register = () => {
                   inputTitle="이메일"
                   getData={getEmail}
                   placeholder="example@mail.com"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -130,7 +130,7 @@ const Register = () => {
                   inputTitle="비밀번호"
                   getData={getPassword}
                   placeholder="User Password"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
