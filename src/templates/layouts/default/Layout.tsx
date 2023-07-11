@@ -54,6 +54,7 @@ const Layout = ({ children }) => {
       <div className="relative z-20">
         <Header />
         <SubNav />
+        <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div>
         <motion.main
           variants={variants}
           initial="hidden"
@@ -73,7 +74,7 @@ const Layout = ({ children }) => {
             }}
             whileTap={{ scale: 1 }}
             onClick={goToTop}
-            className="fixed right-10 bottom-10 rounded-lg bg-dark-600/50 hover:bg-dark-500/50 backdrop-blur-lg dark:backdrop-blur-lg text-white p-3 z-101 cursor-pointer"
+            className="fixed right-10 bottom-10 rounded-lg bg-gray-800 hover:bg-gray-950 dark:bg-dark-600/50 dark:hover:bg-dark-500/50 backdrop-blur-lg dark:backdrop-blur-lg text-white p-3 z-101 cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

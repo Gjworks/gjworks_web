@@ -38,6 +38,19 @@ const Header = () => {
       document.removeEventListener('click', handleClickOutside, true)
     }
   }, [])
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener('scroll', handleScroll)
+    }, 1000)
+    return () => {
+      window.removeEventListener('scroll', handleScroll) //clean up
+    }
+  }, [])
+
+  const handleScroll = () => {
+    setShowNavigation(false)
+    // console.log('scrolled')
+  }
 
   const headerInitial = {
     opacity: 0,
@@ -126,7 +139,7 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/60 z-101"
+        className="relative top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/60 z-101"
       >
         <div className="max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center py-2 pr-3">
@@ -240,7 +253,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md bg-dark-800"
+                className="bg-slate-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-800"
                 onClick={() => {}}
               >
                 <svg
@@ -259,7 +272,7 @@ const Header = () => {
                 </svg>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-primary-600 text-gray-500 hover:text-gray-900 dark:text-primary-200 dark:hover:text-white text-xs"
+                className="group relative flex items-center rounded-md bg-primary-600 text-primary-200 hover:text-white dark:text-primary-200 dark:hover:text-white text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-3">
@@ -299,19 +312,19 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-800/75 w-screen h-screen"
+        className="absolute top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-800/75 w-screen h-screen"
       ></motion.div>
       <motion.div
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 z-99"
+        className="absolute top-0 left-0 right-0 z-99"
       >
         <motion.div
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/60 z-100"
+          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/60 z-100"
         >
           <motion.div
             initial={initial}

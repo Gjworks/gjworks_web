@@ -2,7 +2,7 @@ const Page = () => {
   return (
     <>
       <div className="relative flex items-end h-[400px] lg:h-[600px] bg-[url('/assets/images/bg13.jpg')] bg-no-repeat bg-cover bg-center">
-        <div className="absolute bottom-0 left-0 right-0 h-[400px] lg:h-[600px] bg-gradient-to-b from-dark-600/10 via-dark-800/50 to-dark-900 dark:from-dark-800/10 dark:via-dark-900/50 dark:to-dark-900"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-[400px] lg:h-[600px] bg-gradient-to-b from-dark-600/10 via-dark-800/50 to-dark-900 dark:from-dark-800/10 dark:via-dark-900/50 dark:to-dark-900 backdrop-blur-sm"></div>
         <div className="relative flex justify-center h-full items-end max-w-screen-sm mx-auto py-10">
           <div className="bg-dark-800/60 backdrop-blur-lg rounded-lg text-center p-10">
             <div className="text-dark-400 font-semibold text-xl mb-1">
