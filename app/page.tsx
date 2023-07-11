@@ -212,7 +212,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="relative overflow-hidden bg-gray-100 border border-slate-100 dark:border-dark-900 dark:bg-dark-800 shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="relative overflow-hidden bg-gray-100 border border-slate-100 dark:border-dark-900 dark:bg-dark-800 shadow-lg shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div className="text-2xl font-light text-center text-black dark:text-white mb-5">
                   Rhymix 제작 및 유지보수를 해드립니다.
@@ -227,7 +227,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="relative overflow-hidden bg-gray-100 border border-slate-50 dark:border-dark-900 dark:bg-dark-900 shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="relative overflow-hidden bg-gray-100 border border-slate-50 dark:border-dark-900 dark:bg-dark-900 shadow-lg shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div className="text-2xl font-light text-center text-black dark:text-white mb-5">
                   Web UI Components
@@ -468,7 +468,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className=" bg-gray-100 dark:bg-dark-800 p-10 border border-slate-100 dark:border-dark-800 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-slate-200 dark:shadow-dark-950"
+                className=" bg-gray-100 dark:bg-dark-800 p-10 border border-slate-100 dark:border-dark-800 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-200 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Partners
