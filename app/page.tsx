@@ -215,7 +215,7 @@ export default function Page() {
                   variants={variants}
                   className="relative overflow-hidden bg-gray-100 border border-slate-100 dark:border-dark-800 dark:bg-dark-950 shadow-lg shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 h-full"
                 >
-                  <div className="relative px-0 mb-10">
+                  <div className="relative px-8 mb-10">
                     <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
                     <div className="absolute bottom-0 left-0 right-0 h-[350px] rounded-lg bg-gradient-to-b from-dark-950/20 via-dark-950/60 to-dark-950"></div>
                   </div>
