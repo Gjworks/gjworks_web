@@ -57,7 +57,7 @@ export default function Page() {
                 <div className="relative text-center">
                   <motion.div
                     variants={variants}
-                    className="text-sm text-center lg:text-base font-bold text-cyan-600 dark:text-cyan-400 mb-3"
+                    className="text-sm text-center lg:text-base font-bold text-blue-600 dark:text-blue-400 mb-3"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -82,7 +82,7 @@ export default function Page() {
                     </div>
                     <Link
                       href="/auth/Signin"
-                      className="flex gap-2 bg-cyan-700 text-cyan-200 text-sm p-3 px-5 rounded-full hover:bg-cyan-600 hover:text-white"
+                      className="flex gap-2 bg-blue-700 text-blue-200 text-sm p-3 px-5 rounded-full hover:bg-blue-600 hover:text-white"
                     >
                       <span>
                         <svg
@@ -144,7 +144,7 @@ export default function Page() {
               <div className="flex items-center flex-wrap w-full md:flex-1 h-full order-0 md:order-1 backdrop-blur-lg bg-dark-900 dark:backdrop-blur-lg">
                 <div className="flex items-stretch flex-wrap w-full h-full lg:max-w-screen-sm ml-auto px-5 py-5">
                   <div className="flex items-center flex-wrap gap-8 w-full">
-                    <div className="flex items-center justify-center text-cyan-400 w-12 h-12 rounded-lg shadow-md shadow-dark-950 bg-dark-700/60 backdrop-blur-lg">
+                    <div className="flex items-center justify-center text-blue-400 w-12 h-12 rounded-lg shadow-md shadow-dark-950 bg-dark-700/60 backdrop-blur-lg">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -171,13 +171,13 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:flex-1 bg-cyan-600 order-0 md:order-1">
+              <div className="w-full md:flex-1 bg-blue-600 order-0 md:order-1">
                 <div className="flex items-center flex-wrap w-full lg:max-w-screen-sm mr-auto px-5 py-5 h-full">
                   <div className="flex-1">
                     <div className="text-white text-lg font-semibold">
                       Store
                     </div>
-                    <div className="text-cyan-300 text-sm">
+                    <div className="text-blue-300 text-sm">
                       Store에서 제품 구매하기
                     </div>
                   </div>
@@ -228,7 +228,7 @@ export default function Page() {
                     protection for businesses and ensures safety for employees,
                     clients, and assets.
                   </div>
-                  <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-cyan-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                  <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-blue-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
                     <div className="relative group-hover:text-white text-sm text-dark-300">
                       Link more
                     </div>
@@ -253,7 +253,7 @@ export default function Page() {
                       <div className="w-[240px] rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800 dark:shadow-black border border-slate-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]">
                         <div className="relative z-[100]">
                           <div className="w-56">
-                            <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-white hover:text-white text-white bg-cyan-600 dark:bg-cyan-600 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                            <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-white hover:text-white text-white bg-blue-600 dark:bg-blue-600 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
                               <div className="flex justify-between">
                                 <div className="flex items-center">
                                   <svg
@@ -332,8 +332,8 @@ export default function Page() {
                           <div className="ml-16">Example</div>
                         </div>
                         <div className="relative bg-black rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                          <div className="absolute bg-cyan-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                          <div className="ml-16 text-cyan-400">
+                          <div className="absolute bg-blue-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                          <div className="ml-16 text-blue-400">
                             Data Fetching
                           </div>
                         </div>
@@ -366,7 +366,7 @@ export default function Page() {
         </div>
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
-            <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 via-cyan-700 to-cyan-800 text-white">
+            <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-blue-700 to-blue-800 text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -413,7 +413,7 @@ export default function Page() {
             </motion.div>
             <button
               onClick={() => setShowBottom(!showBottom)}
-              className="relative group bg-dark-950 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-cyan-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md shadow-lg hover:shadow-dark-950"
+              className="relative group bg-dark-950 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-blue-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md shadow-lg hover:shadow-dark-950"
             >
               <div className="relative group-hover:text-white text-sm text-dark-300">
                 자세히 보기
@@ -448,10 +448,10 @@ export default function Page() {
             <div className="grid grid-cols-4 gap-8">
               <div className="col-span-2 grid grid-cols-2 gap-8">
                 <div className="flex flex-wrap gap-8 col-span-1 h-full">
-                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-cyan-500">
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-blue-500">
                     <div className="text-white text-lg">Store</div>
                   </div>
-                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-cyan-500">
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-blue-500">
                     <div className="text-white text-lg">Store</div>
                   </div>
                 </div>
@@ -487,12 +487,12 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-cyan-500 via-cyan-600 to-cyan-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
+                className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-white dark:text-white font-light text-center mb-8">
                   Store
                 </div>
-                <div className="text-base text-cyan-300 dark:text-cyan-300 mb-10 text-center">
+                <div className="text-base text-blue-300 dark:text-blue-300 mb-10 text-center">
                   React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
                   있습니다.
                 </div>
@@ -550,7 +550,7 @@ export default function Page() {
                       DB
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-cyan-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-blue-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 60%</div>
                   </div>
@@ -559,7 +559,7 @@ export default function Page() {
                       Front
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-cyan-600 rounded-full"></motion.div>
+                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-blue-600 rounded-full"></motion.div>
                     </div>
                     <div className="text-xs text-white"> 20%</div>
                   </div>
@@ -568,7 +568,7 @@ export default function Page() {
                       Server
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-cyan-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-blue-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 30%</div>
                   </div>
@@ -576,7 +576,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-cyan-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-blue-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
@@ -640,7 +640,7 @@ export default function Page() {
               >
                 <motion.div className="flex-1">
                   <motion.div
-                    className="text-cyan-600 mb-5"
+                    className="text-blue-600 mb-5"
                     variants={variants}
                   >
                     Front End Platform
@@ -665,7 +665,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-cyan-500 dark:hover:bg-cyan-500 cursor-pointer"
+                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-blue-500 dark:hover:bg-blue-500 cursor-pointer"
                   >
                     Read more
                   </motion.div>
@@ -693,13 +693,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-cyan-500 via-cyan-600 to-sky-500 text-center pt-20 mb-3"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-secondary-500 text-center pt-20 mb-3"
                 >
                   We Are Creative
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-cyan-500 via-cyan-600 to-sky-600 text-center mb-10 leading-normal"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-secondary-600 text-center mb-10 leading-normal"
                 >
                   Responsive everything.
                 </motion.div>
