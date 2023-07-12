@@ -208,130 +208,159 @@ export default function Page() {
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
-              className="flex flex-wrap gap-4"
+              className="grid grid-cols-12 gap-8"
             >
-              <motion.div
-                variants={variants}
-                className="relative overflow-hidden bg-gray-100 border border-slate-100 dark:border-dark-900 dark:bg-dark-800 shadow-lg shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
-              >
-                <div className="text-2xl font-light text-center text-black dark:text-white mb-5">
-                  Rhymix 제작 및 유지보수를 해드립니다.
-                </div>
-                <div className="text-base text-gray-400 dark:text-dark-400 text-center mb-10">
-                  라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지 모든
-                  부분의 제작을 의뢰를 통해 하고 있습니다. 결제 모듈과 카카오톡
-                  메세지 전송까지 다양한 서드파티 모듈을 가지고 있으며
-                  라이믹스의 모든 부분에 해당 기능을 추가하여 코어 수정 없이
-                  지원합니다.
-                </div>
-              </motion.div>
-              <motion.div
-                variants={variants}
-                className="relative overflow-hidden bg-gray-100 border border-slate-50 dark:border-dark-900 dark:bg-dark-900 shadow-lg shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
-              >
-                <div className="text-2xl font-light text-center text-black dark:text-white mb-5">
-                  Web UI Components
-                </div>
-                <div className="text-base text-center text-gray-400 dark:text-dark-400 mb-10">
-                  Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
-                  프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
-                  제작합니다.
-                </div>
-                <div className="flex flex-wrap gap-8 justify-between">
-                  <div>
-                    <div className="w-[240px] rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800 dark:shadow-black border border-slate-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]">
-                      <div className="relative z-[100]">
-                        <div className="w-56">
-                          <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-white hover:text-white text-white bg-cyan-600 dark:bg-cyan-600 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
-                            <div className="flex justify-between">
-                              <div className="flex items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth="1"
-                                  stroke="currentColor"
-                                  className="w-4 h-4"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
-                                  ></path>
-                                </svg>
-                                <div className="pl-2">Sign In</div>
+              <div className="col-span-12 lg:col-span-5">
+                <motion.div
+                  variants={variants}
+                  className="relative overflow-hidden bg-gray-100 border border-slate-100 dark:border-dark-800 dark:bg-dark-950 shadow-lg shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 h-full"
+                >
+                  <div className="relative px-0 mb-10">
+                    <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-[350px] rounded-lg bg-gradient-to-b from-dark-950/20 via-dark-950/60 to-dark-950"></div>
+                  </div>
+
+                  <div className="text-xl text-white mb-3">
+                    Mobile experience
+                  </div>
+                  <div className="text-sm text-dark-500 mb-10">
+                    Advanced tech and data insights, Kepler 51 enables proactive
+                    protection for businesses and ensures safety for employees,
+                    clients, and assets.
+                  </div>
+                  <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-cyan-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                    <div className="relative group-hover:text-white text-sm text-dark-300">
+                      Link more
+                    </div>
+                  </button>
+                </motion.div>
+              </div>
+              <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
+                <motion.div
+                  variants={variants}
+                  className="relative overflow-hidden bg-gray-100 border border-slate-50 dark:border-dark-800 dark:bg-dark-900 shadow-lg shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0"
+                >
+                  <div className="text-xl text-black dark:text-white mb-5">
+                    Web UI Components
+                  </div>
+                  <div className="text-base text-gray-400 dark:text-dark-500 mb-10">
+                    Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
+                    프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
+                    제작합니다.
+                  </div>
+                  <div className="flex flex-wrap gap-8 justify-between">
+                    <div>
+                      <div className="w-[240px] rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800 dark:shadow-black border border-slate-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]">
+                        <div className="relative z-[100]">
+                          <div className="w-56">
+                            <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-white hover:text-white text-white bg-cyan-600 dark:bg-cyan-600 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                              <div className="flex justify-between">
+                                <div className="flex items-center">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1"
+                                    stroke="currentColor"
+                                    className="w-4 h-4"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
+                                    ></path>
+                                  </svg>
+                                  <div className="pl-2">Sign In</div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div>
-                          <div className="block rounded px-4 py-2 cursor-pointer text-xs text-slate-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
-                            <div className="flex justify-between">
-                              <div className="flex items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth="1"
-                                  stroke="currentColor"
-                                  className="w-4 h-4"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
-                                  ></path>
-                                </svg>
-                                <div className="pl-2">Register</div>
+                          <div>
+                            <div className="block rounded px-4 py-2 cursor-pointer text-xs text-slate-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                              <div className="flex justify-between">
+                                <div className="flex items-center">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1"
+                                    stroke="currentColor"
+                                    className="w-4 h-4"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+                                    ></path>
+                                  </svg>
+                                  <div className="pl-2">Register</div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="block border-b border-slate-300 dark:border-dark-700 my-2 mx-3"></div>
-                        <div>
-                          <div className="block rounded px-4 py-2 cursor-pointer text-xs text-slate-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
-                            <div className="flex justify-between">
-                              <div className="flex items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth="1"
-                                  stroke="currentColor"
-                                  className="w-4 h-4"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                                  ></path>
-                                </svg>
-                                <div className="pl-2">Infomation</div>
+                          <div className="block border-b border-slate-300 dark:border-dark-700 my-2 mx-3"></div>
+                          <div>
+                            <div className="block rounded px-4 py-2 cursor-pointer text-xs text-slate-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
+                              <div className="flex justify-between">
+                                <div className="flex items-center">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1"
+                                    stroke="currentColor"
+                                    className="w-4 h-4"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                                    ></path>
+                                  </svg>
+                                  <div className="pl-2">Infomation</div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div>
-                    <div className="w-[240px]">
-                      <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                        <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                        <div className="ml-16">Example</div>
-                      </div>
-                      <div className="relative bg-black rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                        <div className="absolute bg-cyan-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                        <div className="ml-16 text-cyan-400">Data Fetching</div>
-                      </div>
-                      <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                        <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                        <div className="ml-16">Network</div>
+                    <div>
+                      <div className="w-[240px]">
+                        <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                          <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                          <div className="ml-16">Example</div>
+                        </div>
+                        <div className="relative bg-black rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                          <div className="absolute bg-cyan-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                          <div className="ml-16 text-cyan-400">
+                            Data Fetching
+                          </div>
+                        </div>
+                        <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
+                          <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
+                          <div className="ml-16">Network</div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
+                </motion.div>
+                <motion.div
+                  variants={variants}
+                  className="relative overflow-hidden bg-gray-100 border border-slate-100 dark:border-dark-800 dark:bg-dark-900 shadow-lg shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0"
+                >
+                  <div className="text-xl text-black dark:text-white mb-5">
+                    Rhymix 제작 및 유지보수를 해드립니다.
+                  </div>
+                  <div className="text-sm text-gray-400 dark:text-dark-500 mb-10">
+                    라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지 모든
+                    부분의 제작을 의뢰를 통해 하고 있습니다. 결제 모듈과
+                    카카오톡 메세지 전송까지 다양한 서드파티 모듈을 가지고
+                    있으며 라이믹스의 모든 부분에 해당 기능을 추가하여 코어 수정
+                    없이 지원합니다.
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -384,9 +413,11 @@ export default function Page() {
             </motion.div>
             <button
               onClick={() => setShowBottom(!showBottom)}
-              className="inline-block text-cyan-600 bg-transparent backdrop-blur-lg border border-cyan-600 shadow-lg shadow-cyan-600/30 hover:shadow-cyan-600/50 py-2 px-5 rounded-lg hover:bg-cyan-600 hover:text-white"
+              className="relative group bg-dark-950 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-cyan-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md shadow-lg hover:shadow-dark-950"
             >
-              자세히 보기
+              <div className="relative group-hover:text-white text-sm text-dark-300">
+                자세히 보기
+              </div>
             </button>
           </motion.div>
         </div>
