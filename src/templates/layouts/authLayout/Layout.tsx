@@ -5,13 +5,13 @@
  **/
 'use client'
 import React, { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import Header from 'src/templates/layouts/default/Header'
-import Footer from 'src/templates/layouts/default/Footer'
-import SubNav from 'src/templates/layouts/default/SubNav'
+import Footer from 'src/templates/layouts/authLayout/Footer'
 
 const Layout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     const updatePosition = () => {
@@ -52,8 +52,54 @@ const Layout = ({ children }) => {
     <motion.div className="selection:text-white selection:bg-primary-500 break-keep">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
-        <Header />
-        <SubNav />
+        <motion.header
+          transition={{ duration: 0.3 }}
+          className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/60 z-101 border-b border-gray-800"
+        >
+          <div className="max-w-screen-sm mx-auto">
+            <div className="flex justify-between items-center py-2 pr-3">
+              <a
+                onClick={() => router.back()}
+                className="text-dark-400 hover:text-white py-2 px-3 rounded-lg cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </a>
+              <div className="text-lg font-semibold text-white">지제이웍스</div>
+              <a
+                href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                className="text-dark-400 hover:text-white py-2 px-3 rounded-lg cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </motion.header>
         <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div>
         <motion.main
           variants={variants}

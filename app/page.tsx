@@ -57,7 +57,7 @@ export default function Page() {
                 <div className="relative text-center">
                   <motion.div
                     variants={variants}
-                    className="text-sm text-center lg:text-base font-bold text-blue-600 dark:text-blue-400 mb-3"
+                    className="text-sm text-center lg:text-base font-bold text-primary-600 dark:text-primary-400 mb-3"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -82,7 +82,7 @@ export default function Page() {
                     </div>
                     <Link
                       href="/auth/Signin"
-                      className="flex gap-2 bg-blue-700 text-blue-200 text-sm p-3 px-5 rounded-full hover:bg-blue-600 hover:text-white"
+                      className="flex gap-2 bg-primary-700 text-primary-200 text-sm p-3 px-5 rounded-full hover:bg-primary-600 hover:text-white"
                     >
                       <span>
                         <svg
@@ -144,7 +144,7 @@ export default function Page() {
               <div className="flex items-center flex-wrap w-full md:flex-1 h-full order-0 md:order-1 backdrop-blur-lg bg-dark-900 dark:backdrop-blur-lg">
                 <div className="flex items-stretch flex-wrap w-full h-full lg:max-w-screen-sm ml-auto px-5 py-5">
                   <div className="flex items-center flex-wrap gap-8 w-full">
-                    <div className="flex items-center justify-center text-blue-400 w-12 h-12 rounded-lg shadow-md shadow-dark-950 bg-dark-700/60 backdrop-blur-lg">
+                    <div className="flex items-center justify-center text-primary-500 w-12 h-12 rounded-lg shadow-sm shadow-dark-950 bg-dark-700/60 backdrop-blur-lg">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -171,13 +171,13 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:flex-1 bg-blue-600 order-0 md:order-1">
+              <div className="w-full md:flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 order-0 md:order-1">
                 <div className="flex items-center flex-wrap w-full lg:max-w-screen-sm mr-auto px-5 py-5 h-full">
                   <div className="flex-1">
                     <div className="text-white text-lg font-semibold">
                       Store
                     </div>
-                    <div className="text-blue-300 text-sm">
+                    <div className="text-primary-300 text-sm">
                       Store에서 제품 구매하기
                     </div>
                   </div>
@@ -221,14 +221,13 @@ export default function Page() {
                   </div>
 
                   <div className="text-xl text-white mb-3">
-                    Mobile experience
+                    Coming soon mobile
                   </div>
                   <div className="text-sm text-dark-500 mb-10">
-                    Advanced tech and data insights, Kepler 51 enables proactive
-                    protection for businesses and ensures safety for employees,
-                    clients, and assets.
+                    Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도 불편함이
+                    없게 UI/UX를 설계 합니다.
                   </div>
-                  <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-blue-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                  <button className="relative group bg-dark-800 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-sky-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
                     <div className="relative group-hover:text-white text-sm text-dark-300">
                       Link more
                     </div>
@@ -248,102 +247,7 @@ export default function Page() {
                     프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
                     제작합니다.
                   </div>
-                  <div className="flex flex-wrap gap-8 justify-between">
-                    <div>
-                      <div className="w-[240px] rounded-md backdrop-blur-lg shadow-lg bg-white/90 dark:bg-dark-800 dark:shadow-black border border-slate-200 dark:border-dark-700 overflow-hidden shadow-xs p-2 z-[101]">
-                        <div className="relative z-[100]">
-                          <div className="w-56">
-                            <div className="block rounded px-4 py-2 cursor-pointer text-xs dark:text-white hover:text-white text-white bg-blue-600 dark:bg-blue-600 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
-                              <div className="flex justify-between">
-                                <div className="flex items-center">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth="1"
-                                    stroke="currentColor"
-                                    className="w-4 h-4"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"
-                                    ></path>
-                                  </svg>
-                                  <div className="pl-2">Sign In</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div>
-                            <div className="block rounded px-4 py-2 cursor-pointer text-xs text-slate-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
-                              <div className="flex justify-between">
-                                <div className="flex items-center">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth="1"
-                                    stroke="currentColor"
-                                    className="w-4 h-4"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
-                                    ></path>
-                                  </svg>
-                                  <div className="pl-2">Register</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="block border-b border-slate-300 dark:border-dark-700 my-2 mx-3"></div>
-                          <div>
-                            <div className="block rounded px-4 py-2 cursor-pointer text-xs text-slate-500 dark:text-dark-200 focus:outline-none focus:bg-dark-800 focus:text-dark-300">
-                              <div className="flex justify-between">
-                                <div className="flex items-center">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth="1"
-                                    stroke="currentColor"
-                                    className="w-4 h-4"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                                    ></path>
-                                  </svg>
-                                  <div className="pl-2">Infomation</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="w-[240px]">
-                        <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                          <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                          <div className="ml-16">Example</div>
-                        </div>
-                        <div className="relative bg-black rounded-lg p-2 text-white text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                          <div className="absolute bg-blue-400 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                          <div className="ml-16 text-blue-400">
-                            Data Fetching
-                          </div>
-                        </div>
-                        <div className="relative bg-dark-700 rounded-lg p-2 text-dark-200 text-sm font-normal mb-1 shadow-md shadow-dark-900 overflow-hidden">
-                          <div className="absolute bg-dark-600 -left-6 bottom-0 rounded-full w-20 h-20"></div>
-                          <div className="ml-16">Network</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <div className="flex flex-wrap gap-8 justify-between"></div>
                 </motion.div>
                 <motion.div
                   variants={variants}
@@ -366,7 +270,7 @@ export default function Page() {
         </div>
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
-            <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 via-blue-700 to-blue-800 text-white">
+            <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 via-primary-700 to-primary-800 text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -413,7 +317,7 @@ export default function Page() {
             </motion.div>
             <button
               onClick={() => setShowBottom(!showBottom)}
-              className="relative group bg-dark-950 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-blue-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md shadow-lg hover:shadow-dark-950"
+              className="relative group bg-dark-800 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-sky-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
             >
               <div className="relative group-hover:text-white text-sm text-dark-300">
                 자세히 보기
@@ -448,10 +352,10 @@ export default function Page() {
             <div className="grid grid-cols-4 gap-8">
               <div className="col-span-2 grid grid-cols-2 gap-8">
                 <div className="flex flex-wrap gap-8 col-span-1 h-full">
-                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-blue-500">
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-primary-500">
                     <div className="text-white text-lg">Store</div>
                   </div>
-                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-blue-500">
+                  <div className="w-full rounded-lg shadow-lg shadow-black p-5 bg-primary-500">
                     <div className="text-white text-lg">Store</div>
                   </div>
                 </div>
@@ -487,12 +391,12 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
+                className="bg-gradient-to-br from-primary-500 via-primary-600 to-primary-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-white dark:text-white font-light text-center mb-8">
                   Store
                 </div>
-                <div className="text-base text-blue-300 dark:text-blue-300 mb-10 text-center">
+                <div className="text-base text-primary-300 dark:text-primary-300 mb-10 text-center">
                   React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
                   있습니다.
                 </div>
@@ -550,7 +454,7 @@ export default function Page() {
                       DB
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-blue-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-primary-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 60%</div>
                   </div>
@@ -559,7 +463,7 @@ export default function Page() {
                       Front
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-blue-600 rounded-full"></motion.div>
+                      <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-primary-600 rounded-full"></motion.div>
                     </div>
                     <div className="text-xs text-white"> 20%</div>
                   </div>
@@ -568,7 +472,7 @@ export default function Page() {
                       Server
                     </div>
                     <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
-                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-blue-600 rounded-full"></div>
+                      <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-primary-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 30%</div>
                   </div>
@@ -576,7 +480,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-blue-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
@@ -640,7 +544,7 @@ export default function Page() {
               >
                 <motion.div className="flex-1">
                   <motion.div
-                    className="text-blue-600 mb-5"
+                    className="text-primary-600 mb-5"
                     variants={variants}
                   >
                     Front End Platform
@@ -665,7 +569,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-blue-500 dark:hover:bg-blue-500 cursor-pointer"
+                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-primary-500 dark:hover:bg-primary-500 cursor-pointer"
                   >
                     Read more
                   </motion.div>
@@ -693,13 +597,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-secondary-500 text-center pt-20 mb-3"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-secondary-500 text-center pt-20 mb-3"
                 >
                   We Are Creative
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-secondary-600 text-center mb-10 leading-normal"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-secondary-600 text-center mb-10 leading-normal"
                 >
                   Responsive everything.
                 </motion.div>

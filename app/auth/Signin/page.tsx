@@ -110,8 +110,8 @@ const Signin = () => {
             </div>
           </div>
           <div className="py-5">
-            <div className="flex gap-4">
-              <button className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+            <div className="grid grid-cols-3 gap-4">
+              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +129,7 @@ const Signin = () => {
                   Apple
                 </div>
               </button>
-              <button className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +146,7 @@ const Signin = () => {
                   Github
                 </div>
               </button>
-              <button className="group flex-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

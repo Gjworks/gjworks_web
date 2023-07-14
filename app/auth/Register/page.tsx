@@ -18,6 +18,7 @@ const Register = () => {
   const strSpace = /\s/
 
   const getNickname = (msg: string) => {
+    console.log(msg)
     setNickName(msg)
   }
   const getEmail = (msg: string) => {
@@ -26,10 +27,17 @@ const Register = () => {
   const getPassword = (msg: string) => {
     setPassword(msg)
   }
+
   const submitHandler = async e => {
     e.preventDefault()
-    console.log(e)
-    registerUser(e)
+    const data = {
+      nickname: e.target.nickName.value,
+      email: e.target.email.value,
+      password: e.target.password.value,
+    }
+    console.log(data)
+    const result = registerUser(data)
+    console.log(result)
   }
 
   // const registerUser = async e => {

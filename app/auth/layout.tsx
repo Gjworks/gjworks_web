@@ -1,7 +1,7 @@
-import DefaultLayout from 'src/templates/layouts/default/Layout'
+import AuthLayout from 'src/templates/layouts/authLayout/Layout'
 
 const PageLayout = ({ children }) => {
-  return <DefaultLayout>{children}</DefaultLayout>
+  return <AuthLayout>{children}</AuthLayout>
 }
 
 export default PageLayout
