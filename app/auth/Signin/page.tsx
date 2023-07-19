@@ -55,7 +55,7 @@ const Signin = () => {
                   inputTitle="Email"
                   placeholder="What's your Email"
                   getData={getData}
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -68,7 +68,7 @@ const Signin = () => {
                   inputTitle="비밀번호"
                   getData={getPassword}
                   placeholder="Your Password"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>

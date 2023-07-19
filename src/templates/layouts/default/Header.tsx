@@ -139,7 +139,7 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="relative top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/60 z-101"
+        className="relative top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/90 z-101"
       >
         <div className="max-w-screen-xl mx-auto">
           <div className="flex justify-between items-center py-2 pr-3">
@@ -324,7 +324,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/60 z-100"
+          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/90 z-100"
         >
           <motion.div
             initial={initial}

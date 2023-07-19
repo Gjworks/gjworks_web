@@ -49,18 +49,18 @@ const Layout = ({ children }) => {
     })
   }
   return (
-    <motion.div className="selection:text-white selection:bg-primary-500 break-keep">
+    <motion.div className="selection:text-white selection:bg-primary-500 break-keep dark:bg-transparent min-h-full">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <motion.header
           transition={{ duration: 0.3 }}
-          className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/60 z-101 border-b border-gray-800"
+          className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/70 dark:bg-dark-900/60 z-101 border-b border-slate-100 dark:border-gray-800"
         >
           <div className="max-w-screen-sm mx-auto">
             <div className="flex justify-between items-center py-2 pr-3">
               <a
                 onClick={() => router.back()}
-                className="text-dark-400 hover:text-white py-2 px-3 rounded-lg cursor-pointer"
+                className="text-slate-500 hover:text-slate-900 dark:text-dark-400 dark:hover:text-white py-2 px-3 rounded-lg cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -77,10 +77,15 @@ const Layout = ({ children }) => {
                   />
                 </svg>
               </a>
-              <div className="text-lg font-semibold text-white">지제이웍스</div>
               <a
                 href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                className="text-dark-400 hover:text-white py-2 px-3 rounded-lg cursor-pointer"
+                className="text-lg font-semibold text-black dark:text-white"
+              >
+                지제이웍스
+              </a>
+              <a
+                href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                className="text-slate-500 hover:text-slate-900 dark:text-dark-400 dark:hover:text-white py-2 px-3 rounded-lg cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

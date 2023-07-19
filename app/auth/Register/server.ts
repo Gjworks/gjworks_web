@@ -10,17 +10,18 @@ type UserInfo = {
   password: string;
 };
 
-const registerUser = async (data: UserInfo): Promise<UserInfo> => {
+const registerUser = async (data: UserInfo) => {
   const { nickname, email, password } = data;
 
-  const createUser = await prisma.user.create({
-    data: {
-      nickname: nickname,
-      email: email,
-      password: await hashedPassword(password),
-    },
-  });
-  return createUser;
+  
+  // const createUser = await prisma.user.create({
+  //   data: {
+  //     nickname: nickname,
+  //     email: email,
+  //     password: await hashedPassword(password).toString(),
+  //   },
+  // });
+  // return createUser;
 };
 
 export default registerUser;
