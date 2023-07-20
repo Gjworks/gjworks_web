@@ -2,7 +2,7 @@
     "header" : {
         "store" : {
             "name": "store",
-            "title": "스토어",
+            "title": "Store",
             "description": "회사소개 문구가 들어갈 예정입니다.",
             "route": "/store",
             "image_name": "",
@@ -33,11 +33,11 @@
                 }
             ]
         },
-        "components" : {
-            "name": "components",
-            "title": "Components",
+        "service" : {
+            "name": "service",
+            "title": "Service",
             "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/components",
+            "route": "/service",
             "image_name": "",
             "subMenu": [
                 {
@@ -67,11 +67,11 @@
                 }
             ]
         },
-        "web" : {
-            "name": "web",
-            "title": "Web",
+        "portfolio" : {
+            "name": "portfolio",
+            "title": "Portfolio",
             "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/web",
+            "route": "/portfolio",
             "image_name": "",
             "subMenu": []
         },
@@ -109,6 +109,14 @@
                     "description": "Create React"
                 }
             ]
+        },
+        "supports" : {
+            "name": "supports",
+            "title": "Supports",
+            "description": "회사소개 문구가 들어갈 예정입니다.",
+            "route": "/supports",
+            "image_name": "",
+            "subMenu": []
         }
     },
     "footer" : {

@@ -139,14 +139,14 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="relative top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-900/90 z-101"
+        className="relative top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-950/90 z-101"
       >
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex justify-between items-center py-2 pr-3">
-            <div className="flex items-center justify-center">
+          <div className="grid grid-cols-2 lg:grid-cols-3 py-2 pr-3">
+            <div className="col-span-1 flex items-center">
               <button
                 onClick={() => setShowLeft(!showLeft)}
-                className="group flex lg:hidden items-center justify-center mx-auto px-3"
+                className="group flex lg:hidden items-center px-3"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
@@ -159,7 +159,7 @@ const Header = () => {
 
               <button
                 onClick={() => setShowNavigation(!showNavigation)}
-                className="group hidden lg:flex items-center justify-center mx-auto px-3"
+                className="group hidden lg:flex items-center px-3"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
@@ -187,7 +187,7 @@ const Header = () => {
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="flex items-center"
                 >
-                  <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-medium mr-4">
+                  <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-semibold mr-4">
                     지제이웍스
                   </div>
                 </a>
@@ -209,28 +209,27 @@ const Header = () => {
                   <span>0.1.10.beta</span>
                 </div>
               </div>
-
-              <div className="hidden items-center pl-3">
-                {nav.header &&
-                  Object.entries(nav.header).map((data, index) => {
-                    return (
-                      <Link
-                        href={data[1].route}
-                        key={data[1].name}
-                        className={
-                          'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal uppercase ' +
-                          (pathname === data[1].route
-                            ? 'text-black dark:text-white'
-                            : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
-                        }
-                      >
-                        {data[1].title}
-                      </Link>
-                    )
-                  })}
-              </div>
             </div>
-            <div className="relative flex gap-2 items-center">
+            <div className="col-span-1 hidden lg:flex items-center pl-3">
+              {nav.header &&
+                Object.entries(nav.header).map((data, index) => {
+                  return (
+                    <Link
+                      href={data[1].route}
+                      key={data[1].name}
+                      className={
+                        'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
+                        (pathname === data[1].route
+                          ? 'text-black dark:text-white'
+                          : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
+                      }
+                    >
+                      {data[1].title}
+                    </Link>
+                  )
+                })}
+            </div>
+            <div className="relative col-span-1 flex gap-2 items-center justify-end">
               <div className="flex gap-1 items-center">
                 <button
                   className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-2"
@@ -272,7 +271,7 @@ const Header = () => {
                 </svg>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-primary-600 text-primary-200 hover:text-white dark:text-primary-200 dark:hover:text-white text-xs"
+                className="group relative flex items-center rounded-md bg-dark-800 text-primary-200 hover:text-black dark:text-dark-400 dark:hover:text-white text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-3">
@@ -324,7 +323,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/90 z-100"
+          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90 z-100"
         >
           <motion.div
             initial={initial}

@@ -202,7 +202,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="py-20 bg-gradient-to-b from-white dark:from-dark-950 via-white dark:via-dark-950 to-transparent">
+        <div className="py-20 bg-gradient-to-b from-white dark:from-dark-950 via-white dark:via-transparent to-transparent">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
@@ -213,7 +213,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-gray-200/80 border border-white dark:border-dark-800 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0 h-full"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0 h-full"
                 >
                   <div className="relative px-8 mb-10">
                     <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
@@ -237,7 +237,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-gray-200/80 border border-white dark:border-dark-800 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -257,7 +257,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-gray-200/80 border border-white dark:border-dark-800 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
                 >
                   <div className="text-xl text-black dark:text-white mb-5">
                     Rhymix 제작 및 유지보수를 해드립니다.

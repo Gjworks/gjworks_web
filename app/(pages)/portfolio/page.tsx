@@ -31,7 +31,7 @@ const Page = props => {
       <PageWrap>
         <div className="max-w-screen-xl mx-auto py-8 xl:py-20 px-3">
           <motion.div className="text-black dark:text-white text-5xl font-semibold mb-16">
-            Metaverse
+            Portfolio
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <Sectionbox

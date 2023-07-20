@@ -3,7 +3,7 @@ const Page = () => {
     <>
       <div className="max-w-screen-xl mx-auto px-3 py-20">
         <div className="grid grid-cols-3 gap-8">
-          <div className="col-span-3 md:col-span-1">
+          <div className="col-span-3 lg:col-span-1">
             <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950 bg-[url('/assets/images/bg9.jpg')] bg-no-repeat bg-cover bg-center ">
               <div className="absolute inset-0 backdrop-blur-lg bg-dark-900/60"></div>
               <div className="relative h-[200px] overflow-hidden">
@@ -33,7 +33,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-3 md:col-span-1">
+          <div className="col-span-3 lg:col-span-1">
             <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950 bg-[url('/assets/images/bg10.jpg')] bg-no-repeat bg-cover bg-center ">
               <div className="absolute inset-0 backdrop-blur-lg bg-dark-900/60"></div>
               <div className="relative h-[200px] overflow-hidden">
@@ -63,7 +63,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-3 md:col-span-1">
+          <div className="col-span-3 lg:col-span-1">
             <div className="group relative rounded-lg bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950 bg-[url('/assets/images/primary/primary_bg3.jpg')] bg-no-repeat bg-cover bg-center ">
               <div className="absolute inset-0 backdrop-blur-lg bg-dark-900/60"></div>
               <div className="relative h-[200px] overflow-hidden">

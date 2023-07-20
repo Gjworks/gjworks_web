@@ -15,7 +15,7 @@
     },
     "store" : {
         "name": "store",
-        "title": "스토어",
+        "title": "Store",
         "description": "",
         "route": "/store",
         "parent" : "store",
@@ -37,11 +37,11 @@
         "parent" : "store",
         "image_name": ""
     },
-    "web" : {
-        "name": "web",
-        "title": "Web Create",
+    "service" : {
+        "name": "service",
+        "title": "Service",
         "description": "",
-        "route": "/web",
+        "route": "/service",
         "image_name": ""
     },
     "components" : {
