@@ -127,5 +127,12 @@
         "parent": "components",
         "route": "/license",
         "image_name": ""
+    },
+    "portfolio" : {
+        "name": "portfolio",
+        "title": "Portfolio",
+        "description": "",
+        "route": "/portfolio",
+        "image_name": ""
     }
 }

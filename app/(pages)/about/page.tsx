@@ -5,7 +5,7 @@ const Page = () => {
     <>
       <div className="flex justify-center items-center h-[calc(100vh-302px)]">
         <div className="max-w-screen-sm mx-auto px-3">
-          <div className="text-white flex justify-center pb-5">
+          <div className="text-sky-400 flex justify-center pb-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -21,11 +21,11 @@ const Page = () => {
               />
             </svg>
           </div>
-          <div className="text-white text-3xl font-light text-center mb-10">
+          <div className="text-dark-400 text-3xl font-light text-center mb-10">
             <span className="text-primary-400">Simple</span> &{' '}
             <span className="text-secondary-500">Creative</span>
           </div>
-          <div className="text-dark-200 text-base font-light text-center break-keep">
+          <div className="text-dark-500 text-base font-light text-center break-keep">
             지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모
             개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및
             비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
