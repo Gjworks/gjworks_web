@@ -57,7 +57,7 @@ export default function Page() {
                 <div className="relative text-center">
                   <motion.div
                     variants={variants}
-                    className="text-sm text-center lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3"
+                    className="text-sm text-center lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3 pt-0 lg:pt-20"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -90,7 +90,7 @@ export default function Page() {
                     </div>
                     <Link
                       href="/auth/Signin"
-                      className="flex gap-2 bg-primary-400 text-white text-sm p-3 px-5 rounded-full hover:bg-primary-500 hover:text-white"
+                      className="flex gap-2 bg-primary-500 text-white text-sm p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
                     >
                       <span>
                         <svg
@@ -373,10 +373,10 @@ export default function Page() {
                 variants={variants}
                 className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
               >
-                <div className="text-2xl text-white dark:text-black font-light text-center mb-8">
+                <div className="text-2xl text-white dark:text-white font-light text-center mb-8">
                   Store
                 </div>
-                <div className="text-base text-primary-300 dark:text-dark-600 mb-10 text-center">
+                <div className="text-base text-primary-300 dark:text-primary-200 mb-10 text-center">
                   React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
                   있습니다.
                 </div>

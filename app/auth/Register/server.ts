@@ -12,8 +12,13 @@ type UserInfo = {
 
 const registerUser = async (data: UserInfo) => {
   const { nickname, email, password } = data;
-
-  
+  if (!nickname) {
+    throw new Error('Invalid input.')
+  }
+  // if(!nickname)
+  // {
+  //   throw new Error(`This is error is in the Server Action`);
+  // }
   // const createUser = await prisma.user.create({
   //   data: {
   //     nickname: nickname,

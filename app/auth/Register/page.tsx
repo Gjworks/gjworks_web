@@ -35,9 +35,14 @@ const Register = () => {
       email: e.target.email.value,
       password: e.target.password.value,
     }
-    console.log(data)
-    const result = registerUser(data)
-    console.log(result)
+    // console.log(data)
+    // const result = registerUser(data)
+    // console.log(result)
+    try {
+      await registerUser(data)
+    } catch (e) {
+      console.log('error' + e)
+    }
   }
 
   // const registerUser = async e => {
@@ -147,7 +152,7 @@ const Register = () => {
               </div>
             </div>
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 hover:text-black dark:hover:text-white dark:text-primary-200 text-black py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500">
+              <button className="flex justify-center items-center w-full bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 hover:text-black dark:hover:text-white dark:text-primary-200 text-black py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500">
                 Register Completed
               </button>
             </div>
@@ -158,7 +163,7 @@ const Register = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white dark:bg-dark-900 px-4 text-xs text-dark-400">
+                <span className="bg-white dark:bg-dark-950 px-4 text-xs text-dark-400">
                   OR
                 </span>
               </div>
