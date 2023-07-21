@@ -67,11 +67,11 @@
                 }
             ]
         },
-        "portfolio" : {
-            "name": "portfolio",
-            "title": "Portfolio",
+        "works" : {
+            "name": "works",
+            "title": "Works",
             "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/portfolio",
+            "route": "/works",
             "image_name": "",
             "subMenu": []
         },

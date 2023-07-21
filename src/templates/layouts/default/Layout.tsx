@@ -49,11 +49,11 @@ const Layout = ({ children }) => {
     })
   }
   return (
-    <motion.div className="selection:text-white selection:bg-primary-600 break-keep">
+    <motion.div className="selection:text-white selection:bg-primary-300 break-keep">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <Header />
-        <SubNav />
+
         <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div>
         <motion.main
           variants={variants}
@@ -74,7 +74,7 @@ const Layout = ({ children }) => {
             }}
             whileTap={{ scale: 1 }}
             onClick={goToTop}
-            className="fixed right-10 bottom-10 rounded-lg bg-gray-800 hover:bg-gray-950 dark:bg-dark-600/50 dark:hover:bg-dark-500/50 backdrop-blur-lg dark:backdrop-blur-lg text-white p-3 z-101 cursor-pointer"
+            className="fixed right-3 lg:right-10 bottom-5 lg:bottom-10 rounded-lg bg-gray-600 hover:bg-gray-950 dark:bg-dark-600/50 dark:hover:bg-dark-500/50 backdrop-blur-lg dark:backdrop-blur-lg text-white p-3 z-101 cursor-pointer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

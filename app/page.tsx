@@ -44,8 +44,8 @@ export default function Page() {
       >
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
-        <div className=" relative bg-[url('/assets/images/bg12.jpg')] bg-no-repeat bg-cover bg-bottom">
-          <div className="absolute inset-0 overflow-hidden bg-dark-950/90 backdrop-blur-sm"></div>
+        <div className=" relative ">
+          <div className="hidden absolute inset-0 overflow-hidden bg-dark-950/90 backdrop-blur-sm"></div>
           <motion.div className="relative flex items-center py-20">
             <motion.div
               initial="offscreen"
@@ -57,16 +57,24 @@ export default function Page() {
                 <div className="relative text-center">
                   <motion.div
                     variants={variants}
-                    className="text-sm text-center lg:text-base font-bold text-primary-600 dark:text-primary-600 mb-3"
+                    className="text-sm text-center lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="text-3xl sm:text-5xl md:text-6xl mb-10 text-center text-white"
+                    className="text-3xl sm:text-5xl md:text-6xl mb-10 text-center text-black dark:text-white font-semibold"
                   >
                     <div>Build web and app</div>
-                    <div>Quickly and simply</div>
+                    <div>
+                      <span className="text-gray-400 dark:text-dark-400">
+                        Quickly
+                      </span>{' '}
+                      and{' '}
+                      <span className="text-gray-400 dark:text-dark-400">
+                        simply
+                      </span>
+                    </div>
                   </motion.div>
                   <motion.div
                     variants={variants}
@@ -74,7 +82,7 @@ export default function Page() {
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
-                  <div className="relative flex gap-8 bg-dark-500/10 backdrop-blur-lg rounded-full p-3 mb-12">
+                  <div className="relative flex gap-8 bg-slate-100 dark:bg-dark-500/10 backdrop-blur-lg rounded-full p-3 mb-12">
                     <div className="flex-1 flex items-center px-3">
                       <div className="text-sm text-dark-400 line-clamp-1">
                         Launch Your Service.
@@ -82,7 +90,7 @@ export default function Page() {
                     </div>
                     <Link
                       href="/auth/Signin"
-                      className="flex gap-2 bg-primary-700 text-primary-200 text-sm p-3 px-5 rounded-full hover:bg-primary-600 hover:text-white"
+                      className="flex gap-2 bg-primary-400 text-white text-sm p-3 px-5 rounded-full hover:bg-primary-500 hover:text-white"
                     >
                       <span>
                         <svg
@@ -104,7 +112,7 @@ export default function Page() {
                     </Link>
                   </div>
                   <div className="flex justify-center items-center gap-4 pb-20 lg:w-4/5 mx-auto">
-                    <div className="rounded-lg p-3 bg-dark-800/40 ">
+                    <div className="rounded-lg p-3 bg-slate-100 dark:bg-dark-800/40 ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 50.44096 49.52621"
@@ -139,7 +147,7 @@ export default function Page() {
               </div>
             </motion.div>
           </motion.div>
-          <div className="relative">
+          <div className="hidden relative">
             <div className="flex flex-wrap">
               <div className="flex items-center flex-wrap w-full md:flex-1 h-full order-0 md:order-1 backdrop-blur-lg bg-dark-900 dark:backdrop-blur-lg">
                 <div className="flex items-stretch flex-wrap w-full h-full lg:max-w-screen-sm ml-auto px-5 py-5">
@@ -202,7 +210,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="py-20 bg-gradient-to-b from-white dark:from-dark-950 via-white dark:via-transparent to-transparent">
+        <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
@@ -213,11 +221,11 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0 h-full"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0 h-full"
                 >
                   <div className="relative px-8 mb-10">
                     <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
-                    <div className="absolute bottom-0 left-0 right-0 h-[350px] rounded-lg dark:bg-gradient-to-b dark:from-dark-950/20 dark:via-dark-950/60 dark:to-dark-950"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-[350px] rounded-lg dark:bg-gradient-to-b dark:from-dark-900/20 dark:via-dark-900/60 dark:to-dark-900"></div>
                   </div>
 
                   <div className="text-xl text-black dark:text-white mb-3">
@@ -237,7 +245,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -257,7 +265,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-950 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
                 >
                   <div className="text-xl text-black dark:text-white mb-5">
                     Rhymix 제작 및 유지보수를 해드립니다.
@@ -363,19 +371,19 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-primary-500 via-primary-600 to-primary-600 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
+                className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
               >
-                <div className="text-2xl text-white dark:text-white font-light text-center mb-8">
+                <div className="text-2xl text-white dark:text-black font-light text-center mb-8">
                   Store
                 </div>
-                <div className="text-base text-primary-300 dark:text-primary-300 mb-10 text-center">
+                <div className="text-base text-primary-300 dark:text-dark-600 mb-10 text-center">
                   React 뿐만아니라 라이믹스 CMS기능까지 모두 만나보실 수
                   있습니다.
                 </div>
               </motion.div>
               <motion.div
                 variants={variants}
-                className=" bg-white dark:bg-dark-800 p-10 border border-slate-100 dark:border-dark-800 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-200 dark:shadow-dark-950"
+                className=" bg-slate-100 dark:bg-dark-900/80 p-10 border border-white dark:border-dark-800 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-200 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Partners
@@ -569,13 +577,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-600 to-secondary-500 text-center pt-20 mb-3"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 text-center pt-20 mb-3"
                 >
                   We Are Creative
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-600 to-secondary-600 text-center mb-10 leading-normal"
+                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-500 to-primary-600 text-center mb-10 leading-normal"
                 >
                   Responsive everything.
                 </motion.div>

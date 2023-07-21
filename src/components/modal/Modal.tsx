@@ -56,7 +56,7 @@ const Modal = ({ state, close, children }) => {
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
-                className="fixed inset-0 transform overflow-auto bg-slate-600/25 dark:bg-dark-950/25 z-90 px-3 backdrop-blur-lg"
+                className="fixed inset-0 transform overflow-auto bg-slate-950/50 dark:bg-dark-950/50 z-90 px-3"
               >
                 <div
                   className="absolute inset-0 z-99"
@@ -74,7 +74,7 @@ const Modal = ({ state, close, children }) => {
                     y: '-10%',
                     transition: { duration: 0.5 },
                   }}
-                  className="relative mt-20 mb-10 z-100 bg-white/90 dark:bg-dark-900/90 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white"
+                  className="relative mt-20 mb-10 z-100 bg-white/90 dark:bg-dark-900/90 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-black dark:text-white backdrop-blur-xl"
                 >
                   {children}
                 </motion.div>

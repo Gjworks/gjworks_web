@@ -128,11 +128,11 @@
         "route": "/license",
         "image_name": ""
     },
-    "portfolio" : {
-        "name": "portfolio",
-        "title": "Portfolio",
+    "works" : {
+        "name": "works",
+        "title": "Works",
         "description": "",
-        "route": "/portfolio",
+        "route": "/works",
         "image_name": ""
     }
 }

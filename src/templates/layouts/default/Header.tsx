@@ -139,7 +139,7 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="relative top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-950/90 z-101"
+        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-950/90 z-101"
       >
         <div className="max-w-screen-xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-3 py-2 pr-3">
@@ -271,7 +271,7 @@ const Header = () => {
                 </svg>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-dark-800 text-primary-200 hover:text-black dark:text-dark-400 dark:hover:text-white text-xs"
+                className="group relative flex items-center rounded-md bg-primary-500 dark:hover:bg-primary-400 text-slate-200 hover:text-white dark:text-white dark:hover:text-white text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-3">
@@ -311,13 +311,13 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="absolute top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-800/75 w-screen h-screen"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-900/70 w-screen h-screen"
       ></motion.div>
       <motion.div
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="absolute top-0 left-0 right-0 z-99"
+        className="fixed top-0 left-0 right-0 z-99"
       >
         <motion.div
           initial={{ opacity: 0 }}
