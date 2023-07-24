@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, Suspense } from 'react'
 
-import PageWrap from 'src/components/sections/PageWrap'
 import BoardList from 'src/components/list/BoardList'
 import PageNavigation from 'src/components/nav/PageNavigation'
 import { getData } from './server'
@@ -27,15 +26,13 @@ const Page: React.FC<PageProps> = ({ params }) => {
 
   return (
     <>
-      <PageWrap>
-        <div className="max-w-screen-lg mx-auto px-3">
-          <div className="py-10 text-2xl font-semibold text-white">Blog</div>
-          {documentInfo && <BoardList document={documentInfo}></BoardList>}
-          <div className="py-10">
-            <PageNavigation></PageNavigation>
-          </div>
+      <div className="max-w-screen-lg mx-auto px-3">
+        <div className="py-10 text-2xl font-semibold text-white">Blog</div>
+        {documentInfo && <BoardList document={documentInfo}></BoardList>}
+        <div className="py-10">
+          <PageNavigation></PageNavigation>
         </div>
-      </PageWrap>
+      </div>
     </>
   )
 }

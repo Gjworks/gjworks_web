@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import axios from 'axios'
 import Warning from 'src/components/message/Warning'
-import PageWrap from 'src/components/sections/PageWrap'
 import TextInput from 'src/components/form/TextInput'
 import registerUser from './server'
 
@@ -78,7 +77,7 @@ const Register = () => {
   // }
 
   return (
-    <PageWrap>
+    <>
       <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
         <div className="max-w-xl mx-auto p-5">
           <div className="py-10 text-center">
@@ -186,7 +185,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </PageWrap>
+    </>
   )
 }
 

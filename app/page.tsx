@@ -82,7 +82,7 @@ export default function Page() {
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
-                  <div className="relative flex gap-8 bg-slate-100 dark:bg-dark-500/10 backdrop-blur-lg rounded-full p-3 mb-12">
+                  <div className="relative flex gap-8 bg-slate-100 dark:bg-dark-800/90 backdrop-blur-lg rounded-full p-3 mb-12">
                     <div className="flex-1 flex items-center px-3">
                       <div className="text-sm text-dark-400 line-clamp-1">
                         Launch Your Service.
@@ -221,7 +221,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0 h-full"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0 h-full"
                 >
                   <div className="relative px-8 mb-10">
                     <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
@@ -245,12 +245,12 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
                     <div className="mx-auto w-36 h-36">
-                      <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-slate-200"></div>
+                      <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-slate-200 dark:border-dark-800"></div>
                     </div>
                   </div>
                   {/* <div className="text-xl text-black dark:text-white mb-5">
@@ -265,8 +265,26 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-md w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
                 >
+                  <div className="mb-6">
+                    <div className="flex justify-center items-center bg-primary-400 w-8 h-8 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
                   <div className="text-xl text-black dark:text-white mb-5">
                     Rhymix 제작 및 유지보수를 해드립니다.
                   </div>
@@ -371,7 +389,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
+                className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-white dark:text-white font-light text-center mb-8">
                   Store
@@ -383,7 +401,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className=" bg-slate-100 dark:bg-dark-900/80 p-10 border border-white dark:border-dark-800 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-200 dark:shadow-dark-950"
+                className=" bg-slate-100 dark:bg-dark-900/80 p-10 border border-white dark:border-dark-800 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-200 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Partners

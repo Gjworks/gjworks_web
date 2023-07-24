@@ -1,12 +1,6 @@
 'use client'
 
-import PageWrap from 'src/components/sections/PageWrap'
-
 const Page = () => {
-  return (
-    <>
-      <PageWrap>pageContainer</PageWrap>
-    </>
-  )
+  return <></>
 }
 export default Page

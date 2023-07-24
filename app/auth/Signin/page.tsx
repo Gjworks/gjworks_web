@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import { useRouter } from 'next/navigation'
-import PageWrap from 'src/components/sections/PageWrap'
 import TextInput from 'src/components/form/TextInput'
 
 const Signin = () => {
@@ -27,7 +26,7 @@ const Signin = () => {
     const userPassword = passwordInput
   }
   return (
-    <PageWrap>
+    <>
       <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
         <div className="max-w-lg mx-auto p-5">
           <form onSubmit={submitHandler}>
@@ -190,7 +189,7 @@ const Signin = () => {
           </div>
         </div>
       </div>
-    </PageWrap>
+    </>
   )
 }
 

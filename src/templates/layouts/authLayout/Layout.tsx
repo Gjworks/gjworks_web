@@ -145,7 +145,9 @@ const Layout = ({ children }) => {
         )}
 
         <footer>
-          <Footer />
+          <div className="max-w-screen-sm mx-auto pt-5 pb-10 px-3">
+            <Footer />
+          </div>
         </footer>
       </div>
     </motion.div>

@@ -7,8 +7,6 @@ import { motion } from 'framer-motion'
 import 'styles/globals.css'
 import 'styles/tailwindcss.css'
 
-import PageWrap from 'src/components/sections/PageWrap'
-
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
@@ -325,9 +323,7 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <div className="relative top-0 ml-[300px] bg-white">
-          <PageWrap>{children}</PageWrap>
-        </div>
+        <div className="relative top-0 ml-[300px] bg-white">{children}</div>
       </div>
     </div>
   )

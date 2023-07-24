@@ -22,25 +22,6 @@ const Layout = ({ children }) => {
 
     return () => window.removeEventListener('scroll', updatePosition)
   }, [])
-  const variants = {
-    hidden: { opacity: 0, x: 0, y: 25 },
-    enter: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 0.4,
-      },
-    },
-    exit: {
-      opacity: 0,
-      x: 0,
-      y: 25,
-      transition: {
-        duration: 0.4,
-      },
-    },
-  }
 
   const goToTop = () => {
     document.documentElement.scrollTo({
@@ -49,20 +30,11 @@ const Layout = ({ children }) => {
     })
   }
   return (
-    <motion.div className="selection:text-black selection:bg-primary-300 break-keep">
-      {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
+    <div className="selection:text-black selection:bg-primary-300 break-keep">
       <div className="relative z-20">
         <Header />
-
         <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div>
-        <motion.main
-          variants={variants}
-          initial="hidden"
-          animate="enter"
-          exit="exit"
-        >
-          {children}
-        </motion.main>
+        <main>{children}</main>
         {scrollPosition > 100 && (
           <motion.button
             initial={{ y: 100, opacity: 0 }}
@@ -94,10 +66,12 @@ const Layout = ({ children }) => {
         )}
 
         <footer>
-          <Footer />
+          <div className="max-w-screen-xl mx-auto pt-5 pb-10 px-3">
+            <Footer />
+          </div>
         </footer>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
