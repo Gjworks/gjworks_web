@@ -16,20 +16,22 @@ export default function Page() {
   }
   const parentVariants = {
     onscreen: {
-      transition: { staggerChildren: 0.3 },
+      transition: { staggerChildren: 0.2 },
     },
     offscreen: {
-      transition: { staggerChildren: 0.3, staggerDirection: -1 },
+      transition: { staggerChildren: 0.2, staggerDirection: -1 },
     },
   }
   const variants = {
     onscreen: {
+      y: 0,
       opacity: [0, 1],
       transition: {
-        duration: 0.6,
+        duration: 0.4,
       },
     },
     offscreen: {
+      y: 25,
       opacity: 0,
     },
   }
@@ -48,6 +50,7 @@ export default function Page() {
           <div className="hidden absolute inset-0 overflow-hidden bg-dark-950/90 backdrop-blur-sm"></div>
           <motion.div className="relative flex items-center py-20">
             <motion.div
+              variants={parentVariants}
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
@@ -82,7 +85,10 @@ export default function Page() {
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
-                  <div className="relative flex gap-8 bg-slate-100 dark:bg-dark-800/90 backdrop-blur-lg rounded-full p-3 mb-12">
+                  <motion.div
+                    variants={variants}
+                    className="relative flex gap-8 bg-slate-100 dark:bg-dark-800/90 backdrop-blur-lg rounded-full p-3 mb-12"
+                  >
                     <div className="flex-1 flex items-center px-3">
                       <div className="text-sm text-dark-400 line-clamp-1">
                         Launch Your Service.
@@ -110,8 +116,11 @@ export default function Page() {
                       </span>
                       <span className="hidden lg:flex">Get Started!</span>
                     </Link>
-                  </div>
-                  <div className="flex justify-center items-center gap-4 pb-20 lg:w-4/5 mx-auto">
+                  </motion.div>
+                  <motion.div
+                    variants={variants}
+                    className="flex justify-center items-center gap-4 pb-20 lg:w-4/5 mx-auto"
+                  >
                     <div className="rounded-lg p-3 bg-slate-100 dark:bg-dark-800/40 ">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +151,7 @@ export default function Page() {
                         주시면 반영하겠습니다.
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -213,6 +222,7 @@ export default function Page() {
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
+              variants={parentVariants}
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
@@ -221,31 +231,46 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0 h-full"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
-                  <div className="relative px-8 mb-10">
-                    <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
-                    <div className="absolute bottom-0 left-0 right-0 h-[350px] rounded-lg dark:bg-gradient-to-b dark:from-dark-900/20 dark:via-dark-900/60 dark:to-dark-900"></div>
-                  </div>
+                  <motion.div
+                    variants={parentVariants}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                  >
+                    <motion.div
+                      variants={variants}
+                      className="relative px-8 mb-10"
+                    >
+                      <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
+                      <div className="absolute bottom-0 left-0 right-0 h-[350px] rounded-lg dark:bg-gradient-to-b dark:from-dark-900/20 dark:via-dark-900/60 dark:to-dark-900"></div>
+                    </motion.div>
 
-                  <div className="text-xl text-black dark:text-white mb-3">
-                    Coming soon mobile
-                  </div>
-                  <div className="text-sm text-dark-500 mb-10">
-                    Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도 불편함이
-                    없게 UI/UX를 설계 합니다.
-                  </div>
-                  <button className="relative group bg-dark-800 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
-                    <div className="relative group-hover:text-white text-sm text-dark-300">
-                      Link more
-                    </div>
-                  </button>
+                    <motion.div
+                      variants={variants}
+                      className="text-xl text-black dark:text-white mb-3"
+                    >
+                      Coming soon mobile
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-sm text-dark-500 mb-10"
+                    >
+                      Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
+                      불편함이 없게 UI/UX를 설계 합니다.
+                    </motion.div>
+                    <button className="relative group bg-dark-800 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                      <div className="relative group-hover:text-white text-sm text-dark-300">
+                        Link more
+                      </div>
+                    </button>
+                  </motion.div>
                 </motion.div>
               </div>
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -265,43 +290,60 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full transition duration-300 hover:shadow-xs translate-y-1 hover:translate-y-0"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full hover:shadow-xs"
                 >
-                  <div className="mb-6">
-                    <div className="flex justify-center items-center bg-primary-400 w-8 h-8 rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-6 h-6"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="text-xl text-black dark:text-white mb-5">
-                    Rhymix 제작 및 유지보수를 해드립니다.
-                  </div>
-                  <div className="text-sm text-gray-400 dark:text-dark-500 mb-10">
-                    라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지 모든
-                    부분의 제작을 의뢰를 통해 하고 있습니다. 결제 모듈과
-                    카카오톡 메세지 전송까지 다양한 서드파티 모듈을 가지고
-                    있으며 라이믹스의 모든 부분에 해당 기능을 추가하여 코어 수정
-                    없이 지원합니다.
-                  </div>
+                  <motion.div
+                    variants={parentVariants}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                  >
+                    <motion.div variants={variants} className="mb-6">
+                      <div className="flex justify-center items-center bg-primary-400 w-8 h-8 rounded-full">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-6 h-6"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                          />
+                        </svg>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-xl text-black dark:text-white mb-5"
+                    >
+                      Rhymix 제작 및 유지보수를 해드립니다.
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-sm text-gray-400 dark:text-dark-500 mb-10"
+                    >
+                      라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지 모든
+                      부분의 제작을 의뢰를 통해 하고 있습니다. 결제 모듈과
+                      카카오톡 메세지 전송까지 다양한 서드파티 모듈을 가지고
+                      있으며 라이믹스의 모든 부분에 해당 기능을 추가하여 코어
+                      수정 없이 지원합니다.
+                    </motion.div>
+                  </motion.div>
                 </motion.div>
               </div>
             </motion.div>
           </div>
         </div>
         <div className="py-20">
-          <div className="relative max-w-screen-xl mx-auto px-3">
+          <motion.div
+            variants={parentVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            className="relative max-w-screen-xl mx-auto px-3"
+          >
             <div className="absolute hidden items-center justify-center -top-28 right-3 w-16 h-16 rounded-full bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -319,13 +361,16 @@ export default function Page() {
               </svg>
             </div>
 
-            <motion.div className="relative max-w-screen-lg mx-auto">
+            <motion.div
+              variants={variants}
+              className="relative max-w-screen-lg mx-auto"
+            >
               <div className="relative">
                 <SafariBrower />
               </div>
               {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950"></div> */}
             </motion.div>
-          </div>
+          </motion.div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -347,14 +392,16 @@ export default function Page() {
               선보이고 있습니다. 그에 맞춰 그전에는 없는 느낌의 레이아웃을 출시
               하려고 합니다. 현재 작업중에 있으며 6월중에 출시 예정입니다.
             </motion.div>
-            <button
-              onClick={() => setShowBottom(!showBottom)}
-              className="relative group bg-dark-800 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
-            >
-              <div className="relative group-hover:text-white text-sm text-dark-300">
-                자세히 보기
-              </div>
-            </button>
+            <motion.div variants={variants} className="">
+              <button
+                onClick={() => setShowBottom(!showBottom)}
+                className="relative group bg-dark-800 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
+              >
+                <div className="relative group-hover:text-white text-sm text-dark-300">
+                  자세히 보기
+                </div>
+              </button>
+            </motion.div>
           </motion.div>
         </div>
         <div className="py-20 hidden">
@@ -382,6 +429,7 @@ export default function Page() {
         <div className="py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
+              variants={parentVariants}
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
@@ -389,7 +437,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-300 dark:shadow-dark-950"
+                className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-slate-300 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-white dark:text-white font-light text-center mb-8">
                   Store
@@ -401,7 +449,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className=" bg-slate-100 dark:bg-dark-900/80 p-10 border border-white dark:border-dark-800 rounded-xl w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 shadow-lg shadow-slate-200 dark:shadow-dark-950"
+                className=" bg-slate-100 dark:bg-dark-900/80 p-10 border border-white dark:border-dark-800 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-slate-200 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Partners
