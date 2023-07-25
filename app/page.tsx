@@ -87,39 +87,41 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="relative flex gap-8 bg-slate-100 dark:bg-dark-800/90 backdrop-blur-lg rounded-full p-3 mb-12"
+                    className="relative  p-3 mb-12"
                   >
-                    <div className="flex-1 flex items-center px-3">
-                      <div className="text-sm text-dark-400 line-clamp-1">
-                        Launch Your Service.
+                    <div className="flex gap-8 p-2 lg:p-3 bg-slate-100 dark:bg-dark-800/90 backdrop-blur-lg rounded-full">
+                      <div className="flex-1 flex items-center px-3">
+                        <div className="text-sm text-dark-400 line-clamp-1">
+                          Launch Your Service.
+                        </div>
                       </div>
+                      <Link
+                        href="/auth/Signin"
+                        className="flex gap-2 bg-primary-500 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
+                      >
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1}
+                            stroke="currentColor"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                            />
+                          </svg>
+                        </span>
+                        <span className="hidden lg:flex">Get Started!</span>
+                      </Link>
                     </div>
-                    <Link
-                      href="/auth/Signin"
-                      className="flex gap-2 bg-primary-500 text-white text-sm p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
-                    >
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1}
-                          stroke="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-                          />
-                        </svg>
-                      </span>
-                      <span className="hidden lg:flex">Get Started!</span>
-                    </Link>
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="flex justify-center items-center gap-4 pb-20 lg:w-4/5 mx-auto"
+                    className="flex justify-center items-center gap-4 pb-20 px-3 lg:w-4/5 mx-auto"
                   >
                     <div className="rounded-lg p-3 bg-slate-100 dark:bg-dark-800/40 ">
                       <svg
@@ -231,7 +233,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full hover:shadow-xs h-full"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-800/70 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -243,12 +245,11 @@ export default function Page() {
                       className="relative px-8 mb-10"
                     >
                       <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
-                      <div className="absolute bottom-0 left-0 right-0 h-[350px] rounded-lg dark:bg-gradient-to-b dark:from-dark-900/20 dark:via-dark-900/60 dark:to-dark-900"></div>
                     </motion.div>
 
                     <motion.div
                       variants={variants}
-                      className="text-xl text-black dark:text-white mb-3"
+                      className="text-lg lg:text-xl text-black dark:text-white mb-3"
                     >
                       Coming soon mobile
                     </motion.div>
@@ -270,7 +271,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-800/70 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -278,7 +279,7 @@ export default function Page() {
                       <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-slate-200 dark:border-dark-800"></div>
                     </div>
                   </div>
-                  {/* <div className="text-xl text-black dark:text-white mb-5">
+                  {/* <div className="text-lg lg:text-xl text-black dark:text-white mb-5">
                     Web UI Components
                   </div>
                   <div className="text-base text-gray-400 dark:text-dark-500 mb-10">
@@ -290,7 +291,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/90 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-800/70 shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -317,7 +318,7 @@ export default function Page() {
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="text-xl text-black dark:text-white mb-5"
+                      className="text-lg lg:text-xl text-black dark:text-white mb-5"
                     >
                       Rhymix 제작 및 유지보수를 해드립니다.
                     </motion.div>
@@ -380,13 +381,13 @@ export default function Page() {
           >
             <motion.div
               variants={variants}
-              className="text-3xl font-medium text-black dark:text-white mb-8"
+              className="text-xl lg:text-3xl font-medium text-black dark:text-white mb-8"
             >
               라이믹스 전용 레이아웃 출시 예정
             </motion.div>
             <motion.div
               variants={variants}
-              className="text-base text-slate-500 dark:text-dark-300 text-center mb-5"
+              className="text-sm lg:text-base text-slate-500 dark:text-dark-300 text-center mb-5"
             >
               최근 데스크탑 환경에서 모바일 UI를 적극 활용한 디자인들을 많이
               선보이고 있습니다. 그에 맞춰 그전에는 없는 느낌의 레이아웃을 출시
@@ -426,7 +427,7 @@ export default function Page() {
             </div>
           </motion.div>
         </div>
-        <div className="py-20">
+        <div className="hidden py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
               variants={parentVariants}
@@ -542,7 +543,7 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="hidden py-20 w-full overflow-hidden">
+        <div className=" py-20 w-full overflow-hidden">
           <div className="max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
@@ -553,27 +554,35 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="relative w-[80%] flex-none aspect-[1216/640] rounded-md cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 overflow-hidden"
+                className="relative w-[65%] flex-none aspect-[960/520] rounded-md cursor-pointer hover:shadow-xs overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-dark-900/25 via-dark-900/50 to-dark-900/90 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-dark-900/25 via-dark-950/80 to-dark-950/90 z-10"></div>
                 <Image
-                  src="/assets/images/playcanvas.png"
-                  quality={100}
-                  fill
-                  alt=""
+                  src="/assets/images/bg_phone.jpg"
+                  alt="screenshot_1"
+                  width={960}
+                  style={{ width: '100%', height: 'auto' }}
+                  height={520}
                 ></Image>
               </motion.div>
               <motion.div
                 variants={variants}
-                className="relative w-[80%] flex-none aspect-[1216/640] rounded-md cursor-pointer shadow-xl shadow-dark-900 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 overflow-hidden"
+                className="relative w-[65%] flex-none aspect-[960/520] rounded-md cursor-pointer hover:shadow-xs overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-dark-900/25 via-dark-900/50 to-dark-900/90 z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-dark-900/25 via-dark-950/80 to-dark-950/90 z-10"></div>
                 <Image
-                  src="/assets/images/photo.jpg"
-                  quality={100}
-                  fill
-                  alt=""
+                  src="/assets/images/mbg.jpg"
+                  alt="screenshot_2"
+                  width={960}
+                  style={{ width: '100%', height: 'auto' }}
+                  height={520}
                 ></Image>
+              </motion.div>
+              <motion.div
+                variants={variants}
+                className="relative w-[65%] flex-none aspect-[960/520] rounded-md cursor-pointer hover:shadow-xs overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-tl from-dark-900 via-dark-900 to-dark-900 z-10"></div>
               </motion.div>
             </motion.div>
           </div>
@@ -590,7 +599,7 @@ export default function Page() {
               >
                 <motion.div className="flex-1">
                   <motion.div
-                    className="text-primary-600 mb-5"
+                    className="text-primary-400 mb-5"
                     variants={variants}
                   >
                     Front End Platform
@@ -643,13 +652,13 @@ export default function Page() {
               <div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 text-center pt-20 mb-3"
+                  className="block font-medium text-transparent text-3xl lg:text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 text-center pt-20 mb-3"
                 >
                   We Are Creative
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-500 to-primary-600 text-center mb-10 leading-normal"
+                  className="block font-medium text-transparent text-3xl lg:text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-500 to-primary-600 text-center mb-10 leading-normal"
                 >
                   Responsive everything.
                 </motion.div>
@@ -669,7 +678,7 @@ export default function Page() {
           </motion.div>
         </div>
 
-        <div className="py-20 hidden">
+        <div className="hidden py-20">
           <div className="max-w-screen-xl mx-auto  px-3 xl:px-8">
             <div className="grid grid-cols-2 gap-8">
               <div className="col-span-2 xl:col-span-1">
