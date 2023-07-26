@@ -9,7 +9,7 @@ const Page = () => {
           <div className="text-white text-5xl font-semibold">Supports</div>
           <div className="py-20">
             <div className="grid grid-cols-2 gap-8">
-              <div className="col-span-1">
+              <div className="col-span-2 lg:col-span-1 order-1 lg:order-0">
                 <div className="grid grid-cols-4 gap-8 py-10">
                   <div className="col-span-4 lg:col-span-1">
                     <div className="text-lg font-semibold text-white">
@@ -91,7 +91,7 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-span-1">
+              <div className="col-span-2 lg:col-span-1 order-0 lg:order-1">
                 <div className="relative overflow-hidden bg-dark-100/80 border border-white dark:border-dark-800/20 dark:bg-dark-900/70 backdrop-blur-xl p-8 lg:p-16 rounded-2xl w-full">
                   <div className="text-white">고객문의</div>
                 </div>
