@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     <div className="selection:text-black selection:bg-primary-300 break-keep">
       <div className="relative z-20">
         <Header />
-        <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div>
+        {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main>{children}</main>
         {scrollPosition > 100 && (
           <motion.button
