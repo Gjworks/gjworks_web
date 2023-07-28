@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
     })
   }
   return (
-    <div className="selection:text-black selection:bg-primary-300 break-keep">
+    <div className="selection:text-white selection:bg-primary-300 break-keep">
       <div className="relative z-20">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}

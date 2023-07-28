@@ -5,7 +5,7 @@ import Link from 'next/link'
 const SearchForm = () => {
   return (
     <>
-      <div className="px-3">
+      <div className="px-3 bg-white/90 dark:bg-dark-900/90 backdrop-blur">
         <div className="flex border-b border-slate-200 dark:border-dark-700 p-3">
           <input
             type="text"
@@ -119,7 +119,7 @@ const SearchForm = () => {
           </div>
         </motion.div>
       </div>
-      <div className="px-3 pt-2 bg-slate-100/90 dark:bg-dark-700/40 backdrop-blur-lg">
+      <div className="px-3 pt-2 bg-gray-100/90 dark:bg-dark-800/50 backdrop-blur-lg">
         <motion.div
           className="pt-2 pb-5 px-3"
           initial={{ opacity: 0, y: '20%' }}
@@ -130,7 +130,7 @@ const SearchForm = () => {
           }}
         >
           <div className="flex">
-            <div className="text-slate-500 dark:text-dark-400 hover:text-slate-800 dark:hover:text-dark-50">
+            <div className="text-gray-500 dark:text-dark-400 hover:text-gray-800 dark:hover:text-dark-50">
               <Link href="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

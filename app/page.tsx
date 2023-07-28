@@ -38,7 +38,7 @@ export default function Page() {
   return (
     <DefaultLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
-      <div className="relative bg-white dark:bg-transparent">
+      <div className="relative dark:bg-transparent">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -60,7 +60,7 @@ export default function Page() {
                 <div className="relative text-center">
                   <motion.div
                     variants={variants}
-                    className="text-sm text-center lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3 pt-0 lg:pt-20"
+                    className="text-sm text-center lg:text-base font-bold text-primary-400 dark:text-primary-400 mb-3 pt-0 lg:pt-20"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -89,7 +89,7 @@ export default function Page() {
                     variants={variants}
                     className="relative  p-3 mb-12"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-slate-100 dark:bg-dark-800/90 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-slate-200/50 dark:bg-dark-800/90 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
                         <div className="text-sm text-dark-400 line-clamp-1">
                           Launch Your Service.
@@ -233,7 +233,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
+                  className="relative overflow-hidden bg-white/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -271,7 +271,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-white/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -291,7 +291,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-white/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <motion.div
                     variants={parentVariants}

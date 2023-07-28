@@ -139,11 +139,11 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-950/90 z-101"
+        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-slate-100/90 dark:bg-dark-950/90 z-101"
       >
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-3 py-2 pr-3">
-            <div className="col-span-1 flex items-center">
+          <div className="flex py-2 pr-3">
+            <div className="flex items-center">
               <button
                 onClick={() => setShowLeft(!showLeft)}
                 className="group flex lg:hidden items-center px-3"
@@ -210,26 +210,28 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-1 hidden lg:flex items-center pl-3">
-              {nav.header &&
-                Object.entries(nav.header).map((data, index) => {
-                  return (
-                    <Link
-                      href={data[1].route}
-                      key={data[1].name}
-                      className={
-                        'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
-                        (pathname === data[1].route
-                          ? 'text-black dark:text-white'
-                          : 'text-gray-500 dark:text-dark-400 hover:text-black dark:hover:text-white')
-                      }
-                    >
-                      {data[1].title}
-                    </Link>
-                  )
-                })}
+            <div className="flex-1">
+              <div className="hidden lg:flex justify-center items-center pl-3">
+                {nav.header &&
+                  Object.entries(nav.header).map((data, index) => {
+                    return (
+                      <Link
+                        href={data[1].route}
+                        key={data[1].name}
+                        className={
+                          'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
+                          (pathname === data[1].route
+                            ? 'text-black dark:text-white'
+                            : 'text-slate-400 dark:text-dark-500 hover:text-black dark:hover:text-white')
+                        }
+                      >
+                        {data[1].title}
+                      </Link>
+                    )
+                  })}
+              </div>
             </div>
-            <div className="relative col-span-1 flex gap-2 items-center justify-end">
+            <div className="relative flex gap-2 items-center justify-end">
               <div className="flex gap-1 items-center">
                 <button
                   className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-2"
@@ -252,7 +254,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="bg-slate-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-800"
+                className="bg-slate-200 text-gray-700 hover:bg-slate-300 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-800"
                 onClick={() => {}}
               >
                 <svg
@@ -271,7 +273,7 @@ const Header = () => {
                 </svg>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-primary-500 dark:hover:bg-primary-400 text-slate-200 hover:text-white dark:text-white dark:hover:text-white text-xs"
+                className="group relative flex items-center rounded-md bg-slate-900  dark:bg-dark-100 dark:hover:bg-white text-slate-200 hover:text-white dark:text-black dark:hover:text-primary-500 text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-3">
@@ -323,7 +325,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90 z-100"
+          className="relative right-0 bg-slate-100/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90 z-100"
         >
           <motion.div
             initial={initial}

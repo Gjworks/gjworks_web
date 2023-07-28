@@ -33,11 +33,11 @@
                 }
             ]
         },
-        "service" : {
-            "name": "service",
-            "title": "Service",
+        "components" : {
+            "name": "components",
+            "title": "Components",
             "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/service",
+            "route": "/components",
             "image_name": "",
             "subMenu": [
                 {

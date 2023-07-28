@@ -39,8 +39,8 @@ const Register = () => {
     // console.log(result)
     try {
       await registerUser(data)
-    } catch (e) {
-      console.log('error' + e)
+    } catch (error) {
+      console.error('error' + error)
     }
   }
 

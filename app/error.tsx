@@ -2,15 +2,17 @@
 
 import React, { useEffect } from 'react'
 
-const Error = statusCode => {
+const Error = ({ error, reset }: { error: Error; reset: () => void }) => {
   useEffect(() => {
-    console.error(statusCode)
-  }, [statusCode])
+    console.error(error)
+  }, [error])
   return (
-    <div className="text-center text-white py-20 text-lg">
-      {statusCode
-        ? `An error ${statusCode} occurred on server`
+    <div className="text-center text-rose-500 py-20 text-lg">
+      {error
+        ? `An error ${error} occurred on server`
         : 'An error occurred on client'}
+
+      <button onClick={() => reset()}>Try again</button>
     </div>
   )
 }

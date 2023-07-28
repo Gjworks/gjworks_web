@@ -12,8 +12,10 @@ type UserInfo = {
 
 const registerUser = async (data: UserInfo) => {
   const { nickname, email, password } = data;
-  if (!nickname) {
-    throw new Error('Invalid input.')
+  console.log(nickname)
+  if (!nickname.trim()) {
+    // throw new Error('Invalid input.')
+    return { error: "String is Required" }
   }
   // if(!nickname)
   // {
@@ -27,6 +29,7 @@ const registerUser = async (data: UserInfo) => {
   //   },
   // });
   // return createUser;
+  
 };
 
 export default registerUser;

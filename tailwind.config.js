@@ -90,7 +90,7 @@ module.exports = {
         700: '#2b2f3b',
         800: '#21232c',
         900: '#15171d',
-        950: '#0e1015',
+        950: '#0a0c12',
       },
       // dark: colors.gray,
       // primary: colors.yellow,
