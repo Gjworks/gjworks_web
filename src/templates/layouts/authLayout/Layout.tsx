@@ -54,7 +54,7 @@ const Layout = ({ children }) => {
       <div className="relative z-20">
         <motion.header
           transition={{ duration: 0.3 }}
-          className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-slate-100/80 dark:bg-dark-950/60 z-101 "
+          className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/80 dark:bg-dark-950/60 z-101 "
         >
           <div className="max-w-screen-sm mx-auto">
             <div className="flex justify-between items-center py-2 pr-3">

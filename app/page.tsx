@@ -233,7 +233,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-white/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
+                  className="relative overflow-hidden bg-slate-100/80 dark:bg-dark-800/50 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -271,7 +271,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-white/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-100/80 dark:bg-dark-800/50 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -291,7 +291,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-white/80 border border-white dark:border-dark-900 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-100/80 dark:bg-dark-800/50 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <motion.div
                     variants={parentVariants}

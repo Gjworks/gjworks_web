@@ -34,7 +34,7 @@ const TextInput: React.FC<Props> = props => {
               'flex-1 text-sm py-4 focus:outline-none w-full px-3 appearance-none focus:ring-0 peer order-1 rounded-r-lg border-t border-b border-r ' +
               (props.theme === 'light'
                 ? 'bg-white text-primary-500 border-primary-500 focus:border-primary-500 placeholder-shown:border-slate-300 placeholder-shown:text-slate-400 '
-                : ' bg-dark-900 text-primary-500 border-primary-500 focus:border-primary-500 placeholder-shown:border-dark-600 placeholder-shown:text-slate-400 ')
+                : ' bg-dark-950 text-primary-500 border-primary-500 focus:border-primary-500 placeholder-shown:border-dark-600 placeholder-shown:text-slate-400 ')
             }
             placeholder=" "
             defaultValue={props?.value}
@@ -46,7 +46,7 @@ const TextInput: React.FC<Props> = props => {
               `flex items-center px-3 w-auto min-w-[${nameInputText}px] max-w-32 text-sm order-0 rounded-l-lg border-t border-b border-l` +
               (props.theme === 'light'
                 ? ' bg-white text-primary-500 peer-focus:text-primary-500 border-primary-500 peer-focus:border-primary-500 peer-placeholder-shown:text-slate-400 peer-placeholder-shown:border-slate-300 '
-                : ' bg-dark-900 text-primary-500 peer-focus:text-primary-500 border-primary-500 peer-focus:border-primary-500 peer-placeholder-shown:text-dark-500 peer-placeholder-shown:border-dark-600 ')
+                : ' bg-dark-950 text-primary-500 peer-focus:text-primary-500 border-primary-500 peer-focus:border-primary-500 peer-placeholder-shown:text-dark-500 peer-placeholder-shown:border-dark-600 ')
             }
           >
             {props?.inputTitle}
@@ -57,7 +57,7 @@ const TextInput: React.FC<Props> = props => {
               `absolute text-sm top-0 px-3 left-4 scale-75 -translate-y-3 duration-300 transform peer-placeholder-shown:top-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-0 peer-placeholder-shown:left-20 origin-[0] peer-focus:top-0 peer-focus:scale-75 peer-focus:-translate-y-3 cursor-text` +
               (props.theme === 'light'
                 ? ' bg-white backdrop-blur-3xl text-primary-500 peer-placeholder-shown:text-slate-400 peer-focus:text-primary-500 '
-                : ' dark:bg-dark-900 dark:text-primary-500 peer-placeholder-shown:text-dark-600 peer-focus:text-primary-500')
+                : ' dark:bg-dark-950 dark:text-primary-500 peer-placeholder-shown:text-dark-600 peer-focus:text-primary-500')
             }
           >
             {props?.placeholder}

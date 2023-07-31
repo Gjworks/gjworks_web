@@ -139,7 +139,7 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-slate-100/90 dark:bg-dark-950/90 z-101"
+        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-950/90 z-101"
       >
         <div className="max-w-screen-xl mx-auto">
           <div className="flex py-2 pr-3">
@@ -221,8 +221,8 @@ const Header = () => {
                         className={
                           'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
                           (pathname === data[1].route
-                            ? 'text-black dark:text-white'
-                            : 'text-slate-400 dark:text-dark-500 hover:text-black dark:hover:text-white')
+                            ? 'text-slate-400 dark:text-white'
+                            : 'text-slate-950 dark:text-dark-500 hover:text-slate-400 dark:hover:text-white')
                         }
                       >
                         {data[1].title}
@@ -325,7 +325,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="relative right-0 bg-slate-100/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90 z-100"
+          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90 z-100"
         >
           <motion.div
             initial={initial}
