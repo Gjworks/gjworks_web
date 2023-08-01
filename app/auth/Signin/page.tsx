@@ -54,7 +54,7 @@ const Signin = () => {
                   inputTitle="Email"
                   placeholder="What's your Email"
                   getData={getData}
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -67,7 +67,7 @@ const Signin = () => {
                   inputTitle="비밀번호"
                   getData={getPassword}
                   placeholder="Your Password"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -76,7 +76,7 @@ const Signin = () => {
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white dark:text-primary-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500"
+                className="flex justify-center items-center w-full bg-primary-400 dark:bg-primary-500 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white dark:text-primary-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
