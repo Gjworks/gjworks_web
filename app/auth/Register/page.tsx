@@ -9,17 +9,14 @@ import TextInput from 'src/components/form/TextInput'
 import registerUser from './server'
 
 const Register = () => {
-  const [nickName, setNickName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [nickName, setNickName] = useState('')
+
   const [error, setError] = useState<{ [key: string]: any }>()
   const router = useRouter()
   const strSpace = /\s/
 
-  const getNickname = (msg: string) => {
-    console.log(msg)
-    setNickName(msg)
-  }
   const getEmail = (msg: string) => {
     setEmail(msg)
   }
@@ -27,20 +24,27 @@ const Register = () => {
     setPassword(msg)
   }
 
+  const getNickname = (msg: string) => {
+    console.log(msg)
+    setNickName(msg)
+  }
+
   const submitHandler = async e => {
     e.preventDefault()
     const data = {
-      nickname: e.target.nickName.value,
       email: e.target.email.value,
       password: e.target.password.value,
+      nickname: e.target.nickName.value,
     }
     // console.log(data)
     // const result = registerUser(data)
     // console.log(result)
     try {
-      await registerUser(data)
-    } catch (error) {
-      console.error('error' + error)
+      const res = await registerUser(data)
+      console.log('res', res)
+    } catch (err) {
+      // setError(err)
+      console.error(err)
     }
   }
 
@@ -110,19 +114,6 @@ const Register = () => {
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput
-                  inputType="text"
-                  inputName="nickName"
-                  inputTitle="닉네임"
-                  getData={getNickname}
-                  placeholder="User nick name"
-                  theme="dark"
-                  value=""
-                ></TextInput>
-              </div>
-            </div>
-            <div className="relative mb-5 w-full">
-              <div className="flex items-center w-full text-xs">
-                <TextInput
                   inputType="email"
                   inputName="email"
                   inputTitle="이메일"
@@ -150,6 +141,20 @@ const Register = () => {
                 비밀번호는 암호화 되어 안전하게 저장됩니다.
               </div>
             </div>
+            <div className="relative mb-5 w-full">
+              <div className="flex items-center w-full text-xs">
+                <TextInput
+                  inputType="text"
+                  inputName="nickName"
+                  inputTitle="닉네임"
+                  getData={getNickname}
+                  placeholder="User nick name"
+                  theme="dark"
+                  value=""
+                ></TextInput>
+              </div>
+            </div>
+
             <div className="flex mb-2">
               <button className="flex justify-center items-center w-full bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 hover:text-black dark:hover:text-white dark:text-primary-200 text-black py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500">
                 Register Completed

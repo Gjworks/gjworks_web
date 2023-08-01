@@ -97,7 +97,7 @@ export default function Page() {
                       </div>
                       <Link
                         href="/auth/Signin"
-                        className="flex gap-2 bg-primary-500 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
+                        className="flex gap-2 bg-primary-400 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-500 hover:text-white"
                       >
                         <span>
                           <svg
@@ -233,7 +233,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 dark:bg-dark-800/50 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -271,7 +271,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 dark:bg-dark-800/50 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -291,7 +291,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-100/80 dark:bg-dark-800/50 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -658,7 +658,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="block font-medium text-transparent text-3xl lg:text-5xl bg-clip-text bg-gradient-to-r from-primary-500 via-primary-500 to-primary-600 text-center mb-10 leading-normal"
+                  className="block font-medium text-transparent text-3xl lg:text-5xl bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 text-center mb-10 leading-normal"
                 >
                   Responsive everything.
                 </motion.div>

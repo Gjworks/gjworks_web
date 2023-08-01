@@ -5,18 +5,32 @@ import { hashedPassword } from "src/lib/auth/password";
 const prisma = new PrismaClient();
 
 type UserInfo = {
-  nickname: string;
   email: string;
   password: string;
+  nickname: string;
+
 };
 
 const registerUser = async (data: UserInfo) => {
-  const { nickname, email, password } = data;
-  console.log(nickname)
-  if (!nickname.trim()) {
-    // throw new Error('Invalid input.')
-    return { error: "String is Required" }
-  }
+  const { email, password , nickname} = data;
+  console.log(email)
+
+  // try {
+  //   if(!email){
+  //     throw new Error('Data Null Email');
+  //   }
+  //   if(!password){
+  //     throw new Error('Data Null Password');
+  //   }
+  //   // Faking code producing errors
+  //   if(!nickname){
+  //     throw new Error('Data Null Nickname');
+  //   }
+
+  // } catch (err) {
+  //   throw new Error('An error occurred' + err.message);
+  // }
+  
   // if(!nickname)
   // {
   //   throw new Error(`This is error is in the Server Action`);
