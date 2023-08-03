@@ -52,7 +52,7 @@ const SubNav = () => {
   const snav = null
   return (
     <>
-      <div className="sticky backdrop-blur-lg bg-white/90 top-0 z-[50] dark:bg-dark-950/90 border-b border-gray-100 dark:border-dark-800">
+      <div className="sticky backdrop-blur-lg bg-white/90 top-0 dark:bg-black/90 border-b border-gray-100 dark:border-dark-800 z-999">
         <div className="max-w-screen-xl mx-auto px-3 overflow-hidden overflow-scroll-hide overflow-x-auto">
           <div className="flex gap-8 justify-between h-[52px]">
             <div>

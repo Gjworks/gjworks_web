@@ -92,7 +92,7 @@ const Register = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1}
                 stroke="currentColor"
-                className="w-10 h-10 text-white"
+                className="w-10 h-10 text-black dark:text-white"
               >
                 <path
                   strokeLinecap="round"
@@ -119,7 +119,7 @@ const Register = () => {
                   inputTitle="이메일"
                   getData={getEmail}
                   placeholder="example@mail.com"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -133,7 +133,7 @@ const Register = () => {
                   inputTitle="비밀번호"
                   getData={getPassword}
                   placeholder="User Password"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -149,14 +149,14 @@ const Register = () => {
                   inputTitle="닉네임"
                   getData={getNickname}
                   placeholder="User nick name"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
             </div>
 
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-primary-400 dark:bg-primary-500 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white dark:text-primary-200 text-primary-100 py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-500">
+              <button className="flex justify-center items-center w-full bg-primary-500 dark:bg-primary-500 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white dark:text-primary-200 text-primary-100 py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-600">
                 Register Completed
               </button>
             </div>
@@ -181,7 +181,7 @@ const Register = () => {
                   className="group text-sm text-dark-500"
                 >
                   계정이 이미 있으시다면{' '}
-                  <span className="group-hover:text-primary-300 text-primary-500 underline">
+                  <span className="group-hover:text-primary-500 text-primary-600 underline">
                     Sign In
                   </span>
                 </Link>

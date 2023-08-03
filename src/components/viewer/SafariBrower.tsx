@@ -4,7 +4,7 @@ const SafariBrower = () => {
     <>
       <div className="shadow-xl shadow-slate-200 dark:shadow-dark-950/50 sm:rounded-xl min-w-full max-w-full mb-10">
         <div className="sm:rounded-xl ring-1 ring-slate-950/5">
-          <div className="sm:rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-800 dark:to-dark-900">
+          <div className="sm:rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-800/70 dark:to-dark-900/30">
             <div className="py-2.5 flex px-4 gap-6">
               <div className="flex items-center">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
@@ -59,7 +59,7 @@ const SafariBrower = () => {
             </div>
           </div>
         </div>
-        <div className="relative border-t border-slate-100 dark:border-dark-950 rounded-b-xl bg-white dark:bg-dark-900">
+        <div className="relative border-t border-slate-100 dark:border-dark-950 rounded-b-xl bg-white dark:bg-dark-900/80">
           <div className="w-full h-20"></div>
         </div>
       </div>

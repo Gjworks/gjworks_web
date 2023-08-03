@@ -23,8 +23,10 @@ const Header = () => {
   const [showLeft, setShowLeft] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
   const [showNavigation, setShowNavigation] = useState(false)
+  const [background, setBackground] = useState('')
   const closeModal = close => {
     setShowModal(close)
+    setBackground('bg-transparent dark:bg-transparent')
   }
   const closeLeft = close => {
     setShowLeft(close)
@@ -139,13 +141,19 @@ const Header = () => {
     <>
       <motion.header
         transition={{ duration: 0.3 }}
-        className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/90 dark:bg-dark-950/90 z-101"
+        className={
+          'sticky w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/90 bg-white/90' +
+          background
+        }
       >
         <div className="max-w-screen-xl mx-auto">
           <div className="flex py-2 pr-3">
             <div className="flex items-center">
               <button
-                onClick={() => setShowLeft(!showLeft)}
+                onClick={() => {
+                  setBackground('dark:bg-dark-950/90 bg-white/90')
+                  setShowLeft(!showLeft)
+                }}
                 className="group flex lg:hidden items-center px-3"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">

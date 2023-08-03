@@ -38,7 +38,7 @@ export default function Page() {
   return (
     <DefaultLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
-      <div className="relative dark:bg-transparent">
+      <div className="relative">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -60,7 +60,7 @@ export default function Page() {
                 <div className="relative text-center">
                   <motion.div
                     variants={variants}
-                    className="text-sm text-center lg:text-base font-bold text-primary-400 dark:text-primary-400 mb-3 pt-0 lg:pt-20"
+                    className="text-sm text-center lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3 pt-0 lg:pt-10"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -89,7 +89,7 @@ export default function Page() {
                     variants={variants}
                     className="relative  p-3 mb-12"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-slate-200/50 dark:bg-dark-800/90 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-slate-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
                         <div className="text-sm text-dark-400 line-clamp-1">
                           Launch Your Service.
@@ -97,7 +97,7 @@ export default function Page() {
                       </div>
                       <Link
                         href="/auth/Signin"
-                        className="flex gap-2 bg-primary-400 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-500 hover:text-white"
+                        className="flex gap-2 bg-secondary-400 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-secondary-500 hover:text-white"
                       >
                         <span>
                           <svg
@@ -233,7 +233,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-900/80 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -260,7 +260,7 @@ export default function Page() {
                       Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                       불편함이 없게 UI/UX를 설계 합니다.
                     </motion.div>
-                    <button className="relative group bg-dark-700 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                    <button className="relative group bg-dark-800/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
                       <div className="relative group-hover:text-white text-sm text-dark-300">
                         Link more
                       </div>
@@ -271,7 +271,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-900/80 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -291,7 +291,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-900/80 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -299,7 +299,7 @@ export default function Page() {
                     whileInView="onscreen"
                   >
                     <motion.div variants={variants} className="mb-6">
-                      <div className="flex justify-center items-center bg-primary-400 w-8 h-8 rounded-full">
+                      <div className="flex justify-center items-center bg-primary-500 text-white w-8 h-8 rounded-full">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -338,7 +338,7 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="py-20">
+        <div className="py-20 mb-20">
           <motion.div
             variants={parentVariants}
             initial="offscreen"
@@ -396,7 +396,7 @@ export default function Page() {
             <motion.div variants={variants} className="">
               <button
                 onClick={() => setShowBottom(!showBottom)}
-                className="relative group bg-dark-700 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
+                className="relative group bg-dark-950/80 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
               >
                 <div className="relative group-hover:text-white text-sm text-dark-300">
                   자세히 보기
@@ -543,7 +543,7 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className=" py-20 w-full overflow-hidden">
+        <div className="hidden py-20 w-full overflow-hidden">
           <div className="max-w-screen-xl mx-auto px-3">
             <motion.div
               initial="offscreen"
@@ -640,7 +640,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="relative flex items-center justify-center">
+        <div className="hidden relative items-center justify-center">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"

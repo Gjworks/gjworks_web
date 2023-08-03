@@ -19,7 +19,7 @@ const Page = () => {
           <a
             href="https://tailwindcss.com"
             target="_blank"
-            className="text-primary-400 underline"
+            className="text-primary-500 underline"
           >
             Tailwindcss
           </a>
@@ -27,7 +27,7 @@ const Page = () => {
           <a
             href="https://www.framer.com/motion/"
             target="_blank"
-            className="text-primary-400 underline"
+            className="text-primary-500 underline"
           >
             Framer Motion
           </a>

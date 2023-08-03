@@ -21,7 +21,7 @@ const Sectionbox: React.FC<SectionData> = props => {
       whileTap={{ scale: 0.95, transition: { duration: 0.3 } }}
     >
       <Link href="/metaverse">
-        <div className="relative dark:bg-dark-700/25 rounded-xl p-5 flex-1 backdrop-blur-lg overflow-hidden">
+        <div className="relative dark:bg-dark-700/25 rounded-xl p-5 flex-1 backdrop-blur-lg overflow-hidden bg-slate-100 shadow-lg shadow-slate-200">
           <div className="absolute inset-0">
             <div
               className={
@@ -29,10 +29,10 @@ const Sectionbox: React.FC<SectionData> = props => {
               }
             ></div>
           </div>
-          <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-slate-200/80 via-slate-200/25 to-white dark:from-dark-700/25 dark:via-dark-950/50 dark:to-dark-950"></div>
-          <div className="relative h-40"></div>
+          {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-slate-200/20 via-slate-200/80 to-white dark:from-dark-700/25 dark:via-dark-950/50 dark:to-dark-950"></div> */}
+          <div className="relative h-52"></div>
         </div>
-        <div className="relative px-5 -mt-10">
+        <div className="relative px-1 mt-5">
           <motion.div
             initial={{ opacity: 0, y: '10%' }}
             animate={{
