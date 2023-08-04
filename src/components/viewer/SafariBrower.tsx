@@ -1,8 +1,8 @@
 import Image from 'next/image'
-const SafariBrower = () => {
+const SafariBrower = props => {
   return (
     <>
-      <div className="shadow-xl shadow-slate-200 dark:shadow-dark-950/50 sm:rounded-xl min-w-full max-w-full mb-10">
+      <div className="shadow-xl shadow-slate-200 dark:shadow-dark-900/10 sm:rounded-xl min-w-full max-w-full mb-10">
         <div className="sm:rounded-xl ring-1 ring-slate-950/5">
           <div className="sm:rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-800/70 dark:to-dark-900/30">
             <div className="py-2.5 flex px-4 gap-6">
@@ -59,8 +59,21 @@ const SafariBrower = () => {
             </div>
           </div>
         </div>
-        <div className="relative border-t border-slate-100 dark:border-dark-950 rounded-b-xl bg-white dark:bg-dark-900/80">
-          <div className="w-full h-20"></div>
+        <div className="relative border-t border-slate-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-900/80 overflow-hidden">
+          <div className="w-full relative h-full p-[1px]">
+            <Image
+              src={props.image}
+              quality={100}
+              width={1024}
+              height={100}
+              style={{
+                width: '100%',
+                objectFit: 'cover',
+              }}
+              alt="image"
+              className="relative"
+            />
+          </div>
         </div>
       </div>
     </>

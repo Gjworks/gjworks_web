@@ -47,7 +47,6 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className=" relative ">
-          <div className="hidden absolute inset-0 overflow-hidden bg-dark-950/90 backdrop-blur-sm"></div>
           <motion.div className="relative flex items-center py-20">
             <motion.div
               variants={parentVariants}
@@ -56,7 +55,7 @@ export default function Page() {
               viewport={{ once: false, amount: 0.3 }}
               className="relative w-full z-10"
             >
-              <div className="flex justify-center max-w-screen-xl mx-auto px-3 pt-10">
+              <div className="relative flex justify-center max-w-screen-xl mx-auto px-3 pt-10 pb-10">
                 <div className="relative text-center">
                   <motion.div
                     variants={variants}
@@ -87,7 +86,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="relative  p-3 mb-12"
+                    className=" relative  p-3 mb-12"
                   >
                     <div className="flex gap-8 p-2 lg:p-3 bg-slate-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
@@ -119,45 +118,103 @@ export default function Page() {
                       </Link>
                     </div>
                   </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="flex justify-center items-center gap-4 pb-20 px-3 lg:w-4/5 mx-auto"
-                  >
-                    <div className="rounded-lg p-3 bg-slate-100 dark:bg-dark-800/40 ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 50.44096 49.52621"
-                        className="w-5 h-5 fill-dark-300 stroke-dark-300"
+                </div>
+              </div>
+
+              <div className="hidden relative pt-10 z-50">
+                <div className="hidden absolute bottom-20 left-0 right-0 z-10">
+                  <div className="max-w-screen-sm mx-auto px-3">
+                    <motion.div
+                      initial="offscreen"
+                      whileInView="onscreen"
+                      viewport={{ once: false, amount: 0.3 }}
+                      variants={parentVariants}
+                      className=" max-w-screen-md mx-auto text-center px-3"
+                    >
+                      <motion.div
+                        variants={variants}
+                        className="text-xl lg:text-3xl font-medium text-black dark:text-white mb-8"
                       >
-                        <path
-                          d="M1.84644,1.58409C.44163,16.71335-.16235,31.90823,.03716,47.10126c.00547,.41635,.33955,.73511,.75,.75,15.38984,.5582,30.77967,1.1164,46.16951,1.67461,.29945,.01086,.67105-.23858,.72321-.55062,2.52389-15.10011,3.32945-30.44594,2.36732-45.72607-.02773-.44042-.32393-.70122-.75-.75C33.83294,.72875,18.27256-.10258,2.70769,.01009c-.96483,.00698-.96703,1.507,0,1.5,15.56487-.11266,31.12525,.71866,46.58951,2.48908l-.75-.75c.95344,15.14205,.18761,30.36207-2.31374,45.32732l.72321-.55062c-15.38984-.5582-30.77967-1.1164-46.16951-1.67461l.75,.75c-.19951-15.19303,.40447-30.38791,1.80927-45.51717,.08921-.96076-1.41136-.95467-1.5,0h0Z"
-                          fill="#01010C"
-                          origin="undraw"
-                        />
-                        <path
-                          d="M13.75626,15.87761l1.05436-2.82127-1.25354,.33095c1.96008,2.06592,4.14894,4.34382,7.03233,5.01008,2.26646,.52371,4.927,.0561,6.43336-1.84386,.35002-.44147,.64793-1.25113,1.12179-1.56631,.94282-.62708,1.61952,.66611,2.07061,1.29124,.68647,.95134,1.55037,1.67033,2.78171,1.67316,2.89583,.00665,4.11053-2.87401,4.81104-5.2116,.2777-.92667-1.16956-1.32264-1.44642-.39876-.3636,1.21333-.7371,2.63637-1.7531,3.48388-.53109,.44302-1.3535,.77979-2.05012,.56776-.68554-.20865-1.0382-.88001-1.42699-1.42376-1.11523-1.55976-2.95493-2.3964-4.36141-.67894-.73582,.89851-1.12889,1.85227-2.25172,2.37071-1.03787,.47921-2.25964,.54615-3.36988,.32308-2.69999-.54248-4.71689-2.74575-6.53055-4.65734-.41748-.44003-1.06526-.17285-1.25354,.33095l-1.05436,2.82127c-.33835,.90537,1.11098,1.29634,1.44642,.39876h0Z"
-                          fill="#01010C"
-                        />
-                        <path
-                          d="M16.8072,29.49315c-.1581-.2279,.3614-.25333,.51011-.18961,.39047,.16729,.68081,.58358,.93097,.90536,.504,.64829,1.04151,1.33647,1.8667,1.57929,1.28601,.37843,2.33879-.45718,3.20416-1.30009,.73433-.71528,1.72365-1.88623,2.62503-.70805,.47438,.62006,.70859,1.38706,1.17993,2.01313,.51994,.69063,1.18383,1.15147,2.06608,1.18869,.96522,.04072,.9633-1.45936,0-1.5-.90185-.03804-1.29492-1.35555-1.66382-2.0025-.43521-.76325-1.04463-1.4817-1.93938-1.68299-1.49116-.33546-2.56196,.91084-3.52923,1.82487-.34984,.33059-.83583,.82324-1.36967,.76445-.86151-.09486-1.39786-1.38863-1.98339-1.91887-.69091-.62567-1.67347-.98777-2.53558-.47891-.77038,.45471-1.20258,1.47607-.65711,2.26233,.54652,.78776,1.84729,.0387,1.29521-.75708h0Z"
-                          fill="#01010C"
-                        />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-left text-dark-400 text-sm mb-2">
-                        OpenSource Projects
+                        라이믹스 전용 레이아웃 출시 예정
+                      </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="text-sm lg:text-base text-slate-500 dark:text-dark-300 text-center mb-5"
+                      >
+                        최근 데스크탑 환경에서 모바일 UI를 적극 활용한
+                        디자인들을 많이 선보이고 있습니다. 그에 맞춰 그전에는
+                        없는 느낌의 레이아웃을 출시 하려고 합니다. 현재 작업중에
+                        있으며 6월중에 출시 예정입니다.
+                      </motion.div>
+                      <motion.div variants={variants} className="">
+                        <button
+                          onClick={() => setShowBottom(!showBottom)}
+                          className="relative group bg-dark-800/80 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
+                        >
+                          <div className="relative group-hover:text-white text-sm text-dark-300">
+                            자세히 보기
+                          </div>
+                        </button>
+                      </motion.div>
+                    </motion.div>
+
+                    <motion.div
+                      variants={variants}
+                      className="relative hidden justify-center items-center gap-4 pb-20 px-3 lg:w-4/5 mx-auto"
+                    >
+                      <div className="rounded-lg p-3 bg-slate-100 dark:bg-dark-800/40 ">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 50.44096 49.52621"
+                          className="w-5 h-5 fill-dark-300 stroke-dark-300"
+                        >
+                          <path
+                            d="M1.84644,1.58409C.44163,16.71335-.16235,31.90823,.03716,47.10126c.00547,.41635,.33955,.73511,.75,.75,15.38984,.5582,30.77967,1.1164,46.16951,1.67461,.29945,.01086,.67105-.23858,.72321-.55062,2.52389-15.10011,3.32945-30.44594,2.36732-45.72607-.02773-.44042-.32393-.70122-.75-.75C33.83294,.72875,18.27256-.10258,2.70769,.01009c-.96483,.00698-.96703,1.507,0,1.5,15.56487-.11266,31.12525,.71866,46.58951,2.48908l-.75-.75c.95344,15.14205,.18761,30.36207-2.31374,45.32732l.72321-.55062c-15.38984-.5582-30.77967-1.1164-46.16951-1.67461l.75,.75c-.19951-15.19303,.40447-30.38791,1.80927-45.51717,.08921-.96076-1.41136-.95467-1.5,0h0Z"
+                            fill="#01010C"
+                            origin="undraw"
+                          />
+                          <path
+                            d="M13.75626,15.87761l1.05436-2.82127-1.25354,.33095c1.96008,2.06592,4.14894,4.34382,7.03233,5.01008,2.26646,.52371,4.927,.0561,6.43336-1.84386,.35002-.44147,.64793-1.25113,1.12179-1.56631,.94282-.62708,1.61952,.66611,2.07061,1.29124,.68647,.95134,1.55037,1.67033,2.78171,1.67316,2.89583,.00665,4.11053-2.87401,4.81104-5.2116,.2777-.92667-1.16956-1.32264-1.44642-.39876-.3636,1.21333-.7371,2.63637-1.7531,3.48388-.53109,.44302-1.3535,.77979-2.05012,.56776-.68554-.20865-1.0382-.88001-1.42699-1.42376-1.11523-1.55976-2.95493-2.3964-4.36141-.67894-.73582,.89851-1.12889,1.85227-2.25172,2.37071-1.03787,.47921-2.25964,.54615-3.36988,.32308-2.69999-.54248-4.71689-2.74575-6.53055-4.65734-.41748-.44003-1.06526-.17285-1.25354,.33095l-1.05436,2.82127c-.33835,.90537,1.11098,1.29634,1.44642,.39876h0Z"
+                            fill="#01010C"
+                          />
+                          <path
+                            d="M16.8072,29.49315c-.1581-.2279,.3614-.25333,.51011-.18961,.39047,.16729,.68081,.58358,.93097,.90536,.504,.64829,1.04151,1.33647,1.8667,1.57929,1.28601,.37843,2.33879-.45718,3.20416-1.30009,.73433-.71528,1.72365-1.88623,2.62503-.70805,.47438,.62006,.70859,1.38706,1.17993,2.01313,.51994,.69063,1.18383,1.15147,2.06608,1.18869,.96522,.04072,.9633-1.45936,0-1.5-.90185-.03804-1.29492-1.35555-1.66382-2.0025-.43521-.76325-1.04463-1.4817-1.93938-1.68299-1.49116-.33546-2.56196,.91084-3.52923,1.82487-.34984,.33059-.83583,.82324-1.36967,.76445-.86151-.09486-1.39786-1.38863-1.98339-1.91887-.69091-.62567-1.67347-.98777-2.53558-.47891-.77038,.45471-1.20258,1.47607-.65711,2.26233,.54652,.78776,1.84729,.0387,1.29521-.75708h0Z"
+                            fill="#01010C"
+                          />
+                        </svg>
                       </div>
-                      <div className="text-left text-dark-500 text-xs">
-                        다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
-                        주시면 반영하겠습니다.
+                      <div className="flex-1">
+                        <div className="text-left text-dark-400 text-sm mb-2">
+                          OpenSource Projects
+                        </div>
+                        <div className="text-left text-dark-500 text-xs">
+                          다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
+                          주시면 반영하겠습니다.
+                        </div>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </motion.div>
+          <motion.div
+            variants={parentVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.3 }}
+            className="relative h-[330px] overflow-hidden"
+          >
+            <motion.div
+              variants={variants}
+              className="max-w-screen-lg mx-auto "
+            >
+              <div className="relative">
+                <SafariBrower image="/assets/images/main.png" />
+              </div>
+            </motion.div>
+          </motion.div>
+          <div className="absolute left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b dark:from-dark-950/0 dark:via-dark-950/20 dark:to-dark-950 h-[430px] z-10"></div>
           <div className="hidden relative">
             <div className="flex flex-wrap">
               <div className="flex items-center flex-wrap w-full md:flex-1 h-full order-0 md:order-1 backdrop-blur-lg bg-dark-900 dark:backdrop-blur-lg">
@@ -338,7 +395,7 @@ export default function Page() {
             </motion.div>
           </div>
         </div>
-        <div className="py-20 mb-20">
+        <div className="hidden py-20 mb-20">
           <motion.div
             variants={parentVariants}
             initial="offscreen"
@@ -361,48 +418,6 @@ export default function Page() {
                 />
               </svg>
             </div>
-
-            <motion.div
-              variants={variants}
-              className="relative max-w-screen-lg mx-auto"
-            >
-              <div className="relative">
-                <SafariBrower />
-              </div>
-              {/* <div className="absolute inset-0 overflow-hidden bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950"></div> */}
-            </motion.div>
-          </motion.div>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
-            variants={parentVariants}
-            className="max-w-screen-md mx-auto text-center px-3"
-          >
-            <motion.div
-              variants={variants}
-              className="text-xl lg:text-3xl font-medium text-black dark:text-white mb-8"
-            >
-              라이믹스 전용 레이아웃 출시 예정
-            </motion.div>
-            <motion.div
-              variants={variants}
-              className="text-sm lg:text-base text-slate-500 dark:text-dark-300 text-center mb-5"
-            >
-              최근 데스크탑 환경에서 모바일 UI를 적극 활용한 디자인들을 많이
-              선보이고 있습니다. 그에 맞춰 그전에는 없는 느낌의 레이아웃을 출시
-              하려고 합니다. 현재 작업중에 있으며 6월중에 출시 예정입니다.
-            </motion.div>
-            <motion.div variants={variants} className="">
-              <button
-                onClick={() => setShowBottom(!showBottom)}
-                className="relative group bg-dark-950/80 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
-              >
-                <div className="relative group-hover:text-white text-sm text-dark-300">
-                  자세히 보기
-                </div>
-              </button>
-            </motion.div>
           </motion.div>
         </div>
         <div className="py-20 hidden">
