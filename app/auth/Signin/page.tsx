@@ -31,10 +31,10 @@ const Signin = () => {
         <div className="max-w-lg mx-auto p-5">
           <form onSubmit={submitHandler}>
             <div className="py-10 text-center">
-              <div className="text-2xl font-semibold text-dark-500 dark:text-dark-50">
+              <div className="text-2xl font-semibold text-gray-700 dark:text-dark-50">
                 Request Access
               </div>
-              <div className="text-slate-400 dark:text-dark-500 pt-10 text-sm">
+              <div className="text-slate-600 dark:text-dark-500 pt-10 text-sm">
                 소셜로그인은 추후에 지원 됩니다. <br></br>일반 회원가입을
                 이용하셔도 모든 서비스를 이용 할 수 있습니다.
               </div>

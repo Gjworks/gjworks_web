@@ -61,18 +61,20 @@ const SafariBrower = props => {
         </div>
         <div className="relative border-t border-slate-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-900/80 overflow-hidden">
           <div className="w-full relative h-full p-[1px]">
-            <Image
-              src={props.image}
-              quality={100}
-              width={1024}
-              height={100}
-              style={{
-                width: '100%',
-                objectFit: 'cover',
-              }}
-              alt="image"
-              className="relative"
-            />
+            {props.image && (
+              <Image
+                src={props.image}
+                quality={100}
+                width={1024}
+                height={100}
+                style={{
+                  width: '100%',
+                  objectFit: 'cover',
+                }}
+                alt="image"
+                className="relative"
+              />
+            )}
           </div>
         </div>
       </div>

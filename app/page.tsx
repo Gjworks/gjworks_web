@@ -146,16 +146,6 @@ export default function Page() {
                         없는 느낌의 레이아웃을 출시 하려고 합니다. 현재 작업중에
                         있으며 6월중에 출시 예정입니다.
                       </motion.div>
-                      <motion.div variants={variants} className="">
-                        <button
-                          onClick={() => setShowBottom(!showBottom)}
-                          className="relative group bg-dark-800/80 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
-                        >
-                          <div className="relative group-hover:text-white text-sm text-dark-300">
-                            자세히 보기
-                          </div>
-                        </button>
-                      </motion.div>
                     </motion.div>
 
                     <motion.div
@@ -198,23 +188,62 @@ export default function Page() {
               </div>
             </motion.div>
           </motion.div>
-          <motion.div
-            variants={parentVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
-            className="relative h-[330px] overflow-hidden"
-          >
-            <motion.div
-              variants={variants}
-              className="max-w-screen-lg mx-auto "
-            >
-              <div className="relative">
-                <SafariBrower image="/assets/images/main.png" />
-              </div>
-            </motion.div>
-          </motion.div>
-          <div className="absolute left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b dark:from-dark-950/0 dark:via-dark-950/20 dark:to-dark-950 h-[430px] z-10"></div>
+          <div className="relative h-[450px] ">
+            <div className="absolute left-0 right-0 h-[450px]">
+              <motion.div
+                variants={parentVariants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.3 }}
+                className="relative overflow-hidden w-full"
+              >
+                <motion.div
+                  variants={variants}
+                  className="max-w-screen-lg mx-auto relative h-[330px]"
+                >
+                  <div className="relative">
+                    <SafariBrower image="/assets/images/main.png" />
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/0 dark:via-dark-950/95 dark:to-dark-950 z-10"></div>
+            </div>
+
+            <div className="relative flex justify-center pb-5 z-20">
+              <motion.div
+                variants={parentVariants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.3 }}
+                className="max-w-screen-lg mx-auto px-3 mt-[200px]"
+              >
+                <motion.div
+                  variants={variants}
+                  className="text-center text-black dark:text-white text-2xl lg:text-4xl mb-5"
+                >
+                  연내 개발 목표
+                </motion.div>
+                <motion.div
+                  variants={variants}
+                  className="text-center text-gray-600 dark:text-dark-400  text-sm lg:text-xl mb-5"
+                >
+                  올해 중 서비스를 출시 할 수 있도록 최선을 다 하겠습니다.
+                </motion.div>
+                <motion.div variants={variants} className="flex justify-center">
+                  <button
+                    onClick={() => setShowBottom(!showBottom)}
+                    className="relative group bg-dark-800/80 px-16 py-3 backdrop-blur-lg rounded-md hover:after:w-32 hover:after:backdrop-blur-lg hover:after:h-32 overflow-hidden hover:after:absolute hover:after:-bottom-20 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-lg shadow-lg hover:shadow-dark-950"
+                  >
+                    <div className="relative group-hover:text-white text-sm text-dark-300">
+                      자세히 보기
+                    </div>
+                  </button>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+
           <div className="hidden relative">
             <div className="flex flex-wrap">
               <div className="flex items-center flex-wrap w-full md:flex-1 h-full order-0 md:order-1 backdrop-blur-lg bg-dark-900 dark:backdrop-blur-lg">

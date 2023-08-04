@@ -102,10 +102,10 @@ const Register = () => {
               </svg>
             </div>
 
-            <div className="text-2xl text-dark-500 dark:text-dark-50">
+            <div className="text-2xl text-dark-800 dark:text-dark-50">
               Register
             </div>
-            <div className="text-dark-300 text-sm pt-5">
+            <div className="text-dark-600 text-sm pt-5">
               회원가입을 해주셔서 감사드립니다.
             </div>
           </div>
