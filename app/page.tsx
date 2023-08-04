@@ -97,7 +97,7 @@ export default function Page() {
                       </div>
                       <Link
                         href="/auth/Signin"
-                        className="flex gap-2 bg-secondary-400 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-secondary-500 hover:text-white"
+                        className="flex gap-2 bg-primary-500 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
                       >
                         <span>
                           <svg
@@ -190,7 +190,7 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:flex-1 bg-gradient-to-r from-primary-600 via-primary-600 to-secondary-600 order-0 md:order-1">
+              <div className="w-full md:flex-1 bg-gradient-to-r from-primary-600 via-primary-600 to-primary-600 order-0 md:order-1">
                 <div className="flex items-center flex-wrap w-full lg:max-w-screen-sm mr-auto px-5 py-5 h-full">
                   <div className="flex-1">
                     <div className="text-white text-lg font-semibold">
@@ -233,7 +233,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-900/80 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -271,7 +271,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-900/80 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
@@ -291,7 +291,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-900/80 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -299,7 +299,7 @@ export default function Page() {
                     whileInView="onscreen"
                   >
                     <motion.div variants={variants} className="mb-6">
-                      <div className="flex justify-center items-center bg-primary-500 text-white w-8 h-8 rounded-full">
+                      <div className="flex justify-center items-center bg-primary-500 text-white w-10 h-10 rounded-full">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -450,7 +450,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className=" bg-slate-100 dark:bg-dark-900/80 p-10 border border-white dark:border-dark-800 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-slate-200 dark:shadow-dark-950"
+                className=" bg-slate-100 dark:bg-dark-800/60 p-10 border border-white dark:border-dark-800 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-slate-200 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Partners
@@ -527,7 +527,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-600 to-secondary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-600 to-primary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">

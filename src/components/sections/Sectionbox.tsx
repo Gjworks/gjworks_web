@@ -21,7 +21,7 @@ const Sectionbox: React.FC<SectionData> = props => {
       whileTap={{ scale: 0.95, transition: { duration: 0.3 } }}
     >
       <Link href="/metaverse">
-        <div className="relative dark:bg-dark-700/25 rounded-xl p-5 flex-1 backdrop-blur-lg overflow-hidden bg-slate-100 shadow-lg shadow-slate-200">
+        <div className="relative dark:bg-dark-700/25 rounded-xl p-5 flex-1 backdrop-blur-lg overflow-hidden bg-slate-100 shadow-lg shadow-slate-200 dark:shadow-black">
           <div className="absolute inset-0">
             <div
               className={
