@@ -229,8 +229,8 @@ const Header = () => {
                         className={
                           'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
                           (pathname === data[1].route
-                            ? 'text-slate-900 dark:text-white'
-                            : 'text-slate-400 dark:text-dark-500 hover:text-slate-800 dark:hover:text-white')
+                            ? 'text-slate-400 dark:text-white'
+                            : 'text-slate-800 dark:text-dark-500 hover:text-slate-400 dark:hover:text-white')
                         }
                       >
                         {data[1].title}

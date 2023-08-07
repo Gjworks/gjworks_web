@@ -60,7 +60,7 @@ export default function Page() {
                   <div className="w-full">
                     <motion.div
                       variants={variants}
-                      className="text-sm lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
+                      className="text-sm lg:text-base font-bold text-slate-900 dark:text-dark-200 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
                     >
                       TEAM THAT MAKES THE SERVICE
                     </motion.div>
@@ -97,7 +97,7 @@ export default function Page() {
                         </div>
                         <Link
                           href="/auth/Signin"
-                          className="flex gap-2 bg-primary-500 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
+                          className="flex gap-2 bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-200 text-white dark:text-dark-950 text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-slate-600 hover:text-white"
                         >
                           <span>
                             <svg
