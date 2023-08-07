@@ -47,7 +47,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className=" relative ">
-          <motion.div className="relative flex items-center">
+          <motion.div className="relative flex items-center py-20">
             <motion.div
               variants={parentVariants}
               initial="offscreen"
