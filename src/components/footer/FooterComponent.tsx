@@ -65,7 +65,7 @@ const Footer = () => {
                 <motion.div variants={parentVariants} className="">
                   <Link
                     href="/"
-                    className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                    className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                   >
                     파트너 센터
                   </Link>
@@ -73,7 +73,7 @@ const Footer = () => {
                 <motion.div variants={parentVariants} className="">
                   <Link
                     href="/"
-                    className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                    className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                   >
                     파트너 신청
                   </Link>
@@ -93,7 +93,7 @@ const Footer = () => {
                 <motion.div variants={parentVariants}>
                   <Link
                     href="/"
-                    className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                    className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                   >
                     Documentation
                   </Link>
@@ -101,7 +101,7 @@ const Footer = () => {
                 <motion.div variants={parentVariants}>
                   <Link
                     href="/"
-                    className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                    className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                   >
                     구매내역
                   </Link>
@@ -109,7 +109,7 @@ const Footer = () => {
                 <motion.div variants={parentVariants}>
                   <Link
                     href="/"
-                    className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                    className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                   >
                     스토어
                   </Link>
@@ -117,7 +117,7 @@ const Footer = () => {
                 <motion.div variants={parentVariants}>
                   <Link
                     href="/"
-                    className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs px-3"
+                    className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs px-3"
                   >
                     License
                   </Link>
@@ -184,7 +184,7 @@ const Footer = () => {
             className="flex items-center justify-center w-full lg:w-auto"
             variants={parentVariants}
           >
-            <div className="text-xs text-gray-400 dark:text-dark-200 text-center lg:text-left">
+            <div className="text-xs text-slate-700 dark:text-dark-200 text-center lg:text-left">
               ⓒ 지제이웍스
             </div>
           </motion.div>
@@ -193,7 +193,7 @@ const Footer = () => {
               <motion.div variants={parentVariants}>
                 <Link
                   href="/about"
-                  className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                  className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                 >
                   ABOUT
                 </Link>
@@ -201,7 +201,7 @@ const Footer = () => {
               <motion.div variants={parentVariants}>
                 <Link
                   href="/"
-                  className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                  className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                 >
                   Terms of service
                 </Link>
@@ -209,7 +209,7 @@ const Footer = () => {
               <motion.div variants={parentVariants}>
                 <Link
                   href="/"
-                  className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                  className="text-slate-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
                 >
                   Privacy policy
                 </Link>

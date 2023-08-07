@@ -81,7 +81,7 @@ export default function Page() {
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="text-gray-400 dark:text-dark-400 text-sm lg:text-lg mb-6 lg:text-left text-center"
+                      className="text-slate-600 dark:text-dark-400 text-sm lg:text-lg mb-6 lg:text-left text-center"
                     >
                       서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                     </motion.div>

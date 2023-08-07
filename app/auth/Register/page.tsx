@@ -119,7 +119,7 @@ const Register = () => {
                   inputTitle="이메일"
                   getData={getEmail}
                   placeholder="example@mail.com"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -133,7 +133,7 @@ const Register = () => {
                   inputTitle="비밀번호"
                   getData={getPassword}
                   placeholder="User Password"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
@@ -149,14 +149,14 @@ const Register = () => {
                   inputTitle="닉네임"
                   getData={getNickname}
                   placeholder="User nick name"
-                  theme="dark"
+                  theme="light"
                   value=""
                 ></TextInput>
               </div>
             </div>
 
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-primary-500 dark:bg-primary-500 dark:hover:bg-primary-400 hover:text-white dark:hover:text-white dark:text-primary-200 text-primary-100 py-4 px-5 rounded-lg transition duration-300 hover:bg-primary-600">
+              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-400 hover:text-black dark:hover:text-white dark:text-primary-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200">
                 Register Completed
               </button>
             </div>
