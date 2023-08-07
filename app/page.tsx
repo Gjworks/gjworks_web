@@ -47,7 +47,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className=" relative ">
-          <motion.div className="relative flex items-center py-20">
+          <motion.div className="relative flex items-center">
             <motion.div
               variants={parentVariants}
               initial="offscreen"
@@ -55,70 +55,82 @@ export default function Page() {
               viewport={{ once: false, amount: 0.3 }}
               className="relative w-full z-10"
             >
-              <div className="relative flex justify-center max-w-screen-xl mx-auto px-3 pt-10 pb-10">
-                <div className="relative text-center">
-                  <motion.div
-                    variants={variants}
-                    className="text-sm text-center lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3 pt-0 lg:pt-10"
-                  >
-                    TEAM THAT MAKES THE SERVICE
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="text-3xl sm:text-5xl md:text-6xl mb-10 text-center text-black dark:text-white font-semibold"
-                  >
-                    <div>Build web and app</div>
-                    <div>
-                      <span className="text-gray-400 dark:text-dark-400">
-                        Quickly
-                      </span>{' '}
-                      and{' '}
-                      <span className="text-gray-400 dark:text-dark-400">
-                        simply
-                      </span>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="text-gray-400 text-center dark:text-dark-400 text-sm lg:text-lg mb-6"
-                  >
-                    서비스에 도움이 되는 제품을 만들어 드리겠습니다.
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className=" relative  p-3 mb-12"
-                  >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-slate-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
-                      <div className="flex-1 flex items-center px-3">
-                        <div className="text-sm text-dark-400 line-clamp-1">
-                          Launch Your Service.
-                        </div>
-                      </div>
-                      <Link
-                        href="/auth/Signin"
-                        className="flex gap-2 bg-primary-500 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
-                      >
-                        <span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1}
-                            stroke="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-                            />
-                          </svg>
+              <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3 pt-10 pb-10">
+                <div className="relative col-span-2 lg:col-span-1 flex items-center">
+                  <div className="w-full">
+                    <motion.div
+                      variants={variants}
+                      className="text-sm lg:text-base font-bold text-primary-500 dark:text-primary-400 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
+                    >
+                      TEAM THAT MAKES THE SERVICE
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-3xl sm:text-5xl md:text-6xl mb-10 text-black dark:text-white font-semibold lg:text-left text-center"
+                    >
+                      <div>Build web and app</div>
+                      <div>
+                        <span className="text-gray-400 dark:text-dark-400">
+                          Quickly
+                        </span>{' '}
+                        and{' '}
+                        <span className="text-gray-400 dark:text-dark-400">
+                          simply
                         </span>
-                        <span className="hidden lg:flex">Get Started!</span>
-                      </Link>
-                    </div>
-                  </motion.div>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-gray-400 dark:text-dark-400 text-sm lg:text-lg mb-6 lg:text-left text-center"
+                    >
+                      서비스에 도움이 되는 제품을 만들어 드리겠습니다.
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className=" relative  p-3 mb-12"
+                    >
+                      <div className="flex gap-8 p-2 lg:p-3 bg-slate-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
+                        <div className="flex-1 flex items-center px-3">
+                          <div className="text-sm text-dark-400 line-clamp-1">
+                            Launch Your Service.
+                          </div>
+                        </div>
+                        <Link
+                          href="/auth/Signin"
+                          className="flex gap-2 bg-primary-500 text-white text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-primary-400 hover:text-white"
+                        >
+                          <span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1}
+                              stroke="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+                              />
+                            </svg>
+                          </span>
+                          <span className="hidden lg:flex">Get Started!</span>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  </div>
                 </div>
+                <motion.div
+                  variants={variants}
+                  className="col-span-2 lg:col-span-1"
+                >
+                  <div className="relative">
+                    <div>
+                      <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[505px] w-[240px] mx-auto"></div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
 
               <div className="hidden relative pt-10 z-50">
@@ -188,7 +200,7 @@ export default function Page() {
               </div>
             </motion.div>
           </motion.div>
-          <div className="relative h-[450px] ">
+          <div className="hidden relative h-[450px] ">
             <div className="absolute left-0 right-0 h-[450px]">
               <motion.div
                 variants={parentVariants}
@@ -206,7 +218,6 @@ export default function Page() {
                   </div>
                 </motion.div>
               </motion.div>
-
               <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/0 dark:via-dark-950/95 dark:to-dark-950 z-10"></div>
             </div>
 
@@ -307,7 +318,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="py-20">
+        <div className="hidden py-20">
           <div className="relative max-w-screen-xl mx-auto px-3">
             <motion.div
               variants={parentVariants}
