@@ -53,10 +53,10 @@ const Footer = () => {
           viewport={{ once: false, amount: 0.3 }}
           className="flex gap-4 flex-wrap w-full lg:flex-1 order-1 lg:order-0"
         >
-          <motion.div className="flex items-center gap-4 w-full">
+          <motion.div className="flex items-center gap-1 lg:gap-4 w-full flex-wrap">
             <motion.div
               variants={parentVariants}
-              className="flex items-center text-black dark:text-white text-xs w-16"
+              className="flex items-center text-black dark:text-white text-xs w-full lg:w-16"
             >
               Partners
             </motion.div>
@@ -81,10 +81,10 @@ const Footer = () => {
               </div>
             </motion.div>
           </motion.div>
-          <div className="flex gap-4 w-full">
+          <div className="flex gap-1 lg:gap-4 w-full flex-wrap">
             <motion.div
               variants={parentVariants}
-              className="flex items-center text-black dark:text-white text-xs w-16"
+              className="flex items-center text-black dark:text-white text-xs w-full lg:w-16"
             >
               Developer
             </motion.div>

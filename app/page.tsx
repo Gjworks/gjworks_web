@@ -95,8 +95,8 @@ export default function Page() {
                             Launch Your Service.
                           </div>
                         </div>
-                        <Link
-                          href="/auth/Signin"
+                        <button
+                          onClick={() => setShowBottom(!showBottom)}
                           className="flex gap-2 bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-200 text-white dark:text-dark-950 text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-slate-600 hover:text-white"
                         >
                           <span>
@@ -116,7 +116,7 @@ export default function Page() {
                             </svg>
                           </span>
                           <span className="hidden lg:flex">Get Started!</span>
-                        </Link>
+                        </button>
                       </div>
                     </motion.div>
                   </div>
@@ -132,7 +132,215 @@ export default function Page() {
                   </div>
                 </motion.div>
               </div>
-
+              <div className=" overflow-hidden">
+                <div className="max-w-screen-xl mx-auto px-3 pt-20">
+                  <div className="rounded-2xl p-5">
+                    <motion.div
+                      initial="offscreen"
+                      whileInView="onscreen"
+                      viewport={{ once: false, amount: 0.1 }}
+                      variants={parentVariants}
+                      className="grid grid-cols-12 gap-4"
+                    >
+                      <div className="col-span-12 lg:col-span-6">
+                        <motion.div
+                          variants={variants}
+                          className="text-black text-5xl font-bold"
+                        >
+                          Comfortable
+                        </motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="text-black text-5xl font-bold"
+                        >
+                          zoning in one open
+                        </motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="text-black text-5xl font-bold"
+                        >
+                          space.
+                        </motion.div>
+                      </div>
+                      <div className="col-span-12 lg:col-span-6 flex items-center">
+                        <div className=" pt-5 lg:pt-0">
+                          <motion.div
+                            variants={variants}
+                            className="text-base text-black mb-2 font-semibold"
+                          >
+                            Feedback
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="text-sm font-light text-slate-400"
+                          >
+                            Today I want to introduce my new experimentation.
+                            What do you guys think ? I would be very honered for
+                            any feedback or suggestions.
+                          </motion.div>
+                        </div>
+                      </div>
+                      <div className="col-span-12 lg:col-span-3"></div>
+                      <div className="col-span-12 lg:col-span-9">
+                        <motion.div className="flex gap-4 lg:gap-8 w-full">
+                          <motion.div
+                            variants={variants}
+                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-b from-dark-900/25 via-dark-950/80 to-dark-950/90 z-10"></div>
+                            <Image
+                              src="/assets/images/bg_phone.jpg"
+                              alt="screenshot_1"
+                              width={500}
+                              style={{ width: '100%', height: 'auto' }}
+                              height={280}
+                            ></Image>
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-b from-dark-900/25 via-dark-950/80 to-dark-950/90 z-10"></div>
+                            <Image
+                              src="/assets/images/mbg.jpg"
+                              alt="screenshot_2"
+                              width={500}
+                              style={{ width: '100%', height: 'auto' }}
+                              height={280}
+                            ></Image>
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-tl from-dark-900 via-dark-900 to-dark-900 z-10"></div>
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-tl from-dark-900 via-dark-900 to-dark-900 z-10"></div>
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-tl from-dark-900 via-dark-900 to-dark-900 z-10"></div>
+                          </motion.div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+              <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.1 }}
+                variants={parentVariants}
+                className="pt-10 lg:pt-20"
+              >
+                <div className="max-w-screen-xl mx-auto px-3">
+                  <motion.div className="grid grid-cols-12 gap-4">
+                    <motion.div
+                      variants={variants}
+                      className="col-span-12 lg:col-span-5 border border-slate-200 rounded-xl p-4 h-full shadow-md shadow-slate-100"
+                    >
+                      <div className="flex gap-2">
+                        <div className="">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1}
+                            stroke="currentColor"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </div>
+                        <div className="flex-1 text-black mb-2 text-sm font-semibold">
+                          설치 요청
+                        </div>
+                      </div>
+                      <div className="text-slate-400 text-xs pl-6">
+                        설치가 힘드신가요? 설치 지원요청을 통해서 빠르게
+                        해결하세요.
+                      </div>
+                      <div className="text-slate-400 text-xs pl-6">
+                        구매한 제품의 설치환경과 맞는경우에만 도움 받을 수
+                        있습니다.
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="col-span-12 lg:col-span-3"
+                    >
+                      <div className=" border border-slate-200 rounded-xl p-4 h-full shadow-md shadow-slate-100">
+                        <div className="flex gap-2">
+                          <div className="">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1}
+                              stroke="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                          </div>
+                          <div className="flex-1 text-black mb-2 text-sm font-semibold">
+                            계산서 발행
+                          </div>
+                        </div>
+                        <div className="text-slate-400 text-xs pl-6">
+                          계산서 발행이 필요 하신가요?
+                        </div>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="col-span-12 lg:col-span-4"
+                    >
+                      <div className=" border border-slate-200 rounded-xl p-4 h-full shadow-md shadow-slate-100">
+                        <div className="flex gap-2">
+                          <div className="">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1}
+                              stroke="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                          </div>
+                          <div className="flex-1 text-black mb-2 text-sm font-semibold">
+                            계산서 발행
+                          </div>
+                        </div>
+                        <div className="text-slate-400 text-xs pl-6">
+                          계산서 발행이 필요 하신가요?
+                        </div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </div>
+              </motion.div>
               <div className="hidden relative pt-10 z-50">
                 <div className="hidden absolute bottom-20 left-0 right-0 z-10">
                   <div className="max-w-screen-sm mx-auto px-3">
