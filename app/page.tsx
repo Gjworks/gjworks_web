@@ -60,7 +60,7 @@ export default function Page() {
                   <div className="w-full">
                     <motion.div
                       variants={variants}
-                      className="text-sm lg:text-base font-bold text-slate-900 dark:text-dark-200 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
+                      className="text-sm lg:text-base font-bold text-gray-900 dark:text-dark-200 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
                     >
                       TEAM THAT MAKES THE SERVICE
                     </motion.div>
@@ -81,7 +81,7 @@ export default function Page() {
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="text-slate-600 dark:text-dark-400 text-sm lg:text-lg mb-6 lg:text-left text-center"
+                      className="text-gray-600 dark:text-dark-400 text-sm lg:text-lg mb-6 lg:text-left text-center"
                     >
                       서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                     </motion.div>
@@ -89,7 +89,7 @@ export default function Page() {
                       variants={variants}
                       className=" relative  p-3 mb-12"
                     >
-                      <div className="flex gap-8 p-2 lg:p-3 bg-slate-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
+                      <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
                         <div className="flex-1 flex items-center px-3">
                           <div className="text-sm text-dark-400 line-clamp-1">
                             Launch Your Service.
@@ -97,7 +97,7 @@ export default function Page() {
                         </div>
                         <button
                           onClick={() => setShowBottom(!showBottom)}
-                          className="flex gap-2 bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-200 text-white dark:text-dark-950 text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-slate-600 hover:text-white"
+                          className="flex gap-2 bg-gray-900 dark:bg-dark-100 dark:hover:bg-dark-200 text-white dark:text-dark-950 text-sm p-2 lg:p-3 px-5 rounded-full hover:bg-gray-600 hover:text-white"
                         >
                           <span>
                             <svg
@@ -147,19 +147,19 @@ export default function Page() {
                           variants={variants}
                           className="text-black text-5xl font-bold"
                         >
-                          Comfortable
+                          Flexible
                         </motion.div>
                         <motion.div
                           variants={variants}
                           className="text-black text-5xl font-bold"
                         >
-                          zoning in one open
+                          Creative and better
                         </motion.div>
                         <motion.div
                           variants={variants}
                           className="text-black text-5xl font-bold"
                         >
-                          space.
+                          Platform.
                         </motion.div>
                       </div>
                       <div className="col-span-12 lg:col-span-6 flex items-center">
@@ -168,15 +168,15 @@ export default function Page() {
                             variants={variants}
                             className="text-base text-black mb-2 font-semibold"
                           >
-                            Feedback
+                            WE WORK IT
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="text-sm font-light text-slate-400"
+                            className="text-sm font-light text-gray-500"
                           >
-                            Today I want to introduce my new experimentation.
-                            What do you guys think ? I would be very honered for
-                            any feedback or suggestions.
+                            지제이웍스만의 방법으로 디지털 플랫폼을 구축하고
+                            최상의 디지털 경험을 느낄 수 있도록 최선을 다 하고
+                            있습니다.
                           </motion.div>
                         </div>
                       </div>
@@ -185,7 +185,7 @@ export default function Page() {
                         <motion.div className="flex gap-4 lg:gap-8 w-full">
                           <motion.div
                             variants={variants}
-                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                            className="relative w-[62%] lg:w-[49%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-gray-400 hover:scale-105"
                           >
                             <div className="absolute inset-0 bg-gradient-to-b from-dark-900/25 via-dark-950/80 to-dark-950/90 z-10"></div>
                             <Image
@@ -198,7 +198,7 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                            className="relative w-[62%] lg:w-[49%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-gray-400 hover:scale-105"
                           >
                             <div className="absolute inset-0 bg-gradient-to-b from-dark-900/25 via-dark-950/80 to-dark-950/90 z-10"></div>
                             <Image
@@ -211,19 +211,19 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                            className="relative w-[62%] lg:w-[49%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-gray-400 hover:scale-105"
                           >
                             <div className="absolute inset-0 bg-gradient-to-tl from-dark-900 via-dark-900 to-dark-900 z-10"></div>
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                            className="relative w-[62%] lg:w-[49%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-gray-400 hover:scale-105"
                           >
                             <div className="absolute inset-0 bg-gradient-to-tl from-dark-900 via-dark-900 to-dark-900 z-10"></div>
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="relative w-[62%] lg:w-[33%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-slate-400"
+                            className="relative w-[62%] lg:w-[49%] flex-none aspect-[400/240] lg:aspect-[500/280] rounded-md cursor-pointer hover:shadow-xs overflow-hidden shadow-lg shadow-gray-400 hover:scale-105"
                           >
                             <div className="absolute inset-0 bg-gradient-to-tl from-dark-900 via-dark-900 to-dark-900 z-10"></div>
                           </motion.div>
@@ -244,7 +244,7 @@ export default function Page() {
                   <motion.div className="grid grid-cols-12 gap-4">
                     <motion.div
                       variants={variants}
-                      className="col-span-12 lg:col-span-5 border border-slate-200 rounded-xl p-4 h-full shadow-md shadow-slate-100"
+                      className="col-span-12 lg:col-span-5 border border-gray-200 rounded-xl p-4 h-full shadow-md shadow-gray-100"
                     >
                       <div className="flex gap-2">
                         <div className="">
@@ -254,12 +254,17 @@ export default function Page() {
                             viewBox="0 0 24 24"
                             strokeWidth={1}
                             stroke="currentColor"
-                            className="w-5 h-5"
+                            className="w-6 h-6"
                           >
                             <path
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                              d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                             />
                           </svg>
                         </div>
@@ -267,11 +272,11 @@ export default function Page() {
                           설치 요청
                         </div>
                       </div>
-                      <div className="text-slate-400 text-xs pl-6">
+                      <div className="text-gray-400 text-xs pl-8">
                         설치가 힘드신가요? 설치 지원요청을 통해서 빠르게
                         해결하세요.
                       </div>
-                      <div className="text-slate-400 text-xs pl-6">
+                      <div className="text-gray-400 text-xs pl-8">
                         구매한 제품의 설치환경과 맞는경우에만 도움 받을 수
                         있습니다.
                       </div>
@@ -280,7 +285,7 @@ export default function Page() {
                       variants={variants}
                       className="col-span-12 lg:col-span-3"
                     >
-                      <div className=" border border-slate-200 rounded-xl p-4 h-full shadow-md shadow-slate-100">
+                      <div className=" border border-gray-200 rounded-xl p-4 h-full shadow-md shadow-gray-100">
                         <div className="flex gap-2">
                           <div className="">
                             <svg
@@ -289,12 +294,12 @@ export default function Page() {
                               viewBox="0 0 24 24"
                               strokeWidth={1}
                               stroke="currentColor"
-                              className="w-5 h-5"
+                              className="w-6 h-6"
                             >
                               <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
                               />
                             </svg>
                           </div>
@@ -302,8 +307,9 @@ export default function Page() {
                             계산서 발행
                           </div>
                         </div>
-                        <div className="text-slate-400 text-xs pl-6">
-                          계산서 발행이 필요 하신가요?
+                        <div className="text-gray-400 text-xs pl-8">
+                          전자 계산서 발행이 필요 하신가요? 신청 시 3일이내에
+                          관련하여 처리해드립니다.
                         </div>
                       </div>
                     </motion.div>
@@ -311,7 +317,7 @@ export default function Page() {
                       variants={variants}
                       className="col-span-12 lg:col-span-4"
                     >
-                      <div className=" border border-slate-200 rounded-xl p-4 h-full shadow-md shadow-slate-100">
+                      <div className=" p-4 h-full">
                         <div className="flex gap-2">
                           <div className="">
                             <svg
@@ -320,21 +326,22 @@ export default function Page() {
                               viewBox="0 0 24 24"
                               strokeWidth={1}
                               stroke="currentColor"
-                              className="w-5 h-5"
+                              className="w-6 h-6"
                             >
                               <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
-                                d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
                               />
                             </svg>
                           </div>
                           <div className="flex-1 text-black mb-2 text-sm font-semibold">
-                            계산서 발행
+                            Play Documents
                           </div>
                         </div>
-                        <div className="text-slate-400 text-xs pl-6">
-                          계산서 발행이 필요 하신가요?
+                        <div className="text-gray-400 text-xs pl-8">
+                          사용방법 및 커스터마이징관련하여 문서를 제공합니다.
+                          문서에 없는경우 Forum에 남겨주세요.
                         </div>
                       </div>
                     </motion.div>
@@ -359,7 +366,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-sm lg:text-base text-slate-500 dark:text-dark-300 text-center mb-5"
+                        className="text-sm lg:text-base text-gray-500 dark:text-dark-300 text-center mb-5"
                       >
                         최근 데스크탑 환경에서 모바일 UI를 적극 활용한
                         디자인들을 많이 선보이고 있습니다. 그에 맞춰 그전에는
@@ -372,7 +379,7 @@ export default function Page() {
                       variants={variants}
                       className="relative hidden justify-center items-center gap-4 pb-20 px-3 lg:w-4/5 mx-auto"
                     >
-                      <div className="rounded-lg p-3 bg-slate-100 dark:bg-dark-800/40 ">
+                      <div className="rounded-lg p-3 bg-gray-100 dark:bg-dark-800/40 ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 50.44096 49.52621"
@@ -538,7 +545,7 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-5">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
+                  className="relative overflow-hidden bg-gray-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -576,12 +583,12 @@ export default function Page() {
               <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-gray-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <div className="relative items-center overflow-hidden h-full">
                     <div className="absolute inset-0"></div>
                     <div className="mx-auto w-36 h-36">
-                      <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-slate-200 dark:border-dark-800"></div>
+                      <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-gray-200 dark:border-dark-800"></div>
                     </div>
                   </div>
                   {/* <div className="text-lg lg:text-xl text-black dark:text-white mb-5">
@@ -596,7 +603,7 @@ export default function Page() {
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="relative overflow-hidden bg-slate-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                  className="relative overflow-hidden bg-gray-200/80 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-300 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                 >
                   <motion.div
                     variants={parentVariants}
@@ -701,7 +708,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-slate-300 dark:shadow-dark-950"
+                className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-500 p-10 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-gray-300 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-white dark:text-white font-light text-center mb-8">
                   Store
@@ -713,7 +720,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className=" bg-slate-100 dark:bg-dark-800/60 p-10 border border-white dark:border-dark-800 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-slate-200 dark:shadow-dark-950"
+                className=" bg-gray-100 dark:bg-dark-800/60 p-10 border border-white dark:border-dark-800 rounded-xl w-full lg:flex-1 hover:shadow-xs shadow-lg shadow-gray-200 dark:shadow-dark-950"
               >
                 <div className="text-2xl text-black dark:text-white font-light text-center mb-8">
                   Partners
@@ -736,7 +743,7 @@ export default function Page() {
             >
               <motion.div
                 variants={variants}
-                className="bg-slate-100 dark:bg-dark-700 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="bg-gray-100 dark:bg-dark-700 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs translate-y-0 hover:-translate-y-2 "
               >
                 <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Web UI Components
@@ -748,7 +755,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="bg-white border border-slate-200 dark:border-dark-700 dark:bg-dark-800 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="bg-white border border-gray-200 dark:border-dark-700 dark:bg-dark-800 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs translate-y-0 hover:-translate-y-2 "
               >
                 <div className="text-2xl font-bold text-black dark:text-white mb-5">
                   Metaverse Platform
@@ -763,7 +770,7 @@ export default function Page() {
                     <div className="text-xs text-black dark:text-white w-12">
                       DB
                     </div>
-                    <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                    <div className="relative flex-1 bg-gray-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
                       <div className="absolute left-0 top-0 bottom-0 w-[60%] bg-primary-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 60%</div>
@@ -772,7 +779,7 @@ export default function Page() {
                     <div className="text-xs text-black dark:text-white w-12">
                       Front
                     </div>
-                    <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                    <div className="relative flex-1 bg-gray-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
                       <motion.div className="absolute left-0 top-0 bottom-0 w-[20%] bg-primary-600 rounded-full"></motion.div>
                     </div>
                     <div className="text-xs text-white"> 20%</div>
@@ -781,7 +788,7 @@ export default function Page() {
                     <div className="text-xs text-black dark:text-white w-12">
                       Server
                     </div>
-                    <div className="relative flex-1 bg-slate-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
+                    <div className="relative flex-1 bg-gray-200 dark:bg-dark-500 rounded-full h-[6px] overflow-hidden">
                       <div className="absolute left-0 top-0 bottom-0 w-[30%] bg-primary-600 rounded-full"></div>
                     </div>
                     <div className="text-xs text-white"> 30%</div>
@@ -790,7 +797,7 @@ export default function Page() {
               </motion.div>
               <motion.div
                 variants={variants}
-                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-600 to-primary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs -translate-y-2 hover:translate-y-0 "
+                className="flex flex-wrap items-center gap-8 bg-gradient-to-br from-primary-600 to-primary-600 p-5 rounded-md w-full lg:flex-1 transition duration-300 hover:shadow-xs translate-y-0 hover:-translate-y-2 "
               >
                 <div>
                   <div className="text-2xl font-bold text-white mb-5 text-center">
@@ -887,7 +894,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="inline rounded-full bg-slate-500 dark:bg-dark-600 py-2 px-5 text-sm text-slate-100 dark:white dark:hover:text-black hover:bg-primary-500 dark:hover:bg-primary-500 cursor-pointer"
+                    className="inline rounded-full bg-gray-500 dark:bg-dark-600 py-2 px-5 text-sm text-gray-100 dark:white dark:hover:text-black hover:bg-primary-500 dark:hover:bg-primary-500 cursor-pointer"
                   >
                     Read more
                   </motion.div>
@@ -933,7 +940,7 @@ export default function Page() {
             >
               <Link
                 href="/contact"
-                className="border bg-transparent backdrop-blur-lg border-slate-900 dark:border-dark-300 rounded-full py-1 px-10 text-black dark:text-dark-300 text-base hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black dark:shadow-lg dark:shadow-dark-600"
+                className="border bg-transparent backdrop-blur-lg border-gray-900 dark:border-dark-300 rounded-full py-1 px-10 text-black dark:text-dark-300 text-base hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:border-white dark:hover:text-black dark:shadow-lg dark:shadow-dark-600"
               >
                 Contact us
               </Link>
@@ -979,14 +986,14 @@ export default function Page() {
             <div className="flex justify-center">
               <motion.div
                 variants={variants}
-                className="inline font-black text-5xl md:text-7xl text-slate-700 dark:text-dark-600/75 text-center"
+                className="inline font-black text-5xl md:text-7xl text-gray-700 dark:text-dark-600/75 text-center"
               >
                 WE ARE CRATEIVE
               </motion.div>
             </div>
             <motion.div
               variants={variants}
-              className="font-thin text-xl xl:text-3xl text-slate-400 dark:text-dark-100 text-center -mt-6"
+              className="font-thin text-xl xl:text-3xl text-gray-400 dark:text-dark-100 text-center -mt-6"
             >
               Responsive everything.
             </motion.div>

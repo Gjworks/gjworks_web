@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
     })
   }
   return (
-    <motion.div className="selection:text-white selection:bg-slate-950 break-keep dark:bg-transparent min-h-full">
+    <motion.div className="selection:text-white selection:bg-gray-950 break-keep dark:bg-transparent min-h-full">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <motion.header
@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
             <div className="flex justify-between items-center py-2 pr-3">
               <a
                 onClick={() => router.back()}
-                className="text-slate-500 hover:text-slate-900 dark:text-dark-400 dark:hover:text-white py-2 px-3 rounded-lg cursor-pointer"
+                className="text-gray-500 hover:text-gray-900 dark:text-dark-400 dark:hover:text-white py-2 px-3 rounded-lg cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const Layout = ({ children }) => {
               </a>
               <a
                 href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                className="text-slate-500 hover:text-slate-900 dark:text-dark-400 dark:hover:text-white py-2 px-3 rounded-lg cursor-pointer"
+                className="text-gray-500 hover:text-gray-900 dark:text-dark-400 dark:hover:text-white py-2 px-3 rounded-lg cursor-pointer"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const Layout = ({ children }) => {
             </div>
           </div>
         </motion.header>
-        <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div>
+        <div className="sticky block top-[57px] w-full shadow-lg shadow-gray-100"></div>
         <motion.main
           variants={variants}
           initial="hidden"

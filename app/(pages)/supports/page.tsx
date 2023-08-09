@@ -92,7 +92,7 @@ const Page = () => {
                 </div>
               </div>
               <div className="col-span-2 lg:col-span-1 order-0 lg:order-1">
-                <div className="relative overflow-hidden bg-white border border-white dark:border-dark-800/20 dark:bg-dark-900/70 backdrop-blur-xl p-8 lg:p-16 rounded-2xl w-full">
+                <div className="relative overflow-hidden bg-white/90 border border-white dark:border-dark-800/20 dark:bg-dark-900/70 backdrop-blur-xl p-8 lg:p-16 rounded-2xl w-full">
                   <div className="text-black dark:text-white">고객문의</div>
                 </div>
               </div>

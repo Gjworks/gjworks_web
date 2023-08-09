@@ -229,8 +229,8 @@ const Header = () => {
                         className={
                           'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
                           (pathname === data[1].route
-                            ? 'text-slate-400 dark:text-white'
-                            : 'text-slate-800 dark:text-dark-500 hover:text-slate-400 dark:hover:text-white')
+                            ? 'text-gray-400 dark:text-white'
+                            : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
                         }
                       >
                         {data[1].title}
@@ -262,7 +262,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="bg-slate-200 text-gray-700 hover:bg-slate-300 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-800"
+                className="bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-800"
                 onClick={() => {}}
               >
                 <svg
@@ -281,7 +281,7 @@ const Header = () => {
                 </svg>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-slate-900  dark:bg-dark-100 dark:hover:bg-white text-slate-200 hover:text-white dark:text-black dark:hover:text-primary-500 text-xs"
+                className="group relative flex items-center rounded-md bg-gray-900  dark:bg-dark-100 dark:hover:bg-white text-gray-200 hover:text-white dark:text-black dark:hover:text-primary-500 text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-3">
@@ -321,7 +321,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-slate-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-900/70 w-screen h-screen"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 backdrop-blur-lg before:backdrop-blur-lg dark:bg-dark-900/70 w-screen h-screen"
       ></motion.div>
       <motion.div
         initial={headerInitial}
