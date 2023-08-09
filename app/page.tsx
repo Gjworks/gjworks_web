@@ -125,9 +125,15 @@ export default function Page() {
                   variants={variants}
                   className="col-span-2 lg:col-span-1"
                 >
-                  <div className="relative">
-                    <div>
-                      <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[505px] w-[240px] mx-auto"></div>
+                  <div className="relative px-0">
+                    <div className="flex justify-center">
+                      <Image
+                        src="/assets/images/mac_studio.png"
+                        width={500}
+                        height="100"
+                        alt="Mac"
+                        style={{ objectFit: 'contain' }}
+                      />
                     </div>
                   </div>
                 </motion.div>
