@@ -151,23 +151,25 @@ export default function Page() {
               >
                 <div className="max-w-screen-xl mx-auto px-3">
                   <div className="grid grid-cols-12 gap-0 lg:gap-8 mb-16">
-                    <div className="col-span-12 lg:col-span-5">
-                      <div className="">
-                        <motion.div
-                          variants={variants}
-                          className="text-black text-3xl lg:text-4xl font-bold mb-4"
-                        >
-                          제품을 구매 하면 컴포넌트와 템플릿을 사용할 수
-                          있습니다.
-                        </motion.div>
-                        <motion.div
-                          variants={variants}
-                          className="text-gray-400 text-sm"
-                        >
-                          컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
-                          모든 Component는 tailwindcss와 Framer motion을
-                          활용하여 애니메이션과 스타일을 정의했습니다.
-                        </motion.div>
+                    <div className="col-span-12">
+                      <div className="flex justify-center">
+                        <div className="w-full lg:w-1/2 mx-auto">
+                          <motion.div
+                            variants={variants}
+                            className="text-black text-3xl lg:text-4xl font-bold mb-4 text-center"
+                          >
+                            제품을 구매 하면 컴포넌트와 템플릿을 사용할 수
+                            있습니다.
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="text-gray-400 text-sm text-center"
+                          >
+                            컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
+                            모든 Component는 tailwindcss와 Framer motion을
+                            활용하여 애니메이션과 스타일을 정의했습니다.
+                          </motion.div>
+                        </div>
                       </div>
                     </div>
                   </div>
