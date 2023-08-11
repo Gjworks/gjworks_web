@@ -35,10 +35,13 @@ export default function Page() {
       opacity: 0,
     },
   }
-  const preCode = `<button onClick={() => setShowDropdown(!showDropdown)}>Dropdown</button>
-  <Dropdown state={showDropdown}>
+  const codeString = `<button onClick={() => setShowDropdown(!showDropdown)}>
+  Dropdown
+</button>
+<Dropdown state={showDropdown}>
   <AccountDropwdown />
 </Dropdown>`
+
   return (
     <DefaultLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
@@ -51,17 +54,17 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className=" relative ">
-          <motion.div className="relative flex items-center py-20">
-            <motion.div
-              variants={parentVariants}
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: false, amount: 0.3 }}
-              className="relative w-full z-10"
-            >
+          <motion.div className="relative flex items-center py-8 lg:py-20">
+            <motion.div className="relative w-full z-10">
               <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3 pt-10 pb-10">
                 <div className="relative col-span-2 lg:col-span-1 flex items-center">
-                  <div className="w-full">
+                  <motion.div
+                    variants={parentVariants}
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="w-full"
+                  >
                     <motion.div
                       variants={variants}
                       className="text-sm lg:text-base font-bold text-gray-950 dark:text-dark-200 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
@@ -123,14 +126,20 @@ export default function Page() {
                         </button>
                       </div>
                     </motion.div>
-                  </div>
+                  </motion.div>
                 </div>
                 <motion.div
-                  variants={variants}
+                  variants={parentVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: false, amount: 0.3 }}
                   className="col-span-2 lg:col-span-1"
                 >
                   <div className="relative px-0">
-                    <div className="flex justify-center">
+                    <motion.div
+                      variants={variants}
+                      className="flex justify-center"
+                    >
                       <Image
                         src="/assets/images/mac_studio.png"
                         width={500}
@@ -138,7 +147,7 @@ export default function Page() {
                         alt="Mac"
                         style={{ objectFit: 'contain' }}
                       />
-                    </div>
+                    </motion.div>
                   </div>
                 </motion.div>
               </div>
@@ -207,11 +216,10 @@ export default function Page() {
                           </motion.div>
                         </div>
                         <div className="col-span-12 lg:col-span-7 py-5">
-                          <div className="bg-gray-950 text-white rounded-lg h-full w-full p-8 break-words">
-                            <pre className="overflow-auto whitespace-pre-wrap">
-                              {preCode}
-                            </pre>
-                          </div>
+                          <motion.div
+                            variants={variants}
+                            className=""
+                          ></motion.div>
                         </div>
                       </div>
                     </div>

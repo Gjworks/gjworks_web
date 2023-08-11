@@ -284,7 +284,7 @@ const Header = () => {
                 className="group relative flex items-center rounded-md bg-gray-900  dark:bg-dark-100 dark:hover:bg-white text-gray-200 hover:text-white dark:text-black dark:hover:text-primary-500 text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-[6px] px-3">
+                <div className="flex py-[6px] px-6 lg:px-3">
                   <div className="p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -301,7 +301,9 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="flex items-center px-3">Account</div>
+                  <div className="hidden lg:flex items-center px-3">
+                    Account
+                  </div>
                 </div>
               </button>
               <Dropdown state={showDropdown}>
