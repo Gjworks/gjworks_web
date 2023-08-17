@@ -45,19 +45,6 @@ export default function Page() {
   <AccountDropwdown />
 </Dropdown>`
 
-  const phpCodeString = `$group_srl = array();
-foreach($output->data as $key => $val){
-    if($val->tm_group_srl){
-            array_push($group_srl, $val->tm_group_srl);
-    }
-}
-
-$placeholder = str_repeat('?,', count($group_srl) - 1) . '?';
-
-$stmt = $oDB->prepare("SELECT count(tm_group_srl) as count FROM teacher_manage_member WHERE tm_group_srl IN ($placeholder) GROUP BY tm_group_srl");
-
-$stmt->execute($group_srl);`
-
   return (
     <DefaultLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
