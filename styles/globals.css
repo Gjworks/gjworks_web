@@ -327,7 +327,7 @@ div.code-toolbar > .toolbar span:focus
 code[class*="language-"],
 pre[class*="language-"] 
 {
-  @apply text-gray-300;
+  @apply text-gray-700 dark:text-dark-300;
   text-shadow: none;
   font-family: PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
     monospace;
@@ -353,7 +353,7 @@ pre[class*="language-"]
 pre[class*="language-"] 
 {
   border-radius: 0.5em;
-  padding: 1em;
+  padding: 1em 2.5em;
   margin: 0.5em 0;
   overflow: auto;
   height: auto;
@@ -406,7 +406,7 @@ pre[class*="language-"]
 
 .token 
 {
-  @apply text-cyan-400
+  @apply text-cyan-600 dark:text-cyan-400
 }
 
 .language-css .token 
@@ -416,7 +416,7 @@ pre[class*="language-"]
 
 .token.script
 {
-  color: var(--foreground);
+  @apply text-gray-900 dark:text-gray-400;
 }
 
 .token.bold 
@@ -431,7 +431,7 @@ pre[class*="language-"]
 
 .token.atrule, .token.attr-name, .token.attr-value 
 {
-  @apply text-purple-400
+  @apply text-purple-600 dark:text-purple-400
 }
 
 .language-css .token.atrule 
@@ -446,17 +446,17 @@ pre[class*="language-"]
 
 .token.boolean 
 {
-  color: var(--purple);
+  @apply text-purple-700;
 }
 
 .token.builtin, .token.class-name 
 {
-  @apply text-lime-400
+  @apply text-blue-500 dark:text-blue-400
 }
 
 .token.comment 
 {
-  color: var(--comment);
+  @apply text-gray-400;  
 }
 
 .token.constant 
@@ -502,17 +502,17 @@ pre[class*="language-"]
 
 .token.function 
 {
-  @apply text-sky-500
+  @apply text-sky-500 dark:text-sky-600
 }
 
 .language-css .token.function 
 {
-  @apply text-sky-500
+  @apply text-sky-600 dark:text-sky-400
 }
 
 .token.important, .token.keyword 
 {
-  @apply text-pink-500
+  @apply text-blue-600 dark:text-blue-500
 }
 
 .token.prolog 
@@ -527,17 +527,17 @@ pre[class*="language-"]
 
 .language-css .token.property 
 {
-  @apply text-cyan-400
+  @apply text-cyan-600 dark:text-cyan-400
 }
 
 .token.punctuation 
 {
-  @apply text-cyan-400
+  @apply text-sky-400 dark:text-cyan-400
 }
 
 .language-css .token.punctuation
 {
-  @apply text-orange-400
+  @apply text-orange-600 dark:text-orange-400
 }
 
 .language-html .token.punctuation, .language-markup .token.punctuation 
@@ -567,12 +567,12 @@ pre[class*="language-"]
 
 .token.string 
 {
-  @apply text-yellow-400
+  @apply text-teal-500 dark:text-teal-400
 }
 
 .token.tag 
 {
-  @apply text-pink-500
+  @apply text-indigo-600 dark:text-indigo-500
 }
 
 .token.url 
@@ -597,7 +597,7 @@ pre[class*="language-"]
 
 .token.operator 
 {
-  color: rgba(139, 233, 253, 1);
+  @apply text-violet-500;
 }
 
 .token.char 

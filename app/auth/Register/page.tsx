@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import axios from 'axios'
 import Warning from 'src/components/message/Warning'
 import TextInput from 'src/components/form/TextInput'
 import registerUser from './server'
@@ -110,7 +109,7 @@ const Register = () => {
             </div>
           </div>
           {error && <Warning message={error} />}
-          <form onSubmit={submitHandler}>
+          <form action={submitHandler}>
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput
@@ -164,7 +163,7 @@ const Register = () => {
           <div className="divider">
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-dark-500 to-transparent"></div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-dark-600 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
                 <span className="bg-white dark:bg-dark-950 px-4 text-xs text-dark-400">

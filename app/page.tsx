@@ -57,9 +57,9 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
         <div className=" relative ">
-          <motion.div className="relative flex items-center py-8 lg:py-20">
+          <motion.div className="relative flex items-center">
             <motion.div className="relative w-full z-10">
-              <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3 pt-10 pb-10">
+              <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3 pt-20 pb-10">
                 <div className="relative col-span-2 lg:col-span-1 flex items-center">
                   <motion.div
                     variants={parentVariants}
@@ -70,28 +70,28 @@ export default function Page() {
                   >
                     <motion.div
                       variants={variants}
-                      className="text-sm lg:text-base font-bold text-gray-950 dark:text-dark-200 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
+                      className="text-sm lg:text-base font-bold text-gray-950 dark:text-dark-300 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
                     >
                       TEAM THAT MAKES THE SERVICE
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="text-4xl sm:text-5xl md:text-6xl mb-10 text-black dark:text-white font-semibold lg:text-left text-center"
+                      className="text-4xl sm:text-4xl md:text-5xl mb-10 text-black dark:text-white lg:text-left text-center"
                     >
                       <div>Build web and app</div>
                       <div>
-                        <span className="text-gray-400 dark:text-dark-400">
+                        <span className="text-gray-400 dark:text-dark-500">
                           Quickly
                         </span>{' '}
                         and{' '}
-                        <span className="text-gray-400 dark:text-dark-400">
+                        <span className="text-gray-400 dark:text-dark-500">
                           simply
                         </span>
                       </div>
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="text-gray-600 dark:text-dark-400 text-sm lg:text-lg mb-6 lg:text-left text-center"
+                      className="text-gray-600 dark:text-dark-400 text-sm lg:text-base mb-6 lg:text-left text-center"
                     >
                       서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                     </motion.div>
@@ -161,21 +161,21 @@ export default function Page() {
                 variants={parentVariants}
                 className=" pt-10 lg:py-20"
               >
-                <div className="max-w-screen-xl mx-auto px-3">
+                <div className="max-w-screen-xl mx-auto px-3 pt-20">
                   <div className="grid grid-cols-12 gap-0 lg:gap-8 mb-16">
                     <div className="col-span-12">
                       <div className="flex justify-center">
                         <div className="w-full lg:w-1/2 mx-auto">
                           <motion.div
                             variants={variants}
-                            className="text-black text-3xl lg:text-4xl font-bold mb-4 text-center"
+                            className="text-black dark:text-white text-3xl lg:text-4xl font-bold mb-4 text-center"
                           >
                             제품을 구매 하면 컴포넌트와 템플릿을 사용할 수
                             있습니다.
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="text-gray-400 text-sm text-center"
+                            className="text-gray-400 dark:text-dark-500 text-sm text-center"
                           >
                             컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
                             모든 Component는 tailwindcss와 Framer motion을
@@ -185,13 +185,29 @@ export default function Page() {
                       </div>
                     </div>
                   </div>
-                  <div className="max-w-screen-xl mx-auto">
-                    <div className="bg-gray-100 rounded-xl p-4 lg:p-16 h-full">
+                  <div className="max-w-screen-xl mx-auto pb-20">
+                    <motion.div
+                      variants={variants}
+                      className="bg-gray-100 dark:bg-dark-900 rounded-xl p-4 lg:p-16 h-full"
+                    ></motion.div>
+                  </div>
+
+                  <div className="max-w-screen-xl mx-auto pt-20 pb-10">
+                    <div className="px-3">
                       <div className="grid grid-cols-12 gap-0 lg:gap-20">
+                        <div className="col-span-12 lg:col-span-7">
+                          <motion.div variants={variants} className="">
+                            <Codehighlighte
+                              title="Component Example"
+                              value={codeString}
+                              lang="jsx"
+                            />
+                          </motion.div>
+                        </div>
                         <div className="col-span-12 lg:col-span-5 py-5">
                           <motion.div
                             variants={variants}
-                            className="text-xl lg:text-2xl font-semibold text-black mb-4"
+                            className="text-xl lg:text-2xl font-semibold text-black dark:text-white mb-4"
                           >
                             UI/UX를 쉽게 처리할 수 있도록 Component를 제공해
                             드립니다.
@@ -213,23 +229,9 @@ export default function Page() {
                             variants={variants}
                             className="text-sm text-white"
                           >
-                            <button className="relative group bg-dark-800 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
+                            <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
                               컴포넌트 가기
                             </button>
-                          </motion.div>
-                        </div>
-                        <div className="col-span-12 lg:col-span-7">
-                          <motion.div variants={variants} className="">
-                            <div className="Code bg-dark-950 rounded-md overflow-hidden">
-                              <div className="py-2.5 grid items-center px-4 gap-6  dark:border-dark-800  bg-gray-950 ">
-                                <div className="flex items-center">
-                                  <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                                  <div className="ml-1.5 w-2.5 h-2.5 rounded-full bg-amber-500"></div>
-                                  <div className="ml-1.5 w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-                                </div>
-                              </div>
-                              <Codehighlighte value={codeString} lang="jsx" />
-                            </div>
                           </motion.div>
                         </div>
                       </div>
@@ -249,19 +251,19 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-6">
                       <motion.div
                         variants={variants}
-                        className="text-black text-4xl lg:text-5xl font-bold"
+                        className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
                       >
                         Flexible
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-black text-4xl lg:text-5xl font-bold"
+                        className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
                       >
                         Creative and better
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-black text-4xl lg:text-5xl font-bold"
+                        className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
                       >
                         Platform.
                       </motion.div>
@@ -270,7 +272,7 @@ export default function Page() {
                       <div className=" pt-5 lg:pt-0">
                         <motion.div
                           variants={variants}
-                          className="text-base text-black mb-2 font-semibold"
+                          className="text-base text-black dark:text-white mb-2 font-semibold"
                         >
                           WE WORK IT
                         </motion.div>
@@ -287,7 +289,7 @@ export default function Page() {
                   </motion.div>
                 </div>
               </div>
-              <div className="overflow-x-scroll overflow-y-hidden overflow-scroll-hide">
+              <div className="overflow-x-scroll overflow-y-hidden overflow-scroll-hide pb-20">
                 <div className="max-w-screen-xl mx-auto px-3">
                   <div className="">
                     <motion.div

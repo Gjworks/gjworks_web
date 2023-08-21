@@ -99,7 +99,7 @@ const Signin = () => {
           <div className="divider">
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-dark-600 to-transparent"></div>
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-dark-600 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
                 <span className="bg-white dark:bg-dark-950 px-4 text-xs text-slate-400">

@@ -6,6 +6,7 @@ import SearchForm from 'src/templates/forms/SearchForm'
 const Page = () => {
   return (
     <>
+      <div className="py-10 bg-gray-950"></div>
       <div className="max-w-screen-xl mx-auto px-3 py-10 lg:py-20">
         <div className="text-4xl font-bold text-black dark:text-white mb-10">
           Components
