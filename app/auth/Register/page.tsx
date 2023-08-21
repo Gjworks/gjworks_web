@@ -109,7 +109,7 @@ const Register = () => {
             </div>
           </div>
           {error && <Warning message={error} />}
-          <form action={submitHandler}>
+          <form onSubmit={submitHandler}>
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput
