@@ -107,7 +107,7 @@ export default function Page() {
                         </div>
                         <button
                           onClick={() => setShowBottom(!showBottom)}
-                          className="flex gap-2 bg-gray-900 dark:bg-dark-100 dark:hover:bg-dark-200 text-white dark:text-dark-950 text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-600 hover:text-white"
+                          className="flex gap-2 bg-gray-950 dark:bg-dark-100 dark:hover:bg-dark-200 text-white dark:text-dark-950 text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-600 hover:text-white"
                         >
                           <span>
                             <svg
@@ -304,7 +304,7 @@ export default function Page() {
                 initial="offscreen"
                 whileInView="onscreen"
                 viewport={{ once: false, amount: 0.3 }}
-                className="py-20 bg-gray-50"
+                className="py-20 bg-gray-100 dark:bg-dark-900"
               >
                 <div className="max-w-screen-xl mx-auto py-5 lg:py-10">
                   <div className="px-3">
