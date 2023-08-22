@@ -76,7 +76,7 @@ export default function Page() {
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="text-4xl sm:text-4xl md:text-5xl mb-10 text-black dark:text-white lg:text-left text-center"
+                      className="text-4xl sm:text-4xl md:text-5xl mb-10 text-black dark:text-white lg:text-left text-center font-bold tracking-tighter"
                     >
                       <div>Build web and app</div>
                       <div>
@@ -161,14 +161,14 @@ export default function Page() {
                 variants={parentVariants}
                 className=" pt-10 lg:py-20"
               >
-                <div className="max-w-screen-xl mx-auto px-3 pt-20">
-                  <div className="grid grid-cols-12 gap-0 lg:gap-8 mb-16">
+                <div className="relative max-w-screen-xl mx-auto px-3 pt-20">
+                  <div className="grid grid-cols-12 gap-0 lg:gap-8">
                     <div className="col-span-12">
                       <div className="flex justify-center">
-                        <div className="w-full lg:w-1/2 mx-auto">
+                        <div className="w-full lg:w-2/5 mx-auto">
                           <motion.div
                             variants={variants}
-                            className="text-black dark:text-white text-3xl lg:text-4xl font-bold mb-4 text-center"
+                            className="text-black dark:text-white text-2xl lg:text-3xl font-bold mb-4 text-center"
                           >
                             제품을 구매 하면 컴포넌트와 템플릿을 사용할 수
                             있습니다.
@@ -185,55 +185,168 @@ export default function Page() {
                       </div>
                     </div>
                   </div>
-                  <div className="max-w-screen-xl mx-auto pb-20">
-                    <motion.div
-                      variants={variants}
-                      className="bg-gray-100 dark:bg-dark-900 rounded-xl p-4 lg:p-16 h-full"
-                    ></motion.div>
-                  </div>
+                  <div className=" pt-20">
+                    <div className="relative max-w-screen-xl mx-auto px-3">
+                      <motion.div className="grid grid-cols-12 gap-8">
+                        <div className="col-span-12 lg:col-span-5">
+                          <motion.div
+                            variants={variants}
+                            className="relative overflow-hidden bg-gray-100 dark:bg-dark-800/60 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full "
+                          >
+                            <motion.div
+                              variants={parentVariants}
+                              initial="offscreen"
+                              whileInView="onscreen"
+                            >
+                              <motion.div
+                                variants={variants}
+                                className="relative px-8 mb-10"
+                              >
+                                <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
+                              </motion.div>
 
-                  <div className="max-w-screen-xl mx-auto pt-20 pb-10">
-                    <div className="px-3">
-                      <div className="grid grid-cols-12 gap-0 lg:gap-20">
-                        <div className="col-span-12 lg:col-span-7">
-                          <motion.div variants={variants} className="">
-                            <Codehighlighte
-                              title="Component Example"
-                              value={codeString}
-                              lang="jsx"
-                            />
+                              <motion.div
+                                variants={variants}
+                                className="text-lg lg:text-xl text-black dark:text-white mb-3"
+                              >
+                                Coming soon mobile
+                              </motion.div>
+                              <motion.div
+                                variants={variants}
+                                className="text-sm text-dark-500 mb-10"
+                              >
+                                Desktop의 경험과 Mobile에섣의 경험을 어느것
+                                하나도 불편함이 없게 UI/UX를 설계 합니다.
+                              </motion.div>
+                              <button className="relative group bg-dark-800/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                                <div className="relative group-hover:text-white text-sm text-dark-300">
+                                  Link more
+                                </div>
+                              </button>
+                            </motion.div>
                           </motion.div>
                         </div>
-                        <div className="col-span-12 lg:col-span-5 py-5">
+                        <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                           <motion.div
                             variants={variants}
-                            className="text-xl lg:text-2xl font-semibold text-black dark:text-white mb-4"
+                            className="relative overflow-hidden bg-gray-100 dark:bg-dark-800/60 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                           >
-                            UI/UX를 쉽게 처리할 수 있도록 Component를 제공해
-                            드립니다.
+                            <div className="relative items-center overflow-hidden h-full">
+                              <div className="absolute inset-0"></div>
+                              <div className="mx-auto w-36 h-36">
+                                <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-gray-200 dark:border-dark-800"></div>
+                              </div>
+                            </div>
+                            {/* <div className="text-lg lg:text-xl text-black dark:text-white mb-5">
+                      Web UI Components
+                    </div>
+                    <div className="text-base text-gray-400 dark:text-dark-500 mb-10">
+                      Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
+                      프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
+                      제작합니다.
+                    </div> */}
+                            {/* <div className="flex flex-wrap gap-8 justify-between"></div> */}
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="text-sm text-gray-500"
+                            className="relative overflow-hidden bg-gray-100 dark:bg-dark-800/60 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
                           >
-                            완벽한 애니메이션 동작과 심플한 코드로 바로 적용할
-                            수 있습니다.
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="text-sm text-gray-500 mb-5"
-                          >
-                            (React와 Next.js 에서만 지원됩니다.)
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="text-sm text-white"
-                          >
-                            <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
-                              컴포넌트 가기
-                            </button>
+                            <motion.div
+                              variants={parentVariants}
+                              initial="offscreen"
+                              whileInView="onscreen"
+                            >
+                              <motion.div variants={variants} className="mb-6">
+                                <div className="flex justify-center items-center bg-primary-600 text-white w-10 h-10 rounded-full">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth={1.5}
+                                    stroke="currentColor"
+                                    className="w-6 h-6"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+                                    />
+                                  </svg>
+                                </div>
+                              </motion.div>
+                              <motion.div
+                                variants={variants}
+                                className="text-lg lg:text-xl text-black dark:text-white mb-5"
+                              >
+                                Rhymix 제작 및 유지보수를 해드립니다.
+                              </motion.div>
+                              <motion.div
+                                variants={variants}
+                                className="text-sm text-gray-400 dark:text-dark-500 mb-10"
+                              >
+                                라이믹스 모듈제작과 데이터 이전 그리고
+                                유지보수까지 모든 부분의 제작을 의뢰를 통해 하고
+                                있습니다. 결제 모듈과 카카오톡 메세지 전송까지
+                                다양한 서드파티 모듈을 가지고 있으며 라이믹스의
+                                모든 부분에 해당 기능을 추가하여 코어 수정 없이
+                                지원합니다.
+                              </motion.div>
+                            </motion.div>
                           </motion.div>
                         </div>
+                      </motion.div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={parentVariants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: false, amount: 0.3 }}
+                className="py-20 bg-gray-50"
+              >
+                <div className="max-w-screen-xl mx-auto py-5 lg:py-10">
+                  <div className="px-3">
+                    <div className="grid grid-cols-12 gap-0 lg:gap-20">
+                      <div className="col-span-12 lg:col-span-7">
+                        <motion.div variants={variants} className="">
+                          <Codehighlighte
+                            title="Component Example"
+                            value={codeString}
+                            lang="jsx"
+                          />
+                        </motion.div>
+                      </div>
+                      <div className="col-span-12 lg:col-span-5">
+                        <motion.div
+                          variants={variants}
+                          className="text-xl lg:text-2xl font-semibold text-black dark:text-white mb-4"
+                        >
+                          UI/UX를 쉽게 처리할 수 있도록 Component를 제공해
+                          드립니다.
+                        </motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="text-sm text-gray-500"
+                        >
+                          완벽한 애니메이션 동작과 심플한 코드로 바로 적용할 수
+                          있습니다.
+                        </motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="text-sm text-gray-500 mb-5"
+                        >
+                          (React와 Next.js 에서만 지원됩니다.)
+                        </motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="text-sm text-white"
+                        >
+                          <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
+                            컴포넌트 가기
+                          </button>
+                        </motion.div>
                       </div>
                     </div>
                   </div>
@@ -334,123 +447,6 @@ export default function Page() {
                       </div>
                     </motion.div>
                   </div>
-                </div>
-              </div>
-              <div className="hidden pt-20">
-                <div className="relative max-w-screen-xl mx-auto px-3">
-                  <motion.div
-                    variants={parentVariants}
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{ once: false, amount: 0.3 }}
-                    className="grid grid-cols-12 gap-8"
-                  >
-                    <div className="col-span-12 lg:col-span-5">
-                      <motion.div
-                        variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs h-full"
-                      >
-                        <motion.div
-                          variants={parentVariants}
-                          initial="offscreen"
-                          whileInView="onscreen"
-                        >
-                          <motion.div
-                            variants={variants}
-                            className="relative px-8 mb-10"
-                          >
-                            <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
-                          </motion.div>
-
-                          <motion.div
-                            variants={variants}
-                            className="text-lg lg:text-xl text-black dark:text-white mb-3"
-                          >
-                            Coming soon mobile
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="text-sm text-dark-500 mb-10"
-                          >
-                            Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
-                            불편함이 없게 UI/UX를 설계 합니다.
-                          </motion.div>
-                          <button className="relative group bg-dark-800/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
-                            <div className="relative group-hover:text-white text-sm text-dark-300">
-                              Link more
-                            </div>
-                          </button>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                    <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
-                      <motion.div
-                        variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
-                      >
-                        <div className="relative items-center overflow-hidden h-full">
-                          <div className="absolute inset-0"></div>
-                          <div className="mx-auto w-36 h-36">
-                            <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-gray-200 dark:border-dark-800"></div>
-                          </div>
-                        </div>
-                        {/* <div className="text-lg lg:text-xl text-black dark:text-white mb-5">
-                      Web UI Components
-                    </div>
-                    <div className="text-base text-gray-400 dark:text-dark-500 mb-10">
-                      Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
-                      프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
-                      제작합니다.
-                    </div> */}
-                        {/* <div className="flex flex-wrap gap-8 justify-between"></div> */}
-                      </motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-800/60 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
-                      >
-                        <motion.div
-                          variants={parentVariants}
-                          initial="offscreen"
-                          whileInView="onscreen"
-                        >
-                          <motion.div variants={variants} className="mb-6">
-                            <div className="flex justify-center items-center bg-primary-500 text-white w-10 h-10 rounded-full">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="w-6 h-6"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                                />
-                              </svg>
-                            </div>
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="text-lg lg:text-xl text-black dark:text-white mb-5"
-                          >
-                            Rhymix 제작 및 유지보수를 해드립니다.
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="text-sm text-gray-400 dark:text-dark-500 mb-10"
-                          >
-                            라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지
-                            모든 부분의 제작을 의뢰를 통해 하고 있습니다. 결제
-                            모듈과 카카오톡 메세지 전송까지 다양한 서드파티
-                            모듈을 가지고 있으며 라이믹스의 모든 부분에 해당
-                            기능을 추가하여 코어 수정 없이 지원합니다.
-                          </motion.div>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                  </motion.div>
                 </div>
               </div>
             </motion.div>
