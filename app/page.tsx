@@ -257,7 +257,7 @@ export default function Page() {
                               whileInView="onscreen"
                             >
                               <motion.div variants={variants} className="mb-6">
-                                <div className="flex justify-center items-center bg-primary-600 text-white w-10 h-10 rounded-full">
+                                <div className="flex justify-center items-center bg-primary-400 text-black w-10 h-10 rounded-full">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
