@@ -74,7 +74,7 @@ const Bottom = ({ state, close, children, title }) => {
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed bootom-1 mb-2 left-1/2 -translate-x-1/2 lg:mb-10 p-8 lg:p-10 z-101 bg-white/90 dark:bg-dark-800/90 rounded-xl max-w-[560px] w-full shadow-md mx-auto overflow-hidden text-white backdrop-blur-lg"
+              className="fixed bootom-1 mb-2 left-1/2 -translate-x-1/2 lg:mb-10 p-8 lg:p-10 z-101 bg-white/90 dark:bg-dark-900/90 rounded-xl max-w-[560px] w-full shadow-md mx-auto overflow-hidden text-white backdrop-blur-lg"
             >
               <div className=" w-full flex">
                 <div className="text-black dark:text-white text-xl lg:text-3xl font-semibold">
@@ -82,7 +82,7 @@ const Bottom = ({ state, close, children, title }) => {
                 </div>
                 <button
                   onClick={handleClosePanel}
-                  className="absolute right-3 top-3 rounded-full bg-dark-950 hover:bg-dark-900 p-2"
+                  className="absolute right-3 top-3 rounded-full bg-dark-950 hover:bg-dark-700 p-2"
                 >
                   <span>
                     <svg

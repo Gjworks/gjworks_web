@@ -40,7 +40,7 @@ const Codehighlighter = props => {
           </div>
           <div className="col-span-2 text-xs">
             <div className="flex justify-end h-full ">
-              <div className="h-full flex items-center justify-center text-[10px] border-l border-gray-200 bg-gray-100 dark:bg-dark-800 dark:border-dark-700 px-4 py-1 text-gray-400 hover:text-gray-600 cursor-pointer">
+              <div className="h-full flex items-center justify-center text-[10px] border-l border-gray-200 bg-gray-100 dark:bg-dark-800 dark:border-dark-700 px-4 py-1 text-gray-400 hover:text-gray-600 dark:text-dark-500 dark:hover:text-dark-400 cursor-pointer">
                 Copy
               </div>
             </div>

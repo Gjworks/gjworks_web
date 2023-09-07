@@ -158,7 +158,7 @@ const Register = () => {
 
             <div className="flex mb-2">
               <button
-                className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-400 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200"
+                className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-800 dark:hover:bg-dark-600 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200"
                 disabled={pending}
               >
                 Register Completed
@@ -185,7 +185,7 @@ const Register = () => {
                   className="group text-sm text-dark-500"
                 >
                   계정이 이미 있으시다면{' '}
-                  <span className="group-hover:text-gray-500 text-gray-600 dark:group-hover:text-gray-500 dark:text-gray-600 underline">
+                  <span className="group-hover:text-gray-500 text-gray-600 dark:group-hover:text-dark-400 dark:text-dark-200 underline">
                     Sign In
                   </span>
                 </Link>

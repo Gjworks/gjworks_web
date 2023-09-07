@@ -142,7 +142,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'sticky w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/90 bg-white/90' +
+          'sticky w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/90 bg-white/70' +
           background
         }
       >
@@ -151,7 +151,7 @@ const Header = () => {
             <div className="flex items-center">
               <button
                 onClick={() => {
-                  setBackground('dark:bg-dark-950/90 bg-white/90')
+                  setBackground('dark:bg-dark-950/90 bg-white/70')
                   setShowLeft(!showLeft)
                 }}
                 className="group flex lg:hidden items-center px-3"
