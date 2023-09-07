@@ -94,8 +94,8 @@ module.exports = {
       },
       // dark: colors.zinc,
 
-      // primary: colors.yellow,
-      // secondary: colors.amber,
+      primary: colors.teal,
+      secondary: colors.green,
     },
   },
   plugins: [],

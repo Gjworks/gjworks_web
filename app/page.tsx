@@ -139,7 +139,7 @@ export default function Page() {
                 viewport={{ once: false, amount: 0.3 }}
                 className="col-span-2 lg:col-span-1"
               >
-                <div className="relative px-0 bg-primary-400 h-full rounded-2xl">
+                <div className="relative px-0 bg-primary-900 h-full rounded-2xl">
                   <motion.div
                     variants={variants}
                     className="flex justify-center"
