@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { experimental_useFormStatus as useFormStatus } from 'react-dom'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Warning from 'src/components/message/Warning'
@@ -8,6 +9,7 @@ import TextInput from 'src/components/form/TextInput'
 import registerUser from './server'
 
 const Register = () => {
+  const { pending } = useFormStatus()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [nickName, setNickName] = useState('')
@@ -136,7 +138,7 @@ const Register = () => {
                   value=""
                 ></TextInput>
               </div>
-              <div className="text-dark-400 text-sm pt-2 px-2">
+              <div className="text-dark-400 text-xs pt-2 px-2">
                 비밀번호는 암호화 되어 안전하게 저장됩니다.
               </div>
             </div>
@@ -155,7 +157,10 @@ const Register = () => {
             </div>
 
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-400 hover:text-black dark:hover:text-white dark:text-primary-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200">
+              <button
+                className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-400 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200"
+                disabled={pending}
+              >
                 Register Completed
               </button>
             </div>
@@ -180,7 +185,7 @@ const Register = () => {
                   className="group text-sm text-dark-500"
                 >
                   계정이 이미 있으시다면{' '}
-                  <span className="group-hover:text-primary-500 text-primary-600 underline">
+                  <span className="group-hover:text-gray-500 text-gray-600 dark:group-hover:text-gray-500 dark:text-gray-600 underline">
                     Sign In
                   </span>
                 </Link>

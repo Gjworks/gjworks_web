@@ -76,7 +76,7 @@ const Signin = () => {
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-400 hover:text-black dark:hover:text-white dark:text-primary-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200"
+                className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-100 dark:hover:bg-dark-400 hover:text-black dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ const Signin = () => {
           </div>
           <div className="py-5">
             <div className="grid grid-cols-3 gap-4">
-              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-dark-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@ const Signin = () => {
                   Apple
                 </div>
               </button>
-              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-dark-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ const Signin = () => {
                   Github
                 </div>
               </button>
-              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-primary-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-dark-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +172,7 @@ const Signin = () => {
                   className="group text-sm text-dark-500"
                 >
                   회원가입을 하시려면{' '}
-                  <span className="group-hover:text-primary-600 text-primary-500 hover:text-primary-600 underline">
+                  <span className="group-hover:text-gray-600 text-gray-500 hover:text-gray-600 dark:text-dark-500 dark:hover:text-dark-600 underline">
                     회원가입 하기
                   </span>
                 </Link>
@@ -180,7 +180,7 @@ const Signin = () => {
               <div className="w-full">
                 <Link href="/" className="group text-sm text-dark-500">
                   이메일과 비밀번호를 잊어버리 셨나요?{' '}
-                  <span className="group-hover:text-primary-600 text-primary-500 hover:text-primary-600 underline">
+                  <span className="group-hover:text-gray-600 text-gray-500 hover:text-gray-600 dark:text-dark-500 dark:hover:text-dark-600 underline">
                     Email/비밀번호 찾기
                   </span>
                 </Link>
