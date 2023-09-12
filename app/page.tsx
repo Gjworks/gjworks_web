@@ -68,7 +68,7 @@ export default function Page() {
                   initial="offscreen"
                   whileInView="onscreen"
                   viewport={{ once: false, amount: 0.3 }}
-                  className="w-full pt-10"
+                  className="w-full"
                 >
                   <motion.div
                     variants={variants}
@@ -149,12 +149,12 @@ export default function Page() {
                           </div>
                         </motion.div>
                       </motion.div>
-                      <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/40 dark:via-dark-950 dark:to-dark-950"></div>
                     </div>
                   </div>
                 </motion.div>
               </div>
             </div>
+            <div className="absolute left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 h-[400px] via-white/50 to-white dark:from-transparent dark:via-dark-950/75 dark:to-dark-950"></div>
           </div>
 
           <motion.div
