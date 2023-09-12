@@ -58,26 +58,26 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative pt-20 pb-20 ">
+          <div className="relative pt-20 pb-20  overflow-hidden">
             <div className="absolute inset-0"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
-              <div className="relative col-span-2 lg:col-span-1 flex items-center">
+              <div className="relative col-span-2 lg:col-span-2 flex justify-center items-center">
                 <motion.div
                   variants={parentVariants}
                   initial="offscreen"
                   whileInView="onscreen"
                   viewport={{ once: false, amount: 0.3 }}
-                  className="w-full py-20"
+                  className="w-full pt-10"
                 >
                   <motion.div
                     variants={variants}
-                    className="text-sm lg:text-base font-bold text-black dark:text-dark-300 mb-3 pt-0 lg:pt-10 lg:text-left text-center"
+                    className="text-sm lg:text-base font-semibold text-black dark:text-dark-300 mb-3 pt-0 lg:pt-10 text-center"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="text-4xl sm:text-4xl md:text-5xl mb-10 text-black dark:text-white lg:text-left text-center font-bold tracking-tighter"
+                    className="text-4xl sm:text-4xl md:text-6xl mb-10 text-black dark:text-white text-center font-semibold tracking-tighter"
                   >
                     <div>Build web and app</div>
                     <div>
@@ -92,13 +92,13 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="text-slate-500 dark:text-dark-400 text-sm lg:text-base mb-6 lg:text-left text-center"
+                    className="text-slate-500 dark:text-dark-400 text-sm lg:text-base mb-6 text-center"
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className=" relative  p-3 mb-12"
+                    className="relative py-3 mb-12 max-w-lg mx-auto"
                   >
                     <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
@@ -130,30 +130,38 @@ export default function Page() {
                       </button>
                     </div>
                   </motion.div>
+                  <div className="relative h-[250px] pt-10">
+                    <div className="absolute left-0 right-0 h-[450px]">
+                      <motion.div
+                        variants={parentVariants}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="relative overflow-hidden w-full"
+                      >
+                        <motion.div
+                          variants={variants}
+                          className="max-w-screen-lg mx-auto relative h-[330px]"
+                        >
+                          <div className="relative">
+                            <SafariBrower image="/assets/images/main.png" />
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                      <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/30 dark:via-dark-950 dark:to-dark-950 z-10"></div>
+                    </div>
+                  </div>
                 </motion.div>
               </div>
-              <motion.div
-                variants={parentVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: false, amount: 0.3 }}
-                className="col-span-2 lg:col-span-1"
-              >
-                <div className="relative px-0 bg-primary-900 h-full rounded-2xl">
-                  <motion.div
-                    variants={variants}
-                    className="flex justify-center"
-                  ></motion.div>
-                </div>
-              </motion.div>
             </div>
           </div>
+
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
-            className=" pt-10 lg:py-20"
+            className=" pt-10"
           >
             <div className="relative max-w-screen-xl mx-auto px-3 pt-20">
               <div className="grid grid-cols-12 gap-0 lg:gap-8">
@@ -184,7 +192,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-5">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full "
+                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full dark:border dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -211,7 +219,7 @@ export default function Page() {
                             Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                             불편함이 없게 UI/UX를 설계 합니다.
                           </motion.div>
-                          <button className="relative group bg-slate-800 hover:bg-slate-950 dark:hover:bg-dark-950 dark:bg-dark-800/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                          <button className="relative group bg-slate-800 hover:bg-slate-950 dark:hover:bg-dark-950 dark:bg-dark-950/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
                             <div className="relative group-hover:text-white text-sm text-dark-300">
                               Link more
                             </div>
@@ -222,7 +230,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs dark:border dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <div className="relative items-center overflow-hidden h-full">
                           <div className="absolute inset-0"></div>
@@ -242,7 +250,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs"
+                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs dark:border dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <motion.div
                           variants={parentVariants}

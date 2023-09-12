@@ -24,12 +24,13 @@ const UserSchema = z.object({
 type UserInfo = z.infer<typeof UserSchema>;
 
 const registerUser = async (data : UserInfo) => {
+  console.log(data)
   const { email, password , nickname} = data;
   let msg = '';
-  console.log(email)
+  
   try {
     if(!email){
-      return msg = 'Please fill in all fields.';
+      return { code: "error", message: data.email};
     }
   } catch (err) {
     console.log(err)

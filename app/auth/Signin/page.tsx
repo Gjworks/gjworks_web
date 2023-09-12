@@ -27,7 +27,7 @@ const Signin = () => {
   }
   return (
     <>
-      <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
+      <div className="">
         <div className="max-w-lg mx-auto p-5">
           <form onSubmit={submitHandler}>
             <div className="py-10 text-center">

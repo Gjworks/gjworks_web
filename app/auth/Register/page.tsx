@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { experimental_useFormStatus as useFormStatus } from 'react-dom'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Warning from 'src/components/message/Warning'
@@ -9,14 +8,12 @@ import TextInput from 'src/components/form/TextInput'
 import registerUser from './server'
 
 const Register = () => {
-  const { pending } = useFormStatus()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [nickName, setNickName] = useState('')
+  const [email, setEmail] = useState<string>()
+  const [password, setPassword] = useState<string>()
+  const [nickName, setNickName] = useState<string>()
 
-  const [error, setError] = useState<{ [key: string]: any }>()
+  const [error, setError] = useState<any>()
   const router = useRouter()
-  const strSpace = /\s/
 
   const getEmail = (msg: string) => {
     setEmail(msg)
@@ -24,9 +21,7 @@ const Register = () => {
   const getPassword = (msg: string) => {
     setPassword(msg)
   }
-
   const getNickname = (msg: string) => {
-    console.log(msg)
     setNickName(msg)
   }
 
@@ -37,16 +32,28 @@ const Register = () => {
       password: e.target.password.value,
       nickname: e.target.nickName.value,
     }
-    // console.log(data)
-    // const result = registerUser(data)
-    // console.log(result)
-    try {
-      const res = await registerUser(data)
-      console.log('res', res)
-    } catch (err) {
-      // setError(err)
-      console.error(err)
+    console.log(data)
+    const formData = new FormData()
+    formData.append('email', data.email)
+    formData.append('password', data.password)
+    formData.append('nickname', data.nickname)
+    console.log(formData)
+    const postData = async () => {
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        body: formData,
+      })
+      return response.json()
     }
+    postData()
+      .then(data => {
+        if (data.code === 'error') {
+          console.log(data.element)
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error)
+      })
   }
 
   // const registerUser = async e => {
@@ -83,7 +90,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="pt-10 lg:pt-10 pb-20 lg:pb-20">
+      <div className="">
         <div className="max-w-xl mx-auto p-5">
           <div className="py-10 text-center">
             <div className="flex justify-center mb-4">
@@ -157,10 +164,7 @@ const Register = () => {
             </div>
 
             <div className="flex mb-2">
-              <button
-                className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-800 dark:hover:bg-dark-600 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200"
-                disabled={pending}
-              >
+              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-800 dark:hover:bg-dark-600 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200">
                 Register Completed
               </button>
             </div>

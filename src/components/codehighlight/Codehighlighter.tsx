@@ -26,7 +26,7 @@ const Codehighlighter = props => {
   }, [])
   return (
     <>
-      <div className="Code bg-white dark:bg-dark-950 rounded-md overflow-hidden border border-gray-200 dark:border-dark-800 shadow-md shadow-gray-200/70 dark:shadow-dark-950">
+      <div className="Code bg-white dark:bg-dark-950 rounded-md overflow-hidden border border-gray-200 dark:border-dark-800 dark:border-t-dark-700 shadow-md shadow-gray-200/70 dark:shadow-dark-950">
         <div className="grid grid-cols-12 gap-6 border-b border-gray-200 dark:border-dark-800 bg-white dark:bg-dark-900">
           <div className="col-span-2 flex gap-2 items-center py-2.5 pl-4">
             <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>

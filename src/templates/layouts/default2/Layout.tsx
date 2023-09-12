@@ -1,0 +1,80 @@
+/**
+ * @file Layout.js
+ * @author 지제이웍스 (gjworks2@gmail.com)
+ * @brief 레이아웃 최상위 파일
+ **/
+'use client'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+
+const Layout = ({ children }) => {
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  useEffect(() => {
+    const updatePosition = () => {
+      setScrollPosition(window.pageYOffset)
+    }
+
+    window.addEventListener('scroll', updatePosition)
+
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
+
+  const goToTop = () => {
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+  return (
+    <>
+      <div className="absolute inset-0 w-1/2 bg-dark-900"></div>
+      <div className="selection:text-white selection:bg-gray-950 dark:selection:bg-white dark:selection:text-black break-keep">
+        <div className="relative flex z-20 max-w-screen-xl mx-auto">
+          {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
+          <div className="fixed w-[320px] top-0 bottom-0 bg-dark-900 h-full">
+            1
+          </div>
+          <main className="bg-dark-950 w-full ml-[320px] h-full px-10 py-10">
+            {children}
+          </main>
+          {scrollPosition > 100 && (
+            <motion.button
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+              exit={{ y: 100, opacity: 0, transition: { duration: 0.6 } }}
+              whileHover={{
+                scale: 1.2,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{ scale: 1 }}
+              onClick={goToTop}
+              className="fixed right-3 lg:right-10 bottom-5 lg:bottom-10 rounded-lg bg-gray-600 hover:bg-gray-950 dark:bg-dark-600/50 dark:hover:bg-dark-500/50 backdrop-blur-lg dark:backdrop-blur-lg text-white p-3 z-101 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </motion.button>
+          )}
+
+          <footer>
+            <div className="max-w-screen-xl mx-auto pt-5 pb-10 px-3"></div>
+          </footer>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default Layout
