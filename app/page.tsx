@@ -58,8 +58,9 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative pt-20 pb-20  overflow-hidden">
-            <div className="absolute inset-0"></div>
+          <div className="relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg18.jpg')] bg-no-repeat bg-cover bg-bottom z-10">
+            {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
+            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
               <div className="relative col-span-2 lg:col-span-2 flex justify-center items-center">
                 <motion.div
@@ -71,7 +72,7 @@ export default function Page() {
                 >
                   <motion.div
                     variants={variants}
-                    className="text-sm lg:text-base font-semibold text-black dark:text-dark-300 mb-3 pt-0 lg:pt-10 text-center"
+                    className="relative text-sm lg:text-base font-semibold text-black dark:text-dark-300 mb-3 pt-0 lg:pt-10 text-center"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -100,7 +101,7 @@ export default function Page() {
                     variants={variants}
                     className="relative py-3 mb-12 max-w-lg mx-auto"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-800/50 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-950/80 border border-dark-900/90 border-t-dark-800 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
                         <div className="text-sm text-slate-700 dark:text-dark-400 line-clamp-1">
                           Launch Your Service.
@@ -148,7 +149,7 @@ export default function Page() {
                           </div>
                         </motion.div>
                       </motion.div>
-                      <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/30 dark:via-dark-950 dark:to-dark-950 z-10"></div>
+                      <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/40 dark:via-dark-950 dark:to-dark-950"></div>
                     </div>
                   </div>
                 </motion.div>
