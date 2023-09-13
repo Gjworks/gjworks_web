@@ -72,7 +72,7 @@ export default function Page() {
                 >
                   <motion.div
                     variants={variants}
-                    className="relative text-sm lg:text-base font-semibold text-black dark:text-dark-300 mb-3 pt-0 lg:pt-10 text-center"
+                    className="relative text-sm lg:text-base font-semibold text-black dark:text-white mb-3 pt-0 lg:pt-10 text-center"
                   >
                     TEAM THAT MAKES THE SERVICE
                   </motion.div>
@@ -189,7 +189,7 @@ export default function Page() {
               </div>
               <div className=" pt-20 mb-20">
                 <div className="relative max-w-screen-xl mx-auto px-3">
-                  <motion.div className="grid grid-cols-12 gap-8">
+                  <motion.div className="grid grid-cols-12 gap-y-8 lg:gap-8">
                     <div className="col-span-12 lg:col-span-5">
                       <motion.div
                         variants={variants}
@@ -202,7 +202,7 @@ export default function Page() {
                         >
                           <motion.div
                             variants={variants}
-                            className="relative px-8 mb-10"
+                            className="relative px-3 lg:px-8 mb-10"
                           >
                             <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
                           </motion.div>
