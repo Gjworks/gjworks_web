@@ -58,7 +58,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg18.jpg')] bg-no-repeat bg-cover bg-bottom z-10">
+          <div className="relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg19.jpg')] bg-no-repeat bg-cover bg-bottom z-10">
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
@@ -82,12 +82,8 @@ export default function Page() {
                   >
                     <div>Build web and app</div>
                     <div>
-                      <span className="text-slate-400 dark:text-dark-500">
-                        Quickly
-                      </span>{' '}
-                      and{' '}
-                      <span className="text-slate-400 dark:text-dark-500">
-                        simply
+                      <span className="text-slate-400 dark:text-dark-300">
+                        Quickly and simply
                       </span>
                     </div>
                   </motion.div>
