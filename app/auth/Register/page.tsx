@@ -5,14 +5,13 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Warning from 'src/components/message/Warning'
 import TextInput from 'src/components/form/TextInput'
-import registerUser from './server'
 
 const Register = () => {
   const [email, setEmail] = useState<string>()
   const [password, setPassword] = useState<string>()
   const [nickName, setNickName] = useState<string>()
 
-  const [error, setError] = useState<any>()
+  const [error, setError] = useState<any>(false)
   const router = useRouter()
 
   const getEmail = (msg: string) => {
@@ -48,7 +47,8 @@ const Register = () => {
     postData()
       .then(data => {
         if (data.code === 'error') {
-          console.log(data.element)
+          console.log(data)
+          setError(data.msg)
         }
       })
       .catch(error => {
@@ -116,6 +116,9 @@ const Register = () => {
             <div className="text-dark-600 text-sm pt-5">
               회원가입을 해주셔서 감사드립니다.
             </div>
+            <div className="text-dark-600 text-sm">
+              회원님의 정보는 안전하게 저장되어 보관됩니다.
+            </div>
           </div>
           {error && <Warning message={error} />}
           <form onSubmit={submitHandler}>
@@ -164,7 +167,7 @@ const Register = () => {
             </div>
 
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-800 dark:hover:bg-dark-600 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200">
+              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-700 dark:hover:bg-dark-700 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200">
                 Register Completed
               </button>
             </div>

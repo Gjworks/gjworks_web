@@ -72,13 +72,7 @@ export default function Page() {
                 >
                   <motion.div
                     variants={variants}
-                    className="relative text-sm lg:text-base font-semibold text-black dark:text-white mb-3 pt-0 lg:pt-10 text-center"
-                  >
-                    TEAM THAT MAKES THE SERVICE
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="text-4xl sm:text-4xl md:text-6xl mb-10 text-black dark:text-white text-center font-semibold tracking-tighter"
+                    className="hidden text-4xl sm:text-4xl md:text-6xl mb-10 text-black dark:text-white text-center font-semibold tracking-tighter"
                   >
                     <div>Build web and app</div>
                     <div>
@@ -87,6 +81,30 @@ export default function Page() {
                       </span>
                     </div>
                   </motion.div>
+                  <div className="max-w-lg mx-auto pt-10 lg:pt-20">
+                    <div className="flex justify-center lg:justify-between flex-wrap">
+                      <motion.div
+                        variants={variants}
+                        className="w-full lg:w-auto text-5xl md:text-6xl text-black dark:text-dark-200 font-semibold tracking-tighter order-1 lg:order-0 text-center lg:text-left"
+                      >
+                        Full Stack
+                      </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="w-full lg:w-auto relative text-sm lg:text-base font-semibold text-black dark:text-white mb-3 pt-0 lg:pt-3 text-center order-0 lg:order-1 "
+                      >
+                        Creative Platform Service
+                      </motion.div>
+                    </div>
+
+                    <motion.div
+                      variants={variants}
+                      className="text-5xl md:text-6xl mb-10 text-black dark:text-white font-semibold tracking-tighter pl-0 lg:pl-20 text-center lg:text-left"
+                    >
+                      Developer
+                    </motion.div>
+                  </div>
+
                   <motion.div
                     variants={variants}
                     className="text-slate-500 dark:text-dark-400 text-sm lg:text-base mb-6 text-center"

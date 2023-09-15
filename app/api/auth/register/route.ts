@@ -14,16 +14,18 @@ export async function POST(request: Request) {
 
     if(!email) {
       const data = {"code":"error", "element": "email","msg": "Invalid email address provided in POST request"}
-      return NextResponse.json(data,{ status:400})
+      return NextResponse.json(data,{ status:402})
     }
     if(!password) {
-      return NextResponse.json("Error",{ status:402})
+      const data = {"code":"error", "element": "password","msg": "Invalid password provided in POST request"}
+      return NextResponse.json(data,{ status:402})
     }
     if(!nickname) {
-      return NextResponse.json("Error",{ status:402})
+      const data = {"code":"error", "element": "nickname","msg": "Invalid nickname provided in POST request"}
+      return NextResponse.json(data,{ status:402})
     }
 
-    return NextResponse.json({ email })
+    return NextResponse.json({})
   } catch (error) {
     console.error(error)
     return new Response("fail")
