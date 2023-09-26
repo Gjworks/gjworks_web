@@ -99,7 +99,7 @@ const Signin = () => {
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-black dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200"
+                className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-400 dark:hover:bg-primary-500 hover:text-black dark:hover:text-black dark:text-black text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

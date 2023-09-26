@@ -60,7 +60,7 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10">
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/25 via-gray-950/25 to-gray-950/25 dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
+            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b  dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
               <div className="relative col-span-2 lg:col-span-2 flex justify-center items-center">
                 <motion.div
@@ -85,13 +85,13 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="w-full md:w-auto text-5xl md:text-6xl text-white dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 text-center md:text-left"
+                        className="w-full md:w-auto text-5xl md:text-6xl text-black dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 text-center md:text-left"
                       >
                         Full Stack
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="w-full md:w-auto relative text-sm md:text-base font-light text-white dark:text-white mb-3 pt-0 md:pt-3 text-center order-0 md:order-1 "
+                        className="w-full md:w-auto relative text-sm md:text-base font-light text-black dark:text-white mb-3 pt-0 md:pt-3 text-center order-0 md:order-1 "
                       >
                         Creative Platform Service
                       </motion.div>
@@ -99,7 +99,7 @@ export default function Page() {
 
                     <motion.div
                       variants={variants}
-                      className="text-5xl md:text-6xl mb-10 text-white dark:text-white font-semibold tracking-tighter pl-0 md:pl-20 text-center md:text-left"
+                      className="text-5xl md:text-6xl mb-10 text-black dark:text-white font-semibold tracking-tighter pl-0 md:pl-20 text-center md:text-left"
                     >
                       Developer
                     </motion.div>
@@ -107,7 +107,7 @@ export default function Page() {
 
                   <motion.div
                     variants={variants}
-                    className="relative text-gray-100 dark:text-dark-400 text-sm lg:text-base mb-6 text-center"
+                    className="relative text-gray-800 dark:text-dark-400 text-sm lg:text-base mb-6 text-center"
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
@@ -115,7 +115,7 @@ export default function Page() {
                     variants={variants}
                     className="relative py-3 mb-20 max-w-lg mx-auto"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-900/80 border border-gray-300 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-900/80 border border-gray-200 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
                         <div className="text-sm text-gray-700 dark:text-dark-400 line-clamp-1">
                           Launch Your Service.
@@ -123,7 +123,7 @@ export default function Page() {
                       </div>
                       <button
                         onClick={() => setShowBottom(!showBottom)}
-                        className="flex gap-2 bg-gray-950 dark:bg-primary-700 dark:hover:bg-primary-500 text-white dark:text-primary-200 dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-600 hover:text-white"
+                        className="flex gap-2 bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-500 text-black dark:text-black dark:hover:text-black text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-500 hover:text-black"
                       >
                         <span>
                           <svg
@@ -273,7 +273,7 @@ export default function Page() {
                           whileInView="onscreen"
                         >
                           <motion.div variants={variants} className="mb-6">
-                            <div className="flex justify-center items-center bg-gray-900 dark:bg-white text-white dark:text-dark-950 w-10 h-10 rounded-full">
+                            <div className="flex justify-center items-center bg-primary-400 text-black w-10 h-10 rounded-full">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
