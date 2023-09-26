@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 import { useRouter } from 'next/navigation'
 import TextInput from 'src/components/form/TextInput'
+import Warning from 'src/components/message/Warning'
 
 const Signin = () => {
   const router = useRouter()
@@ -12,6 +13,7 @@ const Signin = () => {
   // const emailInputRef = useRef(null)
   const [emailInput, setEmailInput] = useState<string>()
   const [passwordInput, setPasswordInput] = useState<string>()
+  const [error, setError] = useState<any>(false)
 
   const getData = (x: string) => {
     setEmailInput(x)
@@ -19,11 +21,38 @@ const Signin = () => {
   const getPassword = (msg: string) => {
     setPasswordInput(msg)
   }
+
   const submitHandler = async e => {
     e.preventDefault()
+    const data = {
+      email: e.target.email.value,
+      password: e.target.password.value,
+    }
+    console.log(data)
+    const formData = new FormData()
+    formData.append('email', data.email)
+    formData.append('password', data.password)
+
     console.log(setEmailInput)
-    const userEmail = emailInput
-    const userPassword = passwordInput
+    const postData = async () => {
+      const response = await fetch('/api/auth/signIn', {
+        method: 'POST',
+        body: formData,
+      })
+      return response.json()
+    }
+    postData()
+      .then(data => {
+        if (data.code === 'error') {
+          console.log(data)
+          setError(data.msg)
+        } else {
+          // router.replace('/')
+        }
+      })
+      .catch(error => {
+        console.error('Failed to register: ' + error.toString())
+      })
   }
   return (
     <>
@@ -39,13 +68,7 @@ const Signin = () => {
                 이용하셔도 모든 서비스를 이용 할 수 있습니다.
               </div>
             </div>
-            {formMessage && (
-              <div className="py-5">
-                <div className=" text-rose-500 bg-rose-700 bg-opacity-25 py-3 px-3 rounded-sm text-sm ">
-                  {formMessage}
-                </div>
-              </div>
-            )}
+            {error && <Warning message={error} />}
             <div className="relative flex mb-5 w-full">
               <div className="flex items-center w-full text-xs">
                 <TextInput
@@ -76,7 +99,7 @@ const Signin = () => {
             <div className="flex mb-4">
               <button
                 type="submit"
-                className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-600 dark:hover:bg-dark-700 hover:text-black dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200"
+                className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-black dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-200"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

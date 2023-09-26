@@ -9,6 +9,7 @@ import { motion } from 'framer-motion'
 import Header from 'src/templates/layouts/default/Header'
 import Footer from 'src/templates/layouts/default/Footer'
 import SubNav from 'src/templates/layouts/default/SubNav'
+import SideNav from 'src/components/nav/SideNav'
 
 const Layout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)

@@ -7,5 +7,6 @@ export async function hashedPassword(password: string): Promise<string> {
 
 export async function verifyPassword(password: string, hashedPassword: string) {
   const isValid = await compare(password, hashedPassword);
+  console.log(isValid);
   return isValid;
 }

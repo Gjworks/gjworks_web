@@ -93,9 +93,8 @@ module.exports = {
         950: '#090b0f',
       },
       // dark: colors.zinc,
-
-      primary: colors.sky,
-      secondary: colors.cyan,
+      primary: colors.blue,
+      secondary: colors.sky,
     },
   },
   plugins: [],

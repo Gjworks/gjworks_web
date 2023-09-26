@@ -58,9 +58,9 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg19.jpg')] bg-no-repeat bg-cover bg-bottom z-10">
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg19.jpg')] bg-no-repeat bg-cover bg-center z-10">
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/50 to-white dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
+            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/25 via-gray-950/25 to-gray-950/25 dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
               <div className="relative col-span-2 lg:col-span-2 flex justify-center items-center">
                 <motion.div
@@ -76,22 +76,22 @@ export default function Page() {
                   >
                     <div>Build web and app</div>
                     <div>
-                      <span className="text-slate-400 dark:text-dark-300">
+                      <span className="text-gray-400 dark:text-dark-300">
                         Quickly and simply
                       </span>
                     </div>
                   </motion.div>
                   <div className="max-w-lg mx-auto pt-10 lg:pt-20">
-                    <div className="flex justify-center lg:justify-between flex-wrap">
+                    <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="w-full lg:w-auto text-5xl md:text-6xl text-black dark:text-dark-200 font-semibold tracking-tighter order-1 lg:order-0 text-center lg:text-left"
+                        className="w-full md:w-auto text-5xl md:text-6xl text-white dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 text-center md:text-left"
                       >
                         Full Stack
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="w-full lg:w-auto relative text-sm lg:text-base font-semibold text-black dark:text-white mb-3 pt-0 lg:pt-3 text-center order-0 lg:order-1 "
+                        className="w-full md:w-auto relative text-sm md:text-base font-light text-white dark:text-white mb-3 pt-0 md:pt-3 text-center order-0 md:order-1 "
                       >
                         Creative Platform Service
                       </motion.div>
@@ -99,7 +99,7 @@ export default function Page() {
 
                     <motion.div
                       variants={variants}
-                      className="text-5xl md:text-6xl mb-10 text-black dark:text-white font-semibold tracking-tighter pl-0 lg:pl-20 text-center lg:text-left"
+                      className="text-5xl md:text-6xl mb-10 text-white dark:text-white font-semibold tracking-tighter pl-0 md:pl-20 text-center md:text-left"
                     >
                       Developer
                     </motion.div>
@@ -107,7 +107,7 @@ export default function Page() {
 
                   <motion.div
                     variants={variants}
-                    className="text-slate-500 dark:text-dark-400 text-sm lg:text-base mb-6 text-center"
+                    className="relative text-gray-100 dark:text-dark-400 text-sm lg:text-base mb-6 text-center"
                   >
                     서비스에 도움이 되는 제품을 만들어 드리겠습니다.
                   </motion.div>
@@ -115,15 +115,15 @@ export default function Page() {
                     variants={variants}
                     className="relative py-3 mb-12 max-w-lg mx-auto"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-950/80 border border-dark-900/90 border-t-dark-800 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-950/80 border border-gray-300 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
-                        <div className="text-sm text-slate-700 dark:text-dark-400 line-clamp-1">
+                        <div className="text-sm text-gray-700 dark:text-dark-400 line-clamp-1">
                           Launch Your Service.
                         </div>
                       </div>
                       <button
                         onClick={() => setShowBottom(!showBottom)}
-                        className="flex gap-2 bg-gray-950 dark:bg-dark-100 dark:hover:bg-dark-200 text-white dark:text-dark-950 text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-600 hover:text-white"
+                        className="flex gap-2 bg-gray-950 dark:bg-primary-700 dark:hover:bg-primary-500 text-white dark:text-primary-200 dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-600 hover:text-white"
                       >
                         <span>
                           <svg
@@ -145,7 +145,7 @@ export default function Page() {
                       </button>
                     </div>
                   </motion.div>
-                  <div className="relative h-[250px] pt-10">
+                  <div className="hidden dark:block relative h-[250px] pt-10">
                     <div className="absolute left-0 right-0 h-[450px]">
                       <motion.div
                         variants={parentVariants}
@@ -168,7 +168,7 @@ export default function Page() {
                 </motion.div>
               </div>
             </div>
-            <div className="absolute left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 h-[400px] via-white/50 to-white dark:from-transparent dark:via-dark-950/75 dark:to-dark-950"></div>
+            <div className="hidden dark:block absolute left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b from-white/0 h-[400px] via-white/50 to-white dark:from-transparent dark:via-dark-950/40 dark:to-dark-950"></div>
           </div>
 
           <motion.div
@@ -207,7 +207,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-5">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full dark:border dark:border-dark-800/70 dark:border-t-dark-700/60"
+                        className="relative overflow-hidden bg-white dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full border border-gray-200 dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -229,12 +229,12 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="text-sm text-slate-600 dark:text-dark-500 mb-10"
+                            className="text-sm text-gray-600 dark:text-dark-500 mb-10"
                           >
                             Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                             불편함이 없게 UI/UX를 설계 합니다.
                           </motion.div>
-                          <button className="relative group bg-slate-800 hover:bg-slate-950 dark:hover:bg-dark-950 dark:bg-dark-950/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute  hover:before:inset-0 hover:before:backdrop-blur-md ">
+                          <button className="relative group bg-slate-800 hover:bg-slate-950 dark:hover:bg-dark-950 dark:bg-dark-950/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md ">
                             <div className="relative group-hover:text-white text-sm text-dark-300">
                               Link more
                             </div>
@@ -245,7 +245,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs dark:border dark:border-dark-800/70 dark:border-t-dark-700/60"
+                        className="relative overflow-hidden bg-white dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200 dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <div className="relative items-center overflow-hidden h-full">
                           <div className="absolute inset-0"></div>
@@ -265,7 +265,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs dark:border dark:border-dark-800/70 dark:border-t-dark-700/60"
+                        className="relative overflow-hidden bg-white dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200 dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -273,7 +273,7 @@ export default function Page() {
                           whileInView="onscreen"
                         >
                           <motion.div variants={variants} className="mb-6">
-                            <div className="flex justify-center items-center bg-slate-900 dark:bg-white text-white dark:text-dark-950 w-10 h-10 rounded-full">
+                            <div className="flex justify-center items-center bg-gray-900 dark:bg-white text-white dark:text-dark-950 w-10 h-10 rounded-full">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -298,7 +298,7 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="text-sm text-slate-600 dark:text-dark-500 mb-10"
+                            className="text-sm text-gray-600 dark:text-dark-500 mb-10"
                           >
                             라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지
                             모든 부분의 제작을 의뢰를 통해 하고 있습니다. 결제
@@ -319,7 +319,7 @@ export default function Page() {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="py-20"
+            className="py-20 bg-dark-900"
           >
             <div className="max-w-screen-xl mx-auto py-5 lg:py-10">
               <div className="px-3">
@@ -357,7 +357,7 @@ export default function Page() {
                       variants={variants}
                       className="text-sm text-white"
                     >
-                      <button className="relative group bg-dark-900 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
+                      <button className="relative group bg-dark-950 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
                         컴포넌트 가기
                       </button>
                     </motion.div>

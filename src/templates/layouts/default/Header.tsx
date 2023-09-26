@@ -142,7 +142,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'sticky w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/90 bg-white/70' +
+          'sticky w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/90 bg-gray-100/70' +
           background
         }
       >
@@ -151,7 +151,7 @@ const Header = () => {
             <div className="flex items-center">
               <button
                 onClick={() => {
-                  setBackground('dark:bg-dark-950/90 bg-white/70')
+                  setBackground('dark:bg-dark-950/90 bg-gray-100/70')
                   setShowLeft(!showLeft)
                 }}
                 className="group flex lg:hidden items-center px-3"
@@ -281,7 +281,7 @@ const Header = () => {
                 </svg>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-gray-900  dark:bg-dark-700 dark:hover:bg-dark-600 text-gray-200 hover:text-white dark:text-primary-100 dark:hover:text-white text-xs"
+                className="group relative flex items-center rounded-md bg-primary-700 hover:bg-primary-600 dark:bg-primary-700 dark:hover:bg-primary-600 text-gray-200 hover:text-white dark:text-dark-100 dark:hover:text-white text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-6 lg:px-3">
@@ -335,7 +335,7 @@ const Header = () => {
           initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="relative right-0 bg-white/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90 z-100"
+          className="relative right-0 bg-gray-100/90 backdrop-blur-lg before:backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90 z-100"
         >
           <motion.div
             initial={initial}

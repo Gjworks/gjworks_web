@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="flex bg-gray-950 dark:text-primary-200 dark:bg-dark-700 py-1 px-3 text-xs rounded-full hover:bg-gray-700 dark:hover:bg-dark-700 dark:hover:text-primary-100 hover:text-white text-white cursor-pointer">
+            <div className="flex bg-gray-950 dark:text-primary-200 dark:bg-dark-700 py-1 px-3 text-xs rounded-full hover:bg-gray-700 dark:hover:bg-primary-700 dark:hover:text-primary-100 hover:text-white text-white cursor-pointer">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-gray-950 dark:text-primary-200 dark:bg-dark-700 py-1 px-3 text-xs rounded-full hover:bg-gray-700 dark:hover:bg-dark-700 dark:hover:text-primary-100 hover:text-white text-white cursor-pointer">
+            <div className="flex bg-gray-950 dark:text-primary-200 dark:bg-dark-700 py-1 px-3 text-xs rounded-full hover:bg-gray-700 dark:hover:bg-primary-700 dark:hover:text-primary-100 hover:text-white text-white cursor-pointer">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg

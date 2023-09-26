@@ -11,10 +11,11 @@ datasource db {
 }
 
 model User {
-    id               Int               @id @default(autoincrement())
+    id               String            @id @default(uuid())
     email            String            @unique
     nickname         String            @unique
     password         String
+    refreshToken     String?
     createdAt        DateTime          @default(now())
     updateAt         DateTime          @updatedAt
     isAdmin          Boolean?
@@ -27,7 +28,7 @@ model Profile {
     id               Int               @id @default(autoincrement())
     phone            String            @unique
     author           User              @relation(fields: [authorId], references: [id])
-    authorId         Int               @unique
+    authorId         String            @unique
 }
 
 model Document {
@@ -40,7 +41,7 @@ model Document {
     updatedAt        DateTime?         @updatedAt
     published        Boolean?          @default(false)
     author           User?             @relation(fields: [authorId], references: [id])
-    authorId         Int?
+    authorId         String?
     title            String?           @db.VarChar(255)
     description      String?           @db.LongText
     isNotice         Boolean?          @default(false)

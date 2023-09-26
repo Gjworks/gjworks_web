@@ -49,10 +49,12 @@ const Register = () => {
         if (data.code === 'error') {
           console.log(data)
           setError(data.msg)
+        } else {
+          router.replace('/auth/Signin')
         }
       })
       .catch(error => {
-        console.error('Error:', error)
+        console.error('Failed to register: ' + error.toString())
       })
   }
 
@@ -167,7 +169,7 @@ const Register = () => {
             </div>
 
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-dark-700 dark:hover:bg-dark-700 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200">
+              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-500 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-dark-200 text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700 disabled:bg-slate-200">
                 Register Completed
               </button>
             </div>
