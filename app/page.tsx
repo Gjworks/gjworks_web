@@ -58,7 +58,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg19.jpg')] bg-no-repeat bg-cover bg-center z-10">
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10">
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/25 via-gray-950/25 to-gray-950/25 dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
@@ -113,9 +113,9 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="relative py-3 mb-12 max-w-lg mx-auto"
+                    className="relative py-3 mb-20 max-w-lg mx-auto"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-950/80 border border-gray-300 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-900/80 border border-gray-300 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
                         <div className="text-sm text-gray-700 dark:text-dark-400 line-clamp-1">
                           Launch Your Service.
