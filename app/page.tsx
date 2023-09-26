@@ -319,9 +319,9 @@ export default function Page() {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className="py-20 bg-dark-900"
+            className="hidden py-20 bg-dark-900"
           >
-            <div className="max-w-screen-xl mx-auto py-5 lg:py-10">
+            <div className=" max-w-screen-xl mx-auto py-5 lg:py-10">
               <div className="px-3">
                 <div className="grid grid-cols-12 gap-0 lg:gap-20">
                   <div className="col-span-12 lg:col-span-7">
