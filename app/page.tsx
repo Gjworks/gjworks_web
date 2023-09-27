@@ -58,9 +58,9 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10">
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10 bg-[url('/assets/images/bg20.jpg')] bg-cover bg-bottom bg-no-repeat ">
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b  dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
+            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 dark:bg-gradient-to-b  dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
               <div className="relative col-span-2 lg:col-span-2 flex justify-center items-center">
                 <motion.div
@@ -115,7 +115,7 @@ export default function Page() {
                     variants={variants}
                     className="relative py-3 mb-20 max-w-lg mx-auto"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-900/80 border border-gray-200 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-900/80 border border-gray-200/25 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
                         <div className="text-sm text-gray-700 dark:text-dark-400 line-clamp-1">
                           Launch Your Service.
@@ -123,7 +123,7 @@ export default function Page() {
                       </div>
                       <button
                         onClick={() => setShowBottom(!showBottom)}
-                        className="flex gap-2 bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-500 text-black dark:text-black dark:hover:text-black text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-500 hover:text-black"
+                        className="flex gap-2 bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600 text-white dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-600 hover:text-white"
                       >
                         <span>
                           <svg
@@ -234,7 +234,7 @@ export default function Page() {
                             Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                             불편함이 없게 UI/UX를 설계 합니다.
                           </motion.div>
-                          <button className="relative group bg-slate-800 hover:bg-slate-950 dark:hover:bg-dark-950 dark:bg-dark-950/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md ">
+                          <button className="relative group bg-slate-800 hover:bg-slate-950 dark:hover:bg-dark-950 dark:bg-dark-950/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-600 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md ">
                             <div className="relative group-hover:text-white text-sm text-dark-300">
                               Link more
                             </div>
@@ -273,7 +273,7 @@ export default function Page() {
                           whileInView="onscreen"
                         >
                           <motion.div variants={variants} className="mb-6">
-                            <div className="flex justify-center items-center bg-primary-400 text-black w-10 h-10 rounded-full">
+                            <div className="flex justify-center items-center bg-primary-600 text-black w-10 h-10 rounded-full">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -357,7 +357,7 @@ export default function Page() {
                       variants={variants}
                       className="text-sm text-white"
                     >
-                      <button className="relative group bg-dark-950 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-400 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
+                      <button className="relative group bg-dark-950 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-600 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
                         컴포넌트 가기
                       </button>
                     </motion.div>
