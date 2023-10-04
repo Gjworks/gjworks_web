@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const Page = () => {
   return (
     <>
@@ -9,7 +11,10 @@ const Page = () => {
               <div className="relative h-[200px] overflow-hidden">
                 <div className="group relative h-[200px]">
                   {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-950/40 to-dark-950"></div> */}
-                  <div className="relative w-full h-full bg-slate-950 bg-[url('/assets/images/bg9.jpg')] bg-no-repeat bg-cover bg-center transition duration-700 group-hover:scale-[1.08]"></div>
+                  <Link
+                    href="/store/view"
+                    className="block relative w-full h-full bg-slate-950 bg-[url('/assets/images/bg9.jpg')] bg-no-repeat bg-cover bg-center transition duration-700 group-hover:scale-[1.08]"
+                  ></Link>
                   <div className="absolute bottom-3 left-3">
                     <div className="relative text-white bg-white/10 py-1 px-3 backdrop-blur-lg rounded-lg text-xs">
                       Next.js

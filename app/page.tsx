@@ -58,9 +58,9 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10 bg-[url('/assets/images/bg20.jpg')] bg-cover bg-bottom bg-no-repeat ">
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10 bg-[url('/assets/images/bg21.jpg')] bg-cover bg-center bg-no-repeat ">
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 dark:bg-gradient-to-b  dark:from-dark-950/40 dark:via-dark-950/75 dark:to-dark-950"></div>
+            {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 dark:bg-gradient-to-b  dark:from-dark-950/0 dark:via-dark-950/0 dark:to-dark-950/0"></div> */}
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
               <div className="relative col-span-2 lg:col-span-2 flex justify-center items-center">
                 <motion.div

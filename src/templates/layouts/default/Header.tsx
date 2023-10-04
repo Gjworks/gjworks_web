@@ -362,12 +362,6 @@ const Header = () => {
                       Components
                     </Link>
                     <Link
-                      href="/metaverse"
-                      className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
-                    >
-                      Metaverse
-                    </Link>
-                    <Link
                       href="/posts/blog"
                       className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
                     >
