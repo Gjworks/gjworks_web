@@ -25,28 +25,50 @@ export async function POST(request: Request) {
       return NextResponse.json(data,{ status:402})
     }
     try {
-    const userInfo = await prisma.user.findUnique({
-      where: { email: email },
-      select: {
-        id: true,
-        email : true,
-        nickname:true,
-        password:true
-      }
-    })
+      const userInfo = await prisma.user.findUnique({
+        where: { email: email },
+        select: {
+          id: true,
+          email : true,
+          nickname:true,
+          password:true
+        }
+      })
 
-    console.log(userInfo && userInfo.password)
-    if (userInfo && await verifyPassword(password, userInfo.password)) {
-      // exclude password from json response
-      const refreshToken = refresh(email);
-      const accessToken = sign(email);
-      return NextResponse.json({ code: "success" }, { status: 200 })
-    } else {
-      return NextResponse.json({"code":"error", "element": "password","msg": "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다."}, { status: 401 })
+      console.log(userInfo && userInfo.password)
+      if (userInfo && await verifyPassword(password, userInfo.password)) {
+        // exclude password from json response
+        const refreshToken = refresh(email);
+        const accessToken = sign(email);
+
+        const updateUser = await prisma.user.update({
+          where: {
+            email: email,
+          },
+          data: {
+            refreshToken: refreshToken,
+          },
+        })
+
+        // NextResponse.headers.set(
+        //   'Set-Cookie',
+        //   `refreshToken=${refreshToken}; Path=/; Expires=${new Date(
+        //     Date.now() + 60 * 60 * 24 * 1000 * 3,
+        //   ).toUTCString()}; HttpOnly`,
+        // );
+        const response =  NextResponse.json({ code: "success" }, { status: 200,  headers: { "content-type": "application/json" }})
+
+        response.cookies.set({
+          name: "refreshToken",
+          value: refreshToken,
+          path: "/",
+        });
+      } else {
+        return NextResponse.json({"code":"error", "element": "password","msg": "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다."}, { status: 401 })
+      }
+    } catch (e) {
+      throw NextResponse.json({ code: "error" }, { status: 500 })
     }
-  } catch (e) {
-    throw NextResponse.json({ code: "error" }, { status: 500 })
-  }
     // return NextResponse.json({ code: "success" }, { status: 200 })
   } catch (error) {
     console.error(error)

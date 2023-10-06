@@ -281,7 +281,7 @@ const Header = () => {
                 </svg>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-primary-700 hover:bg-primary-500 dark:bg-primary-700 dark:hover:bg-primary-600 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
+                className="group relative flex items-center rounded-md bg-primary-700 hover:bg-primary-500 dark:bg-primary-600 dark:hover:bg-primary-500 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-6 lg:px-3">

@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="flex bg-primary-400 dark:text-black dark:bg-primary-400 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-primary-500 dark:hover:text-black hover:text-black text-black cursor-pointer">
+            <div className="flex bg-primary-700 dark:text-white dark:bg-primary-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-primary-500 dark:hover:text-white hover:text-black text-black cursor-pointer">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -120,7 +120,7 @@ const SearchForm = () => {
         </motion.div>
       </div>
 
-      <div className="px-3 pt-2 ">
+      <div className="px-3 pt-2 bg-dark-950/50 backdrop-blur-lg">
         <motion.div
           className="pt-2 pb-5 px-3"
           initial={{ opacity: 0, y: '20%' }}

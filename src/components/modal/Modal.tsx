@@ -56,7 +56,7 @@ const Modal = ({ state, close, children }) => {
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
-                className="fixed bootom-1 mb-2 top-20 left-1/2 -translate-x-1/2 lg:mb-10 z-101 bg-white/90 dark:bg-dark-950/80 rounded-xl max-w-screen-md w-full mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800"
+                className="fixed bootom-1 mb-2 top-20 left-1/2 -translate-x-1/2 lg:mb-10 z-101 bg-white/90 dark:bg-dark-950/25 rounded-xl max-w-screen-md w-full mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800"
               >
                 <div className="" onClick={handleCloseModal}></div>
                 <motion.div
