@@ -41,14 +41,14 @@ export async function POST(request: Request) {
         const refreshToken = refresh(email);
         const accessToken = sign(email);
 
-        const updateUser = await prisma.user.update({
-          where: {
-            email: email,
-          },
-          data: {
-            refreshToken: refreshToken,
-          },
-        })
+        // const updateUser = await prisma.user.update({
+        //   where: {
+        //     email: email,
+        //   },
+        //   data: {
+        //     refreshToken: refreshToken
+        //   }
+        // })
 
         // NextResponse.headers.set(
         //   'Set-Cookie',
