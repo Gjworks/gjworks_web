@@ -86,7 +86,7 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="w-full md:w-auto text-5xl md:text-6xl text-black dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 text-center md:text-left"
+                        className="w-full md:w-auto text-5xl md:text-6xl text-gray-500 dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 text-center md:text-left"
                       >
                         Full Stack
                       </motion.div>
@@ -208,7 +208,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-5">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-50 dark:bg-dark-900/75 backdrop-blur-xl shadow-lg shadow-gray-100/75 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full border border-gray-100 dark:border-dark-700/90 dark:border-t-dark-600/60"
+                        className="relative overflow-hidden bg-gray-100/75 dark:bg-dark-900/75 backdrop-blur-xl shadow-lg shadow-gray-100/90 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -246,7 +246,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-50 dark:bg-dark-900/75 backdrop-blur-xl shadow-md shadow-gray-100/75 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-100 dark:border-dark-700/90 dark:border-t-dark-600/60"
+                        className="relative overflow-hidden bg-gray-100/75 dark:bg-dark-900/75 backdrop-blur-xl shadow-md shadow-gray-100/90 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
                       >
                         <div className="relative items-center overflow-hidden h-full">
                           <div className="absolute inset-0"></div>
@@ -266,7 +266,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-50 dark:bg-dark-900/75 backdrop-blur-xl shadow-md shadow-gray-100/75 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-100 dark:border-dark-700/90 dark:border-t-dark-600/60"
+                        className="relative overflow-hidden bg-gray-100/75 dark:bg-dark-900/75 backdrop-blur-xl shadow-md shadow-gray-100/90 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
                       >
                         <motion.div
                           variants={parentVariants}

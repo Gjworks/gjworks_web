@@ -197,8 +197,9 @@ const Header = () => {
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="flex items-center"
                 >
-                  <div className="text-black dark:text-white pl-2 text-sm lg:text-base font-semibold mr-4">
-                    지제이웍스
+                  <div className="flex  pl-2 text-sm lg:text-base font-semibold mr-4">
+                    <div className="text-black dark:text-white">지제이</div>
+                    <div className="text-gray-400 dark:text-dark-400">웍스</div>
                   </div>
                 </a>
                 <div className="hidden lg:flex text-gray-500 dark:text-dark-100 text-xs bg-gray-100/90 dark:bg-dark-100/10 px-4 py-1 rounded-full hover:bg-gray-200/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer">
@@ -244,7 +245,7 @@ const Header = () => {
             <div className="relative flex gap-2 items-center justify-end">
               <div className="flex gap-1 items-center">
                 <button
-                  className="text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:bg-dark-950 dark:hover:bg-dark-700"
+                  className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:bg-dark-950 dark:hover:bg-dark-700"
                   onClick={() => setShowModal(!showModal)}
                 >
                   <svg
@@ -264,7 +265,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="relative bg-gray-200 text-gray-700 hover:bg-gray-300 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-950 dark:hover:bg-dark-700 "
+                className="relative bg-white text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-950 dark:hover:bg-dark-700 "
                 onClick={() => {}}
               >
                 <svg
@@ -281,7 +282,7 @@ const Header = () => {
                     d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
                   />
                 </svg>
-                <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600"></div>
+                <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-gray-400 dark:bg-dark-600"></div>
               </button>
               <button
                 className="group relative flex items-center rounded-md bg-gray-900 hover:bg-gray-700 dark:bg-dark-800 dark:hover:bg-dark-700 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"

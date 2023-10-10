@@ -6,7 +6,7 @@ const SearchForm = () => {
   return (
     <>
       <div className=" ">
-        <div className="flex border-b border-slate-300 dark:border-dark-900 p-3">
+        <div className="flex border-b border-gray-200 dark:border-dark-900 p-3">
           <input
             type="text"
             className="group flex-1 text-base text-slate-600 py-2 bg-transparent px-3 outline-none focus:text-black dark:text-dark-200 placeholder:text-slate-500 dark:placeholder:text-dark-500 placeholder:font-light"
@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="flex bg-primary-700 dark:text-white dark:bg-primary-700 py-1 px-3 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-500 dark:hover:text-white hover:text-black text-black cursor-pointer">
+            <div className="flex bg-primary-700 dark:text-white dark:bg-primary-700 py-1 px-3 text-xs rounded-full hover:bg-primary-600 dark:hover:bg-primary-500 dark:hover:text-white hover:text-white text-white cursor-pointer">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-gray-950 dark:text-white dark:bg-dark-700 py-1 px-3 text-xs rounded-full hover:bg-gray-700 dark:hover:bg-primary-600 dark:hover:text-white hover:text-black text-black cursor-pointer">
+            <div className="flex bg-primary-300 dark:text-white dark:bg-dark-700 py-1 px-3 text-xs rounded-full hover:bg-primary-700 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white text-primary-700 cursor-pointer">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
