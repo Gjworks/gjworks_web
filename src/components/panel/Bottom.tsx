@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import BottomPortal from 'src/components/panel/BottomPortal'
 
-const Bottom = ({ state, close, children, title }) => {
+const Bottom = ({ state, close, children }) => {
   const [panelState, setPanelState] = useState(false)
   useEffect(() => {
     setPanelState(state)
@@ -19,14 +19,14 @@ const Bottom = ({ state, close, children, title }) => {
   //     }
   //   }
   // }, [panelState])
-  // useEffect(() => {
-  //   if (panelState === true) {
-  //     document.body.style.overflow = 'hidden'
-  //     return () => {
-  //       document.body.style.overflow = 'unset'
-  //     }
-  //   }
-  // }, [panelState])
+  useEffect(() => {
+    if (panelState === true) {
+      document.body.style.overflow = 'hidden'
+      return () => {
+        document.body.style.overflow = 'unset'
+      }
+    }
+  }, [panelState])
 
   const variants = {
     openPanel: {
@@ -74,15 +74,15 @@ const Bottom = ({ state, close, children, title }) => {
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed bootom-1 mb-2 left-1/2 -translate-x-1/2 lg:mb-10 p-8 lg:p-10 z-101 bg-white/90 dark:bg-dark-900/75 rounded-xl max-w-[560px] w-full shadow-md mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800"
+              className="fixed bootom-1 left-1/2 -translate-x-1/2 z-101 w-full h-full"
             >
-              <div className=" w-full flex">
-                <div className="text-black dark:text-white text-xl lg:text-3xl font-semibold">
-                  {title}
-                </div>
+              <div
+                className="relative w-full flex h-10"
+                onClick={handleClosePanel}
+              >
                 <button
                   onClick={handleClosePanel}
-                  className="absolute right-3 top-3 rounded-full bg-dark-950 hover:bg-dark-700 p-2"
+                  className="absolute right-3 top-1 rounded-full p-2 z-101"
                 >
                   <span>
                     <svg
@@ -91,7 +91,7 @@ const Bottom = ({ state, close, children, title }) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6 text-white "
+                      className="w-6 h-6 text-gray-100 dark:text-white "
                     >
                       <path
                         strokeLinecap="round"
@@ -102,18 +102,19 @@ const Bottom = ({ state, close, children, title }) => {
                   </span>
                 </button>
               </div>
-              <div className="flex justify-center items-center pt-8 min-h-[200px]">
-                {children}
+              <div className=" bg-white/90 dark:bg-dark-900/90 rounded-t-xl w-full shadow-md mx-auto backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800 h-full  overflow-x-hidden overflow-y-auto">
+                <div className="py-10">{children}</div>
               </div>
             </motion.div>
             {/* </motion.div> */}
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants2}
               exit={exit2}
               onClick={handleClosePanel}
-              className="fixed inset-0 bg-slate-950/50 dark:bg-dark-950/50 z-90 backdrop-blur-sm"
+              className="fixed inset-0 bg-slate-950/70 dark:bg-dark-950/50 z-90 "
             ></motion.div>
           </BottomPortal>
         )}

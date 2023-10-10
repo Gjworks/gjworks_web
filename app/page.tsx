@@ -467,13 +467,15 @@ export default function Page() {
           </div>
         </motion.div>
       </div>
-      <Bottom
-        state={showBottom}
-        close={closeBottom}
-        title="현재 미출시 제품입니다."
-      >
-        <div className="text-dark-300 text-base text-center">
-          빠른시일내에 출시 할 수 있도록 하겠습니다.
+      <Bottom state={showBottom} close={closeBottom}>
+        <div className="max-w-screen-lg mx-auto px-3">
+          <div className="text-3xl font-bold text-black mb-8">
+            현재 상품 준비중입니다.
+          </div>
+          <div className="text-base text-gray-500 mb-10">
+            빠른 시일내에 상품 미리보기 및 구매가 가능하도록 하겠습니다.
+          </div>
+          <div className="bg-zinc-200 h-[560px] rounded-lg"></div>
         </div>
       </Bottom>
     </DefaultLayout>
