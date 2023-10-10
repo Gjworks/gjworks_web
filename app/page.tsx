@@ -146,7 +146,7 @@ export default function Page() {
                       </button>
                     </div>
                   </motion.div>
-                  <div className="hidden dark:block relative h-[250px] pt-20">
+                  <div className="block relative h-[250px] pt-20">
                     <div className="absolute left-0 right-0 h-[450px]">
                       <motion.div
                         variants={parentVariants}
@@ -160,7 +160,7 @@ export default function Page() {
                           className="max-w-screen-lg mx-auto relative h-[330px]"
                         >
                           <div className="relative">
-                            <SafariBrower image="/assets/images/main.png" />
+                            <SafariBrower image="" />
                           </div>
                         </motion.div>
                       </motion.div>
@@ -169,7 +169,7 @@ export default function Page() {
                 </motion.div>
               </div>
             </div>
-            <div className="hidden dark:block absolute left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b from-white/0 h-[400px] via-white/50 to-white dark:from-transparent dark:via-dark-950/40 dark:to-dark-950"></div>
+            <div className="block absolute left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b from-white/0 h-[400px] via-white/50 to-white dark:from-transparent dark:via-dark-950/40 dark:to-dark-950"></div>
           </div>
 
           <motion.div
