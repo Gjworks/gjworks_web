@@ -58,7 +58,8 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10 bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x ">
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden z-10">
+            {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 dark:bg-gradient-to-b  dark:from-dark-950/0 dark:via-dark-950/0 dark:to-dark-950/0"></div> */}
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
@@ -145,7 +146,7 @@ export default function Page() {
                       </button>
                     </div>
                   </motion.div>
-                  <div className="hidden dark:block relative h-[250px] pt-10">
+                  <div className="hidden dark:block relative h-[250px] pt-20">
                     <div className="absolute left-0 right-0 h-[450px]">
                       <motion.div
                         variants={parentVariants}
@@ -207,7 +208,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-5">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-white dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full border border-gray-200 dark:border-dark-800/70 dark:border-t-dark-700/60"
+                        className="relative overflow-hidden bg-gray-50 dark:bg-dark-900 backdrop-blur-xl shadow-lg shadow-gray-100/75 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full border border-gray-100 dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -234,7 +235,7 @@ export default function Page() {
                             Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                             불편함이 없게 UI/UX를 설계 합니다.
                           </motion.div>
-                          <button className="relative group bg-slate-800 hover:bg-slate-950 dark:hover:bg-dark-950 dark:bg-dark-950/80 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-600 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md ">
+                          <button className="relative group bg-gray-800 hover:bg-gray-950 dark:hover:bg-dark-950 dark:bg-dark-950 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-600 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-trangray-x-1/2 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md ">
                             <div className="relative group-hover:text-white text-sm text-dark-300">
                               Link more
                             </div>
@@ -245,12 +246,12 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-white dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200 dark:border-dark-800/70 dark:border-t-dark-700/60"
+                        className="relative overflow-hidden bg-gray-50 dark:bg-dark-900 backdrop-blur-xl shadow-lg shadow-gray-100/75 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-100 dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <div className="relative items-center overflow-hidden h-full">
                           <div className="absolute inset-0"></div>
                           <div className="mx-auto w-36 h-36">
-                            <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-gray-200 dark:border-dark-800"></div>
+                            <div className="mx-auto rounded-full bg-white dark:bg-dark-900 border border-gray-100 dark:border-dark-800"></div>
                           </div>
                         </div>
                         {/* <div className="text-lg lg:text-xl text-black dark:text-white mb-5">
@@ -265,7 +266,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-white dark:bg-dark-900 backdrop-blur-xl shadow-gray-100 hover:shadow-gray-200 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200 dark:border-dark-800/70 dark:border-t-dark-700/60"
+                        className="relative overflow-hidden bg-gray-50 dark:bg-dark-900 backdrop-blur-xl shadow-lg shadow-gray-100/75 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-100 dark:border-dark-800/70 dark:border-t-dark-700/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -319,7 +320,7 @@ export default function Page() {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.3 }}
-            className=" py-20 bg-dark-900"
+            className=" py-20"
           >
             <div className=" max-w-screen-xl mx-auto py-5 lg:py-10">
               <div className="px-3">
@@ -357,7 +358,7 @@ export default function Page() {
                       variants={variants}
                       className="text-sm text-white"
                     >
-                      <button className="relative group bg-dark-950 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-600 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-translate-x-1/2 ">
+                      <button className="relative group bg-dark-950 px-8 py-2 backdrop-blur-lg rounded-md hover:after:w-24 hover:after:backdrop-blur-lg hover:after:h-24 overflow-hidden hover:after:absolute hover:after:-bottom-16 hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:from-primary-600 hover:after:via-dark-950/25 hover:after:to-dark-900 hover:after:z-[-1] hover:after:rounded-full hover:after:left-1/2 hover:after:transform hover:after:-trangray-x-1/2 ">
                         컴포넌트 가기
                       </button>
                     </motion.div>

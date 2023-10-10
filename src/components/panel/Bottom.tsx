@@ -74,7 +74,7 @@ const Bottom = ({ state, close, children, title }) => {
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed bootom-1 mb-2 left-1/2 -translate-x-1/2 lg:mb-10 p-8 lg:p-10 z-101 bg-white/90 dark:bg-dark-900/25 rounded-xl max-w-[560px] w-full shadow-md mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-800/75 dark:border-t-dark-700"
+              className="fixed bootom-1 mb-2 left-1/2 -translate-x-1/2 lg:mb-10 p-8 lg:p-10 z-101 bg-white/90 dark:bg-dark-900/75 rounded-xl max-w-[560px] w-full shadow-md mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800"
             >
               <div className=" w-full flex">
                 <div className="text-black dark:text-white text-xl lg:text-3xl font-semibold">
@@ -113,7 +113,7 @@ const Bottom = ({ state, close, children, title }) => {
               variants={variants2}
               exit={exit2}
               onClick={handleClosePanel}
-              className="fixed inset-0 bg-slate-950/50 dark:bg-dark-950/50 z-90 "
+              className="fixed inset-0 bg-slate-950/50 dark:bg-dark-950/50 z-90 backdrop-blur-sm"
             ></motion.div>
           </BottomPortal>
         )}

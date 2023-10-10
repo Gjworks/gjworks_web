@@ -9,7 +9,7 @@
   }
   html, html body {
     -webkit-overflow-scrolling: touch;
-    @apply bg-gray-100;
+    @apply bg-white;
     @apply min-h-full;
     @apply h-full;
   }
