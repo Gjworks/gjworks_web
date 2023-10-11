@@ -2,7 +2,7 @@ import Image from 'next/image'
 const SafariBrower = props => {
   return (
     <>
-      <div className="shadow-xl shadow-slate-200 dark:shadow-dark-900/10 rounded-xl min-w-full max-w-full mb-10 border border-slate-100 dark:border-t-dark-700 dark:border-dark-800">
+      <div className="shadow-xl shadow-slate-200 dark:shadow-dark-900/10 rounded-xl min-w-full max-w-full border border-slate-100 dark:border-t-dark-700 dark:border-dark-800">
         <div className="rounded-xl ring-1 ring-slate-950/5">
           <div className="rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-800 dark:to-dark-900">
             <div className="py-2.5 flex px-4 gap-6">
@@ -61,7 +61,7 @@ const SafariBrower = props => {
         </div>
         <div className="relative border-t border-slate-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-900/80 overflow-hidden">
           <div className="w-full relative h-full p-[1px]">
-            <div className="h-[100px]"></div>
+            <div className="h-[150px]"></div>
             {props.image && (
               <Image
                 src={props.image}
