@@ -208,7 +208,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-5">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100/75 dark:bg-dark-900/75 backdrop-blur-xl shadow-lg shadow-gray-100/90 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
+                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-lg shadow-gray-100/90 dark:shadow-dark-950 p-5 lg:p-10 rounded-xl w-full border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -246,7 +246,7 @@ export default function Page() {
                     <div className="col-span-12 lg:col-span-7 flex flex-wrap gap-8">
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100/75 dark:bg-dark-900/75 backdrop-blur-xl shadow-md shadow-gray-100/90 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
+                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-md shadow-gray-100/90 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
                       >
                         <div className="relative items-center overflow-hidden h-full">
                           <div className="absolute inset-0"></div>
@@ -266,7 +266,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="relative overflow-hidden bg-gray-100/75 dark:bg-dark-900/75 backdrop-blur-xl shadow-md shadow-gray-100/90 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
+                        className="relative overflow-hidden bg-gray-100 dark:bg-dark-900 backdrop-blur-xl shadow-md shadow-gray-100/90 dark:shadow-dark-950/75 p-5 lg:p-10 rounded-xl w-full hover:shadow-xs border border-gray-200/75 dark:border-dark-700/90 dark:border-t-dark-600/60"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -468,14 +468,15 @@ export default function Page() {
         </motion.div>
       </div>
       <Bottom state={showBottom} close={closeBottom}>
-        <div className="max-w-screen-lg mx-auto px-3">
-          <div className="text-3xl font-bold text-black mb-8">
+        <div className="max-w-screen-md mx-auto px-3 pb-20">
+          <div className="text-3xl font-bold text-black dark:text-white mb-8">
             현재 상품 준비중입니다.
           </div>
-          <div className="text-base text-gray-500 mb-10">
+          <div className="text-base text-gray-500 dark:text-dark-400 mb-10">
             빠른 시일내에 상품 미리보기 및 구매가 가능하도록 하겠습니다.
           </div>
-          <div className="bg-zinc-200 h-[560px] rounded-lg"></div>
+          <div className="bg-gray-200 dark:bg-dark-700 h-[560px] rounded-lg mb-4"></div>
+          <div className="bg-gray-200 dark:bg-dark-700 h-[560px] rounded-lg"></div>
         </div>
       </Bottom>
     </DefaultLayout>
