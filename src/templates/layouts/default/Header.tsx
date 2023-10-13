@@ -24,6 +24,18 @@ const Header = () => {
   const [showDropdown, setShowDropdown] = useState(false)
   const [showNavigation, setShowNavigation] = useState(false)
   const [background, setBackground] = useState('')
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  useEffect(() => {
+    const updatePosition = () => {
+      setScrollPosition(window.pageYOffset)
+    }
+
+    window.addEventListener('scroll', updatePosition)
+
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
+
   const closeModal = close => {
     setShowModal(close)
     setBackground('bg-transparent dark:bg-transparent')
@@ -144,7 +156,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'sticky w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90' +
+          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90' +
           background
         }
       >
@@ -198,8 +210,7 @@ const Header = () => {
                   className="flex items-center"
                 >
                   <div className="flex  pl-2 text-sm lg:text-base font-semibold mr-4">
-                    <div className="text-black dark:text-white">지제이</div>
-                    <div className="text-gray-400 dark:text-dark-400">웍스</div>
+                    <div className="text-black dark:text-white">지제이웍스</div>
                   </div>
                 </a>
                 <div className="hidden lg:flex text-gray-500 dark:text-dark-100 text-xs bg-gray-100/90 dark:bg-dark-100/10 px-4 py-1 rounded-full hover:bg-gray-200/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer">
@@ -282,7 +293,7 @@ const Header = () => {
                     d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
                   />
                 </svg>
-                <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-gray-400 dark:bg-dark-600"></div>
+                <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
                 className="group relative flex items-center rounded-md bg-gray-900 hover:bg-gray-700 dark:bg-dark-800 dark:hover:bg-dark-700 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
@@ -449,6 +460,137 @@ const Header = () => {
           </div>
         </motion.div>
       </motion.div>
+      {scrollPosition > 80 && (
+        <motion.div
+          className=" fixed left-0 right-0 z-101 top-3 px-3"
+          initial={{ y: -40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+          exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
+        >
+          <div className="bg-white/90 dark:bg-dark-800/90 mx-auto max-w-screen-lg rounded-full py-1 px-10  shadow-md shadow-gray-100 dark:shadow-dark-950 backdrop-blur-lg border border-gray-100 dark:border-dark-800">
+            <div className="flex items-center gap-4">
+              <div className="flex items-center">
+                <button
+                  onClick={() => {
+                    setBackground('dark:bg-dark-950/75 bg-white/90')
+                    setShowLeft(!showLeft)
+                  }}
+                  className="group flex items-center"
+                >
+                  <div className="flex relative w-5 h-5 cursor-pointer">
+                    <span>
+                      <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div>
+                      <div className="transition-all absolute left-0 top-[9px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
+                      <div className="transition-all absolute left-0 top-[15px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
+                    </span>
+                  </div>
+                </button>
+                <a
+                  href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                  className="flex items-center"
+                >
+                  <div className="flex  pl-2 text-sm font-semibold mr-4">
+                    <div className="text-black dark:text-white">지제이웍스</div>
+                  </div>
+                </a>
+              </div>
+              <div className="flex-1">
+                <div className="hidden lg:flex justify-center items-center pl-3">
+                  {nav.header &&
+                    Object.entries(nav.header).map((data, index) => {
+                      return (
+                        <Link
+                          href={data[1].route}
+                          key={data[1].name}
+                          className={
+                            'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
+                            (pathname === data[1].route
+                              ? 'text-gray-400 dark:text-white'
+                              : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
+                          }
+                        >
+                          {data[1].title}
+                        </Link>
+                      )
+                    })}
+                </div>
+              </div>
+              <div className="relative flex gap-2 items-center justify-end">
+                <div className="flex gap-1 items-center">
+                  <button
+                    className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
+                    onClick={() => setShowModal(!showModal)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <button
+                  className="relative text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:hover:bg-dark-700 "
+                  onClick={() => {}}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                    />
+                  </svg>
+                  <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
+                </button>
+                <button
+                  className="group relative flex items-center rounded-md bg-gray-900 hover:bg-gray-700 dark:bg-dark-950 dark:hover:bg-dark-700 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                >
+                  <div className="flex py-[6px] px-6 lg:px-3">
+                    <div className="p-0">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1}
+                        stroke="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                        />
+                      </svg>
+                    </div>
+                    <div className="hidden lg:flex items-center px-3">
+                      Account
+                    </div>
+                  </div>
+                </button>
+                <Dropdown state={showDropdown}>
+                  <AccountDropwdown />
+                </Dropdown>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </>
   )
 }
