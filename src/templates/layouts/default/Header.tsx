@@ -462,14 +462,14 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-0 right-0 z-101 top-3 px-3"
+          className=" fixed left-0 right-0 z-101 top-2 px-3"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
         >
-          <div className="bg-white/90 dark:bg-dark-800/90 mx-auto max-w-screen-lg rounded-full py-1 px-10  shadow-md shadow-gray-100 dark:shadow-dark-950 backdrop-blur-lg border border-gray-100 dark:border-dark-800">
+          <div className="bg-white/90 dark:bg-dark-800/95 mx-auto max-w-screen-lg rounded-full py-1.5 px-5 lg:px-10  shadow-md shadow-gray-100 dark:shadow-dark-950 backdrop-blur-lg border border-gray-100 dark:border-dark-800">
             <div className="flex items-center gap-4">
-              <div className="flex items-center">
+              <div className="flex items-center gap-2">
                 <button
                   onClick={() => {
                     setBackground('dark:bg-dark-950/75 bg-white/90')
@@ -485,14 +485,30 @@ const Header = () => {
                     </span>
                   </div>
                 </button>
-                <a
-                  href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex items-center"
-                >
-                  <div className="flex  pl-2 text-sm font-semibold mr-4">
-                    <div className="text-black dark:text-white">지제이웍스</div>
-                  </div>
-                </a>
+                <div className="flex items-center">
+                  <a
+                    href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                    className="flex lg:hidden items-center"
+                  >
+                    <Image
+                      src="/assets/images/brand/gjworks_white.svg"
+                      alt="gjworks logo"
+                      width="32"
+                      height="32"
+                      className="block w-8 h-8"
+                    />
+                  </a>
+                  <a
+                    href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                    className="hidden lg:flex items-center"
+                  >
+                    <div className="flex  pl-2 text-sm font-semibold mr-4">
+                      <div className="text-black dark:text-white">
+                        지제이웍스
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
               <div className="flex-1">
                 <div className="hidden lg:flex justify-center items-center pl-3">
@@ -503,7 +519,7 @@ const Header = () => {
                           href={data[1].route}
                           key={data[1].name}
                           className={
-                            'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
+                            'block py-0 lg:py-1 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
                             (pathname === data[1].route
                               ? 'text-gray-400 dark:text-white'
                               : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
