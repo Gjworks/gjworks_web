@@ -467,7 +467,7 @@ const Header = () => {
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
         >
-          <div className="bg-white/90 dark:bg-dark-800/95 mx-auto max-w-screen-lg rounded-full py-1.5 px-5 lg:px-10  shadow-md shadow-gray-100 dark:shadow-dark-950 backdrop-blur-lg border border-gray-100 dark:border-dark-800">
+          <div className="bg-white/90 dark:bg-dark-800/75 mx-auto max-w-screen-lg rounded-full py-1.5 px-5 lg:px-10  shadow-md shadow-gray-100 dark:shadow-dark-900/90 backdrop-blur-lg border border-gray-100 dark:border-dark-700/75">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <button
@@ -574,7 +574,7 @@ const Header = () => {
                   <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
                 </button>
                 <button
-                  className="group relative flex items-center rounded-md bg-gray-900 hover:bg-gray-700 dark:bg-dark-950 dark:hover:bg-dark-700 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
+                  className="group relative flex items-center rounded-md  dark:hover:bg-dark-700 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
                   onClick={() => setShowDropdown(!showDropdown)}
                 >
                   <div className="flex py-[6px] px-6 lg:px-3">
@@ -593,9 +593,6 @@ const Header = () => {
                           d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
                         />
                       </svg>
-                    </div>
-                    <div className="hidden lg:flex items-center px-3">
-                      Account
                     </div>
                   </div>
                 </button>
