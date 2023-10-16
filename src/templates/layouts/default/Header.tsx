@@ -462,12 +462,12 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-0 right-0 z-101 top-2 px-3"
+          className=" fixed left-0 right-0 z-101 top-2 px-3 backdrop-blur-lg bg-white/75 dark:bg-dark-800/75 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-100/75 dark:shadow-dark-900/90  border border-gray-100 dark:border-dark-700/75"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
         >
-          <div className="bg-white/90 dark:bg-dark-800/75 mx-auto max-w-screen-lg rounded-full py-1.5 px-5 lg:px-10  shadow-md shadow-gray-100 dark:shadow-dark-900/90 backdrop-blur-lg border border-gray-100 dark:border-dark-700/75">
+          <div className=" py-1.5 px-5 lg:px-10 ">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <button
