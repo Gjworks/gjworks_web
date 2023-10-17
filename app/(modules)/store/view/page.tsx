@@ -1,13 +1,13 @@
 const Page = () => {
   return (
     <>
-      <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg20.jpg')] bg-cover bg-center bg-no-repeat h-[350px]">
-        <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 bg-gradient-to-b from-dark-950/30 via-dark-950/50 to-dark-950/75"></div>
+      <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg20.jpg')] bg-cover bg-center bg-no-repeat h-[500px]">
+        <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-dark-950/50 via-dark-950/75 to-dark-950"></div>
       </div>
-      <div className="max-w-screen-lg mx-auto px-3">
-        <div className="dark:bg-dark-950/20 bg-white/90 backdrop-blur-lg rounded-lg p-5 -mt-[120px] border dark:border-dark-800/50 border-gray-200/75 shadow-md shadow-gray-100 dark:shadow-black">
+      <div className="max-w-screen-lg mx-auto -mt-[300px] px-3">
+        <div className="dark:bg-dark-950/20 bg-gradient-to-b dark:from-dark-950/30 dark:via-dark-950/70 to-dark-950 bg-white/90 backdrop-blur-lg rounded-lg p-5 -mt-[120px] ">
           <div className="flex gap-8 flex-wrap mb-8">
-            <div className="w-20 h-20 rounded-lg bg-gray-200"></div>
+            <div className="w-20 h-20 rounded-lg bg-dark-600/30"></div>
             <div className="flex-1">
               <div className="text-lg text-black dark:text-white mb-1">
                 Dynamic Property Applications
@@ -48,7 +48,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="border border-gray-200/70 dark:border-dark-800/75 bg-white/90 dark:bg-dark-900/50 rounded-lg p-5 mb-8">
+          <div className="border border-gray-200/70 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-dark-950">
             <div className="grid grid-cols-4 gap-10">
               <div className="col-span-1">
                 <div className="text-base text-sky-600 mb-3">1,200</div>
