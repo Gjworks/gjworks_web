@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import BottomPortal from 'src/components/panel/BottomPortal'
+import BottomPortal from '@gjworks/components/panel/BottomPortal'
 
 const Bottom = ({ state, close, children }) => {
   const [panelState, setPanelState] = useState(false)
@@ -102,8 +102,8 @@ const Bottom = ({ state, close, children }) => {
                   </span>
                 </button>
               </div>
-              <div className=" bg-white dark:bg-dark-900 rounded-t-xl w-full shadow-md mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full  overflow-x-hidden overflow-y-auto">
-                <div className="py-10">{children}</div>
+              <div className=" bg-white dark:bg-dark-900 rounded-t-xl w-full shadow-md mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto">
+                {children}
               </div>
             </motion.div>
             {/* </motion.div> */}

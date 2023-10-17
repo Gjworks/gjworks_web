@@ -24,6 +24,12 @@
         "name": "next"
       }
     ],
+    "paths": {
+        "@gjworks/components/*": ["src/components/*"],
+        "@gjworks/templates/*": ["src/templates/*"],
+        "@gjworks/lib/*": ["src/lib/*"],
+        "@gjworks/res/*": ["src/res/*"],
+    },
     "strictNullChecks": true
   },
   "include": [

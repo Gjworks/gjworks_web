@@ -462,7 +462,7 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-0 right-0 z-101 top-2 px-3 backdrop-blur-lg bg-white/75 dark:bg-dark-800/75 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-100/75 dark:shadow-dark-900/90  border border-gray-100 dark:border-dark-700/75"
+          className=" fixed left-0 right-0 z-101 top-2 px-3 backdrop-blur-lg bg-white/75 dark:bg-dark-800/40 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-100/75 dark:shadow-dark-900/40 border border-gray-100 dark:border-dark-700/40"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
@@ -522,7 +522,7 @@ const Header = () => {
                             'block py-0 lg:py-1 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
                             (pathname === data[1].route
                               ? 'text-gray-400 dark:text-white'
-                              : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
+                              : 'text-gray-800 dark:text-dark-300 hover:text-gray-400 dark:hover:text-white')
                           }
                         >
                           {data[1].title}

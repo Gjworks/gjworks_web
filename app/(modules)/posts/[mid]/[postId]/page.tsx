@@ -5,8 +5,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { getData } from './server'
 
-import Loading from 'src/components/loading/loading'
-
 import Description from './description'
 
 //
@@ -19,7 +17,6 @@ const Page: React.FC<PageProps> = ({ params }) => {
   const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>()
 
   let items
-  console.log(params.postId)
   const fetchData = async () => {
     items = await getData()
     setDocumentInfo(items)

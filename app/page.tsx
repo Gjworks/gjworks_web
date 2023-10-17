@@ -3,11 +3,11 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import SafariBrower from 'src/components/viewer/SafariBrower'
+import SafariBrower from '@gjworks/components/viewer/SafariBrower'
 import { motion } from 'framer-motion'
-import DefaultLayout from 'src/templates/layouts/default/Layout'
-import Bottom from 'src/components/panel/Bottom'
-import Codehighlighte from 'src/components/codehighlight/Codehighlighter'
+import DefaultLayout from '@gjworks/templates/layouts/default/Layout'
+import Bottom from '@gjworks/components/panel/Bottom'
+import Codehighlighte from '@gjworks/components/codehighlight/Codehighlighter'
 
 export default function Page() {
   const [showBottom, setShowBottom] = useState(false)
@@ -75,7 +75,7 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="w-full md:w-auto text-5xl md:text-6xl text-gray-500 dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 mb-5 lg:mb-2"
+                        className="w-full md:w-auto text-5xl md:text-6xl text-black dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 mb-5 lg:mb-2"
                       >
                         Building digital experience
                       </motion.div>
@@ -412,7 +412,7 @@ export default function Page() {
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="text-sm font-light text-gray-500"
+                      className="text-sm font-light text-gray-400"
                     >
                       지제이웍스만의 방법으로 디지털 플랫폼을 구축하고 최상의
                       디지털 경험을 느낄 수 있도록 최선을 다 하고 있습니다.
@@ -480,14 +480,14 @@ export default function Page() {
               <div className="flex justify-center">
                 <motion.div
                   variants={variants}
-                  className="inline font-black text-5xl md:text-7xl text-gray-300 dark:text-dark-600/75 text-center"
+                  className="inline font-black text-5xl md:text-[5.5rem] text-gray-200 dark:text-dark-600/75 text-center"
                 >
                   WE ARE CRATEIVE
                 </motion.div>
               </div>
               <motion.div
                 variants={variants}
-                className="font-thin text-xl xl:text-4xl text-gray-800 dark:text-dark-100 text-center -mt-6"
+                className="font-light text-xl xl:text-4xl text-gray-500 dark:text-dark-100 text-center -mt-8"
               >
                 Responsive everything.
               </motion.div>
@@ -511,20 +511,32 @@ export default function Page() {
                   </div>
                 </motion.div>
               </motion.div>
-              <div className="block absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/40 to-white dark:from-transparent dark:via-dark-950/20 dark:to-dark-950 z-90"></div>
+              {/* <div className="block absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/40 to-white dark:from-transparent dark:via-dark-950/20 dark:to-dark-950 z-90"></div> */}
             </div>
           </div>
         </motion.div>
       </div>
       <Bottom state={showBottom} close={closeBottom}>
-        <div className="max-w-screen-md mx-auto px-3 pb-20">
+        <div className="max-w-screen-md mx-auto px-3 pt-10">
           <div className="text-3xl font-bold text-black dark:text-white mb-8">
             현재 상품 준비중입니다.
           </div>
           <div className="text-base text-gray-500 dark:text-dark-400 mb-10">
             빠른 시일내에 상품 미리보기 및 구매가 가능하도록 하겠습니다.
           </div>
-          <div className="bg-gray-200 dark:bg-dark-700 h-[560px] rounded-lg mb-4"></div>
+        </div>
+        <div className="max-w-screen-lg mx-auto px-3 pb-20">
+          <Image
+            src="/assets/images/bg19.jpg"
+            alt="Main Visual Image"
+            width="1265"
+            height="468"
+            loading="lazy"
+            className="rounded-2xl"
+          />
+        </div>
+
+        <div className="max-w-screen-md mx-auto px-3 pb-20">
           <div className="bg-gray-200 dark:bg-dark-700 h-[560px] rounded-lg"></div>
         </div>
       </Bottom>
