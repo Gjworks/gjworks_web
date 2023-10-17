@@ -1,7 +1,7 @@
 const Page = () => {
   return (
     <>
-      <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg20.jpg')] bg-cover bg-center bg-no-repeat h-[500px]">
+      <div className="max-w-[2560px] mx-auto relative pt-20 pb-20  overflow-hidden bg-[url('/assets/images/bg7.jpg')] bg-cover bg-center bg-no-repeat h-[500px]">
         <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-dark-950/50 via-dark-950/75 to-dark-950"></div>
       </div>
       <div className="max-w-screen-lg mx-auto -mt-[300px] px-3">
