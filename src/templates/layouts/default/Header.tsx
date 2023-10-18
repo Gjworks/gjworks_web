@@ -462,7 +462,7 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-0 right-0 z-101 top-2 px-3 backdrop-blur-lg bg-white/75 dark:bg-dark-800/40 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-100/75 dark:shadow-dark-900/40 border border-gray-100 dark:border-dark-700/40"
+          className=" fixed left-0 right-0 z-101 top-2 px-3 backdrop-blur-lg bg-white/75 dark:bg-dark-800/40 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-200/75 dark:shadow-dark-900/40 border border-gray-200 dark:border-dark-700/40"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}

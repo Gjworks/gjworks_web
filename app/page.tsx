@@ -101,7 +101,7 @@ export default function Page() {
                       </div>
                       <button
                         onClick={() => setShowBottom(!showBottom)}
-                        className="flex gap-2 bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-500 text-white dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-600 hover:text-white"
+                        className="flex gap-2 bg-primary-500 dark:bg-primary-600 dark:hover:bg-primary-500 text-white dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-600 hover:text-white"
                       >
                         <span>
                           <svg
