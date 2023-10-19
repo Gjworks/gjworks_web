@@ -59,7 +59,7 @@ const SafariBrower = props => {
             </div>
           </div>
         </div>
-        <div className="relative border-t border-gray-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-900 overflow-hidden">
+        <div className="relative border-t border-gray-100 dark:border-dark-950/75 rounded-b-xl bg-white dark:bg-dark-800 overflow-hidden">
           <div className="w-full relative h-full p-[1px]">
             <div className="h-[150px]"></div>
             {props.image && (
