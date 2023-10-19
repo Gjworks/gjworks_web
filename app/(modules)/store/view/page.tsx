@@ -4,14 +4,24 @@ const Page = () => {
       <div className="max-w-screen-2xl mx-auto px-3">
         <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl h-[550px] bg-[url('/assets/images/bg10.jpg')] bg-cover bg-no-repeat overflow-hidden bg-center ">
           <div className="absolute inset-0 z-10 bg-dark-950/20"></div>
-          <div className="absolute bottom-4 left-0 right-0 z-20">
-            <div className="relative flex justify-center">
-              <div className="flex gap-2  bg-gray-950/10 dark:bg-dark-700/70 py-3 px-10 rounded-lg">
-                <div className="inline-block text-black bg-primary-400 hover:bg-primary-500 rounded py-2 px-4 text-xs cursor-pointer">
-                  Download
-                </div>
-                <div className="inline-block text-primary-500 bg-dark-950 hover:bg-dark-600 rounded py-2 px-4 text-xs cursor-pointer">
-                  Link
+          <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">
+            <div className="relative">
+              <div className="max-w-screen-md mx-auto dark:bg-dark-950/20 bg-gradient-to-b dark:from-dark-950/30 dark:via-dark-950/70 to-dark-950 bg-white/90 backdrop-blur-lg lg:rounded-lg p-3 ">
+                <div className="flex gap-8 flex-wrap">
+                  <div className="w-20 h-20 rounded-lg bg-dark-600/30"></div>
+                  <div className="flex-1">
+                    <div className="text-lg text-black dark:text-white mb-1">
+                      Dynamic Property Applications
+                    </div>
+                    <div className="text-dark-500 mb-1">
+                      지제이웍스 웹애플리케이션
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-dark-400 text-sm">
+                        Next.js, React.js, Rhymix
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -19,60 +29,40 @@ const Page = () => {
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto pt-6 lg:pt-10 px-3">
-        <div className="flex gap-8">
-          <div className="max-w-screen-md">
-            <div className="dark:bg-dark-950/20 bg-gradient-to-b dark:from-dark-950/30 dark:via-dark-950/70 to-dark-950 bg-white/90 backdrop-blur-lg rounded-lg pb-5 ">
-              <div className="flex gap-8 flex-wrap mb-8">
-                <div className="w-20 h-20 rounded-lg bg-dark-600/30"></div>
-                <div className="flex-1">
-                  <div className="text-lg text-black dark:text-white mb-1">
-                    Dynamic Property Applications
-                  </div>
-                  <div className="text-dark-500 mb-1">
-                    지제이웍스 웹애플리케이션
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-dark-400 text-sm">
-                      Next.js, React.js, Rhymix
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="border border-gray-200/50 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
-                <div className="grid grid-cols-4 gap-10">
-                  <div className="col-span-1">
-                    <div className="text-base text-primary-400 mb-3">1,200</div>
-                    <div className="text-sm text-dark-400">Download Count</div>
-                  </div>
-                  <div className="col-span-1">
-                    <div className="text-base text-primary-400 mb-3">1,200</div>
-                    <div className="text-sm text-dark-400">Like Count</div>
-                  </div>
-                  <div className="col-span-1">
-                    <div className="text-base text-primary-400 mb-3">1,200</div>
-                    <div className="text-sm text-dark-400">Review Count</div>
-                  </div>
-                  <div className="col-span-1">
-                    <div className="text-base text-primary-400 mb-3">1,200</div>
-                    <div className="text-sm text-dark-400">Readed Count</div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div className="text-base text-black dark:text-white mb-1">
-                  About us
-                </div>
-                <div className="text-sm text-gray-400 dark:text-dark-300">
-                  I’ve written a few thousand words on why traditional “semantic
-                  class names” are the reason CSS is hard to maintain, but the
-                  truth is you’re never going to believe me until you actually
-                  try it.
-                </div>
-              </div>
-              <div></div>
-            </div>
+        <div className="flex flex-wrap gap-8">
+          <div className="max-w-screen-md order-1 lg:order-0">
             <div className="">
-              <div className="py-10">
+              <div className="pb-10">
+                <div className="border border-gray-200/50 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
+                  <div className="grid grid-cols-4 gap-10">
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-400 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">
+                        Download Count
+                      </div>
+                    </div>
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-400 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">Like Count</div>
+                    </div>
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-400 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">Review Count</div>
+                    </div>
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-400 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">Readed Count</div>
+                    </div>
+                  </div>
+                </div>
                 <div className="text-black dark:text-white text-xl mb-8">
                   Properties
                 </div>
@@ -151,22 +141,51 @@ const Page = () => {
                   산뜻한 느낌을 유지하면서도 로고의 색상이 붕 뜨지 않고 단단하게
                   자리잡을 수 있도록 했다.
                 </div>
+              </div>
+              <div className="text-black dark:text-white text-xl mb-5">
+                Review
+              </div>
+              <div className="rounded-lg flex justify-center p-5 bg-dark-700 text-sm text-dark-500 mb-20">
+                코멘트가 없습니다.
               </div>
             </div>
           </div>
-          <div className="flex-1">
-            <div className="sticky top-16 rounded-lg border border-gray-200/50 dark:border-dark-800/75 bg-gray-100/90 dark:bg-dark-700/60 p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
-              <div className="">
-                <div className="text-center text-black bg-primary-400 hover:bg-primary-500 rounded-md px-4 cursor-pointer py-4 text-base">
-                  29,000 원
+          <div className="w-full lg:flex-1 order-0 lg:order-1">
+            <div className="sticky top-16 ">
+              <div className="rounded-lg border border-gray-200/50 dark:border-dark-800/75 bg-gray-100/90 dark:bg-dark-700/60 p-3 lg:p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
+                <div className="">
+                  <div className="text-center text-black bg-primary-400 hover:bg-primary-500 rounded-md px-4 cursor-pointer py-4 text-base">
+                    29,000 원
+                  </div>
+                  <div className="flex gap-3 pt-3">
+                    <div className="flex-1 text-center text-black bg-white dark:bg-dark-600 hover:bg-gray-200 rounded-md px-4 cursor-pointer py-3 text-sm border border-gray-300/50 dark:border-dark-800 dark:text-primary-400 dark:hover:bg-dark-500">
+                      미리보기
+                    </div>
+                    <div className="text-center text-black bg-white dark:bg-dark-600 hover:bg-gray-200 rounded-md px-8 cursor-pointer py-3 text-sm border border-gray-300/50 dark:border-dark-800 dark:text-white dark:hover:bg-dark-500">
+                      목록
+                    </div>
+                  </div>
                 </div>
-                <div className="flex gap-3 pt-3">
-                  <div className="flex-1 text-center text-black bg-white dark:bg-dark-600 hover:bg-gray-200 rounded-md px-4 cursor-pointer py-3 text-sm border border-gray-300/50 dark:border-dark-800 dark:text-primary-400 dark:hover:bg-dark-500">
-                    미리보기
+              </div>
+              <div className="border border-dark-700 p-5 rounded-lg mb-6">
+                <div className="text-base text-white mb-5">제품 정보</div>
+                <div className="flex text-sm mb-3">
+                  <div className="text-dark-200 w-20">카테고리</div>
+                  <div className="text-dark-400">SOFTWARE / ADOBE / ADOBE</div>
+                </div>
+                <div className="flex text-sm mb-3">
+                  <div className="text-dark-200 w-20">버전</div>
+                  <div className="text-dark-400">0.1ver</div>
+                </div>
+                <div className="flex text-sm mb-3">
+                  <div className="text-dark-200 w-20">환경</div>
+                  <div className="text-dark-400">
+                    node 16.15.0 이상, npm 8.5.5 이상
                   </div>
-                  <div className="text-center text-black bg-white dark:bg-dark-600 hover:bg-gray-200 rounded-md px-8 cursor-pointer py-3 text-sm border border-gray-300/50 dark:border-dark-800 dark:text-white dark:hover:bg-dark-500">
-                    목록
-                  </div>
+                </div>
+                <div className="flex text-sm">
+                  <div className="text-dark-200 w-20">제작자</div>
+                  <div className="text-dark-400"></div>
                 </div>
               </div>
             </div>
