@@ -114,7 +114,7 @@ const Bottom = ({ state, close, children }) => {
               variants={variants2}
               exit={exit2}
               onClick={handleClosePanel}
-              className="fixed inset-0 bg-slate-950/70 dark:bg-dark-950/50 z-90 "
+              className="fixed inset-0 bg-slate-950/70 dark:bg-dark-950/50 z-90 backdrop-blur-sm"
             ></motion.div>
           </BottomPortal>
         )}

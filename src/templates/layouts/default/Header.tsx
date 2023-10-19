@@ -338,7 +338,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 dark:bg-dark-950/50 dark:backdrop-blur-sm"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 dark:bg-dark-800/50 dark:backdrop-blur-sm"
       ></motion.div>
       <motion.div
         initial={headerInitial}
@@ -462,7 +462,7 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-0 right-0 z-101 top-2 px-3 backdrop-blur-lg bg-white/75 dark:bg-dark-800/40 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-200/75 dark:shadow-dark-900/40 border border-gray-200 dark:border-dark-700/40"
+          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg bg-white/75 dark:bg-dark-800/40 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-100/75 dark:shadow-dark-900/40 border border-gray-200/50 dark:border-dark-700/40"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
@@ -574,10 +574,10 @@ const Header = () => {
                   <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
                 </button>
                 <button
-                  className="group relative flex items-center rounded-md  dark:hover:bg-dark-700 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
+                  className="group relative flex items-center rounded-md hover:bg-gray-200 dark:hover:bg-dark-700 text-gray-900 hover:text-gray-950 dark:text-white dark:hover:text-white text-xs"
                   onClick={() => setShowDropdown(!showDropdown)}
                 >
-                  <div className="flex py-[6px] px-6 lg:px-3">
+                  <div className="flex py-1 px-2 lg:px-3">
                     <div className="p-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -585,7 +585,7 @@ const Header = () => {
                         viewBox="0 0 24 24"
                         strokeWidth={1}
                         stroke="currentColor"
-                        className="w-4 h-4"
+                        className="w-5 h-5"
                       >
                         <path
                           strokeLinecap="round"
