@@ -28,12 +28,13 @@ const Page = () => {
           </div>
         </div>
       </div>
+
       <div className="max-w-screen-xl mx-auto pt-6 lg:pt-10 px-3">
         <div className="flex flex-wrap gap-8">
           <div className="max-w-screen-md order-1 lg:order-0">
             <div className="">
               <div className="pb-10">
-                <div className="border border-gray-200/50 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
+                <div className="hidden border border-gray-200/50 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
                   <div className="grid grid-cols-4 gap-10">
                     <div className="col-span-1">
                       <div className="text-base text-primary-400 mb-3">
@@ -66,6 +67,7 @@ const Page = () => {
                 <div className="text-black dark:text-white text-xl mb-8">
                   Properties
                 </div>
+                <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl overflow-hidden h-[386px] mb-8"></div>
                 <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
                   다사다난했던 지난 날을 뒤로 하고 드디어 2022년 새해가
                   다가왔다. Happy New Year, 나 자신. 많은 일들이 있었고, 많은
@@ -145,7 +147,7 @@ const Page = () => {
               <div className="text-black dark:text-white text-xl mb-5">
                 Review
               </div>
-              <div className="rounded-lg flex justify-center p-5 bg-dark-700 text-sm text-dark-500 mb-20">
+              <div className="rounded-lg flex justify-center p-5 bg-dark-700/40 text-sm text-dark-500 mb-20">
                 코멘트가 없습니다.
               </div>
             </div>
