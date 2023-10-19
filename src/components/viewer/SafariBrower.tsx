@@ -4,7 +4,7 @@ const SafariBrower = props => {
     <>
       <div className="shadow-lg shadow-gray-100 dark:shadow-dark-900/10 rounded-xl min-w-full max-w-full border border-gray-200 dark:border-dark-800">
         <div className="rounded-xl">
-          <div className="rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-800 dark:to-dark-900">
+          <div className="rounded-t-xl bg-gradient-to-b from-white to-[#FBFBFB] dark:from-dark-700 dark:to-dark-800">
             <div className="py-2.5 flex px-4 gap-6">
               <div className="flex items-center">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
@@ -47,19 +47,19 @@ const SafariBrower = props => {
               </div>
             </div>
             <div className="grid grid-cols-3 text-xs leading-5 overflow-hidden">
-              <div className="pointer-events-none select-none rounded-tr border border-gray-200/5 dark:border-dark-900/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 bg-gray-100 dark:bg-dark-950/50 text-gray-400 dark:text-dark-400">
+              <div className="pointer-events-none select-none rounded-tr border border-gray-200/5 dark:border-dark-900/5 px-4 py-1.5 -mb-px -ml-px flex items-center justify-center space-x-2 bg-gray-100 dark:bg-dark-900 text-gray-400 dark:text-dark-400">
                 <div className="truncate">Components</div>
               </div>
               <div className="pointer-events-none select-none font-medium px-4 py-1.5 flex items-center justify-center space-x-2 text-gray-500 dark:text-dark-200">
                 <div className="truncate">Workspace</div>
               </div>
-              <div className="pointer-events-none select-none rounded-tl border border-gray-200/5 dark:border-dark-900/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 bg-gray-100 dark:bg-dark-950/50 text-gray-400 dark:text-dark-400">
+              <div className="pointer-events-none select-none rounded-tl border border-gray-200/5 dark:border-dark-900/5 pl-4 pr-8 py-1.5 -mb-px -mr-4 flex items-center justify-center space-x-2 bg-gray-100 dark:bg-dark-900 text-gray-400 dark:text-dark-400">
                 <div className="truncate">UI</div>
               </div>
             </div>
           </div>
         </div>
-        <div className="relative border-t border-gray-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-900/80 overflow-hidden">
+        <div className="relative border-t border-gray-100 dark:border-dark-900 rounded-b-xl bg-white dark:bg-dark-900 overflow-hidden">
           <div className="w-full relative h-full p-[1px]">
             <div className="h-[150px]"></div>
             {props.image && (

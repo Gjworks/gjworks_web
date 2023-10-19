@@ -93,7 +93,7 @@ export default function Page() {
                     variants={variants}
                     className="relative py-3 mb-6 max-w-lg"
                   >
-                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-800/90 border border-gray-200/25 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
+                    <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-700 border border-gray-200/25 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
                       <div className="flex-1 flex items-center px-3">
                         <div className="text-sm text-gray-700 dark:text-dark-400 line-clamp-1">
                           Launch Your Service.

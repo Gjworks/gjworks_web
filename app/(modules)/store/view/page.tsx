@@ -154,7 +154,7 @@ const Page = () => {
           </div>
           <div className="w-full lg:flex-1 order-0 lg:order-1">
             <div className="sticky top-16 ">
-              <div className="rounded-lg border border-gray-200/50 dark:border-dark-800/75 bg-gray-100/90 dark:bg-dark-700/60 p-3 lg:p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
+              <div className="rounded-lg border border-gray-200/50 dark:border-dark-800/40 bg-gray-100/90 dark:bg-dark-700/60 p-3 lg:p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-dark-950/40 backdrop-blur-md">
                 <div className="">
                   <div className="text-center text-black bg-primary-400 hover:bg-primary-500 rounded-md px-4 cursor-pointer py-4 text-base">
                     29,000 원
@@ -169,26 +169,26 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="border border-dark-700 p-5 rounded-lg mb-6">
-                <div className="text-base text-white mb-5">제품 정보</div>
-                <div className="flex text-sm mb-3">
-                  <div className="text-dark-200 w-20">카테고리</div>
-                  <div className="text-dark-400">SOFTWARE / ADOBE / ADOBE</div>
+            </div>
+            <div className="border border-dark-700 p-5 rounded-lg mb-6">
+              <div className="text-base text-white mb-5">제품 정보</div>
+              <div className="flex text-sm mb-3">
+                <div className="text-dark-200 w-20">카테고리</div>
+                <div className="text-dark-400">SOFTWARE / ADOBE / ADOBE</div>
+              </div>
+              <div className="flex text-sm mb-3">
+                <div className="text-dark-200 w-20">버전</div>
+                <div className="text-dark-400">0.1ver</div>
+              </div>
+              <div className="flex text-sm mb-3">
+                <div className="text-dark-200 w-20">환경</div>
+                <div className="text-dark-400">
+                  node 16.15.0 이상, npm 8.5.5 이상
                 </div>
-                <div className="flex text-sm mb-3">
-                  <div className="text-dark-200 w-20">버전</div>
-                  <div className="text-dark-400">0.1ver</div>
-                </div>
-                <div className="flex text-sm mb-3">
-                  <div className="text-dark-200 w-20">환경</div>
-                  <div className="text-dark-400">
-                    node 16.15.0 이상, npm 8.5.5 이상
-                  </div>
-                </div>
-                <div className="flex text-sm">
-                  <div className="text-dark-200 w-20">제작자</div>
-                  <div className="text-dark-400"></div>
-                </div>
+              </div>
+              <div className="flex text-sm">
+                <div className="text-dark-200 w-20">제작자</div>
+                <div className="text-dark-400"></div>
               </div>
             </div>
           </div>

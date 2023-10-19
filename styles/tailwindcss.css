@@ -15,7 +15,7 @@
   }
   html.dark, html.dark body {
     -webkit-overflow-scrolling: touch;
-    @apply bg-dark-950
+    @apply bg-dark-900
   }
   h1 {
     @apply text-5xl;
