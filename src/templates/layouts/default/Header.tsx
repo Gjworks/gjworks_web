@@ -156,7 +156,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-900/75 bg-white/90' +
+          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90' +
           background
         }
       >
@@ -165,7 +165,7 @@ const Header = () => {
             <div className="flex items-center">
               <button
                 onClick={() => {
-                  setBackground('dark:bg-dark-900/75 bg-white/90')
+                  setBackground('dark:bg-dark-950/75 bg-white/90')
                   setShowLeft(!showLeft)
                 }}
                 className="group flex lg:hidden items-center px-3"
@@ -256,7 +256,7 @@ const Header = () => {
             <div className="relative flex gap-2 items-center justify-end">
               <div className="flex gap-1 items-center">
                 <button
-                  className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:bg-dark-900 dark:hover:bg-dark-700"
+                  className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:bg-dark-950 dark:hover:bg-dark-700"
                   onClick={() => setShowModal(!showModal)}
                 >
                   <svg
@@ -276,7 +276,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="relative bg-white text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-900 dark:hover:bg-dark-700 "
+                className="relative bg-white text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-950 dark:hover:bg-dark-700 "
                 onClick={() => {}}
               >
                 <svg
@@ -344,7 +344,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 z-99 bg-white/90 backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-900/90"
+        className="fixed top-0 left-0 right-0 z-99 bg-white/90 backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -462,7 +462,7 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg bg-white/75 dark:bg-dark-950/75 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-100/75 dark:shadow-dark-900/40 border border-gray-200/50 dark:border-dark-700/40"
+          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg bg-white/75 dark:bg-dark-600/40 mx-auto max-w-screen-lg rounded-full shadow-md shadow-gray-100/75 dark:shadow-dark-700/40 border border-gray-200/50 dark:border-dark-600/40"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
