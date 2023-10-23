@@ -38,19 +38,19 @@ export async function POST(request: Request) {
       console.log(userInfo && userInfo.password)
       if (userInfo && await verifyPassword(password, userInfo.password)) {
         // exclude password from json response
-        const refreshToken = refresh(email);
-        const accessToken = sign(email);
+        const refreshToken = refresh(userInfo.id);
+        const accessToken = sign(userInfo.id);
 
-        // const updateUser = await prisma.user.update({
-        //   where: {
-        //     email: email,
-        //   },
-        //   data: {
-        //     refreshToken: refreshToken
-        //   }
-        // })
+        const updateUser = await prisma.user.update({
+          where: {
+            email: email,
+          },
+          data: {
+            refreshToken: refreshToken
+          }
+        })
 
-        // NextResponse.headers.set(
+        // NextResponse.cookies.set(
         //   'Set-Cookie',
         //   `refreshToken=${refreshToken}; Path=/; Expires=${new Date(
         //     Date.now() + 60 * 60 * 24 * 1000 * 3,
@@ -58,11 +58,9 @@ export async function POST(request: Request) {
         // );
         const response =  NextResponse.json({ code: "success" }, { status: 200,  headers: { "content-type": "application/json" }})
 
-        response.cookies.set({
-          name: "refreshToken",
-          value: refreshToken,
-          path: "/",
-        });
+        response.cookies.set("accessToken",accessToken,{httpOnly:true});
+        return response;
+        
       } else {
         return NextResponse.json({"code":"error", "element": "password","msg": "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다."}, { status: 401 })
       }

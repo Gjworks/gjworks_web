@@ -47,6 +47,7 @@ const Signin = () => {
           console.log(data)
           setError(data.msg)
         } else {
+          console.log(data)
           // router.replace('/')
         }
       })

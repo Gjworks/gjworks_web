@@ -1,25 +1,32 @@
+import Image from 'next/image'
+
 const Page = () => {
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto px-3">
-        <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl h-[550px] bg-[url('/assets/images/bg10.jpg')] bg-cover bg-no-repeat overflow-hidden bg-center ">
-          <div className="absolute inset-0 z-10 bg-dark-950/20"></div>
+      <div className="max-w-screen-xl mx-auto px-0 lg:px-3">
+        <div className="relative bg-gray-100 dark:bg-dark-600 rounded-none lg:rounded-xl h-[calc(100vh-44px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
+          <div className="absolute inset-0 z-10"></div>
           <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">
-            <div className="relative">
-              <div className="max-w-screen-md mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/90 backdrop-blur-lg lg:rounded-lg p-3 ">
-                <div className="flex gap-8 flex-wrap">
-                  <div className="w-20 h-20 rounded-lg bg-dark-600/30"></div>
-                  <div className="flex-1">
-                    <div className="text-lg text-black dark:text-white mb-1">
-                      Dynamic Property Applications
+            <div className="relative px-3 lg:px-0 pb-3">
+              <div className="max-w-screen-md mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/90 backdrop-blur-lg rounded-lg p-3 ">
+                <div className="flex gap-4 lg:gap-8 flex-wrap">
+                  <div className="w-20 h-20 mx-auto rounded-lg bg-primary-500/75 lg:bg-primary-500/70 -mt-12 md:mt-0 backdrop-blur-lg"></div>
+                  <div className="w-full md:flex-1 flex flex-wrap">
+                    <div className="w-full">
+                      <div className="text-lg font-semibold text-black dark:text-white line-clamp-1">
+                        Dynamic Property Applications
+                      </div>
+                      <div className="text-dark-500 mb-1 line-clamp-1">
+                        지제이웍스 웹애플리케이션
+                      </div>
                     </div>
-                    <div className="text-dark-500 mb-1">
-                      지제이웍스 웹애플리케이션
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-dark-400 text-sm">
-                        Next.js, React.js, Rhymix
-                      </span>
+                    <div className="w-full flex items-center gap-2">
+                      <div className="text-white text-xs bg-primary-700 rounded-full py-1 px-4 hover:bg-primary-600 cursor-pointer">
+                        150,000 원
+                      </div>
+                      <div className="text-primary-700 text-xs bg-white rounded-full py-1 px-4 hover:bg-gray-200 cursor-pointer">
+                        미리보기
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -28,10 +35,9 @@ const Page = () => {
           </div>
         </div>
       </div>
-
       <div className="max-w-screen-xl mx-auto pt-6 lg:pt-10 px-3">
         <div className="flex flex-wrap gap-8">
-          <div className="max-w-screen-md order-1 lg:order-0">
+          <div className="max-w-screen-md mx-auto order-1 lg:order-0">
             <div className="">
               <div className="pb-10">
                 <div className="hidden border border-gray-200/50 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
@@ -64,131 +70,122 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="text-black dark:text-white text-xl mb-8">
-                  Properties
+                  잔재된 기운
                 </div>
-                <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl overflow-hidden h-[386px] mb-8"></div>
                 <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
-                  다사다난했던 지난 날을 뒤로 하고 드디어 2022년 새해가
-                  다가왔다. Happy New Year, 나 자신. 많은 일들이 있었고, 많은
-                  변화가 있었지만 나는 이렇게 어엿한 3년차 Front-End 개발자가
-                  되었다. 2021년 초부터 협업을 하기 시작했던 스타트업에 입사를
-                  하게 되어 디자인과 개발을 병행했으며, 많은 결과물을
-                  만들어냈다. 다만 아쉽게도 개인과 회사의 성장은 동일하지 않기
-                  때문에 나는 더 나은 성장 방향성을 잡기 위해 회사를 그만두고
-                  나왔다. 오늘은 그간 JOOTEK 이라는 스타트업에서 근무하며,
-                  UI/UX부터 시작하여 브랜드 컬러 재정립, 디자인 시스템 구축,
-                  React 기반 프로젝트의 대규모 리팩토링까지 다양했던 경험들을
-                  소개해보려고 한다.
+                  잔재 블레이드의 요소들을 각각 뜯어보면 A급이나 S급으로 보기는
+                  힘든 부족한 요소는 있어도 D급 이하의 폐급 요소는 찾아보기
+                  어렵다. 딜량도 준수하고, 지속무력수치와 부위파괴 수치는 매우
+                  좋다. 다크 악셀이라는 보스를 넘을수 있는 S급 기동기에 보조
+                  이동기로 스핀커터 등이 있고, 소울 앱소버도 쓰기에 따라선 준
+                  이동기로 활용가능하며, 잔재된 기운과 마엘스톰에 이속증가
+                  버프가 있어서 이동기, 이동속도면에서도 준수하다. 체방지수도
+                  이동능력이 받혀주는 근접 딜러중에서는 좋은편에 속한다.
+                  서포터나 느려빠진 워로드, 디트등의 논외의 대상을 제외하면
+                  몸빵도 좋은편. 백헤드 버프 수치는 2023년 1월에 너프를 먹긴
+                  했지만 그래도 마엘스톰과 스핀커터 덕분에 팀에게 주는 시너지
+                  버프도 1인분 이상은 한다. 더군다나 차징기에는 전부 경직면역이
+                  붙어있고, 빠르게 아이덴티티 게이지를 채워서 때리는 버스트에는
+                  피격이상면역까지 붙어있어서 피면기와 경면기도 많다. 여기다
+                  심지어 인기 많은 여캐중 하나라서 커마까지 괜잖다. 딜링, 몸빵,
+                  무력, 부위파괴, 이동기, 이동속도, 피면기, 경면기, 팀 시너지,
+                  외관까지 어딜 뜯어봐도 최소 1인분 이상은 하는 '나사 빠진것
+                  같은 요소'를 찾기 어려운 직업. 덕분에 성능과 별개로 유저들
+                  사이에서 인식이 좋은 편이기 때문에 레이드 파티 구직중에도
+                  블레이드라는 이유만으로 기피되는 경우는 많지 않다.
                 </div>
-                <div className="ttext-base text-gray-600 mb-5 dark:text-dark-300">
-                  지금의 색상을 만들어내기까지 상당한 시간이 걸렸다. 세련되고
-                  신뢰감을 줄 수 있는 브랜드 컬러가 필요했지만 경쟁업체가 이미
-                  파란색을 사용하고 있다는 이유로 푸른 계열의 색상을 사용할 수
-                  없었으며, 당시 브런치와 같은 디자인을 선호했던 대표님의 취향과
-                  입김이 반영되어 하늘색과 녹색의 중간 단계, 옥색에 가까운
-                  컬러를 사용했었다. 건축물과 떼어놓을 수 없는 자연적 요소와
-                  안락한 보금자리를 상징하는 초록색과 신뢰를 상징하는 파란색을
-                  섞은 결과이다.
+                <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
+                  잔재된 기운은 아츠 상태의 쿨타임 감소와 잔재된 기운의 공이속
+                  효과로 인해 고특화 클래스임에도 신속 클래스 처럼 빠르고
+                  지속적으로 몰아치는 플레이가 가능하다. 끊임없이 아이덴티티를
+                  사용하고 회복하기 때문에 블레이드의 핵심 시너지 스킬인
+                  마엘스톰 가동률도 높아진다.
                 </div>
-                <div className="ttext-base text-gray-600 mb-5 dark:text-dark-300">
-                  하지만 쨍한 컬러가 유행하는 이 시점에서 애매한 색상은 호불호가
-                  갈렸고, 무엇보다 하나의 컬러 코드를 다양한 곳에서 사용하기에는
-                  색상 자체가 대비가 높지 않다보니 면에 사용하면 지나치게 눈에
-                  띄고, 텍스트에 사용하면 가독성이 떨어지는 문제가 생겼다.
-                  때문에 3차 리뉴얼을 거치면서 서비스의 모든 디자인 언어를
-                  새롭게 바꾸게 되었고, 이를 통해 지금의 네X버가 떠오르는 정직한
-                  녹색이 채택되었다. 또한 유색이 들어가면 과하게 붕 뜨는 로고의
-                  특성을 개선하기 위해 심볼에만 브랜드 컬러를 적용하도록 하여
-                  산뜻한 느낌을 유지하면서도 로고의 색상이 붕 뜨지 않고 단단하게
-                  자리잡을 수 있도록 했다.
-                </div>
+              </div>
+              <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl overflow-hidden h-[386px] mb-8">
+                <Image
+                  alt="content images"
+                  src="/assets/images/bg23.jpg"
+                  width="768"
+                  height="368"
+                  loading="lazy"
+                  className="rounded-2xl"
+                />
               </div>
               <div className="py-10">
                 <div className="text-black dark:text-white text-xl mb-8">
-                  Properties
+                  버스트
                 </div>
                 <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
-                  다사다난했던 지난 날을 뒤로 하고 드디어 2022년 새해가
-                  다가왔다. Happy New Year, 나 자신. 많은 일들이 있었고, 많은
-                  변화가 있었지만 나는 이렇게 어엿한 3년차 Front-End 개발자가
-                  되었다. 2021년 초부터 협업을 하기 시작했던 스타트업에 입사를
-                  하게 되어 디자인과 개발을 병행했으며, 많은 결과물을
-                  만들어냈다. 다만 아쉽게도 개인과 회사의 성장은 동일하지 않기
-                  때문에 나는 더 나은 성장 방향성을 잡기 위해 회사를 그만두고
-                  나왔다. 오늘은 그간 JOOTEK 이라는 스타트업에서 근무하며,
-                  UI/UX부터 시작하여 브랜드 컬러 재정립, 디자인 시스템 구축,
-                  React 기반 프로젝트의 대규모 리팩토링까지 다양했던 경험들을
-                  소개해보려고 한다.
+                  적절히 스택을 쌓은 뒤 각종 각인과 특성, 사멸 장비 효과까지
+                  받은 버스트 스킬은 로스트아크 내의 손에 꼽을 정도로 강력한
+                  한방 딜링을 자랑한다. 사실상 딜의 대부분이 버스트에 몰려있고,
+                  남은 스킬중 딜링을 내는 스킬이라 해봤자 두개정도에 얼마 하지도
+                  않으니 버스트와 소울 앱소버, 블리츠 러시에만 멸화를 주고
+                  홍염을 빙 둘러 빠른 템포로 딜을 욱여넣는 플레이가 가능하다.
+                  또한 이로 인해 버스트를 제외한 다른 스킬이 빗나가는것은 거의
+                  문제가 되지 않고, 사이클형 딜러임에도 스킬이 빗나가는것을
+                  커버쳐줄 여유로운 스킬 구조나 보이드의 우수한 아덴 수급력을
+                  근거로 하여 딜로스 직전 버스트를 활용하고 부족한 아덴을 따로
+                  수급, 뎀감상태에서 추가로 스택을 쌓아나가는 등 일반적으로 그
+                  고점을 유저의 숙련도로 받쳐줄 수 없다 평가되는 잔재와 달리
+                  유저의 숙련도만 있다면 극한의 성능을 곧이 곧대로 보여줄 수
+                  있는 편이다.
                 </div>
-                <div className="ttext-base text-gray-600 mb-5 dark:text-dark-300">
-                  지금의 색상을 만들어내기까지 상당한 시간이 걸렸다. 세련되고
-                  신뢰감을 줄 수 있는 브랜드 컬러가 필요했지만 경쟁업체가 이미
-                  파란색을 사용하고 있다는 이유로 푸른 계열의 색상을 사용할 수
-                  없었으며, 당시 브런치와 같은 디자인을 선호했던 대표님의 취향과
-                  입김이 반영되어 하늘색과 녹색의 중간 단계, 옥색에 가까운
-                  컬러를 사용했었다. 건축물과 떼어놓을 수 없는 자연적 요소와
-                  안락한 보금자리를 상징하는 초록색과 신뢰를 상징하는 파란색을
-                  섞은 결과이다.
+                <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
+                  트라이포드에 영향을 전혀받지 않고 자체 스킬 성능, 속칭 깡통
+                  성능만의 영향을 받는 보정에서 버스트는 꽤나 좋은 모습을
+                  보인다. 잔재처럼 아이덴티티 게이지 수급에 목메지 않아도 되고,
+                  버스트 단발만 온전히 박아낼 수 있다면 보정에서는 꽤 괜찮은
+                  딜러로 평가받을 정도로 성능을 뽑아내는 편.
                 </div>
-                <div className="ttext-base text-gray-600 mb-5 dark:text-dark-300">
-                  하지만 쨍한 컬러가 유행하는 이 시점에서 애매한 색상은 호불호가
-                  갈렸고, 무엇보다 하나의 컬러 코드를 다양한 곳에서 사용하기에는
-                  색상 자체가 대비가 높지 않다보니 면에 사용하면 지나치게 눈에
-                  띄고, 텍스트에 사용하면 가독성이 떨어지는 문제가 생겼다.
-                  때문에 3차 리뉴얼을 거치면서 서비스의 모든 디자인 언어를
-                  새롭게 바꾸게 되었고, 이를 통해 지금의 네X버가 떠오르는 정직한
-                  녹색이 채택되었다. 또한 유색이 들어가면 과하게 붕 뜨는 로고의
-                  특성을 개선하기 위해 심볼에만 브랜드 컬러를 적용하도록 하여
-                  산뜻한 느낌을 유지하면서도 로고의 색상이 붕 뜨지 않고 단단하게
-                  자리잡을 수 있도록 했다.
+              </div>
+              <div className=" w-full order-0 lg:order-1 pb-20">
+                <div className="">
+                  <div className="border border-gray-200 dark:border-dark-700 rounded-lg p-5">
+                    <div className="text-base text-gray-950 dark:text-white mb-5">
+                      제품 정보
+                    </div>
+                    <div className="flex text-sm mb-3">
+                      <div className="text-gray-700 dark:text-dark-200 w-20">
+                        카테고리
+                      </div>
+                      <div className="text-gray-400 dark:text-dark-400">
+                        SOFTWARE / ADOBE / ADOBE
+                      </div>
+                    </div>
+                    <div className="flex text-sm mb-3">
+                      <div className="text-gray-700 dark:text-dark-200 w-20">
+                        버전
+                      </div>
+                      <div className="text-gray-400 dark:text-dark-400">
+                        0.1ver
+                      </div>
+                    </div>
+                    <div className="flex text-sm mb-3">
+                      <div className="text-gray-700 dark:text-dark-200 w-20">
+                        환경
+                      </div>
+                      <div className="text-gray-400 dark:text-dark-400">
+                        node 16.15.0 이상, npm 8.5.5 이상
+                      </div>
+                    </div>
+                    <div className="flex text-sm">
+                      <div className="text-gray-700 dark:text-dark-200 w-20">
+                        제작자
+                      </div>
+                      <div className="text-gray-400 dark:text-dark-400"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="text-black dark:text-white text-xl mb-5">
                 Review
               </div>
-              <div className="rounded-lg flex justify-center p-5 bg-dark-700/40 text-sm text-dark-500 mb-20">
+              <div className="rounded-lg flex justify-center p-5 bg-gray-100 text-gray-400 dark:bg-dark-700/40 text-sm dark:text-dark-500 mb-20">
                 코멘트가 없습니다.
-              </div>
-            </div>
-          </div>
-          <div className="w-full lg:flex-1 order-0 lg:order-1">
-            <div className="sticky top-16 ">
-              <div className="rounded-lg border border-gray-200/50 dark:border-dark-800/40 bg-gray-100/90 dark:bg-dark-700/60 p-3 lg:p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-dark-950/40 backdrop-blur-md">
-                <div className="">
-                  <div className="text-center text-white bg-primary-700 hover:bg-primary-600 rounded-md px-4 cursor-pointer py-4 text-base">
-                    29,000 원
-                  </div>
-                  <div className="flex gap-3 pt-3">
-                    <div className="flex-1 text-center text-black bg-white dark:bg-dark-600 hover:bg-gray-200 rounded-md px-4 cursor-pointer py-3 text-sm border border-gray-300/50 dark:border-dark-800 dark:text-primary-400 dark:hover:bg-dark-500">
-                      미리보기
-                    </div>
-                    <div className="text-center text-black bg-white dark:bg-dark-600 hover:bg-gray-200 rounded-md px-8 cursor-pointer py-3 text-sm border border-gray-300/50 dark:border-dark-800 dark:text-white dark:hover:bg-dark-500">
-                      목록
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="border border-dark-700 p-5 rounded-lg mb-6">
-              <div className="text-base text-white mb-5">제품 정보</div>
-              <div className="flex text-sm mb-3">
-                <div className="text-dark-200 w-20">카테고리</div>
-                <div className="text-dark-400">SOFTWARE / ADOBE / ADOBE</div>
-              </div>
-              <div className="flex text-sm mb-3">
-                <div className="text-dark-200 w-20">버전</div>
-                <div className="text-dark-400">0.1ver</div>
-              </div>
-              <div className="flex text-sm mb-3">
-                <div className="text-dark-200 w-20">환경</div>
-                <div className="text-dark-400">
-                  node 16.15.0 이상, npm 8.5.5 이상
-                </div>
-              </div>
-              <div className="flex text-sm">
-                <div className="text-dark-200 w-20">제작자</div>
-                <div className="text-dark-400"></div>
               </div>
             </div>
           </div>
