@@ -75,18 +75,17 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="w-full md:w-auto text-5xl md:text-6xl text-black dark:text-dark-200 font-semibold tracking-tighter order-1 md:order-0 mb-5 lg:mb-2"
+                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-orange-200 to-orange-300 font-semibold tracking-tighter mb-5 lg:mb-2"
                       >
                         Building digital experience
                       </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-300  to-orange-300 font-semibold tracking-tighter pl-0"
+                      >
+                        Creative platform service
+                      </motion.div>
                     </div>
-
-                    <motion.div
-                      variants={variants}
-                      className="text-5xl md:text-6xl mb-10 text-black dark:text-white font-semibold tracking-tighter pl-0"
-                    >
-                      Creative platform service
-                    </motion.div>
                   </div>
 
                   <motion.div
@@ -101,7 +100,7 @@ export default function Page() {
                       </div>
                       <button
                         onClick={() => setShowBottom(!showBottom)}
-                        className="flex gap-2 bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600 text-white dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-600 hover:text-white"
+                        className="flex gap-2 bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-300 text-white dark:text-black dark:hover:text-black text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-600 hover:text-white"
                       >
                         <span>
                           <svg
@@ -404,11 +403,10 @@ export default function Page() {
                 </div>
                 <div className="col-span-12 lg:col-span-6 flex items-center">
                   <div className=" pt-5 lg:pt-0">
-                    <motion.div
-                      variants={variants}
-                      className="text-base text-black dark:text-white mb-2 font-semibold"
-                    >
-                      WE WORK IT
+                    <motion.div variants={variants} className=" mb-2">
+                      <span className="text-base text-black dark:text-white  font-semibold">
+                        WE WORK IT
+                      </span>
                     </motion.div>
                     <motion.div
                       variants={variants}
