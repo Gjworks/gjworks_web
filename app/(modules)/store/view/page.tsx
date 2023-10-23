@@ -4,7 +4,16 @@ const Page = () => {
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-0 lg:px-3">
-        <div className="relative bg-gray-100 dark:bg-dark-600 rounded-none lg:rounded-xl h-[calc(100vh-44px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
+        <div className="max-w-screen-md mx-auto px-3 flex justify-between items-center gap-8 py-8">
+          <div className="flex gap-2 items-center">
+            <div className="text-2xl font-bold text-white">Store</div>
+            <div className="text-lg font-semibold text-gray-400">악세사리</div>
+          </div>
+          <div className="bg-white hover:bg-dark-300 rounded-full py-2 px-8 text-sm cursor-pointer">
+            장바구니
+          </div>
+        </div>
+        <div className="relative bg-gray-100 dark:bg-dark-600 rounded-none lg:rounded-xl h-[calc(100vh-144px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
           <div className="absolute inset-0 z-10"></div>
           <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">
             <div className="relative px-3 lg:px-0 pb-3">
