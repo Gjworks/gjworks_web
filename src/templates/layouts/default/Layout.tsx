@@ -34,6 +34,11 @@ const Layout = ({ children }) => {
     <div className="selection:text-white selection:bg-gray-950 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
       <div className="relative z-20">
         <Header />
+        <div className="py-3 bg-rose-600 text-white">
+          <div className="flex justify-center max-w-screen-xl mx-auto px-3 text-sm">
+            현재 홈페이지가 작업중에 있습니다.
+          </div>
+        </div>
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main>{children}</main>
         {scrollPosition > 100 && (
