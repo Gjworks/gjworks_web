@@ -158,10 +158,10 @@ export default function Page() {
                     </div>
                   </motion.div>
                   <div className="relative">
-                    <div className="absolute inset-0 bg-dark-950/30 rounded-2xl"></div>
+                    <div className="absolute inset-0  rounded-2xl"></div>
                     <div className="bg-dark-900 rounded-2xl overflow-hidden">
                       <Image
-                        src="/assets/images/bg19.jpg"
+                        src="/assets/images/bg23.jpg"
                         alt="Main Visual Image"
                         width="1265"
                         height="468"
