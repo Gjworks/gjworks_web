@@ -38,8 +38,8 @@ export async function POST(request: Request) {
       console.log(userInfo && userInfo.password)
       if (userInfo && await verifyPassword(password, userInfo.password)) {
         // exclude password from json response
-        const refreshToken = refresh(userInfo.id);
-        const accessToken = sign(userInfo.id);
+        const refreshToken = refresh(userInfo.email);
+        const accessToken = sign(userInfo.email);
 
         const updateUser = await prisma.user.update({
           where: {
