@@ -163,7 +163,7 @@ export default function Page() {
           </div>
           <div>
             <div className="relative max-w-screen-xl mx-auto px-3">
-              <div className="px-3">
+              <div className="">
                 <div className="absolute inset-0  rounded-2xl"></div>
                 <div className="bg-dark-900 rounded-2xl overflow-hidden">
                   <Image
