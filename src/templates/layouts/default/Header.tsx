@@ -168,13 +168,13 @@ const Header = () => {
                   setBackground('dark:bg-dark-950/75 bg-white/90')
                   setShowLeft(!showLeft)
                 }}
-                className="group hidden items-center px-3"
+                className="group flex lg:hidden items-center px-3"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
-                    <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div>
-                    <div className="transition-all absolute left-0 top-[9px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
-                    <div className="transition-all absolute left-0 top-[15px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
+                    {/* <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div> */}
+                    <div className="transition-all absolute left-0 top-[6px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
+                    <div className="transition-all absolute left-0 top-[12px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
                   </span>
                 </div>
               </button>
