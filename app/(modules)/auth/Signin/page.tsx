@@ -39,6 +39,7 @@ const Signin = () => {
         method: 'POST',
         body: formData,
       })
+      console.log(response)
       return response.json()
     }
     postData()

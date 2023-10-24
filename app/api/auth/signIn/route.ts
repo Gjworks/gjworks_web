@@ -41,7 +41,7 @@ export async function POST(request: Request) {
         const refreshToken = refresh(userInfo.email);
         const accessToken = sign(userInfo.email);
 
-        // const updateUser = await prisma.user.update({
+        // await prisma.user.update({
         //   where: {
         //     email: email,
         //   },
@@ -49,23 +49,35 @@ export async function POST(request: Request) {
         //     refreshToken: refreshToken
         //   }
         // })
+        // let response
+ 
 
-        // NextResponse.cookies.set(
-        //   'Set-Cookie',
-        //   `refreshToken=${refreshToken}; Path=/; Expires=${new Date(
-        //     Date.now() + 60 * 60 * 24 * 1000 * 3,
-        //   ).toUTCString()}; HttpOnly`,
-        // );
-        const response =  NextResponse.json({ code: "success" }, { status: 200,  headers: { "content-type": "application/json" }})
+      //   response.statusCode = 200;
+	
+      // // Access Token을 보내줌
+      //   return response.send({ email, accessToken });
+        // response =  NextResponse.json({ status: 200, data : { "accessToken": accessToken}})
 
-        response.cookies.set("accessToken",accessToken,{httpOnly:true});
+        // response.cookies.set("accessToken",accessToken,{httpOnly:true});
+
+        const response = NextResponse.json(
+          { success: true },
+          { status: 200, headers: { "content-type": "application/json" } }
+        );
+    
+        response.cookies.set({
+          name: "token",
+          value: accessToken,
+          path: "/",
+        });
+
         return response;
         
       } else {
-        return NextResponse.json({"code":"error", "element": "password","msg": "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다."}, { status: 401 })
+        return NextResponse.json({ "element": "password","msg": "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다."}, { status: 401 })
       }
     } catch (e) {
-      throw NextResponse.json({ code: "error" }, { status: 500 })
+      throw NextResponse.json({status: 500 })
     }
     // return NextResponse.json({ code: "success" }, { status: 200 })
   } catch (error) {
