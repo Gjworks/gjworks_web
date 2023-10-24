@@ -156,12 +156,12 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90 pt-0 lg:pt-8 ' +
+          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90 pt-0 lg:pt-5 ' +
           background
         }
       >
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex py-2 px-4 lg:px-8">
+          <div className="flex py-2 px-3">
             <div className="flex items-center">
               <button
                 onClick={() => {
@@ -202,7 +202,7 @@ const Header = () => {
                     alt="gjworks logo"
                     width="32"
                     height="32"
-                    className="block w-8 h-8"
+                    className="block w-10 h-10"
                   />
                 </a>
                 <a
@@ -352,7 +352,7 @@ const Header = () => {
           variants={wrapVariants}
           className="relative z-100"
         >
-          <div className="max-w-screen-xl mx-auto px-4 lg:px-8 pt-5 mt-[84px]">
+          <div className="max-w-screen-xl mx-auto px-4 pt-5 mt-[84px]">
             <div className="grid grid-cols-12 px-3">
               <div className="col-span-12 lg:col-span-3">
                 <div className="py-5">

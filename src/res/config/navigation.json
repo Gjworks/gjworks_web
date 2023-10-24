@@ -43,7 +43,7 @@
         },
         "forum" : {
             "name": "forum",
-            "title": "Forum",
+            "title": "Community",
             "description": "회사소개 문구가 들어갈 예정입니다.",
             "route": "/posts/forum",
             "image_name": "",

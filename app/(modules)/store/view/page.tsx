@@ -17,7 +17,7 @@ const Page = () => {
           <div className="absolute inset-0 z-10"></div>
           <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">
             <div className="relative px-3 lg:px-0 pb-3">
-              <div className="max-w-screen-sm mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/90 backdrop-blur-lg rounded-lg p-5 ">
+              <div className="max-w-screen-md mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/90 backdrop-blur-lg rounded-lg p-3 ">
                 <div className="flex gap-4 lg:gap-8 flex-wrap">
                   <div className="w-20 h-20 mx-auto rounded-lg bg-primary-500/75 lg:bg-primary-500/70 -mt-12 md:mt-0 backdrop-blur-lg"></div>
                   <div className="w-full md:flex-1 flex flex-wrap">
@@ -25,15 +25,15 @@ const Page = () => {
                       <div className="text-lg font-semibold text-black dark:text-white line-clamp-1">
                         Dynamic Property Applications
                       </div>
-                      <div className="text-dark-500 mb-2 line-clamp-1 text-sm">
+                      <div className="text-dark-500 mb-1 line-clamp-1">
                         지제이웍스 웹애플리케이션
                       </div>
                     </div>
                     <div className="w-full flex items-center gap-2">
-                      <div className="text-white text-xs bg-blue-700 rounded-full py-1 px-4 hover:bg-blue-600 cursor-pointer">
+                      <div className="text-white text-xs bg-primary-700 rounded-full py-1 px-4 hover:bg-primary-600 cursor-pointer">
                         150,000 원
                       </div>
-                      <div className="text-blue-700 text-xs bg-white rounded-full py-1 px-4 hover:bg-gray-200 cursor-pointer">
+                      <div className="text-primary-700 text-xs bg-white rounded-full py-1 px-4 hover:bg-gray-200 cursor-pointer">
                         미리보기
                       </div>
                     </div>
@@ -49,6 +49,37 @@ const Page = () => {
           <div className="max-w-screen-md mx-auto order-1 lg:order-0">
             <div className="">
               <div className="pb-10">
+                <div className="hidden border border-gray-200/50 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
+                  <div className="grid grid-cols-4 gap-10">
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-700 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">
+                        Download Count
+                      </div>
+                    </div>
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-400 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">Like Count</div>
+                    </div>
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-400 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">Review Count</div>
+                    </div>
+                    <div className="col-span-1">
+                      <div className="text-base text-primary-400 mb-3">
+                        1,200
+                      </div>
+                      <div className="text-sm text-dark-400">Readed Count</div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="text-black dark:text-white text-xl mb-8">
                   잔재된 기운
                 </div>

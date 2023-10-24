@@ -62,7 +62,7 @@ export default function Page() {
             {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 dark:bg-gradient-to-b  dark:from-dark-950/0 dark:via-dark-950/0 dark:to-dark-950/0"></div> */}
-            <div className="relative grid grid-cols-2 gap-8 max-w-screen-lg mx-auto px-4 lg:px-8">
+            <div className="relative grid grid-cols-2 gap-8 max-w-screen-lg mx-auto px-4">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center">
                 <motion.div
                   variants={parentVariants}
@@ -71,7 +71,7 @@ export default function Page() {
                   viewport={{ once: false, amount: 0.3 }}
                   className="w-full"
                 >
-                  <div className="pt-10 lg:pt-20">
+                  <div className="pt-10 lg:pt-12">
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
@@ -162,7 +162,7 @@ export default function Page() {
             </div>
           </div>
           <div>
-            <div className="relative max-w-screen-xl mx-auto px-3 lg:px-8">
+            <div className="relative max-w-screen-xl mx-auto px-3">
               <div className="px-3">
                 <div className="absolute inset-0  rounded-2xl"></div>
                 <div className="bg-dark-900 rounded-2xl overflow-hidden">
@@ -223,7 +223,7 @@ export default function Page() {
                         >
                           <motion.div
                             variants={variants}
-                            className="relative px-3 lg:px-8 mb-10"
+                            className="relative px-3 mb-10"
                           >
                             <div className="bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[350px]"></div>
                           </motion.div>

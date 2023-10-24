@@ -5,7 +5,7 @@ const Page = () => {
     <>
       <div className="relative bg-[url('/assets/images/bg15.jpg')] bg-no-repeat bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-transparent to-dark-950"></div>
-        <div className="relative max-w-screen-xl mx-auto py-8 xl:py-20 px-3">
+        <div className="relative max-w-screen-xl mx-auto py-8 xl:py-20 px-3 lg:px-8">
           <div className="text-white text-5xl font-semibold">Supports</div>
           <div className="py-20">
             <div className="grid grid-cols-2 gap-8">
