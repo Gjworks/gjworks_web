@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
         )}
 
         <footer>
-          <div className="max-w-screen-xl mx-auto pt-5 pb-10 px-3">
+          <div className="max-w-screen-xl mx-auto pt-5 pb-10 px-4 lg:px-8">
             <Footer />
           </div>
         </footer>

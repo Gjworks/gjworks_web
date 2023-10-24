@@ -62,7 +62,7 @@ export default function Page() {
             {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 dark:bg-gradient-to-b  dark:from-dark-950/0 dark:via-dark-950/0 dark:to-dark-950/0"></div> */}
-            <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-3">
+            <div className="relative grid grid-cols-2 gap-8 max-w-screen-lg mx-auto px-4 lg:px-8">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center">
                 <motion.div
                   variants={parentVariants}
@@ -157,24 +157,27 @@ export default function Page() {
                       </div>
                     </div>
                   </motion.div>
-                  <div className="relative">
-                    <div className="absolute inset-0  rounded-2xl"></div>
-                    <div className="bg-dark-900 rounded-2xl overflow-hidden">
-                      <Image
-                        src="/assets/images/bg23.jpg"
-                        alt="Main Visual Image"
-                        width="1265"
-                        height="468"
-                        loading="lazy"
-                        className="rounded-2xl"
-                      />
-                    </div>
-                  </div>
                 </motion.div>
               </div>
             </div>
           </div>
-
+          <div>
+            <div className="relative max-w-screen-xl mx-auto px-3 lg:px-8">
+              <div className="px-3">
+                <div className="absolute inset-0  rounded-2xl"></div>
+                <div className="bg-dark-900 rounded-2xl overflow-hidden">
+                  <Image
+                    src="/assets/images/bg23.jpg"
+                    alt="Main Visual Image"
+                    width="1265"
+                    height="468"
+                    loading="lazy"
+                    className="rounded-2xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -182,7 +185,7 @@ export default function Page() {
             variants={parentVariants}
             className="hidden pt-10"
           >
-            <div className="relative max-w-screen-xl mx-auto px-3">
+            <div className="relative max-w-screen-lg mx-auto px-3">
               <div className="grid grid-cols-12 gap-0 lg:gap-8">
                 <div className="col-span-12">
                   <div className="flex">
@@ -206,7 +209,7 @@ export default function Page() {
                 </div>
               </div>
               <div className="pt-20 mb-20">
-                <div className="relative max-w-screen-xl mx-auto px-3">
+                <div className="relative max-w-screen-lg mx-auto px-3">
                   <motion.div className="grid grid-cols-12 gap-y-8 lg:gap-8">
                     <div className="col-span-12 lg:col-span-5">
                       <motion.div
@@ -325,7 +328,7 @@ export default function Page() {
             viewport={{ once: false, amount: 0.3 }}
             className="hidden py-20"
           >
-            <div className=" max-w-screen-xl mx-auto py-5 lg:py-10">
+            <div className=" max-w-screen-lg mx-auto py-5 lg:py-10">
               <div className="px-3">
                 <div className="grid grid-cols-12 gap-0 lg:gap-20">
                   <div className="col-span-12 lg:col-span-7">
@@ -373,7 +376,7 @@ export default function Page() {
             </div>
           </motion.div>
           <div className="overflow-hidden mb-10">
-            <div className="max-w-screen-xl mx-auto px-3 pt-20">
+            <div className="max-w-screen-lg mx-auto px-3 pt-20">
               <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
@@ -421,7 +424,7 @@ export default function Page() {
             </div>
           </div>
           <div className="overflow-x-scroll overflow-y-hidden overflow-scroll-hide pb-20">
-            <div className="max-w-screen-xl mx-auto px-3">
+            <div className="max-w-screen-lg mx-auto px-3">
               <div className="">
                 <motion.div
                   initial="offscreen"
@@ -473,7 +476,7 @@ export default function Page() {
               whileInView="onscreen"
               viewport={{ once: false, amount: 0.3 }}
               variants={parentVariants}
-              className="max-w-screen-xl mx-auto px-3 xl:px-8 overflow-hidden pt-0 "
+              className="max-w-screen-lg mx-auto px-3 xl:px-8 overflow-hidden pt-0 "
             >
               <div className="flex justify-center">
                 <motion.div

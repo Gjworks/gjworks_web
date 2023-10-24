@@ -33,40 +33,6 @@
                 }
             ]
         },
-        "components" : {
-            "name": "components",
-            "title": "Components",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/components",
-            "image_name": "",
-            "subMenu": [
-                {
-                    "title": "Components",
-                    "name": "components",
-                    "image_name": "",
-                    "parent": "components",
-                    "description": "Create React",
-                    "route": "/components",
-                    "subMenu" : []
-                },
-                {
-                    "title": "Documentation",
-                    "name": "documentation",
-                    "image_name": "",
-                    "parent": "components",
-                    "route": "/components/documentation",
-                    "description": "Create React"
-                },
-                {
-                    "title": "License",
-                    "name": "license",
-                    "image_name": "",
-                    "parent": "components",
-                    "route": "/components/license",
-                    "description": "Create React"
-                }
-            ]
-        },
         "works" : {
             "name": "works",
             "title": "Works",

@@ -156,19 +156,19 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90 pt-0 lg:pt-3' +
+          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90 pt-0 lg:pt-8 ' +
           background
         }
       >
         <div className="max-w-screen-xl mx-auto">
-          <div className="flex py-2 pr-3">
+          <div className="flex py-2 px-4 lg:px-8">
             <div className="flex items-center">
               <button
                 onClick={() => {
                   setBackground('dark:bg-dark-950/75 bg-white/90')
                   setShowLeft(!showLeft)
                 }}
-                className="group flex lg:hidden items-center px-3"
+                className="group hidden items-center px-3"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
@@ -181,7 +181,7 @@ const Header = () => {
 
               <button
                 onClick={() => setShowNavigation(!showNavigation)}
-                className="group hidden lg:flex items-center px-3"
+                className="group hidden items-center px-3"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
@@ -195,7 +195,7 @@ const Header = () => {
               <div className="flex items-center">
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="hidden items-center"
+                  className="flex items-center"
                 >
                   <Image
                     src="/assets/images/brand/gjworks_white.svg"
@@ -207,13 +207,13 @@ const Header = () => {
                 </a>
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex items-center"
+                  className="hidden items-center"
                 >
                   <div className="flex  pl-2 text-sm lg:text-base font-semibold mr-4">
                     <div className="text-black dark:text-white">지제이웍스</div>
                   </div>
                 </a>
-                <div className="hidden lg:flex text-gray-500 dark:text-dark-100 text-xs bg-gray-100/90 dark:bg-dark-100/10 px-4 py-1 rounded-full hover:bg-gray-200/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer">
+                <div className="hidden text-gray-500 dark:text-dark-100 text-xs bg-gray-100/90 dark:bg-dark-100/10 px-4 py-1 rounded-full hover:bg-gray-200/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -232,8 +232,8 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="flex-1">
-              <div className="hidden lg:flex justify-center items-center pl-3">
+            <div className="flex-1 flex items-center gap-4">
+              <div className="hidden lg:flex items-center pl-6">
                 {nav.header &&
                   Object.entries(nav.header).map((data, index) => {
                     return (
@@ -276,7 +276,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="relative bg-white text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-950 dark:hover:bg-dark-700 "
+                className="hidden relative bg-white text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-950 dark:hover:bg-dark-700 "
                 onClick={() => {}}
               >
                 <svg
@@ -296,10 +296,10 @@ const Header = () => {
                 <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="group relative flex items-center rounded-md bg-gray-900 hover:bg-gray-700 dark:bg-dark-800 dark:hover:bg-dark-700 text-white hover:text-white dark:text-white dark:hover:text-white text-xs"
+                className="group relative flex items-center text-white hover:text-white dark:text-white dark:hover:text-white text-xs border border-dark-600 shadow-inner shadow-dark-600/60 rounded-full hover:shadow-md hover:shadow-dark-700"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-[6px] px-6 lg:px-3">
+                <div className="flex py-[6px] px-6 lg:px-4">
                   <div className="p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -352,8 +352,8 @@ const Header = () => {
           variants={wrapVariants}
           className="relative z-100"
         >
-          <div className="max-w-screen-xl mx-auto px-3 pt-5 mt-[44px]">
-            <div className="grid grid-cols-12">
+          <div className="max-w-screen-xl mx-auto px-4 lg:px-8 pt-5 mt-[84px]">
+            <div className="grid grid-cols-12 px-3">
               <div className="col-span-12 lg:col-span-3">
                 <div className="py-5">
                   <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
@@ -488,7 +488,7 @@ const Header = () => {
                 <div className="flex items-center">
                   <a
                     href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                    className="flex lg:hidden items-center"
+                    className="flex items-center"
                   >
                     <Image
                       src="/assets/images/brand/gjworks_white.svg"
@@ -500,7 +500,7 @@ const Header = () => {
                   </a>
                   <a
                     href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                    className="hidden lg:flex items-center"
+                    className="hidden items-center"
                   >
                     <div className="flex  pl-2 text-sm font-semibold mr-4">
                       <div className="text-black dark:text-white">
@@ -511,7 +511,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="flex-1">
-                <div className="hidden lg:flex justify-center items-center pl-3">
+                <div className="hidden items-center">
                   {nav.header &&
                     Object.entries(nav.header).map((data, index) => {
                       return (
@@ -554,7 +554,7 @@ const Header = () => {
                   </button>
                 </div>
                 <button
-                  className="relative text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:hover:bg-dark-700 "
+                  className="hidden relative text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:hover:bg-dark-700 "
                   onClick={() => {}}
                 >
                   <svg
