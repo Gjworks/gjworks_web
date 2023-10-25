@@ -9,8 +9,24 @@ const Page = () => {
             <div className="text-2xl font-bold text-white">Store</div>
             <div className="text-lg font-semibold text-gray-400">악세사리</div>
           </div>
-          <div className="bg-white hover:bg-dark-300 rounded-full py-2 px-8 text-sm cursor-pointer">
-            장바구니
+          <div className="flex items-center gap-1 bg-white hover:bg-dark-300 rounded-full py-2 px-8 cursor-pointer">
+            <div className="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1}
+                stroke="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                />
+              </svg>
+            </div>
+            <div className="text-sm">장바구니</div>
           </div>
         </div>
         <div className="relative bg-gray-100 dark:bg-dark-600 rounded-none lg:rounded-xl h-[calc(100vh-144px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
@@ -190,11 +206,186 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="text-black dark:text-white text-xl mb-5">
-                Review
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-1 bg-dark-900"></div>
+      <div className="max-w-screen-md mx-auto px-3 pt-10">
+        <div className="text-black dark:text-white text-xl mb-5">
+          Comments (1)
+        </div>
+        <div className="rounded-lg flex justify-center p-5 bg-gray-100 text-gray-400 dark:bg-dark-700/40 text-sm dark:text-dark-500 mb-10">
+          Comment Editor
+        </div>
+        <div className="pb-20">
+          <div className="py-10 border-b border-dark-800">
+            <div className="flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-dark-700"></div>
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="text-base font-semibold text-dark-100">
+                    Coreamericano
+                  </div>
+                  <div className="text-xs text-dark-500">1일전</div>
+                </div>
+                <div className="text-sm text-dark-400">
+                  안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
+                  상황인데, 일이 어렵게 되었군요. 묵시적 갱신이 되어버린
+                  상태에서 계약의 해지가 필요한 상황인 것 같습니다. 합의로 해당
+                  일자에 해지하기로 하고, 해지가 된다면 보증금의 반환청구는
+                  가능할 것 같습니다. 추가적인 부분은 편하게 말씀주세요.
+                  감사합니다.
+                </div>
+                <div className="flex justify-between items-center gap-4 pt-6">
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-1 text-xs">
+                      <div className="text-rose-500">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                        </svg>
+                      </div>
+                      <div className="text-dark-500">56 Likes</div>
+                    </div>
+
+                    <div className="text-dark-500 text-xs">Reply</div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="text-dark-500 text-xs">Modify</div>
+                    <div className="text-dark-500 text-xs">Delete</div>
+                  </div>
+                </div>
               </div>
-              <div className="rounded-lg flex justify-center p-5 bg-gray-100 text-gray-400 dark:bg-dark-700/40 text-sm dark:text-dark-500 mb-20">
-                코멘트가 없습니다.
+            </div>
+            <div>
+              <div className="flex gap-4 pt-10 pl-12">
+                <div className="w-8 h-8 rounded-full bg-dark-700"></div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="text-base font-semibold text-dark-100">
+                      Coreamericano
+                    </div>
+                    <div className="text-xs text-dark-500">1일전</div>
+                  </div>
+                  <div className=" text-sm text-dark-400">
+                    안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
+                    쉬웠을 상황인데, 일이 어렵게 되었군요. 묵시적 갱신이
+                    되어버린 상태에서 계약의 해지가 필요한 상황인 것 같습니다.
+                    합의로 해당 일자에 해지하기로 하고, 해지가 된다면 보증금의
+                    반환청구는 가능할 것 같습니다. 추가적인 부분은 편하게
+                    말씀주세요. 감사합니다.
+                  </div>
+                  <div className="flex items-center gap-4 pt-6">
+                    <div className="flex items-center gap-1 text-dark-500 text-xs">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                          />
+                        </svg>
+                      </div>
+                      <div>56 Likes</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex gap-4 pt-10 pl-12">
+                <div className="w-8 h-8 rounded-full bg-dark-700"></div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="text-base font-semibold text-dark-100">
+                      Coreamericano
+                    </div>
+                    <div className="text-xs text-dark-500">1일전</div>
+                  </div>
+                  <div className=" text-sm text-dark-400">
+                    안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
+                    쉬웠을 상황인데, 일이 어렵게 되었군요. 묵시적 갱신이
+                    되어버린 상태에서 계약의 해지가 필요한 상황인 것 같습니다.
+                    합의로 해당 일자에 해지하기로 하고, 해지가 된다면 보증금의
+                    반환청구는 가능할 것 같습니다. 추가적인 부분은 편하게
+                    말씀주세요. 감사합니다.
+                  </div>
+                  <div className="flex items-center gap-4 pt-6">
+                    <div className="flex items-center gap-1 text-dark-500 text-xs">
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                          />
+                        </svg>
+                      </div>
+                      <div>56 Likes</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="py-10 border-b border-dark-800">
+            <div className="flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-dark-700"></div>
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="text-base font-semibold text-dark-100">
+                    Coreamericano
+                  </div>
+                  <div className="text-xs text-dark-500">1일전</div>
+                </div>
+                <div className=" text-sm text-dark-400">
+                  안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
+                  상황인데, 일이 어렵게 되었군요. 묵시적 갱신이 되어버린
+                  상태에서 계약의 해지가 필요한 상황인 것 같습니다. 합의로 해당
+                  일자에 해지하기로 하고, 해지가 된다면 보증금의 반환청구는
+                  가능할 것 같습니다. 추가적인 부분은 편하게 말씀주세요.
+                  감사합니다.
+                </div>
+                <div className="flex items-center gap-4 pt-6">
+                  <div className="flex items-center gap-1 text-dark-500 text-xs">
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1}
+                        stroke="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                        />
+                      </svg>
+                    </div>
+                    <div>56 Likes</div>
+                  </div>
+                  <div className="text-dark-500 text-xs">Reply</div>
+                </div>
               </div>
             </div>
           </div>
