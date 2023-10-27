@@ -29,7 +29,7 @@ const Page = () => {
             <div className="text-sm">장바구니</div>
           </div>
         </div>
-        <div className="relative bg-gray-100 dark:bg-dark-600 rounded-none lg:rounded-xl h-[calc(100vh-144px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
+        <div className="relative bg-gray-100 dark:bg-dark-600 rounded-none lg:rounded-xl h-[calc(100vh-157px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
           <div className="absolute inset-0 z-10"></div>
           <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">
             <div className="relative px-3 lg:px-0 pb-3">
@@ -129,7 +129,7 @@ const Page = () => {
                   마엘스톰 가동률도 높아진다.
                 </div>
               </div>
-              <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl overflow-hidden h-[386px] mb-8">
+              <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl overflow-hidden mb-8">
                 <Image
                   alt="content images"
                   src="/assets/images/bg23.jpg"
