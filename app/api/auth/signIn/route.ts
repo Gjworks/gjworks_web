@@ -61,14 +61,20 @@ export async function POST(request: Request) {
         // response.cookies.set("accessToken",accessToken,{httpOnly:true});
 
         const response = NextResponse.json(
-          { success: true },
+          { 
+            success: true ,
+            userInfo : userInfo,
+            accessToken : accessToken,
+            expiresIn : ''},
           { status: 200, headers: { "content-type": "application/json" } }
         );
     
         response.cookies.set({
-          name: "token",
-          value: accessToken,
-          path: "/",
+          name: "refreshToken",
+          value: refreshToken,
+          httpOnly: true,
+          secure: true,
+          maxAge: 1000 * 60 * 60 * 24 * 7,
         });
 
         return response;
