@@ -52,10 +52,10 @@ const SubNav = () => {
   const snav = null
   return (
     <>
-      <div className="sticky backdrop-blur-lg bg-white/90 top-0 dark:bg-dark-950/10 border-b border-gray-100 dark:border-dark-900/20 z-999">
+      <div className=" backdrop-blur-lg bg-white/90 top-0 dark:bg-dark-950/10 border-b border-gray-100 dark:border-dark-900 z-999">
         <div className="max-w-screen-xl mx-auto px-3 overflow-hidden overflow-scroll-hide overflow-x-auto">
-          <div className="flex gap-8 justify-between h-[52px]">
-            <div>
+          <div className="py-5">
+            <div className="flex justify-center">
               {currentPage && (
                 <Link
                   href={currentPage?.route}
@@ -65,7 +65,9 @@ const SubNav = () => {
                 </Link>
               )}
             </div>
-            <div className="flex items-center">
+          </div>
+          <div>
+            <div className="flex justify-center items-center gap-4">
               {subMenu &&
                 Object.entries(subMenu).map((data, index) => {
                   return (
@@ -73,7 +75,7 @@ const SubNav = () => {
                       href={data[1].route}
                       key={data[1].name}
                       className={
-                        'block py-0 lg:py-2 px-1 lg:px-3 mx-1 text-xs lg:text-xs font-normal ' +
+                        'block py-4 px-1 lg:px-3 text-xs lg:text-xs font-normal ' +
                         (pathname === data[1].route
                           ? 'text-gray-400 dark:text-white'
                           : 'text-gray-800 dark:text-dark-200 hover:text-gray-400 dark:hover:text-white')
@@ -83,12 +85,6 @@ const SubNav = () => {
                     </Link>
                   )
                 })}
-              <Link
-                href="#"
-                className="whitespace-nowrap block text-primary-200 dark:text-white text-xs py-0 lg:py-1 px-1 lg:px-3 mx-1 hover:text-white dark:hover:text-white transition duration-300 cursor-pointer bg-primary-500 hover:bg-primary-600 rounded-full"
-              >
-                Contact us
-              </Link>
             </div>
           </div>
         </div>

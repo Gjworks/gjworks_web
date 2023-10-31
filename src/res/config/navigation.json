@@ -41,11 +41,19 @@
             "image_name": "",
             "subMenu": []
         },
-        "forum" : {
-            "name": "forum",
-            "title": "Community",
+        "maintenance" : {
+            "name": "maintenance",
+            "title": "Maintenance",
             "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/posts/forum",
+            "route": "/maintenance",
+            "image_name": "",
+            "subMenu": []
+        },
+        "supports" : {
+            "name": "supports",
+            "title": "Supports",
+            "description": "회사소개 문구가 들어갈 예정입니다.",
+            "route": "/supports",
             "image_name": "",
             "subMenu": [
                 {
@@ -75,14 +83,6 @@
                     "description": "Create React"
                 }
             ]
-        },
-        "supports" : {
-            "name": "supports",
-            "title": "Supports",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/supports",
-            "image_name": "",
-            "subMenu": []
         }
     },
     "footer" : {
