@@ -467,7 +467,7 @@ const Header = () => {
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
         >
-          <div className=" py-1.5 px-5 lg:px-10 bg-gray-300/25 dark:bg-dark-600/25 rounded-full">
+          <div className=" py-1.5 px-5 lg:px-10 bg-white/90 dark:bg-dark-700/75 rounded-full shadow-md shadow-gray-950/10 dark:shadow-gray-950/25">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <button
@@ -490,13 +490,15 @@ const Header = () => {
                     href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                     className="flex items-center"
                   >
-                    <Image
-                      src="/assets/images/brand/gjworks_white.svg"
-                      alt="gjworks logo"
-                      width="32"
-                      height="32"
-                      className="block w-8 h-8"
-                    />
+                    <span className="p-[2px] bg-black rounded-md">
+                      <Image
+                        src="/assets/images/brand/gjworks_white.svg"
+                        alt="gjworks logo"
+                        width="32"
+                        height="32"
+                        className="block w-6 h-6"
+                      />
+                    </span>
                   </a>
                   <a
                     href={process.env.NEXT_PUBLIC_DEFAULT_URL}
@@ -534,7 +536,7 @@ const Header = () => {
               <div className="relative flex gap-2 items-center justify-end">
                 <div className="flex gap-1 items-center">
                   <button
-                    className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
+                    className="hover:bg-gray-200/50 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700/50"
                     onClick={() => setShowModal(!showModal)}
                   >
                     <svg

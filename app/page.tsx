@@ -75,13 +75,13 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-orange-200 to-orange-300 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
+                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-orange-500 to-orange-600 dark:from-purple-300 dark:via-orange-200 dark:to-orange-300 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
                       >
                         Building digital experience
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-300  to-orange-300 font-semibold tracking-tighter pl-0"
+                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-orange-500 dark:from-purple-300  dark:to-orange-300 font-semibold tracking-tighter pl-0"
                       >
                         Creative platform service
                       </motion.div>
