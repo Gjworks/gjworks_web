@@ -296,7 +296,7 @@ const Header = () => {
                 <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="group relative flex items-center text-white hover:text-white dark:text-white dark:hover:text-white text-xs border border-dark-600 shadow-inner shadow-dark-600/60 rounded-full hover:shadow-md hover:shadow-dark-700"
+                className="group relative flex items-center text-black dark:text-white hover:text-black dark:hover:text-white text-xs border border-gray-200 dark:border-dark-600 shadow-inner shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full hover:shadow-md hover:shadow-gray-100 dark:hover:shadow-dark-700"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-6 lg:px-4">
@@ -462,12 +462,12 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-md bg-opacity-75 mx-auto max-w-screen-lg rounded-full"
+          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg bg-opacity-75 mx-auto max-w-screen-lg rounded-full"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
         >
-          <div className=" py-1.5 px-5 lg:px-10 bg-white/80 dark:bg-dark-600/25 rounded-full">
+          <div className=" py-1.5 px-5 lg:px-10 bg-gray-300/25 dark:bg-dark-600/25 rounded-full">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <button

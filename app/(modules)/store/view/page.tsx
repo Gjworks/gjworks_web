@@ -6,10 +6,14 @@ const Page = () => {
       <div className="max-w-screen-xl mx-auto px-0 lg:px-3">
         <div className="max-w-screen-md mx-auto px-3 flex justify-between items-center gap-8 py-8">
           <div className="flex gap-2 items-center">
-            <div className="text-2xl font-bold text-white">Store</div>
-            <div className="text-lg font-semibold text-gray-400">악세사리</div>
+            <div className="text-2xl font-bold text-black dark:text-white">
+              Store
+            </div>
+            <div className="text-lg font-semibold text-gray-700 dark:text-dark-400">
+              악세사리
+            </div>
           </div>
-          <div className="flex items-center gap-1 bg-white hover:bg-dark-300 rounded-full py-2 px-8 cursor-pointer">
+          <div className="flex items-center gap-1 bg-gray-950 hover:bg-gray-700 dark:bg-white dark:hover:bg-dark-300 rounded-full py-2 px-8 cursor-pointer text-white dark:text-black">
             <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +39,7 @@ const Page = () => {
             <div className="relative px-3 lg:px-0 pb-3">
               <div className="max-w-screen-md mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/90 backdrop-blur-lg rounded-lg p-3 ">
                 <div className="flex gap-4 lg:gap-8 flex-wrap">
-                  <div className="w-20 h-20 mx-auto rounded-lg bg-primary-500/75 lg:bg-primary-500/70 -mt-12 md:mt-0 backdrop-blur-lg"></div>
+                  <div className="w-20 h-20 mx-auto rounded-2xl -mt-12 md:mt-0 backdrop-blur-lg shadow-lg shadow-gray-200 dark:shadow-dark-950/40 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500"></div>
                   <div className="w-full md:flex-1 flex flex-wrap">
                     <div className="w-full">
                       <div className="text-lg font-semibold text-black dark:text-white line-clamp-1">
@@ -210,24 +214,26 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="h-1 bg-dark-900"></div>
+      <div className="h-1 bg-gray-100 dark:bg-dark-900"></div>
       <div className="max-w-screen-md mx-auto px-3 pt-10">
-        <div className="text-black dark:text-white text-xl mb-5">
+        <div className="text-black dark:text-white text-lg mb-5">
           Comments (1)
         </div>
         <div className="rounded-lg flex justify-center p-5 bg-gray-100 text-gray-400 dark:bg-dark-700/40 text-sm dark:text-dark-500 mb-10">
           Comment Editor
         </div>
         <div className="pb-20">
-          <div className="py-10 border-b border-dark-800">
+          <div className="py-10 border-b border-gray-200 dark:border-dark-800">
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-dark-700"></div>
+              <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-dark-700"></div>
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-2">
-                  <div className="text-base font-semibold text-dark-100">
+                  <div className="text-base font-semibold text-gray-700 dark:text-dark-100">
                     Coreamericano
                   </div>
-                  <div className="text-xs text-dark-500">1일전</div>
+                  <div className="text-xs text-gray-400 dark:text-dark-500">
+                    1일전
+                  </div>
                 </div>
                 <div className="text-sm text-dark-400">
                   안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
@@ -250,28 +256,38 @@ const Page = () => {
                           <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
                         </svg>
                       </div>
-                      <div className="text-dark-500">56 Likes</div>
+                      <div className="text-gray-400 dark:text-dark-500">
+                        56 Likes
+                      </div>
                     </div>
 
-                    <div className="text-dark-500 text-xs">Reply</div>
+                    <div className="text-gray-400 dark:text-dark-500 text-xs">
+                      Reply
+                    </div>
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <div className="text-dark-500 text-xs">Modify</div>
-                    <div className="text-dark-500 text-xs">Delete</div>
+                    <div className="text-gray-400 dark:text-dark-500 text-xs">
+                      Modify
+                    </div>
+                    <div className="text-gray-400 dark:text-dark-500 text-xs">
+                      Delete
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             <div>
               <div className="flex gap-4 pt-10 pl-12">
-                <div className="w-8 h-8 rounded-full bg-dark-700"></div>
+                <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-dark-700"></div>
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="text-base font-semibold text-dark-100">
+                    <div className="text-base font-semibold text-gray-700 dark:text-dark-100">
                       Coreamericano
                     </div>
-                    <div className="text-xs text-dark-500">1일전</div>
+                    <div className="text-xs text-gray-400 dark:text-dark-500">
+                      1일전
+                    </div>
                   </div>
                   <div className=" text-sm text-dark-400">
                     안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
@@ -282,7 +298,7 @@ const Page = () => {
                     말씀주세요. 감사합니다.
                   </div>
                   <div className="flex items-center gap-4 pt-6">
-                    <div className="flex items-center gap-1 text-dark-500 text-xs">
+                    <div className="flex items-center gap-1 text-gray-400 dark:text-dark-500 text-xs">
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -305,13 +321,15 @@ const Page = () => {
                 </div>
               </div>
               <div className="flex gap-4 pt-10 pl-12">
-                <div className="w-8 h-8 rounded-full bg-dark-700"></div>
+                <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-dark-700"></div>
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="text-base font-semibold text-dark-100">
+                    <div className="text-base font-semibold text-gray-700 dark:text-dark-100">
                       Coreamericano
                     </div>
-                    <div className="text-xs text-dark-500">1일전</div>
+                    <div className="text-xs text-gray-400 dark:text-dark-500">
+                      1일전
+                    </div>
                   </div>
                   <div className=" text-sm text-dark-400">
                     안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
@@ -322,7 +340,7 @@ const Page = () => {
                     말씀주세요. 감사합니다.
                   </div>
                   <div className="flex items-center gap-4 pt-6">
-                    <div className="flex items-center gap-1 text-dark-500 text-xs">
+                    <div className="flex items-center gap-1 text-gray-400 dark:text-dark-500 text-xs">
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -346,15 +364,17 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className="py-10 border-b border-dark-800">
+          <div className="py-10">
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-dark-700"></div>
+              <div className="w-10 h-10 rounded-full bg-gray-200 dark:bg-dark-700"></div>
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-2">
-                  <div className="text-base font-semibold text-dark-100">
+                  <div className="text-base font-semibold text-gray-700 dark:text-dark-100">
                     Coreamericano
                   </div>
-                  <div className="text-xs text-dark-500">1일전</div>
+                  <div className="text-xs text-gray-400 dark:text-dark-500">
+                    1일전
+                  </div>
                 </div>
                 <div className=" text-sm text-dark-400">
                   안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
@@ -365,7 +385,7 @@ const Page = () => {
                   감사합니다.
                 </div>
                 <div className="flex items-center gap-4 pt-6">
-                  <div className="flex items-center gap-1 text-dark-500 text-xs">
+                  <div className="flex items-center gap-1 text-gray-400 dark:text-dark-500 text-xs">
                     <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
