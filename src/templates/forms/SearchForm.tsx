@@ -9,10 +9,10 @@ const SearchForm = () => {
         <div className="flex border-b border-gray-200 dark:border-dark-900 p-3">
           <input
             type="text"
-            className="group flex-1 text-base text-slate-600 py-2 bg-transparent px-3 outline-none focus:text-black dark:text-dark-200 placeholder:text-slate-500 dark:placeholder:text-dark-500 placeholder:font-light"
+            className="group flex-1 text-base text-gray-600 py-2 bg-transparent px-3 outline-none focus:text-black dark:text-dark-200 placeholder:text-gray-500 dark:placeholder:text-dark-500 placeholder:font-light"
             placeholder="Search Text..."
           ></input>
-          <button className="text-slate-400 hover:text-slate-900 dark:text-dark-300 dark:hover:text-white group-focus:text-white">
+          <button className="text-gray-700 hover:text-gray-900 dark:text-dark-300 dark:hover:text-white group-focus:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -39,7 +39,7 @@ const SearchForm = () => {
           }}
         >
           <div className="flex items-center gap-4">
-            <div className="text-slate-500 dark:text-dark-100 text-xs">
+            <div className="text-gray-500 dark:text-dark-100 text-xs">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="flex bg-primary-700 dark:text-white dark:bg-primary-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white text-black cursor-pointer">
+            <div className="flex bg-primary-400 dark:text-white dark:bg-gray-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-gray-600 dark:hover:text-white hover:text-black text-black cursor-pointer">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-primary-300 dark:text-white dark:bg-primary-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white text-primary-700 cursor-pointer">
+            <div className="flex bg-gray-300 dark:text-white dark:bg-gray-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-gray-600 dark:hover:text-white hover:text-black text-gray-700 cursor-pointer">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
@@ -105,15 +105,15 @@ const SearchForm = () => {
           <div className="text-sm font-semibold mb-3 text-black dark:text-white">
             검색기록
           </div>
-          <div className="flex text-sm border-b border-slate-300/50 dark:border-dark-700 text-gray-600 dark:text-dark-500 py-3 hover:bg-gray-950 dark:hover:bg-primary-700 hover:text-black dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-gray-300/50 dark:border-dark-700 text-gray-600 dark:text-dark-500 py-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">tailwind 설정하는 방법</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-slate-300/50 dark:border-dark-700 text-gray-600 dark:text-dark-500 py-3 hover:bg-gray-950 dark:hover:bg-primary-700 hover:text-black dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm border-b border-gray-300/50 dark:border-dark-700 text-gray-600 dark:text-dark-500 py-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">Prisma Create Schemas</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm text-gray-600 dark:text-dark-500 py-3 hover:bg-gray-950 dark:hover:bg-primary-700 hover:text-black dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="flex text-sm text-gray-600 dark:text-dark-500 py-3 hover:bg-gray-300 dark:hover:bg-gray-700 hover:text-black dark:hover:text-white px-3 rounded-sm cursor-pointer">
             <div className="flex-1">postfix 메일 설정</div>
             <div>22.05.23</div>
           </div>
@@ -150,7 +150,7 @@ const SearchForm = () => {
               </Link>
             </div>
             <div className="flex-1"></div>
-            <div className="text-slate-400 dark:text-dark-500 text-xs">
+            <div className="text-gray-400 dark:text-dark-500 text-xs">
               Cookie 정책보기
             </div>
           </div>

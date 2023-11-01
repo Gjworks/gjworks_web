@@ -30,7 +30,7 @@ const Page = () => {
                 />
               </svg>
             </div>
-            <div className="text-sm">장바구니</div>
+            <div className="hidden md:flex text-sm">장바구니</div>
           </div>
         </div>
         <div className="relative bg-gray-100/10 dark:bg-dark-600 rounded-none lg:rounded-2xl h-[calc(100vh-157px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
@@ -45,15 +45,15 @@ const Page = () => {
                       <div className="text-lg font-semibold text-white dark:text-white line-clamp-1">
                         Dynamic Property Applications
                       </div>
-                      <div className="text-gray-100 text-dark-500 mb-1 line-clamp-1">
+                      <div className="text-gray-100 font-light dark:text-dark-500 mb-1 line-clamp-1">
                         지제이웍스 웹애플리케이션
                       </div>
                     </div>
                     <div className="w-full flex items-center gap-2">
-                      <div className="text-white text-xs bg-primary-700 rounded-full py-1 px-4 hover:bg-primary-600 cursor-pointer">
+                      <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
                         150,000 원
                       </div>
-                      <div className="text-primary-700 text-xs bg-white rounded-full py-1 px-4 hover:bg-gray-200 cursor-pointer">
+                      <div className="text-primary-600 text-xs bg-white rounded-full py-1 px-4 hover:bg-gray-200 cursor-pointer">
                         미리보기
                       </div>
                     </div>
@@ -103,7 +103,7 @@ const Page = () => {
                 <div className="text-black dark:text-white text-xl mb-8">
                   잔재된 기운
                 </div>
-                <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
+                <div className="text-base text-gray-700 mb-5 dark:text-dark-300 font-light font-light">
                   잔재 블레이드의 요소들을 각각 뜯어보면 A급이나 S급으로 보기는
                   힘든 부족한 요소는 있어도 D급 이하의 폐급 요소는 찾아보기
                   어렵다. 딜량도 준수하고, 지속무력수치와 부위파괴 수치는 매우
@@ -125,7 +125,7 @@ const Page = () => {
                   인식이 좋은 편이기 때문에 레이드 파티 구직중에도 블레이드라는
                   이유만으로 기피되는 경우는 많지 않다.
                 </div>
-                <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
+                <div className="text-base text-gray-700 mb-5 dark:text-dark-300 font-light">
                   잔재된 기운은 아츠 상태의 쿨타임 감소와 잔재된 기운의 공이속
                   효과로 인해 고특화 클래스임에도 신속 클래스 처럼 빠르고
                   지속적으로 몰아치는 플레이가 가능하다. 끊임없이 아이덴티티를
@@ -147,7 +147,7 @@ const Page = () => {
                 <div className="text-black dark:text-white text-xl mb-8">
                   버스트
                 </div>
-                <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
+                <div className="text-base text-gray-700 mb-5 dark:text-dark-300 font-light">
                   적절히 스택을 쌓은 뒤 각종 각인과 특성, 사멸 장비 효과까지
                   받은 버스트 스킬은 로스트아크 내의 손에 꼽을 정도로 강력한
                   한방 딜링을 자랑한다. 사실상 딜의 대부분이 버스트에 몰려있고,
@@ -163,7 +163,7 @@ const Page = () => {
                   유저의 숙련도만 있다면 극한의 성능을 곧이 곧대로 보여줄 수
                   있는 편이다.
                 </div>
-                <div className="text-base text-gray-600 mb-5 dark:text-dark-300">
+                <div className="text-base text-gray-700 mb-5 dark:text-dark-300 font-light">
                   트라이포드에 영향을 전혀받지 않고 자체 스킬 성능, 속칭 깡통
                   성능만의 영향을 받는 보정에서 버스트는 꽤나 좋은 모습을
                   보인다. 잔재처럼 아이덴티티 게이지 수급에 목메지 않아도 되고,
@@ -235,7 +235,7 @@ const Page = () => {
                     1일전
                   </div>
                 </div>
-                <div className="text-sm text-dark-400">
+                <div className="text-sm text-gray-500 dark:text-dark-400 font-light">
                   안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
                   상황인데, 일이 어렵게 되었군요. 묵시적 갱신이 되어버린
                   상태에서 계약의 해지가 필요한 상황인 것 같습니다. 합의로 해당
@@ -289,7 +289,7 @@ const Page = () => {
                       1일전
                     </div>
                   </div>
-                  <div className=" text-sm text-dark-400">
+                  <div className=" text-sm text-gray-500 dark:text-dark-400 font-light">
                     안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
                     쉬웠을 상황인데, 일이 어렵게 되었군요. 묵시적 갱신이
                     되어버린 상태에서 계약의 해지가 필요한 상황인 것 같습니다.
@@ -331,7 +331,7 @@ const Page = () => {
                       1일전
                     </div>
                   </div>
-                  <div className=" text-sm text-dark-400">
+                  <div className=" text-sm text-gray-500 dark:text-dark-400 font-light">
                     안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
                     쉬웠을 상황인데, 일이 어렵게 되었군요. 묵시적 갱신이
                     되어버린 상태에서 계약의 해지가 필요한 상황인 것 같습니다.
@@ -376,7 +376,7 @@ const Page = () => {
                     1일전
                   </div>
                 </div>
-                <div className=" text-sm text-dark-400">
+                <div className=" text-sm text-gray-500 dark:text-dark-400 font-light">
                   안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
                   상황인데, 일이 어렵게 되었군요. 묵시적 갱신이 되어버린
                   상태에서 계약의 해지가 필요한 상황인 것 같습니다. 합의로 해당

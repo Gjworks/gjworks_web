@@ -156,7 +156,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90 pt-0 lg:pt-5 ' +
+          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90 pt-0 lg:py-3 ' +
           background
         }
       >
@@ -198,7 +198,7 @@ const Header = () => {
                   className="flex items-center"
                 >
                   <Image
-                    src="/assets/images/brand/gjworks_white.svg"
+                    src="/assets/images/brand/gjworks.svg"
                     alt="gjworks logo"
                     width="32"
                     height="32"
@@ -296,7 +296,7 @@ const Header = () => {
                 <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="group relative flex items-center text-black dark:text-white hover:text-black dark:hover:text-white text-xs border border-gray-200 dark:border-dark-600 shadow-inner shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full hover:shadow-md hover:shadow-gray-100 dark:hover:shadow-dark-700"
+                className="group relative flex items-center bg-slate-100/75 hover:bg-white text-black dark:text-white hover:text-black dark:hover:text-white text-xs border border-gray-200 dark:border-dark-600 shadow-inner shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full hover:shadow-md hover:shadow-gray-100 dark:hover:shadow-dark-700"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-6 lg:px-4">
@@ -467,7 +467,7 @@ const Header = () => {
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
         >
-          <div className=" py-1.5 px-5 lg:px-10 bg-white/90 dark:bg-dark-700/75 rounded-full shadow-md shadow-gray-950/10 dark:shadow-gray-950/25">
+          <div className=" py-1.5 px-5 lg:px-10 bg-white/75 dark:bg-dark-900/75 rounded-full shadow-md shadow-gray-500/10 dark:shadow-gray-950/25">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <button

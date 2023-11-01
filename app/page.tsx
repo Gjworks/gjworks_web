@@ -75,13 +75,13 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-orange-500 to-orange-600 dark:from-purple-300 dark:via-orange-200 dark:to-orange-300 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
+                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-gray-900 dark:from-primary-400 dark:via-primary-200 dark:to-primary-300 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
                       >
                         Building digital experience
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-orange-500 dark:from-purple-300  dark:to-orange-300 font-semibold tracking-tighter pl-0"
+                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-gray-950 dark:from-primary-400  dark:to-primary-300 font-semibold tracking-tighter pl-0"
                       >
                         Creative platform service
                       </motion.div>
@@ -100,7 +100,7 @@ export default function Page() {
                       </div>
                       <button
                         onClick={() => setShowBottom(!showBottom)}
-                        className="flex gap-2 bg-primary-700 dark:bg-primary-700 dark:hover:bg-primary-600 text-white dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-600 hover:text-white"
+                        className="flex gap-2 bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-500 text-black dark:text-black dark:hover:text-black text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-500 hover:text-black"
                       >
                         <span>
                           <svg
@@ -167,7 +167,7 @@ export default function Page() {
                 <div className="absolute inset-0  rounded-2xl"></div>
                 <div className="bg-dark-900 rounded-2xl overflow-hidden">
                   <Image
-                    src="/assets/images/bg23.jpg"
+                    src="/assets/images/bg22.jpg"
                     alt="Main Visual Image"
                     width="1265"
                     height="468"
