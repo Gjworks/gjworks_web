@@ -156,7 +156,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          'relative w-full top-0 backdrop-blur-lg z-101 dark:bg-dark-950/75 bg-white/90 pt-0 lg:py-3 ' +
+          'relative w-full top-0 backdrop-blur-lg z-101  pt-0 lg:py-3 ' +
           background
         }
       >
@@ -233,7 +233,11 @@ const Header = () => {
               </div>
             </div>
             <div className="flex-1 flex items-center gap-4">
-              <div className="hidden lg:flex items-center pl-6">
+              <div
+                className="hidden lg:flex items-center pl-6"
+                onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
+                // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
+              >
                 {nav.header &&
                   Object.entries(nav.header).map((data, index) => {
                     return (
@@ -462,12 +466,12 @@ const Header = () => {
       </motion.div>
       {scrollPosition > 80 && (
         <motion.div
-          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg bg-opacity-75 mx-auto max-w-screen-lg rounded-full"
+          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg mx-auto max-w-screen-lg rounded-full"
           initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
           exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
         >
-          <div className=" py-1.5 px-5 lg:px-10 bg-white/75 dark:bg-dark-900/75 rounded-full shadow-md shadow-gray-500/10 dark:shadow-gray-950/25">
+          <div className=" py-1.5 px-5 lg:px-10 bg-white/90 dark:bg-dark-900/75 rounded-full shadow-md shadow-gray-500/10 dark:shadow-gray-950/25 border border-gray-200">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <button
@@ -479,9 +483,8 @@ const Header = () => {
                 >
                   <div className="flex relative w-5 h-5 cursor-pointer">
                     <span>
-                      <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div>
-                      <div className="transition-all absolute left-0 top-[9px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
-                      <div className="transition-all absolute left-0 top-[15px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
+                      <div className="transition-all absolute left-0 top-[6px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
+                      <div className="transition-all absolute left-0 top-[12px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
                     </span>
                   </div>
                 </button>

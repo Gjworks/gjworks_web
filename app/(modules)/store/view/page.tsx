@@ -236,12 +236,11 @@ const Page = () => {
                   </div>
                 </div>
                 <div className="text-sm text-gray-500 dark:text-dark-400 font-light">
-                  안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
-                  상황인데, 일이 어렵게 되었군요. 묵시적 갱신이 되어버린
-                  상태에서 계약의 해지가 필요한 상황인 것 같습니다. 합의로 해당
-                  일자에 해지하기로 하고, 해지가 된다면 보증금의 반환청구는
-                  가능할 것 같습니다. 추가적인 부분은 편하게 말씀주세요.
-                  감사합니다.
+                  트라이포드에 영향을 전혀받지 않고 자체 스킬 성능, 속칭 깡통
+                  성능만의 영향을 받는 보정에서 버스트는 꽤나 좋은 모습을
+                  보인다. 잔재처럼 아이덴티티 게이지 수급에 목메지 않아도 되고,
+                  버스트 단발만 온전히 박아낼 수 있다면 보정에서는 꽤 괜찮은
+                  딜러로 평가받을 정도로 성능을 뽑아내는 편.
                 </div>
                 <div className="flex justify-between items-center gap-4 pt-6">
                   <div className="flex items-center gap-4">
@@ -290,12 +289,11 @@ const Page = () => {
                     </div>
                   </div>
                   <div className=" text-sm text-gray-500 dark:text-dark-400 font-light">
-                    안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
-                    쉬웠을 상황인데, 일이 어렵게 되었군요. 묵시적 갱신이
-                    되어버린 상태에서 계약의 해지가 필요한 상황인 것 같습니다.
-                    합의로 해당 일자에 해지하기로 하고, 해지가 된다면 보증금의
-                    반환청구는 가능할 것 같습니다. 추가적인 부분은 편하게
-                    말씀주세요. 감사합니다.
+                    트라이포드에 영향을 전혀받지 않고 자체 스킬 성능, 속칭 깡통
+                    성능만의 영향을 받는 보정에서 버스트는 꽤나 좋은 모습을
+                    보인다. 잔재처럼 아이덴티티 게이지 수급에 목메지 않아도
+                    되고, 버스트 단발만 온전히 박아낼 수 있다면 보정에서는 꽤
+                    괜찮은 딜러로 평가받을 정도로 성능을 뽑아내는 편.
                   </div>
                   <div className="flex items-center gap-4 pt-6">
                     <div className="flex items-center gap-1 text-gray-400 dark:text-dark-500 text-xs">
@@ -332,12 +330,11 @@ const Page = () => {
                     </div>
                   </div>
                   <div className=" text-sm text-gray-500 dark:text-dark-400 font-light">
-                    안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도
-                    쉬웠을 상황인데, 일이 어렵게 되었군요. 묵시적 갱신이
-                    되어버린 상태에서 계약의 해지가 필요한 상황인 것 같습니다.
-                    합의로 해당 일자에 해지하기로 하고, 해지가 된다면 보증금의
-                    반환청구는 가능할 것 같습니다. 추가적인 부분은 편하게
-                    말씀주세요. 감사합니다.
+                    트라이포드에 영향을 전혀받지 않고 자체 스킬 성능, 속칭 깡통
+                    성능만의 영향을 받는 보정에서 버스트는 꽤나 좋은 모습을
+                    보인다. 잔재처럼 아이덴티티 게이지 수급에 목메지 않아도
+                    되고, 버스트 단발만 온전히 박아낼 수 있다면 보정에서는 꽤
+                    괜찮은 딜러로 평가받을 정도로 성능을 뽑아내는 편.
                   </div>
                   <div className="flex items-center gap-4 pt-6">
                     <div className="flex items-center gap-1 text-gray-400 dark:text-dark-500 text-xs">
@@ -377,12 +374,11 @@ const Page = () => {
                   </div>
                 </div>
                 <div className=" text-sm text-gray-500 dark:text-dark-400 font-light">
-                  안녕하세요. 장변입니다. 잊지 않고 미리 말씀만 하셨어도 쉬웠을
-                  상황인데, 일이 어렵게 되었군요. 묵시적 갱신이 되어버린
-                  상태에서 계약의 해지가 필요한 상황인 것 같습니다. 합의로 해당
-                  일자에 해지하기로 하고, 해지가 된다면 보증금의 반환청구는
-                  가능할 것 같습니다. 추가적인 부분은 편하게 말씀주세요.
-                  감사합니다.
+                  트라이포드에 영향을 전혀받지 않고 자체 스킬 성능, 속칭 깡통
+                  성능만의 영향을 받는 보정에서 버스트는 꽤나 좋은 모습을
+                  보인다. 잔재처럼 아이덴티티 게이지 수급에 목메지 않아도 되고,
+                  버스트 단발만 온전히 박아낼 수 있다면 보정에서는 꽤 괜찮은
+                  딜러로 평가받을 정도로 성능을 뽑아내는 편.
                 </div>
                 <div className="flex items-center gap-4 pt-6">
                   <div className="flex items-center gap-1 text-gray-400 dark:text-dark-500 text-xs">

@@ -51,15 +51,9 @@ const Left = ({ state, close, children, width }) => {
       <AnimatePresence>
         {state && (
           <LeftPortal>
-            <motion.div
-              initial={{ marginRight: '100%' }}
-              animate={panelState === true ? 'openPanel' : 'closePanel'}
-              variants={variants}
-              exit={exit}
-              className="fixed inset-0 transform overflow-auto bg-transition z-90"
-            >
+            <motion.div className="fixed inset-0 transform overflow-auto bg-transition z-90">
               <div
-                className="absolute inset-0 z-99"
+                className="absolute inset-0 z-99  bg-gray-800/20"
                 onClick={handleClosePanel}
               ></div>
               <motion.div
