@@ -518,7 +518,7 @@ export default function Page() {
         </motion.div>
       </div>
       <Bottom state={showBottom} close={closeBottom}>
-        <div className="sticky top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg z-50">
+        <div className="sticky top-0 w-full border-b border-gray-100 bg-white/75 backdrop-blur-lg z-50">
           <div className="max-w-screen-lg mx-auto px-3 flex justify-between items-center gap-8 py-4">
             <div className="flex items-center gap-4">
               <div className="">
