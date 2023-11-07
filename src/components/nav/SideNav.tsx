@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
-import { motion } from 'framer-motion'
+import {usePathname} from 'next/navigation'
+import {motion} from 'framer-motion'
 import nav from 'src/res/config/navigation.json'
 
 const SideNav = props => {
@@ -15,15 +15,15 @@ const SideNav = props => {
         <div className="absolute top-0 w-[320px] bottom-0 overflow-y-auto h-full pb-[80px] bg-white/80 dark:bg-dark-900/80">
           <motion.div
             className="flex justify-center items-center py-12"
-            initial={{ opacity: 0, x: '-50%' }}
-            animate={{ opacity: 1, x: '0%', transition: { duration: 0.5 } }}
+            initial={{opacity: 0, x: '-50%'}}
+            animate={{opacity: 1, x: '0%', transition: {duration: 0.5}}}
           >
             <a
               href={process.env.NEXT_PUBLIC_DEFAULT_URL}
               className="flex items-center"
             >
               <Image
-                src="/assets/images/brand/gjworks_white.svg"
+                src="/assets/images/brand/gjworks.svg"
                 alt="gjworks logo"
                 width="64"
                 height="64"
@@ -34,7 +34,7 @@ const SideNav = props => {
           <motion.div className="mb-5 text-xl font-extralight text-gray-900 dark:text-white px-3"></motion.div>
           <motion.div
             className="pl-3 pb-12"
-            initial={{ opacity: 0, x: '-50%' }}
+            initial={{opacity: 0, x: '-50%'}}
             animate={{
               opacity: 1,
               x: '0%',
@@ -65,8 +65,8 @@ const SideNav = props => {
           </motion.div>
           <motion.div
             className="text-xs text-slate-500 dark:text-dark-200 text-center lg:text-left px-3 pb-10"
-            initial={{ opacity: 0, x: '-50%' }}
-            animate={{ opacity: 1, x: '0%', transition: { duration: 0.9 } }}
+            initial={{opacity: 0, x: '-50%'}}
+            animate={{opacity: 1, x: '0%', transition: {duration: 0.9}}}
           >
             ⓒ 지제이웍스 All rights reserved.
           </motion.div>
@@ -74,8 +74,8 @@ const SideNav = props => {
 
         <motion.div
           className="fixed bottom-0 bg-slate-300/25 dark:bg-dark-600/25 backdrop-blur-lg py-5 w-[320px] px-3"
-          initial={{ opacity: 0, y: '20%' }}
-          animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
+          initial={{opacity: 0, y: '20%'}}
+          animate={{opacity: 1, y: '0%', transition: {duration: 1}}}
         >
           <div className="flex">
             <div className="flex items-center pr-3">

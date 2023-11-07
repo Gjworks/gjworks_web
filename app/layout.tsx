@@ -3,7 +3,7 @@
 import 'styles/globals.css'
 import 'styles/tailwindcss.css'
 
-export default function RootLayout({ children }) {
+export default function RootLayout({children}) {
   return (
     <html className="">
       <head />

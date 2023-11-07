@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from '@gjworks/components/viewer/SafariBrower'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 import DefaultLayout from '@gjworks/templates/layouts/default/Layout'
 import Bottom from '@gjworks/components/panel/Bottom'
 import Codehighlighte from '@gjworks/components/codehighlight/Codehighlighter'
@@ -17,10 +17,10 @@ export default function Page() {
   }
   const parentVariants = {
     onscreen: {
-      transition: { staggerChildren: 0.2 },
+      transition: {staggerChildren: 0.2},
     },
     offscreen: {
-      transition: { staggerChildren: 0.2, staggerDirection: -1 },
+      transition: {staggerChildren: 0.2, staggerDirection: -1},
     },
   }
   const variants = {
@@ -68,20 +68,20 @@ export default function Page() {
                   variants={parentVariants}
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{once: false, amount: 0.3}}
                   className="w-full"
                 >
                   <div className="pt-10 lg:pt-12">
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-gray-900 dark:from-primary-400 dark:via-primary-200 dark:to-primary-300 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
+                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-700 to-gray-900 dark:from-primary-400 dark:via-primary-200 dark:to-primary-300 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
                       >
                         Building digital experience
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-primary-500 to-gray-950 dark:from-primary-400  dark:to-primary-300 font-semibold tracking-tighter pl-0"
+                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-700 to-gray-950 dark:from-primary-400  dark:to-primary-300 font-semibold tracking-tighter pl-0"
                       >
                         Creative platform service
                       </motion.div>
@@ -100,7 +100,7 @@ export default function Page() {
                       </div>
                       <button
                         onClick={() => setShowBottom(!showBottom)}
-                        className="flex gap-2 bg-primary-400 dark:bg-primary-400 dark:hover:bg-primary-500 text-black dark:text-black dark:hover:text-black text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-500 hover:text-black"
+                        className="flex gap-2 bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 text-white dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-500 hover:text-white"
                       >
                         <span>
                           <svg
@@ -167,7 +167,7 @@ export default function Page() {
                 <div className="absolute inset-0  rounded-2xl"></div>
                 <div className="bg-dark-900 rounded-2xl overflow-hidden">
                   <Image
-                    src="/assets/images/bg22.jpg"
+                    src="/assets/images/bg19.jpg"
                     alt="Main Visual Image"
                     width="1265"
                     height="468"
@@ -181,7 +181,7 @@ export default function Page() {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{once: false, amount: 0.1}}
             variants={parentVariants}
             className="hidden pt-10"
           >
@@ -325,7 +325,7 @@ export default function Page() {
             variants={parentVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="hidden py-20"
           >
             <div className=" max-w-screen-lg mx-auto py-5 lg:py-10">
@@ -380,7 +380,7 @@ export default function Page() {
               <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: false, amount: 0.1 }}
+                viewport={{once: false, amount: 0.1}}
                 variants={parentVariants}
                 className="grid grid-cols-12 gap-4"
               >
@@ -429,7 +429,7 @@ export default function Page() {
                 <motion.div
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{ once: false, amount: 0.1 }}
+                  viewport={{once: false, amount: 0.1}}
                   variants={parentVariants}
                   className="grid grid-cols-12 gap-4"
                 >
@@ -474,7 +474,7 @@ export default function Page() {
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{once: false, amount: 0.3}}
               variants={parentVariants}
               className="max-w-screen-lg mx-auto px-3 xl:px-8 overflow-hidden pt-0 "
             >
@@ -488,7 +488,7 @@ export default function Page() {
               </div>
               <motion.div
                 variants={variants}
-                className="font-light text-xl xl:text-4xl text-gray-500 dark:text-dark-100 text-center -mt-8"
+                className="font-light text-xl xl:text-4xl text-gray-800 dark:text-dark-100 text-center -mt-8"
               >
                 Responsive everything.
               </motion.div>
@@ -500,7 +500,7 @@ export default function Page() {
                 variants={parentVariants}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{once: false, amount: 0.3}}
                 className="w-full"
               >
                 <motion.div

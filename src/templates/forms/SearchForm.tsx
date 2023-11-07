@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 import Link from 'next/link'
 
 const SearchForm = () => {
@@ -31,11 +31,11 @@ const SearchForm = () => {
         </div>
         <motion.div
           className="pt-3 pb-4 px-5"
-          initial={{ opacity: 0, y: '20%' }}
+          initial={{opacity: 0, y: '20%'}}
           animate={{
             opacity: 1,
             y: '0%',
-            transition: { duration: 0.8, delay: 0.5 },
+            transition: {duration: 0.8, delay: 0.5},
           }}
         >
           <div className="flex items-center gap-4">
@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="flex bg-primary-400 dark:text-white dark:bg-gray-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-gray-600 dark:hover:text-white hover:text-black text-black cursor-pointer">
+            <div className="flex bg-primary-600 dark:text-white dark:bg-gray-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-gray-600 dark:hover:text-white hover:text-white text-white cursor-pointer">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-gray-300 dark:text-white dark:bg-gray-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-gray-600 dark:hover:text-white hover:text-black text-gray-700 cursor-pointer">
+            <div className="flex bg-gray-300 dark:text-white dark:bg-gray-700 py-1 px-3 text-xs rounded-full hover:bg-primary-500 dark:hover:bg-gray-600 dark:hover:text-white hover:text-white text-gray-700 cursor-pointer">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
@@ -95,11 +95,11 @@ const SearchForm = () => {
         </motion.div>
         <motion.div
           className="pt-2 pb-5 px-5"
-          initial={{ opacity: 0, y: '20%' }}
+          initial={{opacity: 0, y: '20%'}}
           animate={{
             opacity: 1,
             y: '0%',
-            transition: { duration: 0.9, delay: 0.3 },
+            transition: {duration: 0.9, delay: 0.3},
           }}
         >
           <div className="text-sm font-semibold mb-3 text-black dark:text-white">
@@ -123,11 +123,11 @@ const SearchForm = () => {
       <div className="px-3 pt-2">
         <motion.div
           className="pt-2 pb-5 px-3"
-          initial={{ opacity: 0, y: '20%' }}
+          initial={{opacity: 0, y: '20%'}}
           animate={{
             opacity: 1,
             y: '0%',
-            transition: { duration: 1.1, delay: 0.5 },
+            transition: {duration: 1.1, delay: 0.5},
           }}
         >
           <div className="flex">

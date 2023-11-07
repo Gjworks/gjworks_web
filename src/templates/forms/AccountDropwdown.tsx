@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 import Link from 'next/link'
 
 const AccountDropwdown = () => {
@@ -24,7 +24,7 @@ const AccountDropwdown = () => {
       <motion.div className="w-56" variants={innerAnimation}>
         <Link
           href="/auth/Signin"
-          className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-dark-600/50 dark:text-white dark:hover:text-white backdrop-blur-lg"
+          className="block rounded px-4 py-2 text-xs hover:bg-primary-600 hover:text-white dark:hover:bg-dark-600/50 dark:text-white dark:hover:text-white backdrop-blur-lg"
         >
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -50,7 +50,7 @@ const AccountDropwdown = () => {
       <motion.div variants={innerAnimation}>
         <Link
           href="/auth/Register"
-          className="block rounded px-4 py-2 text-xs hover:bg-black hover:text-white dark:hover:bg-dark-600/50 dark:text-white dark:hover:text-white backdrop-blur-lg"
+          className="block rounded px-4 py-2 text-xs hover:bg-primary-600 hover:text-white dark:hover:bg-dark-600/50 dark:text-white dark:hover:text-white backdrop-blur-lg"
         >
           <div className="flex justify-between">
             <div className="flex items-center">

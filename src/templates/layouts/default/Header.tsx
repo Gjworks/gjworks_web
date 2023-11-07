@@ -4,9 +4,9 @@
  * @brief 설정 및 환경변수등이 저장되는 파일
  **/
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, {useState, useEffect} from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import {usePathname} from 'next/navigation'
 import Image from 'next/image'
 import Dropdown from 'src/components/dropdown/Dropdown'
 import Modal from 'src/components/modal/Modal'
@@ -15,7 +15,7 @@ import SearchForm from 'src/templates/forms/SearchForm'
 import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
 import nav from 'src/res/config/navigation.json'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 
 const Header = () => {
   const pathname = usePathname()
@@ -154,7 +154,7 @@ const Header = () => {
   return (
     <>
       <motion.header
-        transition={{ duration: 0.3 }}
+        transition={{duration: 0.3}}
         className={
           'relative w-full top-0 backdrop-blur-lg z-101  pt-0 lg:py-3 ' +
           background
@@ -300,7 +300,7 @@ const Header = () => {
                 <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="group relative flex items-center bg-slate-100/75 hover:bg-white text-black dark:text-white hover:text-black dark:hover:text-white text-xs border border-gray-200 dark:border-dark-600 shadow-inner shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full hover:shadow-md hover:shadow-gray-100 dark:hover:shadow-dark-700"
+                className="group relative flex items-center hover:bg-slate-100/75 bg-white text-black dark:text-white hover:text-black dark:hover:text-white text-xs border border-gray-200 dark:border-dark-600 hover:shadow-inner hover:shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full shadow-md shadow-gray-100 dark:hover:shadow-dark-700"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-6 lg:px-4">
@@ -351,12 +351,12 @@ const Header = () => {
         className="fixed top-0 left-0 right-0 z-99 bg-white/90 backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90"
       >
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={{opacity: 0}}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
           className="relative z-100"
         >
-          <div className="max-w-screen-xl mx-auto px-4 pt-5 mt-[84px]">
+          <div className="max-w-screen-xl mx-auto px-4 pt-5 pb-8 mt-[84px]">
             <div className="grid grid-cols-12 px-3">
               <div className="col-span-12 lg:col-span-3">
                 <div className="py-5">
@@ -365,25 +365,25 @@ const Header = () => {
                   </div>
                   <Link
                     href="/store"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
                   >
                     Store
                   </Link>
                   <Link
                     href="/components"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
                   >
                     Components
                   </Link>
                   <Link
                     href="/posts/blog"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
                   >
                     Blog
                   </Link>
                   <Link
                     href="/contact"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-gray-500 dark:hover:text-dark-200"
+                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
                   >
                     Contact us
                   </Link>
@@ -397,19 +397,19 @@ const Header = () => {
                     </div>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       개발문서
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       교육
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       유지보수/관리
                     </Link>
@@ -422,25 +422,25 @@ const Header = () => {
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       XE/라이믹스 스토어
                     </a>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       도메인 등록
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       세금계산서 신청
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       파트너 신청
                     </Link>
@@ -453,7 +453,7 @@ const Header = () => {
                       href="https://github.com/gjworks"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-gray-500"
+                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-primary-600"
                     >
                       Github
                     </a>
@@ -467,9 +467,9 @@ const Header = () => {
       {scrollPosition > 80 && (
         <motion.div
           className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg mx-auto max-w-screen-lg rounded-full"
-          initial={{ y: -40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-          exit={{ y: -40, opacity: 0, transition: { duration: 0.6 } }}
+          initial={{y: -40, opacity: 0}}
+          animate={{y: 0, opacity: 1, transition: {duration: 0.6}}}
+          exit={{y: -40, opacity: 0, transition: {duration: 0.6}}}
         >
           <div className=" py-1.5 px-5 lg:px-10 bg-white/90 dark:bg-dark-900/75 rounded-full shadow-md shadow-gray-500/10 dark:shadow-gray-950/25 border border-gray-200">
             <div className="flex items-center gap-4">
