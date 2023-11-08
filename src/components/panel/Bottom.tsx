@@ -1,14 +1,17 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, {useEffect, useState} from 'react'
+import {useRouter} from 'next/navigation'
+import {motion, AnimatePresence} from 'framer-motion'
 import BottomPortal from '@gjworks/components/panel/BottomPortal'
 
-const Bottom = ({ state, close, children }) => {
+const Bottom = ({children}) => {
+  const router = useRouter()
   const [panelState, setPanelState] = useState(false)
+  const [state, setState] = useState(false)
   useEffect(() => {
-    setPanelState(state)
-  }, [state])
+    setPanelState(true)
+  }, [])
   // useEffect(() => {
   //   if (panelState === true) {
   //     const $body = document.querySelector('body')
@@ -31,46 +34,50 @@ const Bottom = ({ state, close, children }) => {
   const variants = {
     openPanel: {
       bottom: '0%',
-      transition: { duration: 0.3 },
+      transition: {duration: 0.3},
     },
     closePanel: {
       bottom: '-100%',
-      transition: { duration: 0.3 },
+      transition: {duration: 0.3},
     },
   }
   const variants2 = {
     openPanel: {
       opacity: 1,
-      transition: { duration: 0.5 },
+      transition: {duration: 0.5},
     },
     closePanel: {
       opacity: 0,
-      transition: { duration: 0.5 },
+      transition: {duration: 0.5},
     },
   }
   const exit = {
     bottom: '-100%',
-    transition: { duration: 0.5 },
+    transition: {duration: 0.5},
   }
   const exit2 = {
     opacity: 0,
-    transition: { duration: 0.5 },
+    transition: {duration: 0.5},
   }
   const handleClosePanel = () => {
-    close(false)
+    // close(false)
+    setPanelState(false)
+    setTimeout(() => {
+      router.back()
+    }, 500)
   }
 
   return (
     <>
       <AnimatePresence>
-        {state && (
+        {panelState && (
           <BottomPortal>
             {/* <motion.div
               onClick={handleClosePanel}
               className="fixed w-screen h-screen transform overflow-auto z-100 flex justify-center items-end px-1"
             > */}
             <motion.div
-              initial={{ bottom: '-100%' }}
+              initial={{bottom: '-100%'}}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
@@ -109,7 +116,7 @@ const Bottom = ({ state, close, children }) => {
             {/* </motion.div> */}
 
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{opacity: 0}}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants2}
               exit={exit2}

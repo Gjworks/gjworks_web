@@ -38,7 +38,7 @@ const Page = () => {
         <div className="grid grid-cols-3 gap-8">
           <div className="col-span-3 md:col-span-1">
             <Link
-              href="/store/view"
+              href="/store/view/1"
               className="block rounded-lg bg-gray-100 hover:bg-gray-200 py-20 mb-6 h-[120px]"
             ></Link>
             <div className="flex gap-4">

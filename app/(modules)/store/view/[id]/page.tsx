@@ -3,14 +3,19 @@ import Image from 'next/image'
 const Page = () => {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto px-0 lg:px-3">
-        <div className="max-w-screen-md mx-auto px-3 flex justify-between items-center gap-8 py-8">
-          <div className="flex gap-2 items-center">
-            <div className="text-2xl font-bold text-black dark:text-white">
-              Store
+      <div className="sticky top-[56px] w-full border-b border-gray-100 bg-white/75 backdrop-blur-lg z-50">
+        <div className="max-w-screen-lg mx-auto px-3 flex justify-between items-center gap-8 py-4">
+          <div className="flex items-center gap-4">
+            <div className="">
+              <div className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full"></div>
             </div>
-            <div className="text-lg font-semibold text-gray-700 dark:text-dark-400">
-              악세사리
+            <div>
+              <div className="text-xl font-medium text-black dark:text-white line-clamp-1">
+                Launch Your Service. Get Started
+              </div>
+              <div className="text-xs text-gray-400 dark:text-dark-400 line-clamp-1">
+                악세사리
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-1 bg-gray-950 hover:bg-gray-700 dark:bg-white dark:hover:bg-dark-300 rounded-full py-2 px-8 cursor-pointer text-white dark:text-black">
@@ -33,6 +38,8 @@ const Page = () => {
             <div className="hidden md:flex text-sm">장바구니</div>
           </div>
         </div>
+      </div>
+      <div className="max-w-screen-xl mx-auto px-0 lg:px-3">
         <div className="relative bg-gray-100/10 dark:bg-dark-600 rounded-none lg:rounded-2xl h-[calc(100vh-157px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
           <div className="absolute inset-0 z-10"></div>
           <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">

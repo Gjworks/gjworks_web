@@ -151,13 +151,14 @@ const Header = () => {
       },
     },
   }
+
   return (
     <>
       <motion.header
         transition={{duration: 0.3}}
         className={
-          'relative w-full top-0 backdrop-blur-lg z-101  pt-0 lg:py-3 ' +
-          background
+          'sticky w-full top-0 backdrop-blur-lg z-101 pt-0 lg:py-3 bg-white/75 ' +
+          (scrollPosition > 100 && 'lg:!py-0')
         }
       >
         <div className="max-w-screen-xl mx-auto">
@@ -348,15 +349,15 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 z-99 bg-white/90 backdrop-blur-lg dark:backdrop-blur-lg dark:bg-dark-950/90"
+        className="fixed top-0 left-0 right-0 z-99 bg-transparent dark:bg-transparent backdrop-blur-lg dark:backdrop-blur-lg "
       >
         <motion.div
           initial={{opacity: 0}}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="relative z-100"
+          className="relative z-100 bg-white/90 dark:bg-dark-950/90"
         >
-          <div className="max-w-screen-xl mx-auto px-4 pt-5 pb-8 mt-[84px]">
+          <div className="max-w-screen-xl mx-auto px-4 pt-5 pb-5 mt-[64px]">
             <div className="grid grid-cols-12 px-3">
               <div className="col-span-12 lg:col-span-3">
                 <div className="py-5">
@@ -464,151 +465,6 @@ const Header = () => {
           </div>
         </motion.div>
       </motion.div>
-      {scrollPosition > 80 && (
-        <motion.div
-          className=" fixed left-1.5 right-1.5 z-101 top-2 backdrop-blur-lg mx-auto max-w-screen-lg rounded-full"
-          initial={{y: -40, opacity: 0}}
-          animate={{y: 0, opacity: 1, transition: {duration: 0.6}}}
-          exit={{y: -40, opacity: 0, transition: {duration: 0.6}}}
-        >
-          <div className=" py-1.5 px-5 lg:px-10 bg-white/90 dark:bg-dark-900/75 rounded-full shadow-md shadow-gray-500/10 dark:shadow-gray-950/25 border border-gray-200">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => {
-                    setBackground('dark:bg-dark-950/75 bg-white/90')
-                    setShowLeft(!showLeft)
-                  }}
-                  className="group flex items-center"
-                >
-                  <div className="flex relative w-5 h-5 cursor-pointer">
-                    <span>
-                      <div className="transition-all absolute left-0 top-[6px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
-                      <div className="transition-all absolute left-0 top-[12px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
-                    </span>
-                  </div>
-                </button>
-                <div className="flex items-center">
-                  <a
-                    href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                    className="flex items-center"
-                  >
-                    <span className="p-[2px] bg-black rounded-md">
-                      <Image
-                        src="/assets/images/brand/gjworks_white.svg"
-                        alt="gjworks logo"
-                        width="32"
-                        height="32"
-                        className="block w-6 h-6"
-                      />
-                    </span>
-                  </a>
-                  <a
-                    href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                    className="hidden items-center"
-                  >
-                    <div className="flex  pl-2 text-sm font-semibold mr-4">
-                      <div className="text-black dark:text-white">
-                        지제이웍스
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className="flex-1">
-                <div className="hidden items-center">
-                  {nav.header &&
-                    Object.entries(nav.header).map((data, index) => {
-                      return (
-                        <Link
-                          href={data[1].route}
-                          key={data[1].name}
-                          className={
-                            'block py-0 lg:py-1 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
-                            (pathname === data[1].route
-                              ? 'text-gray-400 dark:text-white'
-                              : 'text-gray-800 dark:text-dark-300 hover:text-gray-400 dark:hover:text-white')
-                          }
-                        >
-                          {data[1].title}
-                        </Link>
-                      )
-                    })}
-                </div>
-              </div>
-              <div className="relative flex gap-2 items-center justify-end">
-                <div className="flex gap-1 items-center">
-                  <button
-                    className="hover:bg-gray-200/50 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700/50"
-                    onClick={() => setShowModal(!showModal)}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <button
-                  className="hidden relative text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:hover:bg-dark-700 "
-                  onClick={() => {}}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                    />
-                  </svg>
-                  <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
-                </button>
-                <button
-                  className="group relative flex items-center rounded-md hover:bg-gray-200 dark:hover:bg-dark-700 text-gray-900 hover:text-gray-950 dark:text-white dark:hover:text-white text-xs"
-                  onClick={() => setShowDropdown(!showDropdown)}
-                >
-                  <div className="flex py-1 px-2 lg:px-3">
-                    <div className="p-0">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1}
-                        stroke="currentColor"
-                        className="w-5 h-5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </button>
-                <Dropdown state={showDropdown}>
-                  <AccountDropwdown />
-                </Dropdown>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      )}
     </>
   )
 }

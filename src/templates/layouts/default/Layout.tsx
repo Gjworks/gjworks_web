@@ -4,14 +4,14 @@
  * @brief 레이아웃 최상위 파일
  **/
 'use client'
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import React, {useState, useEffect} from 'react'
+import {motion} from 'framer-motion'
 import Header from 'src/templates/layouts/default/Header'
 import Footer from 'src/templates/layouts/default/Footer'
 import SubNav from 'src/templates/layouts/default/SubNav'
 import SideNav from 'src/components/nav/SideNav'
 
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
@@ -38,14 +38,14 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         {scrollPosition > 100 && (
           <motion.button
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-            exit={{ y: 100, opacity: 0, transition: { duration: 0.6 } }}
+            initial={{y: 100, opacity: 0}}
+            animate={{y: 0, opacity: 1, transition: {duration: 0.6}}}
+            exit={{y: 100, opacity: 0, transition: {duration: 0.6}}}
             whileHover={{
               scale: 1.2,
-              transition: { duration: 0.2 },
+              transition: {duration: 0.2},
             }}
-            whileTap={{ scale: 1 }}
+            whileTap={{scale: 1}}
             onClick={goToTop}
             className="fixed right-3 lg:right-10 bottom-5 lg:bottom-10 rounded-lg bg-gray-600 hover:bg-gray-950 dark:bg-dark-600/50 dark:hover:bg-dark-500/50 backdrop-blur-lg dark:backdrop-blur-lg text-white p-3 z-101 cursor-pointer"
           >
