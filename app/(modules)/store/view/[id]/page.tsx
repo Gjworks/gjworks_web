@@ -3,14 +3,19 @@ import Image from 'next/image'
 const Page = () => {
   return (
     <>
-      <div className="sticky top-[56px] w-full border-b border-gray-100 bg-white/75 backdrop-blur-lg z-50">
+      <div className="max-w-screen-lg mx-auto px-3 pt-8 pb-3">
+        <div className="text-2xl font-semibold text-black dark:text-white line-clamp-1">
+          Launch Your Service. Get Started
+        </div>
+      </div>
+      <div className="sticky top-[56px] w-full bg-white/75 dark:bg-dark-950/75 backdrop-blur-lg z-50">
         <div className="max-w-screen-lg mx-auto px-3 flex justify-between items-center gap-8 py-4">
           <div className="flex items-center gap-4">
             <div className="">
               <div className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full"></div>
             </div>
             <div>
-              <div className="text-xl font-medium text-black dark:text-white line-clamp-1">
+              <div className="text-base font-medium text-black dark:text-white line-clamp-1">
                 Launch Your Service. Get Started
               </div>
               <div className="text-xs text-gray-400 dark:text-dark-400 line-clamp-1">
@@ -39,7 +44,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="max-w-screen-xl mx-auto px-0 lg:px-3">
+      <div className="max-w-screen-xl mx-auto px-0 lg:px-3 pt-5">
         <div className="relative bg-gray-100/10 dark:bg-dark-600 rounded-none lg:rounded-2xl h-[calc(100vh-157px)] lg:h-[550px] bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
           <div className="absolute inset-0 z-10"></div>
           <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">

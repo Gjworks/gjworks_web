@@ -39,13 +39,13 @@ const Page = () => {
           <div className="col-span-3 md:col-span-1">
             <Link
               href="/store/view/1"
-              className="block rounded-lg bg-gray-100 hover:bg-gray-200 py-20 mb-6 h-[120px]"
+              className="block rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-900 py-20 mb-6 h-[120px]"
             ></Link>
             <div className="flex gap-4">
               <div className="flex-1">
                 <Link
-                  href="/store/view"
-                  className="text-gray-800 text-base font-medium mb-2 line-clamp-1"
+                  href="/store/view/1"
+                  className="text-gray-800 dark:text-dark-100 text-base font-medium mb-2 line-clamp-1"
                 >
                   지제이웍스 웹애플리케이션 디자인
                 </Link>
@@ -64,13 +64,13 @@ const Page = () => {
           <div className="col-span-3 md:col-span-1">
             <Link
               href="/store/view"
-              className="block rounded-lg bg-gray-100 hover:bg-gray-200 py-20 mb-6 h-[120px]"
+              className="block rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-900 py-20 mb-6 h-[120px]"
             ></Link>
             <div className="flex gap-4">
               <div className="flex-1">
                 <Link
-                  href="/store/view"
-                  className="text-gray-800 text-base font-medium mb-2 line-clamp-1"
+                  href="/store/view/1"
+                  className="text-gray-800 dark:text-dark-100 text-base font-medium mb-2 line-clamp-1"
                 >
                   지제이웍스 웹애플리케이션 디자인
                 </Link>
@@ -89,13 +89,13 @@ const Page = () => {
           <div className="col-span-3 md:col-span-1">
             <Link
               href="/store/view"
-              className="block rounded-lg bg-gray-100 hover:bg-gray-200 py-20 mb-6 h-[120px]"
+              className="block rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-900 py-20 mb-6 h-[120px]"
             ></Link>
             <div className="flex gap-4">
               <div className="flex-1">
                 <Link
-                  href="/store/view"
-                  className="text-gray-800 text-base font-medium mb-2 line-clamp-1"
+                  href="/store/view/1"
+                  className="text-gray-800 dark:text-dark-100 text-base font-medium mb-2 line-clamp-1"
                 >
                   지제이웍스 웹애플리케이션 디자인
                 </Link>

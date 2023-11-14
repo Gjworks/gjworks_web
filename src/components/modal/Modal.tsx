@@ -1,9 +1,9 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, {useState, useEffect} from 'react'
+import {motion, AnimatePresence} from 'framer-motion'
 import ModalPortal from 'src/components/modal/ModalPortal'
 
-const Modal = ({ state, close, children }) => {
+const Modal = ({state, close, children}) => {
   const [modalState, setModalState] = useState(false)
   useEffect(() => {
     setModalState(state)
@@ -31,16 +31,16 @@ const Modal = ({ state, close, children }) => {
   const variants = {
     openModal: {
       opacity: 1,
-      transition: { duration: 0.3 },
+      transition: {duration: 0.3},
     },
     closeModal: {
       opacity: 0,
-      transition: { duration: 0.3 },
+      transition: {duration: 0.3},
     },
   }
   const exit = {
     opacity: 0,
-    transition: { duration: 0.3 },
+    transition: {duration: 0.3},
   }
   const handleCloseModal = () => {
     close(false)
@@ -52,7 +52,7 @@ const Modal = ({ state, close, children }) => {
           <>
             <ModalPortal>
               <motion.div
-                initial={{ opacity: 0 }}
+                initial={{opacity: 0}}
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
@@ -60,16 +60,16 @@ const Modal = ({ state, close, children }) => {
               >
                 <div className="" onClick={handleCloseModal}></div>
                 <motion.div
-                  initial={{ opacity: 0, y: '-10%' }}
+                  initial={{opacity: 0, y: '-10%'}}
                   animate={{
                     opacity: 1,
                     y: '0%',
-                    transition: { duration: 0.5 },
+                    transition: {duration: 0.5},
                   }}
                   exit={{
                     opacity: 1,
                     y: '-10%',
-                    transition: { duration: 0.5 },
+                    transition: {duration: 0.5},
                   }}
                   className="z-101"
                 >
@@ -77,12 +77,12 @@ const Modal = ({ state, close, children }) => {
                 </motion.div>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0 }}
+                initial={{opacity: 0}}
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
                 onClick={handleCloseModal}
-                className="fixed inset-0 bg-slate-950/50 dark:bg-dark-950/50 z-90 backdrop-blur-sm"
+                className="fixed inset-0 bg-slate-950/50 dark:bg-dark-600/50 z-90 backdrop-blur-sm"
               ></motion.div>
             </ModalPortal>
           </>

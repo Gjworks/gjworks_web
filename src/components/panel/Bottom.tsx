@@ -83,10 +83,7 @@ const Bottom = ({children}) => {
               exit={exit}
               className="fixed bootom-1 left-1/2 -translate-x-1/2 z-101 w-full h-full"
             >
-              <div
-                className="relative w-full flex h-10"
-                onClick={handleClosePanel}
-              >
+              <div className="relative w-full flex h-10">
                 <button
                   onClick={handleClosePanel}
                   className="absolute right-3 top-1 rounded-full p-2 z-101"
@@ -109,7 +106,7 @@ const Bottom = ({children}) => {
                   </span>
                 </button>
               </div>
-              <div className=" bg-white dark:bg-dark-900 rounded-t-xl w-full shadow-md mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto">
+              <div className=" bg-white dark:bg-dark-950 rounded-t-xl w-full shadow-md mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto">
                 {children}
               </div>
             </motion.div>
@@ -121,7 +118,7 @@ const Bottom = ({children}) => {
               variants={variants2}
               exit={exit2}
               onClick={handleClosePanel}
-              className="fixed inset-0 bg-slate-950/70 dark:bg-dark-950/50 z-90 backdrop-blur-sm"
+              className="fixed inset-0 bg-slate-950/70 dark:bg-dark-200/20 z-90 backdrop-blur-sm"
             ></motion.div>
           </BottomPortal>
         )}
