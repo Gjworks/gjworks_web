@@ -23,7 +23,7 @@ const SideNav = props => {
               className="flex items-center"
             >
               <Image
-                src="/assets/images/brand/gjworks.svg"
+                src="/assets/images/brand/gjworks_white.svg"
                 alt="gjworks logo"
                 width="64"
                 height="64"

@@ -199,7 +199,7 @@ const Header = () => {
                   className="flex items-center"
                 >
                   <Image
-                    src="/assets/images/brand/gjworks.svg"
+                    src="/assets/images/brand/gjworks_white.svg"
                     alt="gjworks logo"
                     width="32"
                     height="32"
@@ -343,7 +343,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 dark:bg-dark-800/50 dark:backdrop-blur-sm"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 dark:bg-dark-600/50 dark:backdrop-blur-sm"
       ></motion.div>
       <motion.div
         initial={headerInitial}
@@ -359,8 +359,8 @@ const Header = () => {
         >
           <div
             className={
-              '' + (scrollPosition > 100)
-                ? 'max-w-screen-xl mx-auto px-4 pt-5 pb-5 lg:mt-[56px]'
+              scrollPosition > 100
+                ? 'max-w-screen-xl mx-auto px-4 pt-5 pb-5 mt-[56px]'
                 : 'max-w-screen-xl mx-auto px-4 pt-5 pb-5 mt-[64px]'
             }
           >

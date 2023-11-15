@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Page = () => {
   return (
     <>
-      <div className="max-w-screen-lg mx-auto px-3 pt-8 pb-3">
+      <div className="max-w-screen-lg mx-auto px-3 pt-12 pb-3">
         <div className="text-2xl font-semibold text-black dark:text-white line-clamp-1">
           Launch Your Service. Get Started
         </div>
@@ -15,8 +15,8 @@ const Page = () => {
               <div className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full"></div>
             </div>
             <div>
-              <div className="text-base font-medium text-black dark:text-white line-clamp-1">
-                Launch Your Service. Get Started
+              <div className="text-sm font-medium text-black dark:text-white line-clamp-1">
+                지지에웍스
               </div>
               <div className="text-xs text-gray-400 dark:text-dark-400 line-clamp-1">
                 악세사리
