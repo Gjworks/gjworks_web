@@ -14,7 +14,7 @@ const Page = () => {
           <div className="max-w-screen-lg mx-auto px-3 flex justify-between items-center gap-8 py-3">
             <div className="flex items-center gap-4">
               <div className="">
-                <div className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full"></div>
+                <div className="w-10 h-10 bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-700 rounded-full"></div>
               </div>
               <div>
                 <div className="text-sm font-medium text-black dark:text-white line-clamp-1">
