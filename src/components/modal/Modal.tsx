@@ -56,7 +56,7 @@ const Modal = ({state, close, children}) => {
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
-                className="fixed bootom-1 mb-2 top-20 left-1/2 -translate-x-1/2 lg:mb-10 z-101 bg-white/90 dark:bg-dark-800/75 rounded-xl max-w-screen-md w-full mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800"
+                className="fixed bootom-1 mb-2 top-20 left-1/2 -translate-x-1/2 lg:mb-10 z-101 bg-white/90 dark:bg-dark-950/75 rounded-xl max-w-screen-md w-full mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800"
               >
                 <div className="" onClick={handleCloseModal}></div>
                 <motion.div
@@ -82,7 +82,7 @@ const Modal = ({state, close, children}) => {
                 variants={variants}
                 exit={exit}
                 onClick={handleCloseModal}
-                className="fixed inset-0 bg-slate-950/50 dark:bg-dark-950/50 z-90 backdrop-blur-sm"
+                className="fixed inset-0 bg-slate-950/50 dark:bg-dark-800/70 z-90 backdrop-blur-sm"
               ></motion.div>
             </ModalPortal>
           </>

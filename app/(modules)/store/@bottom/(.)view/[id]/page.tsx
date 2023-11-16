@@ -53,7 +53,7 @@ const Page = () => {
               <div className="relative px-3 lg:px-0 pb-3">
                 <div className="max-w-screen-md mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/20 backdrop-blur-lg rounded-lg p-3 ">
                   <div className="flex gap-4 lg:gap-8 flex-wrap">
-                    <div className="w-20 h-20 mx-auto rounded-2xl -mt-12 md:mt-0 backdrop-blur-lg shadow-lg shadow-gray-600/30 dark:shadow-dark-950/40 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500"></div>
+                    <div className="w-20 h-20 mx-auto rounded-2xl -mt-12 md:mt-0 backdrop-blur-lg shadow-lg shadow-gray-600/30 dark:shadow-dark-950/40 bg-gradient-to-b from-sky-400 via-sky-500 to-blue-700"></div>
                     <div className="w-full md:flex-1 flex flex-wrap">
                       <div className="w-full">
                         <div className="text-lg font-semibold text-white dark:text-white line-clamp-1">

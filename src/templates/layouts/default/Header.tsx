@@ -343,13 +343,13 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 dark:bg-dark-950/50 dark:backdrop-blur-sm"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 dark:bg-dark-800/75 backdrop-blur-sm dark:backdrop-blur-sm"
       ></motion.div>
       <motion.div
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 z-99 bg-transparent dark:bg-transparent backdrop-blur-lg dark:backdrop-blur-lg "
+        className="fixed top-0 left-0 right-0 z-99 bg-transparent dark:bg-transparent  "
       >
         <motion.div
           initial={{opacity: 0}}
