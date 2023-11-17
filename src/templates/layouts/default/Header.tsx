@@ -364,7 +364,7 @@ const Header = () => {
                 : 'max-w-screen-xl mx-auto px-4 pt-5 pb-5 mt-[64px]'
             }
           >
-            <div className="grid grid-cols-12 px-3">
+            <div className="grid grid-cols-12 px-3 lg:px-20">
               <div className="col-span-12 lg:col-span-3">
                 <div className="py-5">
                   <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
