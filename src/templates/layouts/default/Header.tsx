@@ -469,9 +469,7 @@ const Header = () => {
               </div>
               <div className="col-span-12 lg:col-span-4">
                 <div className="relative flex gap-8 h-full py-10 lg:py-0">
-                  <div className="relative h-full hidden lg:flex items-center justify-center w-px bg-gradient-to-t from-transparent via-gray-200/75 dark:via-dark-600 to-transparent">
-                    {/* <div className="relative rotate-90 w-full h-px "></div> */}
-                  </div>
+                  <div className="relative h-full hidden lg:flex items-center justify-center w-px bg-gradient-to-t from-transparent via-gray-200/75 dark:via-dark-600 to-transparent"></div>
                   <div className="flex-1">
                     <div className="">
                       <div className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-dark-500/10 transition-all duration-300 scale-100 hover:scale-110">
@@ -493,10 +491,10 @@ const Header = () => {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
-                        Flutter 2+
+                        Flutter 2
                       </div>
                       <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
-                        Swift 5+
+                        Swift 5
                       </div>
                       <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
                         Android 0
