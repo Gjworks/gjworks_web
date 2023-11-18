@@ -364,8 +364,8 @@ const Header = () => {
                 : 'max-w-screen-xl mx-auto px-4 pt-5 pb-5 mt-[64px]'
             }
           >
-            <div className="grid grid-cols-12 px-3 lg:px-20">
-              <div className="col-span-12 lg:col-span-3">
+            <div className="grid grid-cols-12 pl-3 lg:pl-20 pr-3">
+              <div className="col-span-12 lg:col-span-2">
                 <div className="py-5">
                   <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
                     Navigation
@@ -396,7 +396,7 @@ const Header = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-span-12 lg:col-span-9">
+              <div className="col-span-12 lg:col-span-6">
                 <div className="flex flex-wrap gap-10">
                   <div className="py-3 lg:py-5  px-3 lg:px-5">
                     <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
@@ -464,6 +464,47 @@ const Header = () => {
                     >
                       Github
                     </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-12 lg:col-span-4">
+                <div className="relative flex gap-8 h-full py-10 lg:py-0">
+                  <div className="relative h-full hidden lg:flex items-center justify-center w-px bg-gradient-to-t from-transparent via-gray-200/75 dark:via-dark-600 to-transparent">
+                    {/* <div className="relative rotate-90 w-full h-px "></div> */}
+                  </div>
+                  <div className="flex-1">
+                    <div className="">
+                      <div className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-dark-500/10 transition-all duration-300 scale-100 hover:scale-110">
+                        <div className="flex items-center justify-center rounded-2xl w-full h-full bg-gradient-to-b from-dark-800/90 via-dark-950/75 to-dark-950/90">
+                          <Image
+                            src="/assets/images/brand/gjworks_white.svg"
+                            alt="gjworks logo"
+                            width="32"
+                            height="32"
+                            className="block w-16 h-16"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-xs text-dark-500 pt-5 mb-4">
+                      Each subscription goes towards aggressively adding new
+                      features built with customers' best interests at heart,
+                      including your privacy.
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
+                        Flutter 2+
+                      </div>
+                      <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
+                        Swift 5+
+                      </div>
+                      <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
+                        Android 0
+                      </div>
+                    </div>
+                    {/* <div className="text-dark-300 hover:text-white text-xs underline">
+                      앱 제작이 궁금하다면?
+                    </div> */}
                   </div>
                 </div>
               </div>
