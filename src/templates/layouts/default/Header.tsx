@@ -486,7 +486,7 @@ const Header = () => {
                     </div>
                     <div className="text-xs text-dark-500 pt-5 mb-4">
                       Each subscription goes towards aggressively adding new
-                      features built with customers' best interests at heart,
+                      features built with customers best interests at heart,
                       including your privacy.
                     </div>
                     <div className="flex flex-wrap gap-2">
