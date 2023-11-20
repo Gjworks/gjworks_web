@@ -196,7 +196,7 @@ export default function Page() {
                     variants={variants}
                     className="text-dark-300 text-sm"
                   >
-                    Everything, unlike anything. Whether you're an armchair
+                    Everything, unlike anything. Whether youre an armchair
                     investor or a Wall Street aficionado, Fey is designed to
                     keep you informed with real-time market data and advanced
                     analysis tools.
