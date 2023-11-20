@@ -153,20 +153,56 @@ export default function Page() {
             </div>
           </div>
           <div>
-            <div className="relative max-w-screen-xl mx-auto px-3">
-              <div className="">
-                <div className="absolute inset-0  rounded-2xl"></div>
-                <div className="bg-dark-900 rounded-2xl overflow-hidden">
-                  <Image
-                    src="/assets/images/bg19.jpg"
-                    alt="Main Visual Image"
-                    width="1265"
-                    height="468"
-                    loading="lazy"
-                    className="rounded-2xl"
-                  />
+            <div className="relative max-w-screen-xl mx-auto px-3 py-20">
+              <motion.div
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{once: false, amount: 0.1}}
+                variants={parentVariants}
+                className="flex flex-wrap gap-12"
+              >
+                <div className="relative w-full lg:flex-1">
+                  {/* <div className="absolute inset-0 bg-dark-950/40 rounded-2xl"></div> */}
+                  <motion.div
+                    variants={variants}
+                    className="bg-dark-900 rounded-sm overflow-hidden"
+                  >
+                    <Image
+                      src="/assets/images/bg12.jpg"
+                      alt="Main Visual Image"
+                      width="1265"
+                      height="468"
+                      loading="lazy"
+                      className="rounded-sm"
+                    />
+                  </motion.div>
                 </div>
-              </div>
+                <div className="w-full lg:flex-1">
+                  <motion.div
+                    variants={variants}
+                    className="text-white text-2xl font-light mb-10"
+                  >
+                    Next Level of crypto and fintech product
+                  </motion.div>
+                  <motion.div
+                    variants={variants}
+                    className="text-dark-300 text-sm mb-3"
+                  >
+                    Dive into financials, estimates, and more. All meticulously
+                    sourced from the titans of the industry, packed within a
+                    beautiful interface.
+                  </motion.div>
+                  <motion.div
+                    variants={variants}
+                    className="text-dark-300 text-sm"
+                  >
+                    Everything, unlike anything. Whether you're an armchair
+                    investor or a Wall Street aficionado, Fey is designed to
+                    keep you informed with real-time market data and advanced
+                    analysis tools.
+                  </motion.div>
+                </div>
+              </motion.div>
             </div>
           </div>
           <motion.div
@@ -392,7 +428,7 @@ export default function Page() {
                     variants={variants}
                     className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
                   >
-                    Platform.
+                    Platform
                   </motion.div>
                 </div>
                 <div className="col-span-12 lg:col-span-6 flex items-center">
@@ -481,7 +517,7 @@ export default function Page() {
                 variants={variants}
                 className="font-light text-xl xl:text-4xl text-gray-800 dark:text-dark-100 text-center -mt-8"
               >
-                Responsive everything.
+                Responsive everything
               </motion.div>
             </motion.div>
           </div>

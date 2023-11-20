@@ -4,12 +4,12 @@
  * @brief 레이아웃 최상위 파일
  **/
 'use client'
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { motion } from 'framer-motion'
+import React, {useState, useEffect} from 'react'
+import {useRouter} from 'next/navigation'
+import {motion} from 'framer-motion'
 import Footer from 'src/templates/layouts/authLayout/Footer'
 
-const Layout = ({ children }) => {
+const Layout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
   const router = useRouter()
 
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
     return () => window.removeEventListener('scroll', updatePosition)
   }, [])
   const variants = {
-    hidden: { opacity: 0, x: 0, y: 25 },
+    hidden: {opacity: 0, x: 0, y: 25},
     enter: {
       opacity: 1,
       x: 0,
@@ -50,10 +50,13 @@ const Layout = ({ children }) => {
   }
   return (
     <motion.div className="selection:text-white selection:bg-gray-950 break-keep dark:bg-transparent min-h-full">
+      <div className="fixed inset-0 bg-[url('/assets/images/bg26.jpg')] bg-no-repeat bg-center bg-cover">
+        <div className="w-full h-full bg-dark-950/10 backdrop-blur-3xl"></div>
+      </div>
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <motion.header
-          transition={{ duration: 0.3 }}
+          transition={{duration: 0.3}}
           className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/80 dark:bg-dark-950/60 z-101 "
         >
           <div className="max-w-screen-sm mx-auto">
@@ -116,14 +119,14 @@ const Layout = ({ children }) => {
         </motion.main>
         {scrollPosition > 100 && (
           <motion.button
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-            exit={{ y: 100, opacity: 0, transition: { duration: 0.6 } }}
+            initial={{y: 100, opacity: 0}}
+            animate={{y: 0, opacity: 1, transition: {duration: 0.6}}}
+            exit={{y: 100, opacity: 0, transition: {duration: 0.6}}}
             whileHover={{
               scale: 1.2,
-              transition: { duration: 0.2 },
+              transition: {duration: 0.2},
             }}
-            whileTap={{ scale: 1 }}
+            whileTap={{scale: 1}}
             onClick={goToTop}
             className="fixed right-10 bottom-10 rounded-lg bg-gray-800 hover:bg-gray-950 dark:bg-dark-600/50 dark:hover:bg-dark-500/50 backdrop-blur-lg dark:backdrop-blur-lg text-white p-3 z-101 cursor-pointer"
           >
