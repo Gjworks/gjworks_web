@@ -1,6 +1,6 @@
 'use client'
 
-import HEADER from 'src/templates/layouts/default/Header'
+import HEADER from '@gjworks/templates/layouts/fullLayout/Header'
 import Footer from 'src/components/footer/FooterComponent'
 import SearchForm from 'src/templates/forms/SearchForm'
 const Page = () => {

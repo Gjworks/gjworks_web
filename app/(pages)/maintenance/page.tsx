@@ -1,5 +1,7 @@
 'use client'
 
+import Sectionbox from '@gjworks/components/sections/Sectionbox'
+
 const Page = () => {
   return (
     <div className="">
@@ -8,18 +10,42 @@ const Page = () => {
           Maintenance
         </div>
         <div className=" py-10">
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-4">
             <div className="col-span-2 lg:col-span-1">
-              <div className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-800/20 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-8 lg:p-16 rounded-md w-full hover:shadow-xs h-[340px] cursor-pointer dark:hover:bg-dark-900/40"></div>
-            </div>
-            <div className="col-span-2 lg:col-span-1 ">
-              <div className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-800/20 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-8 lg:p-16 rounded-md w-full hover:shadow-xs h-[340px] cursor-pointer dark:hover:bg-dark-900/40"></div>
+              <Sectionbox>
+                <div className="py-10 px-5">
+                  <div className="text-white font-bold text-xl mb-5">
+                    홈페이지 유지보수
+                  </div>
+                </div>
+              </Sectionbox>
             </div>
             <div className="col-span-2 lg:col-span-1">
-              <div className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-800/20 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-8 lg:p-16 rounded-md w-full hover:shadow-xs h-[340px] cursor-pointer dark:hover:bg-dark-900/40"></div>
+              <Sectionbox>
+                <div className="py-10 px-5">
+                  <div className="text-white font-bold text-xl mb-5">
+                    홈페이지 유지보수
+                  </div>
+                </div>
+              </Sectionbox>
             </div>
-            <div className="col-span-2 lg:col-span-1 ">
-              <div className="relative overflow-hidden bg-slate-100/80 border border-white dark:border-dark-800/20 dark:bg-dark-900/70 backdrop-blur-xl shadow-sm hover:shadow-lg shadow-gray-100 hover:shadow-slate-200 dark:shadow-dark-950 p-8 lg:p-16 rounded-md w-full hover:shadow-xs h-[340px] cursor-pointer dark:hover:bg-dark-900/40"></div>
+            <div className="col-span-2 lg:col-span-1">
+              <Sectionbox>
+                <div className="py-10 px-5">
+                  <div className="text-white font-bold text-xl mb-5">
+                    홈페이지 유지보수
+                  </div>
+                </div>
+              </Sectionbox>
+            </div>
+            <div className="col-span-2 lg:col-span-1">
+              <Sectionbox>
+                <div className="py-10 px-5">
+                  <div className="text-white font-bold text-xl mb-5">
+                    홈페이지 유지보수
+                  </div>
+                </div>
+              </Sectionbox>
             </div>
           </div>
         </div>

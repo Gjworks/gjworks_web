@@ -1,11 +1,11 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from 'src/components/viewer/SafariBrower'
-import { motion } from 'framer-motion'
-import DefaultLayout from 'src/templates/layouts/default/Layout'
+import {motion} from 'framer-motion'
+import DefaultLayout from '@gjworks/templates/layouts/fullLayout/Layout'
 
 const Page = () => {
   const [showBottom, setShowBottom] = useState(false)
@@ -15,10 +15,10 @@ const Page = () => {
   }
   const parentVariants = {
     onscreen: {
-      transition: { staggerChildren: 0.2 },
+      transition: {staggerChildren: 0.2},
     },
     offscreen: {
-      transition: { staggerChildren: 0.2, staggerDirection: -1 },
+      transition: {staggerChildren: 0.2, staggerDirection: -1},
     },
   }
   const variants = {
@@ -42,7 +42,7 @@ const Page = () => {
             variants={parentVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="relative overflow-hidden w-full"
           >
             <motion.div
@@ -62,7 +62,7 @@ const Page = () => {
           variants={parentVariants}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{once: false, amount: 0.3}}
           className="max-w-screen-lg mx-auto px-3 mt-[200px]"
         >
           <motion.div
@@ -156,7 +156,7 @@ const Page = () => {
             variants={parentVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="grid grid-cols-12 gap-8"
           >
             <div className="col-span-12 lg:col-span-5">
@@ -296,7 +296,7 @@ const Page = () => {
         <motion.div
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{once: false, amount: 0.3}}
           variants={parentVariants}
           className="max-w-screen-xl mx-auto px-3 xl:px-8 overflow-hidden pt-0 lg:py-20"
         >
@@ -320,7 +320,7 @@ const Page = () => {
             variants={parentVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="flex flex-wrap gap-4"
           >
             <motion.div
@@ -354,7 +354,7 @@ const Page = () => {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="flex flex-wrap gap-8"
           >
             <motion.div
@@ -434,7 +434,7 @@ const Page = () => {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{once: false, amount: 0.1}}
             variants={parentVariants}
             className="flex gap-8 w-full"
           >
@@ -447,7 +447,7 @@ const Page = () => {
                 src="/assets/images/bg_phone.jpg"
                 alt="screenshot_1"
                 width={960}
-                style={{ width: '100%', height: 'auto' }}
+                style={{width: '100%', height: 'auto'}}
                 height={520}
               ></Image>
             </motion.div>
@@ -460,7 +460,7 @@ const Page = () => {
                 src="/assets/images/mbg.jpg"
                 alt="screenshot_2"
                 width={960}
-                style={{ width: '100%', height: 'auto' }}
+                style={{width: '100%', height: 'auto'}}
                 height={520}
               ></Image>
             </motion.div>
@@ -479,7 +479,7 @@ const Page = () => {
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{once: false, amount: 0.3}}
               variants={parentVariants}
               className="flex items-center col-span-5 lg:col-span-3"
             >
@@ -529,7 +529,7 @@ const Page = () => {
         <motion.div
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{once: false, amount: 0.3}}
           variants={parentVariants}
           className="relative max-w-screen-xl mx-auto py-20 px-3 "
         >
@@ -565,7 +565,7 @@ const Page = () => {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{once: false, amount: 0.1}}
             variants={parentVariants}
             className="grid grid-cols-2 gap-8"
           >
@@ -602,7 +602,7 @@ const Page = () => {
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: false, amount: 0.1 }}
+        viewport={{once: false, amount: 0.1}}
         variants={parentVariants}
         className=" pt-10 lg:pt-20"
       >
@@ -656,7 +656,7 @@ const Page = () => {
         <motion.div
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{once: false, amount: 0.3}}
           variants={parentVariants}
           className="max-w-screen-xl mx-auto px-3 xl:px-8 overflow-hidden pt-0 lg:py-20"
         >
@@ -682,7 +682,7 @@ const Page = () => {
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{once: false, amount: 0.3}}
               variants={parentVariants}
               className=" max-w-screen-md mx-auto text-center px-3"
             >

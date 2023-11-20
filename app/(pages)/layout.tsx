@@ -1,6 +1,6 @@
-import DefaultLayout from 'src/templates/layouts/default/Layout'
+import DefaultLayout from '@gjworks/templates/layouts/fullLayout/Layout'
 
-const PageLayout = ({ children }) => {
+const PageLayout = ({children}) => {
   return <DefaultLayout>{children}</DefaultLayout>
 }
 

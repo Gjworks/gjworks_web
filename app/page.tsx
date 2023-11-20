@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from '@gjworks/components/viewer/SafariBrower'
 import {motion} from 'framer-motion'
-import DefaultLayout from '@gjworks/templates/layouts/default/Layout'
+import MainLayout from '@gjworks/templates/layouts/main/Layout'
 import Codehighlighte from '@gjworks/components/codehighlight/Codehighlighter'
 
 export default function Page() {
@@ -40,7 +40,7 @@ export default function Page() {
 </Dropdown>`
 
   return (
-    <DefaultLayout>
+    <MainLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
       <div className="relative">
         {/* <motion.div
@@ -508,6 +508,6 @@ export default function Page() {
           </div>
         </motion.div>
       </div>
-    </DefaultLayout>
+    </MainLayout>
   )
 }

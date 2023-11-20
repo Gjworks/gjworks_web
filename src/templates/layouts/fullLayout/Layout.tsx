@@ -6,12 +6,11 @@
 'use client'
 import React, {useState, useEffect} from 'react'
 import {motion} from 'framer-motion'
-import Header from 'src/templates/layouts/default/Header'
-import Footer from 'src/templates/layouts/default/Footer'
-import SubNav from 'src/templates/layouts/default/SubNav'
-import SideNav from 'src/components/nav/SideNav'
+import Header from '@gjworks/templates/layouts/fullLayout/Header'
+import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
+// import SubNav from '@gjworks/templates/layouts/fullLayout/SubNav'
 
-const Layout = ({children}) => {
+const FullLayout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
@@ -34,6 +33,7 @@ const Layout = ({children}) => {
     <div className="selection:text-white selection:bg-gray-950 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
       <div className="relative z-20">
         <Header />
+
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main>{children}</main>
         {scrollPosition > 100 && (
@@ -76,4 +76,4 @@ const Layout = ({children}) => {
   )
 }
 
-export default Layout
+export default FullLayout

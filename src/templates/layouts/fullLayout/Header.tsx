@@ -155,7 +155,7 @@ const Header = () => {
   return (
     <>
       <motion.header
-        transition={{duration: 0.3}}
+        transition={{transition: {duration: 0.3}}}
         className={
           'sticky w-full top-0 backdrop-blur-lg z-101 pt-0 lg:py-3 bg-white/90 dark:bg-dark-950/75 ' +
           (scrollPosition > 100 && 'lg:!py-0')
@@ -472,7 +472,10 @@ const Header = () => {
                   <div className="relative h-full hidden lg:flex items-center justify-center w-px bg-gradient-to-t from-transparent via-gray-200/75 dark:via-dark-600 to-transparent"></div>
                   <div className="flex-1">
                     <div className="">
-                      <div className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-dark-500/10 transition-all duration-300 scale-100 hover:scale-110">
+                      <motion.div
+                        whileTap={{scale: 0.97, transition: {duration: 0.3}}}
+                        className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-dark-500/10 transition-all duration-300 scale-100 hover:scale-110"
+                      >
                         <div className="flex items-center justify-center rounded-2xl w-full h-full bg-gradient-to-b from-dark-800/90 via-dark-950/75 to-dark-950/90">
                           <Image
                             src="/assets/images/brand/gjworks_white.svg"
@@ -482,7 +485,7 @@ const Header = () => {
                             className="block w-16 h-16"
                           />
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
                     <div className="text-xs text-dark-500 pt-5 mb-4">
                       Each subscription goes towards aggressively adding new
