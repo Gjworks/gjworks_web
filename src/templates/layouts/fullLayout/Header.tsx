@@ -303,7 +303,7 @@ const Header = () => {
                 <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="group relative flex items-center hover:bg-slate-100/75 bg-white text-black dark:text-white dark:bg-transparent hover:text-black dark:hover:text-white text-xs border border-gray-200 dark:border-dark-600 hover:shadow-inner hover:shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full shadow-md shadow-gray-100 dark:hover:shadow-dark-700"
+                className="group relative flex items-center hover:bg-slate-100/75 bg-white text-black dark:text-white dark:bg-transparent hover:text-black dark:hover:text-white text-xs border-[0.5px] border-gray-200 dark:border-dark-600 hover:shadow-inner hover:shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full shadow-md shadow-gray-100 dark:hover:shadow-dark-700"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-6 lg:px-4">
@@ -357,15 +357,12 @@ const Header = () => {
           initial={{opacity: 0}}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
-          className="relative z-100 bg-white/90 dark:bg-dark-950/70"
+          className={
+            'relative z-100 bg-white/90 dark:bg-dark-950/70' +
+            (scrollPosition > 100 ? ' mt-[56px]' : ' mt-[80px]')
+          }
         >
-          <div
-            className={
-              scrollPosition > 100
-                ? 'max-w-screen-xl mx-auto px-4 pt-5 pb-5 mt-[56px]'
-                : 'max-w-screen-xl mx-auto px-4 pt-5 pb-5 mt-[64px]'
-            }
-          >
+          <div className="max-w-screen-xl mx-auto px-4 py-5">
             <div className="grid grid-cols-12 pl-3 lg:pl-20 pr-3">
               <div className="col-span-12 lg:col-span-2">
                 <div className="py-5">
@@ -476,9 +473,9 @@ const Header = () => {
                     <div className="">
                       <motion.div
                         whileTap={{scale: 0.97, transition: {duration: 0.3}}}
-                        className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-dark-500/10 transition-all duration-300 scale-100 hover:scale-110"
+                        className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-black transition-all duration-300 scale-100 hover:scale-110"
                       >
-                        <div className="flex items-center justify-center rounded-2xl w-full h-full bg-gradient-to-b from-dark-800/90 via-dark-950/75 to-dark-950/90">
+                        <div className="flex items-center justify-center rounded-2xl w-full h-full bg-gradient-to-b from-dark-800/90 via-dark-950/75 to-dark-950/90 shadow-inner shadow-dark-900/90">
                           <Image
                             src="/assets/images/brand/gjworks_white.svg"
                             alt="gjworks logo"

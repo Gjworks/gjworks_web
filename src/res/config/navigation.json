@@ -3,7 +3,6 @@
         "store" : {
             "name": "store",
             "title": "Store",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
             "route": "/store",
             "image_name": "",
             "subMenu": [
@@ -12,7 +11,6 @@
                     "name": "buylist",
                     "image_name": "",
                     "parent": "store",
-                    "description": "Create React",
                     "route": "/store/buylist"
                 },
                 {
@@ -36,23 +34,54 @@
         "works" : {
             "name": "works",
             "title": "Works",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
             "route": "/works",
             "image_name": "",
             "subMenu": []
         },
-        "maintenance" : {
-            "name": "maintenance",
-            "title": "Maintenance",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
-            "route": "/maintenance",
+        "documentation" : {
+            "name": "documentation",
+            "title": "Docs",
+            "route": "/documentation",
             "image_name": "",
-            "subMenu": []
+            "subMenu": [
+                {
+                    "title": "Documentation",
+                    "name": "documentation",
+                    "image_name": "",
+                    "parent": "documentation",
+                    "route": "/documentation",
+                    "subMenu" : []
+                },
+                {
+                    "title": "Modules",
+                    "name": "modules",
+                    "image_name": "",
+                    "parent": "documentation",
+                    "route": "/documentation/modules",
+                    "subMenu" : []
+                },
+                
+                {
+                    "title": "Databases",
+                    "name": "databases",
+                    "image_name": "",
+                    "parent": "documentation",
+                    "route": "/documentation/databases",
+                    "subMenu" : []
+                },
+                {
+                    "title": "Dashboard Settings",
+                    "name": "dashboardsettings",
+                    "image_name": "",
+                    "parent": "documentation",
+                    "route": "/documentation/dashboardsettings",
+                    "subMenu" : []
+                }
+            ]
         },
         "supports" : {
             "name": "supports",
             "title": "Supports",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
             "route": "/supports",
             "image_name": "",
             "subMenu": [
@@ -61,7 +90,7 @@
                     "name": "forum",
                     "image_name": "",
                     "parent": "forum",
-                    "description": "Create React",
+                    
                     "route": "/posts/forum",
                     "subMenu" : []
                 },
@@ -70,7 +99,7 @@
                     "name": "blog",
                     "image_name": "",
                     "parent": "forum",
-                    "description": "Create React",
+                    
                     "route": "/posts/blog",
                     "subMenu" : []
                 },

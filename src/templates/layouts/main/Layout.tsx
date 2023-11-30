@@ -8,7 +8,6 @@ import React, {useState, useEffect} from 'react'
 import {motion} from 'framer-motion'
 import Header from '@gjworks/templates/layouts/fullLayout/Header'
 import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
-import SideNav from '@gjworks/components/nav/SideNav'
 
 const MainLayout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)

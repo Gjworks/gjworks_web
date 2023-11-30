@@ -56,8 +56,8 @@
         "name": "documentation",
         "title": "문서",
         "description": "",
-        "parent" : "components",
-        "route": "/web",
+        "parent" : "documentation",
+        "route": "/documentation",
         "image_name": ""
     },
     "metaverse" : {

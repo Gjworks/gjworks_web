@@ -32,7 +32,6 @@ const SubNav = () => {
         setCurrentPage(page[params?.[1]])
       }
     }
-
     if (currentPage?.parent && nav.header[currentPage?.parent]) {
       _subMenu = nav.header[currentPage?.parent]?.subMenu
       if (_subMenu) {
@@ -52,11 +51,11 @@ const SubNav = () => {
   const snav = null
   return (
     <>
-      <div className="backdrop-blur-lg bg-white/90 top-0 dark:bg-dark-950/10 z-999 py-4">
+      <div className="backdrop-blur-lg bg-white/90 top-0 dark:bg-dark-950/10 z-999 border-t border-b border-dark-800">
         <div className="max-w-screen-xl mx-auto px-3 overflow-hidden overflow-scroll-hide overflow-x-auto">
           <div className="flex flex-wrap gap-8">
-            <div className="w-full flex-1">
-              <div className="hidden py-2">
+            <div className="w-full lg:flex-1 grid grid-cols-12 gap-8 justify-between">
+              <div className="col-span-3 flex items-center">
                 {currentPage && (
                   <Link
                     href={currentPage?.route}
@@ -66,10 +65,10 @@ const SubNav = () => {
                   </Link>
                 )}
               </div>
-              <div className="flex justify-center ">
-                <div className="rounded-full p-[0.5px] bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-dark-500/10">
-                  <div className="px-8 py-1 rounded-full bg-gradient-to-b from-dark-800/90 via-dark-950/75 to-dark-950/90">
-                    <div className="">
+              <div className="col-span-6 flex justify-center ">
+                <div className="">
+                  <div className="px-3">
+                    <div className="flex gap-8">
                       {subMenu &&
                         Object.entries(subMenu).map((data, index) => {
                           return (
@@ -77,10 +76,10 @@ const SubNav = () => {
                               href={data[1].route}
                               key={data[1].name}
                               className={
-                                'block py-2 text-xs lg:text-xs font-normal ' +
+                                'block text-xs lg:text-xs font-normal py-4 px-1 border-b-2 border-transparent ' +
                                 (pathname === data[1].route
-                                  ? 'text-gray-400 dark:text-white'
-                                  : 'text-gray-800 dark:text-dark-200 hover:text-gray-400 dark:hover:text-white')
+                                  ? 'text-gray-400 dark:text-white border-white'
+                                  : 'text-gray-800 dark:text-dark-400 hover:text-gray-400 dark:hover:text-white')
                               }
                             >
                               {data[1].title}
@@ -89,6 +88,32 @@ const SubNav = () => {
                         })}
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className="col-span-3">
+                <div className="flex items-center justify-end h-full">
+                  <Link
+                    href="#"
+                    className="flex gap-1 text-sm text-dark-400 hover:text-dark-200 hover:underline"
+                  >
+                    <span className=" ">help me?</span>
+                    <span className="">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1}
+                        stroke="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+                        />
+                      </svg>
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>
