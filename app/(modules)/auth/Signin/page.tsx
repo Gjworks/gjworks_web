@@ -59,7 +59,7 @@ const Signin = () => {
   return (
     <>
       <div className="">
-        <div className="max-w-lg mx-auto p-5">
+        <div className="max-w-md mx-auto p-5">
           <form onSubmit={submitHandler}>
             <div className="py-10 text-center">
               <div className="text-2xl font-semibold text-gray-700 dark:text-dark-50">
@@ -71,54 +71,109 @@ const Signin = () => {
               </div>
             </div>
             {error && <Warning message={error} />}
-            <div className="relative flex mb-5 w-full">
-              <div className="flex items-center w-full text-xs">
-                <TextInput
-                  inputType="email"
-                  inputName="email"
-                  inputTitle="Email"
-                  placeholder="What's your Email"
-                  getData={getData}
-                  theme="light"
-                  value=""
-                ></TextInput>
+            <div>
+              <div className="relative flex mb-5">
+                <div className="flex items-center w-full text-xs">
+                  <div className="group flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/20 transition-all duration-300">
+                    <div className="px-5">
+                      <span className="text-dark-300 group-hover:text-white">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      className="outline-none bg-transparent text-sm py-3 pr-3 text-white flex-1 placeholder:text-dark-500/75"
+                      placeholder="Your email"
+                    />
+                  </div>
+                  {/* <TextInput
+                    inputType="email"
+                    inputName="email"
+                    inputTitle="Email"
+                    placeholder="What's your Email"
+                    getData={getData}
+                    theme="light"
+                    value=""
+                  ></TextInput> */}
+                </div>
               </div>
-            </div>
-            <div className="relative flex mb-5 w-full">
-              <div className="flex items-center w-full text-xs">
-                <TextInput
-                  inputType="password"
-                  inputName="password"
-                  inputTitle="비밀번호"
-                  getData={getPassword}
-                  placeholder="Your Password"
-                  theme="light"
-                  value=""
-                ></TextInput>
+              <div className="relative flex mb-5 w-full">
+                <div className="flex items-center w-full text-xs">
+                  <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/20 transition-all duration-300">
+                    <div className="px-5">
+                      <span className="text-dark-300">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      className="outline-none bg-transparent text-sm py-3 pr-3 text-white flex-1 placeholder:text-dark-500/75"
+                      placeholder="Your Password"
+                    />
+                  </div>
+                  {/* <TextInput
+                    inputType="password"
+                    inputName="password"
+                    inputTitle="비밀번호"
+                    getData={getPassword}
+                    placeholder="Your Password"
+                    theme="light"
+                    value=""
+                  ></TextInput> */}
+                </div>
               </div>
-            </div>
 
-            <div className="flex mb-4">
-              <button
-                type="submit"
-                className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                  className="w-4 h-4"
+              <div className="flex mb-4">
+                <button
+                  type="submit"
+                  className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-3 px-5 rounded-lg transition duration-300 hover:bg-slate-700 text-sm"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
-                  />
-                </svg>
-                <span className="pl-2 text-sm">Sign In</span>
-              </button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1}
+                    stroke="currentColor"
+                    className="w-4 h-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                    />
+                  </svg>
+                  <span className="pl-2 text-sm">Sign In</span>
+                </button>
+              </div>
             </div>
           </form>
           <div className="divider">
@@ -127,19 +182,19 @@ const Signin = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-dark-600 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white dark:bg-dark-950 px-4 text-xs text-slate-400">
+                <span className="backdrop-blur-sm px-4 text-xs text-slate-400">
                   OR
                 </span>
               </div>
             </div>
           </div>
-          <div className="py-5">
-            <div className="grid grid-cols-3 gap-4">
-              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-dark-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+          <div className="pt-5 pb-8">
+            <div className="grid grid-cols-2 gap-2">
+              <button className="group col-span-2 sm:col-span-1 flex items-center justify-center bg-slate-100 dark:bg-dark-700/25 hover:bg-slate-200 dark:hover:bg-dark-600/25 dark:hover:text-white dark:text-dark-400 rounded-md px-3 py-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-dark-400"
+                    className="w-5 h-5 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-white"
                     width="512"
                     height="512"
                     viewBox="0 0 512 512"
@@ -149,15 +204,15 @@ const Signin = () => {
                     <path d="M340.25,32c-24,1.63-52,16.91-68.4,36.86-14.88,18.08-27.12,44.9-22.32,70.91h1.92c25.56,0,51.72-15.39,67-35.11C333.17,85.89,344.33,59.29,340.25,32Z" />
                   </svg>
                 </div>
-                <div className="text-sm dark:text-dark-400 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-dark-400">
+                <div className="text-xs dark:text-dark-400 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-white">
                   Apple
                 </div>
               </button>
-              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-dark-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+              <button className="group col-span-2 sm:col-span-1 flex items-center justify-center bg-slate-100 dark:bg-dark-700/25 hover:bg-slate-200 dark:hover:bg-dark-600/25 dark:hover:text-white dark:text-dark-400 rounded-md px-3 py-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-dark-400"
+                    className="w-5 h-5 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-white"
                     width="512"
                     height="512"
                     viewBox="0 0 512 512"
@@ -166,15 +221,15 @@ const Signin = () => {
                     <path d="M256,32C132.3,32,32,134.9,32,261.7c0,101.5,64.2,187.5,153.2,217.9a17.56,17.56,0,0,0,3.8.4c8.3,0,11.5-6.1,11.5-11.4,0-5.5-.2-19.9-.3-39.1a102.4,102.4,0,0,1-22.6,2.7c-43.1,0-52.9-33.5-52.9-33.5-10.2-26.5-24.9-33.6-24.9-33.6-19.5-13.7-.1-14.1,1.4-14.1h.1c22.5,2,34.3,23.8,34.3,23.8,11.2,19.6,26.2,25.1,39.6,25.1a63,63,0,0,0,25.6-6c2-14.8,7.8-24.9,14.2-30.7-49.7-5.8-102-25.5-102-113.5,0-25.1,8.7-45.6,23-61.6-2.3-5.8-10-29.2,2.2-60.8a18.64,18.64,0,0,1,5-.5c8.1,0,26.4,3.1,56.6,24.1a208.21,208.21,0,0,1,112.2,0c30.2-21,48.5-24.1,56.6-24.1a18.64,18.64,0,0,1,5,.5c12.2,31.6,4.5,55,2.2,60.8,14.3,16.1,23,36.6,23,61.6,0,88.2-52.4,107.6-102.3,113.3,8,7.1,15.2,21.1,15.2,42.5,0,30.7-.3,55.5-.3,63,0,5.4,3.1,11.5,11.4,11.5a19.35,19.35,0,0,0,4-.4C415.9,449.2,480,363.1,480,261.7,480,134.9,379.7,32,256,32Z" />
                   </svg>
                 </div>
-                <div className="text-sm dark:text-dark-400 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-dark-400">
+                <div className="text-xs dark:text-dark-400 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-white">
                   Github
                 </div>
               </button>
-              <button className="group col-span-3 sm:col-span-1 flex justify-center bg-slate-100 dark:bg-dark-700 hover:bg-slate-200 dark:hover:bg-dark-600 dark:hover:text-dark-400 rounded-md px-3 py-3 mb-2 cursor-pointer">
+              <button className="group col-span-2 sm:col-span-1 flex items-center justify-center bg-slate-100 dark:bg-dark-700/25 hover:bg-slate-200 dark:hover:bg-dark-600/25 dark:hover:text-white dark:text-dark-400 rounded-md px-3 py-2 cursor-pointer">
                 <div className="pr-3">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-dark-400"
+                    className="w-5 h-5 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-white"
                     width="512"
                     height="512"
                     viewBox="0 0 512 512"
@@ -183,8 +238,24 @@ const Signin = () => {
                     <path d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z" />
                   </svg>
                 </div>
-                <div className="text-sm dark:text-dark-400 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-dark-400">
+                <div className="text-xs dark:text-dark-400 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-white">
                   Twitter
+                </div>
+              </button>
+              <button className="group col-span-2 sm:col-span-1 flex items-center justify-center bg-slate-100 dark:bg-dark-700/25 hover:bg-slate-200 dark:hover:bg-dark-600/25 dark:hover:text-white dark:text-dark-400 rounded-md px-3 py-2 cursor-pointer">
+                <div className="pr-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5 stroke-1 fill-slate-500 group-hover:fill-slate-700 dark:fill-dark-400 dark:group-hover:fill-white"
+                    width="512"
+                    height="512"
+                    viewBox="0 0 512 512"
+                  >
+                    <path d="M473.16,221.48l-2.26-9.59H262.46v88.22H387c-12.93,61.4-72.93,93.72-121.94,93.72-35.66,0-73.25-15-98.13-39.11a140.08,140.08,0,0,1-41.8-98.88c0-37.16,16.7-74.33,41-98.78s61-38.13,97.49-38.13c41.79,0,71.74,22.19,82.94,32.31l62.69-62.36C390.86,72.72,340.34,32,261.6,32h0c-60.75,0-119,23.27-161.58,65.71C58,139.5,36.25,199.93,36.25,256S56.83,369.48,97.55,411.6C141.06,456.52,202.68,480,266.13,480c57.73,0,112.45-22.62,151.45-63.66,38.34-40.4,58.17-96.3,58.17-154.9C475.75,236.77,473.27,222.12,473.16,221.48Z" />
+                  </svg>
+                </div>
+                <div className="text-xs dark:text-dark-400 text-slate-500 group-hover:text-slate-700 dark:group-hover:text-white">
+                  Google
                 </div>
               </button>
             </div>

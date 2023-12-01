@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import {useRouter} from 'next/navigation'
 import Warning from '@gjworks/components/message/Warning'
 import TextInput from '@gjworks/components/form/TextInput'
 
@@ -93,7 +93,7 @@ const Register = () => {
   return (
     <>
       <div className="">
-        <div className="max-w-xl mx-auto p-5">
+        <div className="max-w-md mx-auto p-5">
           <div className="py-10 text-center">
             <div className="flex justify-center mb-4">
               <svg
@@ -126,7 +126,7 @@ const Register = () => {
           <form onSubmit={submitHandler}>
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
-                <TextInput
+                {/* <TextInput
                   inputType="email"
                   inputName="email"
                   inputTitle="이메일"
@@ -134,13 +134,37 @@ const Register = () => {
                   placeholder="example@mail.com"
                   theme="light"
                   value=""
-                ></TextInput>
+                ></TextInput> */}
+                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
+                  <div className="px-5">
+                    <span className="text-dark-300">이메일</span>
+                  </div>
+                  <input
+                    type="text"
+                    name="email"
+                    id=""
+                    className="outline-none bg-transparent text-sm py-3 pr-3 text-white flex-1 placeholder:text-dark-500/75"
+                    placeholder="example@mail.com"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
-                <TextInput
+                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
+                  <div className="px-5">
+                    <span className="text-dark-300">비밀번호</span>
+                  </div>
+                  <input
+                    type="password"
+                    name="password"
+                    id=""
+                    className="outline-none bg-transparent text-sm py-3 pr-3 text-white flex-1 placeholder:text-dark-500/75"
+                    placeholder="User Password"
+                  />
+                </div>
+                {/* <TextInput
                   inputType="password"
                   inputName="password"
                   inputTitle="비밀번호"
@@ -148,7 +172,7 @@ const Register = () => {
                   placeholder="User Password"
                   theme="light"
                   value=""
-                ></TextInput>
+                ></TextInput> */}
               </div>
               <div className="text-dark-400 text-xs pt-2 px-2">
                 비밀번호는 암호화 되어 안전하게 저장됩니다.
@@ -156,7 +180,19 @@ const Register = () => {
             </div>
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
-                <TextInput
+                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
+                  <div className="px-5">
+                    <span className="text-dark-300">닉네임</span>
+                  </div>
+                  <input
+                    type="text"
+                    name="nickName"
+                    id=""
+                    className="outline-none bg-transparent text-sm py-3 pr-3 text-white flex-1 placeholder:text-dark-500/75"
+                    placeholder="User nick name"
+                  />
+                </div>
+                {/* <TextInput
                   inputType="text"
                   inputName="nickName"
                   inputTitle="닉네임"
@@ -164,12 +200,12 @@ const Register = () => {
                   placeholder="User nick name"
                   theme="light"
                   value=""
-                ></TextInput>
+                ></TextInput> */}
               </div>
             </div>
 
             <div className="flex mb-2">
-              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-4 px-5 rounded-lg transition duration-300 hover:bg-slate-700">
+              <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-3 px-5 rounded-lg transition duration-300 hover:bg-slate-700 text-sm">
                 Register Completed
               </button>
             </div>
@@ -180,7 +216,7 @@ const Register = () => {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-dark-600 to-transparent"></div>
               </div>
               <div className="relative flex justify-center">
-                <span className="bg-white dark:bg-dark-950 px-4 text-xs text-dark-400">
+                <span className="backdrop-blur-sm px-4 text-xs text-dark-400">
                   OR
                 </span>
               </div>
