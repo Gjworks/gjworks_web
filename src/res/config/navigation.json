@@ -38,25 +38,25 @@
             "image_name": "",
             "subMenu": []
         },
-        "documentation" : {
-            "name": "documentation",
+        "docs" : {
+            "name": "docs",
             "title": "Docs",
-            "route": "/documentation",
+            "route": "/docs/documentation",
             "image_name": "",
             "subMenu": [
                 {
                     "title": "Documentation",
-                    "name": "documentation",
+                    "name": "docs",
                     "image_name": "",
-                    "parent": "documentation",
-                    "route": "/documentation",
+                    "parent": "docs",
+                    "route": "/docs/documentation",
                     "subMenu" : []
                 },
                 {
                     "title": "Modules",
                     "name": "modules",
                     "image_name": "",
-                    "parent": "documentation",
+                    "parent": "docs",
                     "route": "/documentation/modules",
                     "subMenu" : []
                 },
@@ -65,7 +65,7 @@
                     "title": "Databases",
                     "name": "databases",
                     "image_name": "",
-                    "parent": "documentation",
+                    "parent": "docs",
                     "route": "/documentation/databases",
                     "subMenu" : []
                 },
@@ -73,7 +73,7 @@
                     "title": "Dashboard Settings",
                     "name": "dashboardsettings",
                     "image_name": "",
-                    "parent": "documentation",
+                    "parent": "docs",
                     "route": "/documentation/dashboardsettings",
                     "subMenu" : []
                 }

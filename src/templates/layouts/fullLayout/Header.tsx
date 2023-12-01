@@ -263,7 +263,7 @@ const Header = () => {
             <div className="relative flex gap-2 items-center justify-end">
               <div className="flex gap-1 items-center">
                 <button
-                  className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:bg-dark-950 dark:hover:bg-dark-700"
+                  className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
                   onClick={() => setShowModal(!showModal)}
                 >
                   <svg

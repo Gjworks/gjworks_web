@@ -52,12 +52,20 @@
         "parent": "components",
         "image_name": ""
     },
-    "documentation" : {
-        "name": "documentation",
+    "docs" : {
+        "name": "docs",
         "title": "문서",
         "description": "",
-        "parent" : "documentation",
-        "route": "/documentation",
+        "parent" : "docs",
+        "route": "/docs",
+        "image_name": ""
+    },
+    "documentation" : {
+        "name": "docs",
+        "title": "문서",
+        "description": "",
+        "parent" : "docs",
+        "route": "/docs/documentation",
         "image_name": ""
     },
     "metaverse" : {
