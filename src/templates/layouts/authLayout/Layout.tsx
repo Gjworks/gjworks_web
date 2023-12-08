@@ -4,7 +4,9 @@
  * @brief 레이아웃 최상위 파일
  **/
 'use client'
+
 import React, {useState, useEffect} from 'react'
+import Link from 'next/link'
 import {useRouter} from 'next/navigation'
 import {motion} from 'framer-motion'
 import Footer from 'src/templates/layouts/authLayout/Footer'
@@ -42,6 +44,23 @@ const Layout = ({children}) => {
     },
   }
 
+  const parentVariants = {
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    offscreen: {
+      y: 15,
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  }
+
   const goToTop = () => {
     document.documentElement.scrollTo({
       top: 0,
@@ -50,14 +69,14 @@ const Layout = ({children}) => {
   }
   return (
     <motion.div className="selection:text-white selection:bg-gray-950 break-keep dark:bg-transparent min-h-full">
-      <div className="fixed inset-0 bg-[url('/assets/images/bg26.jpg')] bg-no-repeat bg-center bg-cover">
-        <div className="w-full h-full bg-dark-950/10 backdrop-blur-3xl"></div>
+      <div className="absolute inset-0 bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-top bg-cover">
+        <div className="w-full h-full bg-dark-950/30 backdrop-blur-3xl"></div>
       </div>
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <motion.header
           transition={{duration: 0.3}}
-          className="sticky top-0 backdrop-blur-lg before:backdrop-blur-lg bg-white/80 dark:bg-dark-950/25 z-101 "
+          className="sticky top-0 backdrop-blur-xl before:backdrop-blur-lg z-101 "
         >
           <div className="max-w-screen-sm mx-auto">
             <div className="flex justify-between items-center py-2 pr-3">
@@ -148,8 +167,46 @@ const Layout = ({children}) => {
         )}
 
         <footer>
-          <div className="max-w-screen-sm mx-auto pt-5 pb-10 px-3">
-            <Footer />
+          <div className="max-w-screen-sm mx-auto pt-5 pb-10 px-3 lg:px-8">
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200/50 dark:via-dark-600 to-transparent"></div>
+            <div className="pt-8 lg:pt-5 pb-8">
+              <motion.div
+                variants={variants}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{once: false, amount: 0.3}}
+                className="flex flex-wrap justify-between gap-8"
+              >
+                <motion.div
+                  className="flex items-center justify-center w-full lg:w-auto"
+                  variants={parentVariants}
+                >
+                  <div className="text-xs text-gray-700 dark:text-dark-200 text-center lg:text-left">
+                    ⓒ 지제이웍스
+                  </div>
+                </motion.div>
+                <motion.div className="flex items-center justify-center lg:justify-end w-full lg:w-auto">
+                  <div className="flex flex-wrap gap-4">
+                    <motion.div variants={parentVariants}>
+                      <Link
+                        href="/"
+                        className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                      >
+                        Terms of service
+                      </Link>
+                    </motion.div>
+                    <motion.div variants={parentVariants}>
+                      <Link
+                        href="/"
+                        className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                      >
+                        Privacy policy
+                      </Link>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
         </footer>
       </div>

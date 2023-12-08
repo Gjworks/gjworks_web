@@ -33,7 +33,7 @@ module.exports = {
       black: '#000',
       white: '#fff',
       gray: colors.slate,
-      slate: colors.slate,
+      slate: colors.gray,
       neutral: colors.neutral,
       zinc: colors.zinc,
       stone: colors.stone,

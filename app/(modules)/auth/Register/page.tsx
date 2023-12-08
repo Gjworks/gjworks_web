@@ -135,7 +135,7 @@ const Register = () => {
                   theme="light"
                   value=""
                 ></TextInput> */}
-                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
+                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-300 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
                   <div className="px-5">
                     <span className="text-dark-300">이메일</span>
                   </div>
@@ -152,7 +152,7 @@ const Register = () => {
 
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
-                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
+                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-300 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
                   <div className="px-5">
                     <span className="text-dark-300">비밀번호</span>
                   </div>
@@ -180,7 +180,7 @@ const Register = () => {
             </div>
             <div className="relative mb-5 w-full">
               <div className="flex items-center w-full text-xs">
-                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-100 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
+                <div className="flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-300 focus:border-dark-100 rounded-full bg-dark-950/40 transition-all duration-300">
                   <div className="px-5">
                     <span className="text-dark-300">닉네임</span>
                   </div>

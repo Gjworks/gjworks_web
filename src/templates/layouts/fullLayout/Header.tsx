@@ -159,8 +159,8 @@ const Header = () => {
         className={
           'sticky w-full top-0  z-101 pt-0 lg:py-3 ' +
           (scrollPosition > 100 &&
-            'lg:!py-0 backdrop-blur-lg bg-dark-950/70 ') +
-          (showNavigation === true ? ' bg-dark-950/70' : '')
+            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/70 bg-white/90 ') +
+          (showNavigation === true ? ' dark:bg-dark-950/70 bg-white/90' : '')
         }
       >
         <div className="max-w-screen-xl mx-auto">
@@ -212,7 +212,7 @@ const Header = () => {
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="hidden items-center"
                 >
-                  <div className="flex  pl-2 text-sm lg:text-base font-semibold mr-4">
+                  <div className="flex pl-2 text-sm lg:text-base font-semibold mr-4">
                     <div className="text-black dark:text-white">지제이웍스</div>
                   </div>
                 </a>
@@ -493,13 +493,13 @@ const Header = () => {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
-                        Flutter 2
+                        iOS
                       </div>
                       <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
-                        Swift 5
+                        macOS
                       </div>
                       <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
-                        Android 0
+                        Android
                       </div>
                     </div>
                     {/* <div className="text-dark-300 hover:text-white text-xs underline">
