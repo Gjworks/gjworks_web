@@ -56,7 +56,7 @@ export default function Page() {
             {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-dark-950/40 dark:bg-gradient-to-b  dark:from-dark-950/0 dark:via-dark-950/0 dark:to-dark-950/0"></div> */}
-            <div className="relative grid grid-cols-2 gap-8 max-w-screen-lg mx-auto px-4">
+            <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-4">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center">
                 <motion.div
                   variants={parentVariants}

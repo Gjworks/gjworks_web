@@ -3,8 +3,8 @@
 const Page = () => {
   return (
     <>
-      <div className="relative bg-[url('/assets/images/bg15.jpg')] bg-no-repeat bg-cover bg-center">
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-transparent to-dark-950"></div>
+      <div className="relative  bg-no-repeat bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-950/50 to-dark-950"></div>
         <div className="relative max-w-screen-xl mx-auto py-8 xl:py-20 px-3 lg:px-8">
           <div className="text-white text-5xl font-semibold">Supports</div>
           <div className="py-20">
@@ -91,11 +91,7 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-span-2 lg:col-span-1 order-0 lg:order-1">
-                <div className="relative overflow-hidden bg-white/90 border border-white dark:border-dark-800/20 dark:bg-dark-950/75 backdrop-blur-lg p-8 lg:p-16 rounded-2xl w-full">
-                  <div className="text-black dark:text-white">고객문의</div>
-                </div>
-              </div>
+              <div className="col-span-2 lg:col-span-1 order-0 lg:order-1"></div>
             </div>
           </div>
         </div>

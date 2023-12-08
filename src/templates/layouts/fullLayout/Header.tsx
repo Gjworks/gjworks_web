@@ -159,8 +159,8 @@ const Header = () => {
         className={
           'sticky w-full top-0  z-101 pt-0 lg:py-3 ' +
           (scrollPosition > 100 &&
-            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/70 bg-white/90 ') +
-          (showNavigation === true ? ' dark:bg-dark-950/70 bg-white/90' : '')
+            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/75 bg-white/90 ') +
+          (showNavigation === true ? ' ' : ' ')
         }
       >
         <div className="max-w-screen-xl mx-auto">
@@ -345,21 +345,21 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 bg-gray-600/25 dark:bg-dark-800/75 backdrop-blur-sm"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-transparent"
       ></motion.div>
       <motion.div
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 z-99 bg-transparent dark:bg-transparent backdrop-blur-lg "
+        className="fixed top-0 left-0 right-0 z-99 "
       >
         <motion.div
           initial={{opacity: 0}}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
           className={
-            'relative z-100 bg-white/90 dark:bg-dark-950/70' +
-            (scrollPosition > 100 ? ' mt-[56px]' : ' mt-[80px]')
+            'relative z-100 bg-white/90 dark:bg-dark-950/90 border-b-[0.5px] border-dark-600/50 shadow-xl shadow-dark-900/90 ' +
+            (scrollPosition > 100 ? ' pt-[56px]' : ' pt-[80px]')
           }
         >
           <div className="max-w-screen-xl mx-auto px-4 py-5">
@@ -468,7 +468,7 @@ const Header = () => {
               </div>
               <div className="col-span-12 lg:col-span-4">
                 <div className="relative flex gap-8 h-full py-10 lg:py-0">
-                  <div className="relative h-full hidden lg:flex items-center justify-center w-px bg-gradient-to-t from-transparent via-gray-200/75 dark:via-dark-600 to-transparent"></div>
+                  <div className="relative h-full hidden lg:flex items-center justify-center w-px bg-gradient-to-t from-transparent via-gray-200/75 dark:via-dark-700 to-transparent"></div>
                   <div className="flex-1">
                     <div className="">
                       <motion.div
