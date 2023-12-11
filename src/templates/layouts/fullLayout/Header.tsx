@@ -159,7 +159,7 @@ const Header = () => {
         className={
           'sticky w-full top-0  z-101 pt-0 lg:py-3 ' +
           (scrollPosition > 100 &&
-            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/75 bg-white/90 ') +
+            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/75 bg-white ') +
           (showNavigation === true ? ' ' : ' ')
         }
       >
@@ -168,7 +168,7 @@ const Header = () => {
             <div className="flex items-center">
               <button
                 onClick={() => {
-                  setBackground('dark:bg-dark-950/70 bg-white/90')
+                  setBackground('dark:bg-dark-950 bg-white')
                   setShowLeft(!showLeft)
                 }}
                 className="group flex lg:hidden items-center px-3"
@@ -358,7 +358,7 @@ const Header = () => {
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
           className={
-            'relative z-100 bg-white/90 dark:bg-dark-950/90 border-b-[0.5px] border-dark-600/50 shadow-xl shadow-dark-900/90 ' +
+            'relative z-100 bg-white dark:bg-dark-950 border-b-[0.5px] border-dark-600/50 shadow-xl shadow-dark-900/90 ' +
             (scrollPosition > 100 ? ' pt-[56px]' : ' pt-[80px]')
           }
         >
