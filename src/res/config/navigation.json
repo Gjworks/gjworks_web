@@ -38,45 +38,12 @@
             "image_name": "",
             "subMenu": []
         },
-        "docs" : {
-            "name": "docs",
-            "title": "Docs",
-            "route": "/docs/documentation",
+        "maintenance" : {
+            "name": "maintenance",
+            "title": "Maintenance",
+            "route": "/maintenance",
             "image_name": "",
             "subMenu": [
-                {
-                    "title": "Documentation",
-                    "name": "docs",
-                    "image_name": "",
-                    "parent": "docs",
-                    "route": "/docs/documentation",
-                    "subMenu" : []
-                },
-                {
-                    "title": "Modules",
-                    "name": "modules",
-                    "image_name": "",
-                    "parent": "docs",
-                    "route": "/documentation/modules",
-                    "subMenu" : []
-                },
-                
-                {
-                    "title": "Databases",
-                    "name": "databases",
-                    "image_name": "",
-                    "parent": "docs",
-                    "route": "/documentation/databases",
-                    "subMenu" : []
-                },
-                {
-                    "title": "Dashboard Settings",
-                    "name": "dashboardsettings",
-                    "image_name": "",
-                    "parent": "docs",
-                    "route": "/documentation/dashboardsettings",
-                    "subMenu" : []
-                }
             ]
         },
         "supports" : {

@@ -55,7 +55,7 @@ export default function Page() {
           <div className="max-w-[2560px] mx-auto relative pt-20 pb-20 overflow-hidden z-10 bg-[url('/assets/images/bg31.jpg')] bg-no-repeat bg-center bg-cover">
             {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b dark:from-dark-950/100 dark:via-dark-950/40 dark:to-dark-950/100"></div>
+            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b dark:from-dark-950/100 dark:via-dark-950/75 dark:to-dark-950/100"></div>
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-4 py-10">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center">
                 <motion.div

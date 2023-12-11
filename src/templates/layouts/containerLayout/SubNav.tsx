@@ -52,10 +52,10 @@ const SubNav = () => {
   return (
     <>
       <div className="backdrop-blur-lg bg-white/90 top-0 dark:bg-dark-950/10 z-999 border-t border-b border-dark-800">
-        <div className="max-w-screen-xl mx-auto px-3">
+        <div className="max-w-screen-xl mx-auto px-0">
           <div className="flex flex-wrap gap-8">
             <div className="w-full lg:flex-1 flex gap-8 justify-between">
-              <div className="flex items-center">
+              <div className="hidden items-center">
                 {currentPage && (
                   <Link
                     href={currentPage?.route}
@@ -65,9 +65,9 @@ const SubNav = () => {
                   </Link>
                 )}
               </div>
-              <div className="flex-1 relative overflow-hidden overflow-scroll-hide overflow-x-auto">
+              <div className="flex-1 relative overflow-hidden">
                 <div className="absolute top-0 left-0 bottom-0 w-12 bg-gradient-to-r from-dark-950 to-transparent"></div>
-                <div className="flex ">
+                <div className="flex overflow-hidden overflow-scroll-hide overflow-x-auto">
                   <div className="">
                     <div className="px-3">
                       <div className="flex gap-8">
@@ -95,32 +95,7 @@ const SubNav = () => {
                 <div className="absolute top-0 right-0 bottom-0 w-12 bg-gradient-to-r from-transparent to-dark-950"></div>
               </div>
 
-              <div className="">
-                <div className="flex items-center justify-end h-full">
-                  <Link
-                    href="#"
-                    className="flex gap-1 text-sm text-dark-400 hover:text-dark-200 hover:underline"
-                  >
-                    <span className=" ">help me?</span>
-                    <span className="">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1}
-                        stroke="currentColor"
-                        className="w-5 h-5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
-                        />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
-              </div>
+              <div className=""></div>
             </div>
           </div>
         </div>

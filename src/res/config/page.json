@@ -68,6 +68,13 @@
         "route": "/docs/documentation",
         "image_name": ""
     },
+    "maintenance": {
+        "name": "maintenance",
+        "title": "Maintenance",
+        "description": "",
+        "route": "/maintenance",
+        "image_name": ""
+    },
     "metaverse" : {
         "name": "metaverse",
         "title": "Metaverse Platform",
