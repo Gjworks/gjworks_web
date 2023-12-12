@@ -17,12 +17,21 @@ import SideNav from 'src/components/nav/SideNav'
 import nav from 'src/res/config/navigation.json'
 import {motion} from 'framer-motion'
 
+export type NavType = {
+  name: string
+  image_name: string
+  title: string
+  parent: string
+  route: string
+}
+
 const Header = () => {
   const pathname = usePathname()
   const [showModal, setShowModal] = useState(false)
   const [showLeft, setShowLeft] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
   const [showNavigation, setShowNavigation] = useState(false)
+  const [showNavigationList, setShowNavigationList] = useState<NavType[]>()
   const [background, setBackground] = useState('')
   const [scrollPosition, setScrollPosition] = useState(0)
 
@@ -134,24 +143,49 @@ const Header = () => {
     },
   }
   const variants = {
-    open: {
-      opacity: 1,
-      display: 'block',
+    // open: {
+    //   opacity: 1,
+    //   display: 'block',
+    //   transition: {
+    //     duration: 1.5,
+    //   },
+    // },
+    // close: {
+    //   opacity: 0,
+    //   transition: {
+    //     duration: 0.5,
+    //   },
+    //   transitionEnd: {
+    //     display: 'none',
+    //   },
+    // },
+
+    onscreen: {
+      opacity: [0, 1],
       transition: {
-        duration: 1.5,
+        y: {stiffness: 300, velocity: -100},
       },
     },
-    close: {
+    offscreen: {
       opacity: 0,
       transition: {
-        duration: 0.5,
-      },
-      transitionEnd: {
-        display: 'none',
+        y: {stiffness: 300},
       },
     },
   }
 
+  const subMenuVariants = {
+    onscreen: {
+      transition: {staggerChildren: 0.2, delayChildren: 0.2},
+    },
+    offscreen: {
+      transition: {staggerChildren: 0.2, staggerDirection: -1},
+    },
+  }
+
+  const subNavigationView = showNavigationList => {
+    return <></>
+  }
   return (
     <>
       <motion.header
@@ -165,13 +199,13 @@ const Header = () => {
       >
         <div className="max-w-screen-xl mx-auto">
           <div className="flex py-2 px-3">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <button
                 onClick={() => {
                   setBackground('dark:bg-dark-950 bg-white')
                   setShowLeft(!showLeft)
                 }}
-                className="group flex lg:hidden items-center px-3"
+                className="group flex lg:hidden items-center"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
@@ -247,14 +281,33 @@ const Header = () => {
                       <Link
                         href={data[1].route}
                         key={data[1].name}
+                        onMouseEnter={() =>
+                          setShowNavigationList(data[1].subMenu)
+                        }
                         className={
-                          'block py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
+                          'flex gap-2 items-center py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
                           (pathname === data[1].route
                             ? 'text-gray-400 dark:text-white'
                             : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
                         }
                       >
                         {data[1].title}
+                        {data[1].subMenu.length > 0 && (
+                          <span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              className="w-4 h-4"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        )}
                       </Link>
                     )
                   })}
@@ -367,32 +420,37 @@ const Header = () => {
               <div className="col-span-12 lg:col-span-2">
                 <div className="py-5">
                   <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
-                    Navigation
+                    Sub Navigation
                   </div>
-                  <Link
+                  {/* <Link
                     href="/store"
                     className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
                   >
                     Store
-                  </Link>
-                  <Link
-                    href="/components"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
-                  >
-                    Components
-                  </Link>
-                  <Link
-                    href="/posts/blog"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
-                  >
-                    Contact us
-                  </Link>
+                  </Link> */}
+
+                  {showNavigationList && (
+                    <motion.div
+                      initial="offscreen"
+                      // viewport={{once: true, amount: 0.1}}
+                      // animate={showNavigationList ? 'onscreen' : 'offscreen'}
+                      animate="onscreen"
+                      variants={subMenuVariants}
+                    >
+                      {Object.entries(showNavigationList).map((list, key) => {
+                        return (
+                          <motion.div key={key} variants={variants}>
+                            <Link
+                              href="/store"
+                              className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-200"
+                            >
+                              {list[1].title}
+                            </Link>
+                          </motion.div>
+                        )
+                      })}
+                    </motion.div>
+                  )}
                 </div>
               </div>
               <div className="col-span-12 lg:col-span-6">

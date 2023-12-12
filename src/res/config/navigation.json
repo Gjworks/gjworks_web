@@ -7,6 +7,13 @@
             "image_name": "",
             "subMenu": [
                 {
+                    "title": "스토어",
+                    "name": "store",
+                    "image_name": "",
+                    "parent": "store",
+                    "route": "/store"
+                },
+                {
                     "title": "구매내역",
                     "name": "buylist",
                     "image_name": "",
@@ -53,30 +60,25 @@
             "image_name": "",
             "subMenu": [
                 {
-                    "title": "Forum",
-                    "name": "forum",
+                    "title": "Supports",
+                    "name": "supports",
                     "image_name": "",
-                    "parent": "forum",
-                    
-                    "route": "/posts/forum",
-                    "subMenu" : []
+                    "parent": "supports",
+                    "route": "/supports"
                 },
                 {
-                    "title": "Blog",
-                    "name": "blog",
+                    "title": "공지사항",
+                    "name": "notice",
                     "image_name": "",
-                    "parent": "forum",
-                    
-                    "route": "/posts/blog",
-                    "subMenu" : []
+                    "parent": "supports",
+                    "route": "/posts/notice"
                 },
                 {
-                    "title": "News",
-                    "name": "news",
+                    "title": "자주묻는 질문",
+                    "name": "faq",
                     "image_name": "",
-                    "parent": "forum",
-                    "route": "/posts/news",
-                    "description": "Create React"
+                    "parent": "supports",
+                    "route": "/posts/faq"
                 }
             ]
         }

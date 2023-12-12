@@ -98,12 +98,12 @@
         "parent" : "forum",
         "image_name": ""
     },
-    "news" : {
-        "name": "news",
-        "title": "News",
+    "notice" : {
+        "name": "notice",
+        "title": "Notice",
         "description": "",
-        "route": "/posts/news",
-        "parent" : "forum",
+        "route": "/posts/notice",
+        "parent" : "notice",
         "image_name": ""
     },
     "forum" : {

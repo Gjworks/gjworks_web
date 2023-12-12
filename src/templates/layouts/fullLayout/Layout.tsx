@@ -8,7 +8,7 @@ import React, {useState, useEffect} from 'react'
 import {motion} from 'framer-motion'
 import Header from '@gjworks/templates/layouts/fullLayout/Header'
 import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
-// import SubNav from '@gjworks/templates/layouts/fullLayout/SubNav'
+import SubNav from '@gjworks/templates/layouts/containerLayout/SubNav'
 
 const FullLayout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -33,7 +33,7 @@ const FullLayout = ({children}) => {
     <div className="selection:text-white selection:bg-gray-950 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
       <div className="relative z-20">
         <Header />
-
+        <SubNav />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main>{children}</main>
         {scrollPosition > 100 && (
