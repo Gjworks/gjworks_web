@@ -8,14 +8,14 @@ const Page = () => {
   return (
     <>
       <div className="fixed inset-0 bg-[url('https://images.unsplash.com/photo-1606075920560-c43aa8659a3c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center bg-fixed">
-        {/* <div className="absolute inset-0 bg-gray-950/5"></div> */}
+        <div className="absolute inset-0 bg-white/50"></div>
       </div>
       <div className="relative w-full h-full">
-        <div className="relative  max-w-screen-xl mx-auto">
+        <div className="relative max-w-screen-xl mx-auto">
           <div className="relative grid grid-cols-4">
-            <div className="relative col-span-2">
+            <div className="hidden xl:block relative col-span-2">
               <div className="sticky h-screen inset-0 px-8">
-                <div className="relative flex py-6">
+                <div className="relative flex">
                   <div className="text-4xl font-extrabold text-black">
                     <Image
                       src="/assets/pristo/images/pristo_logo.png"
@@ -27,43 +27,100 @@ const Page = () => {
                   </div>
                 </div>
                 <div className="mb-10">
-                  <div className="text-lg font-semibold mb-4">Address</div>
-                  <div className="">업체명 : 지제이웍스</div>
+                  <div className="text-lg font-semibold mb-4 text-black">
+                    고객센터
+                  </div>
+                  <div className="flex gap-2 text-2xl font-bold text-rose-700 mb-3">
+                    1588-4443
+                  </div>
+                  <div className="flex gap-2 text-base">
+                    <span className="text-slate-900 font-medium">업무시간</span>
+                    <span className="text-slate-600">AM 10:00 ~ 19:00</span>
+                  </div>
+                  <div className="flex gap-2 text-base">
+                    <span className="text-slate-900 font-medium">이메일</span>
+                    <span className="text-slate-600">contact@gjworks.dev</span>
+                  </div>
+                </div>
+                <div className="mb-10">
+                  <div className="text-lg font-semibold mb-4 text-black">
+                    Company Info
+                  </div>
+                  <div className="flex flex-wrap gap-x-4">
+                    <div className="flex gap-2 text-base">
+                      <span className="text-slate-900 font-medium">업체명</span>
+                      <span className="text-slate-600">지제이웍스</span>
+                    </div>
+                    <div className="flex gap-2 text-base">
+                      <span className="text-slate-900 font-medium">대표자</span>
+                      <span className="text-slate-600">김규진</span>
+                    </div>
+                    <div className="flex gap-2 text-base">
+                      <span className="text-slate-900 font-medium">
+                        사업소재지
+                      </span>
+                      <span className="text-slate-600">서울 동작구</span>
+                    </div>
+                    <div className="flex gap-2 text-base">
+                      <span className="text-slate-900 font-medium">
+                        사업자등록번호
+                      </span>
+                      <span className="text-slate-600">892-28-00572</span>
+                    </div>
+                    <div className="flex gap-2 text-base">
+                      <span className="text-slate-900 font-medium">
+                        통신판매업번호
+                      </span>
+                      <span className="text-slate-600">000-서울동작-0000</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="">
                   <div className="text-lg font-semibold mb-4">Copyright</div>
-                  <div className=""></div>
+                  <div className="flex flex-wrap gap-x-4">
+                    <div className="flex gap-2 text-base">
+                      <span className="text-slate-900 font-medium">업체명</span>
+                      <span className="text-slate-600">지제이웍스</span>
+                    </div>
+                    <div className="flex gap-2 text-base">
+                      <span className="text-slate-900 font-medium">업체명</span>
+                      <span className="text-slate-600">지제이웍스</span>
+                    </div>
+                  </div>
+                  <div className="text-sm text-slate-900">
+                    Copyright © 지제이웍스. All rights reserved.
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="relative col-span-2 bg-gray-1 bg-white">
-              <div className="h-[calc(100vh - 69px)] overflow-hidden overflow-y-scroll">
-                <div className="px-4">
-                  <header className="sticky top-0 py-5 bg-white/75 backdrop-blur-lg">
-                    <div className="flex items-center gap-4 justify-between">
-                      <div className="text-gray-950 text-lg font-bold">홈</div>
-                      <div className="flex gap-2 items-center text-gray-950 cursor-pointer hover:text-rose-500">
-                        <div className="">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                            />
-                          </svg>
-                        </div>
-                        <div className="text-base font-bold">장바구니</div>
+            <div className="relative col-span-4 xl:col-span-2 bg-slate-1 bg-white">
+              <div className="">
+                <header className="sticky top-0 py-5 bg-white/75 backdrop-blur-lg px-4 z-50">
+                  <div className="flex items-center gap-4 justify-between">
+                    <div className="text-slate-950 text-lg font-bold">홈</div>
+                    <div className="flex gap-2 items-center text-slate-950 cursor-pointer hover:text-rose-500">
+                      <div className="">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1.5}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                          />
+                        </svg>
                       </div>
+                      <div className="text-base font-bold">장바구니</div>
                     </div>
-                  </header>
-                  <div className="h-[333px]">
+                  </div>
+                </header>
+                <div className="px-4">
+                  <div className="min-h-fit">
                     <div className="flex gap-6">
                       <Link
                         href=""
@@ -73,13 +130,13 @@ const Page = () => {
                       </Link>
                       <Link
                         href=""
-                        className="flex gap-1 items-center text-gray-500 hover:text-gray-950 text-base font-semibold border-b-4 py-2 border-transparent"
+                        className="flex gap-1 items-center text-slate-500 hover:text-slate-950 text-base font-semibold border-b-4 py-2 border-transparent"
                       >
                         <span>할인상품</span>
                       </Link>
                       <Link
                         href=""
-                        className="flex gap-1 items-center text-gray-500 hover:text-gray-950 border-b-4 py-2 border-transparent"
+                        className="flex gap-1 items-center text-slate-500 hover:text-slate-950 border-b-4 py-2 border-transparent"
                       >
                         <span>
                           <svg
@@ -102,13 +159,60 @@ const Page = () => {
                     </div>
                   </div>
                 </div>
-                <div className="relative h-full min-h-full"></div>
+                <div className="relative pt-5 pb-20">
+                  <div className="px-4">
+                    <div className="h-[320px] bg-[url('/assets/images/bg19.jpg')] bg-cover rounded-lg mb-8"></div>
+                    <div className="mb-8">
+                      <div className="text-base font-bold mb-4">
+                        진행중인 이벤트
+                      </div>
+                      <div className="rounded-lg h-[220px] bg-slate-200 hover:bg-slate-300"></div>
+                    </div>
+                  </div>
+
+                  <div className="mb-8 bg-slate-50 py-8 px-4">
+                    <div className="text-lg font-normal mb-4">
+                      새로 추가된 신상품을<br></br>
+                      마음껏 구경하세요.
+                    </div>
+                    <div className="mb-5">
+                      <div className="rounded-lg h-[220px] bg-slate-200 hover:bg-slate-300 mb-2"></div>
+                      <div className="text-slate-700 mb-1 text-base">
+                        iPhone Pro 15
+                      </div>
+                      <div className="text-slate-500 mb-1 text-sm">
+                        최신 제품을 소개 합니다.
+                      </div>
+                    </div>
+                    <div className="mb-5">
+                      <div className="rounded-lg h-[220px] bg-slate-200 hover:bg-slate-300 mb-2"></div>
+                      <div className="text-slate-700 mb-1 text-base">
+                        iPhone Pro 15
+                      </div>
+                      <div className="text-slate-500 mb-1 text-sm">
+                        최신 제품을 소개 합니다.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mb-8 py-8 px-4">
+                    <div className="text-lg font-normal mb-4">
+                      새로 추가된 신상품을<br></br>
+                      마음껏 구경하세요.
+                    </div>
+                    <div className="grid grid-cols-2 gap-1">
+                      <div className="col-span-1 h-[333px] bg-slate-100 hover:bg-slate-200"></div>
+                      <div className="col-span-1 h-[333px] bg-slate-100 hover:bg-slate-200"></div>
+                      <div className="col-span-1 h-[333px] bg-slate-100 hover:bg-slate-200"></div>
+                      <div className="col-span-1 h-[333px] bg-slate-100 hover:bg-slate-200"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="sticky bottom-0 left-0 right-0 border-t border-gray-100 bg-gray-50/50 backdrop-blur-lg">
+              <div className="fixed xl:w-[640px] bottom-0 left-0 xl:left-[50%] right-0 border-t border-slate-100 bg-slate-50/50 backdrop-blur-lg">
                 <div className="grid grid-cols-5 gap-4">
                   <div className="col-span-1">
-                    <div className="text-center py-3 text-gray-950 cursor-pointer">
+                    <div className="text-center py-3 text-slate-950 cursor-pointer">
                       <div className="flex justify-center mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +233,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="col-span-1">
-                    <div className="text-center py-3 text-gray-400 hover:text-gray-950 cursor-pointer">
+                    <div className="text-center py-3 text-slate-400 hover:text-slate-950 cursor-pointer">
                       <div className="flex justify-center mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +254,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="col-span-1">
-                    <div className="text-center py-3 text-gray-400 hover:text-gray-950 cursor-pointer">
+                    <div className="text-center py-3 text-slate-400 hover:text-slate-950 cursor-pointer">
                       <div className="flex justify-center mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +275,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="col-span-1">
-                    <div className="text-center py-3 text-gray-400 hover:text-gray-950 cursor-pointer">
+                    <div className="text-center py-3 text-slate-400 hover:text-slate-950 cursor-pointer">
                       <div className="flex justify-center mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +296,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="col-span-1">
-                    <div className="text-center py-3 text-gray-400 hover:text-gray-950 cursor-pointer">
+                    <div className="text-center py-3 text-slate-400 hover:text-slate-950 cursor-pointer">
                       <div className="flex justify-center mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

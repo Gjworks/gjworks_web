@@ -15,7 +15,6 @@
   }
   html.dark, html.dark body {
     -webkit-overflow-scrolling: touch;
-    height: 10 + env(safe-area-inset-bottom)px;
     @apply bg-dark-950
   }
   h1 {
