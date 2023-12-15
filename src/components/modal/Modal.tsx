@@ -82,7 +82,7 @@ const Modal = ({state, close, children}) => {
                 variants={variants}
                 exit={exit}
                 onClick={handleCloseModal}
-                className="fixed inset-0 dark: z-90 backdrop-blur bg-dark-950/70"
+                className="fixed inset-0 dark: z-90 backdrop-blur bg-dark-950/70 dark:bg-transparent"
               ></motion.div>
             </ModalPortal>
           </>
