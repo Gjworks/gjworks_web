@@ -9,7 +9,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import {motion} from 'framer-motion'
 
 const Footer = () => {
   const variants = {
@@ -51,7 +51,7 @@ const Footer = () => {
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="flex gap-4 flex-wrap w-full lg:flex-1 order-1 lg:order-0"
           >
             <motion.div className="flex items-center gap-1 lg:gap-4 w-full flex-wrap">
@@ -131,7 +131,7 @@ const Footer = () => {
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="flex items-center gap-4  order-0 lg:order-1"
           >
             <motion.a
@@ -178,7 +178,7 @@ const Footer = () => {
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="flex flex-wrap justify-center gap-8"
           >
             <motion.div

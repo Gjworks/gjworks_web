@@ -3,8 +3,8 @@
 const Page = () => {
   return (
     <>
-      <div className="fixed inset-0 bg-[url('/assets/images/bg_phone.jpg')] bg-no-repeat bg-center bg-cover">
-        <div className="w-full h-full bg-dark-950/40"></div>
+      <div className="fixed inset-0 bg-[url('/assets/images/bg35.jpg')] bg-no-repeat bg-center bg-cover">
+        <div className="w-full h-full bg-dark-950/80 backdrop-grayscale "></div>
       </div>
       <div className="relative max-w-screen-sm mx-auto px-3 h-[calc(100vh-305px)]">
         <div className="flex justify-center items-center h-full">
