@@ -52,11 +52,11 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20 overflow-hidden z-10 bg-[url('/assets/images/bg31.jpg')] bg-no-repeat bg-center bg-cover">
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20 overflow-hidden z-10 bg-[url('/assets/images/bg31.jpg')] bg-cover bg-center">
             {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b dark:from-dark-950/100 dark:via-dark-950/75 dark:to-dark-950/100"></div>
-            <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-4 py-10">
+            <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-4 py-0 lg:py-10">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center">
                 <motion.div
                   variants={parentVariants}
@@ -65,17 +65,17 @@ export default function Page() {
                   viewport={{once: false, amount: 0.3}}
                   className="w-full"
                 >
-                  <div className="pt-10 lg:pt-12">
+                  <div className="pt-0 lg:pt-12">
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-700 to-gray-900 dark:from-indigo-300 dark:to-teal-200 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
+                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-700 to-gray-950 dark:from-indigo-300 dark:to-teal-200 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
                       >
                         Building digital experience
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-600 via-primary-700 to-gray-950 dark:from-indigo-300  dark:to-teal-200 font-semibold tracking-tighter pl-0"
+                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-900 to-gray-950 dark:from-indigo-300  dark:to-teal-200 font-semibold tracking-tighter pl-0"
                       >
                         Creative platform service
                       </motion.div>
@@ -205,6 +205,87 @@ export default function Page() {
               </motion.div>
             </div>
           </div>
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{once: false, amount: 0.1}}
+            variants={parentVariants}
+            className="lg:pt-10 pb-20"
+          >
+            <div className="relative max-w-screen-xl mx-auto px-3">
+              <div className="grid grid-cols-3 gap-8">
+                <div className="col-span-3 lg:col-span-1">
+                  <motion.div variants={variants} className="flex gap-8">
+                    <div className="">
+                      <div className="w-12 h-12 bg-gray-100 dark:bg-dark-900 rounded-full"></div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-gray-950 dark:text-white mb-2 font-semibold text-lg">
+                        모든 소스코드 제공
+                      </div>
+                      <div className="text-gray-400 dark:text-dark-500 text-base">
+                        git을 통해 패치되는 최신버전을 내려받을 수 있습니다.
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+                <div className="col-span-3 lg:col-span-1">
+                  <motion.div variants={variants} className="flex gap-8">
+                    <div className="">
+                      <div className="w-12 h-12 bg-gray-100 dark:bg-dark-900 rounded-full"></div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-gray-950 dark:text-white mb-2 font-semibold text-lg">
+                        모든 소스코드 제공
+                      </div>
+                      <div className="text-gray-400 dark:text-dark-500 text-base">
+                        git을 통해 패치되는 최신버전을 내려받을 수 있습니다.
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+                <div className="col-span-3 lg:col-span-1">
+                  <motion.div variants={variants} className="flex gap-8">
+                    <div className="">
+                      <div className="w-12 h-12 bg-gray-100 dark:bg-dark-900 rounded-full"></div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-gray-950 dark:text-white mb-2 font-semibold text-lg">
+                        모든 소스코드 제공
+                      </div>
+                      <div className="text-gray-400 dark:text-dark-500 text-base">
+                        git을 통해 패치되는 최신버전을 내려받을 수 있습니다.
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{once: false, amount: 0.1}}
+            variants={parentVariants}
+            className="py-16 lg:py-20 dark:bg-dark-900/90 bg-gray-100"
+          >
+            <div className="relative max-w-screen-lg mx-auto px-3">
+              <div className="rounded-3xl p-10 bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px]">
+                <motion.div
+                  variants={variants}
+                  className="text-black dark:text-white font-semibold text-3xl lg:text-4xl mb-2"
+                >
+                  Business Partner
+                </motion.div>
+                <motion.div
+                  variants={variants}
+                  className="text-black dark:text-white font-semibold text-2xl lg:text-3xl"
+                >
+                  협력하는 관계
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -456,7 +537,7 @@ export default function Page() {
                 <motion.div
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{once: false, amount: 0.1}}
+                  viewport={{once: false, amount: 0.3}}
                   variants={parentVariants}
                   className="grid grid-cols-12 gap-4"
                 >
@@ -503,7 +584,7 @@ export default function Page() {
               whileInView="onscreen"
               viewport={{once: false, amount: 0.3}}
               variants={parentVariants}
-              className="max-w-screen-lg mx-auto px-3 xl:px-8 overflow-hidden pt-0 "
+              className="max-w-screen-lg mx-auto px-3 xl:px-8 overflow-hidden pt-0 pb-20 "
             >
               <div className="flex justify-center">
                 <motion.div
@@ -521,7 +602,7 @@ export default function Page() {
               </motion.div>
             </motion.div>
           </div>
-          <div className="relative px-3 mb-12">
+          <div className="hidden relative px-3 mb-12">
             <div className="block relative h-[300px]">
               <motion.div
                 variants={parentVariants}

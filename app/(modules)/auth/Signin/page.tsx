@@ -74,9 +74,9 @@ const Signin = () => {
             <div>
               <div className="relative flex mb-5">
                 <div className="flex items-center w-full text-xs">
-                  <div className="group flex items-center w-full border-[0.5px] border-dark-600/75 hover:border-dark-300 focus:border-dark-300 rounded-full bg-dark-950/20 transition-all duration-300">
+                  <div className="group flex items-center w-full border-[0.5px] border-gray-200 dark:border-dark-600/75 dark:hover:border-dark-300 dark:focus:border-dark-300 rounded-full dark:bg-dark-950/20 transition-all duration-300">
                     <div className="px-5">
-                      <span className="text-dark-300 group-hover:text-white">
+                      <span className="dark:text-dark-300 group-hover:text-white">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"

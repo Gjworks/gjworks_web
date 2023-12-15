@@ -398,7 +398,7 @@ const Header = () => {
         initial={headerInitial}
         animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-lg bg-transparent"
+        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-sm bg-gray-950/70 dark:bg-transparent"
       ></motion.div>
       <motion.div
         initial={headerInitial}
@@ -411,7 +411,7 @@ const Header = () => {
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
           className={
-            'relative z-100 bg-white dark:bg-dark-950 border-b-[0.5px] border-dark-600/50 shadow-xl shadow-dark-900/90 ' +
+            'relative z-100 bg-white dark:bg-dark-950 border-b-[0.5px] border-gray-200/50 dark:border-dark-600/50 shadow-sm dark:shadow-xl shadow-gray-100/75 dark:shadow-dark-950/90 ' +
             (scrollPosition > 100 ? ' pt-[56px]' : ' pt-[80px]')
           }
         >
@@ -531,7 +531,7 @@ const Header = () => {
                     <div className="">
                       <motion.div
                         whileTap={{scale: 0.97, transition: {duration: 0.3}}}
-                        className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-black transition-all duration-300 scale-100 hover:scale-110"
+                        className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-black"
                       >
                         <div className="flex items-center justify-center rounded-2xl w-full h-full bg-gradient-to-b from-dark-800/90 via-dark-950/75 to-dark-950/90 shadow-inner shadow-dark-900/90">
                           <Image
@@ -544,19 +544,19 @@ const Header = () => {
                         </div>
                       </motion.div>
                     </div>
-                    <div className="text-xs text-dark-500 pt-5 mb-4">
+                    <div className="text-xs text-gray-500 dark:text-dark-500 pt-5 mb-4">
                       Each subscription goes towards aggressively adding new
                       features built with customers best interests at heart,
                       including your privacy.
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
+                      <div className="text-xs py-[2px] px-2 text-gray-400 dark:text-dark-500 border border-gray-200 dark:border-dark-700/75 bg-gray-100 dark:bg-dark-900 hover:bg-gray-200 dark:hover:bg-dark-950 rounded-lg">
                         iOS
                       </div>
-                      <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
+                      <div className="text-xs py-[2px] px-2 text-gray-400 dark:text-dark-500 border border-gray-200 dark:border-dark-700/75 bg-gray-100 dark:bg-dark-900 hover:bg-gray-200 dark:hover:bg-dark-950 rounded-lg">
                         macOS
                       </div>
-                      <div className="text-xs py-[2px] px-2 text-dark-500 border border-dark-700/75 bg-dark-900 hover:bg-dark-950 rounded-lg">
+                      <div className="text-xs py-[2px] px-2 text-gray-400 dark:text-dark-500 border border-gray-200 dark:border-dark-700/75 bg-gray-100 dark:bg-dark-900 hover:bg-gray-200 dark:hover:bg-dark-950 rounded-lg">
                         Android
                       </div>
                     </div>

@@ -14,7 +14,7 @@ const Page = () => {
         <div className="relative max-w-screen-xl mx-auto">
           <div className="relative grid grid-cols-4">
             <div className="hidden xl:block relative col-span-2">
-              <div className="sticky h-screen inset-0 px-8">
+              <div className="sticky h-screen inset-0 px-8 overflow-hidden overflow-scroll-hide overflow-y-auto">
                 <div className="relative flex">
                   <div className="text-4xl font-extrabold text-black">
                     <Image
