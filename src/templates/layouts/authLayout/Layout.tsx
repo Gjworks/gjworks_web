@@ -68,10 +68,7 @@ const Layout = ({children}) => {
     })
   }
   return (
-    <motion.div className="selection:text-white selection:bg-gray-950 break-keep dark:bg-transparent min-h-full">
-      <div className="absolute inset-0 bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-top bg-cover">
-        <div className="w-full h-full bg-dark-950/30 backdrop-blur-3xl"></div>
-      </div>
+    <motion.div className="selection:text-black selection:bg-yellow-400 break-keep dark:bg-transparent min-h-full">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <motion.header

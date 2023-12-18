@@ -193,7 +193,7 @@ const Header = () => {
         className={
           'sticky w-full top-0  z-101 pt-0 lg:py-3 ' +
           (scrollPosition > 100 &&
-            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/75 bg-white ') +
+            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/75 bg-white/75 ') +
           (showNavigation === true ? ' ' : ' ')
         }
       >
@@ -235,7 +235,7 @@ const Header = () => {
                   className="flex items-center"
                 >
                   <Image
-                    src="/assets/images/brand/gjworks_white.svg"
+                    src="/assets/images/brand/gjworks.svg"
                     alt="gjworks logo"
                     width="32"
                     height="32"
@@ -356,7 +356,7 @@ const Header = () => {
                 <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="group relative flex items-center hover:bg-slate-100/75 bg-white text-black dark:text-white dark:bg-transparent hover:text-black dark:hover:text-white text-xs border-[0.5px] border-gray-200 dark:border-dark-600 hover:shadow-inner hover:shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full shadow-md shadow-gray-100 dark:hover:shadow-dark-700"
+                className="group relative flex items-center hover:bg-slate-100/75 bg-white/75 text-black dark:text-white dark:bg-transparent hover:text-black dark:hover:text-white text-xs border-[0.5px] border-gray-200 dark:border-dark-600 hover:shadow-inner hover:shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full shadow-md shadow-gray-100 dark:hover:shadow-dark-700"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex py-[6px] px-6 lg:px-4">

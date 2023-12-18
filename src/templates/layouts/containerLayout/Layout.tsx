@@ -30,7 +30,7 @@ const ContainerLayout = ({children}) => {
     })
   }
   return (
-    <div className="selection:text-white selection:bg-gray-950 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
+    <div className="selection:text-black selection:bg-rose-400 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
       <div className="relative z-20">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}

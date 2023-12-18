@@ -30,7 +30,7 @@ const FullLayout = ({children}) => {
     })
   }
   return (
-    <div className="selection:text-white selection:bg-gray-950 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
+    <div className="selection:text-black selection:bg-yellow-400 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
       <div className="relative z-20">
         <Header />
         <SubNav />

@@ -55,7 +55,7 @@ const Page = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="text-white text-xs bg-blue-600 rounded-full py-1 px-4 hover:bg-blue-500 cursor-pointer">
+                <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
                   구입하기
                 </div>
               </div>
@@ -80,7 +80,7 @@ const Page = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="text-white text-xs bg-blue-600 rounded-full py-1 px-4 hover:bg-blue-500 cursor-pointer">
+                <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
                   구입하기
                 </div>
               </div>
@@ -105,7 +105,7 @@ const Page = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="text-white text-xs bg-blue-600 rounded-full py-1 px-4 hover:bg-blue-500 cursor-pointer">
+                <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
                   구입하기
                 </div>
               </div>

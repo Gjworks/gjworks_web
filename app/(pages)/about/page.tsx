@@ -3,13 +3,13 @@
 const Page = () => {
   return (
     <>
-      <div className="fixed inset-0 bg-[url('/assets/images/bg35.jpg')] bg-no-repeat bg-center bg-cover">
-        <div className="w-full h-full bg-dark-950/80 backdrop-grayscale "></div>
+      <div className="fixed inset-0 bg-[url('/assets/images/bg19.jpg')] bg-no-repeat bg-center bg-cover">
+        {/* <div className="w-full h-full bg-dark-950/5 backdrop-grayscale "></div> */}
       </div>
       <div className="relative max-w-screen-sm mx-auto px-3 h-[calc(100vh-305px)]">
         <div className="flex justify-center items-center h-full">
           <div className="">
-            <div className="flex justify-center pb-5 text-white">
+            <div className="flex justify-center pb-5 text-black">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -26,11 +26,11 @@ const Page = () => {
               </svg>
             </div>
             <div className=" text-center mb-10">
-              <span className="text-white text-3xl font-normal">
+              <span className="text-black text-3xl font-normal">
                 Simple & Creative
               </span>
             </div>
-            <div className="text-white text-base font-light text-center break-keep">
+            <div className="text-black text-base font-light text-center break-keep">
               지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모
               개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및
               비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.

@@ -52,10 +52,10 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20 overflow-hidden z-10 bg-[url('/assets/images/bg31.jpg')] bg-cover bg-center">
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20 overflow-hidden z-10">
             {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b dark:from-dark-950/100 dark:via-dark-950/75 dark:to-dark-950/100"></div>
+            {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b dark:from-dark-950/100 dark:via-dark-950/75 dark:to-dark-950/100"></div> */}
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-4 py-0 lg:py-10">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center">
                 <motion.div
@@ -69,13 +69,13 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-700 to-gray-950 dark:from-indigo-300 dark:to-teal-200 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
+                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-600 via-gray-700 to-gray-950 dark:from-indigo-300 dark:to-teal-200 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
                       >
                         Building digital experience
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-900 to-gray-950 dark:from-indigo-300  dark:to-teal-200 font-semibold tracking-tighter pl-0"
+                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-gray-600 via-gray-700 to-gray-950 dark:from-indigo-300  dark:to-teal-200 font-semibold tracking-tighter pl-0"
                       >
                         Creative platform service
                       </motion.div>
@@ -92,7 +92,7 @@ export default function Page() {
                           Launch Your Service.
                         </div>
                       </div>
-                      <button className="flex gap-2 bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-500 text-white dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-500 hover:text-white">
+                      <button className="flex gap-2 bg-primary-400 dark:bg-primary-600 dark:hover:bg-primary-500 text-black dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-950 hover:text-yellow-400">
                         <span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -205,63 +205,7 @@ export default function Page() {
               </motion.div>
             </div>
           </div>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{once: false, amount: 0.1}}
-            variants={parentVariants}
-            className="lg:pt-10 pb-20"
-          >
-            <div className="relative max-w-screen-xl mx-auto px-3">
-              <div className="grid grid-cols-3 gap-8">
-                <div className="col-span-3 lg:col-span-1">
-                  <motion.div variants={variants} className="flex gap-8">
-                    <div className="">
-                      <div className="w-12 h-12 bg-gray-100 dark:bg-dark-900 rounded-full"></div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-gray-950 dark:text-white mb-2 font-semibold text-lg">
-                        모든 소스코드 제공
-                      </div>
-                      <div className="text-gray-400 dark:text-dark-500 text-base">
-                        git을 통해 패치되는 최신버전을 내려받을 수 있습니다.
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-                <div className="col-span-3 lg:col-span-1">
-                  <motion.div variants={variants} className="flex gap-8">
-                    <div className="">
-                      <div className="w-12 h-12 bg-gray-100 dark:bg-dark-900 rounded-full"></div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-gray-950 dark:text-white mb-2 font-semibold text-lg">
-                        모든 소스코드 제공
-                      </div>
-                      <div className="text-gray-400 dark:text-dark-500 text-base">
-                        git을 통해 패치되는 최신버전을 내려받을 수 있습니다.
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-                <div className="col-span-3 lg:col-span-1">
-                  <motion.div variants={variants} className="flex gap-8">
-                    <div className="">
-                      <div className="w-12 h-12 bg-gray-100 dark:bg-dark-900 rounded-full"></div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-gray-950 dark:text-white mb-2 font-semibold text-lg">
-                        모든 소스코드 제공
-                      </div>
-                      <div className="text-gray-400 dark:text-dark-500 text-base">
-                        git을 통해 패치되는 최신버전을 내려받을 수 있습니다.
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -578,25 +522,25 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className="py-20">
+          <div className="py-20 bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center">
             <motion.div
               initial="offscreen"
               whileInView="onscreen"
               viewport={{once: false, amount: 0.3}}
               variants={parentVariants}
-              className="max-w-screen-lg mx-auto px-3 xl:px-8 overflow-hidden pt-0 pb-20 "
+              className="max-w-screen-lg mx-auto px-3 xl:px-8 overflow-hidden py-20"
             >
               <div className="flex justify-center">
                 <motion.div
                   variants={variants}
-                  className="inline font-black text-5xl md:text-[5.5rem] text-gray-200 dark:text-dark-600/75 text-center"
+                  className="inline font-black text-5xl md:text-[5.5rem] text-gray-200/50 dark:text-dark-600/75 text-center"
                 >
                   WE ARE CRATEIVE
                 </motion.div>
               </div>
               <motion.div
                 variants={variants}
-                className="font-light text-xl xl:text-4xl text-gray-800 dark:text-dark-100 text-center -mt-8"
+                className="font-light text-xl xl:text-4xl text-white text-center -mt-8"
               >
                 Responsive everything
               </motion.div>

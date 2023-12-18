@@ -3,9 +3,9 @@
 const Coming = () => {
   return (
     <div className="relative w-full">
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-950/80 to-dark-950"></div>
-      <div className="bg-[url('/assets/images/bg31.jpg')] bg-no-repeat bg-center bg-cover">
-        <div className="absolute inset-0 bg-dark-950/10"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-950/80 to-dark-950"></div> */}
+      <div className="bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-center bg-cover">
+        {/* <div className="absolute inset-0 bg-dark-950/10"></div> */}
         <div className="relative max-w-screen-xl mx-auto px-3 h-[calc(100vh-305px)]">
           <div className="flex justify-center items-center w-full h-full"></div>
         </div>
