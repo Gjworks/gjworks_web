@@ -39,7 +39,7 @@ const Page = () => {
           <div className="col-span-3 md:col-span-1">
             <Link
               href="/store/view/1"
-              className="block rounded-lg  bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center py-20 mb-6 h-[120px]"
+              className="block rounded-lg  bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-cover bg-center py-20 mb-6 h-[120px] shadow-lg shadow-gray-300"
             ></Link>
             <div className="flex gap-4">
               <div className="flex-1">
@@ -63,8 +63,8 @@ const Page = () => {
           </div>
           <div className="col-span-3 md:col-span-1">
             <Link
-              href="/store/view"
-              className="block rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-900 py-20 mb-6 h-[120px]"
+              href="/store/view/1"
+              className="block rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-900 py-20 mb-6 h-[120px] shadow-lg shadow-gray-300"
             ></Link>
             <div className="flex gap-4">
               <div className="flex-1">
@@ -88,8 +88,8 @@ const Page = () => {
           </div>
           <div className="col-span-3 md:col-span-1">
             <Link
-              href="/store/view"
-              className="block rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-900 py-20 mb-6 h-[120px]"
+              href="/store/view/1"
+              className="block rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-dark-800 dark:hover:bg-dark-900 py-20 mb-6 h-[120px] shadow-lg shadow-gray-300"
             ></Link>
             <div className="flex gap-4">
               <div className="flex-1">

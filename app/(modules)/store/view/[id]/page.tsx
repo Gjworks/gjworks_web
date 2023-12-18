@@ -148,7 +148,7 @@ const Page = () => {
               <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl overflow-hidden mb-8">
                 <Image
                   alt="content images"
-                  src="/assets/images/bg23.jpg"
+                  src="/assets/images/yellow/yellow_bg1.jpg"
                   width="768"
                   height="368"
                   loading="lazy"

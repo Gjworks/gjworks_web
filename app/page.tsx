@@ -160,7 +160,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{once: false, amount: 0.1}}
             variants={parentVariants}
-            className="py-16 lg:py-20 dark:bg-dark-900/90 bg-gray-100"
+            className="py-16 lg:py-20 dark:bg-dark-900/90 bg-gray-100 overflow-hidden"
           >
             <div className="relative max-w-screen-xl mx-auto px-3 flex gap-8">
               <motion.div
