@@ -117,7 +117,7 @@ export default function Page() {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="relative flex justify-center items-center gap-4 pb-20 px-3 lg:w-4/5"
+                    className="relative flex justify-center items-center gap-4 px-3 lg:w-4/5"
                   >
                     <div className="rounded-lg p-3 bg-gray-100 dark:bg-dark-700/75 ">
                       <svg
@@ -163,27 +163,59 @@ export default function Page() {
             className="py-16 lg:py-20 dark:bg-dark-900/90 bg-gray-100 overflow-hidden"
           >
             <div className="relative max-w-screen-xl mx-auto px-3 flex gap-8">
-              <motion.div
-                variants={variants}
-                className="relative w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8"
-              >
-                <motion.div
-                  variants={variants}
-                  className="text-black dark:text-white font-semibold text-3xl lg:text-4xl mb-2"
-                >
-                  Pristo
-                </motion.div>
-                <motion.div
-                  variants={variants}
-                  className="text-black dark:text-white font-semibold text-2xl lg:text-2xl"
-                >
-                  나만의 작은 서비스를 구성해보세요.
-                </motion.div>
+              <motion.div className="relative w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8">
+                <div className="flex flex-wrap gap-4 justify-between h-full">
+                  <div className="w-full">
+                    <motion.div
+                      variants={variants}
+                      className="text-black dark:text-white font-semibold text-3xl lg:text-4xl mb-2"
+                    >
+                      Pristo
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-black dark:text-white font-semibold text-2xl lg:text-2xl"
+                    >
+                      나만의 작은 서비스를 구성해보세요.
+                    </motion.div>
+                  </div>
+                  <div className="flex w-full items-end">
+                    <div className="flex w-full justify-end">
+                      <div className="flex gap-4">
+                        <motion.div
+                          variants={variants}
+                          className="flex-1 flex items-center h-full text-right text-base sm:text-lg font-normal"
+                        >
+                          Demo 확인하기
+                        </motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="flex items-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="w-10 h-10"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
 
               <motion.div
                 variants={variants}
-                className="relative w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8"
+                className="relative w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white/50 dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8"
               >
                 <motion.div
                   variants={variants}
