@@ -69,13 +69,15 @@ export default function Page() {
                     <div className="flex justify-center md:justify-between flex-wrap">
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-600 via-gray-700 to-gray-950 dark:from-indigo-300 dark:to-teal-200 font-semibold tracking-tighter mb-5 lg:mb-2 !leading-tight"
+                        className=" mb-5 lg:mb-2 bg-primary-400 px-1"
                       >
-                        Building digital experience
+                        <div className="text-5xl md:text-6xl text-gray-950 font-semibold tracking-tighter !leading-tight">
+                          Building digital experience
+                        </div>
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl mb-10 text-transparent bg-clip-text bg-gradient-to-r from-gray-600 via-gray-700 to-gray-950 dark:from-indigo-300  dark:to-teal-200 font-semibold tracking-tighter pl-0"
+                        className="text-5xl md:text-6xl mb-10 text-gray-950 font-semibold tracking-tighter pl-0"
                       >
                         Creative platform service
                       </motion.div>
@@ -92,7 +94,7 @@ export default function Page() {
                           Launch Your Service.
                         </div>
                       </div>
-                      <button className="flex gap-2 bg-primary-400 dark:bg-primary-600 dark:hover:bg-primary-500 text-black dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-950 hover:text-yellow-400">
+                      <button className="flex gap-2 bg-gray-950 dark:bg-primary-600 dark:hover:bg-primary-500 text-yellow-400 dark:text-white dark:hover:text-white text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-gray-700 hover:text-yellow-400">
                         <span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -152,59 +154,6 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div>
-            <div className="hidden relative max-w-screen-xl mx-auto px-3 py-20">
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{once: false, amount: 0.1}}
-                variants={parentVariants}
-                className="flex flex-wrap gap-12"
-              >
-                <div className="relative w-full lg:flex-1">
-                  {/* <div className="absolute inset-0 bg-dark-950/40 rounded-2xl"></div> */}
-                  <motion.div
-                    variants={variants}
-                    className="bg-dark-900 rounded-sm overflow-hidden"
-                  >
-                    <Image
-                      src="/assets/images/bg12.jpg"
-                      alt="Main Visual Image"
-                      width="1265"
-                      height="468"
-                      loading="lazy"
-                      className="rounded-sm"
-                    />
-                  </motion.div>
-                </div>
-                <div className="w-full lg:flex-1">
-                  <motion.div
-                    variants={variants}
-                    className="text-white text-2xl font-medium mb-10"
-                  >
-                    Next Level of crypto and fintech product
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="text-dark-300 text-sm mb-3"
-                  >
-                    Dive into financials, estimates, and more. All meticulously
-                    sourced from the titans of the industry, packed within a
-                    beautiful interface.
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="text-dark-300 text-sm"
-                  >
-                    Everything, unlike anything. Whether youre an armchair
-                    investor or a Wall Street aficionado, Fey is designed to
-                    keep you informed with real-time market data and advanced
-                    analysis tools.
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
 
           <motion.div
             initial="offscreen"
@@ -213,23 +162,45 @@ export default function Page() {
             variants={parentVariants}
             className="py-16 lg:py-20 dark:bg-dark-900/90 bg-gray-100"
           >
-            <div className="relative max-w-screen-lg mx-auto px-3">
-              <div className="rounded-3xl p-10 bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px]">
+            <div className="relative max-w-screen-xl mx-auto px-3 flex gap-8">
+              <motion.div
+                variants={variants}
+                className="relative w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8"
+              >
                 <motion.div
                   variants={variants}
                   className="text-black dark:text-white font-semibold text-3xl lg:text-4xl mb-2"
                 >
-                  Business Partner
+                  Pristo
                 </motion.div>
                 <motion.div
                   variants={variants}
-                  className="text-black dark:text-white font-semibold text-2xl lg:text-3xl"
+                  className="text-black dark:text-white font-semibold text-2xl lg:text-2xl"
                 >
-                  협력하는 관계
+                  나만의 작은 서비스를 구성해보세요.
                 </motion.div>
-              </div>
+              </motion.div>
+
+              <motion.div
+                variants={variants}
+                className="relative w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8"
+              >
+                <motion.div
+                  variants={variants}
+                  className="text-black dark:text-white font-semibold text-3xl lg:text-4xl mb-2"
+                >
+                  Next Product?
+                </motion.div>
+                <motion.div
+                  variants={variants}
+                  className="text-black dark:text-white font-semibold text-2xl lg:text-2xl"
+                >
+                  Coming...
+                </motion.div>
+              </motion.div>
             </div>
           </motion.div>
+
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
