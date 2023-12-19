@@ -52,10 +52,10 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20 overflow-hidden z-10">
-            {/* bg-[url('/assets/images/bg21_1.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
+          <div className="max-w-[2560px] mx-auto relative pt-20 pb-20 overflow-hidden z-10 ">
+            {/* bg-[url('/assets/images/tile_pattern.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden dark:bg-gradient-to-b dark:from-dark-950/100 dark:via-dark-950/75 dark:to-dark-950/100"></div> */}
+            {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/100 to-transparent"></div> */}
             <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto px-4 py-0 lg:py-10">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center">
                 <motion.div
@@ -430,101 +430,104 @@ export default function Page() {
               </div>
             </div>
           </motion.div>
-          <div className="overflow-hidden mb-10">
-            <div className="max-w-screen-lg mx-auto px-3 pt-20">
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{once: false, amount: 0.1}}
-                variants={parentVariants}
-                className="grid grid-cols-12 gap-4"
-              >
-                <div className="col-span-12 lg:col-span-6">
-                  <motion.div
-                    variants={variants}
-                    className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
-                  >
-                    Flexible
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
-                  >
-                    Creative and better
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
-                  >
-                    Platform
-                  </motion.div>
-                </div>
-                <div className="col-span-12 lg:col-span-6 flex items-center">
-                  <div className=" pt-5 lg:pt-0">
-                    <motion.div variants={variants} className=" mb-2">
-                      <span className="text-base text-black dark:text-white  font-semibold">
-                        WE WORK IT
-                      </span>
-                    </motion.div>
-                    <motion.div
-                      variants={variants}
-                      className="text-sm font-light text-gray-400"
-                    >
-                      지제이웍스만의 방법으로 디지털 플랫폼을 구축하고 최상의
-                      디지털 경험을 느낄 수 있도록 최선을 다 하고 있습니다.
-                    </motion.div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-          <div className="overflow-x-scroll overflow-y-hidden overflow-scroll-hide pb-20">
-            <div className="max-w-screen-lg mx-auto px-3">
-              <div className="">
+          <div className="py-10 bg-[url('/assets/images/tile_pattern.png')]">
+            <div className="overflow-hidden mb-10 ">
+              <div className="max-w-screen-lg mx-auto px-3 pt-20">
                 <motion.div
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{once: false, amount: 0.3}}
+                  viewport={{once: false, amount: 0.1}}
                   variants={parentVariants}
                   className="grid grid-cols-12 gap-4"
                 >
-                  <div className="col-span-12 lg:col-span-3"></div>
-                  <div className="col-span-12 lg:col-span-9">
-                    <motion.div className="flex gap-4 lg:gap-8 w-full pb-10">
+                  <div className="col-span-12 lg:col-span-6">
+                    <motion.div
+                      variants={variants}
+                      className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
+                    >
+                      Flexible
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
+                    >
+                      Creative and better
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-black dark:text-white text-4xl lg:text-5xl font-bold"
+                    >
+                      Platform
+                    </motion.div>
+                  </div>
+                  <div className="col-span-12 lg:col-span-6 flex items-center">
+                    <div className=" pt-5 lg:pt-0">
+                      <motion.div variants={variants} className=" mb-2">
+                        <span className="text-base text-black dark:text-white  font-semibold">
+                          WE WORK IT
+                        </span>
+                      </motion.div>
                       <motion.div
                         variants={variants}
-                        className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
+                        className="text-sm font-light text-gray-400"
                       >
-                        {/* <Image
+                        지제이웍스만의 방법으로 디지털 플랫폼을 구축하고 최상의
+                        디지털 경험을 느낄 수 있도록 최선을 다 하고 있습니다.
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+            <div className="overflow-x-scroll overflow-y-hidden overflow-scroll-hide pb-20">
+              <div className="max-w-screen-lg mx-auto px-3">
+                <div className="">
+                  <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{once: true, amount: 0.3}}
+                    variants={parentVariants}
+                    className="grid grid-cols-12 gap-4"
+                  >
+                    <div className="col-span-12 lg:col-span-3"></div>
+                    <div className="col-span-12 lg:col-span-9">
+                      <motion.div className="flex gap-4 lg:gap-8 w-full pb-10">
+                        <motion.div
+                          variants={variants}
+                          className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
+                        >
+                          {/* <Image
                               src="/assets/images/bg_phone.jpg"
                               alt="screenshot_1"
                               width={500}
                               style={{ width: '100%', height: 'auto' }}
                               height={280}
                             ></Image> */}
+                        </motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
+                        ></motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
+                        ></motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
+                        ></motion.div>
+                        <motion.div
+                          variants={variants}
+                          className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
+                        ></motion.div>
                       </motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
-                      ></motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
-                      ></motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
-                      ></motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="relative w-[304px] flex-none rounded-md cursor-pointer hover:shadow-xs overflow-hidden hover:scale-105 bg-[url('/assets/images/Iphone14.png')] bg-no-repeat bg-top bg-cover h-[610px]"
-                      ></motion.div>
-                    </motion.div>
-                  </div>
-                </motion.div>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </div>
+
           <div className="py-20 bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center">
             <motion.div
               initial="offscreen"
