@@ -3,13 +3,13 @@
 const Page = () => {
   return (
     <>
-      <div className="fixed inset-0 bg-[url('/assets/images/bg19.jpg')] bg-no-repeat bg-center bg-cover">
+      <div className="fixed inset-0 bg-[url('/assets/images/tile_pattern.png')]">
         {/* <div className="w-full h-full bg-dark-950/5 backdrop-grayscale "></div> */}
       </div>
       <div className="relative max-w-screen-sm mx-auto px-3 h-[calc(100vh-305px)]">
         <div className="flex justify-center items-center h-full">
           <div className="">
-            <div className="flex justify-center pb-5 text-black">
+            <div className="flex justify-center pb-5 text-primary-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
