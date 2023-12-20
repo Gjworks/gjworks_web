@@ -31,10 +31,26 @@ const Modal = ({state, close, children}) => {
   const variants = {
     openModal: {
       opacity: 1,
+      y: '0%',
       transition: {duration: 0.3},
     },
     closeModal: {
       opacity: 0,
+      y: '-10%',
+      transition: {duration: 0.3},
+    },
+  }
+  const modalVariants = {
+    openModal: {
+      opacity: 1,
+      y: '0%',
+      x: '-50%',
+      transition: {duration: 0.3},
+    },
+    closeModal: {
+      opacity: 0,
+      y: '-10%',
+      x: '-50%',
       transition: {duration: 0.3},
     },
   }
@@ -52,9 +68,9 @@ const Modal = ({state, close, children}) => {
           <>
             <ModalPortal>
               <motion.div
-                initial={{opacity: 0}}
+                initial={{opacity: 0, y: '-10%', x: '-50%'}}
                 animate={modalState === true ? 'openModal' : 'closeModal'}
-                variants={variants}
+                variants={modalVariants}
                 exit={exit}
                 className="fixed bootom-1 mb-2 top-20 left-1/2 -translate-x-1/2 lg:mb-10 z-101 bg-white/90 dark:bg-dark-950/90 rounded-xl max-w-screen-md w-full mx-auto overflow-hidden text-white backdrop-blur-lg dark:border dark:border-dark-900/75 dark:border-t-dark-800"
               >
