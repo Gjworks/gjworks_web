@@ -30,7 +30,7 @@ const verify = (token: string) => {
 const refresh = (userId: string) => {
   return jwt.sign({ id: userId }, secret, {
     algorithm: 'HS256',
-    expiresIn: '14d', // 유효기간
+    expiresIn: '7d', // 유효기간
   });
 };
 

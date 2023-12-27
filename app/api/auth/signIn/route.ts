@@ -13,7 +13,6 @@ export async function POST(request: Request) {
   
   try {
     let formData = await request.formData()
-    console.log(formData)
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
 
@@ -36,12 +35,12 @@ export async function POST(request: Request) {
         }
       })
 
-      console.log(userInfo)
       if (userInfo && await verifyPassword(password, userInfo.password)) {
         // exclude password from json response
         const refreshToken = refresh(userInfo.email);
         const accessToken = sign(userInfo.email);
         console.log(accessToken)
+        console.log(refreshToken)
         // await prisma.user.update({
         //   where: {
         //     email: email,
@@ -64,7 +63,6 @@ export async function POST(request: Request) {
         const response = NextResponse.json(
           { 
             success: true ,
-            userInfo : userInfo,
             accessToken : accessToken},
           { 
             status: 200,

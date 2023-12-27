@@ -45,7 +45,7 @@ const Footer = () => {
   }
   return (
     <>
-      <div className="px-3">
+      <div className="px-3 pb-10 lg:pb-0">
         <div className="flex flex-wrap gap-8 mb-6">
           <motion.div
             variants={variants}

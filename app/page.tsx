@@ -15,6 +15,12 @@ export default function Page() {
     setShowPopup(close)
   }
 
+  const [showPopup2, setShowPopup2] = useState(false)
+  const closePopup2 = close => {
+    console.log(close)
+    setShowPopup2(close)
+  }
+
   const parentVariants = {
     onscreen: {
       transition: {staggerChildren: 0.2},
@@ -48,7 +54,7 @@ export default function Page() {
   return (
     <MainLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
-      <div className="relative">
+      <div className="relative ">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -58,11 +64,11 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative overflow-hidden z-10">
-            {/* bg-[url('/assets/images/tile_pattern.jpg')] bg-cover lg:bg-contain bg-center bg-repeat-x  */}
+          <div className="max-w-[2560px] mx-auto relative overflow-hidden z-10 bg-[url('/assets/images/yellow/yellow_bg3.jpg')] bg-cover bg-center bg-repeat-none h-[calc(100vh-192px)]">
+            {/*  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
-            {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/100 to-transparent"></div> */}
-            <div className="relative grid grid-cols-2 gap-8 max-w-screen-xl mx-auto py-0 lg:py-10">
+            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950 via-gray-950/60 to-gray-950 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
+            <div className="relative flex items-center h-full gap-8 max-w-screen-xl mx-auto py-0 lg:py-10">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center py-20">
                 <motion.div
                   variants={parentVariants}
@@ -75,16 +81,16 @@ export default function Page() {
                     <div className="relative flex justify-center md:justify-between flex-wrap px-4">
                       <motion.div
                         variants={variants}
-                        className=" mb-5 lg:mb-2 bg-primary-400 px-1"
+                        className="mb-5 lg:mb-2  px-1"
                       >
-                        <div className="text-5xl md:text-6xl text-gray-950 font-semibold tracking-tighter !leading-tight">
+                        <div className="flex flex-wrap gap-2 lg:gap-0 text-primary-500 text-5xl md:text-6xl font-semibold tracking-tighter !leading-tight">
                           Building digital experience
                         </div>
                       </motion.div>
 
                       <motion.div
                         variants={variants}
-                        className="text-5xl md:text-6xl mb-10 text-gray-950 font-semibold tracking-tighter pl-0"
+                        className="text-5xl md:text-6xl mb-10 text-white font-semibold tracking-tighter pl-0"
                       >
                         Creative platform service
                       </motion.div>
@@ -95,9 +101,9 @@ export default function Page() {
                       variants={variants}
                       className="relative py-3 mb-6 max-w-lg"
                     >
-                      <div className="flex gap-8 p-2 lg:p-3 bg-gray-200/50 dark:bg-dark-700/50 border border-gray-200/25 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
+                      <div className="flex gap-8 p-2 lg:p-3 bg-gray-900/40 dark:bg-dark-700/50 border border-gray-900/25 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
                         <div className="flex-1 flex items-center px-3">
-                          <div className="text-sm text-gray-700 dark:text-dark-400 line-clamp-1">
+                          <div className="text-sm text-gray-300 dark:text-dark-400 line-clamp-1">
                             Launch Your Service.
                           </div>
                         </div>
@@ -131,7 +137,7 @@ export default function Page() {
                       variants={variants}
                       className="relative flex justify-center items-center gap-4 px-3 lg:w-4/5"
                     >
-                      <div className="rounded-lg p-3 bg-gray-100 dark:bg-dark-700/75 ">
+                      <div className="rounded-lg p-3 bg-gray-100/10 dark:bg-dark-700/75 ">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 50.44096 49.52621"
@@ -153,10 +159,10 @@ export default function Page() {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <div className="text-left text-dark-400 text-sm mb-2">
+                        <div className="text-left text-dark-200 text-sm mb-2">
                           OpenSource Projects
                         </div>
-                        <div className="text-left text-dark-500 text-xs">
+                        <div className="text-left text-dark-300 text-xs">
                           다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
                           주시면 반영하겠습니다.
                         </div>
@@ -167,7 +173,85 @@ export default function Page() {
               </div>
             </div>
           </div>
-
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{once: false, amount: 0.1}}
+            variants={parentVariants}
+            className="dark:bg-dark-950/25 bg-gray-950 overflow-hidden shadow-xl shadow-gray-300 dark:shadow-dark-950"
+          >
+            <div className="relative max-w-screen-xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
+                <div className="col-span-1 py-5 lg:py-8">
+                  <div className="flex gap-4">
+                    <div className="flex items-center text-sm font-semibold px-3 rounded-lg text-yellow-400">
+                      Patch
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-base font-bold mb-2 line-clamp-1 text-white">
+                        Pristo 1.1ver Update
+                      </div>
+                      <div className="text-xs text-gray-400 line-clamp-1">
+                        Membership Content Management System
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="rounded-full p-1 bg-gray-800">
+                        <span className="flex items-center justify-center rounded-full w-8 h-8 bg-gray-950 text-yellow-400">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-span-1 py-5 lg:py-8">
+                  <div className="flex gap-4">
+                    <div className="flex items-center text-sm font-semibold px-3 rounded-lg text-yellow-400">
+                      News
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-base font-bold mb-2 line-clamp-1 text-white">
+                        전자 세금계산서 발행 가능합니다.
+                      </div>
+                      <div className="text-xs text-gray-400 line-clamp-1">
+                        신청하신 모든 계산서 발행은 매달 15일에 발행을 한번에
+                        처리 해드립니다.
+                      </div>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="rounded-full p-1 bg-gray-800">
+                        <span className="flex items-center justify-center rounded-full w-8 h-8 bg-gray-950 text-yellow-400">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="w-5 h-5"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -443,7 +527,7 @@ export default function Page() {
               </div>
             </div>
           </motion.div>
-          <div className="py-10 bg-[url('/assets/images/tile_pattern.png')]">
+          <div className="py-10 bg-[url('/assets/images/tile_pattern.png')] dark:bg-none">
             <div className="overflow-hidden mb-10 ">
               <div className="max-w-screen-lg mx-auto px-3 pt-20">
                 <motion.div
@@ -552,7 +636,7 @@ export default function Page() {
               <div className="flex justify-center">
                 <motion.div
                   variants={variants}
-                  className="inline font-black text-5xl md:text-[5.5rem] text-gray-200/50 dark:text-dark-600/75 text-center"
+                  className="inline font-black text-5xl md:text-[5.5rem] text-gray-200/50 dark:text-dark-200/40 text-center"
                 >
                   WE ARE CRATEIVE
                 </motion.div>
@@ -598,7 +682,28 @@ export default function Page() {
             가능하게 할것이며 모달과는 다르게 아래에서 팝업이되며 바탕을
             누른다고 없어지지 않습니다. 그리고 기간의 값을 입력하면 해당 기간
             동안 팝업이 뜨지 않을 것입니다.
+            <button
+              onClick={() => {
+                setShowPopup2(true)
+              }}
+              className="text-primary-500 mb-5"
+            >
+              클릭
+            </button>
           </div>
+          <Popup state={showPopup2} close={closePopup2}>
+            <div className="p-8">
+              <div className="text-2xl font-bold text-gray-950 mb-5">
+                안녕하세요^^
+              </div>
+              <div className="text-sm font-normal text-gray-700">
+                팝업의 역할을 할 것입니다. 팝업의 기능은 언제든 이런 형태로
+                호출이 가능하게 할것이며 모달과는 다르게 아래에서 팝업이되며
+                바탕을 누른다고 없어지지 않습니다. 그리고 기간의 값을 입력하면
+                해당 기간 동안 팝업이 뜨지 않을 것입니다.
+              </div>
+            </div>
+          </Popup>
         </div>
       </Popup>
     </MainLayout>

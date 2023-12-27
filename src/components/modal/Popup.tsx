@@ -4,9 +4,9 @@ import {motion, AnimatePresence} from 'framer-motion'
 import ModalPortal from 'src/components/modal/ModalPortal'
 
 const Popup = ({state, close, children}) => {
-  console.log(state)
   const [popupState, setPopupState] = useState(false)
   useEffect(() => {
+    console.log(state)
     setPopupState(state)
   }, [state])
 
