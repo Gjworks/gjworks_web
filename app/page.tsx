@@ -64,11 +64,11 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="max-w-[2560px] mx-auto relative overflow-hidden z-10 bg-[url('/assets/images/yellow/yellow_bg3.jpg')] bg-cover bg-center bg-repeat-none h-[calc(100vh-192px)]">
+          <div className="max-w-[2560px] mx-auto relative overflow-hidden z-10 bg-[url('/assets/images/yellow/yellow_bg3.jpg')] bg-cover bg-center bg-repeat-none min-h-[calc(100vh-80px)]">
             {/*  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950 via-gray-950/60 to-gray-950 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
-            <div className="relative flex items-center h-full gap-8 max-w-screen-xl mx-auto py-0 lg:py-10">
+            <div className="relative flex items-center gap-8 max-w-screen-xl mx-auto min-h-[calc(100vh-216px)]">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center py-20">
                 <motion.div
                   variants={parentVariants}
@@ -172,86 +172,87 @@ export default function Page() {
                 </motion.div>
               </div>
             </div>
-          </div>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{once: false, amount: 0.1}}
-            variants={parentVariants}
-            className="dark:bg-dark-950/25 bg-gray-950 overflow-hidden shadow-xl shadow-gray-300 dark:shadow-dark-950"
-          >
-            <div className="relative max-w-screen-xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
-                <div className="col-span-1 py-5 lg:py-8">
-                  <div className="flex gap-4">
-                    <div className="flex items-center text-sm font-semibold px-3 rounded-lg text-yellow-400">
-                      Patch
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-base font-bold mb-2 line-clamp-1 text-white">
-                        Pristo 1.1ver Update
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{once: false, amount: 0.1}}
+              variants={parentVariants}
+              className="overflow-hidden pb-6"
+            >
+              <div className="relative max-w-screen-xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
+                  <div className="col-span-1 py-5 lg:py-8">
+                    <div className="flex gap-4">
+                      <div className="flex items-center text-sm font-semibold px-3 rounded-lg text-yellow-400">
+                        Patch
                       </div>
-                      <div className="text-xs text-gray-400 line-clamp-1">
-                        Membership Content Management System
+                      <div className="flex-1">
+                        <div className="text-base font-bold mb-2 line-clamp-1 text-white">
+                          Pristo 1.1ver Update
+                        </div>
+                        <div className="text-xs text-gray-400 line-clamp-1">
+                          Membership Content Management System
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="rounded-full p-1 bg-gray-800">
-                        <span className="flex items-center justify-center rounded-full w-8 h-8 bg-gray-950 text-yellow-400">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </span>
+                      <div className="flex items-center">
+                        <div className="rounded-full p-1 bg-gray-800">
+                          <span className="flex items-center justify-center rounded-full w-8 h-8 bg-gray-950 text-yellow-400">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-span-1 py-5 lg:py-8">
-                  <div className="flex gap-4">
-                    <div className="flex items-center text-sm font-semibold px-3 rounded-lg text-yellow-400">
-                      News
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-base font-bold mb-2 line-clamp-1 text-white">
-                        전자 세금계산서 발행 가능합니다.
+                  <div className="col-span-1 py-5 lg:py-8">
+                    <div className="flex gap-4">
+                      <div className="flex items-center text-sm font-semibold px-3 rounded-lg text-yellow-400">
+                        News
                       </div>
-                      <div className="text-xs text-gray-400 line-clamp-1">
-                        신청하신 모든 계산서 발행은 매달 15일에 발행을 한번에
-                        처리 해드립니다.
+                      <div className="flex-1">
+                        <div className="text-base font-bold mb-2 line-clamp-1 text-white">
+                          전자 세금계산서 발행 가능합니다.
+                        </div>
+                        <div className="text-xs text-gray-400 line-clamp-1">
+                          신청하신 모든 계산서 발행은 매달 15일에 발행을 한번에
+                          처리 해드립니다.
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="rounded-full p-1 bg-gray-800">
-                        <span className="flex items-center justify-center rounded-full w-8 h-8 bg-gray-950 text-yellow-400">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            className="w-5 h-5"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </span>
+                      <div className="flex items-center">
+                        <div className="rounded-full p-1 bg-gray-800">
+                          <span className="flex items-center justify-center rounded-full w-8 h-8 bg-gray-950 text-yellow-400">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              className="w-5 h-5"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
