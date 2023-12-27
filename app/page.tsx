@@ -68,7 +68,7 @@ export default function Page() {
             {/*  */}
             {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
             <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950 via-gray-950/60 to-gray-950 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
-            <div className="relative flex items-center gap-8 max-w-screen-xl mx-auto min-h-[calc(100vh-216px)]">
+            <div className="relative flex items-center gap-8 max-w-screen-xl mx-auto min-h-[calc(100vh-200px)]">
               <div className="relative col-span-8 lg:col-span-8 flex justify-center items-center py-20">
                 <motion.div
                   variants={parentVariants}
@@ -177,7 +177,7 @@ export default function Page() {
               whileInView="onscreen"
               viewport={{once: false, amount: 0.1}}
               variants={parentVariants}
-              className="overflow-hidden pb-6"
+              className="overflow-hidden pb-2"
             >
               <div className="relative max-w-screen-xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-8">
