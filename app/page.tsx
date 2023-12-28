@@ -260,8 +260,8 @@ export default function Page() {
             variants={parentVariants}
             className="py-16 lg:py-20 dark:bg-dark-900/90 bg-gray-100 overflow-hidden"
           >
-            <div className="relative max-w-screen-xl mx-auto px-3 flex gap-8">
-              <motion.div className="relative w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8">
+            <div className="relative max-w-screen-xl mx-auto px-3 flex gap-4 lg:gap-8">
+              <motion.div className="relative w-[85%] lg:w-[65%] flex-none aspect-[960/520] rounded-3xl cursor-pointer bg-white dark:bg-dark-950/75 shadow-lg shadow-gray-200 dark:shadow-dark-950 border border-gray-100 dark:border-dark-950 min-h-[434px] overflow-hidden p-8">
                 <div className="flex flex-wrap gap-4 justify-between h-full">
                   <div className="w-full">
                     <motion.div
