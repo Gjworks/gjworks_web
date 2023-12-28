@@ -9,6 +9,7 @@ import {motion} from 'framer-motion'
 import Header from '@gjworks/templates/layouts/fullLayout/Header'
 import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
 import SubNav from '@gjworks/templates/layouts/containerLayout/SubNav'
+import Toolbar from '@gjworks/templates/layouts/fullLayout/Toolbar'
 
 const FullLayout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -72,6 +73,7 @@ const FullLayout = ({children}) => {
           </div>
         </footer>
       </div>
+      <Toolbar />
     </div>
   )
 }
