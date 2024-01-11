@@ -203,7 +203,7 @@ const Header = () => {
                   setBackground('dark:bg-dark-950 bg-white')
                   setShowLeft(!showLeft)
                 }}
-                className="group flex lg:hidden items-center"
+                className="group flex items-center"
               >
                 <div className="flex relative w-5 h-5 cursor-pointer">
                   <span>
@@ -230,7 +230,7 @@ const Header = () => {
               <div className="flex items-center">
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex items-center"
+                  className="flex md:hidden items-center"
                 >
                   <Image
                     src="/assets/images/brand/gjworks.svg"
@@ -268,12 +268,24 @@ const Header = () => {
               </div>
             </div>
 
-            <div className=" col-span-1">
+            <div className="flex justify-center col-span-1">
               <div
-                className="hidden lg:flex items-center bg-white/90 border border-gray-100 rounded-full backdrop-blur-lg shadow-lg shadow-gray-100 py-1 px-4"
+                className="hidden lg:flex items-center justify-center bg-white/90 border border-gray-100 rounded-full backdrop-blur-lg shadow-lg shadow-gray-100 py-1 px-4"
                 onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                 // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
               >
+                <a
+                  href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                  className="flex items-center pr-3"
+                >
+                  <Image
+                    src="/assets/images/brand/gjworks.svg"
+                    alt="gjworks logo"
+                    width="32"
+                    height="32"
+                    className="block w-8 h-8"
+                  />
+                </a>
                 {nav.header &&
                   Object.entries(nav.header).map((data, index) => {
                     return (
