@@ -237,7 +237,7 @@ const Header = () => {
                     alt="gjworks logo"
                     width="32"
                     height="32"
-                    className="block w-10 h-10"
+                    className="block w-8 h-8"
                   />
                 </a>
                 <a
@@ -276,7 +276,7 @@ const Header = () => {
               >
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex items-center pr-3"
+                  className="flex items-center justify-center w-16"
                 >
                   <Image
                     src="/assets/images/brand/gjworks.svg"
