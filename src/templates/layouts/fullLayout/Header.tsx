@@ -409,10 +409,10 @@ const Header = () => {
           variants={wrapVariants}
           className={
             'relative z-100 bg-white dark:bg-dark-950 border-b-[0.5px] border-gray-200/50 dark:border-dark-600/50 shadow-sm dark:shadow-xl shadow-gray-100/75 dark:shadow-dark-950/90 ' +
-            (scrollPosition > 100 ? ' pt-[56px]' : ' pt-[80px]')
+            (scrollPosition > 100 ? ' pt-[86px]' : ' pt-[86px]')
           }
         >
-          <div className="max-w-screen-xl mx-auto px-4 py-5">
+          <div className="max-w-screen-xl mx-auto px-4 pt-5 pb-16">
             <div className="grid grid-cols-12 pl-3 lg:pl-20 pr-3">
               <div className="col-span-12 lg:col-span-2">
                 <div className="py-5">
