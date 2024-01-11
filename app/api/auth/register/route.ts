@@ -27,15 +27,35 @@ export async function POST(request: Request) {
       const data = {"code":"error", "element": "nickname","msg": "Invalid nickname provided in POST request"}
       return NextResponse.json(data,{ status:402})
     }
-
-    const createUser = await prisma.user.create({
+    try {
+      await prisma.user.create({
         data: {
           nickname: nickname,
           email: email,
           password: await hashedPassword(password),
         },
       });
-
+    } catch (e) {
+      console.error(e.meta.target);
+      if (e.code === 'P2002') {
+        let element, msg
+        if(e.meta.target  === 'User_email_key') {
+          element = 'email',
+          msg =  `이미 존재하는 이메일 입니다. (P2002 : ${e.meta.target})`
+        }
+        if(e.meta.target  === 'User_nickname_key') {
+          element = 'nickname',
+          msg =  `이미 존재하는 닉네임 입니다. (P2002 : ${e.meta.target})`
+        }
+        const data = {
+          "code":"error",
+          "element": element,
+          "msg":msg
+        }
+        return NextResponse.json(data,{ status:402})
+      }
+    }
+    
     return NextResponse.json({ code: "success" }, { status: 200 })
   } catch (error) {
     console.error(error)

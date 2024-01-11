@@ -35,7 +35,7 @@ const MainLayout = ({children}) => {
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main>{children}</main>
-        {scrollPosition > 100 && (
+        {/* {scrollPosition > 100 && (
           <motion.button
             initial={{y: 100, opacity: 0}}
             animate={{y: 0, opacity: 1, transition: {duration: 0.6}}}
@@ -63,15 +63,14 @@ const MainLayout = ({children}) => {
               />
             </svg>
           </motion.button>
-        )}
+        )} */}
 
         <footer>
-          <div className="max-w-screen-xl mx-auto pt-5 pb-10">
+          <div className="max-w-screen-xl mx-auto">
             <Footer />
           </div>
         </footer>
       </div>
-      <Toolbar />
     </div>
   )
 }

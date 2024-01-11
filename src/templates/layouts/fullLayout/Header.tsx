@@ -191,15 +191,13 @@ const Header = () => {
       <motion.header
         transition={{transition: {duration: 0.3}}}
         className={
-          'sticky w-full top-0  z-101 pt-0 lg:py-3 ' +
-          (scrollPosition > 100 &&
-            'lg:!py-0 backdrop-blur-lg dark:bg-dark-950/75 bg-white/75 ') +
-          (showNavigation === true ? ' ' : ' ')
+          'sticky w-full top-0  z-101 pt-0 lg:py-3  ' +
+          (showNavigation === true ? ' bg-white/75 ' : ' ')
         }
       >
-        <div className="max-w-screen-xl mx-auto">
-          <div className="flex py-2 px-3">
-            <div className="flex items-center gap-2">
+        <div className="">
+          <div className="grid grid-cols-3 gap-4 py-2 px-5">
+            <div className="col-span-1 flex items-center gap-2">
               <button
                 onClick={() => {
                   setBackground('dark:bg-dark-950 bg-white')
@@ -269,9 +267,10 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="flex-1 flex items-center gap-4">
+
+            <div className=" col-span-1">
               <div
-                className="hidden lg:flex items-center pl-6"
+                className="hidden lg:flex items-center bg-white/90 border border-gray-100 rounded-full backdrop-blur-lg shadow-lg shadow-gray-100 py-1 px-4"
                 onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                 // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
               >
@@ -313,10 +312,10 @@ const Header = () => {
                   })}
               </div>
             </div>
-            <div className="relative flex gap-2 items-center justify-end">
+            <div className="col-span-1 relative flex gap-2 items-center justify-end">
               <div className="flex gap-1 items-center">
                 <button
-                  className="hover:bg-gray-200 text-gray-500 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
+                  className="hover:bg-gray-200 text-gray-950 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
                   onClick={() => setShowModal(!showModal)}
                 >
                   <svg
@@ -356,10 +355,10 @@ const Header = () => {
                 <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="group relative hidden lg:flex items-center hover:bg-slate-100/75 bg-white/25 text-black dark:text-white dark:bg-transparent hover:text-black dark:hover:text-white text-xs border-[0.5px] border-gray-200 dark:border-dark-600 hover:shadow-inner hover:shadow-gray-200/60 dark:shadow-dark-600/60 rounded-full shadow-md shadow-gray-100 dark:hover:shadow-dark-700"
+                className="hover:bg-gray-200 text-gray-950 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
-                <div className="flex py-[6px] px-6 lg:px-4">
+                <div className="flex items-center">
                   <div className="p-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -367,7 +366,7 @@ const Header = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1}
                       stroke="currentColor"
-                      className="w-4 h-4"
+                      className="w-5 h-5"
                     >
                       <path
                         strokeLinecap="round"
@@ -376,9 +375,7 @@ const Header = () => {
                       />
                     </svg>
                   </div>
-                  <div className="hidden lg:flex items-center px-3">
-                    Account
-                  </div>
+                  <div className="hidden items-center px-3">Account</div>
                 </div>
               </button>
               <Dropdown state={showDropdown}>

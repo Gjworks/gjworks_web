@@ -6,7 +6,7 @@ const Page = () => {
       <div className="fixed inset-0 bg-[url('/assets/images/tile_pattern.png')]">
         {/* <div className="w-full h-full bg-dark-950/5 backdrop-grayscale "></div> */}
       </div>
-      <div className="relative max-w-screen-sm mx-auto px-3 h-[calc(100vh-305px)]">
+      <div className="relative max-w-screen-sm mx-auto px-3 h-[calc(100vh-236px)] md:h-[calc(100vh-162px)]">
         <div className="flex justify-center items-center h-full">
           <div className="">
             <div className="flex justify-center pb-5 text-primary-400">
