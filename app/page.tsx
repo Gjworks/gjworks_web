@@ -172,7 +172,7 @@ export default function Page() {
                     </div>
                   </div>
                   <div className="relative col-span-12 md:col-span-5 order-0 md:order-1">
-                    <div className="absolute -right-[30%] md:left-1/2 transform md:-translate-x-1/2 w-[280px]">
+                    <div className="absolute -right-[30%] md:left-1/2 transform md:-translate-x-1/2 w-[260px]">
                       <motion.div variants={variants} className="">
                         <Image
                           src="/assets/images/Iphone14.png"
