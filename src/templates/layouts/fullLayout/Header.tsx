@@ -191,7 +191,7 @@ const Header = () => {
       <motion.header
         transition={{transition: {duration: 0.3}}}
         className={
-          'sticky w-full top-0  z-101 pt-0 lg:py-3  ' +
+          'sticky w-full top-0  z-101 pt-0 lg:py-3 bg-white/75 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none ' +
           (showNavigation === true ? ' bg-white/75 ' : ' ')
         }
       >
