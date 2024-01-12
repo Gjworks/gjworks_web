@@ -39,7 +39,7 @@ const Page = () => {
           <div className="col-span-3 md:col-span-1">
             <Link
               href="/store/view/1"
-              className="block rounded-lg  bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-cover bg-center py-20 mb-6 h-[120px] shadow-lg shadow-gray-300 dark:shadow-dark-950"
+              className="block rounded-lg  bg-[url('/assets/images/bg37.jpg')] bg-cover bg-center py-20 mb-6 h-[120px] shadow-lg shadow-gray-300 dark:shadow-dark-950"
             ></Link>
             <div className="flex gap-4">
               <div className="flex-1">
@@ -55,7 +55,7 @@ const Page = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
+                <div className="text-white text-xs bg-primary-700 rounded-full py-1 px-4 hover:bg-primary-600 cursor-pointer">
                   구입하기
                 </div>
               </div>
@@ -80,7 +80,7 @@ const Page = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
+                <div className="text-white text-xs bg-primary-700 rounded-full py-1 px-4 hover:bg-primary-600 cursor-pointer">
                   구입하기
                 </div>
               </div>
@@ -105,7 +105,7 @@ const Page = () => {
               </div>
 
               <div className="flex items-center">
-                <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
+                <div className="text-white text-xs bg-primary-700 rounded-full py-1 px-4 hover:bg-primary-600 cursor-pointer">
                   구입하기
                 </div>
               </div>
@@ -177,7 +177,7 @@ const Page = () => {
             </div>
           </div>
           <div className="col-span-3 lg:col-span-1">
-            <div className="group relative rounded-lg bg-opacity-75 bg-slate-900/75 dark:bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950/50 bg-[url('/assets/images/primary/primary_bg3.jpg')] bg-no-repeat bg-cover bg-center ">
+            <div className="group relative rounded-lg bg-opacity-75 bg-slate-900/75 dark:bg-dark-900 overflow-hidden shadow-lg shadow-slate-400 dark:shadow-dark-950/50 bg-[url('/assets/images/bg37.jpg')] bg-no-repeat bg-cover bg-center ">
               <div className="absolute inset-0 backdrop-blur-lg bg-dark-900/60"></div>
               <div className="relative h-[200px] overflow-hidden">
                 <div className="group relative h-[200px]">

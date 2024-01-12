@@ -45,13 +45,13 @@ const Page = () => {
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto px-0 lg:px-3 pt-5">
-        <div className="relative bg-gray-100/10 dark:bg-dark-600 rounded-none lg:rounded-2xl h-[calc(100vh-157px)] lg:h-[550px] bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
+        <div className="relative bg-gray-100/10 dark:bg-dark-600 rounded-none lg:rounded-2xl h-[calc(100vh-157px)] lg:h-[550px] bg-[url('/assets/images/bg37.jpg')] bg-cover bg-no-repeat overflow-hidden bg-bottom ">
           <div className="absolute inset-0 z-10"></div>
           <div className="absolute bottom-0 lg:bottom-3 left-0 right-0 z-20">
             <div className="relative px-3 lg:px-0 pb-3">
               <div className="max-w-screen-md mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/20 backdrop-blur-lg rounded-lg p-3 ">
                 <div className="flex gap-4 lg:gap-8 flex-wrap">
-                  <div className="w-20 h-20 mx-auto rounded-2xl -mt-12 md:mt-0 backdrop-blur-lg shadow-lg shadow-gray-600/30 dark:shadow-dark-950/40 bg-primary-400"></div>
+                  <div className="w-20 h-20 mx-auto rounded-2xl -mt-12 md:mt-0 backdrop-blur-lg shadow-lg shadow-gray-600/30 dark:shadow-dark-950/40 bg-primary-700"></div>
                   <div className="w-full md:flex-1 flex flex-wrap">
                     <div className="w-full">
                       <div className="text-lg font-semibold text-white dark:text-white line-clamp-1">
@@ -62,7 +62,7 @@ const Page = () => {
                       </div>
                     </div>
                     <div className="w-full flex items-center gap-2">
-                      <div className="text-black text-xs bg-primary-400 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
+                      <div className="text-white text-xs bg-primary-600 rounded-full py-1 px-4 hover:bg-primary-700 cursor-pointer">
                         150,000 원
                       </div>
                       <div className="text-primary-400 text-xs bg-black rounded-full py-1 px-4 hover:bg-gray-700 cursor-pointer">
@@ -148,7 +148,7 @@ const Page = () => {
               <div className="relative bg-gray-100 dark:bg-dark-600 rounded-xl overflow-hidden mb-8">
                 <Image
                   alt="content images"
-                  src="/assets/images/yellow/yellow_bg1.jpg"
+                  src="/assets/images/bg37.jpg"
                   width="768"
                   height="368"
                   loading="lazy"
