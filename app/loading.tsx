@@ -1,4 +1,4 @@
-import LoadingBar from '@gjworks/components/loading/loading'
+import LoadingBar from '@gjworks/components/loading/Loading'
 export default function Loading() {
   return (
     <>
