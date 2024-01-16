@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, {useEffect, useState} from 'react'
+import {motion, AnimatePresence} from 'framer-motion'
 import RightPortal from 'src/components/panel/RightPortal'
 
-const Right = ({ state, close, children, title }) => {
+const Right = ({state, close, children}) => {
   const [panelState, setPanelState] = useState(false)
   useEffect(() => {
     setPanelState(state)
@@ -31,17 +31,31 @@ const Right = ({ state, close, children, title }) => {
 
   const variants = {
     openPanel: {
-      marginLeft: '0vw',
-      transition: { duration: 0.3 },
+      marginLeft: '50vw',
+      transition: {duration: 0.3},
     },
     closePanel: {
-      marginLeft: '100vw',
-      transition: { duration: 0.5 },
+      marginLeft: '100vh',
+      transition: {duration: 0.5},
     },
   }
   const exit = {
     marginLeft: '100vw',
-    transition: { duration: 0.5 },
+    transition: {duration: 0.5},
+  }
+  const variants2 = {
+    openPanel: {
+      opacity: 1,
+      transition: {duration: 0.5},
+    },
+    closePanel: {
+      opacity: 0,
+      transition: {duration: 0.5},
+    },
+  }
+  const exit2 = {
+    opacity: 0,
+    transition: {duration: 0.5},
   }
   const handleClosePanel = () => {
     close(false)
@@ -52,45 +66,41 @@ const Right = ({ state, close, children, title }) => {
         {state && (
           <RightPortal>
             <motion.div
-              initial={{ marginLeft: '100vw' }}
+              initial={{marginLeft: '100%'}}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed inset-0 transform overflow-auto bg-slate-900 z-90"
+              className="fixed w-1/2 bottom-0 top-0 transform bg-white z-101"
             >
-              <div className="flex gap-4 border-b border-slate-600 py-3">
-                <button
-                  onClick={handleClosePanel}
-                  className="flex text-white px-4"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15.75 19.5L8.25 12l7.5-7.5"
-                    />
-                  </svg>
-                </button>
-                <button onClick={handleClosePanel} className="text-slate-50">
-                  {title}
-                </button>
-              </div>
-              <motion.div
-                initial={{ opacity: 0, x: '-10%' }}
-                animate={{ opacity: 1, x: '0%', transition: { duration: 0.3 } }}
-                exit={{ opacity: 0, x: '-10%', transition: { duration: 0.3 } }}
-                className="relative mt-20 mb-10 px-3 z-100 bg-slate-600 rounded-md max-w-screen-md shadow-md mx-auto overflow-hidden text-white backdrop-blur bg-opacity-90"
+              <button
+                onClick={handleClosePanel}
+                className="absolute right-2 top-2 rounded-full p-2 z-101"
               >
-                {children}
-              </motion.div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 text-black dark:text-white "
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <div className="relative z-100 overflow-hidden">{children}</div>
             </motion.div>
+            <motion.div
+              initial={{opacity: 0}}
+              animate={panelState === true ? 'openPanel' : 'closePanel'}
+              variants={variants2}
+              exit={exit2}
+              onClick={handleClosePanel}
+              className="fixed inset-0 bg-gray-950/70 dark:bg-dark-800/70 z-90 backdrop-blur-sm"
+            ></motion.div>
           </RightPortal>
         )}
       </AnimatePresence>

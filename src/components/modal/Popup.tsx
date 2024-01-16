@@ -62,12 +62,12 @@ const Popup = ({state, close, children}) => {
               animate={popupState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed left-1/2 -translate-x-1/2 z-50 max-w-lg w-full"
+              className="fixed left-1/2 -translate-x-1/2 z-50 max-w-lg w-full px-3"
             >
-              <div className="relative bg-white mb-20 lg:mb-8 dark:bg-dark-950 rounded-xl w-full shadow-lg shadow-gray-100/25 mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto border border-gray-200">
+              <div className="relative bg-white mb-4 lg:mb-8 dark:bg-dark-950 rounded-xl w-full shadow-2xl shadow-gray-300/75 mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto border border-gray-200">
                 <button
                   onClick={handleClosePanel}
-                  className="absolute right-3 top-1 rounded-full bg-gray-950 p-1 z-10"
+                  className="absolute right-3 top-3 rounded-full bg-gray-950 p-1 z-10"
                 >
                   <span>
                     <svg

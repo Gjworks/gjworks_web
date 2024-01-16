@@ -1,6 +1,14 @@
+'use client'
+import React, {useState} from 'react'
 import Link from 'next/link'
 
+import Popup from '@gjworks/components/modal/Popup'
+
 const Page = () => {
+  const [showPopup, setShowPopup] = useState(false)
+  const closePopup = close => {
+    setShowPopup(close)
+  }
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-3 pt-8 pb-20">
@@ -13,8 +21,13 @@ const Page = () => {
               악세사리
             </div>
           </div>
-          <div className="flex gap-2">
-            <div className="flex items-center gap-1 bg-gray-950 hover:bg-gray-700 dark:bg-white dark:hover:bg-dark-300 rounded-full py-2 px-8 cursor-pointer text-white dark:text-black">
+          <div
+            onClick={() => {
+              setShowPopup(true)
+            }}
+            className="flex gap-2"
+          >
+            <button className="flex items-center gap-1 bg-gray-950 hover:bg-gray-700 dark:bg-white dark:hover:bg-dark-300 rounded-full py-2 px-8 cursor-pointer text-white dark:text-black">
               <div className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +45,7 @@ const Page = () => {
                 </svg>
               </div>
               <div className="hidden md:flex text-sm">장바구니</div>
-            </div>
+            </button>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-8">
@@ -208,6 +221,40 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <Popup state={showPopup} close={closePopup}>
+        <div className="p-8">
+          <div className="text-xl font-bold text-gray-950 mb-5">장바구니</div>
+          <div className="text-sm font-normal text-gray-700">
+            <div className="grid grid-cols-2 gap-8">
+              <div className="col-span-1">
+                <Link
+                  href="/store/view/1"
+                  className="block rounded-lg  bg-[url('/assets/images/bg37.jpg')] bg-cover bg-center py-20 mb-6 h-[80px] shadow-lg shadow-gray-300 dark:shadow-dark-950"
+                ></Link>
+                <div className="flex gap-4">
+                  <div className="flex-1">
+                    <Link
+                      href="/store/view/1"
+                      className="text-gray-800 dark:text-dark-100 text-base font-medium mb-2 line-clamp-1"
+                    >
+                      지제이웍스 웹애플리케이션 디자인
+                    </Link>
+                    <div className="flex text-gray-400 text-sm line-clamp-1">
+                      <button>제거</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-span-1"></div>
+            </div>
+            <div className="pt-8">
+              <button className="bg-primary-700 hover:bg-primary-600 text-white text-center py-3 rounded-lg w-full">
+                구매하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </Popup>
     </>
   )
 }

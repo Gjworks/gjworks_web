@@ -9,10 +9,14 @@ import {motion} from 'framer-motion'
 import Header from '@gjworks/templates/layouts/fullLayout/Header'
 import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
 import Toolbar from '@gjworks/templates/layouts/fullLayout/Toolbar'
+import Right from '@gjworks/components/panel/Right'
 
 const MainLayout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
-
+  const [showRight, setShowRight] = useState(false)
+  const closeRight = close => {
+    setShowRight(close)
+  }
   useEffect(() => {
     const updatePosition = () => {
       setScrollPosition(window.pageYOffset)
@@ -33,8 +37,22 @@ const MainLayout = ({children}) => {
     <div className="selection:text-white selection:bg-cyan-800 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
       <div className="relative z-20">
         <Header />
+        <div
+          onClick={() => {
+            setShowRight(true)
+          }}
+          className="fixed -right-10 z-90 translate-y-1/2 bottom-1/2 cursor-pointer"
+        >
+          <motion.div className="rounded-b-2xl p-[0.5px] bg-gradient-to-tl from-gray-500/30 via-gray-700/40 to-gray-400/70 overflow-hidden shadow-lg shadow-gray-400/60 rotate-90">
+            <div className="flex items-center justify-center rounded-b-2xl w-full h-full bg-gradient-to-b from-gray-800/90 via-gray-950/75 to-gray-950/90 shadow-inner shadow-gray-500/40">
+              <div className="text-white text-sm py-3 px-5">My Menu</div>
+            </div>
+          </motion.div>
+        </div>
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-        <main>{children}</main>
+        <main className="min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-162px)]">
+          {children}
+        </main>
         {/* {scrollPosition > 100 && (
           <motion.button
             initial={{y: 100, opacity: 0}}
@@ -70,6 +88,9 @@ const MainLayout = ({children}) => {
             <Footer />
           </div>
         </footer>
+        <Right state={showRight} close={closeRight}>
+          sd
+        </Right>
       </div>
     </div>
   )

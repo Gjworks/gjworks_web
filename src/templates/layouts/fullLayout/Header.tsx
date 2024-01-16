@@ -15,11 +15,19 @@ import SearchForm from 'src/templates/forms/SearchForm'
 import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
 import nav from 'src/res/config/navigation.json'
+import page from 'src/res/config/page.json'
 import {motion} from 'framer-motion'
 
 export type NavType = {
   name: string
   image_name: string
+  title: string
+  parent: string
+  route: string
+}
+
+interface Inspage {
+  name: string
   title: string
   parent: string
   route: string
@@ -34,6 +42,15 @@ const Header = () => {
   const [showNavigationList, setShowNavigationList] = useState<NavType[]>()
   const [background, setBackground] = useState('')
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [currentPage, setCurrentPage] = useState<Inspage | undefined>()
+
+  useEffect(() => {
+    const params = pathname?.split('/')
+
+    if (params?.length) {
+      setCurrentPage(page[params?.[1]])
+    }
+  }, [pathname, currentPage])
 
   useEffect(() => {
     const updatePosition = () => {
@@ -297,7 +314,7 @@ const Header = () => {
                         }
                         className={
                           'flex gap-2 items-center py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
-                          (pathname === data[1].route
+                          (currentPage?.name === data[1].name
                             ? 'text-gray-400 dark:text-white'
                             : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
                         }
