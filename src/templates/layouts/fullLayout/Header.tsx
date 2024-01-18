@@ -208,7 +208,7 @@ const Header = () => {
       <motion.header
         transition={{transition: {duration: 0.3}}}
         className={
-          'sticky w-full top-0  z-101 pt-0 lg:py-3 bg-white/75 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none ' +
+          'sticky w-full top-0  z-101 pt-0 lg:py-3  bg-transparent ' +
           (showNavigation === true ? ' bg-white/75 ' : ' ')
         }
       >
@@ -284,61 +284,62 @@ const Header = () => {
                 </div>
               </div>
             </div>
-
-            <div className="flex justify-center col-span-1">
-              <div
-                className="hidden lg:flex items-center justify-center bg-white/90 border border-gray-100 rounded-full backdrop-blur-lg shadow-lg shadow-gray-100 py-1 px-4"
-                onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
-                // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
-              >
-                <a
-                  href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex items-center justify-center w-16"
+            <div className="relative flex justify-center col-span-1">
+              <div className="relative">
+                <div
+                  className="relative hidden lg:flex items-center justify-center bg-white/75 border backdrop-blur-lg border-gray-100 rounded-full py-1 px-4 shadow-lg shadow-gray-100"
+                  onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
+                  // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
                 >
-                  <Image
-                    src="/assets/images/brand/gjworks.svg"
-                    alt="gjworks logo"
-                    width="32"
-                    height="32"
-                    className="block w-8 h-8"
-                  />
-                </a>
-                {nav.header &&
-                  Object.entries(nav.header).map((data, index) => {
-                    return (
-                      <Link
-                        href={data[1].route}
-                        key={data[1].name}
-                        onMouseEnter={() =>
-                          setShowNavigationList(data[1].subMenu)
-                        }
-                        className={
-                          'flex gap-2 items-center py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
-                          (currentPage?.name === data[1].name
-                            ? 'text-gray-400 dark:text-white'
-                            : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
-                        }
-                      >
-                        {data[1].title}
-                        {data[1].subMenu.length > 0 && (
-                          <span>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              className="w-4 h-4"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </span>
-                        )}
-                      </Link>
-                    )
-                  })}
+                  <a
+                    href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                    className="flex items-center justify-center w-16"
+                  >
+                    <Image
+                      src="/assets/images/brand/gjworks.svg"
+                      alt="gjworks logo"
+                      width="32"
+                      height="32"
+                      className="block w-8 h-8"
+                    />
+                  </a>
+                  {nav.header &&
+                    Object.entries(nav.header).map((data, index) => {
+                      return (
+                        <Link
+                          href={data[1].route}
+                          key={data[1].name}
+                          onMouseEnter={() =>
+                            setShowNavigationList(data[1].subMenu)
+                          }
+                          className={
+                            'flex gap-2 items-center py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
+                            (currentPage?.name === data[1].name
+                              ? 'text-gray-400 dark:text-white'
+                              : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
+                          }
+                        >
+                          {data[1].title}
+                          {data[1].subMenu.length > 0 && (
+                            <span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                                className="w-4 h-4"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </span>
+                          )}
+                        </Link>
+                      )
+                    })}
+                </div>
               </div>
             </div>
             <div className="col-span-1 relative flex gap-2 items-center justify-end">
