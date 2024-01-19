@@ -21,8 +21,8 @@ const MymenuTemplate = () => {
   }
   return (
     <>
-      <motion.div>
-        <div className="py-10">
+      <div className="max-w-screen-xl mx-auto px-3 bg-white py-10 min-h-screen">
+        <div className="">
           <div className="flex gap-4 px-3">
             <div className="w-12 h-12 rounded-full bg-gray-200"></div>
             <div>
@@ -36,7 +36,7 @@ const MymenuTemplate = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   )
 }

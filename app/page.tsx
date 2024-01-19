@@ -84,14 +84,14 @@ export default function Page() {
                           variants={variants}
                           className="mb-5 lg:mb-2  px-1"
                         >
-                          <div className="flex flex-wrap gap-2 lg:gap-0 text-primary-800 dark:text-white text-5xl md:text-6xl font-semibold tracking-tighter !leading-tight">
+                          <div className="flex flex-wrap gap-2 lg:gap-0 text-black dark:text-white text-5xl md:text-6xl font-semibold tracking-tighter !leading-tight">
                             Building digital experience
                           </div>
                         </motion.div>
 
                         <motion.div
                           variants={variants}
-                          className="text-5xl md:text-6xl mb-10 text-primary-800 dark:text-white font-semibold tracking-tighter pl-0"
+                          className="text-5xl md:text-6xl mb-10 text-black dark:text-white font-semibold tracking-tighter pl-0"
                         >
                           Creative platform service
                         </motion.div>
@@ -102,7 +102,7 @@ export default function Page() {
                         variants={variants}
                         className="relative py-3 mb-6 max-w-lg"
                       >
-                        <div className="flex gap-8 p-2 lg:p-3 bg-gray-300/40 dark:bg-dark-700/50 border border-gray-400/25 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
+                        <div className="flex gap-8 p-2 lg:p-3 bg-gray-300/40 dark:bg-dark-700/50 border border-gray-300/25 dark:border-dark-900/90 dark:border-t-dark-800 backdrop-blur-lg rounded-full">
                           <div className="flex-1 flex items-center px-3">
                             <div className="text-sm text-gray-500 dark:text-dark-400 line-clamp-1">
                               Launch Your Service.
@@ -112,7 +112,7 @@ export default function Page() {
                             onClick={() => {
                               setShowPopup(true)
                             }}
-                            className="flex gap-2 bg-gray-950 dark:bg-gray-300 dark:hover:bg-primary-700 text-gray-300 dark:text-black dark:hover:text-black text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-800 hover:text-white"
+                            className="flex gap-2 bg-gray-950 dark:bg-gray-300 dark:hover:bg-primary-500 text-gray-300 dark:text-black dark:hover:text-black text-sm py-2 px-3 lg:py-3 lg:px-5 rounded-full hover:bg-primary-600 hover:text-white"
                           >
                             <span>
                               <svg
@@ -598,7 +598,7 @@ export default function Page() {
               onClick={() => {
                 setShowPopup2(true)
               }}
-              className="text-primary-700 mb-5"
+              className="text-primary-500 mb-5"
             >
               클릭
             </button>

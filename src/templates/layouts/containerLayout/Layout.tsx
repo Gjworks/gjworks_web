@@ -35,7 +35,7 @@ const ContainerLayout = ({children}) => {
     })
   }
   return (
-    <div className="selection:text-white selection:bg-cyan-700 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
+    <div className="">
       <div className="relative z-20">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
@@ -95,7 +95,7 @@ const ContainerLayout = ({children}) => {
           </div>
         </footer>
         <Right state={showRight} close={closeRight}>
-          sd
+          <div className="relative z-[999] max-w-screen-xl mx-auto px-3 bg-white"></div>
         </Right>
       </div>
     </div>

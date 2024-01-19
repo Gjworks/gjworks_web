@@ -51,7 +51,7 @@ const Page = () => {
             <div className="relative px-3 lg:px-0 pb-3">
               <div className="max-w-screen-md mx-auto dark:bg-dark-900/20 bg-gradient-to-b dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 bg-white/20 backdrop-blur-lg rounded-lg p-3 ">
                 <div className="flex gap-4 lg:gap-8 flex-wrap">
-                  <div className="w-20 h-20 mx-auto rounded-2xl -mt-12 md:mt-0 backdrop-blur-lg shadow-lg shadow-gray-600/30 dark:shadow-dark-950/40 bg-primary-700"></div>
+                  <div className="w-20 h-20 mx-auto rounded-2xl -mt-12 md:mt-0 backdrop-blur-lg shadow-lg shadow-gray-600/30 dark:shadow-dark-950/40 bg-primary-500"></div>
                   <div className="w-full md:flex-1 flex flex-wrap">
                     <div className="w-full">
                       <div className="text-lg font-semibold text-white dark:text-white line-clamp-1">
@@ -62,7 +62,7 @@ const Page = () => {
                       </div>
                     </div>
                     <div className="w-full flex items-center gap-2">
-                      <div className="text-white text-xs bg-primary-600 rounded-full py-1 px-4 hover:bg-primary-700 cursor-pointer">
+                      <div className="text-white text-xs bg-primary-600 rounded-full py-1 px-4 hover:bg-primary-500 cursor-pointer">
                         150,000 원
                       </div>
                       <div className="text-primary-400 text-xs bg-black rounded-full py-1 px-4 hover:bg-gray-700 cursor-pointer">
@@ -84,7 +84,7 @@ const Page = () => {
                 <div className="hidden border border-gray-200/50 dark:border-dark-800/75 bg-white/90 dark:bg-dark-700/40 rounded-lg p-5 mb-8 shadow-md shadow-gray-100/75 dark:shadow-black/90">
                   <div className="grid grid-cols-4 gap-10">
                     <div className="col-span-1">
-                      <div className="text-base text-primary-700 mb-3">
+                      <div className="text-base text-primary-500 mb-3">
                         1,200
                       </div>
                       <div className="text-sm text-dark-400">

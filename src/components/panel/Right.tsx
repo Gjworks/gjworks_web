@@ -31,16 +31,16 @@ const Right = ({state, close, children}) => {
 
   const variants = {
     openPanel: {
-      marginLeft: '50vw',
+      right: '0px',
       transition: {duration: 0.3},
     },
     closePanel: {
-      marginLeft: '100vh',
+      right: '-480px',
       transition: {duration: 0.5},
     },
   }
   const exit = {
-    marginLeft: '100vw',
+    right: '-480px',
     transition: {duration: 0.5},
   }
   const variants2 = {
@@ -66,11 +66,11 @@ const Right = ({state, close, children}) => {
         {state && (
           <RightPortal>
             <motion.div
-              initial={{marginLeft: '100%'}}
+              initial={{right: '-480px'}}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed w-1/2 bottom-0 top-0 transform bg-white z-101"
+              className="fixed w-[480px] bottom-0 top-0 transform z-101"
             >
               <button
                 onClick={handleClosePanel}

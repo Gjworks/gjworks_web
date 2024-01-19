@@ -11,6 +11,8 @@ import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
 import Toolbar from '@gjworks/templates/layouts/fullLayout/Toolbar'
 import Right from '@gjworks/components/panel/Right'
 
+import MymenuTemplate from '@gjworks/templates/forms/MymenuTemplate'
+
 const MainLayout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
   const [showRight, setShowRight] = useState(false)
@@ -34,7 +36,7 @@ const MainLayout = ({children}) => {
     })
   }
   return (
-    <div className="selection:text-white selection:bg-cyan-800 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
+    <div className="">
       <div className="relative z-20">
         <Header />
         <div
@@ -89,7 +91,7 @@ const MainLayout = ({children}) => {
           </div>
         </footer>
         <Right state={showRight} close={closeRight}>
-          sd
+          <MymenuTemplate />
         </Right>
       </div>
     </div>

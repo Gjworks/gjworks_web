@@ -5,7 +5,7 @@ import 'styles/tailwindcss.css'
 
 export default function RootLayout({children}) {
   return (
-    <html className="">
+    <html className="selection:text-white selection:bg-black dark:selection:bg-primary-700 dark:selection:text-white break-keep">
       <head />
       <body>
         {children}

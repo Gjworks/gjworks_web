@@ -37,7 +37,7 @@ const FullLayout = ({children}) => {
     })
   }
   return (
-    <div className="selection:text-white selection:bg-cyan-800 dark:selection:bg-blue-500 dark:selection:text-white break-keep">
+    <div className="">
       <div className="relative z-20">
         <Header />
         <main className="min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-162px)]">
