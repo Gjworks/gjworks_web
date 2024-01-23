@@ -3,12 +3,11 @@ import React, {useState, useEffect} from 'react'
 import {motion, AnimatePresence} from 'framer-motion'
 import ModalPortal from 'src/components/modal/ModalPortal'
 
-const Popup = ({state, close, children}) => {
+const Popup = props => {
   const [popupState, setPopupState] = useState(false)
   useEffect(() => {
-    console.log(state)
-    setPopupState(state)
-  }, [state])
+    setPopupState(props.state)
+  }, [props.state])
 
   const variants = {
     openPanel: {
@@ -44,7 +43,7 @@ const Popup = ({state, close, children}) => {
 
     setTimeout(() => {
       setPopupState(false)
-      close(false)
+      props.close(false)
     }, 100)
   }
 
@@ -65,28 +64,61 @@ const Popup = ({state, close, children}) => {
               className="fixed left-1/2 -translate-x-1/2 z-50 max-w-lg w-full px-3"
             >
               <div className="relative bg-white mb-4 lg:mb-8 dark:bg-dark-950 rounded-xl w-full shadow-2xl shadow-gray-300/75 mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto border border-gray-200">
-                <button
-                  onClick={handleClosePanel}
-                  className="absolute right-3 top-3 rounded-full bg-gray-950 p-1 z-10"
-                >
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6 text-gray-100 dark:text-white "
+                <div className="flex gap-8 px-3 py-3">
+                  <div className="">
+                    <button
+                      onClick={handleClosePanel}
+                      className="rounded-full bg-gray-100 hover:bg-gray-200 transition hover:duration-300 hover:scale-125 p-1 z-10"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M6 18L18 6M6 6l12 12"
-                      />
-                    </svg>
-                  </span>
-                </button>
-                {children}
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1}
+                          stroke="currentColor"
+                          className="w-5 h-5"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 19.5 8.25 12l7.5-7.5"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-center text-xl font-bold text-gray-950 line-clamp-1">
+                      {props.title}
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      onClick={handleClosePanel}
+                      className="rounded-full bg-gray-100 hover:bg-gray-200 transition hover:duration-300 hover:scale-125 p-1 z-10"
+                    >
+                      <span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1}
+                          stroke="currentColor"
+                          className="w-5 h-5 text-black dark:text-white "
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                {props.children}
               </div>
             </motion.div>
             {/* </motion.div> */}

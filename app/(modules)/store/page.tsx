@@ -221,9 +221,8 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <Popup state={showPopup} close={closePopup}>
+      <Popup state={showPopup} title="장바구니" close={closePopup}>
         <div className="p-8">
-          <div className="text-xl font-bold text-gray-950 mb-5">장바구니</div>
           <div className="text-sm font-normal text-gray-700">
             <div className="grid grid-cols-2 gap-8">
               <div className="col-span-1">

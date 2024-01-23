@@ -55,7 +55,7 @@ const FullLayout = ({children}) => {
             </motion.div>
           </div>
           {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-          <div className="">{children}</div>
+          {children}
         </main>
 
         {/* {scrollPosition > 100 && (

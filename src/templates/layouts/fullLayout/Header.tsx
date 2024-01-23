@@ -287,7 +287,7 @@ const Header = () => {
             <div className="relative flex justify-center col-span-1">
               <div className="relative">
                 <div
-                  className="relative hidden lg:flex items-center justify-center bg-white/75 border backdrop-blur-lg border-gray-100 rounded-full py-1 px-4 shadow-lg shadow-gray-100"
+                  className="relative hidden lg:flex items-center justify-center bg-white/75 dark:bg-dark-950/75 border backdrop-blur-lg border-gray-100 dark:border-dark-600 rounded-full py-1 px-4 shadow-lg shadow-gray-100 dark:shadow-dark-700"
                   onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                   // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
                 >
@@ -469,7 +469,7 @@ const Header = () => {
                           <motion.div key={key} variants={variants}>
                             <Link
                               href="/store"
-                              className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-secondary-500 dark:hover:text-dark-200"
+                              className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-secondary-500 dark:hover:text-secondary-500"
                             >
                               {list[1].title}
                             </Link>
@@ -488,19 +488,19 @@ const Header = () => {
                     </div>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       개발문서
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       교육
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       유지보수/관리
                     </Link>
@@ -513,25 +513,25 @@ const Header = () => {
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       XE/라이믹스 스토어
                     </a>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       도메인 등록
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       세금계산서 신청
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       파트너 신청
                     </Link>
@@ -544,7 +544,7 @@ const Header = () => {
                       href="https://github.com/gjworks"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 dark:hover:text-dark-200 text-black hover:text-secondary-500"
+                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
                     >
                       Github
                     </a>
