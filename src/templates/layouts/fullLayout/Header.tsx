@@ -3,112 +3,112 @@
  * @author 지제이웍스 (gjworks@kakao.com)
  * @brief 설정 및 환경변수등이 저장되는 파일
  **/
-'use client'
-import React, {useState, useEffect} from 'react'
-import Link from 'next/link'
-import {usePathname} from 'next/navigation'
-import Image from 'next/image'
-import Dropdown from 'src/components/dropdown/Dropdown'
-import Modal from 'src/components/modal/Modal'
-import Left from 'src/components/panel/Left'
-import SearchForm from 'src/templates/forms/SearchForm'
-import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
-import SideNav from 'src/components/nav/SideNav'
-import nav from 'src/res/config/navigation.json'
-import page from 'src/res/config/page.json'
-import {motion} from 'framer-motion'
+"use client";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import Dropdown from "src/components/dropdown/Dropdown";
+import Modal from "src/components/modal/Modal";
+import Left from "src/components/panel/Left";
+import SearchForm from "src/templates/forms/SearchForm";
+import AccountDropwdown from "src/templates/forms/AccountDropwdown";
+import SideNav from "src/components/nav/SideNav";
+import nav from "src/res/config/navigation.json";
+import page from "src/res/config/page.json";
+import { motion } from "framer-motion";
 
 export type NavType = {
-  name: string
-  image_name: string
-  title: string
-  parent: string
-  route: string
-}
+  name: string;
+  image_name: string;
+  title: string;
+  parent: string;
+  route: string;
+};
 
 interface Inspage {
-  name: string
-  title: string
-  parent: string
-  route: string
+  name: string;
+  title: string;
+  parent: string;
+  route: string;
 }
 
 const Header = () => {
-  const pathname = usePathname()
-  const [showModal, setShowModal] = useState(false)
-  const [showLeft, setShowLeft] = useState(false)
-  const [showDropdown, setShowDropdown] = useState(false)
-  const [showNavigation, setShowNavigation] = useState(false)
-  const [showNavigationList, setShowNavigationList] = useState<NavType[]>()
-  const [background, setBackground] = useState('')
-  const [scrollPosition, setScrollPosition] = useState(0)
-  const [currentPage, setCurrentPage] = useState<Inspage | undefined>()
+  const pathname = usePathname();
+  const [showModal, setShowModal] = useState(false);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showNavigation, setShowNavigation] = useState(false);
+  const [showNavigationList, setShowNavigationList] = useState<NavType[]>();
+  const [background, setBackground] = useState("");
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [currentPage, setCurrentPage] = useState<Inspage | undefined>();
 
   useEffect(() => {
-    const params = pathname?.split('/')
+    const params = pathname?.split("/");
 
     if (params?.length) {
-      setCurrentPage(page[params?.[1]])
+      setCurrentPage(page[params?.[1]]);
     }
-  }, [pathname, currentPage])
+  }, [pathname, currentPage]);
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.pageYOffset)
-    }
+      setScrollPosition(window.pageYOffset);
+    };
 
-    window.addEventListener('scroll', updatePosition)
+    window.addEventListener("scroll", updatePosition);
 
-    return () => window.removeEventListener('scroll', updatePosition)
-  }, [])
+    return () => window.removeEventListener("scroll", updatePosition);
+  }, []);
 
-  const closeModal = close => {
-    setShowModal(close)
-    setBackground('bg-transparent dark:bg-transparent')
-  }
-  const closeLeft = close => {
-    setShowLeft(close)
-  }
+  const closeModal = (close) => {
+    setShowModal(close);
+    setBackground("bg-transparent dark:bg-transparent");
+  };
+  const closeLeft = (close) => {
+    setShowLeft(close);
+  };
   const handleClickOutside = () => {
-    setShowNavigation(false)
-  }
+    setShowNavigation(false);
+  };
   useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true)
+    document.addEventListener("click", handleClickOutside, true);
     return () => {
-      document.removeEventListener('click', handleClickOutside, true)
-    }
-  }, [])
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, []);
   useEffect(() => {
     setTimeout(() => {
-      window.addEventListener('scroll', handleScroll)
-    }, 1000)
+      window.addEventListener("scroll", handleScroll);
+    }, 1000);
     return () => {
-      window.removeEventListener('scroll', handleScroll) //clean up
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll); //clean up
+    };
+  }, []);
 
   const handleScroll = () => {
-    setShowNavigation(false)
+    setShowNavigation(false);
     // console.log('scrolled')
-  }
+  };
 
   const headerInitial = {
     opacity: 0,
     transition: {
       duration: 0.5,
     },
-  }
+  };
   const initial = {
     opacity: 0,
-    y: '0%',
+    y: "0%",
     transition: {
       duration: 0.5,
     },
-  }
+  };
   const fixedVariants = {
     open: {
       opacity: 1,
-      display: 'block',
+      display: "block",
       transition: {
         duration: 0.5,
       },
@@ -119,14 +119,14 @@ const Header = () => {
         duration: 0.5,
       },
       transitionEnd: {
-        display: 'none',
+        display: "none",
       },
     },
-  }
+  };
   const headerVariants = {
     open: {
       opacity: 1,
-      y: '0%',
+      y: "0%",
       // display: 'block',
       transition: {
         duration: 0.5,
@@ -134,7 +134,7 @@ const Header = () => {
     },
     close: {
       opacity: 0,
-      y: '-100%',
+      y: "-100%",
       transition: {
         duration: 0.5,
       },
@@ -142,23 +142,23 @@ const Header = () => {
       //   display: 'none',
       // },
     },
-  }
+  };
   const wrapVariants = {
     open: {
       opacity: 1,
-      y: '0%',
+      y: "0%",
       transition: {
         duration: 0.5,
       },
     },
     close: {
       opacity: 0,
-      y: '-100%',
+      y: "-100%",
       transition: {
         duration: 0.5,
       },
     },
-  }
+  };
   const variants = {
     // open: {
     //   opacity: 1,
@@ -180,53 +180,53 @@ const Header = () => {
     onscreen: {
       opacity: [0, 1],
       transition: {
-        y: {stiffness: 300, velocity: -100},
+        y: { stiffness: 300, velocity: -100 },
       },
     },
     offscreen: {
       opacity: 0,
       transition: {
-        y: {stiffness: 300},
+        y: { stiffness: 300 },
       },
     },
-  }
+  };
 
   const subMenuVariants = {
     onscreen: {
-      transition: {staggerChildren: 0.2, delayChildren: 0.2},
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
     },
     offscreen: {
-      transition: {staggerChildren: 0.2, staggerDirection: -1},
+      transition: { staggerChildren: 0.2, staggerDirection: -1 },
     },
-  }
+  };
 
-  const subNavigationView = showNavigationList => {
-    return <></>
-  }
+  const subNavigationView = (showNavigationList) => {
+    return <></>;
+  };
   return (
     <>
       <motion.header
-        transition={{transition: {duration: 0.3}}}
+        transition={{ transition: { duration: 0.3 } }}
         className={
-          'sticky w-full top-0  z-101 pt-0 lg:py-3  bg-transparent ' +
-          (showNavigation === true ? '  ' : ' ')
+          "z-101 sticky top-0  w-full bg-white/75 pt-0 backdrop-blur-lg lg:bg-transparent lg:py-3 lg:backdrop-blur-none " +
+          (showNavigation === true ? "  " : " ")
         }
       >
         <div className="">
-          <div className="grid grid-cols-3 gap-4 py-2 px-5">
+          <div className="grid grid-cols-3 gap-4 px-5 py-2">
             <div className="col-span-1 flex items-center gap-2">
               <button
                 onClick={() => {
-                  setBackground('dark:bg-dark-950 bg-white')
-                  setShowLeft(!showLeft)
+                  setBackground("dark:bg-dark-950 bg-white");
+                  setShowLeft(!showLeft);
                 }}
                 className="group flex items-center"
               >
-                <div className="flex relative w-5 h-5 cursor-pointer">
+                <div className="relative flex h-5 w-5 cursor-pointer">
                   <span>
                     {/* <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div> */}
-                    <div className="transition-all absolute left-0 top-[6px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
-                    <div className="transition-all absolute left-0 top-[12px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
+                    <div className="absolute left-0 top-[6px] h-[1px] w-4 bg-black transition-all group-hover:w-2 dark:bg-white"></div>
+                    <div className="absolute left-0 top-[12px] h-[1px] w-3 bg-black transition-all group-hover:w-4 dark:bg-white"></div>
                   </span>
                 </div>
               </button>
@@ -235,11 +235,11 @@ const Header = () => {
                 onClick={() => setShowNavigation(!showNavigation)}
                 className="group hidden items-center px-3"
               >
-                <div className="flex relative w-5 h-5 cursor-pointer">
+                <div className="relative flex h-5 w-5 cursor-pointer">
                   <span>
-                    <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div>
-                    <div className="transition-all absolute left-0 top-[9px] h-[1px] w-4 group-hover:w-2 bg-black dark:bg-white"></div>
-                    <div className="transition-all absolute left-0 top-[15px] h-[1px] w-3 group-hover:w-4 bg-black dark:bg-white"></div>
+                    <div className="absolute left-0 top-[3px] h-[1px] w-2 bg-black transition-all group-hover:w-3 dark:bg-white"></div>
+                    <div className="absolute left-0 top-[9px] h-[1px] w-4 bg-black transition-all group-hover:w-2 dark:bg-white"></div>
+                    <div className="absolute left-0 top-[15px] h-[1px] w-3 bg-black transition-all group-hover:w-4 dark:bg-white"></div>
                   </span>
                 </div>
               </button>
@@ -247,32 +247,32 @@ const Header = () => {
               <div className="flex items-center">
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex md:hidden items-center"
+                  className="flex items-center lg:hidden"
                 >
                   <Image
                     src="/assets/images/brand/gjworks.svg"
                     alt="gjworks logo"
                     width="32"
                     height="32"
-                    className="block w-8 h-8"
+                    className="block h-8 w-8"
                   />
                 </a>
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="hidden items-center"
                 >
-                  <div className="flex pl-2 text-sm lg:text-base font-semibold mr-4">
+                  <div className="mr-4 flex pl-2 text-sm font-semibold lg:text-base">
                     <div className="text-black dark:text-white">지제이웍스</div>
                   </div>
                 </a>
-                <div className="hidden text-gray-500 dark:text-dark-100 text-xs bg-gray-100/90 dark:bg-dark-100/10 px-4 py-1 rounded-full hover:bg-gray-200/75 dark:hover:bg-gray-100/20 hover:text-black dark:hover:text-white transition duration-300 backdrop-blur-lg cursor-pointer">
+                <div className="dark:text-dark-100 dark:bg-dark-100/10 hidden cursor-pointer rounded-full bg-gray-100/90 px-4 py-1 text-xs text-gray-500 backdrop-blur-lg transition duration-300 hover:bg-gray-200/75 hover:text-black dark:hover:bg-gray-100/20 dark:hover:text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1}
                     stroke="currentColor"
-                    className="w-4 h-4 mr-2"
+                    className="mr-2 h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -284,23 +284,23 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="relative flex justify-center col-span-1">
+            <div className="relative col-span-1 flex justify-center">
               <div className="relative">
                 <div
-                  className="relative hidden lg:flex items-center justify-center bg-white/75 dark:bg-dark-950/75 border backdrop-blur-lg border-gray-100 dark:border-dark-600 rounded-full py-1 px-4 shadow-lg shadow-gray-100 dark:shadow-dark-700"
+                  className="dark:bg-dark-950/75 dark:border-dark-600 dark:shadow-dark-700 relative hidden items-center justify-center rounded-full border border-gray-100 bg-white/75 px-4 py-1 shadow-lg shadow-gray-100 backdrop-blur-lg lg:flex"
                   onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                   // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
                 >
                   <a
                     href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                    className="flex items-center justify-center w-16"
+                    className="flex w-16 items-center justify-center"
                   >
                     <Image
                       src="/assets/images/brand/gjworks.svg"
                       alt="gjworks logo"
                       width="32"
                       height="32"
-                      className="block w-8 h-8"
+                      className="block h-8 w-8"
                     />
                   </a>
                   {nav.header &&
@@ -313,10 +313,10 @@ const Header = () => {
                             setShowNavigationList(data[1].subMenu)
                           }
                           className={
-                            'flex gap-2 items-center py-0 lg:py-2 px-1 lg:px-3 mx-2 text-xs lg:text-sm font-normal  ' +
+                            "mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
                             (currentPage?.name === data[1].name
-                              ? 'text-gray-400 dark:text-white'
-                              : 'text-gray-800 dark:text-dark-500 hover:text-gray-400 dark:hover:text-white')
+                              ? "text-gray-400 dark:text-white"
+                              : "dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white")
                           }
                         >
                           {data[1].title}
@@ -326,7 +326,7 @@ const Header = () => {
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
-                                className="w-4 h-4"
+                                className="h-4 w-4"
                               >
                                 <path
                                   fillRule="evenodd"
@@ -337,15 +337,15 @@ const Header = () => {
                             </span>
                           )}
                         </Link>
-                      )
+                      );
                     })}
                 </div>
               </div>
             </div>
-            <div className="col-span-1 relative flex gap-2 items-center justify-end">
-              <div className="flex gap-1 items-center">
+            <div className="relative col-span-1 flex items-center justify-end gap-2">
+              <div className="flex items-center gap-1">
                 <button
-                  className="hover:bg-gray-200 text-gray-950 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
+                  className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200  hover:text-gray-900 dark:hover:text-white"
                   onClick={() => setShowModal(!showModal)}
                 >
                   <svg
@@ -354,7 +354,7 @@ const Header = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="w-5 h-5"
+                    className="h-5 w-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -365,7 +365,7 @@ const Header = () => {
                 </button>
               </div>
               <button
-                className="hidden relative bg-white text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1 rounded-md dark:bg-dark-950 dark:hover:bg-dark-700 "
+                className="dark:text-dark-200 dark:bg-dark-950 dark:hover:bg-dark-700 relative hidden rounded-md bg-white px-2 py-1 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:hover:text-white "
                 onClick={() => {}}
               >
                 <svg
@@ -374,7 +374,7 @@ const Header = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1}
                   stroke="currentColor"
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -382,10 +382,10 @@ const Header = () => {
                     d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
                   />
                 </svg>
-                <div className="absolute -right-0.5 -top-0.5 w-2 h-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
+                <div className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-rose-600 dark:bg-rose-600"></div>
               </button>
               <button
-                className="hover:bg-gray-200 text-gray-950 hover:text-gray-900 dark:text-dark-200 dark:hover:text-white px-2 py-1  rounded-md dark:hover:bg-dark-700"
+                className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200  hover:text-gray-900 dark:hover:text-white"
                 onClick={() => setShowDropdown(!showDropdown)}
               >
                 <div className="flex items-center">
@@ -396,7 +396,7 @@ const Header = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1}
                       stroke="currentColor"
-                      className="w-5 h-5"
+                      className="h-5 w-5"
                     >
                       <path
                         strokeLinecap="round"
@@ -423,30 +423,30 @@ const Header = () => {
       </Left>
       <motion.div
         initial={headerInitial}
-        animate={showNavigation === true ? 'open' : 'close'}
+        animate={showNavigation === true ? "open" : "close"}
         variants={fixedVariants}
-        className="fixed top-0 left-0 right-0 bottom-0 z-99 backdrop-blur-sm bg-gray-950/70 dark:bg-transparent"
+        className="z-99 fixed bottom-0 left-0 right-0 top-0 bg-gray-950/70 backdrop-blur-sm dark:bg-transparent"
       ></motion.div>
       <motion.div
         initial={headerInitial}
-        animate={showNavigation === true ? 'open' : 'close'}
+        animate={showNavigation === true ? "open" : "close"}
         variants={headerVariants}
-        className="fixed top-0 left-0 right-0 z-99 "
+        className="z-99 fixed left-0 right-0 top-0 "
       >
         <motion.div
-          initial={{opacity: 0}}
-          animate={showNavigation === true ? 'open' : 'close'}
+          initial={{ opacity: 0 }}
+          animate={showNavigation === true ? "open" : "close"}
           variants={wrapVariants}
           className={
-            'relative z-100 bg-white dark:bg-dark-950 border-b-[0.5px] border-gray-200/50 dark:border-dark-600/50 shadow-sm dark:shadow-xl shadow-gray-100/75 dark:shadow-dark-950/90 ' +
-            (scrollPosition > 100 ? ' pt-[86px]' : ' pt-[86px]')
+            "z-100 dark:bg-dark-950 dark:border-dark-600/50 dark:shadow-dark-950/90 relative border-b-[0.5px] border-gray-200/50 bg-white shadow-sm shadow-gray-100/75 dark:shadow-xl " +
+            (scrollPosition > 100 ? " pt-[86px]" : " pt-[86px]")
           }
         >
-          <div className="max-w-screen-xl mx-auto px-4 pt-5 pb-16">
-            <div className="grid grid-cols-12 pl-3 lg:pl-20 pr-3">
+          <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-5">
+            <div className="grid grid-cols-12 pl-3 pr-3 lg:pl-20">
               <div className="col-span-12 lg:col-span-2">
                 <div className="py-5">
-                  <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                  <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
                     Sub Navigation
                   </div>
                   {/* <Link
@@ -469,12 +469,12 @@ const Header = () => {
                           <motion.div key={key} variants={variants}>
                             <Link
                               href="/store"
-                              className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-secondary-500 dark:hover:text-secondary-500"
+                              className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block w-full text-2xl font-medium text-black dark:text-white"
                             >
                               {list[1].title}
                             </Link>
                           </motion.div>
-                        )
+                        );
                       })}
                     </motion.div>
                   )}
@@ -482,69 +482,69 @@ const Header = () => {
               </div>
               <div className="col-span-12 lg:col-span-6">
                 <div className="flex flex-wrap gap-10">
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                  <div className="px-3 py-3  lg:px-5 lg:py-5">
+                    <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
                       Sitemap
                     </div>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       개발문서
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       교육
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       유지보수/관리
                     </Link>
                   </div>
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                  <div className="px-3 py-3  lg:px-5 lg:py-5">
+                    <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
                       Store
                     </div>
                     <a
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       XE/라이믹스 스토어
                     </a>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       도메인 등록
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       세금계산서 신청
                     </Link>
                     <Link
                       href="#"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       파트너 신청
                     </Link>
                   </div>
-                  <div className="py-3 lg:py-5  px-3 lg:px-5">
-                    <div className="text-gray-400 dark:text-dark-400 text-sm mb-5">
+                  <div className="px-3 py-3  lg:px-5 lg:py-5">
+                    <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
                       Projects
                     </div>
                     <a
                       href="https://github.com/gjworks"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block dark:text-white text-sm mb-3 text-black hover:text-secondary-500 dark:hover:text-secondary-500"
+                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       Github
                     </a>
@@ -552,38 +552,41 @@ const Header = () => {
                 </div>
               </div>
               <div className="col-span-12 lg:col-span-4">
-                <div className="relative flex gap-8 h-full py-10 lg:py-0">
-                  <div className="relative h-full hidden lg:flex items-center justify-center w-px bg-gradient-to-t from-transparent via-gray-200/75 dark:via-dark-700 to-transparent"></div>
+                <div className="relative flex h-full gap-8 py-10 lg:py-0">
+                  <div className="dark:via-dark-700 relative hidden h-full w-px items-center justify-center bg-gradient-to-t from-transparent via-gray-200/75 to-transparent lg:flex"></div>
                   <div className="flex-1">
                     <div className="">
                       <motion.div
-                        whileTap={{scale: 0.97, transition: {duration: 0.3}}}
-                        className="rounded-2xl p-[0.5px] w-20 h-20 bg-gradient-to-tl from-dark-500/30 via-dark-700/40 to-dark-400/70 overflow-hidden shadow-md shadow-black"
+                        whileTap={{
+                          scale: 0.97,
+                          transition: { duration: 0.3 },
+                        }}
+                        className="from-dark-500/30 via-dark-700/40 to-dark-400/70 h-20 w-20 overflow-hidden rounded-2xl bg-gradient-to-tl p-[0.5px] shadow-md shadow-black"
                       >
-                        <div className="flex items-center justify-center rounded-2xl w-full h-full bg-gradient-to-b from-dark-800/90 via-dark-950/75 to-dark-950/90 shadow-inner shadow-dark-900/90">
+                        <div className="from-dark-800/90 via-dark-950/75 to-dark-950/90 shadow-dark-900/90 flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-b shadow-inner">
                           <Image
                             src="/assets/images/brand/gjworks_white.svg"
                             alt="gjworks logo"
                             width="32"
                             height="32"
-                            className="block w-16 h-16"
+                            className="block h-16 w-16"
                           />
                         </div>
                       </motion.div>
                     </div>
-                    <div className="text-xs text-gray-500 dark:text-dark-500 pt-5 mb-4">
+                    <div className="dark:text-dark-500 mb-4 pt-5 text-xs text-gray-500">
                       Each subscription goes towards aggressively adding new
                       features built with customers best interests at heart,
                       including your privacy.
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      <div className="text-xs py-[2px] px-2 text-gray-400 dark:text-dark-500 border border-gray-200 dark:border-dark-700/75 bg-gray-100 dark:bg-dark-900 hover:bg-gray-200 dark:hover:bg-dark-950 rounded-lg">
+                      <div className="dark:text-dark-500 dark:border-dark-700/75 dark:bg-dark-900 dark:hover:bg-dark-950 rounded-lg border border-gray-200 bg-gray-100 px-2 py-[2px] text-xs text-gray-400 hover:bg-gray-200">
                         iOS
                       </div>
-                      <div className="text-xs py-[2px] px-2 text-gray-400 dark:text-dark-500 border border-gray-200 dark:border-dark-700/75 bg-gray-100 dark:bg-dark-900 hover:bg-gray-200 dark:hover:bg-dark-950 rounded-lg">
+                      <div className="dark:text-dark-500 dark:border-dark-700/75 dark:bg-dark-900 dark:hover:bg-dark-950 rounded-lg border border-gray-200 bg-gray-100 px-2 py-[2px] text-xs text-gray-400 hover:bg-gray-200">
                         macOS
                       </div>
-                      <div className="text-xs py-[2px] px-2 text-gray-400 dark:text-dark-500 border border-gray-200 dark:border-dark-700/75 bg-gray-100 dark:bg-dark-900 hover:bg-gray-200 dark:hover:bg-dark-950 rounded-lg">
+                      <div className="dark:text-dark-500 dark:border-dark-700/75 dark:bg-dark-900 dark:hover:bg-dark-950 rounded-lg border border-gray-200 bg-gray-100 px-2 py-[2px] text-xs text-gray-400 hover:bg-gray-200">
                         Android
                       </div>
                     </div>
@@ -598,7 +601,7 @@ const Header = () => {
         </motion.div>
       </motion.div>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

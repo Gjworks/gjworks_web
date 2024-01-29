@@ -1,25 +1,25 @@
-'use client'
-import {motion} from 'framer-motion'
-import Link from 'next/link'
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const SearchForm = () => {
   return (
     <>
       <div className=" ">
-        <div className="flex border-b border-gray-200 dark:border-dark-900 p-3">
+        <div className="dark:border-dark-900 flex border-b border-gray-200 p-3">
           <input
             type="text"
-            className="group flex-1 text-base text-gray-600 py-2 bg-transparent px-3 outline-none focus:text-black dark:text-dark-200 placeholder:text-gray-500 dark:placeholder:text-dark-500 placeholder:font-light"
+            className="dark:text-dark-200 dark:placeholder:text-dark-500 group flex-1 bg-transparent px-3 py-2 text-base text-gray-600 outline-none placeholder:font-light placeholder:text-gray-500 focus:text-black"
             placeholder="Search Text..."
           ></input>
-          <button className="text-gray-700 hover:text-gray-900 dark:text-dark-300 dark:hover:text-white group-focus:text-white">
+          <button className="dark:text-dark-300 text-gray-700 hover:text-gray-900 group-focus:text-white dark:hover:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-5 h-5"
+              className="h-5 w-5"
             >
               <path
                 strokeLinecap="round"
@@ -30,21 +30,21 @@ const SearchForm = () => {
           </button>
         </div>
         <motion.div
-          className="pt-3 pb-4 px-5"
-          initial={{opacity: 0, y: '20%'}}
+          className="px-5 pb-4 pt-3"
+          initial={{ opacity: 0, y: "20%" }}
           animate={{
             opacity: 1,
-            y: '0%',
-            transition: {duration: 0.8, delay: 0.5},
+            y: "0%",
+            transition: { duration: 0.8, delay: 0.5 },
           }}
         >
           <div className="flex items-center gap-4">
-            <div className="text-gray-500 dark:text-dark-100 text-xs">
+            <div className="dark:text-dark-100 text-xs text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-4 h-4"
+                className="h-4 w-4"
               >
                 <path
                   fillRule="evenodd"
@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="flex bg-primary-700 dark:text-white dark:bg-primary-700 py-1 px-3 text-xs rounded-full hover:bg-primary-800 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white text-white cursor-pointer">
+            <div className="bg-primary-400 dark:bg-primary-700 hover:bg-primary-500 dark:hover:bg-primary-600 flex cursor-pointer rounded-full px-3 py-1 text-xs text-black hover:text-black dark:text-black dark:hover:text-white">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -62,7 +62,7 @@ const SearchForm = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1}
                   stroke="currentColor"
-                  className="w-4 h-4"
+                  className="h-4 w-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="flex bg-gray-300 dark:text-white dark:bg-primary-800 py-1 px-3 text-xs rounded-full hover:bg-primary-700 dark:hover:bg-primary-600 dark:hover:text-white hover:text-white text-gray-700 cursor-pointer">
+            <div className="dark:bg-primary-800 hover:bg-primary-400 dark:hover:bg-primary-600 hover:black flex cursor-pointer rounded-full bg-gray-300 px-3 py-1 text-xs text-gray-700 dark:text-white dark:hover:text-white">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
@@ -81,7 +81,7 @@ const SearchForm = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1}
                   stroke="currentColor"
-                  className="w-4 h-4"
+                  className="h-4 w-4"
                 >
                   <path
                     strokeLinecap="round"
@@ -94,26 +94,26 @@ const SearchForm = () => {
           </div>
         </motion.div>
         <motion.div
-          className="pt-2 pb-5 px-5"
-          initial={{opacity: 0, y: '20%'}}
+          className="px-5 pb-5 pt-2"
+          initial={{ opacity: 0, y: "20%" }}
           animate={{
             opacity: 1,
-            y: '0%',
-            transition: {duration: 0.9, delay: 0.3},
+            y: "0%",
+            transition: { duration: 0.9, delay: 0.3 },
           }}
         >
-          <div className="text-sm font-semibold mb-3 text-black dark:text-white">
+          <div className="mb-3 text-sm font-semibold text-black dark:text-white">
             검색기록
           </div>
-          <div className="flex text-sm border-b border-gray-300/50 dark:border-dark-700 text-gray-600 dark:text-dark-500 py-3 hover:bg-primary-700 dark:hover:bg-blue-700 hover:text-white dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="dark:border-dark-700 dark:text-dark-500 hover:bg-primary-400 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:text-black dark:hover:bg-blue-700 dark:hover:text-white">
             <div className="flex-1">tailwind 설정하는 방법</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm border-b border-gray-300/50 dark:border-dark-700 text-gray-600 dark:text-dark-500 py-3 hover:bg-primary-700 dark:hover:bg-blue-700 hover:text-white dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="dark:border-dark-700 dark:text-dark-500 hover:bg-primary-400 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:text-black dark:hover:bg-blue-700 dark:hover:text-white">
             <div className="flex-1">Prisma Create Schemas</div>
             <div>22.05.23</div>
           </div>
-          <div className="flex text-sm text-gray-600 dark:text-dark-500 py-3 hover:bg-primary-700 dark:hover:bg-blue-700 hover:text-white dark:hover:text-white px-3 rounded-sm cursor-pointer">
+          <div className="dark:text-dark-500 hover:bg-primary-400 flex cursor-pointer rounded-sm px-3 py-3 text-sm text-gray-600 hover:text-black dark:hover:bg-blue-700 dark:hover:text-white">
             <div className="flex-1">postfix 메일 설정</div>
             <div>22.05.23</div>
           </div>
@@ -122,16 +122,16 @@ const SearchForm = () => {
 
       <div className="px-3 pt-2">
         <motion.div
-          className="pt-2 pb-5 px-3"
-          initial={{opacity: 0, y: '20%'}}
+          className="px-3 pb-5 pt-2"
+          initial={{ opacity: 0, y: "20%" }}
           animate={{
             opacity: 1,
-            y: '0%',
-            transition: {duration: 1.1, delay: 0.5},
+            y: "0%",
+            transition: { duration: 1.1, delay: 0.5 },
           }}
         >
           <div className="flex">
-            <div className="text-gray-500 dark:text-dark-400 hover:text-gray-800 dark:hover:text-dark-50">
+            <div className="dark:text-dark-400 dark:hover:text-dark-50 text-gray-500 hover:text-gray-800">
               <Link href="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +139,7 @@ const SearchForm = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1}
                   stroke="currentColor"
-                  className="w-5 h-5"
+                  className="h-5 w-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -150,14 +150,14 @@ const SearchForm = () => {
               </Link>
             </div>
             <div className="flex-1"></div>
-            <div className="text-gray-400 dark:text-dark-500 text-xs">
+            <div className="dark:text-dark-500 text-xs text-gray-400">
               Cookie 정책보기
             </div>
           </div>
         </motion.div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SearchForm
+export default SearchForm;

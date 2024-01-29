@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import 'styles/globals.css'
-import 'styles/tailwindcss.css'
+import "styles/globals.css";
+import "styles/tailwindcss.css";
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
   return (
-    <html className="selection:text-white selection:bg-black dark:selection:bg-primary-700 dark:selection:text-white break-keep">
+    <html className=" break-keep selection:bg-black selection:text-white dark:selection:text-white">
       <head />
       <body>
         {children}
@@ -16,5 +16,5 @@ export default function RootLayout({children}) {
         <div id="modal"></div>
       </body>
     </html>
-  )
+  );
 }

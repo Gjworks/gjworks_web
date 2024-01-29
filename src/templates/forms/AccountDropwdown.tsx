@@ -1,30 +1,30 @@
-'use client'
-import {motion} from 'framer-motion'
-import Link from 'next/link'
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const AccountDropwdown = () => {
   const innerAnimation = {
     open: {
       opacity: 1,
-      x: '0%',
+      x: "0%",
       transition: {
         duration: 0.3,
       },
     },
     close: {
       opacity: 0,
-      x: '-20%',
+      x: "-20%",
       transition: {
         duration: 0.2,
       },
     },
-  }
+  };
   return (
     <>
       <motion.div className="w-56" variants={innerAnimation}>
         <Link
           href="/auth/Signin"
-          className="block rounded px-4 py-2 text-xs hover:bg-primary-700 hover:text-white dark:hover:bg-dark-600/50 dark:text-white dark:hover:text-white backdrop-blur-lg"
+          className="hover:bg-primary-400 dark:hover:bg-dark-600/50 block rounded px-4 py-2 text-xs backdrop-blur-lg hover:text-black dark:text-white dark:hover:text-white"
         >
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -34,7 +34,7 @@ const AccountDropwdown = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1}
                 stroke="currentColor"
-                className="w-4 h-4"
+                className="h-4 w-4"
               >
                 <path
                   strokeLinecap="round"
@@ -50,7 +50,7 @@ const AccountDropwdown = () => {
       <motion.div variants={innerAnimation}>
         <Link
           href="/auth/Register"
-          className="block rounded px-4 py-2 text-xs hover:bg-primary-700 hover:text-white dark:hover:bg-dark-600/50 dark:text-white dark:hover:text-white backdrop-blur-lg"
+          className="hover:bg-primary-400 dark:hover:bg-dark-600/50 block rounded px-4 py-2 text-xs backdrop-blur-lg hover:text-black dark:text-white dark:hover:text-white"
         >
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -60,7 +60,7 @@ const AccountDropwdown = () => {
                 viewBox="0 0 24 24"
                 strokeWidth={1}
                 stroke="currentColor"
-                className="w-4 h-4"
+                className="h-4 w-4"
               >
                 <path
                   strokeLinecap="round"
@@ -75,9 +75,9 @@ const AccountDropwdown = () => {
         </Link>
       </motion.div>
 
-      <div className="block border-b border-gray-300 dark:border-dark-700 my-2 mx-3"></div>
+      <div className="dark:border-dark-700 mx-3 my-2 block border-b border-gray-300"></div>
     </>
-  )
-}
+  );
+};
 
-export default AccountDropwdown
+export default AccountDropwdown;
