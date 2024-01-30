@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 /**
  * @file Footer.js
@@ -6,10 +6,10 @@
  * @brief 레이아웃 Footer 파일
  **/
 
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import {motion} from 'framer-motion'
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const variants = {
@@ -26,7 +26,7 @@ const Footer = () => {
         staggerDirection: -1,
       },
     },
-  }
+  };
   const parentVariants = {
     onscreen: {
       y: 0,
@@ -42,31 +42,31 @@ const Footer = () => {
         duration: 0.3,
       },
     },
-  }
+  };
   return (
     <>
       <div className="px-3 pb-10 md:pb-0">
-        <div className="hidden flex-wrap gap-8 mb-6">
+        <div className="mb-6 hidden flex-wrap gap-8">
           <motion.div
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{once: false, amount: 0.3}}
-            className="flex gap-4 flex-wrap w-full lg:flex-1 order-1 lg:order-0"
+            viewport={{ once: false, amount: 0.3 }}
+            className="lg:order-0 order-1 flex w-full flex-wrap gap-4 lg:flex-1"
           >
-            <motion.div className="flex items-center gap-1 lg:gap-4 w-full flex-wrap">
+            <motion.div className="flex w-full flex-wrap items-center gap-1 lg:gap-4">
               <motion.div
                 variants={parentVariants}
-                className="flex items-center text-black dark:text-white text-xs w-full lg:w-16"
+                className="flex w-full items-center text-xs text-black lg:w-16 dark:text-white"
               >
                 Partners
               </motion.div>
-              <motion.div className="flex items-center col-span-3 lg:col-span-1">
+              <motion.div className="col-span-3 flex items-center lg:col-span-1">
                 <div className="flex gap-4">
                   <motion.div variants={parentVariants} className="">
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                      className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
                     >
                       파트너 센터
                     </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
                   <motion.div variants={parentVariants} className="">
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                      className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
                     >
                       파트너 신청
                     </Link>
@@ -82,19 +82,19 @@ const Footer = () => {
                 </div>
               </motion.div>
             </motion.div>
-            <div className="flex gap-1 lg:gap-4 w-full flex-wrap">
+            <div className="flex w-full flex-wrap gap-1 lg:gap-4">
               <motion.div
                 variants={parentVariants}
-                className="flex items-center text-black dark:text-white text-xs w-full lg:w-16"
+                className="flex w-full items-center text-xs text-black lg:w-16 dark:text-white"
               >
                 Developer
               </motion.div>
-              <motion.div className="flex items-center col-span-3 lg:col-span-1">
+              <motion.div className="col-span-3 flex items-center lg:col-span-1">
                 <div className="flex flex-wrap gap-4">
                   <motion.div variants={parentVariants}>
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                      className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
                     >
                       Documentation
                     </Link>
@@ -102,7 +102,7 @@ const Footer = () => {
                   <motion.div variants={parentVariants}>
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                      className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
                     >
                       구매내역
                     </Link>
@@ -110,7 +110,7 @@ const Footer = () => {
                   <motion.div variants={parentVariants}>
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs"
+                      className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
                     >
                       스토어
                     </Link>
@@ -118,7 +118,7 @@ const Footer = () => {
                   <motion.div variants={parentVariants}>
                     <Link
                       href="/"
-                      className="text-gray-400 dark:text-dark-400 hover:text-black dark:hover:text-white text-xs px-3"
+                      className="dark:text-dark-400 px-3 text-xs text-gray-400 hover:text-black dark:hover:text-white"
                     >
                       License
                     </Link>
@@ -131,18 +131,18 @@ const Footer = () => {
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{once: false, amount: 0.3}}
-            className="flex md:hidden items-center gap-4  order-0 lg:order-1"
+            viewport={{ once: false, amount: 0.3 }}
+            className="order-0 flex items-center gap-4  md:hidden lg:order-1"
           >
             <motion.a
               href="https://github.com/Gjworks"
               target="_blank"
-              className="group flex-1 flex justify-center cursor-pointer"
+              className="group flex flex-1 cursor-pointer justify-center"
             >
               <motion.div variants={parentVariants} className="pr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 stroke-1 fill-gray-900 group-hover:fill-gray-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
+                  className="dark:fill-dark-400 dark:group-hover:fill-dark-100 h-6 w-6 fill-gray-900 stroke-1 group-hover:fill-gray-700"
                   width="512"
                   height="512"
                   viewBox="0 0 512 512"
@@ -155,12 +155,12 @@ const Footer = () => {
             <motion.a
               href="https://twitter.com/gjworks2"
               target="_blank"
-              className="group flex-1 flex justify-center cursor-pointer"
+              className="group flex flex-1 cursor-pointer justify-center"
             >
               <motion.div variants={parentVariants} className="pr-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 stroke-1 fill-gray-900 group-hover:fill-gray-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
+                  className="dark:fill-dark-400 dark:group-hover:fill-dark-100 h-6 w-6 fill-gray-900 stroke-1 group-hover:fill-gray-700"
                   width="512"
                   height="512"
                   viewBox="0 0 512 512"
@@ -173,21 +173,21 @@ const Footer = () => {
           </motion.div>
         </div>
         {/* <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200/75 dark:via-dark-700 to-transparent"></div> */}
-        <div className="pt-8 lg:pt-5 pb-8">
+        <div className="pb-12 pt-8 lg:pt-5">
           <motion.div
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{once: false, amount: 0.3}}
+            viewport={{ once: false, amount: 0.3 }}
             className="flex flex-wrap justify-center gap-8"
           >
             <motion.div className="flex items-center lg:justify-end">
               <div className="flex flex-wrap justify-center gap-4 lg:gap-8">
                 <motion.div
-                  className="flex md:hidden items-center justify-center w-full lg:w-auto order-4 md:order-1 pt-5 md:pt-0"
+                  className="order-4 flex w-full items-center justify-center pt-5 md:order-1 md:hidden md:pt-0 lg:w-auto"
                   variants={parentVariants}
                 >
-                  <div className="text-xs text-gray-700 dark:text-dark-200 text-center lg:text-left">
+                  <div className="dark:text-dark-200 text-center text-xs text-gray-700 lg:text-left">
                     ⓒ 지제이웍스
                   </div>
                 </motion.div>
@@ -197,7 +197,7 @@ const Footer = () => {
                 >
                   <Link
                     href="/about"
-                    className="text-gray-950 dark:text-dark-400 hover:text-gray-400 dark:hover:text-white text-xs"
+                    className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
                   >
                     ABOUT
                   </Link>
@@ -208,7 +208,7 @@ const Footer = () => {
                 >
                   <Link
                     href="/"
-                    className="text-gray-950 dark:text-dark-400 hover:text-gray-400 dark:hover:text-white text-xs"
+                    className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
                   >
                     Terms of service
                   </Link>
@@ -219,7 +219,7 @@ const Footer = () => {
                 >
                   <Link
                     href="/"
-                    className="text-gray-950 dark:text-dark-400 hover:text-gray-400 dark:hover:text-white text-xs"
+                    className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
                   >
                     Privacy policy
                   </Link>
@@ -232,14 +232,14 @@ const Footer = () => {
           variants={variants}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{once: false, amount: 0.3}}
-          className="hidden md:flex fixed -left-10 bottom-28 -rotate-90 after:h-[1px] after:w-16 after:bg-gray-950 after:absolute after:bottom-2 after:right-0 pr-20"
+          viewport={{ once: false, amount: 0.3 }}
+          className="fixed -left-12 bottom-36 hidden -rotate-90 pr-24 after:absolute after:bottom-2 after:right-0 after:h-[1px] after:w-20 after:bg-gray-950 md:flex"
         >
           <motion.div
-            className="flex items-center justify-center w-full lg:w-auto"
+            className="flex w-full items-center justify-center lg:w-auto"
             variants={parentVariants}
           >
-            <div className="text-xs text-gray-700 dark:text-dark-200 text-center lg:text-left">
+            <div className="dark:text-dark-200 text-center text-xs text-gray-700 lg:text-left">
               ⓒ 지제이웍스
             </div>
           </motion.div>
@@ -249,18 +249,18 @@ const Footer = () => {
           variants={variants}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{once: false, amount: 0.3}}
-          className="hidden md:flex fixed right-0 bottom-16 rotate-90 items-center gap-4  order-0 lg:order-1"
+          viewport={{ once: false, amount: 0.3 }}
+          className="order-0 fixed -right-4 bottom-24 hidden rotate-90 items-center gap-4 md:flex lg:order-1"
         >
           <motion.a
             href="https://github.com/Gjworks"
             target="_blank"
-            className="group flex-1 flex justify-center cursor-pointer"
+            className="group flex flex-1 cursor-pointer justify-center"
           >
             <motion.div variants={parentVariants} className="pr-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 stroke-1 fill-gray-900 group-hover:fill-gray-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
+                className="dark:fill-dark-400 dark:group-hover:fill-dark-100 h-6 w-6 fill-gray-900 stroke-1 group-hover:fill-gray-700"
                 width="512"
                 height="512"
                 viewBox="0 0 512 512"
@@ -273,12 +273,12 @@ const Footer = () => {
           <motion.a
             href="https://twitter.com/gjworks2"
             target="_blank"
-            className="group flex-1 flex justify-center cursor-pointer"
+            className="group flex flex-1 cursor-pointer justify-center"
           >
             <motion.div variants={parentVariants} className="pr-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 stroke-1 fill-gray-900 group-hover:fill-gray-700 dark:fill-dark-400 dark:group-hover:fill-dark-100"
+                className="dark:fill-dark-400 dark:group-hover:fill-dark-100 h-6 w-6 fill-gray-900 stroke-1 group-hover:fill-gray-700"
                 width="512"
                 height="512"
                 viewBox="0 0 512 512"
@@ -291,7 +291,7 @@ const Footer = () => {
         </motion.div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

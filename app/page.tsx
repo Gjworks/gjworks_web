@@ -537,8 +537,8 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative mx-auto max-w-[2560px] overflow-hidden px-3 pb-20 pt-5 md:px-16">
-            <div className="relative flex h-auto items-center justify-center overflow-hidden rounded-2xl bg-[url('/assets/images/bg10.jpg')] bg-cover bg-center bg-no-repeat md:h-[640px]">
+          <div className="relative mx-auto max-w-[2560px] overflow-hidden px-3 pb-5 pt-5 md:px-16">
+            <div className="relative flex h-auto items-center justify-center overflow-hidden rounded-3xl bg-[url('/assets/images/bg10.jpg')] bg-cover bg-center bg-no-repeat md:h-[640px]">
               <div className="absolute inset-0 bg-gray-950/75"></div>
               <motion.div
                 initial="offscreen"
