@@ -46,4 +46,11 @@
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
+    .bg-dots {
+        background:
+            linear-gradient(90deg, #fff 15px, transparent 1%) 50%,
+            linear-gradient(#fff 15px, transparent 1%) 50%,
+            rgba(0, 0, 0, 0.24);
+        background-size: 16px 16px;
+    }
 }
