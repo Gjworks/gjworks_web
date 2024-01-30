@@ -247,18 +247,6 @@ const Header = () => {
               <div className="flex items-center">
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                  className="flex items-center lg:hidden"
-                >
-                  <Image
-                    src="/assets/images/brand/gjworks.svg"
-                    alt="gjworks logo"
-                    width="32"
-                    height="32"
-                    className="block h-8 w-8"
-                  />
-                </a>
-                <a
-                  href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="hidden items-center"
                 >
                   <div className="mr-4 flex pl-2 text-sm font-semibold lg:text-base">
@@ -286,6 +274,17 @@ const Header = () => {
             </div>
             <div className="relative col-span-1 flex justify-center">
               <div className="relative">
+                <div className="flex items-center lg:hidden">
+                  <a href={process.env.NEXT_PUBLIC_DEFAULT_URL} className="">
+                    <Image
+                      src="/assets/images/brand/gjworks.svg"
+                      alt="gjworks logo"
+                      width="32"
+                      height="32"
+                      className="block h-8 w-8"
+                    />
+                  </a>
+                </div>
                 <div
                   className="dark:bg-dark-950/75 dark:border-dark-600 dark:shadow-dark-700 relative hidden items-center justify-center rounded-full border border-gray-100 bg-white/75 px-4 py-1 shadow-lg shadow-gray-100 backdrop-blur-lg lg:flex"
                   // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
