@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import LeftPortal from 'src/components/panel/LeftPortal'
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import LeftPortal from "src/components/panel/LeftPortal";
 
 const Left = ({ state, close, children, width }) => {
-  const [panelState, setPanelState] = useState(false)
+  const [panelState, setPanelState] = useState(false);
   useEffect(() => {
-    setPanelState(state)
-  }, [state])
+    setPanelState(state);
+  }, [state]);
   // useEffect(() => {
   //   if (panelState === true) {
   //     const $body = document.querySelector('body')
@@ -22,12 +22,12 @@ const Left = ({ state, close, children, width }) => {
 
   useEffect(() => {
     if (panelState === true) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
       return () => {
-        document.body.style.overflow = 'unset'
-      }
+        document.body.style.overflow = "unset";
+      };
     }
-  }, [panelState])
+  }, [panelState]);
 
   const variants = {
     openPanel: {
@@ -35,40 +35,40 @@ const Left = ({ state, close, children, width }) => {
       transition: { duration: 0.3 },
     },
     closePanel: {
-      marginRight: '100%',
+      marginRight: "100%",
       transition: { duration: 0.3 },
     },
-  }
+  };
   const exit = {
-    marginRight: '100%',
+    marginRight: "100%",
     transition: { duration: 0.3 },
-  }
+  };
   const handleClosePanel = () => {
-    close(false)
-  }
+    close(false);
+  };
   return (
     <>
       <AnimatePresence>
         {state && (
           <LeftPortal>
-            <motion.div className="fixed inset-0 transform overflow-auto bg-transition z-90">
+            <motion.div className="bg-transition z-90 fixed inset-0 transform overflow-auto">
               <div
-                className="absolute inset-0 z-99  bg-gray-800/20"
+                className="z-99 absolute inset-0  bg-gray-800/20"
                 onClick={handleClosePanel}
               ></div>
               <motion.div
-                initial={{ width: '320px', marginLeft: '-320px' }}
+                initial={{ width: "275px", marginLeft: "-275px" }}
                 animate={{
-                  width: '320px',
+                  width: "275px",
                   marginLeft: 0,
                   transition: { duration: 0.3 },
                 }}
                 exit={{
-                  width: '320px',
-                  marginLeft: '-320px',
+                  width: "275px",
+                  marginLeft: "-275px",
                   transition: { duration: 0.3 },
                 }}
-                className="fixed h-screen z-100 bg-white/50 dark:bg-dark-100/10 overflow-hidden overflow-y-auto text-slate-900 dark:text-white backdrop-blur-md dark:backdrop-blur-md shadow-xl shadow-slate-300 dark:shadow-slate-900"
+                className="z-100 dark:bg-dark-100/10 fixed h-screen overflow-hidden overflow-y-auto bg-white/50 text-slate-900 shadow-xl shadow-slate-300 backdrop-blur-md dark:text-white dark:shadow-slate-900 dark:backdrop-blur-md"
               >
                 {children}
               </motion.div>
@@ -77,6 +77,6 @@ const Left = ({ state, close, children, width }) => {
         )}
       </AnimatePresence>
     </>
-  )
-}
-export default Left
+  );
+};
+export default Left;
