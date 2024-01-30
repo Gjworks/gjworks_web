@@ -288,7 +288,7 @@ const Header = () => {
               <div className="relative">
                 <div
                   className="dark:bg-dark-950/75 dark:border-dark-600 dark:shadow-dark-700 relative hidden items-center justify-center rounded-full border border-gray-100 bg-white/75 px-4 py-1 shadow-lg shadow-gray-100 backdrop-blur-lg lg:flex"
-                  onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
+                  // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                   // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
                 >
                   <a
@@ -309,9 +309,10 @@ const Header = () => {
                         <Link
                           href={data[1].route}
                           key={data[1].name}
-                          onMouseEnter={() =>
-                            setShowNavigationList(data[1].subMenu)
-                          }
+                          onMouseEnter={() => {
+                            setShowNavigation(true);
+                            setShowNavigationList(data[1].subMenu);
+                          }}
                           className={
                             "mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
                             (currentPage?.name === data[1].name
@@ -339,6 +340,36 @@ const Header = () => {
                         </Link>
                       );
                     })}
+                  <div className="flex pl-2">
+                    <Link
+                      href="/auth/Signin"
+                      className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
+                      // onClick={() => setShowDropdown(!showDropdown)}
+                    >
+                      <div className="flex items-center">
+                        <div className="p-0">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1}
+                            stroke="currentColor"
+                            className="h-5 w-5"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                            />
+                          </svg>
+                        </div>
+                        <div className="hidden items-center px-3">Account</div>
+                      </div>
+                    </Link>
+                    {/* <Dropdown state={showDropdown}>
+                      <AccountDropwdown />
+                    </Dropdown> */}
+                  </div>
                 </div>
               </div>
             </div>
