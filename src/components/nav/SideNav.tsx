@@ -38,7 +38,7 @@ const SideNav = (props) => {
           initial="offscreen"
           whileInView="onscreen"
           // initial={{ opacity: 0, x: "-50%" }}
-          className="overflow-scroll-hide dark:bg-dark-900/80 absolute bottom-0 top-0 h-full w-[275px] overflow-y-auto bg-white/80 pb-[80px]"
+          className="overflow-scroll-hide dark:bg-dark-900/80 absolute bottom-0 top-0 h-full w-[275px] overflow-y-auto bg-white/90 pb-[80px]"
         >
           <motion.div className="px-3">
             <div className="space-y-1">
@@ -150,12 +150,7 @@ const SideNav = (props) => {
               <motion.div variants={variants}>
                 <Link
                   href="/"
-                  className={
-                    "flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 lg:px-3 " +
-                    (pathname === "/"
-                      ? "bg-gray-950 text-white"
-                      : "hover:bg-gray-200 hover:text-black")
-                  }
+                  className="flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 hover:bg-gray-200 hover:text-black lg:px-3"
                 >
                   <span>
                     <svg
