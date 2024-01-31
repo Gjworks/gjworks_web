@@ -16,15 +16,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-
-      - name: Checkout source code.
-        uses: actions/checkout@main
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Next App
-        run: npm run build
-
-      - name: pm2
-        run: pm2 restart gjworks
+          script: |
+            whoami
+            cd public_html/
+            git pull origin main
+            npm install
+            npm run build
+            pm2 restart gjworks
