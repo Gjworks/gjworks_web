@@ -12,6 +12,14 @@ jobs:
       - name: Checkout source code.
         uses: actions/checkout@main
 
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+
       - name: Install Dependencies
         run: npm install
 
