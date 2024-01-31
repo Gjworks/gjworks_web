@@ -9,9 +9,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source code.
-        uses: actions/checkout@main
-
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
@@ -19,6 +16,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
+
+      - name: Checkout source code.
+        uses: actions/checkout@main
 
       - name: Install Dependencies
         run: npm install
