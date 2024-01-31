@@ -343,7 +343,7 @@ const Header = () => {
                     <div className="flex pl-2">
                       <Link
                         href="/auth/Signin"
-                        className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
+                        className="dark:text-dark-200 dark:hover:bg-dark-700 flex items-center rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
                         // onClick={() => setShowDropdown(!showDropdown)}
                       >
                         <div className="flex items-center">
@@ -354,7 +354,7 @@ const Header = () => {
                               viewBox="0 0 24 24"
                               strokeWidth={1}
                               stroke="currentColor"
-                              className="h-5 w-5"
+                              className="h-4 w-4"
                             >
                               <path
                                 strokeLinecap="round"
