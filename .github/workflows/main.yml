@@ -16,6 +16,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
+          passphrase: ${{ secrets.PASSWORD }}
           script: |
             whoami
             cd public_html/
