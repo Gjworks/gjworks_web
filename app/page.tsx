@@ -130,9 +130,7 @@ export default function Page() {
                                 />
                               </svg>
                             </span>
-                            <span className="hidden lg:flex">
-                              Get Started!!!
-                            </span>
+                            <span className="hidden lg:flex">Get Started</span>
                           </button>
                         </div>
                       </motion.div>
