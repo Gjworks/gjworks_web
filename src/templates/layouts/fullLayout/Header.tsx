@@ -208,7 +208,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          "z-101 sticky top-0  w-full bg-white/75 pt-0 backdrop-blur-lg lg:bg-transparent lg:py-3 lg:backdrop-blur-none " +
+          "z-101 sticky top-0  w-full pt-0 before:absolute before:inset-0 before:z-[-1] before:bg-white/75 before:backdrop-blur-lg lg:py-3 before:lg:bg-transparent before:lg:backdrop-blur-none " +
           (showNavigation === true ? "  " : " ")
         }
       >
@@ -285,89 +285,93 @@ const Header = () => {
                     />
                   </a>
                 </div>
-                <div
-                  className="dark:bg-dark-950/75 dark:border-dark-600 dark:shadow-dark-700 relative hidden items-center justify-center rounded-full border border-gray-100 bg-white/75 px-4 py-1 shadow-lg shadow-gray-100 backdrop-blur-lg lg:flex"
-                  // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
-                  // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
-                >
-                  <a
-                    href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                    className="flex w-16 items-center justify-center"
+                <div className="relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:bg-white/75 before:backdrop-blur-lg before:content-[''] lg:flex">
+                  <div
+                    className=" relative flex"
+                    // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
+                    // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
                   >
-                    <Image
-                      src="/assets/images/brand/gjworks.svg"
-                      alt="gjworks logo"
-                      width="32"
-                      height="32"
-                      className="block h-8 w-8"
-                    />
-                  </a>
-                  {nav.header &&
-                    Object.entries(nav.header).map((data, index) => {
-                      return (
-                        <Link
-                          href={data[1].route}
-                          key={data[1].name}
-                          onMouseEnter={() => {
-                            setShowNavigation(true);
-                            setShowNavigationList(data[1].subMenu);
-                          }}
-                          className={
-                            "mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
-                            (currentPage?.name === data[1].name
-                              ? "text-gray-400 dark:text-white"
-                              : "dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white")
-                          }
-                        >
-                          {data[1].title}
-                          {data[1].subMenu.length > 0 && (
-                            <span>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                className="h-4 w-4"
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            </span>
-                          )}
-                        </Link>
-                      );
-                    })}
-                  <div className="flex pl-2">
-                    <Link
-                      href="/auth/Signin"
-                      className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
-                      // onClick={() => setShowDropdown(!showDropdown)}
+                    <a
+                      href={process.env.NEXT_PUBLIC_DEFAULT_URL}
+                      className="flex w-16 items-center justify-center"
                     >
-                      <div className="flex items-center">
-                        <div className="p-0">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1}
-                            stroke="currentColor"
-                            className="h-5 w-5"
+                      <Image
+                        src="/assets/images/brand/gjworks.svg"
+                        alt="gjworks logo"
+                        width="32"
+                        height="32"
+                        className="block h-8 w-8"
+                      />
+                    </a>
+                    {nav.header &&
+                      Object.entries(nav.header).map((data, index) => {
+                        return (
+                          <Link
+                            href={data[1].route}
+                            key={data[1].name}
+                            onMouseEnter={() => {
+                              setShowNavigation(true);
+                              setShowNavigationList(data[1].subMenu);
+                            }}
+                            className={
+                              "mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
+                              (currentPage?.name === data[1].name
+                                ? "text-gray-400 dark:text-white"
+                                : "dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white")
+                            }
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                            />
-                          </svg>
+                            {data[1].title}
+                            {data[1].subMenu.length > 0 && (
+                              <span>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 20 20"
+                                  fill="currentColor"
+                                  className="h-4 w-4"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              </span>
+                            )}
+                          </Link>
+                        );
+                      })}
+                    <div className="flex pl-2">
+                      <Link
+                        href="/auth/Signin"
+                        className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
+                        // onClick={() => setShowDropdown(!showDropdown)}
+                      >
+                        <div className="flex items-center">
+                          <div className="p-0">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1}
+                              stroke="currentColor"
+                              className="h-5 w-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                              />
+                            </svg>
+                          </div>
+                          <div className="hidden items-center px-3">
+                            Account
+                          </div>
                         </div>
-                        <div className="hidden items-center px-3">Account</div>
-                      </div>
-                    </Link>
-                    {/* <Dropdown state={showDropdown}>
+                      </Link>
+                      {/* <Dropdown state={showDropdown}>
                       <AccountDropwdown />
                     </Dropdown> */}
+                    </div>
                   </div>
                 </div>
               </div>
