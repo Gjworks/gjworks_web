@@ -131,7 +131,7 @@ export default function Page() {
                               </svg>
                             </span>
                             <span className="hidden lg:flex">
-                              Get Started Frameworks
+                              Get Started Frameworks!
                             </span>
                           </button>
                         </div>
