@@ -273,7 +273,7 @@ const Header = () => {
               </div>
             </div>
             <div className="relative col-span-1 flex justify-center">
-              <div className="relative">
+              <div className="relative flex items-center gap-2">
                 <div className="flex items-center lg:hidden">
                   <a href={process.env.NEXT_PUBLIC_DEFAULT_URL} className="">
                     <Image
@@ -285,7 +285,7 @@ const Header = () => {
                     />
                   </a>
                 </div>
-                <div className="relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:bg-white/75 before:backdrop-blur-lg before:content-[''] lg:flex">
+                <div className="relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
                   <div
                     className=" relative flex"
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -340,39 +340,37 @@ const Header = () => {
                           </Link>
                         );
                       })}
-                    <div className="flex pl-2">
-                      <Link
-                        href="/auth/Signin"
-                        className="dark:text-dark-200 dark:hover:bg-dark-700 flex items-center rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
-                        // onClick={() => setShowDropdown(!showDropdown)}
-                      >
-                        <div className="flex items-center">
-                          <div className="p-0">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1}
-                              stroke="currentColor"
-                              className="h-4 w-4"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                              />
-                            </svg>
-                          </div>
-                          <div className="hidden items-center px-3">
-                            Account
-                          </div>
-                        </div>
-                      </Link>
-                      {/* <Dropdown state={showDropdown}>
-                      <AccountDropwdown />
-                    </Dropdown> */}
-                    </div>
                   </div>
+                </div>
+                <div className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
+                  <button
+                    // href="/auth/Signin"
+                    className="dark:text-dark-200 dark:hover:bg-dark-700 relative flex items-center rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
+                    onClick={() => setShowDropdown(!showDropdown)}
+                  >
+                    <div className="flex items-center">
+                      <div className="p-0">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth={1}
+                          stroke="currentColor"
+                          className="h-4 w-4"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                          />
+                        </svg>
+                      </div>
+                      <div className="hidden items-center px-3">Account</div>
+                    </div>
+                  </button>
+                  <Dropdown state={showDropdown}>
+                    <AccountDropwdown />
+                  </Dropdown>
                 </div>
               </div>
             </div>
