@@ -1,94 +1,90 @@
 {
-    "header" : {
-        "store" : {
-            "name": "store",
-            "title": "Store",
-            "route": "/store",
-            "image_name": "",
-            "subMenu": [
-                {
-                    "title": "스토어",
-                    "name": "store",
-                    "image_name": "",
-                    "parent": "store",
-                    "route": "/store"
-                },
-                {
-                    "title": "구매내역",
-                    "name": "buylist",
-                    "image_name": "",
-                    "parent": "store",
-                    "route": "/store/buylist"
-                },
-                {
-                    "title": "도메인 변경",
-                    "name": "storeChange",
-                    "image_name": "",
-                    "parent": "store",
-                    "route": "/store/storeChange",
-                    "description": "Create React"
-                },
-                {
-                    "title": "계산서 신청",
-                    "name": "storetax",
-                    "image_name": "",
-                    "parent": "store",
-                    "route": "/store/storetax",
-                    "description": "Create React"
-                }
-            ]
+  "header": {
+    "store": {
+      "name": "store",
+      "title": "Store",
+      "route": "/store",
+      "icon": "",
+      "subMenu": [
+        {
+          "title": "스토어",
+          "name": "store",
+          "icon": "",
+          "parent": "store",
+          "route": "/store"
         },
-        "works" : {
-            "name": "works",
-            "title": "Works",
-            "route": "/works",
-            "image_name": "",
-            "subMenu": []
+        {
+          "title": "구매내역",
+          "name": "buylist",
+          "icon": "",
+          "parent": "store",
+          "route": "/store/buylist"
         },
-        "maintenance" : {
-            "name": "maintenance",
-            "title": "Maintenance",
-            "route": "/maintenance",
-            "image_name": "",
-            "subMenu": [
-            ]
+        {
+          "title": "도메인 변경",
+          "name": "storeChange",
+          "icon": "",
+          "parent": "store",
+          "route": "/store/storeChange",
+          "description": "Create React"
         },
-        "supports" : {
-            "name": "supports",
-            "title": "Supports",
-            "route": "/supports",
-            "image_name": "",
-            "subMenu": [
-                {
-                    "title": "Supports",
-                    "name": "supports",
-                    "image_name": "",
-                    "parent": "supports",
-                    "route": "/supports"
-                },
-                {
-                    "title": "공지사항",
-                    "name": "notice",
-                    "image_name": "",
-                    "parent": "supports",
-                    "route": "/posts/notice"
-                },
-                {
-                    "title": "자주묻는 질문",
-                    "name": "faq",
-                    "image_name": "",
-                    "parent": "supports",
-                    "route": "/posts/faq"
-                }
-            ]
+        {
+          "title": "계산서 신청",
+          "name": "storetax",
+          "icon": "",
+          "parent": "store",
+          "route": "/store/storetax",
+          "description": "Create React"
         }
+      ]
     },
-    "footer" : {
-        "terms" : {
+    "works": {
+      "name": "works",
+      "title": "Works",
+      "route": "/works",
+      "icon": "",
+      "subMenu": []
+    },
+    "maintenance": {
+      "name": "maintenance",
+      "title": "Maintenance",
+      "route": "/maintenance",
+      "icon": "",
+      "subMenu": []
+    },
+    "supports": {
+      "name": "supports",
+      "title": "Supports",
+      "route": "/supports",
+      "icon": "",
+      "subMenu": [
+        {
+          "title": "Supports",
+          "name": "supports",
+          "icon": "",
+          "parent": "supports",
+          "route": "/supports"
         },
-        "privacy" : {
+        {
+          "title": "공지사항",
+          "name": "notice",
+          "icon": "",
+          "parent": "supports",
+          "route": "/posts/notice"
         },
-        "about" : {
+        {
+          "title": "자주묻는 질문",
+          "name": "faq",
+          "icon": "",
+          "parent": "supports",
+          "route": "/posts/faq"
         }
+      ]
     }
+  },
+  "footer": {
+    "terms": {},
+    "privacy": {},
+    "about": {}
+  }
 }

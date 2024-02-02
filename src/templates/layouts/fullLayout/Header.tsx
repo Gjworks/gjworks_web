@@ -213,7 +213,7 @@ const Header = () => {
         }
       >
         <div className="">
-          <div className="grid grid-cols-3 gap-4 px-5 py-2">
+          <div className="grid grid-cols-4 gap-4 px-5 py-2">
             <div className="col-span-1 flex items-center gap-2">
               <button
                 onClick={() => {
@@ -272,7 +272,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="relative col-span-1 flex justify-center">
+            <div className="relative col-span-2 flex justify-center">
               <div className="relative flex items-center gap-2">
                 <div className="flex items-center lg:hidden">
                   <a href={process.env.NEXT_PUBLIC_DEFAULT_URL} className="">
@@ -342,10 +342,10 @@ const Header = () => {
                       })}
                   </div>
                 </div>
-                <div className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
+                <div className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:border-black hover:text-white hover:shadow-gray-400 before:hover:bg-gray-700 before:hover:text-white lg:flex">
                   <button
                     // href="/auth/Signin"
-                    className="dark:text-dark-200 dark:hover:bg-dark-700 relative flex items-center rounded-md px-2 py-1 text-gray-950 hover:text-gray-700 dark:hover:text-white"
+                    className=" relative flex items-center rounded-md px-2 py-1 "
                     onClick={() => setShowDropdown(!showDropdown)}
                   >
                     <div className="flex items-center">
@@ -354,7 +354,7 @@ const Header = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
-                          strokeWidth={1}
+                          strokeWidth={1.5}
                           stroke="currentColor"
                           className="h-4 w-4"
                         >
