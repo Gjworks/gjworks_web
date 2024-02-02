@@ -16,6 +16,19 @@ const Page = () => {
           <SideNavSubTemplates />
         </div>
         <div className="col-span-12 md:col-span-8 xl:col-span-9">
+          <div className="flex items-center justify-center py-10">
+            <div className="flex gap-2 rounded-md bg-gray-100 p-1">
+              <div className="cursor-pointer rounded-md bg-white px-3 py-2 text-xs text-black text-gray-600 shadow shadow-gray-300 hover:bg-white hover:text-black">
+                Blade Template
+              </div>
+              <div className="cursor-pointer rounded-md px-3 py-2 text-xs text-gray-600 hover:bg-gray-200 hover:text-black">
+                Blade Template
+              </div>
+              <div className="cursor-pointer rounded-md px-3 py-2 text-xs text-gray-600 hover:bg-gray-200 hover:text-black">
+                Blade Template
+              </div>
+            </div>
+          </div>
           <Accordion>
             {[...Array(3)].map((_, i) => (
               <AccordionItem key={i}>

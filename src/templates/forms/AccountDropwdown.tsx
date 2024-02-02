@@ -24,7 +24,7 @@ const AccountDropwdown = () => {
       <motion.div className="w-56" variants={innerAnimation}>
         <Link
           href="/auth/Signin"
-          className="hover:bg-primary-400 dark:hover:bg-dark-600/50 block rounded bg-transparent px-4 py-2 text-xs hover:text-black dark:text-white dark:hover:text-white"
+          className="hover:bg-primary-400 dark:hover:bg-dark-600/50 block rounded bg-transparent px-4 py-2 text-xs text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
         >
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -50,7 +50,7 @@ const AccountDropwdown = () => {
       <motion.div variants={innerAnimation}>
         <Link
           href="/auth/Register"
-          className="hover:bg-primary-400 dark:hover:bg-dark-600/50 block rounded bg-transparent px-4 py-2 text-xs hover:text-black dark:text-white dark:hover:text-white"
+          className="hover:bg-primary-400 dark:hover:bg-dark-600/50 block rounded bg-transparent px-4 py-2 text-xs text-gray-800 hover:text-black dark:text-white dark:hover:text-white"
         >
           <div className="flex justify-between">
             <div className="flex items-center">
@@ -75,7 +75,7 @@ const AccountDropwdown = () => {
         </Link>
       </motion.div>
 
-      <div className="dark:border-dark-700 mx-3 my-2 block border-b border-gray-300"></div>
+      <div className="dark:border-dark-700 mx-3 my-2 block border-b border-gray-200/75"></div>
     </>
   );
 };
