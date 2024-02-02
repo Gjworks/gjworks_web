@@ -4,7 +4,17 @@ import { AnimatePresence, motion } from "framer-motion";
 const AccordionContext = React.createContext({});
 const useAccordion = () => React.useContext(AccordionContext);
 
-const Accordion = ({ children, multiple, defaultIndex }) => {
+interface AccordionEmployee {
+  children?: any;
+  multiple?: any;
+  defaultIndex?: any;
+}
+
+const Accordion = ({
+  children,
+  multiple,
+  defaultIndex,
+}: AccordionEmployee): JSX.Element => {
   const [activeIndex, setActiveIndex] = React.useState(
     multiple ? [defaultIndex] : defaultIndex,
   );
@@ -40,9 +50,14 @@ const Accordion = ({ children, multiple, defaultIndex }) => {
 function AccordionItem({ children }) {
   return <div className="AccordionItem mb-3">{children}</div>;
 }
+type Employee = {
+  isActive?: any;
+  index?: any;
+  onChangeIndex?: any;
+};
 
 function AccordionHeader({ children, classname }) {
-  const { isActive, index, onChangeIndex } = useAccordion();
+  const { isActive, index, onChangeIndex }: Employee = useAccordion();
 
   return (
     <motion.div
@@ -54,7 +69,8 @@ function AccordionHeader({ children, classname }) {
   );
 }
 function AccordionPanel({ children, classname }) {
-  const { isActive } = useAccordion();
+  let isActive: any;
+  isActive = useAccordion();
 
   return (
     <AnimatePresence initial={false}>
