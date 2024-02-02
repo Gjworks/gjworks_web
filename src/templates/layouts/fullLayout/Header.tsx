@@ -20,7 +20,7 @@ import { motion } from "framer-motion";
 
 export type NavType = {
   name: string;
-  image_name: string;
+  icon: string;
   title: string;
   parent: string;
   route: string;

@@ -25,16 +25,14 @@
           "name": "storeChange",
           "icon": "",
           "parent": "store",
-          "route": "/store/storeChange",
-          "description": "Create React"
+          "route": "/store/storeChange"
         },
         {
           "title": "계산서 신청",
           "name": "storetax",
           "icon": "",
           "parent": "store",
-          "route": "/store/storetax",
-          "description": "Create React"
+          "route": "/store/storetax"
         }
       ]
     },
