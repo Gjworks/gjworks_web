@@ -53,4 +53,11 @@
             rgba(0, 0, 0, 0.24);
         background-size: 16px 16px;
     }
+    .dark .bg-dots {
+        background:
+            linear-gradient(90deg, #090b0f 15px, transparent 1%) 50%,
+            linear-gradient(#090b0f 15px, #787878 1%) 50%,
+            rgba(0, 0, 0, 0.24);
+        background-size: 16px 16px;
+    }
 }

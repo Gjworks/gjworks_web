@@ -14,10 +14,8 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
-          passphrase: ${{ secrets.PASSWORD }}
-          key: ${{ secrets.SSH_KEY }}
           script: |
             whoami
             cd public_html/

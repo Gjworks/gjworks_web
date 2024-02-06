@@ -285,7 +285,7 @@ const Header = () => {
                     />
                   </a>
                 </div>
-                <div className="relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
+                <div className="dark:border-dark-800 dark:shadow-dark-900 dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
                   <div
                     className=" relative flex"
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
