@@ -310,8 +310,9 @@ const Header = () => {
                             href={data[1].route}
                             key={data[1].name}
                             onMouseEnter={() => {
-                              setShowNavigation(true);
-                              setShowNavigationList(data[1].subMenu);
+                              //   setShowNavigation(true);
+                              showNavigation &&
+                                setShowNavigationList(data[1].subMenu);
                             }}
                             className={
                               "mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
@@ -340,6 +341,27 @@ const Header = () => {
                           </Link>
                         );
                       })}
+                    <button
+                      onClick={() => {
+                        setShowNavigation(true);
+                      }}
+                      className="flex items-center rounded-md px-3 hover:bg-gray-50"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1}
+                        stroke="currentColor"
+                        className="h-5 w-5"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25"
+                        />
+                      </svg>
+                    </button>
                   </div>
                 </div>
                 <div className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:border-black hover:text-white hover:shadow-gray-400 before:hover:bg-gray-700 before:hover:text-white lg:flex">
