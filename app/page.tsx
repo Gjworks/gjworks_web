@@ -84,7 +84,7 @@ export default function Page() {
                           variants={variants}
                           className="mb-5 px-1  lg:mb-2"
                         >
-                          <div className="flex flex-wrap gap-2 text-5xl font-semibold !leading-tight tracking-tighter text-black md:text-6xl lg:gap-0 dark:text-white">
+                          <div className="text-primary-500 flex flex-wrap gap-2 text-5xl font-semibold !leading-tight tracking-tighter md:text-6xl lg:gap-0 dark:text-white">
                             Building digital experience
                           </div>
                         </motion.div>

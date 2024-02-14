@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="bg-primary-400 dark:bg-primary-700 hover:bg-primary-500 dark:hover:bg-primary-600 flex cursor-pointer rounded-full px-3 py-1 text-xs text-black hover:text-black dark:text-black dark:hover:text-white">
+            <div className="bg-primary-500 dark:bg-primary-700 hover:bg-primary-500 dark:hover:bg-primary-600 flex cursor-pointer rounded-full px-3 py-1 text-xs text-white hover:text-white dark:text-white dark:hover:text-white">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="dark:bg-primary-800 hover:bg-primary-400 dark:hover:bg-primary-600 hover:black flex cursor-pointer rounded-full bg-gray-300 px-3 py-1 text-xs text-gray-700 dark:text-white dark:hover:text-white">
+            <div className="dark:bg-primary-800 hover:bg-primary-500 dark:hover:bg-primary-600 flex cursor-pointer rounded-full bg-gray-300 px-3 py-1 text-xs text-gray-700 hover:text-white dark:text-white dark:hover:text-white">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
@@ -105,15 +105,15 @@ const SearchForm = () => {
           <div className="mb-3 text-sm font-semibold text-black dark:text-white">
             검색기록
           </div>
-          <div className="dark:border-dark-700 dark:text-dark-500 hover:bg-primary-400 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:text-black dark:hover:bg-blue-700 dark:hover:text-white">
+          <div className="dark:border-dark-700 dark:text-dark-500 hover:bg-primary-500 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:text-white dark:hover:bg-blue-700 dark:hover:text-white">
             <div className="flex-1">tailwind 설정하는 방법</div>
             <div>22.05.23</div>
           </div>
-          <div className="dark:border-dark-700 dark:text-dark-500 hover:bg-primary-400 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:text-black dark:hover:bg-blue-700 dark:hover:text-white">
+          <div className="dark:border-dark-700 dark:text-dark-500 hover:bg-primary-500 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:text-white dark:hover:bg-blue-700 dark:hover:text-white">
             <div className="flex-1">Prisma Create Schemas</div>
             <div>22.05.23</div>
           </div>
-          <div className="dark:text-dark-500 hover:bg-primary-400 flex cursor-pointer rounded-sm px-3 py-3 text-sm text-gray-600 hover:text-black dark:hover:bg-blue-700 dark:hover:text-white">
+          <div className="dark:text-dark-500 hover:bg-primary-500 flex cursor-pointer rounded-sm px-3 py-3 text-sm text-gray-600 hover:text-white dark:hover:bg-blue-700 dark:hover:text-white">
             <div className="flex-1">postfix 메일 설정</div>
             <div>22.05.23</div>
           </div>

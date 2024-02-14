@@ -496,7 +496,7 @@ const Header = () => {
                           <motion.div key={key} variants={variants}>
                             <Link
                               href="/store"
-                              className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block w-full text-2xl font-medium text-black dark:text-white"
+                              className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block w-full text-2xl font-medium text-black dark:text-white"
                             >
                               {list[1].title}
                             </Link>
@@ -515,19 +515,19 @@ const Header = () => {
                     </div>
                     <Link
                       href="#"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       개발문서
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       교육
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       유지보수/관리
                     </Link>
@@ -540,25 +540,25 @@ const Header = () => {
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       XE/라이믹스 스토어
                     </a>
                     <Link
                       href="#"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       도메인 등록
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       세금계산서 신청
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       파트너 신청
                     </Link>
@@ -571,7 +571,7 @@ const Header = () => {
                       href="https://github.com/gjworks"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-secondary-500 dark:hover:text-secondary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
                     >
                       Github
                     </a>

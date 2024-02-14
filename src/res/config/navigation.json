@@ -43,10 +43,10 @@
       "icon": "",
       "subMenu": []
     },
-    "maintenance": {
-      "name": "maintenance",
-      "title": "Maintenance",
-      "route": "/maintenance",
+    "service": {
+      "name": "service",
+      "title": "Service",
+      "route": "/service",
       "icon": "",
       "subMenu": []
     },
