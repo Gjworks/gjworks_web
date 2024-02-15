@@ -288,7 +288,7 @@ const Header = () => {
                     />
                   </a>
                 </div>
-                <div className="dark:border-dark-800 dark:shadow-dark-900 dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
+                <div className="dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
                   <div
                     className=" relative flex"
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -348,7 +348,7 @@ const Header = () => {
                       onClick={() => {
                         setShowNavigation(true);
                       }}
-                      className="flex items-center rounded-md px-3 hover:bg-gray-50"
+                      className="flex items-center rounded-md px-3 hover:bg-gray-100"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -367,11 +367,13 @@ const Header = () => {
                     </button>
                   </div>
                 </div>
-                <div className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 shadow-lg shadow-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:border-black hover:text-white hover:shadow-gray-400 before:hover:bg-gray-700 before:hover:text-white lg:flex">
-                  <button
+                <button
+                  onClick={() => setShowDropdown(!showDropdown)}
+                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-black hover:text-white hover:shadow-gray-400 before:hover:bg-gray-700 before:hover:text-white lg:flex"
+                >
+                  <div
                     // href="/auth/Signin"
                     className=" relative flex items-center rounded-md px-2 py-1 "
-                    onClick={() => setShowDropdown(!showDropdown)}
                   >
                     <div className="flex items-center">
                       <div className="p-0">
@@ -392,11 +394,11 @@ const Header = () => {
                       </div>
                       <div className="hidden items-center px-3">Account</div>
                     </div>
-                  </button>
+                  </div>
                   <Dropdown state={showDropdown}>
                     <AccountDropwdown />
                   </Dropdown>
-                </div>
+                </button>
               </div>
             </div>
             <div className="relative col-span-1 flex items-center justify-end gap-2">
