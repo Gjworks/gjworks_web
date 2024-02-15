@@ -288,7 +288,7 @@ const Header = () => {
                     />
                   </a>
                 </div>
-                <div className="dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-100 px-4 py-1 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
+                <div className="dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-300/50 px-4 py-1 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
                   <div
                     className=" relative flex"
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -369,7 +369,7 @@ const Header = () => {
                 </div>
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
-                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-lg hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
+                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-300/50 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-lg hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
                 >
                   <div
                     // href="/auth/Signin"
