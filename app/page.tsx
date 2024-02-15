@@ -64,11 +64,11 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="bg-dots relative mx-auto max-w-[2560px] overflow-hidden pt-[116px]">
+          <div className="relative mx-auto max-w-[2560px] overflow-hidden">
             {/*  */}
-            {/* <div className="absolute inset-0 bg-dark-950/75"></div> */}
+            {/* <div className="absolute inset-0 bg-gray-950/75"></div> */}
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
-            <div className="relative mx-auto flex max-w-screen-xl items-center gap-8 pb-20 pt-10">
+            <div className="relative mx-auto flex max-w-screen-xl items-center gap-8 pb-20 pt-20">
               <div className="relative col-span-8 flex items-center justify-center py-20 lg:col-span-8">
                 <motion.div
                   variants={parentVariants}
@@ -84,7 +84,7 @@ export default function Page() {
                           variants={variants}
                           className="mb-5 px-1  lg:mb-2"
                         >
-                          <div className="text-primary-500 flex flex-wrap gap-2 text-5xl font-semibold !leading-tight tracking-tighter md:text-6xl lg:gap-0 dark:text-white">
+                          <div className="flex flex-wrap gap-2 text-5xl font-semibold !leading-tight tracking-tighter text-black md:text-6xl lg:gap-0 dark:text-white">
                             Building digital experience
                           </div>
                         </motion.div>
@@ -112,7 +112,7 @@ export default function Page() {
                             onClick={() => {
                               setShowPopup(true);
                             }}
-                            className="dark:hover:bg-primary-500 hover:bg-primary-600 flex gap-2 rounded-full bg-gray-950 px-3 py-2 text-sm text-gray-300 hover:text-white lg:px-5 lg:py-3 dark:bg-gray-300 dark:text-black dark:hover:text-black"
+                            className="dark:hover:bg-primary-500 flex gap-2 rounded-full bg-gray-950 px-3 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3 dark:bg-gray-300 dark:text-black dark:hover:text-black"
                           >
                             <span>
                               <svg

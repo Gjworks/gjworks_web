@@ -9,14 +9,9 @@ import { motion } from "framer-motion";
 import Header from "@gjworks/templates/layouts/fullLayout/Header";
 import Footer from "@gjworks/templates/layouts/fullLayout/Footer";
 import SubNav from "@gjworks/templates/layouts/containerLayout/SubNav";
-import Right from "@gjworks/components/panel/Right";
 
 const ContainerLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [showRight, setShowRight] = useState(false);
-  const closeRight = (close) => {
-    setShowRight(close);
-  };
 
   useEffect(() => {
     const updatePosition = () => {
@@ -39,18 +34,6 @@ const ContainerLayout = ({ children }) => {
       <div className="relative z-20">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-        <div
-          onClick={() => {
-            setShowRight(true);
-          }}
-          className="z-90 fixed -right-10 bottom-1/2 translate-y-1/2 cursor-pointer"
-        >
-          <motion.div className="dark:shadow-dark-700 rotate-90 overflow-hidden rounded-b-2xl bg-gradient-to-tl from-gray-500/30 via-gray-700/40 to-gray-400/70 p-[0.5px] shadow-lg shadow-gray-400/60">
-            <div className="flex h-full w-full items-center justify-center rounded-b-2xl bg-gradient-to-b from-gray-800/90 via-gray-950/75 to-gray-950/90 shadow-inner shadow-gray-500/40">
-              <div className="px-5 py-3 text-sm text-white">My Menu</div>
-            </div>
-          </motion.div>
-        </div>
         <main className="mx-auto min-h-[calc(100vh-236px)] max-w-screen-xl md:min-h-[calc(100vh-162px)]">
           <div className="flex flex-wrap gap-10">
             <div className="w-64">
@@ -94,9 +77,6 @@ const ContainerLayout = ({ children }) => {
             <Footer />
           </div>
         </footer>
-        <Right state={showRight} close={closeRight}>
-          <div className="relative z-[999] mx-auto max-w-screen-xl bg-white px-3"></div>
-        </Right>
       </div>
     </div>
   );

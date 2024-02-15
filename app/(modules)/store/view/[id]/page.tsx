@@ -8,7 +8,7 @@ const Page = () => {
           Launch Your Service. Get Started
         </div>
       </div>
-      <div className="dark:bg-dark-950/70 z-50 w-full bg-gray-50/75 backdrop-blur-lg">
+      <div className="dark:bg-dark-950/70 sticky top-0 z-50 w-full bg-white/75 backdrop-blur-lg">
         <div className="mx-auto flex max-w-screen-lg items-center justify-between gap-8 px-3 py-4">
           <div className="flex items-center gap-4">
             <div className="">
@@ -62,10 +62,10 @@ const Page = () => {
                       </div>
                     </div>
                     <div className="flex w-full items-center gap-2">
-                      <div className="bg-primary-400 hover:bg-primary-500 cursor-pointer rounded-full px-4 py-1 text-xs text-black">
+                      <div className="cursor-pointer rounded-full bg-white px-4 py-1 text-xs text-black hover:bg-gray-100">
                         150,000 원
                       </div>
-                      <div className="text-primary-400 cursor-pointer rounded-full bg-black px-4 py-1 text-xs hover:bg-gray-700">
+                      <div className="cursor-pointer rounded-full bg-black px-4 py-1 text-xs text-white hover:bg-gray-700">
                         미리보기
                       </div>
                     </div>

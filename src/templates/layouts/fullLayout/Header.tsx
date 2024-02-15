@@ -9,14 +9,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Dropdown from "src/components/dropdown/Dropdown";
-import Modal from "src/components/modal/Modal";
+
 import Left from "src/components/panel/Left";
-import SearchForm from "src/templates/forms/SearchForm";
+
 import AccountDropwdown from "src/templates/forms/AccountDropwdown";
 import SideNav from "src/components/nav/SideNav";
 import nav from "src/res/config/navigation.json";
 import page from "src/res/config/page.json";
 import { motion } from "framer-motion";
+
+import Right from "@gjworks/components/panel/Right";
+import MymenuTemplate from "@gjworks/templates/forms/MymenuTemplate";
 
 export type NavType = {
   name: string;
@@ -35,7 +38,7 @@ interface Inspage {
 
 const Header = () => {
   const pathname = usePathname();
-  const [showModal, setShowModal] = useState(false);
+
   const [showLeft, setShowLeft] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showNavigation, setShowNavigation] = useState(false);
@@ -43,7 +46,11 @@ const Header = () => {
   const [background, setBackground] = useState("");
   const [scrollPosition, setScrollPosition] = useState(0);
   const [currentPage, setCurrentPage] = useState<Inspage | undefined>();
+  const [showRight, setShowRight] = useState(false);
 
+  const closeRight = (close) => {
+    setShowRight(close);
+  };
   useEffect(() => {
     const params = pathname?.split("/");
 
@@ -62,10 +69,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", updatePosition);
   }, []);
 
-  const closeModal = (close) => {
-    setShowModal(close);
-    setBackground("bg-transparent dark:bg-transparent");
-  };
   const closeLeft = (close) => {
     setShowLeft(close);
   };
@@ -213,7 +216,7 @@ const Header = () => {
         }
       >
         <div className="">
-          <div className="grid grid-cols-4 gap-4 px-5 py-2">
+          <div className="grid grid-cols-4 gap-4 px-3 py-2 lg:px-5">
             <div className="col-span-1 flex items-center gap-2">
               <button
                 onClick={() => {
@@ -400,20 +403,21 @@ const Header = () => {
               <div className="flex items-center gap-1">
                 <button
                   className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  onClick={() => setShowModal(!showModal)}
+                  // onClick={() => setShowModal(!showModal)}
+                  onClick={() => setShowRight(true)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1.5}
+                    strokeWidth={1}
                     stroke="currentColor"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
                     />
                   </svg>
                 </button>
@@ -442,12 +446,12 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
-      <Modal state={showModal} close={closeModal}>
-        <SearchForm />
-      </Modal>
       <Left state={showLeft} close={closeLeft} width="320px">
         <SideNav />
       </Left>
+      <Right state={showRight} close={closeRight}>
+        <MymenuTemplate />
+      </Right>
       <motion.div
         initial={headerInitial}
         animate={showNavigation === true ? "open" : "close"}

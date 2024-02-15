@@ -10,16 +10,10 @@ import Header from "@gjworks/templates/layouts/fullLayout/Header";
 import Footer from "@gjworks/templates/layouts/fullLayout/Footer";
 import SubNav from "@gjworks/templates/layouts/containerLayout/SubNav";
 // import Toolbar from '@gjworks/templates/layouts/fullLayout/Toolbar'
-import Right from "@gjworks/components/panel/Right";
-
-import MymenuTemplate from "@gjworks/templates/forms/MymenuTemplate";
 
 const FullLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [showRight, setShowRight] = useState(false);
-  const closeRight = (close) => {
-    setShowRight(close);
-  };
+
   useEffect(() => {
     const updatePosition = () => {
       setScrollPosition(window.pageYOffset);
@@ -41,19 +35,6 @@ const FullLayout = ({ children }) => {
       <div className="relative z-20">
         <Header />
         <main className="min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-162px)]">
-          <SubNav />
-          <div
-            onClick={() => {
-              setShowRight(true);
-            }}
-            className="z-90 fixed -right-10 bottom-1/2 translate-y-1/2 cursor-pointer"
-          >
-            <motion.div className="dark:shadow-dark-800 rotate-90 overflow-hidden rounded-b-2xl bg-gradient-to-tl from-gray-500/30 via-gray-700/40 to-gray-400/70 p-[0.5px] shadow-lg shadow-gray-400/60">
-              <div className="flex h-full w-full items-center justify-center rounded-b-2xl bg-gradient-to-b from-gray-800/90 via-gray-950/75 to-gray-950/90 shadow-inner shadow-gray-500/40">
-                <div className="px-5 py-3 text-sm text-white">My Menu</div>
-              </div>
-            </motion.div>
-          </div>
           {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
           {children}
         </main>
@@ -87,9 +68,7 @@ const FullLayout = ({ children }) => {
             </svg>
           </motion.button>
         )} */}
-        <Right state={showRight} close={closeRight}>
-          <MymenuTemplate />
-        </Right>
+
         <footer>
           <div className="mx-auto max-w-screen-xl">
             <Footer />

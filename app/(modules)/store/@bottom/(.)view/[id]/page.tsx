@@ -64,10 +64,10 @@ const Page = () => {
                         </div>
                       </div>
                       <div className="flex w-full items-center gap-2">
-                        <div className="bg-primary-400 hover:bg-primary-500 cursor-pointer rounded-full px-4 py-1 text-xs text-black">
+                        <div className="cursor-pointer rounded-full bg-white px-4 py-1 text-xs text-black hover:bg-gray-100">
                           150,000 원
                         </div>
-                        <div className="text-primary-400 cursor-pointer rounded-full bg-black px-4 py-1 text-xs hover:bg-gray-700">
+                        <div className="cursor-pointer rounded-full bg-black px-4 py-1 text-xs text-white hover:bg-gray-700">
                           미리보기
                         </div>
                       </div>
