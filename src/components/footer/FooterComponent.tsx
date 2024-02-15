@@ -173,7 +173,7 @@ const Footer = () => {
           </motion.div>
         </div>
         {/* <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200/75 dark:via-dark-700 to-transparent"></div> */}
-        <div className="pb-12 pt-8 lg:pt-5">
+        <div className="pb-8 pt-8 lg:pt-5">
           <motion.div
             variants={variants}
             initial="offscreen"

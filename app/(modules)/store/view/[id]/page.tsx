@@ -8,7 +8,7 @@ const Page = () => {
           Launch Your Service. Get Started
         </div>
       </div>
-      <div className="dark:bg-dark-950/70 sticky top-0 z-50 w-full bg-white/75 backdrop-blur-lg">
+      <div className="dark:bg-dark-950/70 z-50 w-full">
         <div className="mx-auto flex max-w-screen-lg items-center justify-between gap-8 px-3 py-4">
           <div className="flex items-center gap-4">
             <div className="">
