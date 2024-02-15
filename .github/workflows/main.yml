@@ -15,6 +15,7 @@ jobs:
           host: 58.229.253.89
           username: gjworks
           key: ${{ secrets.PRIVATE_KEY }}
+          passphrase: ${{ secrets.PRIVATE_KEY_PASSPHRASE }}
           port: 2022
           script: |
             cd public_html/
