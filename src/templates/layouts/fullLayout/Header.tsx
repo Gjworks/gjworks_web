@@ -369,7 +369,7 @@ const Header = () => {
                 </div>
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
-                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-black hover:text-white hover:shadow-gray-400 before:hover:bg-gray-700 before:hover:text-white lg:flex"
+                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-100 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
                 >
                   <div
                     // href="/auth/Signin"
