@@ -32,8 +32,10 @@ const MainLayout = ({ children }) => {
       <div className="relative z-20">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-        <main className="min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-162px)]">
-          {children}
+        <main className="px-0 lg:px-16">
+          <div className="min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-162px)] ">
+            {children}
+          </div>
         </main>
         {/* {scrollPosition > 100 && (
           <motion.button

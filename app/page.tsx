@@ -539,7 +539,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative mx-auto max-w-[2560px] overflow-hidden px-3 pb-5 pt-5 md:px-16">
+          <div className="relative mx-auto max-w-[2560px] overflow-hidden pb-5 pt-5">
             <div className="relative flex h-[640px] items-center justify-center overflow-hidden rounded-3xl bg-[url('/assets/images/bg10.jpg')] bg-cover bg-center bg-no-repeat">
               <div className="absolute inset-0 bg-gray-950/75"></div>
               <motion.div
