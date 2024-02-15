@@ -12,7 +12,7 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@master
         with:
-          host: 58.229.253.89
+          host: gjworks.dev
           username: gjworks
           key: ${{ secrets.PRIVATE_KEY }}
           passphrase: ${{ secrets.PRIVATE_KEY_PASSPHRASE }}
