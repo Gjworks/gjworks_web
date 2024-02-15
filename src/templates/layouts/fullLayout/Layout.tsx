@@ -34,7 +34,7 @@ const FullLayout = ({ children }) => {
     <div className="">
       <div className="relative z-20">
         <Header />
-        <main className="px-3 lg:px-16">
+        <main className="px-0 lg:px-16">
           <div className="min-h-[calc(100vh-236px)] rounded-2xl bg-gray-50 md:min-h-[calc(100vh-162px)]">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
