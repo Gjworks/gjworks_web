@@ -12,23 +12,93 @@ const Page = () => {
   return (
     <>
       <div className="rounded-t-2xl">
-        <div className="mx-auto max-w-screen-xl px-3 py-6">
-          <div className="flex justify-between gap-4">
+        <div className="mx-auto px-3 py-6">
+          <div className="flex gap-4">
             <div className="flex items-center gap-2">
               <div className="text-2xl font-bold text-black dark:text-white">
                 Store
               </div>
-              <div className="dark:text-dark-400 text-lg font-semibold text-gray-700">
+              <div className="dark:text-dark-400 hidden text-lg font-semibold text-gray-700">
                 악세사리
               </div>
             </div>
+            <div className="overflow-scroll-hide relative flex flex-1 items-center overflow-hidden">
+              <div className="overflow-scroll-hide flex flex-1 overflow-hidden overflow-x-auto lg:justify-center">
+                <div className="flex gap-2">
+                  <Link
+                    href="javascript:void(0)"
+                    className="block rounded-full bg-gray-100 px-4 py-1.5 text-sm text-gray-700"
+                  >
+                    Discover
+                  </Link>
+                  <Link
+                    href="javascript:void(0)"
+                    className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
+                  >
+                    Mobile App
+                  </Link>
+                  <Link
+                    href="javascript:void(0)"
+                    className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
+                  >
+                    React
+                  </Link>
+                  <Link
+                    href="javascript:void(0)"
+                    className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
+                  >
+                    Rhymix
+                  </Link>
+                  <Link
+                    href="javascript:void(0)"
+                    className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
+                  >
+                    Web Design
+                  </Link>
+                  <Link
+                    href="javascript:void(0)"
+                    className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
+                  >
+                    Service Product
+                  </Link>
+                  <Link
+                    href="javascript:void(0)"
+                    className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
+                  >
+                    etc
+                  </Link>
+                </div>
+              </div>
+              <div className="absolute bottom-0 right-0 top-0 flex w-12 items-center justify-end bg-gradient-to-r from-transparent via-white to-white lg:hidden">
+                <Link
+                  href="javascript:void(0)"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-sm text-black hover:text-gray-950"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-4 w-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
             <div
               onClick={() => {
                 setShowPopup(true);
               }}
               className="flex gap-2"
             >
-              <button className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full bg-gray-950 px-8 py-2 text-white hover:bg-gray-700 dark:bg-white dark:text-black">
+              <button className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full bg-gray-950 px-5 py-2 text-white hover:bg-gray-700 lg:px-8 dark:bg-white dark:text-black">
                 <div className="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +106,7 @@ const Page = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1}
                     stroke="currentColor"
-                    className="h-5 w-5"
+                    className="h-4 w-4 lg:h-5 lg:w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -52,9 +122,9 @@ const Page = () => {
         </div>
       </div>
       <div className="">
-        <div className="mx-auto max-w-screen-xl px-3 pb-20 pt-8">
-          <div className="grid grid-cols-3 gap-8">
-            <div className="col-span-3 md:col-span-1">
+        <div className="mx-auto px-3 pb-20 pt-8">
+          <div className="grid gap-8 md:grid-cols-4 xl:grid-cols-4">
+            <div className="col-span-3 md:col-span-2 xl:col-span-1">
               <Link
                 href="/store/view/1"
                 className="dark:shadow-dark-950 mb-6  block h-[120px] rounded-lg bg-[url('/assets/images/bg37.jpg')] bg-cover bg-center py-20 shadow-lg shadow-gray-300"
@@ -79,7 +149,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-3 md:col-span-1">
+            <div className="col-span-3 md:col-span-2 xl:col-span-1">
               <Link
                 href="/store/view/1"
                 className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300 hover:bg-gray-200"
@@ -104,7 +174,7 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-3 md:col-span-1">
+            <div className="col-span-3 md:col-span-2 xl:col-span-1">
               <Link
                 href="/store/view/1"
                 className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300 hover:bg-gray-200"
