@@ -34,7 +34,7 @@ const ContainerLayout = ({ children }) => {
       <div className="relative z-20">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-        <main className="mx-auto min-h-[calc(100vh-236px)] max-w-screen-xl md:min-h-[calc(100vh-162px)]">
+        <main className="mx-auto min-h-[calc(100vh-236px)] max-w-screen-xl md:min-h-[calc(100vh-126px)]">
           <div className="flex flex-wrap gap-10">
             <div className="w-64">
               <SubNav />

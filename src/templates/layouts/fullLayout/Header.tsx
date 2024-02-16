@@ -211,7 +211,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          "z-101 sticky top-0  w-full pt-0 before:absolute before:inset-0 before:z-[-1] before:bg-white/75 before:backdrop-blur-lg lg:py-3 before:lg:bg-transparent before:lg:backdrop-blur-none " +
+          "z-101 sticky top-0  w-full bg-white/90 pt-0 backdrop-blur-lg" +
           (showNavigation === true ? "  " : " ")
         }
       >
@@ -288,7 +288,7 @@ const Header = () => {
                     />
                   </a>
                 </div>
-                <div className="dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full border border-gray-300/50 px-4 py-1 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:bg-white/90 before:backdrop-blur-lg before:content-[''] lg:flex">
+                <div className="dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full px-4 py-1 lg:flex">
                   <div
                     className=" relative flex"
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -367,9 +367,34 @@ const Header = () => {
                     </button>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div className="relative col-span-1 flex items-center justify-end gap-2">
+              <div className="flex items-center gap-1">
+                {/* <button
+                  className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200 hover:text-gray-900 dark:hover:text-white"
+                  // onClick={() => setShowModal(!showModal)}
+                  onClick={() => setShowRight(true)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1}
+                    stroke="currentColor"
+                    className="h-6 w-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                    />
+                  </svg>
+                </button> */}
                 <button
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full border border-gray-300/50 before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-lg hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
+                  // onClick={() => setShowDropdown(!showDropdown)}
+                  onClick={() => setShowRight(true)}
+                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-lg hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
                 >
                   <div
                     // href="/auth/Signin"
@@ -398,30 +423,6 @@ const Header = () => {
                   <Dropdown state={showDropdown}>
                     <AccountDropwdown />
                   </Dropdown>
-                </button>
-              </div>
-            </div>
-            <div className="relative col-span-1 flex items-center justify-end gap-2">
-              <div className="flex items-center gap-1">
-                <button
-                  className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200 hover:text-gray-900 dark:hover:text-white"
-                  // onClick={() => setShowModal(!showModal)}
-                  onClick={() => setShowRight(true)}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1}
-                    stroke="currentColor"
-                    className="h-6 w-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                    />
-                  </svg>
                 </button>
               </div>
               <button
@@ -502,7 +503,7 @@ const Header = () => {
                           <motion.div key={key} variants={variants}>
                             <Link
                               href="/store"
-                              className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block w-full text-2xl font-medium text-black dark:text-white"
+                              className="dark:hover:text-primary-500 mb-3 block w-full text-2xl font-medium text-black hover:text-gray-500 dark:text-white"
                             >
                               {list[1].title}
                             </Link>
@@ -521,19 +522,19 @@ const Header = () => {
                     </div>
                     <Link
                       href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       개발문서
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       교육
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       유지보수/관리
                     </Link>
@@ -546,25 +547,25 @@ const Header = () => {
                       href="#"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       XE/라이믹스 스토어
                     </a>
                     <Link
                       href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       도메인 등록
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       세금계산서 신청
                     </Link>
                     <Link
                       href="#"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       파트너 신청
                     </Link>
@@ -577,7 +578,7 @@ const Header = () => {
                       href="https://github.com/gjworks"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-primary-500 dark:hover:text-primary-500 mb-3 block text-sm text-black dark:text-white"
+                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
                     >
                       Github
                     </a>

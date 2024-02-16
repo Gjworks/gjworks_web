@@ -11,7 +11,7 @@ const Page = () => {
   };
   return (
     <>
-      <div className="rounded-t-2xl border-b border-gray-200/50">
+      <div className="rounded-t-2xl">
         <div className="mx-auto max-w-screen-xl px-3 py-6">
           <div className="flex justify-between gap-4">
             <div className="flex items-center gap-2">
@@ -51,7 +51,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-white ">
+      <div className="">
         <div className="mx-auto max-w-screen-xl px-3 pb-20 pt-8">
           <div className="grid grid-cols-3 gap-8">
             <div className="col-span-3 md:col-span-1">

@@ -32,7 +32,7 @@ module.exports = {
       current: "currentColor",
       black: "#000",
       white: "#fff",
-      gray: colors.gray,
+      gray: colors.slate,
       slate: colors.slate,
       neutral: colors.neutral,
       zinc: colors.zinc,
