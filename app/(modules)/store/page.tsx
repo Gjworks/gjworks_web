@@ -98,7 +98,7 @@ const Page = () => {
               }}
               className="flex gap-2"
             >
-              <button className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full bg-gray-950 px-5 py-2 text-white hover:bg-gray-700 lg:px-8 dark:bg-white dark:text-black">
+              <button className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full border border-gray-700 bg-white px-3 py-[1.5] text-black hover:bg-gray-950 hover:text-white hover:shadow-lg lg:px-8 lg:shadow-gray-400 dark:bg-white dark:text-black">
                 <div className="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
