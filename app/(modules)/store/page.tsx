@@ -13,17 +13,14 @@ const Page = () => {
     <>
       <div className="rounded-t-2xl">
         <div className="mx-auto px-3 py-6">
-          <div className="flex gap-4">
-            <div className="flex items-center gap-2">
+          <div className="grid grid-cols-12 gap-4">
+            <div className="col-span-2">
               <div className="text-2xl font-bold text-black dark:text-white">
                 Store
               </div>
-              <div className="dark:text-dark-400 hidden text-lg font-semibold text-gray-700">
-                악세사리
-              </div>
             </div>
-            <div className="overflow-scroll-hide relative flex flex-1 items-center overflow-hidden">
-              <div className="overflow-scroll-hide flex flex-1 overflow-hidden overflow-x-auto lg:justify-center">
+            <div className="relative col-span-8 flex items-center overflow-hidden">
+              <div className="overflow-scroll-hide flex w-full overflow-hidden overflow-x-auto lg:justify-center">
                 <div className="flex gap-2">
                   <Link
                     href="javascript:void(0)"
@@ -96,9 +93,9 @@ const Page = () => {
               onClick={() => {
                 setShowPopup(true);
               }}
-              className="flex gap-2"
+              className="col-span-2 flex justify-end gap-2"
             >
-              <button className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full border border-gray-700 bg-white px-3 py-[1.5] text-black hover:bg-gray-950 hover:text-white hover:shadow-lg lg:px-8 lg:shadow-gray-400 dark:bg-white dark:text-black">
+              <button className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full border border-gray-700 bg-black px-3 py-2 text-white hover:bg-gray-950 hover:text-white hover:shadow-lg lg:px-8 lg:shadow-gray-400 dark:bg-white dark:text-black">
                 <div className="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -123,8 +120,9 @@ const Page = () => {
       </div>
       <div className="">
         <div className="mx-auto px-3 pb-20 pt-8">
-          <div className="grid gap-8 md:grid-cols-4 xl:grid-cols-4">
-            <div className="col-span-3 md:col-span-2 xl:col-span-1">
+          {/* <div className="mx-auto mb-10 max-w-screen-md rounded-lg bg-rose-200/25 p-8"></div> */}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7">
+            <div className="col-span-1">
               <Link
                 href="/store/view/1"
                 className="dark:shadow-dark-950 mb-6  block h-[120px] rounded-lg bg-[url('/assets/images/bg37.jpg')] bg-cover bg-center py-20 shadow-lg shadow-gray-300"
@@ -144,15 +142,15 @@ const Page = () => {
 
                 <div className="flex items-center">
                   <div className="black cursor-pointer rounded-full bg-gray-950 px-4 py-1 text-xs text-white hover:bg-gray-700">
-                    구입하기
+                    구입완료
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-span-3 md:col-span-2 xl:col-span-1">
+            <div className="col-span-1">
               <Link
                 href="/store/view/1"
-                className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300 hover:bg-gray-200"
+                className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300/50 hover:bg-gray-200"
               ></Link>
               <div className="flex gap-4">
                 <div className="flex-1">
@@ -168,16 +166,16 @@ const Page = () => {
                 </div>
 
                 <div className="flex items-center">
-                  <div className="cursor-pointer rounded-full bg-gray-950 px-4 py-1 text-xs text-white hover:bg-gray-700">
+                  <div className="cursor-pointer rounded-full bg-blue-700 px-4 py-1 text-xs text-white hover:bg-blue-600">
                     구입하기
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-span-3 md:col-span-2 xl:col-span-1">
+            <div className="col-span-1">
               <Link
                 href="/store/view/1"
-                className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300 hover:bg-gray-200"
+                className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300/50 hover:bg-gray-200"
               ></Link>
               <div className="flex gap-4">
                 <div className="flex-1">
@@ -193,8 +191,8 @@ const Page = () => {
                 </div>
 
                 <div className="flex items-center">
-                  <div className="cursor-pointer rounded-full bg-gray-950 px-4 py-1 text-xs text-white hover:bg-gray-700">
-                    구입하기
+                  <div className="cursor-pointer rounded-full bg-gray-400 px-4 py-1 text-xs text-white hover:bg-gray-700">
+                    판매중지
                   </div>
                 </div>
               </div>
