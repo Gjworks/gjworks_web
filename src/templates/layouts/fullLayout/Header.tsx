@@ -394,7 +394,7 @@ const Header = () => {
                 <button
                   // onClick={() => setShowDropdown(!showDropdown)}
                   onClick={() => setShowRight(true)}
-                  className="relative hidden h-[46px] w-[46px] items-center justify-center rounded-full before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-lg hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
+                  className="relative hidden h-[38px] w-[38px] items-center justify-center rounded-full before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-lg hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
                 >
                   <div
                     // href="/auth/Signin"
@@ -408,7 +408,7 @@ const Header = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="h-4 w-4"
+                          className="h-5 w-5"
                         >
                           <path
                             strokeLinecap="round"
