@@ -64,7 +64,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative mx-auto max-w-[2560px] overflow-hidden bg-[url('/assets/images/bg10.jpg')] bg-cover bg-center bg-no-repeat lg:rounded-t-2xl">
+          <div className="relative mx-auto max-w-[2560px] overflow-hidden bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat lg:rounded-t-2xl">
             {/*  */}
             <div className="absolute inset-0 bg-gray-950/75"></div>
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
@@ -102,7 +102,7 @@ export default function Page() {
                         variants={variants}
                         className="relative mx-auto mb-6 max-w-lg py-3"
                       >
-                        <div className="dark:bg-dark-700/50 dark:border-dark-900/90 dark:border-t-dark-800 flex gap-8 rounded-full border border-gray-600/25 bg-gray-700/40 p-2 backdrop-blur-lg lg:p-3">
+                        <div className="dark:bg-dark-700/50 dark:border-dark-900/90 dark:border-t-dark-800 flex gap-8 rounded-full border border-gray-950/50 bg-gray-950/40 p-2 backdrop-blur-lg lg:p-3">
                           <div className="flex flex-1 items-center px-3">
                             <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-500">
                               Launch Your Service.
@@ -112,7 +112,7 @@ export default function Page() {
                             onClick={() => {
                               setShowPopup(true);
                             }}
-                            className="dark:hover:bg-primary-500 flex gap-2 rounded-full bg-gray-950 px-3 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3 dark:bg-gray-300 dark:text-black dark:hover:text-black"
+                            className="dark:hover:bg-primary-500 flex gap-2 rounded-full bg-white px-3 py-2 text-sm text-gray-950 hover:bg-gray-300 hover:text-black lg:px-5 lg:py-3 dark:bg-gray-300 dark:text-black dark:hover:text-black"
                           >
                             <span>
                               <svg
