@@ -369,10 +369,10 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="relative col-span-1 flex items-center justify-end gap-2">
+            <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4">
               <div className="flex items-center gap-1">
-                {/* <button
-                  className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200 hover:text-gray-900 dark:hover:text-white"
+                <button
+                  className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200/50 hover:text-gray-900 dark:hover:text-white"
                   // onClick={() => setShowModal(!showModal)}
                   onClick={() => setShowRight(true)}
                 >
@@ -380,9 +380,9 @@ const Header = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1}
+                    strokeWidth={1.25}
                     stroke="currentColor"
-                    className="h-6 w-6"
+                    className="h-5 w-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -390,36 +390,30 @@ const Header = () => {
                       d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
                     />
                   </svg>
-                </button> */}
+                </button>
                 <button
-                  // onClick={() => setShowDropdown(!showDropdown)}
-                  onClick={() => setShowRight(true)}
-                  className="relative hidden h-[38px] w-[38px] items-center justify-center rounded-full before:absolute before:inset-0 before:z-[-1] before:overflow-hidden before:rounded-full before:bg-white/90 before:backdrop-blur-lg before:content-[''] hover:cursor-pointer hover:border-gray-950 hover:text-white hover:shadow-lg hover:shadow-gray-400 before:hover:bg-gray-950 before:hover:text-white lg:flex"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                  // onClick={() => setShowRight(true)}
+                  className="dark:text-dark-200 dark:hover:bg-dark-700 dark:hover:text-wh rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200/50 hover:text-gray-900"
                 >
-                  <div
-                    // href="/auth/Signin"
-                    className=" relative flex items-center rounded-md px-2 py-1 "
-                  >
-                    <div className="flex items-center">
-                      <div className="p-0">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={1.5}
-                          stroke="currentColor"
-                          className="h-5 w-5"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                          />
-                        </svg>
-                      </div>
-                      <div className="hidden items-center px-3">Account</div>
-                    </div>
+                  <div className="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.25}
+                      stroke="currentColor"
+                      className="h-5 w-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
+                    </svg>
+                    <div className="hidden items-center px-3">Account</div>
                   </div>
+
                   <Dropdown state={showDropdown}>
                     <AccountDropwdown />
                   </Dropdown>

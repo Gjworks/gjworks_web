@@ -12,10 +12,10 @@ const Page = () => {
   return (
     <>
       <div className="rounded-t-2xl">
-        <div className="mx-auto px-3 py-6">
+        <div className="mx-auto border-b border-gray-100 px-3 py-3 lg:py-6">
           <div className="grid grid-cols-12 gap-4">
             <div className="col-span-2">
-              <div className="text-2xl font-bold text-black dark:text-white">
+              <div className="text-lg font-bold text-black lg:text-2xl dark:text-white">
                 Store
               </div>
             </div>
@@ -69,13 +69,13 @@ const Page = () => {
               <div className="absolute bottom-0 right-0 top-0 flex w-12 items-center justify-end bg-gradient-to-r from-transparent via-white to-white lg:hidden">
                 <Link
                   href="javascript:void(0)"
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-gray-200 bg-white text-sm text-black hover:text-gray-950"
+                  className="flex h-5 w-5 items-center justify-center rounded-md border border-gray-200 bg-gray-100 text-sm text-gray-400 hover:text-gray-950"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1.5}
+                    strokeWidth={1}
                     stroke="currentColor"
                     className="h-4 w-4"
                   >
@@ -95,15 +95,15 @@ const Page = () => {
               }}
               className="col-span-2 flex justify-end gap-2"
             >
-              <button className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full border border-gray-700 bg-black px-3 py-2 text-white hover:bg-gray-950 hover:text-white hover:shadow-lg lg:px-8 lg:shadow-gray-400 dark:bg-white dark:text-black">
+              <button className="flex cursor-pointer items-center gap-1 rounded-full border border-gray-200 px-3 py-1 hover:border-gray-950 lg:px-6 lg:shadow-gray-400">
                 <div className="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1}
+                    strokeWidth={1.25}
                     stroke="currentColor"
-                    className="h-4 w-4 lg:h-5 lg:w-4"
+                    className="h-4 w-4 lg:h-5 lg:w-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -112,7 +112,7 @@ const Page = () => {
                     />
                   </svg>
                 </div>
-                <div className="hidden text-sm md:flex">장바구니</div>
+                <div className="hidden text-xs md:hidden">Cart</div>
               </button>
             </div>
           </div>

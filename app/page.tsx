@@ -64,7 +64,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative mx-auto max-w-[2560px] overflow-hidden bg-[url('/assets/images/bg10.jpg')] bg-cover bg-center bg-no-repeat lg:rounded-2xl">
+          <div className="relative mx-auto max-w-[2560px] overflow-hidden bg-[url('/assets/images/bg10.jpg')] bg-cover bg-center bg-no-repeat lg:rounded-t-2xl">
             {/*  */}
             <div className="absolute inset-0 bg-gray-950/75"></div>
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
