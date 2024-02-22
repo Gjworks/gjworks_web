@@ -33,7 +33,7 @@ const MainLayout = ({ children }) => {
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main className="px-0 lg:px-16">
-          <div className="min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-126px)] ">
+          <div className="relative mx-auto min-h-[calc(100vh-236px)] max-w-[2560px] overflow-hidden rounded-2xl md:min-h-[calc(100vh-126px)] lg:rounded-t-2xl ">
             {children}
           </div>
         </main>

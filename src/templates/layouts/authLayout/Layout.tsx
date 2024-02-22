@@ -9,7 +9,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import Footer from "src/templates/layouts/authLayout/Footer";
 
 const Layout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -68,7 +67,7 @@ const Layout = ({ children }) => {
     });
   };
   return (
-    <motion.div className=" bg-dots min-h-full dark:bg-transparent ">
+    <motion.div className="min-h-full dark:bg-transparent ">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
         <motion.header

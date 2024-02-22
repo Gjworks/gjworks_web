@@ -211,7 +211,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          "z-101 sticky top-0  w-full bg-white/90 pt-0 backdrop-blur-lg" +
+          "z-101 dark:bg-dark-950/10 sticky  top-0 w-full bg-white/90 pt-0 backdrop-blur-lg" +
           (showNavigation === true ? "  " : " ")
         }
       >
@@ -370,9 +370,9 @@ const Header = () => {
               </div>
             </div>
             <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4">
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2">
                 <button
-                  className="dark:text-dark-200 dark:hover:bg-dark-700 rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200/50 hover:text-gray-900 dark:hover:text-white"
+                  className="px-2 py-2 text-gray-950 hover:text-gray-400 dark:hover:text-white"
                   // onClick={() => setShowModal(!showModal)}
                   onClick={() => setShowRight(true)}
                 >
@@ -394,16 +394,16 @@ const Header = () => {
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
                   // onClick={() => setShowRight(true)}
-                  className="dark:text-dark-200 dark:hover:bg-dark-700 dark:hover:text-wh rounded-md px-2 py-1 text-gray-950 hover:bg-gray-200/50 hover:text-gray-900"
+                  className="rounded-full border-[0.5px] border-gray-400/50 bg-white/10 px-2 py-1.5 text-black hover:border-gray-950 hover:bg-gray-900 hover:text-white lg:px-4"
                 >
                   <div className="flex items-center">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      strokeWidth={1.25}
+                      strokeWidth={1.5}
                       stroke="currentColor"
-                      className="h-5 w-5"
+                      className="h-4 w-4"
                     >
                       <path
                         strokeLinecap="round"
@@ -411,7 +411,9 @@ const Header = () => {
                         d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
                       />
                     </svg>
-                    <div className="hidden items-center px-3">Account</div>
+                    <div className="hidden items-center px-3 text-xs md:flex">
+                      Account
+                    </div>
                   </div>
 
                   <Dropdown state={showDropdown}>
