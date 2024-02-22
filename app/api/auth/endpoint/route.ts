@@ -1,12 +1,17 @@
 import { NextResponse } from "next/server";
-import { hashedPassword } from "src/lib/auth/password";
-import { PrismaClient } from "@prisma/client";
 
 export async function GET(request: Request) {}
 
 export async function HEAD(request: Request) {}
 
-export async function POST(request: Request) {}
+export async function POST(request: Request) {
+  try {
+    let formData = await request.formData();
+  } catch (error) {
+    console.error(error);
+    return new Response("fail");
+  }
+}
 
 export async function PUT(request: Request) {}
 
