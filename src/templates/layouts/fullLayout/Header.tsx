@@ -51,6 +51,9 @@ const Header = () => {
   const closeRight = (close) => {
     setShowRight(close);
   };
+  const closeDropdown = (close) => {
+    setShowDropdown(close);
+  };
   useEffect(() => {
     const params = pathname?.split("/");
 
@@ -211,7 +214,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          "z-101 dark:bg-dark-950/10 sticky  top-0 w-full bg-white/90 pt-0 backdrop-blur-lg" +
+          "z-101 dark:bg-dark-950/10 sticky  top-0 w-full bg-gray-50/90 pt-0 backdrop-blur-lg" +
           (showNavigation === true ? "  " : " ")
         }
       >
@@ -288,7 +291,7 @@ const Header = () => {
                     />
                   </a>
                 </div>
-                <div className="dark:before:bg-dark-700 relative hidden items-center justify-center overflow-hidden rounded-full px-4 py-1 lg:flex">
+                <div className="dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full px-4 py-1 lg:flex">
                   <div
                     className=" relative flex"
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -314,33 +317,18 @@ const Header = () => {
                             key={data[1].name}
                             onMouseEnter={() => {
                               //   setShowNavigation(true);
-                              showNavigation &&
-                                setShowNavigationList(data[1].subMenu);
+                              // showNavigation &&
+                              //   setShowNavigationList(data[1].subMenu);
+                              // setShowDropdown(!showDropdown);
                             }}
                             className={
-                              "mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
+                              "relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
                               (currentPage?.name === data[1].name
                                 ? "text-gray-400 dark:text-white"
                                 : "dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white")
                             }
                           >
                             {data[1].title}
-                            {data[1].subMenu.length > 0 && (
-                              <span>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  viewBox="0 0 20 20"
-                                  fill="currentColor"
-                                  className="h-4 w-4"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
-                              </span>
-                            )}
                           </Link>
                         );
                       })}
@@ -394,7 +382,7 @@ const Header = () => {
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
                   // onClick={() => setShowRight(true)}
-                  className="rounded-full border-[0.5px] border-gray-400/50 bg-white/10 px-2 py-1.5 text-black hover:border-gray-950 hover:bg-gray-900 hover:text-white lg:px-4"
+                  className="rounded-full border-[0.5px] border-gray-200 bg-white px-2 py-1.5 text-black hover:border-gray-950 hover:bg-gray-900 hover:text-white lg:px-4"
                 >
                   <div className="flex items-center">
                     <svg
@@ -416,7 +404,7 @@ const Header = () => {
                     </div>
                   </div>
 
-                  <Dropdown state={showDropdown}>
+                  <Dropdown state={showDropdown} close={closeDropdown}>
                     <AccountDropwdown />
                   </Dropdown>
                 </button>

@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import MainLayout from "@gjworks/templates/layouts/main/Layout";
 import Codehighlighte from "@gjworks/components/codehighlight/Codehighlighter";
 import Popup from "@gjworks/components/modal/Popup";
+import ArrowLine from "@gjworks/components/arrow/ArrowLine";
 
 export default function Page() {
   const [showPopup, setShowPopup] = useState(false);
@@ -536,7 +537,16 @@ export default function Page() {
               </div>
             </div>
           </div>
-
+          <div className="mx-auto max-w-screen-lg py-20">
+            <div className="grid grid-cols-2 gap-8">
+              <div className="col-span-1">
+                <div className="relative rounded-lg border border-gray-200 p-5 shadow shadow-gray-100">
+                  <div className=""></div>
+                  {/* <ArrowLine /> */}
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="relative mx-auto max-w-[2560px] overflow-hidden bg-gray-50 pb-5 pt-5">
             <div className="relative flex h-[640px] items-center justify-center overflow-hidden rounded-3xl">
               {/* <div className="absolute inset-0 bg-gray-950/75"></div> */}

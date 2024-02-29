@@ -14,17 +14,17 @@ const Page = () => {
       <div className="rounded-t-2xl">
         <div className="mx-auto border-b border-gray-100 px-3 py-3 lg:py-6">
           <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-2">
+            <div className="hidden md:col-span-2 md:flex">
               <div className="text-lg font-bold text-black lg:text-2xl dark:text-white">
                 Store
               </div>
             </div>
-            <div className="relative col-span-8 flex items-center overflow-hidden">
+            <div className="relative col-span-10 flex items-center overflow-hidden md:col-span-8">
               <div className="overflow-scroll-hide flex w-full overflow-hidden overflow-x-auto lg:justify-center">
                 <div className="flex gap-2">
                   <Link
                     href="javascript:void(0)"
-                    className="block rounded-full bg-gray-100 px-4 py-1.5 text-sm text-gray-700"
+                    className="block rounded-full bg-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-300"
                   >
                     Discover
                   </Link>
@@ -66,7 +66,7 @@ const Page = () => {
                   </Link>
                 </div>
               </div>
-              <div className="absolute bottom-0 right-0 top-0 flex w-12 items-center justify-end bg-gradient-to-r from-transparent via-white to-white lg:hidden">
+              <div className="absolute bottom-0 right-0 top-0 flex w-12 items-center justify-end bg-gradient-to-r from-transparent via-gray-50 to-gray-50 lg:hidden">
                 <Link
                   href="javascript:void(0)"
                   className="flex h-5 w-5 items-center justify-center rounded-md border border-gray-200 bg-gray-100 text-sm text-gray-400 hover:text-gray-950"
@@ -95,7 +95,7 @@ const Page = () => {
               }}
               className="col-span-2 flex justify-end gap-2"
             >
-              <button className="flex cursor-pointer items-center gap-1 rounded-full border border-gray-200 px-3 py-1 hover:border-gray-950 lg:px-6 lg:shadow-gray-400">
+              <button className="flex cursor-pointer items-center gap-1 rounded-full border border-gray-200 bg-white px-3 py-1 hover:border-gray-950 lg:px-6 lg:shadow-gray-400">
                 <div className="">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -103,7 +103,7 @@ const Page = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.25}
                     stroke="currentColor"
-                    className="h-4 w-4 lg:h-5 lg:w-5"
+                    className="h-4 w-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -112,7 +112,7 @@ const Page = () => {
                     />
                   </svg>
                 </div>
-                <div className="hidden text-xs md:hidden">Cart</div>
+                <div className=" text-xs">Cart</div>
               </button>
             </div>
           </div>
@@ -121,81 +121,81 @@ const Page = () => {
       <div className="">
         <div className="mx-auto px-3 pb-20 pt-8">
           {/* <div className="mx-auto mb-10 max-w-screen-md rounded-lg bg-rose-200/25 p-8"></div> */}
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7">
             <div className="col-span-1">
-              <Link
-                href="/store/view/1"
-                className="dark:shadow-dark-950 mb-6  block h-[120px] rounded-lg bg-[url('/assets/images/bg37.jpg')] bg-cover bg-center py-20 shadow-lg shadow-gray-300"
-              ></Link>
-              <div className="flex gap-4">
-                <div className="flex-1">
-                  <Link
-                    href="/store/view/1"
-                    className="dark:text-dark-100 mb-2 line-clamp-1 text-base font-medium text-gray-800"
-                  >
-                    지제이웍스 웹애플리케이션 디자인
-                  </Link>
-                  <div className="line-clamp-1 text-sm text-gray-400">
-                    Web Components를 최신 UI/UX 트렌드에 맞게 제공하고 있습니다.
+              <Link href="/store/view/1" className="group">
+                <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
+                <div className="px-1">
+                  <div className="mb-6 w-full">
+                    <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800">
+                      Alien: River of Pain Revisions 2.0
+                    </div>
+                    <div className="line-clamp-3 text-sm text-gray-400">
+                      The birth of Rebecca Jorden, Known to her famliy as Newt,
+                      is a cause for celebration. But as the colony grows and
+                      expands, so, too, do the Political struggles between a
+                      small be-tachment of Colonial Marines.
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex items-center">
-                  <div className="black cursor-pointer rounded-full bg-gray-950 px-4 py-1 text-xs text-white hover:bg-gray-700">
-                    구입완료
+                  <div className="flex items-center">
+                    <div className="flex cursor-pointer items-center gap-2 py-1">
+                      <div className="text-xs text-gray-950">구입하기</div>
+                      <div className="text-gray-400">+</div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="col-span-1">
-              <Link
-                href="/store/view/1"
-                className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300/50 hover:bg-gray-200"
-              ></Link>
-              <div className="flex gap-4">
-                <div className="flex-1">
-                  <Link
-                    href="/store/view/1"
-                    className="dark:text-dark-100 mb-2 line-clamp-1 text-base font-medium text-gray-800"
-                  >
-                    지제이웍스 웹애플리케이션 디자인
-                  </Link>
-                  <div className="line-clamp-1 text-sm text-gray-400">
-                    Web Components를 최신 UI/UX 트렌드에 맞게 제공하고 있습니다.
+              <Link href="/store/view/1" className="group">
+                <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg17.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
+                <div className="px-1">
+                  <div className="mb-6 w-full">
+                    <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800">
+                      Alien: River of Pain Revisions 2.0
+                    </div>
+                    <div className="line-clamp-3 text-sm text-gray-400">
+                      The birth of Rebecca Jorden, Known to her famliy as Newt,
+                      is a cause for celebration. But as the colony grows and
+                      expands, so, too, do the Political struggles between a
+                      small be-tachment of Colonial Marines.
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex items-center">
-                  <div className="cursor-pointer rounded-full bg-blue-700 px-4 py-1 text-xs text-white hover:bg-blue-600">
-                    구입하기
+                  <div className="flex items-center">
+                    <div className="flex cursor-pointer items-center gap-2 py-1">
+                      <div className="text-xs text-gray-950">구입하기</div>
+                      <div className="text-gray-400">+</div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="col-span-1">
-              <Link
-                href="/store/view/1"
-                className="dark:bg-dark-800 dark:hover:bg-dark-900 dark:shadow-dark-950 mb-6 block h-[120px] rounded-lg bg-gray-100 py-20 shadow-lg shadow-gray-300/50 hover:bg-gray-200"
-              ></Link>
-              <div className="flex gap-4">
-                <div className="flex-1">
-                  <Link
-                    href="/store/view/1"
-                    className="dark:text-dark-100 mb-2 line-clamp-1 text-base font-medium text-gray-800"
-                  >
-                    지제이웍스 웹애플리케이션 디자인
-                  </Link>
-                  <div className="line-clamp-1 text-sm text-gray-400">
-                    Web Components를 최신 UI/UX 트렌드에 맞게 제공하고 있습니다.
+              <Link href="/store/view/1" className="group">
+                <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg22.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
+                <div className="px-1">
+                  <div className="mb-6 w-full">
+                    <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800">
+                      Alien: River of Pain Revisions 2.0
+                    </div>
+                    <div className="line-clamp-3 text-sm text-gray-400">
+                      The birth of Rebecca Jorden, Known to her famliy as Newt,
+                      is a cause for celebration. But as the colony grows and
+                      expands, so, too, do the Political struggles between a
+                      small be-tachment of Colonial Marines.
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex items-center">
-                  <div className="cursor-pointer rounded-full bg-gray-400 px-4 py-1 text-xs text-white hover:bg-gray-700">
-                    판매중지
+                  <div className="flex items-center">
+                    <div className="flex cursor-pointer items-center gap-2 py-1">
+                      <div className="text-xs text-gray-950">구입하기</div>
+                      <div className="text-gray-400">+</div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
           <div className="hidden grid-cols-3 gap-8">
@@ -220,11 +220,13 @@ const Page = () => {
                   <div className="bg-dark-700 h-10 w-10 rounded-lg"></div>
                   <div className="flex-1">
                     <div className="line-clamp-1 text-base text-white">
-                      지제이웍스 웹애플리케이션 디자인
+                      Alien: River of Pain Revisions 2.0
                     </div>
                     <div className="text-dark-400 line-clamp-1 text-sm">
-                      Web Components를 최신 UI/UX 트렌드에 맞게 제공하고
-                      있습니다.
+                      The birth of Rebecca Jorden, Known to her famliy as Newt,
+                      is a cause for celebration. But as the colony grows and
+                      expands, so, too, do the Political struggles between a
+                      small be-tachment of Colonial Marines.
                     </div>
                   </div>
                   <div className="dark:bg-dark-700 flex items-center rounded-full bg-slate-700 px-5 py-1 text-sm text-sky-400">
@@ -254,8 +256,10 @@ const Page = () => {
                       지제이웍스 웹애플리케이션 플러그인
                     </div>
                     <div className="text-dark-400 line-clamp-1 text-sm">
-                      Web Components를 최신 UI/UX 트렌드에 맞게 제공하고
-                      있습니다.
+                      The birth of Rebecca Jorden, Known to her famliy as Newt,
+                      is a cause for celebration. But as the colony grows and
+                      expands, so, too, do the Political struggles between a
+                      small be-tachment of Colonial Marines.
                     </div>
                   </div>
                   <div className="dark:bg-dark-700 flex items-center rounded-full bg-slate-700 px-5 py-1 text-sm text-sky-400">
@@ -285,8 +289,10 @@ const Page = () => {
                       지제이웍스 웹애플리케이션 애드온
                     </div>
                     <div className="text-dark-400 line-clamp-1 text-sm">
-                      Web Components를 최신 UI/UX 트렌드에 맞게 제공하고
-                      있습니다.
+                      The birth of Rebecca Jorden, Known to her famliy as Newt,
+                      is a cause for celebration. But as the colony grows and
+                      expands, so, too, do the Political struggles between a
+                      small be-tachment of Colonial Marines.
                     </div>
                   </div>
                   <div className="dark:bg-dark-700 flex items-center rounded-full bg-gray-700 px-5 py-1 text-sm text-sky-400">
@@ -313,7 +319,7 @@ const Page = () => {
                       href="/store/view/1"
                       className="dark:text-dark-100 mb-2 line-clamp-1 text-base font-medium text-gray-800"
                     >
-                      지제이웍스 웹애플리케이션 디자인
+                      Alien: River of Pain Revisions 2.0
                     </Link>
                     <div className="line-clamp-1 flex text-sm text-gray-400">
                       <button>제거</button>

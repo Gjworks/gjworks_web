@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const Dropdown = (props) => {
+const Dropdown = ({ state, close, children }) => {
   const [dropdownState, setDropdownState] = useState(false);
 
   const handleClickOutside = () => {
+    close(false);
     setDropdownState(false);
   };
   // const { mid } = router?.query;
@@ -17,8 +18,8 @@ const Dropdown = (props) => {
   }, []);
 
   useEffect(() => {
-    setDropdownState(props.state);
-  }, [props.state]);
+    setDropdownState(state);
+  }, [state]);
   const initial = {
     opacity: 0,
   };
@@ -53,7 +54,7 @@ const Dropdown = (props) => {
           "dark:bg-dark-950/60 dark:border-dark-700 shadow-xs absolute right-0 top-12 z-[101] mt-2 overflow-hidden rounded-md border border-gray-200 bg-white/90 p-2 shadow-lg shadow-slate-200/50 backdrop-blur-lg dark:shadow-black/50 dark:backdrop-blur-lg"
         }
       >
-        <div className="relative z-[100]">{props.children}</div>
+        <div className="relative z-[100]">{children}</div>
       </motion.div>
     </>
   );

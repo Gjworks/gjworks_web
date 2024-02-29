@@ -1,7 +1,10 @@
-"use client";
-
 import "styles/globals.css";
 import "styles/tailwindcss.css";
+
+export const metadata = {
+  title: "지제이웍스",
+  description: "Building digital experience Creative platform service",
+};
 
 export default function RootLayout({ children }) {
   return (
