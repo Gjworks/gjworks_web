@@ -3,11 +3,6 @@
 import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {motion} from 'framer-motion'
-import {getData} from './server'
-
-import Description from './description'
-
 //
 interface PageProps {
   params: {
@@ -140,7 +135,7 @@ const Page: React.FC<PageProps> = ({params}) => {
                 <div className="mb-8 text-xl text-black dark:text-white">
                   잔재된 기운
                 </div>
-                <div className="dark:text-dark-300 mb-5 text-base font-light font-light text-gray-700">
+                <div className="dark:text-dark-300 mb-5 text-base font-light text-gray-700">
                   잔재 블레이드의 요소들을 각각 뜯어보면 A급이나 S급으로 보기는
                   힘든 부족한 요소는 있어도 D급 이하의 폐급 요소는 찾아보기
                   어렵다. 딜량도 준수하고, 지속무력수치와 부위파괴 수치는 매우
