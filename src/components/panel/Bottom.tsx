@@ -81,12 +81,12 @@ const Bottom = ({children}) => {
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed bootom-1 left-1/2 -translate-x-1/2 z-101 w-full h-full"
+              className="bootom-1 z-101 fixed left-1/2 h-full w-full -translate-x-1/2"
             >
-              <div className="relative w-full flex h-10">
+              <div className="relative flex h-10 w-full">
                 <button
                   onClick={handleClosePanel}
-                  className="absolute right-3 top-1 rounded-full p-2 z-101"
+                  className="z-101 absolute right-3 top-1 rounded-full p-2"
                 >
                   <span>
                     <svg
@@ -95,7 +95,7 @@ const Bottom = ({children}) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6 text-gray-100 dark:text-white "
+                      className="h-6 w-6 text-gray-100 dark:text-white "
                     >
                       <path
                         strokeLinecap="round"
@@ -106,7 +106,7 @@ const Bottom = ({children}) => {
                   </span>
                 </button>
               </div>
-              <div className=" bg-white dark:bg-dark-950 rounded-t-xl w-full shadow-md mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto">
+              <div className=" dark:bg-dark-950 dark:border-dark-800/75 dark:border-t-dark-600/50 mx-auto h-full w-full overflow-y-auto overflow-x-hidden rounded-t-xl bg-white shadow-md backdrop-blur-lg dark:border">
                 {children}
               </div>
             </motion.div>
@@ -118,7 +118,7 @@ const Bottom = ({children}) => {
               variants={variants2}
               exit={exit2}
               onClick={handleClosePanel}
-              className="fixed inset-0 bg-gray-950/70 dark:bg-dark-800/70 z-90 backdrop-blur-sm"
+              className="dark:bg-dark-800/70 z-90 fixed inset-0 bg-gray-950/70 backdrop-blur-sm"
             ></motion.div>
           </BottomPortal>
         )}

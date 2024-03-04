@@ -1,14 +1,14 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
+'use client'
+import React, {useState} from 'react'
+import Link from 'next/link'
 
-import Popup from "@gjworks/components/modal/Popup";
+import Popup from '@gjworks/components/modal/Popup'
 
 const Page = () => {
-  const [showPopup, setShowPopup] = useState(false);
-  const closePopup = (close) => {
-    setShowPopup(close);
-  };
+  const [showPopup, setShowPopup] = useState(false)
+  const closePopup = close => {
+    setShowPopup(close)
+  }
   return (
     <>
       <div className="rounded-t-2xl">
@@ -23,43 +23,43 @@ const Page = () => {
               <div className="overflow-scroll-hide flex w-full overflow-hidden overflow-x-auto lg:justify-center">
                 <div className="flex gap-2">
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     className="block rounded-full bg-gray-200 px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-300"
                   >
                     Discover
                   </Link>
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
                     Mobile App
                   </Link>
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
                     React
                   </Link>
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
                     Rhymix
                   </Link>
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
                     Web Design
                   </Link>
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
                     Service Product
                   </Link>
                   <Link
-                    href="javascript:void(0)"
+                    href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
                     etc
@@ -68,7 +68,7 @@ const Page = () => {
               </div>
               <div className="absolute bottom-0 right-0 top-0 flex w-12 items-center justify-end bg-gradient-to-r from-transparent via-gray-50 to-gray-50 lg:hidden">
                 <Link
-                  href="javascript:void(0)"
+                  href="#"
                   className="flex h-5 w-5 items-center justify-center rounded-md border border-gray-200 bg-gray-100 text-sm text-gray-400 hover:text-gray-950"
                 >
                   <svg
@@ -91,7 +91,7 @@ const Page = () => {
 
             <div
               onClick={() => {
-                setShowPopup(true);
+                setShowPopup(true)
               }}
               className="col-span-2 flex justify-end gap-2"
             >
@@ -338,7 +338,7 @@ const Page = () => {
         </div>
       </Popup>
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

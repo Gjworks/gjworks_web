@@ -1,7 +1,11 @@
 import DefaultLayout from '@gjworks/templates/layouts/fullLayout/Layout'
 
-const PageLayout = ({children}) => {
-  return <DefaultLayout>{children}</DefaultLayout>
+const PageLayout = ({children, bottom}) => {
+  return (
+    <DefaultLayout>
+      {children} {bottom}
+    </DefaultLayout>
+  )
 }
 
 export default PageLayout

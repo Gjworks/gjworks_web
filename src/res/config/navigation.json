@@ -1,45 +1,9 @@
 {
   "header": {
-    "store": {
-      "name": "store",
-      "title": "Store",
-      "route": "/store",
-      "icon": "",
-      "subMenu": [
-        {
-          "title": "스토어",
-          "name": "store",
-          "icon": "",
-          "parent": "store",
-          "route": "/store"
-        },
-        {
-          "title": "구매내역",
-          "name": "buylist",
-          "icon": "",
-          "parent": "store",
-          "route": "/store/buylist"
-        },
-        {
-          "title": "도메인 변경",
-          "name": "storeChange",
-          "icon": "",
-          "parent": "store",
-          "route": "/store/storeChange"
-        },
-        {
-          "title": "계산서 신청",
-          "name": "storetax",
-          "icon": "",
-          "parent": "store",
-          "route": "/store/storetax"
-        }
-      ]
-    },
     "works": {
       "name": "works",
       "title": "Works",
-      "route": "/works",
+      "route": "/posts/works",
       "icon": "",
       "subMenu": []
     },

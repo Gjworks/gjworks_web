@@ -65,7 +65,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative overflow-hidden bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat">
+          <div className="relative overflow-hidden rounded-2xl bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat">
             {/*  */}
             <div className="absolute inset-0 bg-gray-950/75"></div>
             {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
@@ -194,7 +194,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
-            className="dark:bg-dark-900/90 overflow-hidden bg-gray-100 py-16 lg:py-20"
+            className="hidden overflow-hidden py-16 lg:py-20"
           >
             <div className="relative mx-auto flex max-w-screen-xl gap-4 px-3 lg:gap-8">
               <motion.div className="dark:bg-dark-950/75 dark:shadow-dark-950 dark:border-dark-950 relative aspect-[960/520] min-h-[434px] w-[85%] flex-none cursor-pointer overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg shadow-gray-200 lg:w-[65%]">
@@ -537,18 +537,8 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <div className="mx-auto max-w-screen-lg py-20">
-            <div className="grid grid-cols-2 gap-8">
-              <div className="col-span-1">
-                <div className="relative rounded-lg border border-gray-200 p-5 shadow shadow-gray-100">
-                  <div className=""></div>
-                  {/* <ArrowLine /> */}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="relative mx-auto max-w-[2560px] overflow-hidden bg-gray-50 pb-5 pt-5">
-            <div className="relative flex h-[640px] items-center justify-center overflow-hidden rounded-3xl">
+          <div className="relative overflow-hidden pb-5 pt-5">
+            <div className="relative flex h-[640px] items-center justify-center overflow-hidden rounded-2xl">
               {/* <div className="absolute inset-0 bg-gray-950/75"></div> */}
               <motion.div
                 initial="offscreen"

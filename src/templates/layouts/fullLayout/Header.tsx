@@ -3,118 +3,118 @@
  * @author 지제이웍스 (gjworks@kakao.com)
  * @brief 설정 및 환경변수등이 저장되는 파일
  **/
-"use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import Dropdown from "src/components/dropdown/Dropdown";
+'use client'
+import React, {useState, useEffect} from 'react'
+import Link from 'next/link'
+import {usePathname} from 'next/navigation'
+import Image from 'next/image'
+import Dropdown from 'src/components/dropdown/Dropdown'
 
-import Left from "src/components/panel/Left";
+import Left from 'src/components/panel/Left'
 
-import AccountDropwdown from "src/templates/forms/AccountDropwdown";
-import SideNav from "src/components/nav/SideNav";
-import nav from "src/res/config/navigation.json";
-import page from "src/res/config/page.json";
-import { motion } from "framer-motion";
+import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
+import SideNav from 'src/components/nav/SideNav'
+import nav from 'src/res/config/navigation.json'
+import page from 'src/res/config/page.json'
+import {motion} from 'framer-motion'
 
-import Right from "@gjworks/components/panel/Right";
-import MymenuTemplate from "@gjworks/templates/forms/MymenuTemplate";
+import Right from '@gjworks/components/panel/Right'
+import MymenuTemplate from '@gjworks/templates/forms/MymenuTemplate'
 
 export type NavType = {
-  name: string;
-  icon: string;
-  title: string;
-  parent: string;
-  route: string;
-};
+  name: string
+  icon: string
+  title: string
+  parent: string
+  route: string
+}
 
 interface Inspage {
-  name: string;
-  title: string;
-  parent: string;
-  route: string;
+  name: string
+  title: string
+  parent: string
+  route: string
 }
 
 const Header = () => {
-  const pathname = usePathname();
+  const pathname = usePathname()
 
-  const [showLeft, setShowLeft] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [showNavigation, setShowNavigation] = useState(false);
-  const [showNavigationList, setShowNavigationList] = useState<NavType[]>();
-  const [background, setBackground] = useState("");
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [currentPage, setCurrentPage] = useState<Inspage | undefined>();
-  const [showRight, setShowRight] = useState(false);
+  const [showLeft, setShowLeft] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(false)
+  const [showNavigation, setShowNavigation] = useState(false)
+  const [showNavigationList, setShowNavigationList] = useState<NavType[]>()
+  const [background, setBackground] = useState('')
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const [currentPage, setCurrentPage] = useState<Inspage | undefined>()
+  const [showRight, setShowRight] = useState(false)
 
-  const closeRight = (close) => {
-    setShowRight(close);
-  };
-  const closeDropdown = (close) => {
-    setShowDropdown(close);
-  };
+  const closeRight = close => {
+    setShowRight(close)
+  }
+  const closeDropdown = close => {
+    setShowDropdown(close)
+  }
   useEffect(() => {
-    const params = pathname?.split("/");
+    const params = pathname?.split('/')
 
     if (params?.length) {
-      setCurrentPage(page[params?.[1]]);
+      setCurrentPage(page[params?.[1]])
     }
-  }, [pathname, currentPage]);
+  }, [pathname, currentPage])
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.pageYOffset);
-    };
+      setScrollPosition(window.pageYOffset)
+    }
 
-    window.addEventListener("scroll", updatePosition);
+    window.addEventListener('scroll', updatePosition)
 
-    return () => window.removeEventListener("scroll", updatePosition);
-  }, []);
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
 
-  const closeLeft = (close) => {
-    setShowLeft(close);
-  };
+  const closeLeft = close => {
+    setShowLeft(close)
+  }
   const handleClickOutside = () => {
-    setShowNavigation(false);
-  };
+    setShowNavigation(false)
+  }
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
+    document.addEventListener('click', handleClickOutside, true)
     return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
-  }, []);
+      document.removeEventListener('click', handleClickOutside, true)
+    }
+  }, [])
   useEffect(() => {
     setTimeout(() => {
-      window.addEventListener("scroll", handleScroll);
-    }, 1000);
+      window.addEventListener('scroll', handleScroll)
+    }, 1000)
     return () => {
-      window.removeEventListener("scroll", handleScroll); //clean up
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll) //clean up
+    }
+  }, [])
 
   const handleScroll = () => {
-    setShowNavigation(false);
+    setShowNavigation(false)
     // console.log('scrolled')
-  };
+  }
 
   const headerInitial = {
     opacity: 0,
     transition: {
       duration: 0.5,
     },
-  };
+  }
   const initial = {
     opacity: 0,
-    y: "0%",
+    y: '0%',
     transition: {
       duration: 0.5,
     },
-  };
+  }
   const fixedVariants = {
     open: {
       opacity: 1,
-      display: "block",
+      display: 'block',
       transition: {
         duration: 0.5,
       },
@@ -125,14 +125,14 @@ const Header = () => {
         duration: 0.5,
       },
       transitionEnd: {
-        display: "none",
+        display: 'none',
       },
     },
-  };
+  }
   const headerVariants = {
     open: {
       opacity: 1,
-      y: "0%",
+      y: '0%',
       // display: 'block',
       transition: {
         duration: 0.5,
@@ -140,7 +140,7 @@ const Header = () => {
     },
     close: {
       opacity: 0,
-      y: "-100%",
+      y: '-100%',
       transition: {
         duration: 0.5,
       },
@@ -148,23 +148,23 @@ const Header = () => {
       //   display: 'none',
       // },
     },
-  };
+  }
   const wrapVariants = {
     open: {
       opacity: 1,
-      y: "0%",
+      y: '0%',
       transition: {
         duration: 0.5,
       },
     },
     close: {
       opacity: 0,
-      y: "-100%",
+      y: '-100%',
       transition: {
         duration: 0.5,
       },
     },
-  };
+  }
   const variants = {
     // open: {
     //   opacity: 1,
@@ -186,36 +186,36 @@ const Header = () => {
     onscreen: {
       opacity: [0, 1],
       transition: {
-        y: { stiffness: 300, velocity: -100 },
+        y: {stiffness: 300, velocity: -100},
       },
     },
     offscreen: {
       opacity: 0,
       transition: {
-        y: { stiffness: 300 },
+        y: {stiffness: 300},
       },
     },
-  };
+  }
 
   const subMenuVariants = {
     onscreen: {
-      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
+      transition: {staggerChildren: 0.2, delayChildren: 0.2},
     },
     offscreen: {
-      transition: { staggerChildren: 0.2, staggerDirection: -1 },
+      transition: {staggerChildren: 0.2, staggerDirection: -1},
     },
-  };
+  }
 
-  const subNavigationView = (showNavigationList) => {
-    return <></>;
-  };
+  const subNavigationView = showNavigationList => {
+    return <></>
+  }
   return (
     <>
       <motion.header
-        transition={{ transition: { duration: 0.3 } }}
+        transition={{transition: {duration: 0.3}}}
         className={
-          "z-101 dark:bg-dark-950/10 sticky  top-0 w-full bg-gray-50/90 pt-0 backdrop-blur-lg" +
-          (showNavigation === true ? "  " : " ")
+          'z-101 dark:bg-dark-950/10 sticky  top-0 w-full bg-gray-50/90 pt-0 backdrop-blur-lg' +
+          (showNavigation === true ? '  ' : ' ')
         }
       >
         <div className="">
@@ -223,8 +223,8 @@ const Header = () => {
             <div className="col-span-1 flex items-center gap-2">
               <button
                 onClick={() => {
-                  setBackground("dark:bg-dark-950 bg-white");
-                  setShowLeft(!showLeft);
+                  setBackground('dark:bg-dark-950 bg-white')
+                  setShowLeft(!showLeft)
                 }}
                 className="group flex items-center px-2"
               >
@@ -322,19 +322,19 @@ const Header = () => {
                               // setShowDropdown(!showDropdown);
                             }}
                             className={
-                              "relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  " +
+                              'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  ' +
                               (currentPage?.name === data[1].name
-                                ? "text-gray-400 dark:text-white"
-                                : "dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white")
+                                ? 'text-gray-400 dark:text-white'
+                                : 'dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white')
                             }
                           >
                             {data[1].title}
                           </Link>
-                        );
+                        )
                       })}
                     <button
                       onClick={() => {
-                        setShowNavigation(true);
+                        setShowNavigation(true)
                       }}
                       className="flex items-center rounded-md px-3 hover:bg-gray-100"
                     >
@@ -382,7 +382,7 @@ const Header = () => {
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
                   // onClick={() => setShowRight(true)}
-                  className="rounded-full border-[0.5px] border-gray-200 bg-white px-2 py-1.5 text-black hover:border-gray-950 hover:bg-gray-900 hover:text-white lg:px-4"
+                  className="rounded-full border-[0.5px] border-gray-900 bg-gray-950 px-2 py-1.5 text-white shadow-lg shadow-gray-400/80 hover:border-gray-950 hover:bg-gray-700 hover:text-white lg:px-4"
                 >
                   <div className="flex items-center">
                     <svg
@@ -441,23 +441,23 @@ const Header = () => {
       </Right>
       <motion.div
         initial={headerInitial}
-        animate={showNavigation === true ? "open" : "close"}
+        animate={showNavigation === true ? 'open' : 'close'}
         variants={fixedVariants}
         className="z-99 fixed bottom-0 left-0 right-0 top-0 bg-gray-950/70 backdrop-blur-sm dark:bg-transparent"
       ></motion.div>
       <motion.div
         initial={headerInitial}
-        animate={showNavigation === true ? "open" : "close"}
+        animate={showNavigation === true ? 'open' : 'close'}
         variants={headerVariants}
         className="z-99 fixed left-0 right-0 top-0 "
       >
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={showNavigation === true ? "open" : "close"}
+          initial={{opacity: 0}}
+          animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
           className={
-            "z-100 dark:bg-dark-950 dark:border-dark-600/50 dark:shadow-dark-950/90 relative border-b-[0.5px] border-gray-200/50 bg-white shadow-sm shadow-gray-100/75 dark:shadow-xl " +
-            (scrollPosition > 100 ? " pt-[86px]" : " pt-[86px]")
+            'z-100 dark:bg-dark-950 dark:border-dark-600/50 dark:shadow-dark-950/90 relative border-b-[0.5px] border-gray-200/50 bg-gray-50 shadow-sm shadow-gray-100/75 dark:shadow-xl ' +
+            (scrollPosition > 100 ? ' pt-[86px]' : ' pt-[86px]')
           }
         >
           <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-5">
@@ -492,7 +492,7 @@ const Header = () => {
                               {list[1].title}
                             </Link>
                           </motion.div>
-                        );
+                        )
                       })}
                     </motion.div>
                   )}
@@ -577,7 +577,7 @@ const Header = () => {
                       <motion.div
                         whileTap={{
                           scale: 0.97,
-                          transition: { duration: 0.3 },
+                          transition: {duration: 0.3},
                         }}
                         className="from-dark-500/30 via-dark-700/40 to-dark-400/70 h-20 w-20 overflow-hidden rounded-2xl bg-gradient-to-tl p-[0.5px] shadow-md shadow-black"
                       >
@@ -619,7 +619,7 @@ const Header = () => {
         </motion.div>
       </motion.div>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
