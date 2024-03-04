@@ -4,12 +4,12 @@ import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 //
-interface PageProps {
-  params: {
-    postId: string
-  }
-}
-const Page: React.FC<PageProps> = ({params}) => {
+// interface PageProps {
+//   params: {
+//     postId: string
+//   }
+// }
+const Page = () => {
   // const [documentInfo, setDocumentInfo] = useState<{[key: string]: any}>()
 
   // let items
