@@ -3,38 +3,39 @@
  * @author 지제이웍스 (gjworks2@gmail.com)
  * @brief 레이아웃 최상위 파일
  **/
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Header from "@gjworks/templates/layouts/fullLayout/Header";
-import Footer from "@gjworks/templates/layouts/fullLayout/Footer";
-import SubNav from "@gjworks/templates/layouts/containerLayout/SubNav";
+'use client'
+import React, {useState, useEffect} from 'react'
+import {motion} from 'framer-motion'
+import Header from '@gjworks/templates/layouts/fullLayout/Header'
+import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
+import SubNav from '@gjworks/templates/layouts/fullLayout/SubNav'
 // import Toolbar from '@gjworks/templates/layouts/fullLayout/Toolbar'
 
-const FullLayout = ({ children }) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+const FullLayout = ({children}) => {
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.pageYOffset);
-    };
+      setScrollPosition(window.pageYOffset)
+    }
 
-    window.addEventListener("scroll", updatePosition);
+    window.addEventListener('scroll', updatePosition)
 
-    return () => window.removeEventListener("scroll", updatePosition);
-  }, []);
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
 
   const goToTop = () => {
     document.documentElement.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
   return (
     <div className="">
       <div className="relative z-20">
         <Header />
         <main className="h-full px-0 lg:px-16">
+          <SubNav />
           <div className="relative mx-auto h-full min-h-[calc(100vh-236px)] max-w-[2560px] overflow-hidden md:min-h-[calc(100vh-126px)]">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
@@ -78,7 +79,7 @@ const FullLayout = ({ children }) => {
         </footer>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FullLayout;
+export default FullLayout

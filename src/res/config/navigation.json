@@ -14,6 +14,13 @@
       "icon": "",
       "subMenu": []
     },
+    "docs": {
+      "name": "docs",
+      "title": "Documentation",
+      "route": "/docs",
+      "icon": "",
+      "subMenu": []
+    },
     "supports": {
       "name": "supports",
       "title": "Supports",

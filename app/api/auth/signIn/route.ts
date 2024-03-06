@@ -1,3 +1,4 @@
+import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { hashedPassword, verifyPassword } from "src/lib/auth/password";
 import { PrismaClient } from "@prisma/client";
@@ -69,7 +70,6 @@ export async function POST(request: Request) {
           {
             success: true,
             accessToken: accessToken,
-            refreshToken: refreshToken,
           },
           {
             status: 200,
@@ -77,21 +77,14 @@ export async function POST(request: Request) {
           },
         );
 
-        // response.cookies.set({
-        //   name: "refreshToken",
-        //   value: refreshToken,
-        //   httpOnly: true,
-        //   secure: true,
-        //   maxAge: 1000 * 60 * 60 * 24 * 7,
-        // });
-        response.cookies.set({
+        cookies().set({
           name: "accessToken",
           value: accessToken,
           httpOnly: true,
           secure: true,
           maxAge: 3600,
         });
-        response.cookies.set({
+        cookies().set({
           name: "refreshToken",
           value: refreshToken,
           httpOnly: true,

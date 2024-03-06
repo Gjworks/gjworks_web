@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Bottom from '@gjworks/components/panel/Bottom'
+import Image from "next/image";
+import Bottom from "@gjworks/components/panel/Bottom";
 
 const Page = () => {
   return (
@@ -25,50 +25,79 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <div className="dark:hover:bg-dark-300 flex cursor-pointer items-center gap-1 rounded-full bg-gray-950 px-8 py-2 text-white hover:bg-gray-700 dark:bg-white dark:text-black">
-              <div className="">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                  className="h-5 w-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                  />
-                </svg>
+            <div className="flex items-center gap-2 lg:gap-4">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300/75 bg-white/50">
+                <div className="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                    />
+                  </svg>
+                </div>
               </div>
-              <div className="hidden text-sm md:flex">장바구니</div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300/75 bg-white/50">
+                <div className="">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="mx-auto max-w-screen-xl px-0 pt-5 lg:px-3">
-          <div className="dark:bg-dark-600 relative h-[calc(100vh-157px)] overflow-hidden rounded-none bg-gray-100/10 bg-[url('/assets/images//bg37.jpg')] bg-cover bg-bottom bg-no-repeat lg:h-[550px] lg:rounded-2xl ">
-            <div className="absolute inset-0 z-10"></div>
-            <div className="absolute bottom-0 left-0 right-0 z-20 lg:bottom-3">
-              <div className="relative px-3 pb-3 lg:px-0">
-                <div className="dark:bg-dark-900/20 dark:from-dark-900/30 dark:via-dark-900/70 to-dark-950 mx-auto max-w-screen-md rounded-lg bg-white/20 bg-gradient-to-b p-3 backdrop-blur-lg ">
-                  <div className="flex flex-wrap gap-4 lg:gap-8">
-                    <div className="dark:shadow-dark-950/40 bg-primary-400 mx-auto -mt-12 h-20 w-20 rounded-2xl shadow-lg shadow-gray-600/30 backdrop-blur-lg md:mt-0"></div>
-                    <div className="flex w-full flex-wrap md:flex-1">
-                      <div className="w-full">
-                        <div className="line-clamp-1 text-lg font-semibold text-white dark:text-white">
-                          Dynamic Property Applications
-                        </div>
-                        <div className="dark:text-dark-500 mb-1 line-clamp-1 font-light text-gray-100">
-                          지제이웍스 웹애플리케이션
+        <div className="mx-auto max-w-[2560px] px-0 pt-5">
+          <div className="dark:bg-dark-600 relative h-[calc(100vh-157px)] overflow-hidden rounded-none bg-gray-100/10 bg-[url('/assets/images/bg15.jpg')] bg-cover bg-bottom bg-no-repeat px-3 lg:h-[750px]">
+            <div className="absolute inset-0 z-10 bg-gray-950/25"></div>
+            <div className="absolute bottom-0 left-0 right-0 z-20 leading-relaxed lg:bottom-3">
+              <div className="relative px-3 py-20 pb-3 lg:px-0">
+                <div className="mx-auto max-w-screen-md">
+                  <div className="flex flex-wrap gap-4 lg:gap-16">
+                    <div className="w-32">
+                      <div className="mb-3 text-gray-400">24. 01. 28</div>
+                      <div className="text-gray-400">
+                        React, Next.js, Prisma
+                      </div>
+                    </div>
+                    <div className="w-full md:flex-1">
+                      <div className="block overflow-hidden pb-8 text-2xl font-medium text-white md:pb-16 lg:text-4xl">
+                        <div className="line-clamp-2 ">
+                          Generally speaking if a ecommerce site as a range of
+                          product with less that a dozen categories, I like to
+                          show them right below the hero, ideally above the
+                          fold.
                         </div>
                       </div>
-                      <div className="flex w-full items-center gap-2">
-                        <div className="cursor-pointer rounded-full bg-white px-4 py-1 text-xs text-black hover:bg-gray-100">
-                          150,000 원
-                        </div>
-                        <div className="cursor-pointer rounded-full bg-black px-4 py-1 text-xs text-white hover:bg-gray-700">
-                          미리보기
+                      <div className="block overflow-hidden pb-8 text-base leading-snug text-gray-300 md:pb-16">
+                        <div className="line-clamp-3 ">
+                          I recently spent a bit of time debating image, copy,
+                          CTA for an eCommerce homepage redesign project. I
+                          tried to use another similar website to show what I'd
+                          suggest. So I designed a suggestion I'd make to
+                          improve the fenix-store.com homepage hero. It's
+                          heavily inspired by DJI/apple/B&H while still
+                          featuring the core elements of Fenix. I cut down and
+                          rearranged a bunch of stuff to make the UI more
+                          aligned with what I deem to be more modern standards.
                         </div>
                       </div>
                     </div>
@@ -430,7 +459,7 @@ const Page = () => {
         </div>
       </Bottom>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

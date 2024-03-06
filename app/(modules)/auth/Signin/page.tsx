@@ -51,7 +51,7 @@ const Signin = () => {
           console.log(data);
           localStorage.setItem("accessToken", data.accessToken);
 
-          // router.replace('/')
+          router.replace("/");
         }
       })
       .catch((error) => {

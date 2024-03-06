@@ -8,7 +8,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Header from "@gjworks/templates/layouts/fullLayout/Header";
 import Footer from "@gjworks/templates/layouts/fullLayout/Footer";
-import SubNav from "@gjworks/templates/layouts/containerLayout/SubNav";
+import SubNav from "@gjworks/templates/layouts/fullLayout/SubNav";
 
 const ContainerLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
