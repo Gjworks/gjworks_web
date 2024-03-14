@@ -1,38 +1,38 @@
-"use client";
+'use client'
 
-import React, { useEffect, useState, Suspense } from "react";
-import Link from "next/link";
+import React, {useEffect, useState, Suspense} from 'react'
+import Link from 'next/link'
 
-import BoardList from "src/components/list/BoardList";
-import PageNavigation from "src/components/nav/PageNavigation";
-import { getData } from "./server";
+import BoardList from 'src/components/list/BoardList'
+import PageNavigation from 'src/components/nav/PageNavigation'
+import {getData} from './server'
 
 interface PageProps {
   params: {
-    mid: string;
-  };
+    mid: string
+  }
 }
 
-const Page: React.FC<PageProps> = ({ params }) => {
-  const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>();
-  let items;
-  const fetchData = async (mid) => {
-    items = await getData(mid);
-    setDocumentInfo(items.data);
-  };
+const Page: React.FC<PageProps> = ({params}) => {
+  const [documentInfo, setDocumentInfo] = useState<{[key: string]: any}>()
+  let items
+  const fetchData = async mid => {
+    items = await getData(mid)
+    setDocumentInfo(items.data)
+  }
   useEffect(() => {
     // fetchData(params.mid);
-  }, []);
+  }, [])
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-12 px-3 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-7">
+      <div className="grid grid-cols-1 gap-12 px-3 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         <div className="col-span-1">
           <Link href="/posts/works/1" className="group">
             <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
             <div className="px-1">
               <div className="mb-6 w-full">
-                <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-orange-500">
+                <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-indigo-600">
                   Alien: River of Pain Revisions 2.0
                 </div>
                 <div className="line-clamp-3 text-sm text-gray-400">
@@ -58,7 +58,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
             <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg17.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
             <div className="px-1">
               <div className="mb-6 w-full">
-                <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-orange-500">
+                <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-indigo-600">
                   Alien: River of Pain Revisions 2.0
                 </div>
                 <div className="line-clamp-3 text-sm text-gray-400">
@@ -84,7 +84,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
             <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg22.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
             <div className="px-1">
               <div className="mb-6 w-full">
-                <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-orange-500">
+                <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-indigo-600">
                   Alien: River of Pain Revisions 2.0
                 </div>
                 <div className="line-clamp-3 text-sm text-gray-400">
@@ -107,7 +107,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

@@ -1,35 +1,35 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import SafariBrower from "@gjworks/components/viewer/SafariBrower";
-import { motion } from "framer-motion";
-import MainLayout from "@gjworks/templates/layouts/main/Layout";
-import Codehighlighte from "@gjworks/components/codehighlight/Codehighlighter";
-import Popup from "@gjworks/components/modal/Popup";
-import ArrowLine from "@gjworks/components/arrow/ArrowLine";
+import React, {useState} from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import SafariBrower from '@components/viewer/SafariBrower'
+import {motion} from 'framer-motion'
+import MainLayout from '@templates/layouts/main/Layout'
+import Codehighlighte from '@components/codehighlight/Codehighlighter'
+import Popup from '@components/modal/Popup'
+import ArrowLine from '@components/arrow/ArrowLine'
 
 export default function Page() {
-  const [showPopup, setShowPopup] = useState(false);
-  const closePopup = (close) => {
-    setShowPopup(close);
-  };
+  const [showPopup, setShowPopup] = useState(false)
+  const closePopup = close => {
+    setShowPopup(close)
+  }
 
-  const [showPopup2, setShowPopup2] = useState(false);
-  const closePopup2 = (close) => {
-    console.log(close);
-    setShowPopup2(close);
-  };
+  const [showPopup2, setShowPopup2] = useState(false)
+  const closePopup2 = close => {
+    console.log(close)
+    setShowPopup2(close)
+  }
 
   const parentVariants = {
     onscreen: {
-      transition: { staggerChildren: 0.2 },
+      transition: {staggerChildren: 0.2},
     },
     offscreen: {
-      transition: { staggerChildren: 0.2, staggerDirection: -1 },
+      transition: {staggerChildren: 0.2, staggerDirection: -1},
     },
-  };
+  }
   const variants = {
     onscreen: {
       y: 0,
@@ -42,7 +42,7 @@ export default function Page() {
       y: 25,
       opacity: 0,
     },
-  };
+  }
   const codeString = `import Dropdown from 'src/components/dropdown/Dropdown'
 
 <button onClick={() => setShowDropdown(!showDropdown)}>
@@ -50,7 +50,7 @@ export default function Page() {
 </button>
 <Dropdown state={showDropdown}>
   <AccountDropwdown />
-</Dropdown>`;
+</Dropdown>`
 
   return (
     <MainLayout>
@@ -64,7 +64,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <motion.div className="relative w-full">
+        <motion.div className="relative w-full px-3 lg:px-0">
           <div className="relative overflow-hidden rounded-2xl bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat">
             {/*  */}
             <div className="absolute inset-0 bg-gray-950/75"></div>
@@ -75,7 +75,7 @@ export default function Page() {
                   variants={parentVariants}
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{once: false, amount: 0.3}}
                   className="grid w-full grid-cols-12 gap-8"
                 >
                   <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
@@ -111,7 +111,7 @@ export default function Page() {
                           </div>
                           <button
                             onClick={() => {
-                              setShowPopup(true);
+                              setShowPopup(true)
                             }}
                             className="flex gap-2 rounded-full bg-white px-3 py-2 text-sm text-gray-950 hover:bg-gray-300 hover:text-black lg:px-5 lg:py-3"
                           >
@@ -179,7 +179,7 @@ export default function Page() {
                           src="/assets/images/Iphone14.png"
                           alt="Iphone14 Pro"
                           width={600}
-                          style={{ width: "100%", height: "auto" }}
+                          style={{width: '100%', height: 'auto'}}
                           height={280}
                         ></Image>
                       </motion.div>
@@ -192,7 +192,7 @@ export default function Page() {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{once: false, amount: 0.1}}
             variants={parentVariants}
             className="hidden overflow-hidden py-16 lg:py-20"
           >
@@ -270,7 +270,7 @@ export default function Page() {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.1 }}
+            viewport={{once: false, amount: 0.1}}
             variants={parentVariants}
             className="hidden pt-10"
           >
@@ -414,7 +414,7 @@ export default function Page() {
             variants={parentVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="hidden py-20"
           >
             <div className=" mx-auto max-w-screen-lg py-5 lg:py-10">
@@ -470,7 +470,7 @@ export default function Page() {
                 <motion.div
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{ once: false, amount: 0.1 }}
+                  viewport={{once: false, amount: 0.1}}
                   variants={parentVariants}
                   className="grid grid-cols-12 gap-4"
                 >
@@ -519,7 +519,7 @@ export default function Page() {
                   <motion.div
                     initial="offscreen"
                     whileInView="onscreen"
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{once: true, amount: 0.3}}
                     variants={parentVariants}
                     className="mx-auto max-w-xl"
                   >
@@ -528,7 +528,7 @@ export default function Page() {
                         src="/assets/images/mac_studio.png"
                         alt="Macbook Pro"
                         width={600}
-                        style={{ width: "100%", height: "auto" }}
+                        style={{width: '100%', height: 'auto'}}
                         height={280}
                       ></Image>
                     </motion.div>
@@ -543,7 +543,7 @@ export default function Page() {
               <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{once: false, amount: 0.3}}
                 variants={parentVariants}
                 className="px-3 py-20 xl:px-8"
               >
@@ -570,7 +570,7 @@ export default function Page() {
                 variants={parentVariants}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{ once: false, amount: 0.3 }}
+                viewport={{once: false, amount: 0.3}}
                 className="w-full"
               >
                 <motion.div
@@ -599,7 +599,7 @@ export default function Page() {
             동안 팝업이 뜨지 않을 것입니다.
             <button
               onClick={() => {
-                setShowPopup2(true);
+                setShowPopup2(true)
               }}
               className="text-primary-500 mb-5"
             >
@@ -622,5 +622,5 @@ export default function Page() {
         </div>
       </Popup>
     </MainLayout>
-  );
+  )
 }

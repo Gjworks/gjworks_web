@@ -6,10 +6,10 @@
 'use client'
 import React, {useState, useEffect} from 'react'
 import {motion} from 'framer-motion'
-import Header from '@gjworks/templates/layouts/fullLayout/Header'
-import Footer from '@gjworks/templates/layouts/fullLayout/Footer'
-import SubNav from '@gjworks/templates/layouts/fullLayout/SubNav'
-// import Toolbar from '@gjworks/templates/layouts/fullLayout/Toolbar'
+import Header from '@templates/layouts/fullLayout/Header'
+import Footer from '@templates/layouts/fullLayout/Footer'
+import SubNav from '@templates/layouts/fullLayout/SubNav'
+// import Toolbar from '@templates/layouts/fullLayout/Toolbar'
 
 const FullLayout = ({children}) => {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -72,7 +72,7 @@ const FullLayout = ({children}) => {
           </motion.button>
         )} */}
 
-        <footer>
+        <footer className="fixed left-0 right-0 bottom-0">
           <div className="mx-auto max-w-screen-xl">
             <Footer />
           </div>

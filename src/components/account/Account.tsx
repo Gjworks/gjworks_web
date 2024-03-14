@@ -14,8 +14,16 @@ const Account = () => {
       })
 
       if (response.ok) {
-        const userData = await response.json()
-        console.log('User data:', userData)
+        if (response.status === 200) {
+          const userData = await response.json()
+          if (userData.accessToken) {
+            localStorage.setItem('accessToken', userData.accessToken)
+          }
+        }
+
+        if (response.status === 401) {
+          console.log(response)
+        }
       } else {
         throw new Error('Failed to fetch user data')
       }
@@ -29,8 +37,7 @@ const Account = () => {
     const isLoggedIn = accessToken !== null
     setIsLogged(isLoggedIn)
     if (isLoggedIn && accessToken) {
-      console.log(accessToken)
-      fetchUserData(accessToken)
+      accessToken && fetchUserData(accessToken)
     }
   }, [])
   return (

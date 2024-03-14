@@ -3,8 +3,8 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 import {useRouter} from 'next/navigation'
-import Warning from '@gjworks/components/message/Warning'
-import TextInput from '@gjworks/components/form/TextInput'
+import Warning from '@components/message/Warning'
+import TextInput from '@components/form/TextInput'
 
 const Register = () => {
   const [email, setEmail] = useState<string>()

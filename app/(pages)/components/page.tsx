@@ -1,16 +1,12 @@
 'use client'
 
-import HEADER from '@gjworks/templates/layouts/fullLayout/Header'
-import Footer from 'src/components/footer/FooterComponent'
-import SearchForm from 'src/templates/forms/SearchForm'
+import HEADER from '@templates/layouts/fullLayout/Header'
+import Footer from '@components/footer/FooterComponent'
+import SearchForm from '@templates/forms/SearchForm'
 const Page = () => {
   return (
     <>
-      <div className="py-10 bg-gray-950 dark:bg-dark-900"></div>
       <div className="max-w-screen-xl mx-auto px-3 py-10 lg:py-20">
-        <div className="text-4xl font-bold text-black dark:text-white mb-10">
-          Components
-        </div>
         <div className="text-base text-slate-400 dark:text-dark-400">
           지제이웍스에서 제작한 Component들입니다. 해당 Component들을 활용해서
           template을 완성합니다.

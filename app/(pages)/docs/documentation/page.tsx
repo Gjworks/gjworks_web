@@ -1,12 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import SubNav from '@gjworks/templates/layouts/containerLayout/SubNav'
 
 const Page = () => {
   return (
     <>
-      <SubNav />
       <div className="max-w-screen-xl mx-auto px-3 pt-10 pb-10 text-dark-500">
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-3">
@@ -18,7 +16,7 @@ const Page = () => {
                 <div className="border-l-[1px] border-dark-600">
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-cyan-400 text-sm text-cyan-400 bg-gradient-to-r from-cyan-500/20 from-10% to-transparent"
                     >
                       <span>Introduce</span>
@@ -26,7 +24,7 @@ const Page = () => {
                   </div>
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>Workspace setup</span>
@@ -50,7 +48,7 @@ const Page = () => {
                   </div>
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>Installation</span>
@@ -74,7 +72,7 @@ const Page = () => {
                   </div>
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/components"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>Databases</span>
@@ -112,7 +110,7 @@ const Page = () => {
                 <div className="border-l-[1px] border-dark-600">
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>레이아웃 적용법</span>
@@ -143,7 +141,7 @@ const Page = () => {
                 <div className="border-l-[1px] border-dark-600">
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>페이지</span>
@@ -167,7 +165,7 @@ const Page = () => {
                   </div>
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>네비게이션메뉴 설정</span>
@@ -191,7 +189,7 @@ const Page = () => {
                   </div>
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>모듈 설정</span>
@@ -222,7 +220,7 @@ const Page = () => {
                 <div className="border-l-[1px] border-dark-600">
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>Modal</span>
@@ -246,7 +244,7 @@ const Page = () => {
                   </div>
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>Panel</span>
@@ -277,7 +275,7 @@ const Page = () => {
                 <div className="border-l-[1px] border-dark-600">
                   <div className="-ml-[1px] mb-2">
                     <Link
-                      href="/documentation"
+                      href="#"
                       className="flex justify-between items-center px-5 py-1 border-l-[1px] border-transparent text-sm hover:text-white hover:border-dark-500 hover:bg-gradient-to-r from-dark-500/20 from-10% to-transparent"
                     >
                       <span>사용방법</span>

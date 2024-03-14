@@ -3,30 +3,30 @@
  * @author 지제이웍스 (gjworks2@gmail.com)
  * @brief 레이아웃 최상위 파일
  **/
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Header from "@gjworks/templates/layouts/fullLayout/Header";
-import Footer from "@gjworks/templates/layouts/fullLayout/Footer";
+'use client'
+import React, {useState, useEffect} from 'react'
+import {motion} from 'framer-motion'
+import Header from '@templates/layouts/fullLayout/Header'
+import Footer from '@templates/layouts/fullLayout/Footer'
 
-const MainLayout = ({ children }) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
+const MainLayout = ({children}) => {
+  const [scrollPosition, setScrollPosition] = useState(0)
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.pageYOffset);
-    };
+      setScrollPosition(window.pageYOffset)
+    }
 
-    window.addEventListener("scroll", updatePosition);
+    window.addEventListener('scroll', updatePosition)
 
-    return () => window.removeEventListener("scroll", updatePosition);
-  }, []);
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
 
   const goToTop = () => {
     document.documentElement.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
   return (
     <div className="">
       <div className="relative z-20">
@@ -67,14 +67,14 @@ const MainLayout = ({ children }) => {
           </motion.button>
         )} */}
 
-        <footer>
+        <footer className="fixed left-0 right-0 bottom-0 ">
           <div className="mx-auto max-w-screen-xl">
             <Footer />
           </div>
         </footer>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MainLayout;
+export default MainLayout

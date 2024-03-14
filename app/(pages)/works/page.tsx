@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
 // import {
 //   Accordion,
 //   AccordionItem,
 //   AccordionHeader,
 //   AccordionPanel,
-// } from "@gjworks/components/accordion/Accordion";
-// import SideNavSubTemplates from "@gjworks/templates/nav/SideNavSubTemplates";
+// } from "@components/accordion/Accordion";
+// import SideNavSubTemplates from "@templates/nav/SideNavSubTemplates";
 //
-import Coming from "@gjworks/components/message/Coming";
+import Coming from '@components/message/Coming'
 
 const Page = () => {
-  return;
-};
+  return
+}
 
-export default Page;
+export default Page

@@ -25,10 +25,11 @@
       }
     ],
     "paths": {
-        "@gjworks/components/*": ["src/components/*"],
-        "@gjworks/templates/*": ["src/templates/*"],
-        "@gjworks/lib/*": ["src/lib/*"],
-        "@gjworks/res/*": ["src/res/*"],
+        "@components/*": ["src/components/*"],
+        "@templates/*": ["src/templates/*"],
+        "@lib/*": ["src/lib/*"],
+        "@res/*": ["src/res/*"],
+        "@redux/*": ["src/redux/*"],
     },
     "strictNullChecks": true
   },

@@ -1,41 +1,64 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import {useState, useEffect} from 'react'
+import {motion} from 'framer-motion'
+import Link from 'next/link'
+import {useRouter} from 'next/navigation'
 
 const AccountDropwdown = () => {
-  const router = useRouter();
-  const [isLogged, setIsLogged] = useState<boolean>(false);
+  const router = useRouter()
+  const [isLogged, setIsLogged] = useState<boolean>(false)
   useEffect(() => {
-    const accessToken = localStorage.getItem("accessToken");
-    const isLoggedIn = accessToken !== null;
-    setIsLogged(isLoggedIn);
-  }, []);
+    const accessToken = localStorage.getItem('accessToken')
+    const isLoggedIn = accessToken !== null
+    setIsLogged(isLoggedIn)
+  }, [])
 
-  const handleSignOut = (event) => {
-    event.preventDefault();
-    localStorage.removeItem("accessToken");
-    router.replace("/");
-  };
+  const handleSignOut = async event => {
+    event.preventDefault()
+    localStorage.removeItem('accessToken')
+
+    try {
+      const response = await fetch('/api/auth/logout', {
+        method: 'POST',
+      })
+      console.log(response)
+      if (response.ok) {
+        if (response.status === 200) {
+          const callback = await response.json()
+          console.log(callback.message)
+          router.push('/')
+        }
+
+        if (response.status === 401) {
+          const callback = await response.json()
+          console.log(callback.message)
+          alert(callback.message)
+        }
+      } else {
+        throw new Error('Failed')
+      }
+    } catch (error) {
+      console.error('Error Event handleSignOut:', error)
+    }
+  }
 
   const innerAnimation = {
     open: {
       opacity: 1,
-      x: "0%",
+      x: '0%',
       transition: {
         duration: 0.3,
       },
     },
     close: {
       opacity: 0,
-      x: "-20%",
+      x: '-20%',
       transition: {
         duration: 0.2,
       },
     },
-  };
+  }
   return (
     <>
       {isLogged ? (
@@ -156,7 +179,7 @@ const AccountDropwdown = () => {
         </>
       )}
     </>
-  );
-};
+  )
+}
 
-export default AccountDropwdown;
+export default AccountDropwdown

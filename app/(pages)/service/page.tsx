@@ -1,9 +1,9 @@
-"use client";
+'use client'
 
-import Coming from "@gjworks/components/message/Coming";
+import Coming from '@components/message/Coming'
 
 const Page = () => {
-  return;
-};
+  return
+}
 
-export default Page;
+export default Page

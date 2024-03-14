@@ -15,11 +15,26 @@
       "subMenu": []
     },
     "docs": {
-      "name": "docs",
-      "title": "Documentation",
-      "route": "/docs",
+      "name": "components",
+      "title": "Components",
+      "route": "/components",
       "icon": "",
-      "subMenu": []
+      "subMenu": [
+        {
+            "title": "Components",
+            "name": "components",
+            "icon": "",
+            "parent": "components",
+            "route": "/components"
+          },
+          {
+            "title": "Templates",
+            "name": "templates",
+            "icon": "",
+            "parent": "components",
+            "route": "/components/templates"
+          }
+      ]
     },
     "supports": {
       "name": "supports",

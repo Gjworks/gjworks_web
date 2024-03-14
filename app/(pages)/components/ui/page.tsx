@@ -3,9 +3,9 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import SafariBrower from 'src/components/viewer/SafariBrower'
+import SafariBrower from '@components/viewer/SafariBrower'
 import {motion} from 'framer-motion'
-import DefaultLayout from '@gjworks/templates/layouts/fullLayout/Layout'
+import DefaultLayout from '@templates/layouts/fullLayout/Layout'
 
 const Page = () => {
   const [showBottom, setShowBottom] = useState(false)

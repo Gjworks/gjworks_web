@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react'
 import {useRouter} from 'next/navigation'
 import {motion, AnimatePresence} from 'framer-motion'
-import BottomPortal from '@gjworks/components/panel/BottomPortal'
+import BottomPortal from '@components/panel/BottomPortal'
 
 const Bottom = ({children}) => {
   const router = useRouter()

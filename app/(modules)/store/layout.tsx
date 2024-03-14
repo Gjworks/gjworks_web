@@ -1,4 +1,4 @@
-import FullLayout from '@gjworks/templates/layouts/fullLayout/Layout'
+import FullLayout from '@templates/layouts/fullLayout/Layout'
 
 const PageLayout = ({children, bottom}) => {
   return (

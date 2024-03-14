@@ -2,7 +2,7 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 
-import Popup from '@gjworks/components/modal/Popup'
+import Popup from '@components/modal/Popup'
 
 const Page = () => {
   const [showPopup, setShowPopup] = useState(false)

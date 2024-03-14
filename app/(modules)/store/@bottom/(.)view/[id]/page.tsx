@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Bottom from "@gjworks/components/panel/Bottom";
+import Image from 'next/image'
+import Bottom from '@components/panel/Bottom'
 
 const Page = () => {
   return (
@@ -430,7 +430,7 @@ const Page = () => {
         </div>
       </Bottom>
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

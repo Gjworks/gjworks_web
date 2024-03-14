@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 /**
  * @file Footer.js
@@ -6,10 +6,10 @@
  * @brief 레이아웃 Footer 파일
  **/
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import {motion} from 'framer-motion'
 
 const Footer = () => {
   const variants = {
@@ -26,7 +26,7 @@ const Footer = () => {
         staggerDirection: -1,
       },
     },
-  };
+  }
   const parentVariants = {
     onscreen: {
       y: 0,
@@ -42,16 +42,16 @@ const Footer = () => {
         duration: 0.3,
       },
     },
-  };
+  }
   return (
     <>
-      <div className="px-3 pb-10 md:pb-0">
+      <div className="px-3 pb-3 md:pb-0">
         <div className="mb-6 hidden flex-wrap gap-8">
           <motion.div
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="lg:order-0 order-1 flex w-full flex-wrap gap-4 lg:flex-1"
           >
             <motion.div className="flex w-full flex-wrap items-center gap-1 lg:gap-4">
@@ -131,7 +131,7 @@ const Footer = () => {
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="order-0 flex items-center gap-4  md:hidden lg:order-1"
           >
             <motion.a
@@ -173,18 +173,18 @@ const Footer = () => {
           </motion.div>
         </div>
         {/* <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200/75 dark:via-dark-700 to-transparent"></div> */}
-        <div className="pb-5 pt-5 lg:pt-5">
+        <div className="pb-3 pt-3">
           <motion.div
             variants={variants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{once: false, amount: 0.3}}
             className="flex flex-wrap justify-center gap-8"
           >
             <motion.div className="flex items-center lg:justify-end">
               <div className="flex flex-wrap justify-center gap-4 lg:gap-8">
                 <motion.div
-                  className="order-4 flex w-full items-center justify-center pt-5 md:order-1 md:hidden md:pt-0 lg:w-auto"
+                  className="order-4 flex w-full items-center justify-center md:order-1 md:hidden md:pt-0 lg:w-auto"
                   variants={parentVariants}
                 >
                   <div className="dark:text-dark-200 text-center text-xs text-gray-700 lg:text-left">
@@ -232,7 +232,7 @@ const Footer = () => {
           variants={variants}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{once: false, amount: 0.3}}
           className="fixed -left-12 bottom-36 hidden -rotate-90 pr-24 after:absolute after:bottom-2 after:right-0 after:h-[1px] after:w-20 after:bg-gray-950 md:flex"
         >
           <motion.div
@@ -249,7 +249,7 @@ const Footer = () => {
           variants={variants}
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{once: false, amount: 0.3}}
           className="order-0 fixed -right-4 bottom-24 hidden rotate-90 items-center gap-4 md:flex lg:order-1"
         >
           <motion.a
@@ -291,7 +291,7 @@ const Footer = () => {
         </motion.div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import {motion} from 'framer-motion'
-import SideNavTemplate from '@gjworks/templates/nav/SideNavTemplate'
+import SideNavTemplate from '@templates/nav/SideNavTemplate'
 
 const SideNav = props => {
   const pathname = usePathname()

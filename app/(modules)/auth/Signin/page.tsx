@@ -1,63 +1,71 @@
-"use client";
+'use client'
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React, {useState, useEffect} from 'react'
+import Link from 'next/link'
 
-import { useRouter } from "next/navigation";
-import TextInput from "src/components/form/TextInput";
-import Warning from "src/components/message/Warning";
+import {useRouter} from 'next/navigation'
+
+import {useDispatch} from 'react-redux'
+import {userInfoAsync} from '@redux/features/userSlice'
+
+import TextInput from '@components/form/TextInput'
+import Warning from '@components/message/Warning'
 
 const Signin = () => {
-  const router = useRouter();
-  const [formMessage, setFormMessage] = useState<string>();
+  const router = useRouter()
+  const dispatch = useDispatch()
+  const [formMessage, setFormMessage] = useState<string>()
   // const emailInputRef = useRef(null)
-  const [emailInput, setEmailInput] = useState<string>();
-  const [passwordInput, setPasswordInput] = useState<string>();
-  const [error, setError] = useState<any>(false);
+  const [emailInput, setEmailInput] = useState<string>()
+  const [passwordInput, setPasswordInput] = useState<string>()
+  const [userInfo, setUserInfo] = useState({})
+  const [error, setError] = useState<any>(false)
 
   const getData = (x: string) => {
-    setEmailInput(x);
-  };
+    setEmailInput(x)
+  }
   const getPassword = (msg: string) => {
-    setPasswordInput(msg);
-  };
+    setPasswordInput(msg)
+  }
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  const submitHandler = async e => {
+    e.preventDefault()
     const data = {
       email: e.target.email.value,
       password: e.target.password.value,
-    };
-    console.log(data);
-    const formData = new FormData();
-    formData.append("email", data.email);
-    formData.append("password", data.password);
+    }
+    const formData = new FormData()
+    formData.append('email', data.email)
+    formData.append('password', data.password)
 
-    console.log(setEmailInput);
     const postData = async () => {
-      const response = await fetch("/api/auth/signIn", {
-        method: "POST",
+      const response = await fetch('/api/auth/signIn', {
+        method: 'POST',
         body: formData,
-      });
-      console.log(response);
-      return response.json();
-    };
+      })
+      console.log(response)
+      return response.json()
+    }
     postData()
-      .then((data) => {
-        if (data.code === "error") {
-          console.error(data);
-          setError(data.msg);
+      .then(res => {
+        if (res.code === 'error') {
+          console.error(res)
+          setError(res.msg)
         } else {
-          console.log(data);
-          localStorage.setItem("accessToken", data.accessToken);
-
-          router.replace("/");
+          console.log(res.data)
+          console.log(typeof res.data)
+          localStorage.setItem('accessToken', res.accessToken)
+          // dispatch(userInfoAsync(res.data))
+          router.replace('/')
         }
       })
-      .catch((error) => {
-        console.error("Failed to register: " + error.toString());
-      });
-  };
+      .catch(error => {
+        console.error('Failed to register: ' + error.toString())
+      })
+    // const userInfo = useSelector((state: RootState) => state.userInfo)
+    // console.log('redux state', userInfo)
+  }
+
   return (
     <>
       <div className="">
@@ -267,7 +275,7 @@ const Signin = () => {
                   href="/auth/Register"
                   className="text-dark-500 group text-sm"
                 >
-                  회원가입을 하시려면{" "}
+                  회원가입을 하시려면{' '}
                   <span className="dark:text-dark-200 dark:hover:text-dark-400 text-gray-500 underline hover:text-gray-600 group-hover:text-gray-600">
                     회원가입 하기
                   </span>
@@ -275,7 +283,7 @@ const Signin = () => {
               </div>
               <div className="w-full">
                 <Link href="/" className="text-dark-500 group text-sm">
-                  이메일과 비밀번호를 잊어버리 셨나요?{" "}
+                  이메일과 비밀번호를 잊어버리 셨나요?{' '}
                   <span className="dark:text-dark-200 dark:hover:text-dark-400 text-gray-500 underline hover:text-gray-600 group-hover:text-gray-600">
                     Email/비밀번호 찾기
                   </span>
@@ -286,7 +294,7 @@ const Signin = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Signin;
+export default Signin

@@ -38,9 +38,14 @@ export async function POST(request: Request) {
         where: { email: email },
         select: {
           id: true,
+          uuid: true,
           email: true,
-          nickname: true,
           password: true,
+          nickname: true,
+          createdAt: true,
+          updateAt:true,
+          isAdmin:true,
+          isManagers:true
         },
       });
 
@@ -69,6 +74,7 @@ export async function POST(request: Request) {
         const response = NextResponse.json(
           {
             success: true,
+            data: userInfo,
             accessToken: accessToken,
           },
           {
@@ -81,14 +87,16 @@ export async function POST(request: Request) {
           name: "accessToken",
           value: accessToken,
           httpOnly: true,
-          secure: true,
+          // secure: true,
+          sameSite: "strict",
           maxAge: 3600,
         });
         cookies().set({
           name: "refreshToken",
           value: refreshToken,
           httpOnly: true,
-          secure: true,
+          // secure: true,
+          sameSite: "strict",
           maxAge: 3600 * 24 * 7,
         });
 
