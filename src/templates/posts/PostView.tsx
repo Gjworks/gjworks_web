@@ -48,20 +48,20 @@ const PostView = () => {
             </div>
             <div className="col-span-12 md:col-span-9">
               <div className="text-gray-300 font-medium text-2xl line-clamp-2 mb-6">
-                Authentication verifies a user's identity. This happens when a
+                Authentication verifies a users identity. This happens when a
                 user logs in, either with a username and password or through a
-                service like Google. It's all about confirming that users are
-                really who they claim to be, protecting both the user's data and
+                service like Google. Its all about confirming that users are
+                really who they claim to be, protecting both the users data and
                 the application from unauthorized access or fraudulent
                 activities.
               </div>
               <div className="text-gray-500 font-medium text-base line-clamp-3">
-                In this section, we'll explore the process of adding basic
+                In this section, well explore the process of adding basic
                 email-password authentication to a web application. While this
-                method provides a fundamental level of security, it's worth
+                method provides a fundamental level of security, its worth
                 considering more advanced options like OAuth or passwordless
                 logins for enhanced protection against common security threats.
-                The authentication flow we'll discuss is as follows:
+                The authentication flow well discuss is as follows:
               </div>
             </div>
           </div>
