@@ -1,10 +1,14 @@
 'use client'
 
 import {useState, useEffect} from 'react'
+import {useSelector} from 'react-redux'
+import {RootState} from '@redux/store'
 
 const Account = () => {
   const [isLogged, setIsLogged] = useState<boolean>(false)
-
+  // const userInfo = useSelector(state => state)
+  // console.log(userInfo.userInfo.userInfo)
+  const userInfo = useSelector((state: RootState) => state.userInfo)
   const fetchUserData = async (accessToken: string) => {
     try {
       const response = await fetch('/api/auth/refresh', {
@@ -51,8 +55,13 @@ const Account = () => {
               </div>
             </div>
             <div className="flex items-center flex-1 gap-2">
-              <div className="text-left dark:text-dark-100 text-sm font-medium text-gray-800">
-                지제이웍스
+              <div>
+                <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
+                  {userInfo.userInfo?.nickname}
+                </div>
+                <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-400">
+                  {userInfo.userInfo?.email}
+                </div>
               </div>
               {/* <div className="border border-orange-500 text-orange-500 rounded-md py-1 px-3 text-[10px]">
                 PREMIUM

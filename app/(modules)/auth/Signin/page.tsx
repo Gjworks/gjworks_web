@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {useRouter} from 'next/navigation'
 
 import {useDispatch} from 'react-redux'
-import {userInfoAsync} from '@redux/features/userSlice'
+import {setUserInfo} from '@redux/features/userSlice'
 
 import TextInput from '@components/form/TextInput'
 import Warning from '@components/message/Warning'
@@ -18,7 +18,7 @@ const Signin = () => {
   // const emailInputRef = useRef(null)
   const [emailInput, setEmailInput] = useState<string>()
   const [passwordInput, setPasswordInput] = useState<string>()
-  const [userInfo, setUserInfo] = useState({})
+  const [user, setUser] = useState({})
   const [error, setError] = useState<any>(false)
 
   const getData = (x: string) => {
@@ -43,7 +43,7 @@ const Signin = () => {
         method: 'POST',
         body: formData,
       })
-      console.log(response)
+      // console.log(response)
       return response.json()
     }
     postData()
@@ -52,10 +52,11 @@ const Signin = () => {
           console.error(res)
           setError(res.msg)
         } else {
-          console.log(res.data)
+          // console.log(res.data)
           console.log(typeof res.data)
           localStorage.setItem('accessToken', res.accessToken)
-          // dispatch(userInfoAsync(res.data))
+
+          dispatch(setUserInfo(res.data))
           router.replace('/')
         }
       })

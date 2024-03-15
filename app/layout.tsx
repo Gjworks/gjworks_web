@@ -1,6 +1,6 @@
 import 'styles/globals.css'
 import 'styles/tailwindcss.css'
-import ReduxProviders from 'src/redux/Providers'
+import ReduxProviders from '@redux/Providers'
 
 export const metadata = {
   title: '지제이웍스',
