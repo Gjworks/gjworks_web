@@ -5,6 +5,9 @@ import ReduxProviders from '@redux/Providers'
 export const metadata = {
   title: '지제이웍스',
   description: 'Building digital experience Creative platform service',
+  icons: {
+    icon: '/gjworks_dark_128.png',
+  },
 }
 
 export default function RootLayout({children}) {

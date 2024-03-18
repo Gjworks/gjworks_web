@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       const response = NextResponse.json(
         {
           success: true,
-          message: "token이 만료되었습니다. 로그인을 새로 해주세요."
+          message: "token이 만료되었습니다. 새로 로그인을 해주세요."
         },
         {
           status: 200,
