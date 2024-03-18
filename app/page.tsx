@@ -195,8 +195,8 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="absolute left-0 top-0 px-12 py-6 rounded-br-3xl bg-white before:w-10 before:h-10 before:absolute before:-top-[2px] before:-right-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:rotate-90 after:w-10 after:h-10 after:absolute after:-left-[2px] after:-bottom-[38px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:rotate-90">
-              <div className="flex gap-4 px-10">
+            <div className="absolute left-0 top-0 rounded-br-3xl bg-white before:w-10 before:h-10 before:absolute before:-top-[2px] before:-right-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:rotate-90 after:w-10 after:h-10 after:absolute after:-left-[2px] after:-bottom-[38px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:rotate-90">
+              <div className="flex gap-4 px-8 md:px-12 py-4 md:py-6">
                 <div>
                   <button
                     onClick={() => {
