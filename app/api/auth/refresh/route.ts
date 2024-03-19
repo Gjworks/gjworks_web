@@ -17,9 +17,7 @@ export async function GET(request: Request, response: Response){
   // accessToken이 유효한지 검사
   try {
     verifyToken = verify(accessToken)
-    console.log('verifyToken', verifyToken)
     if (verifyToken.ok === false && refreshToken) {
-      
       const refreshVerifyToken = refreshVerify(refreshToken)
 
       if(refreshVerifyToken) {
@@ -46,6 +44,7 @@ export async function GET(request: Request, response: Response){
       }else{
         //refreshToken이 만료되었다면 cookie에 저장된 토큰을 삭제하고 로그인 페이지로 유도 하자
         cookies().delete('refreshToken');
+        cookies().delete('accessToken');
 
         const response = NextResponse.json(
           {
@@ -53,13 +52,14 @@ export async function GET(request: Request, response: Response){
             message: "token이 만료되었습니다. 로그인을 새로 해주세요."
           },
           {
-            status: 401,
+            status: 200,
             headers: { "content-type": "application/json" },
           },
         );
         return response
       }
     }
+    
   // const refreshVerifyToken = refreshVerify(refreshToken)
   return NextResponse.json({ data: 'success' }, { status: 200 });
   } catch (error) {

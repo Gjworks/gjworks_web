@@ -73,7 +73,7 @@ const PostView = () => {
       <div className="sticky top-0 bg-white/75 backdrop-blur-lg z-99 pt-1 border-b border-gray-100">
         <div className="mx-auto  max-w-screen-md px-3">
           <div className="flex items-center gap-2">
-            <div className="bg-primary-600 text-white text-xs px-4 py-1 rounded-full">
+            <div className="bg-primary-400 text-black text-xs px-4 py-1 rounded-full">
               기술공유
             </div>
             <div className="text-base md:text-lg font-light text-gray-950 py-4">
@@ -98,7 +98,7 @@ const PostView = () => {
                     <div className="line-clamp-1 text-base font-light text-black dark:text-white">
                       관리자
                     </div>
-                    <button className="line-clamp-1 text-xs font-light text-primary-500 dark:text-white">
+                    <button className="line-clamp-1 text-xs font-light text-secondary-500 hover:secondary-600 dark:text-white">
                       Follow +
                     </button>
                   </div>

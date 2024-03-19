@@ -23,8 +23,11 @@ const Account = () => {
           if (userData.accessToken) {
             localStorage.setItem('accessToken', userData.accessToken)
           }
+          if (userData.success === false) {
+            localStorage.removeItem('accessToken')
+            alert(userData.message)
+          }
         }
-
         if (response.status === 401) {
           console.log(response)
         }
@@ -58,9 +61,6 @@ const Account = () => {
               <div>
                 <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
                   {userInfo.userInfo?.nickname}
-                </div>
-                <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-400">
-                  {userInfo.userInfo?.email}
                 </div>
               </div>
               {/* <div className="border border-orange-500 text-orange-500 rounded-md py-1 px-3 text-[10px]">

@@ -65,14 +65,14 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full px-3 lg:px-0 pt-4">
-          <div className="relative">
+          <div className="relative max-w-screen-3xl mx-auto">
             <div className=" overflow-hidden rounded-3xl">
               <div className="relative overflow-hidden bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat">
                 {/*  */}
                 <div className="absolute inset-0 bg-gray-950/75"></div>
                 {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
-                <div className="relative mx-auto flex max-w-screen-xl items-center gap-8 pb-20 pt-20">
-                  <div className="relative col-span-8 flex items-center justify-center py-20 lg:col-span-8">
+                <div className="relative mx-auto flex max-w-screen-lg items-center gap-8 pb-20 pt-20">
+                  <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
                       variants={parentVariants}
                       initial="offscreen"
@@ -115,7 +115,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-white px-3 py-2 text-sm text-gray-950 hover:bg-gray-300 hover:text-black lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-secondary-600 px-3 py-2 text-sm text-white hover:bg-secondary-500  lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
@@ -176,19 +176,6 @@ export default function Page() {
                           </motion.div>
                         </div>
                       </div>
-                      <div className="order-0 relative col-span-12 hidden md:order-1 md:col-span-5">
-                        <div className="absolute -right-[30%] w-[260px] transform md:left-1/2 md:-translate-x-1/2">
-                          <motion.div variants={variants} className="">
-                            <Image
-                              src="/assets/images/Iphone14.png"
-                              alt="Iphone14 Pro"
-                              width={600}
-                              style={{width: '100%', height: 'auto'}}
-                              height={280}
-                            ></Image>
-                          </motion.div>
-                        </div>
-                      </div>
                     </motion.div>
                   </div>
                 </div>
@@ -202,7 +189,7 @@ export default function Page() {
                     onClick={() => {
                       setShowPopup(true)
                     }}
-                    className="text-lg font-medium cursor-pointer hover:underline hover:text-primary-500"
+                    className="text-lg font-medium cursor-pointer hover:underline hover:text-tertiary-500"
                   >
                     새로운 프로젝트는?
                   </button>
@@ -322,7 +309,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{once: false, amount: 0.1}}
             variants={parentVariants}
-            className="hidden pt-10"
+            className="hidden pt-20"
           >
             <div className="relative mx-auto max-w-screen-lg px-3">
               <div className="grid grid-cols-12 gap-0 lg:gap-8">
@@ -563,7 +550,7 @@ export default function Page() {
                 </motion.div>
               </div>
             </div>
-            <div className="overflow-scroll-hide overflow-y-hidden overflow-x-scroll pb-20">
+            <div className="hidden overflow-scroll-hide overflow-y-hidden overflow-x-scroll pb-20">
               <div className="mx-auto max-w-screen-lg px-3">
                 <div className="">
                   <motion.div
@@ -587,6 +574,63 @@ export default function Page() {
               </div>
             </div>
           </div>
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{once: false, amount: 0.1}}
+            variants={parentVariants}
+            className="pt-10"
+          >
+            <div className="relative mx-auto max-w-screen-3xl px-3">
+              <motion.div className="grid grid-cols-3 gap-8">
+                <div className="col-span-3 md:col-span-1">
+                  <motion.div
+                    variants={variants}
+                    className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"
+                  >
+                    <motion.div
+                      variants={parentVariants}
+                      initial="offscreen"
+                      whileInView="onscreen"
+                    >
+                      <motion.div
+                        variants={variants}
+                        className="relative mb-10 px-3 md:px-12"
+                      >
+                        <div className="h-[350px] bg-[url('/assets/images/Iphone14.png')] bg-cover bg-top bg-no-repeat"></div>
+                      </motion.div>
+
+                      <motion.div
+                        variants={variants}
+                        className="mb-3 text-lg text-black lg:text-xl dark:text-white"
+                      >
+                        Coming soon mobile
+                      </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="dark:text-dark-500 mb-10 text-sm text-gray-600"
+                      >
+                        Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
+                        불편함이 없게 UI/UX를 설계 합니다.
+                      </motion.div>
+                      <button className="dark:hover:bg-dark-950 dark:bg-dark-950 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-gray-950 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
+                        <div className="text-dark-300 relative text-sm group-hover:text-white">
+                          Link more
+                        </div>
+                      </button>
+                    </motion.div>
+                  </motion.div>
+                </div>
+                <div className="col-span-3 md:col-span-1">
+                  <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"></div>
+                </div>
+                <div className="col-span-3 md:col-span-1">
+                  <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"></div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
           <div className="relative overflow-hidden pb-5 pt-5">
             <div className="relative flex h-[640px] items-center justify-center overflow-hidden rounded-2xl">
               {/* <div className="absolute inset-0 bg-gray-950/75"></div> */}

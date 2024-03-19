@@ -89,7 +89,7 @@ export async function POST(request: Request) {
           httpOnly: true,
           // secure: true,
           sameSite: "strict",
-          maxAge: 3600,
+          // maxAge: 3600,
         });
         cookies().set({
           name: "refreshToken",
@@ -97,7 +97,7 @@ export async function POST(request: Request) {
           httpOnly: true,
           // secure: true,
           sameSite: "strict",
-          maxAge: 3600 * 24 * 7,
+          // maxAge: 3600 * 24 * 7,
         });
 
         return response;
