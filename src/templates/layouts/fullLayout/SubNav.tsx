@@ -52,7 +52,7 @@ const SubNav = () => {
   const snav = null
   return (
     <>
-      <div className="relative px-3">
+      <div className="relative max-w-screen-3xl mx-auto px-3">
         <div className="grid grid-cols-12 gap-4 pt-3 lg:pt-6 pb-8">
           <div className="hidden md:col-span-2 md:flex">
             <div className="text-lg font-bold text-black lg:text-2xl dark:text-white">
