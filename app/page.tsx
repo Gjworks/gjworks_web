@@ -534,13 +534,13 @@ export default function Page() {
                   <div className="col-span-12 flex items-center lg:col-span-6">
                     <div className=" pt-5 lg:pt-0">
                       <motion.div variants={variants} className=" mb-2">
-                        <span className="text-base font-semibold text-black  dark:text-white">
+                        <span className="text-2xl font-semibold text-black  dark:text-white">
                           WE WORK IT
                         </span>
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-sm font-light text-gray-400"
+                        className="text-lg font-light text-gray-500"
                       >
                         지제이웍스만의 방법으로 디지털 플랫폼을 구축하고 최상의
                         디지털 경험을 느낄 수 있도록 최선을 다 하고 있습니다.

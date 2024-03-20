@@ -1,9 +1,9 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { hashedPassword, verifyPassword } from "src/lib/auth/password";
+import { hashedPassword, verifyPassword } from "src/utils/auth/password";
 import { PrismaClient } from "@prisma/client";
 
-import { refresh, sign } from "src/lib/auth/jwtAuth";
+import { refresh, sign } from "src/utils/auth/jwtAuth";
 
 export async function GET(request: Request) {}
 

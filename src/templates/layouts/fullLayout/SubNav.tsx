@@ -128,12 +128,11 @@ const SubNav = () => {
               </Link>
             </div>
           </div>
-
           <div
             onClick={() => {}}
             className="col-span-2 hidden justify-end gap-2 md:flex"
           >
-            <button className="flex cursor-pointer items-center gap-1 rounded-full border border-gray-300 bg-white px-3 py-1 text-black hover:bg-gray-900 hover:text-white lg:px-6 ">
+            <button className="flex cursor-pointer items-center gap-1 rounded-full border border-gray-300 bg-white px-3 py-1 text-black hover:bg-black hover:text-white hover:border-black lg:px-6 ">
               <div className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

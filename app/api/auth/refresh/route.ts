@@ -1,7 +1,7 @@
 import { cookies, headers } from "next/headers";
 import { NextResponse, NextRequest } from "next/server";
 import jwt from 'jsonwebtoken';
-import { sign, verify, refreshVerify } from "src/lib/auth/jwtAuth";
+import { sign, verify, refreshVerify } from "src/utils/auth/jwtAuth";
 
 export async function GET(request: Request, response: Response){
   let newAccessToken: string

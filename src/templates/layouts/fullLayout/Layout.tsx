@@ -36,7 +36,7 @@ const FullLayout = ({children}) => {
         <Header />
         <main className="h-full px-0 lg:px-16">
           <SubNav />
-          <div className="relative mx-auto h-full min-h-[calc(100vh-236px)] max-w-[2560px] overflow-hidden md:min-h-[calc(100vh-126px)]">
+          <div className="relative mx-auto h-full min-h-[calc(100vh-236px)] max-w-[2560px] md:min-h-[calc(100vh-126px)]">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
           </div>

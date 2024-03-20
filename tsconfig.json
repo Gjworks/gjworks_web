@@ -27,7 +27,7 @@
     "paths": {
         "@components/*": ["src/components/*"],
         "@templates/*": ["src/templates/*"],
-        "@lib/*": ["src/lib/*"],
+        "@lib/*": ["src/utils/*"],
         "@res/*": ["src/res/*"],
         "@redux/*": ["src/redux/*"],
     },

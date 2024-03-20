@@ -60,7 +60,7 @@ const Account = () => {
             <div className="flex items-center flex-1 gap-2">
               <div>
                 <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
-                  {userInfo.userInfo?.nickname}
+                  {userInfo?.userInfo?.nickname}
                 </div>
               </div>
               {/* <div className="border border-orange-500 text-orange-500 rounded-md py-1 px-3 text-[10px]">

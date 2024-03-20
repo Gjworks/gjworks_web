@@ -65,7 +65,7 @@ const AccountDropwdown = () => {
         <>
           <motion.div className="w-56" variants={innerAnimation}>
             <Link
-              href="/user"
+              href="/user/unserid"
               className="dark:hover:bg-dark-600/50 block rounded bg-transparent px-4 py-2 text-xs text-gray-800 hover:bg-gray-950 hover:text-white dark:text-white dark:hover:text-white"
             >
               <div className="flex justify-between">
@@ -92,7 +92,7 @@ const AccountDropwdown = () => {
           <motion.div variants={innerAnimation}>
             <button
               onClick={handleSignOut}
-              className="dark:hover:bg-dark-600/50 block block w-full rounded bg-transparent px-4 py-2 text-xs text-gray-800 hover:bg-gray-950 hover:text-white dark:text-white dark:hover:text-white"
+              className="dark:hover:bg-dark-600/50 block w-full rounded bg-transparent px-4 py-2 text-xs text-gray-800 hover:bg-gray-950 hover:text-white dark:text-white dark:hover:text-white"
             >
               <div className="flex justify-between">
                 <div className="flex items-center">

@@ -2,7 +2,8 @@
 
 import React from 'react'
 import {Provider} from 'react-redux'
-import {store} from './store'
+import {PersistGate} from 'redux-persist/integration/react'
+import {store, persistor} from './store'
 
 type Children = {
   children: React.ReactNode
@@ -11,7 +12,11 @@ type Children = {
 export default function ReduxProviders({children}: Children) {
   return (
     <>
-      <Provider store={store}>{children}</Provider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          {children}
+        </PersistGate>
+      </Provider>
     </>
   )
 }
