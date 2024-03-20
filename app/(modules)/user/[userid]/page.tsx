@@ -80,9 +80,6 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-              <div className="text-xs text-gray-400 px-2 py-4">
-                현재 페이지는 공개 여부와 상관없이 Feed는 확인 할 수 있습니다.
-              </div>
             </div>
             <div className="col-span-7 sm:col-span-4 lg:col-span-5">
               <div className="grid grid-cols-5 gap-8">
