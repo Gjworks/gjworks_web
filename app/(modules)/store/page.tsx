@@ -44,7 +44,7 @@ const Page = () => {
                     href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
-                    Rhymix
+                    UI/UX
                   </Link>
                   <Link
                     href="#"
