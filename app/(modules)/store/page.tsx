@@ -56,7 +56,7 @@ const Page = () => {
                     href="#"
                     className="block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:text-gray-500"
                   >
-                    Service Product
+                    Service Products
                   </Link>
                   <Link
                     href="#"
