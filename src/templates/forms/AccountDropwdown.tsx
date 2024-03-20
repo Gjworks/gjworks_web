@@ -17,6 +17,7 @@ const AccountDropwdown = () => {
   const handleSignOut = async event => {
     event.preventDefault()
     localStorage.removeItem('accessToken')
+    localStorage.removeItem('persist:root')
 
     try {
       const response = await fetch('/api/auth/logout', {
