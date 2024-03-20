@@ -41,7 +41,7 @@ const Page = () => {
               </div>
               <div className="relative">
                 <div className="flex md:flex-wrap overflow-scroll-hide overflow-x-auto overflow-hidden gap-2 sm:gap-4 pr-6 md:pr-0">
-                  <div className="md:w-full bg-gray-50 border border-gray-200 rounded-xl shadow-lg shadow-gray-100">
+                  <div className="md:w-full bg-gray-50 border border-gray-200 rounded-xl shadow-lg shadow-gray-100 overflow-hidden">
                     <div className="flex sm:block">
                       <button className="flex w-full whitespace-nowrap text-sm border-b border-gray-200 py-4 px-8 hover:bg-gray-100">
                         비밀번호 변경
