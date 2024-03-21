@@ -23,7 +23,10 @@ export async function POST(request: Request) {
         element: "email",
         msg: "이메일 계정을 입력해주세요.",
       };
-      return NextResponse.json(data, { status: 402 });
+      return NextResponse.json({
+        success: false,
+        data: data
+      }, { status: 402 });
     }
     if (!password) {
       const data = {
@@ -31,7 +34,10 @@ export async function POST(request: Request) {
         element: "password",
         msg: "비밀번호를 입력해주세요.",
       };
-      return NextResponse.json(data, { status: 402 });
+      return NextResponse.json({
+        success: false,
+        data: data
+      }, { status: 402 });
     }
     try {
       const userInfo = await prisma.user.findUnique({
@@ -48,28 +54,12 @@ export async function POST(request: Request) {
           isManagers:true
         },
       });
+      
 
-      if (userInfo && (await verifyPassword(password, userInfo.password))) {
+      if (userInfo! && (await verifyPassword(password, userInfo!.password))) {
         // exclude password from json response
         const refreshToken = refresh(userInfo.email);
         const accessToken = sign(userInfo.email);
-        // await prisma.user.update({
-        //   where: {
-        //     email: email,
-        //   },
-        //   data: {
-        //     refreshToken: refreshToken
-        //   }
-        // })
-        // let response
-
-        //   response.statusCode = 200;
-
-        // // Access Token을 보내줌
-        //   return response.send({ email, accessToken });
-        // response =  NextResponse.json({ status: 200, data : { "accessToken": accessToken}})
-
-        // response.cookies.set("accessToken",accessToken,{httpOnly:true});
 
         const response = NextResponse.json(
           {
@@ -104,8 +94,12 @@ export async function POST(request: Request) {
       } else {
         return NextResponse.json(
           {
-            element: "password",
-            msg: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
+            success: false,
+            data: {
+              code: "error",
+              msg : '아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.'
+            },
+            accessToken:null
           },
           { status: 401 },
         );

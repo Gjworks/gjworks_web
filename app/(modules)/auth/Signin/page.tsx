@@ -48,12 +48,10 @@ const Signin = () => {
     }
     postData()
       .then(res => {
-        if (res.code === 'error') {
-          console.error(res)
-          setError(res.msg)
+        if (res.success === false) {
+          setError(res.data.msg)
         } else {
           // console.log(res.data)
-          console.log(res.data)
           localStorage.setItem('accessToken', res.accessToken)
 
           dispatch(setUserInfo(res.data))
