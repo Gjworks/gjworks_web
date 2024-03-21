@@ -53,7 +53,7 @@ const Signin = () => {
           setError(res.msg)
         } else {
           // console.log(res.data)
-          console.log(typeof res.data)
+          console.log(res.data)
           localStorage.setItem('accessToken', res.accessToken)
 
           dispatch(setUserInfo(res.data))
