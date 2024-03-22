@@ -368,7 +368,7 @@ export default function Page() {
                             불편함이 없게 UI/UX를 설계 합니다.
                           </motion.div>
                           <button className="dark:hover:bg-dark-950 dark:bg-dark-950 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-gray-950 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
-                            <div className="text-dark-300 relative text-sm group-hover:text-white">
+                            <div className="text-dark-300 relative text-sm group-hover:text-primary-400">
                               Link more
                             </div>
                           </button>
@@ -614,7 +614,7 @@ export default function Page() {
                         불편함이 없게 UI/UX를 설계 합니다.
                       </motion.div>
                       <button className="dark:hover:bg-dark-950 dark:bg-dark-950 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-gray-950 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
-                        <div className="text-dark-300 relative text-sm group-hover:text-white">
+                        <div className="text-dark-300 relative text-sm group-hover:text-primary-400">
                           Link more
                         </div>
                       </button>

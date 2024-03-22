@@ -10,4 +10,15 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 	  // 로그인된 상태로 인지, Home 으로 redirect
     if (accessToken?.value) return NextResponse.redirect('/') 
   }
+
+  if (!accessToken?.value && request.nextUrl.pathname.startsWith('/user/')) {
+    // return NextResponse.json(
+    //   { success: false, message: 'authentication failed' },
+    //   { status: 401 }
+    // )
+    return NextResponse.redirect(
+      new URL('/', request.url),
+    );
+    
+  }
 }
