@@ -25,7 +25,7 @@ const DefaultNav = ({list}) => {
           API 설정
         </Link>
         <Link
-          href="#"
+          href="/user/timeline"
           className="py-3 px-1 text-sm border-b-4 text-gray-400 hover:text-gray-950 border-white hover:border-gray-950"
         >
           타임라인

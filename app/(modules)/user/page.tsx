@@ -22,7 +22,7 @@ const Page = () => {
         <div className="w-full">
           <div className="max-w-screen-md mx-auto">
             <div className="w-full">
-              <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full mb-6">
+              <div className="elative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full mb-6">
                 <div className="mb-8 font-semibold text-lg">
                   사용중인 서비스
                 </div>
@@ -64,9 +64,9 @@ const Page = () => {
                       </div>
                       <div className="flex items-center gap-8 pt-2 pb-4">
                         <div className="relative flex-1">
-                          <div className="rounded-full h-2 w-full bg-orange-200/40"></div>
+                          <div className="rounded-full h-2 w-full bg-lime-200/40"></div>
                           <div
-                            className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-orange-400 transition-all"
+                            className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-lime-400 transition-all"
                             style={{width: '80%'}}
                           ></div>
                         </div>
@@ -74,7 +74,7 @@ const Page = () => {
                       </div>
                       <div className="text-black text-sm">남은 잔액</div>
                       <div className="flex gap-2 justify-center items-end py-5">
-                        <div className="text-orange-200 text-3xl font-bold">
+                        <div className="text-lime-300 text-3xl font-bold">
                           18,320
                         </div>
                         <div className="text-black/70">원</div>
