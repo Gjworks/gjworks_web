@@ -96,11 +96,11 @@ const Page = () => {
               <div className="border-l border-b border-r border-gray-100 rounded-b-2xl">
                 <div className="px-4 py-5 text-sm text-gray-400">
                   <div className="line-clamp-2">
-                    his is my first exploration using the "Case Study" Feature.
+                    his is my first exploration using the Case Study Feature.
                     And I am here trying to maximize this feature and explaining
-                    my shot and how it works. ( Because some of us used the
-                    "Case Study" Feature just like they used the "Multi-shot"
-                    Feature LOL.)
+                    my shot and how it works. Because some of us used the "Case
+                    Study" Feature just like they used the "Multi-shot" Feature
+                    LOL.
                   </div>
                 </div>
                 <div className="flex gap-4 pt-3 pb-3 border-t border-gray-100">
