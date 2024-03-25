@@ -52,11 +52,11 @@ const Loa = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-sky-600 pl-3 pt-2 mb-5">
-                  베히모스
-                </div>
-                <div className="bg-sky-100 text-sky-700 text-center py-2 px-4 text-sm">
-                  상아탑 졸업
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-sky-600">
+                    베히모스
+                  </div>
+                  <div className="text-base text-sky-600">(1640 ~ 1675)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -71,7 +71,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1675 >= character.itemAvgLevel &&
+                    1676 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1640
                   ) {
                     return (
@@ -99,8 +99,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-blue-600 pl-3 pt-2 mb-5">
-                  카멘(하드) & 에키드나(하드)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-blue-600">
+                    카멘(하드) & 에키드나(하드)
+                  </div>
+                  <div className="text-base text-blue-600">(1630 ~ 1675)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -115,7 +118,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1675 >= character.itemAvgLevel &&
+                    1676 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1630
                   ) {
                     return (
@@ -143,8 +146,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-rose-600 pl-3 pt-2 mb-5">
-                  에키드나(노말)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-rose-600">
+                    에키드나(노말)
+                  </div>
+                  <div className="text-base text-rose-600">(1620 ~ 1630)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -159,7 +165,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1630 >= character.itemAvgLevel &&
+                    1630 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1620
                   ) {
                     return (
@@ -187,8 +193,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-yellow-600 pl-3 pt-2 mb-5">
-                  상아탑(하드)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-yellow-600">
+                    상아탑(하드)
+                  </div>
+                  <div className="text-base text-yellow-600">(1620 ~ 1639)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -203,7 +212,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1640 >= character.itemAvgLevel &&
+                    1640 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1620
                   ) {
                     return (
@@ -231,8 +240,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-blue-600 pl-3 pt-2 mb-5">
-                  카멘(노말)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-blue-600">
+                    카멘(노말)
+                  </div>
+                  <div className="text-base text-blue-600">(1610 ~ 1629)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -247,7 +259,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1629 >= character.itemAvgLevel &&
+                    1630 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1610
                   ) {
                     return (
@@ -275,8 +287,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-yellow-600 pl-3 pt-2 mb-5">
-                  상아탑 (노말)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-yellow-600">
+                    상아탑(노말)
+                  </div>
+                  <div className="text-base text-yellow-600">(1600 ~ 1619)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -291,7 +306,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1619 >= character.itemAvgLevel &&
+                    1620 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1600
                   ) {
                     return (
@@ -319,8 +334,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-green-600 pl-3 pt-2 mb-5">
-                  일리아칸 (하드)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-green-600">
+                    일리아칸(하드)
+                  </div>
+                  <div className="text-base text-green-600">(1600 ~ 1619)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -335,7 +353,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1619 >= character.itemAvgLevel &&
+                    1620 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1600
                   ) {
                     return (
@@ -363,8 +381,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-green-600 pl-3 pt-2 mb-5">
-                  일리아칸 (노말)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-green-600">
+                    일리아칸(노말)
+                  </div>
+                  <div className="text-base text-green-600">(1580 ~ 1599)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -379,7 +400,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1599 >= character.itemAvgLevel &&
+                    1600 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1580
                   ) {
                     return (
@@ -407,8 +428,11 @@ const Loa = () => {
 
             <div className="col-span-1">
               <div className="border border-gray-200 shadow-lg shadow-gray-100 overflow-hidden rounded-2xl">
-                <div className="text-lg font-semibold text-purple-600 pl-3 pt-2 mb-5">
-                  카양겔 (하드)
+                <div className="flex flex-wrap justify-between gap-4 px-3 pt-2 mb-5">
+                  <div className="text-lg font-semibold text-purple-600">
+                    일리아칸(노말)
+                  </div>
+                  <div className="text-base text-purple-600">(1580 ~ 1609)</div>
                 </div>
                 <div className="grid grid-cols-4">
                   <div className="col-span-2 text-gray-500 bg-gray-50 py-2 px-3 text-center text-xs">
@@ -423,7 +447,7 @@ const Loa = () => {
                 </div>
                 {character.map((character, key) => {
                   if (
-                    1609 >= character.itemAvgLevel &&
+                    1610 > character.itemAvgLevel &&
                     character.itemAvgLevel >= 1580
                   ) {
                     return (
