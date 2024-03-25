@@ -75,7 +75,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1640
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -116,7 +119,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1630
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -157,7 +163,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1620
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -198,7 +207,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1620
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -239,7 +251,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1610
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -280,7 +295,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1600
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -321,7 +339,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1600
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -362,7 +383,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1580
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
@@ -403,7 +427,10 @@ const Loa = () => {
                     character.itemAvgLevel >= 1580
                   ) {
                     return (
-                      <div className="grid grid-cols-4 gap-4 hover:bg-gray-100">
+                      <div
+                        key={character.itemAvgLevel + 1}
+                        className="grid grid-cols-4 gap-4 hover:bg-gray-100"
+                      >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
                           {character.characterName}
                         </div>
