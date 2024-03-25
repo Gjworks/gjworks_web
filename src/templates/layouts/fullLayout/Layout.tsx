@@ -1,9 +1,5 @@
-/**
- * @file Layout.js
- * @author 지제이웍스 (gjworks2@gmail.com)
- * @brief 레이아웃 최상위 파일
- **/
 'use client'
+
 import React, {useState, useEffect} from 'react'
 import {motion} from 'framer-motion'
 import Header from '@templates/layouts/fullLayout/Header'

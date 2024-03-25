@@ -61,7 +61,7 @@ const Popup = props => {
               animate={popupState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
-              className="fixed left-1/2 -translate-x-1/2 z-50 max-w-lg w-full px-3"
+              className="fixed left-1/2 -translate-x-1/2 z-50 max-w-xl w-full px-3"
             >
               <div className="relative bg-white mb-4 lg:mb-8 dark:bg-dark-950 rounded-xl w-full shadow-2xl shadow-gray-300/75 mx-auto dark:border dark:border-dark-800/75 dark:border-t-dark-600/50 h-full backdrop-blur-lg overflow-x-hidden overflow-y-auto border border-gray-200">
                 <div className="flex gap-8 px-3 py-3">

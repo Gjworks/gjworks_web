@@ -77,6 +77,30 @@ const Page = () => {
               </div>
             </div>
 
+            <div className="pb-3 pt-12 relative before:absolute before:left-8 before:w-1 before:h-full before:bg-gray-200 before:top-0">
+              <div className="flex justify-center">
+                <div className="flex items-center gap-2 justify-center text-sm text-gray-400 hover:text-gray-900 hover:border-gray-700 w-36 relative rounded-xl border border-gray-200/75 bg-white py-2 px-5 cursor-pointer">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25"
+                      />
+                    </svg>
+                  </div>
+                  <div>more</div>
+                </div>
+              </div>
+            </div>
+
             <div className="hidden bg-white overflow-hidden shadow shadow-gray-200 rounded-2xl">
               <div className="flex gap-4 p-3 border border-gray-100 rounded-t-2xl">
                 <div className="w-8 h-8 rounded-full bg-gray-200"></div>

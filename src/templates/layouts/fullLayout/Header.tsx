@@ -1,9 +1,5 @@
-/**
- * @file Header.js
- * @author 지제이웍스 (gjworks@kakao.com)
- * @brief 설정 및 환경변수등이 저장되는 파일
- **/
 'use client'
+
 import React, {useState, useEffect} from 'react'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
