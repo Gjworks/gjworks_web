@@ -69,14 +69,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1675 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1640
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -113,14 +113,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1675 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1630
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -157,14 +157,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1630 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1620
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -201,14 +201,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1640 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1620
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -245,14 +245,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1629 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1610
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -289,14 +289,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1619 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1600
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -333,14 +333,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1619 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1600
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -377,14 +377,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1599 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1580
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
@@ -421,14 +421,14 @@ const Loa = () => {
                     직업
                   </div>
                 </div>
-                {character.map(character => {
+                {character.map((character, key) => {
                   if (
                     1609 >= character.itemAvgLevel &&
                     character.itemAvgLevel >= 1580
                   ) {
                     return (
                       <div
-                        key={character.itemAvgLevel + 1}
+                        key={key}
                         className="grid grid-cols-4 gap-4 hover:bg-gray-100"
                       >
                         <div className="col-span-2 text-gray-500 hover:text-gray-950 text-sm py-2 px-5 ">
