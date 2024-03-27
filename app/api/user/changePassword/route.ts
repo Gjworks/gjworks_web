@@ -46,7 +46,7 @@ export async function POST(request: Request) {
         success: true,
         data: {
           code: "error",
-          message : '회원정보가 없습니다..'
+          message : '회원정보가 없습니다.'
         }
       },
       {
