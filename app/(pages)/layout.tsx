@@ -1,7 +1,7 @@
-'use client'
+import DefaultLayout from '@templates/layouts/fullLayout/Layout'
 
 const PageLayout = ({children}) => {
-  return <>{children}</>
+  return <DefaultLayout>{children}</DefaultLayout>
 }
 
 export default PageLayout

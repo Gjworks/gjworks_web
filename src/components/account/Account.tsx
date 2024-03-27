@@ -32,7 +32,7 @@ const Account = () => {
           console.log(response)
         }
       } else {
-        throw new Error('Failed to fetch user data')
+        throw new Error('Failed to fetch error: ' + response.status)
       }
     } catch (error) {
       console.error('Error fetching user data:', error)

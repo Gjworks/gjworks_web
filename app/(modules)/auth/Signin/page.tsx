@@ -5,15 +5,26 @@ import Link from 'next/link'
 
 import {useRouter} from 'next/navigation'
 
-import {useDispatch} from 'react-redux'
-import {setUserInfo} from '@redux/features/userSlice'
+import {store} from '@redux/store'
+import {fetchSignIn} from '@redux/features/userSlice'
 
 import TextInput from '@components/form/TextInput'
 import Warning from '@components/message/Warning'
 
+interface UserInfo {
+  // 사용자 정보에 해당하는 인터페이스를 정의합니다.
+  id: number
+  uuid: string
+  nickname: string
+  password: string
+  email: string
+  createdAt: string
+  updateAt: string
+}
+
 const Signin = () => {
   const router = useRouter()
-  const dispatch = useDispatch()
+  const dispatch = store.dispatch
   const [formMessage, setFormMessage] = useState<string>()
   // const emailInputRef = useRef(null)
   const [emailInput, setEmailInput] = useState<string>()
@@ -30,37 +41,50 @@ const Signin = () => {
 
   const submitHandler = async e => {
     e.preventDefault()
-    const data = {
-      email: e.target.email.value,
-      password: e.target.password.value,
-    }
     const formData = new FormData()
-    formData.append('email', data.email)
-    formData.append('password', data.password)
+    formData.append('email', e.target.email.value)
+    formData.append('password', e.target.password.value)
 
-    const postData = async () => {
-      const response = await fetch('/api/auth/signIn', {
-        method: 'POST',
-        body: formData,
-      })
-      // console.log(response)
-      return response.json()
-    }
-    postData()
-      .then(res => {
-        if (res.success === false) {
-          setError(res.data.msg)
-        } else {
-          // console.log(res.data)
-          localStorage.setItem('accessToken', res.accessToken)
+    dispatch(fetchSignIn({formData})).then(
+      (resultAction: ReturnType<typeof dispatch>) => {
+        console.log(resultAction) // 반환 값을 확인
 
-          dispatch(setUserInfo(res.data))
-          router.replace('/')
+        // 액션의 payload와 type에 대한 타입 정의
+        type SignInResult = {
+          userInfo: UserInfo
+          accessToken: string
+          type: string
         }
-      })
-      .catch(error => {
-        console.error('Failed to register: ' + error.toString())
-      })
+
+        // 반환된 액션에서 accessToken에 접근
+        const accessToken = (resultAction.payload as SignInResult).accessToken
+        accessToken && router.replace('/')
+      }
+    )
+
+    // const postData = async () => {
+    //   const response = await fetch('/api/auth/signIn', {
+    //     method: 'POST',
+    //     body: formData,
+    //   })
+    //   // console.log(response)
+    //   return response.json()
+    // }
+    // postData()
+    //   .then(res => {
+    //     if (res.success === false) {
+    //       setError(res.data.msg)
+    //     } else {
+    //       // console.log(res.data)
+    //       localStorage.setItem('accessToken', res.accessToken)
+    //       console.log(res.data.userInfo)
+    //       dispatch(fetchSignIn(res.data.userInfo))
+    //       router.replace('/')
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.error('Failed to register: ' + error.toString())
+    //   })
     // const userInfo = useSelector((state: RootState) => state.userInfo)
     // console.log('redux state', userInfo)
   }

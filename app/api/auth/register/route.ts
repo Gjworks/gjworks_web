@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { hashedPassword } from "src/utils/auth/password";
+import { hashedPassword } from "@utils/auth/password";
 import { PrismaClient } from "@prisma/client";
 
 export async function GET(request: Request) {}

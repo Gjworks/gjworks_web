@@ -12,10 +12,10 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@master
         with:
-          host: gjworks.dev
-          username: gjworks
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.PRIVATE_KEY }}
-          port: 2022
+          port: ${{ secrets.PORT }}
           script: |
             cd public_html/
             git pull

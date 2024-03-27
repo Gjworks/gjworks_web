@@ -1,9 +1,9 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { hashedPassword, verifyPassword } from "src/utils/auth/password";
+import { hashedPassword, verifyPassword } from "@utils/auth/password";
 import { PrismaClient } from "@prisma/client";
 
-import { refresh, sign } from "src/utils/auth/jwtAuth";
+import { refresh, sign } from "@utils/auth/jwtAuth";
 
 export async function GET(request: Request) {}
 
@@ -13,10 +13,10 @@ export async function POST(request: Request) {
   const prisma = new PrismaClient();
 
   try {
-    let formData = await request.formData();
+    const formData = await request.formData();
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
-
+    console.log(formData);
     if (!email) {
       const data = {
         code: "error",
@@ -64,7 +64,10 @@ export async function POST(request: Request) {
         const response = NextResponse.json(
           {
             success: true,
-            data: userInfo,
+            data: {
+              code: "success",
+              userInfo: userInfo
+            },
             accessToken: accessToken,
           },
           {

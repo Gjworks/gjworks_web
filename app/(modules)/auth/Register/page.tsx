@@ -31,12 +31,11 @@ const Register = () => {
       password: e.target.password.value,
       nickname: e.target.nickName.value,
     }
-    console.log(data)
     const formData = new FormData()
     formData.append('email', data.email)
     formData.append('password', data.password)
     formData.append('nickname', data.nickname)
-    console.log(formData)
+
     const postData = async () => {
       const response = await fetch('/api/auth/register', {
         method: 'POST',

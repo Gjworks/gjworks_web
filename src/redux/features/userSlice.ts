@@ -1,5 +1,6 @@
 "use client"
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 interface UserInfo {
   // 사용자 정보에 해당하는 인터페이스를 정의합니다.
@@ -15,24 +16,107 @@ interface UserInfo {
 
 interface UserState {
   userInfo: UserInfo | null;
+  loading: boolean,
+  error: string | undefined,
 }
 
 const initialState: UserState = {
   userInfo: null,
+  loading: false,
+  error: undefined,
 };
+
+interface FetchSignInPayload {
+  formData: FormData;
+}
+
+interface FetchUserInfoPayload {
+  accessToken: string;
+  formData: FormData;
+}
+
+interface FetchSignInResponse {
+  userInfo: UserInfo;
+  accessToken: string;
+}
+
+export const fetchSignIn = createAsyncThunk<FetchSignInResponse, FetchSignInPayload>(
+  'userInfo/fetchSignIn',
+  async ({formData}: { formData: FormData }):Promise<{ userInfo: UserInfo; accessToken: string }> => {
+    console.log(formData)
+    const response = await fetch('/api/auth/signIn', {
+      method: 'POST',
+      body: formData,
+    });
+    const result = await response.json();
+    console.log(result.accessToken)
+    // return data.data.userInfo;
+    return { userInfo: result.data.userInfo, accessToken: result.accessToken };
+  }
+);
+
+export const fetchUserInfo = createAsyncThunk<UserInfo, FetchUserInfoPayload>(
+  'userInfo/fetchUserInfo',
+  async ({accessToken, formData}: { accessToken: string, formData: FormData }):Promise<UserInfo> => {
+    console.log(accessToken, formData);
+    const response = await fetch('/api/user/userUpdate', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      method: 'POST',
+      body: formData,
+    });
+    const result = await response.json();
+    console.log(result.data.userInfo)
+    return result.data.userInfo;
+  }
+);
 
 export const userSlice = createSlice({
   name: "userInfo",
   initialState,
   reducers: {
-    setUserInfo: (state, action: PayloadAction<UserInfo>) => {
-      state.userInfo = action.payload;
-    },
-    resetUserInfo: (state) => {
-      state.userInfo = null;
-    },
+    // setUserInfo: (state, action: PayloadAction<UserInfo>) => {
+    //   console.log(action.payload)
+    //   state.userInfo = action.payload;
+    // },
+    // resetUserInfo: (state) => {
+    //   state.userInfo = null;
+    // },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUserInfo.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchUserInfo.fulfilled, (state, action) => {
+        state.loading = false;
+        console.log(action.payload)
+        state.userInfo = action.payload;
+      })
+      .addCase(fetchUserInfo.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      })
+      .addCase(fetchSignIn.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchSignIn.fulfilled, (state, action) => {
+        state.loading = false;
+        // 사용자 정보와 accessToken 받아오기
+        console.log(action.payload)
+        const { userInfo, accessToken } = action.payload;
+        // fetchSignIn에서 받아온 사용자 정보로 덮어쓰기
+        state.userInfo = userInfo;
+        // localStorage에 accessToken 저장
+        localStorage.setItem('accessToken', accessToken);
+      })
+      .addCase(fetchSignIn.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
   },
 })
 
-export const { setUserInfo, resetUserInfo } = userSlice.actions;
+// export const { setUserInfo, resetUserInfo } = userSlice.actions;
 export default userSlice.reducer;
