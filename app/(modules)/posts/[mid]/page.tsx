@@ -1,11 +1,12 @@
 'use client'
 
-import React, {useEffect, useState, Suspense} from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 import BoardList from 'src/components/list/BoardList'
 import PageNavigation from 'src/components/nav/PageNavigation'
-import {getData} from './server'
+import { getData } from './server'
 
 interface PageProps {
   params: {
@@ -13,8 +14,9 @@ interface PageProps {
   }
 }
 
-const Page: React.FC<PageProps> = ({params}) => {
-  const [documentInfo, setDocumentInfo] = useState<{[key: string]: any}>()
+const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
+  const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>()
+  console.log(params.mid)
   let items
   const fetchData = async mid => {
     items = await getData(mid)
@@ -29,7 +31,7 @@ const Page: React.FC<PageProps> = ({params}) => {
       <div className="max-w-screen-3xl mx-auto">
         <div className="grid grid-cols-1 gap-12 px-3 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6">
           <div className="col-span-1">
-            <Link href="/posts/works/1" className="group">
+            <Link href="/posts/works/view/1" className="group">
               <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
               <div className="px-1">
                 <div className="mb-6 w-full">
@@ -55,7 +57,7 @@ const Page: React.FC<PageProps> = ({params}) => {
             </Link>
           </div>
           <div className="col-span-1">
-            <Link href="/posts/works/2" className="group">
+            <Link href="/posts/works/view/2" className="group">
               <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg17.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
               <div className="px-1">
                 <div className="mb-6 w-full">
@@ -81,7 +83,7 @@ const Page: React.FC<PageProps> = ({params}) => {
             </Link>
           </div>
           <div className="col-span-1">
-            <Link href="/posts/works/3" className="group">
+            <Link href="/posts/works/view/3" className="group">
               <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg22.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
               <div className="px-1">
                 <div className="mb-6 w-full">
@@ -107,6 +109,7 @@ const Page: React.FC<PageProps> = ({params}) => {
             </Link>
           </div>
         </div>
+        <Link href="/posts/works/create">글쓰기</Link>
       </div>
     </>
   )

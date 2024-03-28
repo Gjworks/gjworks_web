@@ -1,6 +1,6 @@
 'use client'
 
-const ProfileComponent = ({profileName, profileEmail}) => {
+const ProfileComponent = ({ profileName, profileEmail }) => {
   return (
     <>
       <div className="w-full">

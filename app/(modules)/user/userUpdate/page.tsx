@@ -1,11 +1,11 @@
 'use client'
 
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
-import {useSelector} from 'react-redux'
-import {RootState} from '@redux/store'
-import {store} from '@redux/store'
-import {fetchUserInfo} from '@redux/features/userSlice'
+import { useSelector } from 'react-redux'
+import { RootState } from '@redux/store'
+import { store } from '@redux/store'
+import { fetchUserInfo } from '@redux/features/userSlice'
 
 import Popup from 'src/components/modal/Popup'
 import Warning from '@components/message/Warning'
@@ -65,7 +65,7 @@ const Page = (props: any) => {
     const formData = new FormData()
     formData.append('nickname', e.target.nickname.value)
     accessToken &&
-      dispatch(fetchUserInfo({accessToken, formData})).then(
+      dispatch(fetchUserInfo({ accessToken, formData })).then(
         (resultAction: ReturnType<typeof dispatch>) => {
           const dataInfo = resultAction.payload as SignData
           dataInfo?.code === 'error' && setError(dataInfo?.message)

@@ -1,10 +1,10 @@
 'use client'
 
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import {useSelector} from 'react-redux'
-import {RootState} from '@redux/store'
+import { useSelector } from 'react-redux'
+import { RootState } from '@redux/store'
 
 const Page = () => {
   const [isLogged, setIsLogged] = useState<boolean>(false)
@@ -40,7 +40,7 @@ const Page = () => {
                           <div className="rounded-full h-2 w-full bg-blue-200/40"></div>
                           <div
                             className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-blue-400 transition-all"
-                            style={{width: '80%'}}
+                            style={{ width: '80%' }}
                           ></div>
                         </div>
                         <div className="text-black text-xs">80%</div>
@@ -67,7 +67,7 @@ const Page = () => {
                           <div className="rounded-full h-2 w-full bg-lime-200/40"></div>
                           <div
                             className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-lime-400 transition-all"
-                            style={{width: '80%'}}
+                            style={{ width: '80%' }}
                           ></div>
                         </div>
                         <div className="text-black text-xs">80%</div>
@@ -94,7 +94,7 @@ const Page = () => {
                           <div className="rounded-full h-2 w-full bg-rose-200/40"></div>
                           <div
                             className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-rose-400 transition-all"
-                            style={{width: '80%'}}
+                            style={{ width: '80%' }}
                           ></div>
                         </div>
                         <div className="text-black text-xs">80%</div>

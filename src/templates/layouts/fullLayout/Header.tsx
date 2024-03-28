@@ -12,7 +12,6 @@ import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
 import nav from 'src/res/config/navigation.json'
 import Account from '@components/account/Account'
-import page from 'src/res/config/page.json'
 import {motion} from 'framer-motion'
 
 import Right from '@components/panel/Right'
@@ -55,7 +54,6 @@ const Header = () => {
     const params = pathname?.split('/')
 
     if (params?.length) {
-      console.log(params?.length)
       if (params?.length > 2) {
         setCurrentPage(nav.header[params?.[2]])
       } else {
@@ -65,9 +63,7 @@ const Header = () => {
     }
   }, [pathname, currentPage])
 
-  useEffect(() => {
-    console.log(currentPage)
-  }, [currentPage])
+  useEffect(() => {}, [currentPage])
 
   useEffect(() => {
     const updatePosition = () => {
@@ -318,8 +314,6 @@ const Header = () => {
                     </Link>
                     {nav.header &&
                       Object.entries(nav.header).map((data, index) => {
-                        console.log(currentPage)
-                        console.log(data[1].route)
                         return (
                           <Link
                             href={data[1].route}

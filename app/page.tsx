@@ -1,10 +1,10 @@
 'use client'
 
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from '@components/viewer/SafariBrower'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import MainLayout from '@templates/layouts/main/Layout'
 import Codehighlighte from '@components/codehighlight/Codehighlighter'
 import Popup from '@components/modal/Popup'
@@ -24,10 +24,10 @@ export default function Page() {
 
   const parentVariants = {
     onscreen: {
-      transition: {staggerChildren: 0.2},
+      transition: { staggerChildren: 0.2 },
     },
     offscreen: {
-      transition: {staggerChildren: 0.2, staggerDirection: -1},
+      transition: { staggerChildren: 0.2, staggerDirection: -1 },
     },
   }
   const variants = {
@@ -67,7 +67,7 @@ export default function Page() {
         <motion.div className="relative w-full px-3 lg:px-0 pt-4">
           <div className="relative max-w-screen-3xl mx-auto">
             <div className=" overflow-hidden rounded-3xl">
-              <div className="relative overflow-hidden bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat">
+              <div className="relative overflow-hidden bg-[url('/assets/images/bg20.jpg')] bg-cover bg-center bg-no-repeat">
                 {/*  */}
                 <div className="absolute inset-0 bg-gray-950/75"></div>
                 {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
@@ -77,7 +77,7 @@ export default function Page() {
                       variants={parentVariants}
                       initial="offscreen"
                       whileInView="onscreen"
-                      viewport={{once: false, amount: 0.3}}
+                      viewport={{ once: false, amount: 0.3 }}
                       className="grid w-full grid-cols-12 gap-8"
                     >
                       <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
@@ -229,7 +229,7 @@ export default function Page() {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{once: false, amount: 0.1}}
+            viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
             className="hidden overflow-hidden py-16 lg:py-20"
           >
@@ -307,7 +307,7 @@ export default function Page() {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{once: false, amount: 0.1}}
+            viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
             className="hidden pt-20"
           >
@@ -451,7 +451,7 @@ export default function Page() {
             variants={parentVariants}
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{once: false, amount: 0.3}}
+            viewport={{ once: false, amount: 0.3 }}
             className="hidden py-20"
           >
             <div className=" mx-auto max-w-screen-lg py-5 lg:py-10">
@@ -507,7 +507,7 @@ export default function Page() {
                 <motion.div
                   initial="offscreen"
                   whileInView="onscreen"
-                  viewport={{once: false, amount: 0.1}}
+                  viewport={{ once: false, amount: 0.1 }}
                   variants={parentVariants}
                   className="grid grid-cols-12 gap-4"
                 >
@@ -556,7 +556,7 @@ export default function Page() {
                   <motion.div
                     initial="offscreen"
                     whileInView="onscreen"
-                    viewport={{once: true, amount: 0.3}}
+                    viewport={{ once: true, amount: 0.3 }}
                     variants={parentVariants}
                     className="mx-auto max-w-xl"
                   >
@@ -565,7 +565,7 @@ export default function Page() {
                         src="/assets/images/mac_studio.png"
                         alt="Macbook Pro"
                         width={600}
-                        style={{width: '100%', height: 'auto'}}
+                        style={{ width: '100%', height: 'auto' }}
                         height={280}
                       ></Image>
                     </motion.div>
@@ -577,7 +577,7 @@ export default function Page() {
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{once: false, amount: 0.1}}
+            viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
             className="pt-10"
           >
@@ -637,7 +637,7 @@ export default function Page() {
               <motion.div
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{once: false, amount: 0.3}}
+                viewport={{ once: false, amount: 0.3 }}
                 variants={parentVariants}
                 className="px-3 py-20 xl:px-8"
               >
@@ -664,7 +664,7 @@ export default function Page() {
                 variants={parentVariants}
                 initial="offscreen"
                 whileInView="onscreen"
-                viewport={{once: false, amount: 0.3}}
+                viewport={{ once: false, amount: 0.3 }}
                 className="w-full"
               >
                 <motion.div
