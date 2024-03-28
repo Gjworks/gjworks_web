@@ -55,9 +55,19 @@ const Header = () => {
     const params = pathname?.split('/')
 
     if (params?.length) {
-      setCurrentPage(page[params?.[1]])
+      console.log(params?.length)
+      if (params?.length > 2) {
+        setCurrentPage(nav.header[params?.[2]])
+      } else {
+        setCurrentPage(nav.header[params?.[1]])
+      }
+      // setCurrentPage(nav.header[params?.[1]])
     }
   }, [pathname, currentPage])
+
+  useEffect(() => {
+    console.log(currentPage)
+  }, [currentPage])
 
   useEffect(() => {
     const updatePosition = () => {
@@ -308,6 +318,8 @@ const Header = () => {
                     </Link>
                     {nav.header &&
                       Object.entries(nav.header).map((data, index) => {
+                        console.log(currentPage)
+                        console.log(data[1].route)
                         return (
                           <Link
                             href={data[1].route}
@@ -320,7 +332,7 @@ const Header = () => {
                             }}
                             className={
                               'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  ' +
-                              (currentPage?.name === data[1].name
+                              (currentPage?.route === data[1].route
                                 ? 'text-gray-400 dark:text-white'
                                 : 'dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white')
                             }

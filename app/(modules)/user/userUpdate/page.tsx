@@ -64,13 +64,10 @@ const Page = (props: any) => {
     e.preventDefault()
     const formData = new FormData()
     formData.append('nickname', e.target.nickname.value)
-    console.log(accessToken, formData)
     accessToken &&
       dispatch(fetchUserInfo({accessToken, formData})).then(
         (resultAction: ReturnType<typeof dispatch>) => {
-          console.log(resultAction.payload)
           const dataInfo = resultAction.payload as SignData
-          console.log(dataInfo)
           dataInfo?.code === 'error' && setError(dataInfo?.message)
         }
       )

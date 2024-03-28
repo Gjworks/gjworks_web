@@ -74,10 +74,10 @@ const SubNav = () => {
                         href={data[1].route}
                         key={data[1].name}
                         className={
-                          'block whitespace-nowrap rounded-full px-4 py-1.5 text-sm text-black hover:bg-gray-100 hover:text-gray-500 ' +
+                          'block whitespace-nowrap rounded-full px-6 py-1.5 text-sm text-black hover:bg-gray-100 hover:text-gray-500 ' +
                           (currentPage?.name === data[1].name
-                            ? 'bg-gray-300 text-gray-950 dark:text-white'
-                            : 'dark:text-dark-400 text-gray-400 hover:text-gray-900 dark:hover:text-white')
+                            ? 'bg-gray-200/75 text-black dark:text-white'
+                            : 'dark:text-dark-900 text-gray-900 hover:text-gray-400 dark:hover:text-white')
                         }
                       >
                         {data[1].title}

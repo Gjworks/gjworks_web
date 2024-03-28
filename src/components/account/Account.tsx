@@ -23,15 +23,10 @@ const Account = () => {
   const [isLogged, setIsLogged] = useState<boolean>(false)
   const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined)
   const userInfo = useSelector((state: RootState) => state.userInfo)
-  console.log(userInfo?.userInfo)
-  useEffect(() => {
-    console.log(userInfo?.userInfo)
-    userInfo && userInfo?.userInfo && setLoggedInfo(userInfo.userInfo)
-  }, [userInfo])
 
   useEffect(() => {
-    console.log(loggedInfo?.userInfo)
-  }, [loggedInfo])
+    userInfo && userInfo?.userInfo && setLoggedInfo(userInfo.userInfo)
+  }, [userInfo])
 
   const fetchUserData = async (accessToken: string) => {
     try {
@@ -53,7 +48,6 @@ const Account = () => {
           }
         }
         if (response.status === 401) {
-          console.log(response)
         }
       } else {
         throw new Error('Failed to fetch error: ' + response.status)
