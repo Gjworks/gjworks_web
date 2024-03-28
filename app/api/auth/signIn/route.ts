@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       const data = {
         code: "error",
         element: "email",
-        msg: "이메일 계정을 입력해주세요.",
+        message: "이메일 계정을 입력해주세요.",
       };
       return NextResponse.json({
         success: false,
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
       const data = {
         code: "error",
         element: "password",
-        msg: "비밀번호를 입력해주세요.",
+        message: "비밀번호를 입력해주세요.",
       };
       return NextResponse.json({
         success: false,
@@ -100,7 +100,7 @@ export async function POST(request: Request) {
             success: false,
             data: {
               code: "error",
-              msg : '아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.'
+              message : '아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.'
             },
             accessToken:null
           },

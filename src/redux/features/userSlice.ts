@@ -2,20 +2,24 @@
 
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 
-interface UserInfo {
+interface DataInfo {
   // 사용자 정보에 해당하는 인터페이스를 정의합니다.
-  id:number;
-  uuid: string;
-  nickname: string;
-  password: string;
-  email: string;
-  createdAt: string;
-  updateAt: string;
-  
+  code :string
+  element : string
+  message : string
+  userInfo : {
+    id:number;
+    uuid: string;
+    nickname: string;
+    password: string;
+    email: string;
+    createdAt: string;
+    updateAt: string;
+  }
 }
 
 interface UserState {
-  userInfo: UserInfo | null;
+  userInfo: DataInfo | null;
   loading: boolean,
   error: string | undefined,
 }
@@ -36,28 +40,28 @@ interface FetchUserInfoPayload {
 }
 
 interface FetchSignInResponse {
-  userInfo: UserInfo;
+  userInfo: DataInfo;
   accessToken: string;
 }
 
 export const fetchSignIn = createAsyncThunk<FetchSignInResponse, FetchSignInPayload>(
   'userInfo/fetchSignIn',
-  async ({formData}: { formData: FormData }):Promise<{ userInfo: UserInfo; accessToken: string }> => {
+  async ({formData}: { formData: FormData }):Promise<{ userInfo: DataInfo; accessToken: string }> => {
     console.log(formData)
     const response = await fetch('/api/auth/signIn', {
       method: 'POST',
       body: formData,
     });
     const result = await response.json();
-    console.log(result.accessToken)
+    console.log(result)
     // return data.data.userInfo;
-    return { userInfo: result.data.userInfo, accessToken: result.accessToken };
+    return { userInfo: result.data, accessToken: result.accessToken };
   }
 );
 
-export const fetchUserInfo = createAsyncThunk<UserInfo, FetchUserInfoPayload>(
+export const fetchUserInfo = createAsyncThunk<DataInfo, FetchUserInfoPayload>(
   'userInfo/fetchUserInfo',
-  async ({accessToken, formData}: { accessToken: string, formData: FormData }):Promise<UserInfo> => {
+  async ({accessToken, formData}: { accessToken: string, formData: FormData }):Promise<DataInfo> => {
     console.log(accessToken, formData);
     const response = await fetch('/api/user/userUpdate', {
       headers: {
@@ -67,8 +71,8 @@ export const fetchUserInfo = createAsyncThunk<UserInfo, FetchUserInfoPayload>(
       body: formData,
     });
     const result = await response.json();
-    console.log(result.data.userInfo)
-    return result.data.userInfo;
+    console.log(result.data)
+    return result.data;
   }
 );
 
@@ -92,7 +96,7 @@ export const userSlice = createSlice({
       .addCase(fetchUserInfo.fulfilled, (state, action) => {
         state.loading = false;
         console.log(action.payload)
-        state.userInfo = action.payload;
+        if(action.payload) state.userInfo = action.payload;
       })
       .addCase(fetchUserInfo.rejected, (state, action) => {
         state.loading = false;

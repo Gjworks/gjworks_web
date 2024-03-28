@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Link from 'next/link'
 
 import {useRouter} from 'next/navigation'
@@ -11,15 +11,19 @@ import {fetchSignIn} from '@redux/features/userSlice'
 import TextInput from '@components/form/TextInput'
 import Warning from '@components/message/Warning'
 
-interface UserInfo {
-  // 사용자 정보에 해당하는 인터페이스를 정의합니다.
-  id: number
-  uuid: string
-  nickname: string
-  password: string
-  email: string
-  createdAt: string
-  updateAt: string
+interface SignData {
+  code: string
+  element: string
+  message: string
+  userInfo: {
+    id: number
+    uuid: string
+    nickname: string
+    password: string
+    email: string
+    createdAt: string
+    updateAt: string
+  }
 }
 
 const Signin = () => {
@@ -29,8 +33,11 @@ const Signin = () => {
   // const emailInputRef = useRef(null)
   const [emailInput, setEmailInput] = useState<string>()
   const [passwordInput, setPasswordInput] = useState<string>()
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState<SignData>()
   const [error, setError] = useState<any>(false)
+
+  const refInputEmail = useRef<HTMLInputElement>(null)
+  const refInputPassword = useRef<HTMLInputElement>(null)
 
   const getData = (x: string) => {
     setEmailInput(x)
@@ -42,6 +49,7 @@ const Signin = () => {
   const submitHandler = async e => {
     e.preventDefault()
     const formData = new FormData()
+
     formData.append('email', e.target.email.value)
     formData.append('password', e.target.password.value)
 
@@ -51,17 +59,23 @@ const Signin = () => {
 
         // 액션의 payload와 type에 대한 타입 정의
         type SignInResult = {
-          userInfo: UserInfo
+          userInfo: SignData
           accessToken: string
           type: string
         }
 
         // 반환된 액션에서 accessToken에 접근
         const accessToken = (resultAction.payload as SignInResult).accessToken
+        const dataInfo = (resultAction.payload as SignInResult).userInfo
+
+        dataInfo && setUser(dataInfo)
+
+        // dataInfo.code === 'error' && setError(dataInfo.message)
+        // dataInfo.element === 'email' && refInputEmail.current?.focus()
+
         accessToken && router.replace('/')
       }
     )
-
     // const postData = async () => {
     //   const response = await fetch('/api/auth/signIn', {
     //     method: 'POST',
@@ -89,6 +103,17 @@ const Signin = () => {
     // console.log('redux state', userInfo)
   }
 
+  useEffect(() => {
+    user?.code === 'error' && setError(user?.message)
+
+    refInputEmail.current &&
+      user?.element === 'email' &&
+      refInputEmail.current.focus()
+
+    refInputPassword.current &&
+      user?.element === 'password' &&
+      refInputPassword.current.focus()
+  }, [user])
   return (
     <>
       <div className="">
@@ -128,6 +153,7 @@ const Signin = () => {
                     <input
                       type="text"
                       name="email"
+                      ref={refInputEmail}
                       className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none"
                       placeholder="Your email"
                     />
@@ -167,6 +193,7 @@ const Signin = () => {
                     <input
                       type="password"
                       name="password"
+                      ref={refInputPassword}
                       className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none"
                       placeholder="Your Password"
                     />

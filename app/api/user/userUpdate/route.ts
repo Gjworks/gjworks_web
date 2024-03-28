@@ -26,15 +26,16 @@ export async function POST(request: Request) {
   console.log(formData)
   const nickname = formData.get('nickname') as string;
   if (!nickname) {
-    response = NextResponse.json({success: true,
+    return response = NextResponse.json({
+      success: true,
       data: {
-        success: true,
         code: "error",
+        element: 'nickname',
         message : '닉네임 값은 필수입니다.'
       }
     }, { status: 200 });
   }
-
+  console.log(response)
   const decodeToken = jwt.decode(accessToken);
   if(decodeToken) {
     try {
@@ -53,11 +54,10 @@ export async function POST(request: Request) {
         },
       });
       if(!userInfo) {
-        response = NextResponse.json(
+        return response = NextResponse.json(
           {
-            
+            success: true,
             data: {
-              success: true,
               code: "fail",
               message : '회원정보가 없습니다.'
             }
@@ -76,10 +76,11 @@ export async function POST(request: Request) {
               nickname: nickname,
             }
           })
-          response = NextResponse.json(
+          userInfo.nickname = nickname;
+          return response = NextResponse.json(
             {
+              success: true,
               data: {
-                success: true,
                 code: "success",
                 userInfo : userInfo,
                 message : '닉네임이 성공적으로 변경되었습니다.'
@@ -96,9 +97,8 @@ export async function POST(request: Request) {
     } catch (e) {
       console.log('userInfo error' + e)
       throw NextResponse.json({
-            
+        success: false,
         data: {
-          success: false,
           code: "fail",
           message : '회원정보를 가지고 오는 과정에서 문제가 발생하였습니다.'
         }
@@ -108,10 +108,10 @@ export async function POST(request: Request) {
       });
     }
   }else{
-    response = NextResponse.json(
+    return response = NextResponse.json(
       {
+        success: true,
         data: {
-          success: true,
           code: "fail",
           message : '토큰 정보가 잘못되었습니다.'
         }
@@ -123,7 +123,7 @@ export async function POST(request: Request) {
   }
   // const nowPasswordValue = request.get('nowPasswordValue') as string;
   // console.log(nowPasswordValue)
-  return response
+  // return response
 }
 
 export async function PUT(request: Request) {}

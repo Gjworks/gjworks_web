@@ -1,30 +1,38 @@
 'use client'
 
 import React, {useState, useEffect, useRef} from 'react'
+
+import {useSelector} from 'react-redux'
+import {RootState} from '@redux/store'
+import {store} from '@redux/store'
+import {fetchUserInfo} from '@redux/features/userSlice'
+
 import Popup from 'src/components/modal/Popup'
 import Warning from '@components/message/Warning'
 import ChangePassword from '@templates/user/ChangePassword'
 
-import {store} from '@redux/store'
-import {fetchUserInfo} from '@redux/features/userSlice'
-
 interface UserInfo {
-  id: number
-  uuid: string
-  email: string
-  password: string
-  nickname: string
-  createdAt: string
-  updateAt: string
-  isAdmin: null
-  isManagers: null
+  code: string
+  element: string
+  message: string
+  userInfo: {
+    id: number
+    uuid: string
+    nickname: string
+    password: string
+    email: string
+    createdAt: string
+    updateAt: string
+  }
 }
 const Page = (props: any) => {
   const dispatch = store.dispatch
   const [showPopup, setShowPopup] = useState(false)
   const [accessToken, setAccessToken] = useState<string | null>(null)
-  const [userInfo, setUserInfo] = useState<UserInfo>()
+  const [loggedInfo, setLoggedInfo] = useState<UserInfo>()
   const [error, setError] = useState<any>(false)
+
+  const userInfo = useSelector((state: RootState) => state.userInfo)
 
   const closePopup = close => {
     setShowPopup(close)
@@ -33,26 +41,52 @@ const Page = (props: any) => {
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken')
     setAccessToken(accessToken)
+
+    userInfo && userInfo.userInfo && setLoggedInfo(userInfo.userInfo)
   }, [])
+
+  interface SignData {
+    code: string
+    element: string
+    message: string
+    userInfo: {
+      id: number
+      uuid: string
+      nickname: string
+      password: string
+      email: string
+      createdAt: string
+      updateAt: string
+    }
+  }
 
   const handleUserInfoSubmit = async e => {
     e.preventDefault()
     const formData = new FormData()
     formData.append('nickname', e.target.nickname.value)
     console.log(accessToken, formData)
-    accessToken && dispatch(fetchUserInfo({accessToken, formData}))
+    accessToken &&
+      dispatch(fetchUserInfo({accessToken, formData})).then(
+        (resultAction: ReturnType<typeof dispatch>) => {
+          console.log(resultAction.payload)
+          const dataInfo = resultAction.payload as SignData
+          console.log(dataInfo)
+          dataInfo?.code === 'error' && setError(dataInfo?.message)
+        }
+      )
   }
   return (
     <>
       <form onSubmit={handleUserInfoSubmit}>
         <div className="max-w-screen-md mx-auto px-3 py-20">
+          {error && <Warning message={error} />}
           <div className="border-b border-gray-200">
             <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
               <div className="col-span-1 text-base text-gray-400 p-2">
                 이메일
               </div>
               <div className="col-span-2 text-base text-gray-900 p-2">
-                gjworks@kakao.com
+                {loggedInfo && loggedInfo.userInfo && loggedInfo.userInfo.email}
               </div>
             </div>
             <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
@@ -96,7 +130,11 @@ const Page = (props: any) => {
                   name="nickname"
                   className="w-full py-2 border border-gray-200 hover:border-gray-900 focus:border-gray-900 px-5 rounded-lg outline-none"
                   placeholder="변경할 닉네임을 입력해주세요."
-                  defaultValue={userInfo?.nickname}
+                  defaultValue={
+                    loggedInfo &&
+                    loggedInfo.userInfo &&
+                    loggedInfo.userInfo.nickname
+                  }
                 />
               </div>
             </div>

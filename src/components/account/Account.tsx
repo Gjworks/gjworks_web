@@ -4,11 +4,35 @@ import {useState, useEffect} from 'react'
 import {useSelector} from 'react-redux'
 import {RootState} from '@redux/store'
 
+interface UserInfo {
+  code: string
+  element: string
+  message: string
+  userInfo: {
+    id: number
+    uuid: string
+    nickname: string
+    password: string
+    email: string
+    createdAt: string
+    updateAt: string
+  }
+}
+
 const Account = () => {
   const [isLogged, setIsLogged] = useState<boolean>(false)
-  // const userInfo = useSelector(state => state)
-  // console.log(userInfo.userInfo.userInfo)
+  const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined)
   const userInfo = useSelector((state: RootState) => state.userInfo)
+  console.log(userInfo?.userInfo)
+  useEffect(() => {
+    console.log(userInfo?.userInfo)
+    userInfo && userInfo?.userInfo && setLoggedInfo(userInfo.userInfo)
+  }, [userInfo])
+
+  useEffect(() => {
+    console.log(loggedInfo?.userInfo)
+  }, [loggedInfo])
+
   const fetchUserData = async (accessToken: string) => {
     try {
       const response = await fetch('/api/auth/refresh', {
@@ -60,7 +84,9 @@ const Account = () => {
             <div className="flex items-center flex-1 gap-2">
               <div>
                 <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
-                  {userInfo?.userInfo?.nickname}
+                  {loggedInfo &&
+                    loggedInfo.userInfo &&
+                    loggedInfo.userInfo.nickname}
                 </div>
               </div>
               {/* <div className="border border-orange-500 text-orange-500 rounded-md py-1 px-3 text-[10px]">

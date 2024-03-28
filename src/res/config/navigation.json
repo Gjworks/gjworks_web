@@ -5,16 +5,60 @@
       "title": "Works",
       "route": "/posts/works",
       "icon": "",
-      "subMenu": []
+      "subMenu": [
+        {
+            "title": "Works",
+            "name": "works",
+            "icon": "",
+            "parent": "works",
+            "route": "/posts/works"
+        },
+        {
+            "title": "작업이력",
+            "name": "workHistory",
+            "icon": "",
+            "parent": "works",
+            "route": "/posts/workHistory"
+        },
+        {
+            "title": "개발팁",
+            "name": "devTip",
+            "icon": "",
+            "parent": "works",
+            "route": "/posts/devTip"
+        }
+        ]
     },
     "service": {
       "name": "service",
       "title": "Service",
       "route": "/service",
       "icon": "",
-      "subMenu": []
+      "subMenu": [
+        {
+            "title": "서비스",
+            "name": "service",
+            "icon": "",
+            "parent": "service",
+            "route": "/service"
+          },
+          {
+            "title": "증강현실",
+            "name": "ar",
+            "icon": "",
+            "parent": "service",
+            "route": "/service/ar"
+          },
+          {
+            "title": "인공지능",
+            "name": "ai",
+            "icon": "",
+            "parent": "service",
+            "route": "/service/ai"
+          }
+      ]
     },
-    "docs": {
+    "components": {
       "name": "components",
       "title": "Components",
       "route": "/components",
@@ -29,6 +73,13 @@
           },
           {
             "title": "Templates",
+            "name": "templates",
+            "icon": "",
+            "parent": "components",
+            "route": "/components/templates"
+          },
+          {
+            "title": "API Requests",
             "name": "templates",
             "icon": "",
             "parent": "components",
