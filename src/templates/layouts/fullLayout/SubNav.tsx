@@ -3,7 +3,6 @@
 import React, {useEffect, useState} from 'react'
 import Link from 'next/link'
 import nav from 'src/res/config/navigation.json'
-import page from 'src/res/config/page.json'
 import {usePathname} from 'next/navigation'
 
 interface Inspage {
@@ -26,7 +25,6 @@ const SubNav = () => {
 
     let _subMenu
     if (params?.length) {
-      console.log(params?.length)
       if (params?.length > 2) {
         setCurrentPage(nav.header[params?.[2]])
       } else {
@@ -36,7 +34,6 @@ const SubNav = () => {
     }
 
     if (currentPage) {
-      console.log(currentPage)
       _subMenu = currentPage.subMenu
       if (_subMenu) {
         if (_subMenu.length > 0) {
@@ -67,8 +64,6 @@ const SubNav = () => {
               <div className="flex gap-2">
                 {subMenu &&
                   Object.entries(subMenu).map((data, index) => {
-                    // console.log(pathname)
-                    // console.log(currentPage)
                     return (
                       <Link
                         href={data[1].route}

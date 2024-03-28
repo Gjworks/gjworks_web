@@ -8,6 +8,7 @@ datasource db {
 }
 
 model User {
+<<<<<<< HEAD
   id           Int        @id @default(autoincrement())
   uuid         String     @default(uuid())
   email        String     @unique
@@ -20,6 +21,20 @@ model User {
   isManagers   Boolean?
   document     Document[]
   profile      Profile?
+=======
+    id               Int               @id @default(autoincrement()) // 회원 고유 id
+    uuid             String            @default(cuid()) //외부에서 보여질 회원 id
+    email            String            @unique // 회원 이메일
+    nickname         String            @unique // 회원 닉네임
+    password         String            // 비밀번호
+    refreshToken     String?           // 로그인 유지를 위한 refreshToken
+    createdAt        DateTime          @default(now()) // 회원가입 일
+    updateAt         DateTime          @updatedAt // 회원정보 수정 일
+    isAdmin          Boolean?          // 관리자 유무
+    isManagers       Boolean?          // 매니저 유무
+    document         Document[]
+    profile          Profile?
+>>>>>>> 6beca2b2229ca92ec8e9aee8eaad82114e06402b
 }
 
 model Profile {
@@ -30,6 +45,7 @@ model Profile {
 }
 
 model Document {
+<<<<<<< HEAD
   id           Int       @id @default(autoincrement())
   moduleId     Int
   categoryId   Int?
@@ -51,6 +67,25 @@ model Document {
   @@index([authorId], map: "Document_authorId_fkey")
   @@index([categoryId], map: "Document_categoryId_fkey")
   @@index([moduleId], map: "Document_moduleId_fkey")
+=======
+    id               Int               @id @default(autoincrement())
+    module           Module            @relation(fields: [moduleId], references: [id])
+    moduleId         Int
+    category         Category?         @relation(fields: [categoryId], references: [id])
+    categoryId       Int?
+    createdAt        DateTime?         @default(now())
+    updatedAt        DateTime?         //@updatedAt
+    published        Boolean?          @default(false)
+    author           User?             @relation(fields: [authorId], references: [id])
+    authorId         Int?
+    title            String?           @db.VarChar(255)
+    description      String?           @db.LongText
+    isNotice         Boolean?          @default(false)
+    isSecrets        Boolean?          @default(false)
+    readCount        Int?              @default(0)
+    commentCount     Int?              @default(0)
+    voteCount        Int?              @default(0)
+>>>>>>> 6beca2b2229ca92ec8e9aee8eaad82114e06402b
 }
 
 model Category {
@@ -60,6 +95,7 @@ model Category {
 }
 
 model Module {
+<<<<<<< HEAD
   id         Int        @id @default(autoincrement())
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
@@ -70,4 +106,16 @@ model Module {
   config     Json
   status     String?    @db.VarChar(45)
   document   Document[]
+=======
+    id               Int               @id @default(autoincrement())
+    createdAt        DateTime          @default(now())
+    updatedAt        DateTime          //@updatedAt
+    moduleType       String
+    moduleName       String            @unique
+    moduleDesc       String?
+    grant            Json              @db.Json
+    config           Json              @db.Json
+    status           String?           @db.VarChar(45)
+    document         Document[]
+>>>>>>> 6beca2b2229ca92ec8e9aee8eaad82114e06402b
 }

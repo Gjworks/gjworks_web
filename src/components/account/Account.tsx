@@ -1,8 +1,8 @@
 'use client'
 
-import {useState, useEffect} from 'react'
-import {useSelector} from 'react-redux'
-import {RootState} from '@redux/store'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '@redux/store'
 
 interface UserInfo {
   code: string

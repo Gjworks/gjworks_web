@@ -10,7 +10,7 @@ const PostView = () => {
         <div className="relative mx-auto  max-w-screen-lg px-3 pt-20 pb-10 md:pb-20">
           <div
             className="text-3xl md:text-5xl font-light text-white py-4 text-center pt-20"
-            style={{lineHeight: '140%'}}
+            style={{ lineHeight: '140%' }}
           >
             To implement authentication in Next.js, familiarize yourself with
             three foundational concepts.
@@ -389,13 +389,57 @@ const PostView = () => {
             </div>
           </div>
         </div>
-        <div className="dark:bg-dark-900 h-1 bg-gray-100"></div>
+        <div className="dark:bg-dark-900 border-t border-gray-100"></div>
         <div className="mx-auto max-w-screen-md px-3 pt-10">
           <div className="mb-5 text-lg text-black dark:text-white">
-            Comments (1)
+            Comments (6)
           </div>
-          <div className="dark:bg-dark-700/40 dark:text-dark-500 mb-10 flex justify-center rounded-lg bg-gray-100 p-5 text-sm text-gray-400">
-            Comment Editor
+          <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl h-full">
+            <div className="">
+              <textarea
+                className="w-full border-none outline-none text-sm text-gray-900 rounded-xl p-5 focus:shadow-lg focus:shadow-gray-200"
+                rows={4}
+                placeholder="Generate a project kickoff presentation for /meeting"
+              ></textarea>
+            </div>
+            <div className="flex justify-between gap-4 pt-2 px-3">
+              <div className="flex gap-8">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.25}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div className="">
+                <div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.25}
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="pb-20">
             <div className="dark:border-dark-800 border-b border-gray-200 py-10">
