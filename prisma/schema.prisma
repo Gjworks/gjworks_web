@@ -12,7 +12,7 @@ datasource db {
 
 model User {
     id               Int               @id @default(autoincrement()) // 회원 고유 id
-    uuid             String            @default(uuid()) //외부에서 보여질 회원 id
+    uuid             String            @default(cuid()) //외부에서 보여질 회원 id
     email            String            @unique // 회원 이메일
     nickname         String            @unique // 회원 닉네임
     password         String            // 비밀번호
@@ -39,7 +39,7 @@ model Document {
     category         Category?         @relation(fields: [categoryId], references: [id])
     categoryId       Int?
     createdAt        DateTime?         @default(now())
-    updatedAt        DateTime?         @updatedAt
+    updatedAt        DateTime?         //@updatedAt
     published        Boolean?          @default(false)
     author           User?             @relation(fields: [authorId], references: [id])
     authorId         Int?
@@ -61,7 +61,7 @@ model Category {
 model Module {
     id               Int               @id @default(autoincrement())
     createdAt        DateTime          @default(now())
-    updatedAt        DateTime          @updatedAt
+    updatedAt        DateTime          //@updatedAt
     moduleType       String
     moduleName       String            @unique
     moduleDesc       String?
