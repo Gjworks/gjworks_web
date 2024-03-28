@@ -1,27 +1,16 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+    provider = "mysql"
+    url      = env("DATABASE_URL")
 }
 
 model User {
-<<<<<<< HEAD
-  id           Int        @id @default(autoincrement())
-  uuid         String     @default(uuid())
-  email        String     @unique
-  nickname     String     @unique
-  password     String
-  refreshToken String?
-  createdAt    DateTime   @default(now())
-  updateAt     DateTime   @updatedAt
-  isAdmin      Boolean?
-  isManagers   Boolean?
-  document     Document[]
-  profile      Profile?
-=======
     id               Int               @id @default(autoincrement()) // 회원 고유 id
     uuid             String            @default(cuid()) //외부에서 보여질 회원 id
     email            String            @unique // 회원 이메일
@@ -34,40 +23,16 @@ model User {
     isManagers       Boolean?          // 매니저 유무
     document         Document[]
     profile          Profile?
->>>>>>> 6beca2b2229ca92ec8e9aee8eaad82114e06402b
 }
 
 model Profile {
-  id       Int    @id @default(autoincrement())
-  phone    String @unique
-  authorId Int    @unique
-  author   User   @relation(fields: [authorId], references: [id])
+    id               Int               @id @default(autoincrement())
+    phone            String            @unique
+    author           User              @relation(fields: [authorId], references: [id])
+    authorId         Int               @unique
 }
 
 model Document {
-<<<<<<< HEAD
-  id           Int       @id @default(autoincrement())
-  moduleId     Int
-  categoryId   Int?
-  createdAt    DateTime? @default(now())
-  updatedAt    DateTime? @updatedAt
-  published    Boolean?  @default(false)
-  authorId     Int?
-  title        String?   @db.VarChar(255)
-  description  String?   @db.LongText
-  isNotice     Boolean?  @default(false)
-  isSecrets    Boolean?  @default(false)
-  readCount    Int?      @default(0)
-  commentCount Int?      @default(0)
-  voteCount    Int?      @default(0)
-  author       User?     @relation(fields: [authorId], references: [id])
-  category     Category? @relation(fields: [categoryId], references: [id])
-  module       Module    @relation(fields: [moduleId], references: [id])
-
-  @@index([authorId], map: "Document_authorId_fkey")
-  @@index([categoryId], map: "Document_categoryId_fkey")
-  @@index([moduleId], map: "Document_moduleId_fkey")
-=======
     id               Int               @id @default(autoincrement())
     module           Module            @relation(fields: [moduleId], references: [id])
     moduleId         Int
@@ -85,28 +50,15 @@ model Document {
     readCount        Int?              @default(0)
     commentCount     Int?              @default(0)
     voteCount        Int?              @default(0)
->>>>>>> 6beca2b2229ca92ec8e9aee8eaad82114e06402b
 }
 
 model Category {
-  id       Int        @id @default(autoincrement())
-  title    String     @db.VarChar(45)
-  document Document[]
+    id               Int               @id @default(autoincrement())
+    title            String            @db.VarChar(45)
+    document         Document[]
 }
 
 model Module {
-<<<<<<< HEAD
-  id         Int        @id @default(autoincrement())
-  createdAt  DateTime   @default(now())
-  updatedAt  DateTime   @updatedAt
-  moduleType String
-  moduleName String     @unique
-  moduleDesc String?
-  grant      Json
-  config     Json
-  status     String?    @db.VarChar(45)
-  document   Document[]
-=======
     id               Int               @id @default(autoincrement())
     createdAt        DateTime          @default(now())
     updatedAt        DateTime          //@updatedAt
@@ -117,5 +69,4 @@ model Module {
     config           Json              @db.Json
     status           String?           @db.VarChar(45)
     document         Document[]
->>>>>>> 6beca2b2229ca92ec8e9aee8eaad82114e06402b
 }
