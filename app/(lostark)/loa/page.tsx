@@ -1,7 +1,8 @@
 'use client'
 
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import fetchUserData from './server'
+import Image from 'next/image'
 
 interface Character {
   mainCharacter: string
@@ -47,6 +48,7 @@ const Loa = () => {
 
   return (
     <>
+      <Image src="/assets/images/bg10.jpg" alt="dd" width={660} height={660} />
       <div className="py-20">
         <div className="flex gap-8">
           <div className="flex px-3">

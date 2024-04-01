@@ -1,11 +1,11 @@
 'use client'
 
-import React, {useEffect, useState} from 'react'
-import {useRouter} from 'next/navigation'
-import {motion, AnimatePresence} from 'framer-motion'
+import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
 import BottomPortal from '@components/panel/BottomPortal'
 
-const Bottom = ({children}) => {
+const Bottom = ({ children }) => {
   const router = useRouter()
   const [panelState, setPanelState] = useState(false)
   const [state, setState] = useState(false)
@@ -34,30 +34,30 @@ const Bottom = ({children}) => {
   const variants = {
     openPanel: {
       bottom: '0%',
-      transition: {duration: 0.3},
+      transition: { duration: 0.3 },
     },
     closePanel: {
       bottom: '-100%',
-      transition: {duration: 0.3},
+      transition: { duration: 0.3 },
     },
   }
   const variants2 = {
     openPanel: {
       opacity: 1,
-      transition: {duration: 0.5},
+      transition: { duration: 0.5 },
     },
     closePanel: {
       opacity: 0,
-      transition: {duration: 0.5},
+      transition: { duration: 0.5 },
     },
   }
   const exit = {
     bottom: '-100%',
-    transition: {duration: 0.5},
+    transition: { duration: 0.5 },
   }
   const exit2 = {
     opacity: 0,
-    transition: {duration: 0.5},
+    transition: { duration: 0.5 },
   }
   const handleClosePanel = () => {
     // close(false)
@@ -66,6 +66,24 @@ const Bottom = ({children}) => {
       router.back()
     }, 500)
   }
+  useEffect(() => {
+    const handleKeyPress = event => {
+      if (event.key === 'Escape') {
+        // ESC 키를 눌렀을 때 실행할 함수 호출
+        setPanelState(false)
+        setTimeout(() => {
+          router.back()
+        }, 500)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyPress)
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너를 정리
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress)
+    }
+  }, []) // useEffect가 처음에 한 번만 호출되도록 빈 배열을 전달
 
   return (
     <>
@@ -77,7 +95,7 @@ const Bottom = ({children}) => {
               className="fixed w-screen h-screen transform overflow-auto z-100 flex justify-center items-end px-1"
             > */}
             <motion.div
-              initial={{bottom: '-100%'}}
+              initial={{ bottom: '-100%' }}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants}
               exit={exit}
@@ -113,7 +131,7 @@ const Bottom = ({children}) => {
             {/* </motion.div> */}
 
             <motion.div
-              initial={{opacity: 0}}
+              initial={{ opacity: 0 }}
               animate={panelState === true ? 'openPanel' : 'closePanel'}
               variants={variants2}
               exit={exit2}

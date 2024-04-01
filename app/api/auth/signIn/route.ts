@@ -16,7 +16,6 @@ export async function POST(request: Request) {
     const formData = await request.formData();
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
-    console.log(formData);
     if (!email) {
       const data = {
         code: "error",
@@ -60,6 +59,7 @@ export async function POST(request: Request) {
         // exclude password from json response
         const refreshToken = refresh(userInfo.email);
         const accessToken = sign(userInfo.email);
+        console.log(accessToken)
 
         const response = NextResponse.json(
           {

@@ -1,12 +1,12 @@
 'use client'
 
-import {useState, useEffect} from 'react'
-import {useRouter} from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import DefaultLayout from '@templates/layouts/fullLayout/Layout'
 import ProfileComponent from '@components/account/Profile'
 import DefaultNav from '@components/nav/DefaultNav'
-import {useSelector} from 'react-redux'
-import {RootState} from '@redux/store'
+import { useSelector } from 'react-redux'
+import { RootState } from '@redux/store'
 
 interface UserInfo {
   code: string
@@ -23,7 +23,7 @@ interface UserInfo {
   }
 }
 
-const PageLayout = ({children}) => {
+const PageLayout = ({ children }) => {
   const route = useRouter()
   const [isLogged, setIsLogged] = useState<boolean | null>()
   const [userNav, setUserNav] = useState<object>([

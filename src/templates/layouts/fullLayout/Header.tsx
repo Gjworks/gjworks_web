@@ -1,8 +1,8 @@
 'use client'
 
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import {usePathname} from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Dropdown from 'src/components/dropdown/Dropdown'
 
@@ -10,9 +10,9 @@ import Left from 'src/components/panel/Left'
 
 import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
-import nav from 'src/res/config/navigation.json'
+import nav from '@res/config/navigation.json'
 import Account from '@components/account/Account'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import Right from '@components/panel/Right'
 import MymenuTemplate from '@templates/forms/MymenuTemplate'
@@ -189,23 +189,23 @@ const Header = () => {
     onscreen: {
       opacity: [0, 1],
       transition: {
-        y: {stiffness: 300, velocity: -100},
+        y: { stiffness: 300, velocity: -100 },
       },
     },
     offscreen: {
       opacity: 0,
       transition: {
-        y: {stiffness: 300},
+        y: { stiffness: 300 },
       },
     },
   }
 
   const subMenuVariants = {
     onscreen: {
-      transition: {staggerChildren: 0.2, delayChildren: 0.2},
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
     },
     offscreen: {
-      transition: {staggerChildren: 0.2, staggerDirection: -1},
+      transition: { staggerChildren: 0.2, staggerDirection: -1 },
     },
   }
 
@@ -215,7 +215,7 @@ const Header = () => {
   return (
     <>
       <motion.header
-        transition={{transition: {duration: 0.3}}}
+        transition={{ transition: { duration: 0.3 } }}
         className={
           'z-101 dark:bg-dark-950/10 sticky  top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
@@ -436,7 +436,7 @@ const Header = () => {
         className="z-99 fixed left-0 right-0 top-0 "
       >
         <motion.div
-          initial={{opacity: 0}}
+          initial={{ opacity: 0 }}
           animate={showNavigation === true ? 'open' : 'close'}
           variants={wrapVariants}
           className={
@@ -561,7 +561,7 @@ const Header = () => {
                       <motion.div
                         whileTap={{
                           scale: 0.97,
-                          transition: {duration: 0.3},
+                          transition: { duration: 0.3 },
                         }}
                         className="from-dark-500/30 via-dark-700/40 to-dark-400/70 h-20 w-20 overflow-hidden rounded-2xl bg-gradient-to-tl p-[0.5px] shadow-md shadow-black"
                       >
