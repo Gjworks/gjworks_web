@@ -2,20 +2,72 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { getData } from './server'
+import { useSearchParams, usePathname } from 'next/navigation'
+import { getUserList } from './server'
+import PageNavigation from '@plextype/components/nav/PageNavigation'
+import DefaultNav from '@plextype/components/nav/DefaultNav'
+
+interface PageNavigationInfo {
+  totalCount: number
+  totalPages: number
+  page: number
+  listCount: number
+}
 
 const Page = () => {
-  const [memberList, setMemberList] = useState<{ [key: string]: any }>()
+  const params = useSearchParams()
+  const pathname = usePathname()
+  const [userList, setUserList] = useState<{ [key: string]: any }>()
+  const [page, setPage] = useState<number>(Number(params.get('page')) || 1)
+  const [pageNavigation, setPageNavigation] = useState<PageNavigationInfo>({
+    totalCount: 0,
+    totalPages: 0,
+    page: 1,
+    listCount: 0,
+  })
+  const [userNav, setUserNav] = useState<object>([
+    {
+      title: '회원목록',
+      route: '/dashboard/user/list',
+    },
+    {
+      title: '그룹별 회원 목록',
+      route: '/dashboard/user/groupUserlist',
+    },
+    {
+      title: '관리자계정',
+      route: '/dashboard/user/adminUserlist',
+    },
+  ])
+
+  useEffect(() => {
+    const newPage = Number(params.get('page')) || 1
+    setPage(newPage)
+  }, [pathname, params])
+
   let items
-  const fetchData = async () => {
-    items = await getData()
-    setMemberList(items.data)
+  const fetchData = async ({
+    page,
+    target,
+    keyword,
+  }: {
+    page: number | null
+    target: string | null
+    keyword: string | null
+  }) => {
+    items = await getUserList({ page, target, keyword })
+    setUserList(items.userList)
+    setPageNavigation(items.navigation)
   }
   useEffect(() => {
-    fetchData()
-  }, [])
+    const data = {
+      page: page,
+      target: params.get('target') as string | null,
+      keyword: params.get('keyword') as string | null,
+    }
+    fetchData(data)
+  }, [page])
 
-  const documentInfo = ''
   return (
     <>
       <div className="relative">
@@ -30,22 +82,27 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-0 border-b bg-slate-200 bg-white/80 backdrop-blur-lg">
+        <div className="hidden sticky top-0 border-b bg-slate-200 bg-white/80 backdrop-blur-lg">
           <div className="flex pt-3">
             <div className="text-sm py-2 px-5 cursor-pointer border-b border-orange-500 text-black -mb-[1px]">
               회원 목록
             </div>
-            <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-slate-600 -mb-[1px]">
+            <div className="text-sm text-gray-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-slate-600 -mb-[1px]">
               관리자 계정
             </div>
+          </div>
+        </div>
+        <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
+          <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex gap-8 max-w-screen-2xl mx-auto px-3">
+            <DefaultNav list={userNav} />
           </div>
         </div>
         <div className="py-10">
           <div className="max-w-screen-2xl mx-auto px-3">
             <div className="">
               <div className="flex flex-wrap items-center gap-4 mb-5">
-                <div className="text-dark-700 text-lg font-semibold">
-                  회원 목록
+                <div className="text-gray-700 text-lg font-semibold">
+                  회원 목록 ({pageNavigation.totalCount}명)
                 </div>
                 <div className="flex-1"></div>
                 <div className="flex items-center w-full lg:w-auto">
@@ -56,9 +113,9 @@ const Page = () => {
                     </select>
                     <input
                       type="text"
-                      className="bg-transparent py-2 text-dark-200 px-3 outline-none text-sm w-full lg:w-44"
+                      className="bg-transparent py-2 text-gray-200 px-3 outline-none text-sm w-full lg:w-44"
                     ></input>
-                    <button className="hover:text-white text-dark-200 rounded-md">
+                    <button className="hover:text-white text-gray-200 rounded-md">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -83,37 +140,37 @@ const Page = () => {
                     <tr className="bg-slate-200 bg-opacity-50 backdrop-blur-lg">
                       <th
                         scope="col"
-                        className="text-xs text-dark-300 uppercase py-2 px-3 w-32"
+                        className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
                       >
                         No
                       </th>
                       <th
                         scope="col"
-                        className="w-auto text-xs text-dark-300 uppercase py-2 px-3"
+                        className="w-auto text-xs text-gray-600 uppercase py-2 px-3 text-left"
                       >
                         이메일 주소
                       </th>
                       <th
                         scope="col"
-                        className="text-xs text-dark-300 uppercase py-2 px-3 w-32"
+                        className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
                       >
                         닉네임
                       </th>
                       <th
                         scope="col"
-                        className="text-xs text-dark-300 uppercase py-2 px-3 w-32"
+                        className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
                       >
                         그룹
                       </th>
                       <th
                         scope="col"
-                        className="text-xs text-dark-300 uppercase py-2 px-3 w-32"
+                        className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
                       >
                         최근접속일
                       </th>
                       <th
                         scope="col"
-                        className="text-xs text-dark-300 uppercase py-2 px-3 w-32"
+                        className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
                       >
                         조회/수정
                       </th>
@@ -126,35 +183,33 @@ const Page = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {memberList &&
-                      Object.entries(memberList).map((item, index) => {
+                    {userList &&
+                      userList.map((item, index) => {
                         return (
                           <tr
                             key={index}
-                            className="border-b border-slate-200 hover:bg-slate-200 dark:hover:bg-dark-500 hover:bg-opacity-25"
+                            className="border-b border-slate-200 hover:bg-slate-200 dark:hover:bg-gray-500 hover:bg-opacity-25"
                           >
-                            <td className="text-dark-300 text-xs py-3 px-3 text-center">
-                              1
+                            <td className="text-gray-500 text-xs py-3 px-3 text-center">
+                              {item.id - 1}
                             </td>
-                            <td className="text-dark-300 text-xs py-3 px-3 text-center">
-                              {item[1].email}
+                            <td className="text-gray-500 text-xs py-3 px-3">
+                              {item.email}
                             </td>
-                            <td className="text-dark-300 text-sm py-3 px-3 text-center">
-                              {item[1].nickname}
+                            <td className="text-gray-500 text-xs py-3 px-3 text-center">
+                              {item.nickname}
                             </td>
-                            <td className="text-dark-300 text-xs py-3 px-3 text-center">
+                            <td className="text-gray-500 text-xs py-3 px-3 text-center">
                               준회원
                             </td>
-                            <td className="text-dark-300 text-xs py-3 px-3 text-center">
-                              {item[1].updateAt}
-                            </td>
-                            <td className="text-dark-300 text-xs py-3 px-3 text-center">
-                              <div
-                                // href={`/dashboard/member/update/${item[1].id}`}
-                                className="text-orange-500 underline"
+                            <td className="text-gray-500 text-xs py-3 px-3 text-center"></td>
+                            <td className="text-gray-500 text-xs py-3 px-3 text-center">
+                              <Link
+                                href={`/dashboard/user/update/${item.id}`}
+                                className="text-cyan-500 underline"
                               >
                                 조회/수정
-                              </div>
+                              </Link>
                             </td>
                             <td className="px-3 py-3 text-center">
                               <input
@@ -169,26 +224,28 @@ const Page = () => {
                 </table>
               </div>
               <div className="grid grid-cols-2 gap-8 py-5">
-                <div className="col-span-2 xl:col-span-1 flex items-center justify-center xl:justify-start"></div>
+                <div className="col-span-2 xl:col-span-1 flex items-center justify-center xl:justify-start">
+                  <PageNavigation
+                    pathname={pathname}
+                    totalCount={pageNavigation.totalCount}
+                    totalPages={pageNavigation.totalPages}
+                    page={pageNavigation.page}
+                    listCount={pageNavigation.listCount}
+                  />
+                </div>
                 <div className="col-span-2 xl:col-span-1 flex items-center justify-end gap-2 ">
                   <Link
                     className="py-2 px-5 text-white rounded text-sm bg-orange-500 hover:bg-orange-600"
-                    href="/dashboard/member/create"
+                    href="/dashboard/user/create"
                   >
                     회원추가
                   </Link>
-                  <div
-                    className="py-2 px-5 text-white hover:text-white rounded text-sm bg-cyan-500 hover:bg-cyan-600"
-                    // href="/dashboard/member/modify"
-                  >
-                    수정
-                  </div>
-                  <div
+                  <button
                     className="py-2 px-5 text-white rounded text-sm bg-gray-800 hover:bg-red-600"
-                    // href="/dashboard/member/delete"
+                    // href="/dashboard/user/delete"
                   >
                     삭제
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>

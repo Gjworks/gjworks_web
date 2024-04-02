@@ -28,8 +28,8 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
 
   return (
     <>
-      <div className="max-w-screen-3xl mx-auto">
-        <div className="grid grid-cols-1 gap-12 px-3 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6">
+      <div className="max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 gap-12 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           <div className="col-span-1">
             <Link href="/posts/works/view/1" className="group">
               <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>

@@ -1,7 +1,7 @@
 'use client'
 
-import Bottom from '@components/panel/Bottom'
-import PostWrite from '@templates/posts/Write'
+import Bottom from '@plextype/components/panel/Bottom'
+import PostWrite from '@plextype/templates/posts/Write'
 
 const Page = () => {
   return (

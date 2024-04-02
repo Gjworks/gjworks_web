@@ -1,17 +1,49 @@
 'use client'
 
-const PageNavigation = () => {
+import Link from 'next/link'
+interface PageNavigationInfo {
+  pathname: string
+  totalCount: number
+  totalPages: number
+  page: number
+  listCount: number
+}
+
+const PageNavigation = (props: PageNavigationInfo) => {
+  const { pathname, totalCount, totalPages, page, listCount } = props
+
+  const pageNavationList = (): JSX.Element[] | null => {
+    const result: JSX.Element[] = []
+    if (!totalPages) {
+      return null // 페이지 네비게이션 정보가 초기화되지 않은 경우 아무것도 렌더링하지 않습니다.
+    }
+    for (let i = 1; i <= totalPages; i++) {
+      result.push(
+        <Link
+          key={i}
+          href={{ pathname: pathname, query: { page: i } }}
+          className={
+            'flex items-center justify-center rounded-md border text-sm w-[2.25rem] h-[2.25rem] bg-gray-50 hover:bg-white text-gray-500 ' +
+            (page == i
+              ? 'bg-white text-gray-950 border-gray-950'
+              : 'text-gray-500 border-gray-200')
+          }
+        >
+          {i}
+        </Link>
+      )
+    }
+    return result
+  }
+
   return (
     <div className="flex items-center">
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          <nav
-            className="isolate inline-flex -space-x-px rounded-md shadow-sm"
-            aria-label="Pagination"
-          >
+          <nav className="flex gap-1" aria-label="Pagination">
             <a
               href="#"
-              className="relative inline-flex items-center rounded-l-md border border-dark-600 px-2 py-2 text-sm font-medium text-dark-500 hover:bg-dark-500 hover:text-primary-400 focus:z-20"
+              className="flex items-center justify-center rounded-md border text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 bg-gray-50 hover:bg-white"
             >
               <span className="sr-only">Previous</span>
               <svg
@@ -28,49 +60,10 @@ const PageNavigation = () => {
                 />
               </svg>
             </a>
+            {pageNavationList()}
             <a
               href="#"
-              aria-current="page"
-              className="relative z-10 inline-flex items-center border border-primary-500 bg-dark-600 px-4 py-2 text-sm font-medium text-primary-500 hover:bg-primary-800 bg-opacity-75 focus:z-20"
-            >
-              1
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center border border-dark-600 px-4 py-2 text-sm font-medium text-dark-400 hover:bg-dark-700 hover:text-primary-400 focus:z-20"
-            >
-              2
-            </a>
-            <a
-              href="#"
-              className="relative hidden items-center border border-dark-600 px-4 py-2 text-sm font-medium text-dark-400 hover:bg-dark-700 hover:text-primary-400 focus:z-20 md:inline-flex"
-            >
-              3
-            </a>
-            <span className="relative inline-flex items-center border border-dark-600 px-4 py-2 text-sm font-medium text-dark-500">
-              ...
-            </span>
-            <a
-              href="#"
-              className="relative hidden items-center border border-dark-600 px-4 py-2 text-sm font-medium text-dark-400 hover:bg-dark-700 hover:text-primary-400 focus:z-20 md:inline-flex"
-            >
-              8
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center border border-dark-600 px-4 py-2 text-sm font-medium text-dark-400 hover:bg-dark-700 hover:text-primary-400 focus:z-20"
-            >
-              9
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center border border-dark-600 px-4 py-2 text-sm font-medium text-dark-400 hover:bg-dark-700 hover:text-primary-400 focus:z-20"
-            >
-              0
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center rounded-r-md border border-dark-600 px-2 py-2 text-sm font-medium text-dark-400 hover:bg-dark-700 hover:text-primary-400 focus:z-20"
+              className="flex items-center justify-center rounded-md border text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 bg-gray-50 hover:bg-white"
             >
               <span className="sr-only">Next</span>
               <svg

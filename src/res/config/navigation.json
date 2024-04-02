@@ -58,32 +58,32 @@
           }
       ]
     },
-    "components": {
-      "name": "components",
-      "title": "Components",
-      "route": "/components",
+    "plextype": {
+      "name": "plextype",
+      "title": "Plextype",
+      "route": "/plextype",
       "icon": "",
       "subMenu": [
         {
-            "title": "Components",
-            "name": "components",
+            "title": "Plextype",
+            "name": "plextype",
             "icon": "",
-            "parent": "components",
-            "route": "/components"
+            "parent": "plextype",
+            "route": "/plextype"
           },
           {
             "title": "Templates",
             "name": "templates",
             "icon": "",
-            "parent": "components",
-            "route": "/components/templates"
+            "parent": "plextype",
+            "route": "/plextype/templates"
           },
           {
             "title": "API Requests",
             "name": "templates",
             "icon": "",
-            "parent": "components",
-            "route": "/components/templates"
+            "parent": "plextype",
+            "route": "/plextype/templates"
           }
       ]
     },

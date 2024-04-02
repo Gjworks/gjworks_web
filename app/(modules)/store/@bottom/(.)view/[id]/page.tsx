@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Bottom from '@components/panel/Bottom'
+import Bottom from '@plextype/components/panel/Bottom'
 
 const Page = () => {
   return (

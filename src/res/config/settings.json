@@ -1,67 +1,48 @@
 {
-    "module" : {
-        "blog" : {
-            "id" : 1,
-            "name": "blog",
-            "module" : "board",
-            "title": "blog",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
-            "grants" : {
-                "list" : [0],
-                "write" : [3,4],
-                "delete" : [3,4],
-                "view" : [0]
-            },
-            "category" : [
-                {
-                    "name": "fe",
-                    "title" : "Frontend",
-                    "value" : "a"
-                },
-                {
-                    "name": "be",
-                    "title" : "Backend",
-                    "value" : "b"
-                },
-                {
-                    "name": "db",
-                    "title" : "Database",
-                    "value" : "c"
-                }
-            ]
-        },
-        "notice" : {
-            "id" : 2,
-            "name": "notice",
-            "module" : "board",
-            "title": "notice",
-            "description": "회사소개 문구가 들어갈 예정입니다.",
-            "grants" : {
-                "list" : [0],
-                "write" : [5,4],
-                "delete" : [5,4],
-                "view" : [0]
-            },
-            "category" : [
-                {
-                    "name": "notice",
-                    "title" : "Notice",
-                    "value" : "a"
-                },
-                {
-                    "name": "update",
-                    "title" : "Update",
-                    "value" : "b"
-                }
-            ]
-        }
+    "navigation": {
+      "user": {
+        "name": "user",
+        "title": "회원",
+        "route": "/dashboard/user/list",
+        "icon": "",
+        "subMenu": [
+          {
+              "title": "회원목록",
+              "name": "user",
+              "icon": "<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6'><path strokeLinecap='round' strokeLinejoin='round' d='M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z' /></svg>",
+              "parent": "user",
+              "route": "/dashboard/user/list"
+          },
+          {
+              "title": "그룹별 회원 목록",
+              "name": "groupUserList",
+              "icon": "",
+              "parent": "user",
+              "route": "/dashboard/user/groupUserList"
+          },
+          {
+              "title": "관리자 목록",
+              "name": "adminUserList",
+              "icon": "",
+              "parent": "user",
+              "route": "/dashboard/adminUserList"
+          }
+          ]
+      },
+      "posts": {
+        "name": "posts",
+        "title": "게시판",
+        "route": "/posts/list",
+        "icon": "",
+        "subMenu": [
+        ]
+      }
+      
     },
-    "user" : {
-        "terms" : {
-        },
-        "privacy" : {
-        },
-        "about" : {
-        }
+    "footer": {
+      "terms": {},
+      "privacy": {},
+      "about": {}
     }
-}
+  }
+  

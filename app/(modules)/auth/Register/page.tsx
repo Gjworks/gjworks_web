@@ -1,10 +1,10 @@
 'use client'
 
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
-import {useRouter} from 'next/navigation'
-import Warning from '@components/message/Warning'
-import TextInput from '@components/form/TextInput'
+import { useRouter } from 'next/navigation'
+import Warning from '@plextype/components/message/Warning'
+import TextInput from '@plextype/components/form/TextInput'
 
 const Register = () => {
   const [email, setEmail] = useState<string>()

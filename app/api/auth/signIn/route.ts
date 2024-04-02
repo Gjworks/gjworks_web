@@ -57,8 +57,12 @@ export async function POST(request: Request) {
 
       if (userInfo! && (await verifyPassword(password, userInfo!.password))) {
         // exclude password from json response
-        const refreshToken = refresh(userInfo.email);
-        const accessToken = sign(userInfo.email);
+        const tokenParams = {
+          id: userInfo!.email,
+          isAdmin:userInfo!.isAdmin
+        }
+        const refreshToken = refresh(tokenParams);
+        const accessToken = sign(tokenParams);
         console.log(accessToken)
 
         const response = NextResponse.json(

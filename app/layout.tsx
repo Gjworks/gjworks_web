@@ -1,6 +1,6 @@
 import 'styles/globals.css'
 import 'styles/tailwindcss.css'
-import ReduxProviders from '@redux/Providers'
+import ReduxProviders from '@plextype/redux/Providers'
 
 export const metadata = {
   title: '지제이웍스',
@@ -10,7 +10,7 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
   return (
     <html className="break-keep selection:bg-black selection:text-white dark:selection:text-white">
       <head />

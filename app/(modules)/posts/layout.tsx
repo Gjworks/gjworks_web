@@ -1,6 +1,6 @@
-import DefaultLayout from '@templates/layouts/fullLayout/Layout'
+import DefaultLayout from '@plextype/templates/layouts/fullLayout/Layout'
 
-const PageLayout = ({children, bottom}) => {
+const PageLayout = ({ children, bottom }) => {
   return (
     <DefaultLayout>
       {children} {bottom}

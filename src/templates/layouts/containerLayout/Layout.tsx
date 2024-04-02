@@ -4,13 +4,13 @@
  * @brief 레이아웃 최상위 파일
  **/
 'use client'
-import React, {useState, useEffect} from 'react'
-import {motion} from 'framer-motion'
-import Header from '@templates/layouts/fullLayout/Header'
-import Footer from '@templates/layouts/fullLayout/Footer'
-import SubNav from '@templates/layouts/fullLayout/SubNav'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import Header from '@plextype/templates/layouts/fullLayout/Header'
+import Footer from '@plextype/templates/layouts/fullLayout/Footer'
+import SubNav from '@plextype/templates/layouts/fullLayout/SubNav'
 
-const ContainerLayout = ({children}) => {
+const ContainerLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
@@ -44,14 +44,14 @@ const ContainerLayout = ({children}) => {
         </main>
         {scrollPosition > 100 && (
           <motion.button
-            initial={{y: 100, opacity: 0}}
-            animate={{y: 0, opacity: 1, transition: {duration: 0.6}}}
-            exit={{y: 100, opacity: 0, transition: {duration: 0.6}}}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
+            exit={{ y: 100, opacity: 0, transition: { duration: 0.6 } }}
             whileHover={{
               scale: 1.2,
-              transition: {duration: 0.2},
+              transition: { duration: 0.2 },
             }}
-            whileTap={{scale: 1}}
+            whileTap={{ scale: 1 }}
             onClick={goToTop}
             className="dark:bg-dark-600/50 dark:hover:bg-dark-500/50 z-101 fixed bottom-5 right-3 cursor-pointer rounded-lg bg-gray-500/50 p-3 text-white backdrop-blur-lg hover:bg-gray-950 lg:bottom-10 lg:right-10 dark:backdrop-blur-lg"
           >

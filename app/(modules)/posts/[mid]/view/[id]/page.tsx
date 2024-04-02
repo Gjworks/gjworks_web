@@ -1,10 +1,10 @@
 'use client'
 
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import PostView from '@templates/posts/PostView'
+import PostView from '@plextype/templates/posts/PostView'
 //
 // interface PageProps {
 //   params: {

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
-import { RootState } from '@redux/store'
+import { RootState } from '@plextype/redux/store'
 
 const Page = () => {
   const [isLogged, setIsLogged] = useState<boolean>(false)

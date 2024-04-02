@@ -1,7 +1,7 @@
 'use client'
 
-import React, {useState, useEffect, useRef} from 'react'
-import Warning from '@components/message/Warning'
+import React, { useState, useEffect, useRef } from 'react'
+import Warning from '@plextype/components/message/Warning'
 
 const ChangePassword = props => {
   const [accessToken, setAccessToken] = useState<string | null>(null)

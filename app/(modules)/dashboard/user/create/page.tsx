@@ -19,7 +19,7 @@ const Page = () => {
           </div>
         </div>
         <div className="sticky top-[60px] border-b bg-white/80 backdrop-blur-lg z-10">
-          <div className="flex pt-3">
+          <div className="max-w-screen-2xl mx-auto px-3 flex pt-3">
             <div className="text-sm py-2 px-5 cursor-pointer border-b border-orange-500 text-black -mb-[1px]">
               기본정보
             </div>

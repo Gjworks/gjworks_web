@@ -1,15 +1,15 @@
 'use client'
 
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
-import {useRouter} from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
-import {store} from '@redux/store'
-import {fetchSignIn} from '@redux/features/userSlice'
+import { store } from '@plextype/redux/store'
+import { fetchSignIn } from '@plextype/redux/features/userSlice'
 
-import TextInput from '@components/form/TextInput'
-import Warning from '@components/message/Warning'
+import TextInput from '@plextype/components/form/TextInput'
+import Warning from '@plextype/components/message/Warning'
 
 interface SignData {
   code: string
@@ -53,7 +53,7 @@ const Signin = () => {
     formData.append('email', e.target.email.value)
     formData.append('password', e.target.password.value)
 
-    dispatch(fetchSignIn({formData})).then(
+    dispatch(fetchSignIn({ formData })).then(
       (resultAction: ReturnType<typeof dispatch>) => {
         console.log(resultAction) // 반환 값을 확인
 

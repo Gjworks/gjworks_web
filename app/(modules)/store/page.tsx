@@ -1,8 +1,8 @@
 'use client'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 
-import Popup from '@components/modal/Popup'
+import Popup from '@plextype/components/modal/Popup'
 
 const Page = () => {
   const [showPopup, setShowPopup] = useState(false)

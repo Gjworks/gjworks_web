@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import DefaultLayout from '@templates/layouts/fullLayout/Layout'
-import ProfileComponent from '@components/account/Profile'
-import DefaultNav from '@components/nav/DefaultNav'
+import DefaultLayout from '@plextype/templates/layouts/fullLayout/Layout'
+import ProfileComponent from '@plextype/components/account/Profile'
+import DefaultNav from '@plextype/components/nav/DefaultNav'
 import { useSelector } from 'react-redux'
-import { RootState } from '@redux/store'
+import { RootState } from '@plextype/redux/store'
 
 interface UserInfo {
   code: string
@@ -79,7 +79,9 @@ const PageLayout = ({ children }) => {
         }
       />
       <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
-        <DefaultNav list={userNav} />
+        <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex justify-start md:justify-center gap-8 px-3">
+          <DefaultNav list={userNav} />
+        </div>
       </div>
       {children}
     </DefaultLayout>

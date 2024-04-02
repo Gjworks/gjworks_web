@@ -25,11 +25,7 @@
       }
     ],
     "paths": {
-        "@components/*": ["src/components/*"],
-        "@templates/*": ["src/templates/*"],
-        "@utils/*": ["src/utils/*"],
-        "@res/*": ["src/res/*"],
-        "@redux/*": ["src/redux/*"],
+        "@plextype/*": ["src/*"],
     },
     "strictNullChecks": true
   },

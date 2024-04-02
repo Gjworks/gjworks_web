@@ -1,13 +1,12 @@
 'use client'
 
-import React, {useState, useEffect} from 'react'
-import {motion} from 'framer-motion'
-import Header from '@templates/layouts/fullLayout/Header'
-import Footer from '@templates/layouts/fullLayout/Footer'
-import SubNav from '@templates/layouts/fullLayout/SubNav'
-// import Toolbar from '@templates/layouts/fullLayout/Toolbar'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import Header from '@plextype/templates/layouts/fullLayout/Header'
+import Footer from '@plextype/templates/layouts/fullLayout/Footer'
+import SubNav from '@plextype/templates/layouts/fullLayout/SubNav'
 
-const FullLayout = ({children}) => {
+const FullLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
@@ -30,9 +29,14 @@ const FullLayout = ({children}) => {
     <div className="">
       <div className="relative z-20">
         <Header />
-        <main className="h-full px-0 lg:px-16">
-          <SubNav />
-          <div className="relative mx-auto h-full min-h-[calc(100vh-236px)] max-w-[2560px] md:min-h-[calc(100vh-126px)]">
+        <main className="h-full px-0 ">
+          <div className="border-b border-gray-100">
+            <div className="max-w-screen-xl mx-auto">
+              <SubNav />
+            </div>
+          </div>
+
+          <div className="relative mx-auto h-full min-h-[calc(100vh-236px)] max-w-screen-2xl md:min-h-[calc(100vh-126px)] px-3 md:px-6">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
           </div>
@@ -68,8 +72,8 @@ const FullLayout = ({children}) => {
           </motion.button>
         )} */}
 
-        <footer className="pb-8">
-          <div className="mx-auto max-w-screen-xl">
+        <footer className="pb-8 border-t border-gray-100 pt-6">
+          <div className="mx-auto max-w-screen-lg">
             <Footer />
           </div>
         </footer>

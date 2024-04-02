@@ -3,13 +3,13 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 import { useSelector } from 'react-redux'
-import { RootState } from '@redux/store'
-import { store } from '@redux/store'
-import { fetchUserInfo } from '@redux/features/userSlice'
+import { RootState } from '@plextype/redux/store'
+import { store } from '@plextype/redux/store'
+import { fetchUserInfo } from '@plextype/redux/features/userSlice'
 
 import Popup from 'src/components/modal/Popup'
-import Warning from '@components/message/Warning'
-import ChangePassword from '@templates/user/ChangePassword'
+import Warning from '@plextype/components/message/Warning'
+import ChangePassword from '@plextype/templates/user/ChangePassword'
 
 interface UserInfo {
   code: string

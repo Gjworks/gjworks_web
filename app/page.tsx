@@ -3,12 +3,12 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import SafariBrower from '@components/viewer/SafariBrower'
+import SafariBrower from '@plextype/components/viewer/SafariBrower'
 import { motion } from 'framer-motion'
-import MainLayout from '@templates/layouts/main/Layout'
-import Codehighlighte from '@components/codehighlight/Codehighlighter'
-import Popup from '@components/modal/Popup'
-import ArrowLine from '@components/arrow/ArrowLine'
+import MainLayout from '@plextype/templates/layouts/main/Layout'
+import Codehighlighte from '@plextype/components/codehighlight/Codehighlighter'
+import Popup from '@plextype/components/modal/Popup'
+import ArrowLine from '@plextype/components/arrow/ArrowLine'
 
 export default function Page() {
   const [showPopup, setShowPopup] = useState(false)
@@ -182,15 +182,16 @@ export default function Page() {
             </div>
 
             <div className="absolute left-0 top-0 rounded-br-3xl bg-white before:w-10 before:h-10 before:absolute before:-top-[2px] before:-right-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:rotate-90 after:w-10 after:h-10 after:absolute after:-left-[2px] after:-bottom-[38px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:rotate-90">
-              <div className="flex gap-4 px-8 md:px-12 py-4 md:py-6">
+              <div className="flex gap-4 px-6 md:px-12 py-4 md:py-6">
                 <div>
                   <button
                     onClick={() => {
                       setShowPopup(true)
                     }}
-                    className="text-lg font-medium cursor-pointer hover:underline hover:text-tertiary-500"
+                    className="flex text-2xl cursor-pointer hover:underline hover:text-tertiary-500"
                   >
-                    새로운 프로젝트는?
+                    <span className="font-extrabold text-gray-950">plex</span>
+                    <span className="font-normal text-gray-400">type</span>
                   </button>
                 </div>
                 <div className="flex items-center">

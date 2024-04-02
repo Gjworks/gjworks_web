@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import BottomPortal from '@components/panel/BottomPortal'
+import BottomPortal from '@plextype/components/panel/BottomPortal'
 
 const Bottom = ({ children }) => {
   const router = useRouter()

@@ -10,12 +10,12 @@ import Left from 'src/components/panel/Left'
 
 import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
-import nav from '@res/config/navigation.json'
-import Account from '@components/account/Account'
+import nav from '@plextype/res/config/navigation.json'
+import Account from '@plextype/components/account/Account'
 import { motion } from 'framer-motion'
 
-import Right from '@components/panel/Right'
-import MymenuTemplate from '@templates/forms/MymenuTemplate'
+import Right from '@plextype/components/panel/Right'
+import MymenuTemplate from '@plextype/templates/forms/MymenuTemplate'
 
 export type NavType = {
   name: string
@@ -217,12 +217,12 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'z-101 dark:bg-dark-950/10 sticky  top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
+          'z-101 dark:bg-dark-950/10 sticky top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
-        <div className="">
-          <div className="grid grid-cols-4 gap-4 px-3 py-2 lg:px-5">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="grid grid-cols-4 gap-4 px-3 py-2">
             <div className="col-span-1 flex items-center gap-2">
               <button
                 onClick={() => {
@@ -327,8 +327,8 @@ const Header = () => {
                             className={
                               'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm  ' +
                               (currentPage?.route === data[1].route
-                                ? 'text-gray-400 dark:text-white'
-                                : 'dark:text-dark-500 text-gray-800 hover:text-gray-400 dark:hover:text-white')
+                                ? 'text-gray-950 dark:text-white'
+                                : 'dark:text-dark-500 text-gray-400 hover:text-gray-900 dark:hover:text-white')
                             }
                           >
                             {data[1].title}

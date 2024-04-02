@@ -1,36 +1,35 @@
 'use client'
 
-import {useState} from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
-import {usePathname} from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 interface Inspage {
   title: string
   route: string
 }
 
-const DefaultNav = ({list}) => {
+const DefaultNav = ({ list }) => {
   const pathname = usePathname()
 
   return (
     <>
-      <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex justify-start md:justify-center gap-8">
-        {list &&
-          list.map((item, index) => {
-            return (
-              <Link
-                key={index}
-                href={item.route}
-                className={
-                  'block whitespace-nowrap py-3 px-1 text-sm border-b-4 text-gray-400 hover:text-gray-950 hover:border-gray-950 ' +
-                  (pathname === item.route ? 'border-gray-950' : 'border-white')
-                }
-              >
-                {item.title}
-              </Link>
-            )
-          })}
-        {/* <Link
+      {list &&
+        list.map((item, index) => {
+          return (
+            <Link
+              key={index}
+              href={item.route}
+              className={
+                'block whitespace-nowrap py-3 px-1 text-sm border-b-4 text-gray-400 hover:text-gray-950 hover:border-gray-950 ' +
+                (pathname === item.route ? 'border-gray-950' : 'border-white')
+              }
+            >
+              {item.title}
+            </Link>
+          )
+        })}
+      {/* <Link
           href="/user/userUpdate"
           className="whitespace-nowrap py-3 px-1 text-sm border-b-4 text-gray-400 hover:text-gray-950 border-white hover:border-gray-950"
         >
@@ -54,7 +53,6 @@ const DefaultNav = ({list}) => {
         >
           1:1문의
         </Link> */}
-      </div>
     </>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import Coming from '@components/message/Coming'
+import Coming from '@plextype/components/message/Coming'
 
 const Page = () => {
   return

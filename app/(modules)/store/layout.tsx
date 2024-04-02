@@ -1,6 +1,6 @@
-import FullLayout from '@templates/layouts/fullLayout/Layout'
+import FullLayout from '@plextype/templates/layouts/fullLayout/Layout'
 
-const PageLayout = ({children, bottom}) => {
+const PageLayout = ({ children, bottom }) => {
   return (
     <>
       <FullLayout>

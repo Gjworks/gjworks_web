@@ -4,12 +4,12 @@
  * @brief 레이아웃 최상위 파일
  **/
 'use client'
-import React, {useState, useEffect} from 'react'
-import {motion} from 'framer-motion'
-import Header from '@templates/layouts/fullLayout/Header'
-import Footer from '@templates/layouts/fullLayout/Footer'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import Header from '@plextype/templates/layouts/fullLayout/Header'
+import Footer from '@plextype/templates/layouts/fullLayout/Footer'
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
   useEffect(() => {
     const updatePosition = () => {
@@ -32,8 +32,8 @@ const MainLayout = ({children}) => {
       <div className="relative z-20">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-        <main className="px-0 lg:px-16">
-          <div className="relative mx-auto min-h-[calc(100vh-236px)] max-w-[2560px] overflow-hidden md:min-h-[calc(100vh-126px)] ">
+        <main className="">
+          <div className="relative mx-auto min-h-[calc(100vh-236px)] max-w-screen-2xl overflow-hidden md:min-h-[calc(100vh-126px)] px-3 md:px-6">
             {children}
           </div>
         </main>
@@ -67,8 +67,8 @@ const MainLayout = ({children}) => {
           </motion.button>
         )} */}
 
-        <footer className="fixed left-0 right-0 bottom-0 ">
-          <div className="mx-auto max-w-screen-xl">
+        <footer className="pb-8 border-t border-gray-100 pt-6">
+          <div className="mx-auto max-w-screen-lg">
             <Footer />
           </div>
         </footer>

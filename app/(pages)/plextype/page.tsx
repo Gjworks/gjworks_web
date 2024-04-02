@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import Codehighlighte from '@components/codehighlight/Codehighlighter'
+import Codehighlighte from '@plextype/components/codehighlight/Codehighlighter'
 
 const Page = () => {
   const modalString = `import Modal from 'src/components/modal/Modal'

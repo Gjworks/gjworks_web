@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 const secret = process.env.JWT_SECRET!;
 
 // access Token 발급
-const sign = (userId: string) => {
-  return jwt.sign({ id: userId }, secret, {
+const sign = (args:object) => {
+  return jwt.sign(args, secret, {
     algorithm: 'HS256', // 암호화 알고리즘
     expiresIn: '1h', // 유효기간
   });
@@ -16,7 +16,8 @@ const verify = (token: string) => {
     decoded = jwt.verify(token, secret);
     return {
       ok: true,
-      userId: decoded.id,
+      id: decoded.id,
+      isAdmin: decoded.isAdmin
     };
   } catch (error: any) {
     return {
@@ -27,8 +28,8 @@ const verify = (token: string) => {
 };
 
 // refresh Token 발급
-const refresh = (userId: string) => {
-  return jwt.sign({ id: userId }, secret, {
+const refresh = (args:object) => {
+  return jwt.sign(args, secret, {
     algorithm: 'HS256',
     expiresIn: '7d', // 유효기간
   });

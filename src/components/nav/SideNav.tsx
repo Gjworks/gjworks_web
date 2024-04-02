@@ -1,19 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import {usePathname} from 'next/navigation'
-import {motion} from 'framer-motion'
-import SideNavTemplate from '@templates/nav/SideNavTemplate'
+import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
+import SideNavTemplate from '@plextype/templates/nav/SideNavTemplate'
 
 const SideNav = props => {
   const pathname = usePathname()
   console.log(pathname)
   const parentVariants = {
     onscreen: {
-      transition: {staggerChildren: 0.1},
+      transition: { staggerChildren: 0.1 },
     },
     offscreen: {
-      transition: {staggerChildren: 0.1, staggerDirection: -1},
+      transition: { staggerChildren: 0.1, staggerDirection: -1 },
     },
   }
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { RootState } from '@redux/store'
+import { RootState } from '@plextype/redux/store'
 
 interface UserInfo {
   code: string
