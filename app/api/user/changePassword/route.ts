@@ -1,7 +1,7 @@
 import { cookies, headers } from "next/headers";
 import { NextResponse } from "next/server";
 import jwt from 'jsonwebtoken';
-import { hashedPassword, verifyPassword } from "@utils/auth/password";
+import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { PrismaClient } from "@prisma/client";
 
 export async function GET(request: Request) {}
