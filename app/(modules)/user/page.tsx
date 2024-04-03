@@ -22,7 +22,7 @@ const Page = () => {
         <div className="w-full">
           <div className="max-w-screen-md mx-auto">
             <div className="w-full">
-              <div className="elative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full mb-6">
+              <div className="relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full mb-6">
                 <div className="mb-8 font-semibold text-lg">
                   사용중인 서비스
                 </div>

@@ -61,9 +61,12 @@ export async function POST(request: Request) {
           id: userInfo!.email,
           isAdmin:userInfo!.isAdmin
         }
-        const refreshToken = refresh(tokenParams);
-        const accessToken = sign(tokenParams);
+        
+        let refreshToken
+        let accessToken
+        [accessToken, refreshToken] = await Promise.all([sign(tokenParams), refresh(tokenParams)])
         console.log(accessToken)
+        console.log(refreshToken)
 
         const response = NextResponse.json(
           {

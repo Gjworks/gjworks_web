@@ -55,7 +55,7 @@ export async function POST(request: Request) {
           isManagers:true
         }
       });
-      console.log(userInfo)
+
       if(!userInfo) {
         response = NextResponse.json(
           {
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
           },
         );
       }else{
-        console.log(userInfo)
+
         response = NextResponse.json(
           {
             success: true,
@@ -99,7 +99,78 @@ export async function POST(request: Request) {
 
 export async function PUT(request: Request) {}
 
-export async function DELETE(request: Request) {}
+export async function DELETE(request: Request) {
+  const prisma = new PrismaClient();
+
+  let response
+  const authorization = headers().get('authorization')
+  const accessToken = authorization && authorization.split(' ')[1];
+  
+  if (!accessToken) {
+    response =  NextResponse.json({
+      success: true,
+      data: {
+        code: "fail",
+        message : 'accessToken Error'
+      }
+    },
+    {
+      status: 200,
+    },);
+  } else {
+    const decodeToken = jwt.decode(accessToken);
+    if (!decodeToken || !decodeToken.id) {
+      response = NextResponse.json({
+        success: true,
+        data: {
+          code: "fail",
+          message: 'Invalid accessToken'
+        }
+      }, {
+          status: 200,
+      });
+    } else {
+      const deleteUser = await prisma.user.delete({
+        where: {
+          email: decodeToken.id,
+        },
+      })
+      console.log(deleteUser)
+      if(deleteUser){
+        cookies().delete('refreshToken');
+        cookies().delete('accessToken');
+        response = NextResponse.json(
+          {
+            success: true,
+            data: {
+              code: "success",
+              message : '회원 계정정보가 모두 삭제되었습니다.'
+            }
+          },
+          {
+            status: 200,
+          },
+        );
+      }else{
+        response = NextResponse.json(
+          {
+            success: true,
+            data: {
+              code: "fail",
+              message : '회원정보가 없습니다.'
+            }
+          },
+          {
+            status: 200,
+          },
+        );
+      }
+    }
+  }
+  // const nowPasswordValue = request.get('nowPasswordValue') as string;
+  // console.log(nowPasswordValue)
+  return response
+}
 
 export async function PATCH(request: Request) {}
 

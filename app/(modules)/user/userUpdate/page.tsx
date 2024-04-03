@@ -45,20 +45,20 @@ const Page = (props: any) => {
     userInfo && userInfo.userInfo && setLoggedInfo(userInfo.userInfo)
   }, [])
 
-  interface SignData {
-    code: string
-    element: string
-    message: string
-    userInfo: {
-      id: number
-      uuid: string
-      nickname: string
-      password: string
-      email: string
-      createdAt: string
-      updateAt: string
-    }
-  }
+  // interface SignData {
+  //   code: string
+  //   element: string
+  //   message: string
+  //   userInfo: {
+  //     id: number
+  //     uuid: string
+  //     nickname: string
+  //     password: string
+  //     email: string
+  //     createdAt: string
+  //     updateAt: string
+  //   }
+  // }
 
   const handleUserInfoSubmit = async e => {
     e.preventDefault()
@@ -67,7 +67,7 @@ const Page = (props: any) => {
     accessToken &&
       dispatch(fetchUserInfo({ accessToken, formData })).then(
         (resultAction: ReturnType<typeof dispatch>) => {
-          const dataInfo = resultAction.payload as SignData
+          const dataInfo = resultAction.payload as UserInfo
           dataInfo?.code === 'error' && setError(dataInfo?.message)
         }
       )

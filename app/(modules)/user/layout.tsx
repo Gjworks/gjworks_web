@@ -47,6 +47,10 @@ const PageLayout = ({ children }) => {
       title: '1:1문의',
       route: '/user/1n1contact',
     },
+    {
+      title: '회원탈퇴',
+      route: '/user/userDelete',
+    },
   ])
   const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined)
 

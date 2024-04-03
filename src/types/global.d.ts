@@ -1,5 +1,11 @@
 declare global {
   interface UserInfo {
-      // UserInfo 인터페이스 내용
+    id: number
+    uuid: string
+    nickname: string
+    password: string
+    email: string
+    createdAt: string
+    updateAt: string
   }
 }

@@ -18,14 +18,15 @@ export async function GET(request: Request, response: Response){
   try {
     verifyToken = verify(accessToken)
     if (verifyToken.ok === false && refreshToken) {
-      const refreshVerifyToken = refreshVerify(refreshToken)
+      const refreshVerifyToken = await refreshVerify(refreshToken)
+      console.log('refreshVerifyToken', refreshVerifyToken)
 
       if(refreshVerifyToken) {
         //refresh token이 유효하다면 accessToken을 재발급 해주자
 
         const decodeToken = jwt.decode(accessToken);
         if(decodeToken) {
-          newAccessToken = sign(decodeToken.id)
+          newAccessToken = await sign(decodeToken.id)
 
           const response = NextResponse.json(
             {

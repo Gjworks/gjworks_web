@@ -1,6 +1,6 @@
 import { cookies, headers } from "next/headers";
 import { NextResponse } from "next/server";
-import jwt from 'jsonwebtoken';
+import { decodeJwt } from 'jose';
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { PrismaClient } from "@prisma/client";
 
@@ -22,8 +22,6 @@ export async function POST(request: Request) {
   }
   
   const formData = await request.formData()
-  console.log(accessToken)
-  console.log(formData)
   const nickname = formData.get('nickname') as string;
   if (!nickname) {
     return response = NextResponse.json({
@@ -35,9 +33,9 @@ export async function POST(request: Request) {
       }
     }, { status: 200 });
   }
-  console.log(response)
-  const decodeToken = jwt.decode(accessToken);
-  if(decodeToken) {
+  const decodeToken: { id:string, isAdmin:boolean } = await decodeJwt(accessToken);
+  console.log(decodeToken)
+  if(decodeToken && decodeToken.id) {
     try {
       userInfo = await prisma.user.findUnique({
         where: { email: decodeToken.id },

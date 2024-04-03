@@ -84,9 +84,9 @@ export const userSlice = createSlice({
     //   console.log(action.payload)
     //   state.userInfo = action.payload;
     // },
-    // resetUserInfo: (state) => {
-    //   state.userInfo = null;
-    // },
+    resetUserInfo: (state) => {
+      state.userInfo = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -122,5 +122,5 @@ export const userSlice = createSlice({
   },
 })
 
-// export const { setUserInfo, resetUserInfo } = userSlice.actions;
+export const { resetUserInfo } = userSlice.actions;
 export default userSlice.reducer;

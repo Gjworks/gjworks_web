@@ -55,7 +55,7 @@ const SubNav = () => {
       <div className="sticky top-0">
         <div className="flex gap-4 pt-3 px-3">
           <div className="max-w-32 hidden lg:flex items-center">
-            <div className="flex text-lg font-medium text-black uppercase">
+            <div className="flex text-lg font-medium text-black uppercase py-2">
               {currentPage ? currentPage?.title : 'Discovery'}
             </div>
           </div>
