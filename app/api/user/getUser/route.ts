@@ -1,6 +1,6 @@
 import { cookies, headers } from "next/headers";
 import { NextResponse } from "next/server";
-import jwt from 'jsonwebtoken';
+import { decodeJwt } from 'jose';
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { PrismaClient } from "@prisma/client";
 
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       status: 200,
     },);
   } else {
-    const decodeToken = jwt.decode(accessToken);
+    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
     if (!decodeToken || !decodeToken.id) {
       response = NextResponse.json({
         success: true,
@@ -118,7 +118,7 @@ export async function DELETE(request: Request) {
       status: 200,
     },);
   } else {
-    const decodeToken = jwt.decode(accessToken);
+    const decodeToken:{ id:string, isAdmin:boolean } = decodeJwt(accessToken);
     if (!decodeToken || !decodeToken.id) {
       response = NextResponse.json({
         success: true,

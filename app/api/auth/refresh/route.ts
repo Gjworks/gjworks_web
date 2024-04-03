@@ -1,6 +1,6 @@
 import { cookies, headers } from "next/headers";
 import { NextResponse, NextRequest } from "next/server";
-import jwt from 'jsonwebtoken';
+import { decodeJwt } from 'jose';
 import { sign, verify, refreshVerify } from "@plextype/utils/auth/jwtAuth";
 
 export async function GET(request: Request, response: Response){
@@ -24,8 +24,8 @@ export async function GET(request: Request, response: Response){
       if(refreshVerifyToken) {
         //refresh token이 유효하다면 accessToken을 재발급 해주자
 
-        const decodeToken = jwt.decode(accessToken);
-        if(decodeToken) {
+        const decodeToken = await decodeJwt(accessToken);
+        if(decodeToken && decodeToken.id) {
           newAccessToken = await sign(decodeToken.id)
 
           const response = NextResponse.json(

@@ -1,6 +1,6 @@
 import { cookies, headers } from "next/headers";
 import { NextResponse } from "next/server";
-import jwt from 'jsonwebtoken';
+import { decodeJwt } from 'jose';
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { PrismaClient } from "@prisma/client";
 
@@ -24,22 +24,24 @@ export async function POST(request: Request) {
   const newPasswordValue = formData.get('newPasswordValue') as string;
   const renewPasswordValue = formData.get('renewPasswordValue') as string;
 
-  const decodeToken = jwt.decode(accessToken);
-
-  userInfo = await prisma.user.findUnique({
-    where: { email: decodeToken.id },
-    select: {
-      id: true,
-      uuid: true,
-      email: true,
-      password: true,
-      nickname: true,
-      createdAt: true,
-      updateAt:true,
-      isAdmin:true,
-      isManagers:true
-    },
-  });
+  const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
+  if(decodeToken && decodeToken.id){
+    userInfo = await prisma.user.findUnique({
+      where: { email: decodeToken.id },
+      select: {
+        id: true,
+        uuid: true,
+        email: true,
+        password: true,
+        nickname: true,
+        createdAt: true,
+        updateAt:true,
+        isAdmin:true,
+        isManagers:true
+      },
+    });
+  }
+  
   if(!userInfo) {
     response = NextResponse.json(
       {
