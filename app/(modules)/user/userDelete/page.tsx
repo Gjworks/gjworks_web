@@ -56,7 +56,7 @@ const Page = (props: any) => {
   const handlerUserDeleteButton = async event => {
     event.preventDefault()
     if (inputState === true && accessToken) {
-      await fetch('/api/user/getUser', {
+      await fetch('/user/api/handler', {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${accessToken}`,

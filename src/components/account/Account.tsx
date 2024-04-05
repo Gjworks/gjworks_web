@@ -30,7 +30,8 @@ const Account = () => {
 
   const fetchUserData = async (accessToken: string) => {
     try {
-      const response = await fetch('/api/auth/refresh', {
+      const response = await fetch('/auth/Signin/api', {
+        method: 'PUT',
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },

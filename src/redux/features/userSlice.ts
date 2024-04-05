@@ -48,7 +48,7 @@ export const fetchSignIn = createAsyncThunk<FetchSignInResponse, FetchSignInPayl
   'userInfo/fetchSignIn',
   async ({formData}: { formData: FormData }):Promise<{ userInfo: DataInfo; accessToken: string }> => {
     console.log(formData)
-    const response = await fetch('/api/auth/signIn', {
+    const response = await fetch('/auth/api/signin', {
       method: 'POST',
       body: formData,
     });
@@ -63,11 +63,11 @@ export const fetchUserInfo = createAsyncThunk<DataInfo, FetchUserInfoPayload>(
   'userInfo/fetchUserInfo',
   async ({accessToken, formData}: { accessToken: string, formData: FormData }):Promise<DataInfo> => {
     console.log(accessToken, formData);
-    const response = await fetch('/api/user/userUpdate', {
+    const response = await fetch('/user/api/handler', {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
-      method: 'POST',
+      method: 'PUT',
       body: formData,
     });
     const result = await response.json();

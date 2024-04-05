@@ -37,7 +37,7 @@ const Register = () => {
     formData.append('nickname', data.nickname)
 
     const postData = async () => {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch('/auth/api/register', {
         method: 'POST',
         body: formData,
       })

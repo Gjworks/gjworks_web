@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import Dropdown from 'src/components/dropdown/Dropdown'
 
 import Left from 'src/components/panel/Left'
 
@@ -36,7 +35,7 @@ const Header = () => {
   const pathname = usePathname()
 
   const [showLeft, setShowLeft] = useState(false)
-  const [showDropdown, setShowDropdown] = useState(false)
+
   const [showNavigation, setShowNavigation] = useState(false)
   const [showNavigationList, setShowNavigationList] = useState<NavType[]>()
   const [background, setBackground] = useState('')
@@ -47,9 +46,7 @@ const Header = () => {
   const closeRight = close => {
     setShowRight(close)
   }
-  const closeDropdown = close => {
-    setShowDropdown(close)
-  }
+
   useEffect(() => {
     const params = pathname?.split('/')
 
@@ -382,16 +379,7 @@ const Header = () => {
                     />
                   </svg>
                 </button>
-                <button
-                  onClick={() => setShowDropdown(!showDropdown)}
-                  // onClick={() => setShowRight(true)}
-                  className=""
-                >
-                  <Account />
-                </button>
-                <Dropdown state={showDropdown} close={closeDropdown}>
-                  <AccountDropwdown />
-                </Dropdown>
+                <AccountDropwdown />
               </div>
               <button
                 className="dark:text-dark-200 dark:bg-dark-950 dark:hover:bg-dark-700 relative hidden rounded-md bg-white px-2 py-1 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:hover:text-white "
