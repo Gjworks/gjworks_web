@@ -17,14 +17,14 @@ export async function middleware(request: NextRequest, response: NextResponse) {
           new URL('/access', request.url),
         );
       }
-      if (
-        request.nextUrl.pathname.startsWith('/auth/Signin') || 
-        request.nextUrl.pathname.startsWith('/auth/Register')
-      ) {
-        // 요청 url이 Login이거나 createAccount일 경우 && 토큰값이 있다면 
-        // 로그인된 상태로 인지, Home 으로 redirect
-        if (accessToken?.value) return NextResponse.redirect('/access') 
-      }
+      // if (
+      //   request.nextUrl.pathname.startsWith('/auth/Signin') || 
+      //   request.nextUrl.pathname.startsWith('/auth/Register')
+      // ) {
+      //   // 요청 url이 Login이거나 createAccount일 경우 && 토큰값이 있다면 
+      //   // 로그인된 상태로 인지, Home 으로 redirect
+      //   if (accessToken?.value) return NextResponse.redirect('/access') 
+      // }
 
     }
     if (!hasAccessToken && request.nextUrl.pathname.startsWith('/user')) {

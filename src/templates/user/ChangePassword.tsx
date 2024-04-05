@@ -22,7 +22,7 @@ const ChangePassword = props => {
 
   const userData = async data => {
     console.log(data)
-    const response = await fetch('/api/user/changePassword', {
+    const response = await fetch('/user/api/changePassword', {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

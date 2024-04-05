@@ -94,18 +94,17 @@ const AccountDropwdown = () => {
   ])
 
   const handleSignOut = async () => {
-    localStorage.removeItem('accessToken')
-    localStorage.removeItem('persist:root')
-
     try {
-      const response = await fetch('/api/auth/logout', {
-        method: 'POST',
+      const response = await fetch('/auth/api/signin', {
+        method: 'DELETE',
       })
       console.log(response)
       if (response.ok) {
         if (response.status === 200) {
           const callback = await response.json()
           console.log(callback.message)
+          localStorage.removeItem('accessToken')
+          localStorage.removeItem('persist:root')
           // router.push('/')
         }
 
@@ -124,7 +123,8 @@ const AccountDropwdown = () => {
 
   const fetchUserData = async (accessToken: string) => {
     try {
-      const response = await fetch('/api/auth/refresh', {
+      const response = await fetch('/auth/api/signin', {
+        method: 'PUT',
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
