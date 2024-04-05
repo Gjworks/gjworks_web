@@ -80,7 +80,7 @@
           },
           {
             "title": "API Requests",
-            "name": "templates",
+            "name": "apiRequests",
             "icon": "",
             "parent": "plextype",
             "route": "/plextype/templates"

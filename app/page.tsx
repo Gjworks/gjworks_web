@@ -114,7 +114,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-secondary-600 px-3 py-2 text-sm text-white hover:bg-secondary-500  lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-primary-700 px-3 py-2 text-sm text-white hover:bg-primary-600  lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
@@ -182,42 +182,42 @@ export default function Page() {
             </div>
 
             <div className="absolute left-0 top-0 rounded-br-3xl bg-white before:w-10 before:h-10 before:absolute before:-top-[2px] before:-right-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:rotate-90 after:w-10 after:h-10 after:absolute after:-left-[2px] after:-bottom-[38px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:rotate-90">
-              <div className="flex gap-4 px-6 md:px-12 py-4 md:py-6">
-                <div>
+              <div className="pr-2 md:pr-3 pb-3 md:pb-2">
+                <div className="flex gap-4 cursor-pointer rounded-tr-2xl rounded-br-2xl rounded-bl-2xl hover:bg-gray-100 pb-3 px-8 pt-3">
                   <button
                     onClick={() => {
                       setShowPopup(true)
                     }}
-                    className="flex text-2xl cursor-pointer hover:underline hover:text-tertiary-500"
+                    className="flex text-2xl "
                   >
                     <span className="font-extrabold text-gray-950">plex</span>
                     <span className="font-normal text-gray-400">type</span>
                   </button>
-                </div>
-                <div className="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-4 h-4"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                    />
-                  </svg>
+                  <div className="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="absolute right-0 bottom-0 rounded-tl-3xl bg-white before:w-10 before:h-10 before:absolute before:-right-[2px] before:-top-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:-rotate-90 after:w-10 after:h-10 after:absolute after:-left-[38px] after:-bottom-[2px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:-rotate-90">
               <div className="pl-2 pt-2">
-                <div className="block bg-primary-400 rounded-3xl shadow-lg shadow-gray-300/75 hover:shadow-gray-100 cursor-pointer">
+                <div className="block bg-primary-700 rounded-3xl shadow-lg shadow-gray-300/75 hover:shadow-gray-100 cursor-pointer">
                   <div className="px-6 py-6 w-[270px] md:h-[290px]">
                     <div className="flex-1 w-full">
-                      <div className="text-lg font-bold cursor-pointer">
+                      <div className="text-lg font-bold cursor-pointer text-white">
                         서비스 제안하기
                       </div>
                     </div>

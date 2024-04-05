@@ -207,7 +207,7 @@ const Footer = () => {
                   className="order-2 md:order-3"
                 >
                   <Link
-                    href="/"
+                    href="/terms"
                     className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
                   >
                     Terms of service
@@ -218,7 +218,7 @@ const Footer = () => {
                   className="order-3 md:order-4"
                 >
                   <Link
-                    href="/"
+                    href="/privacy"
                     className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
                   >
                     Privacy policy

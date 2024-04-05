@@ -1,21 +1,99 @@
 'use client'
 
-import {useState, useEffect} from 'react'
-import {motion} from 'framer-motion'
-import Link from 'next/link'
-import {useRouter} from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '@plextype/redux/store'
+import { useRouter } from 'next/navigation'
+import Dropdown from '@plextype/components/dropdown/Dropdown'
+import Avator from '@plextype/components/avator/Avator'
+import DefaultList from '@plextype/components/nav/DefaultList'
+
+interface UserInfo {
+  code: string
+  element: string
+  message: string
+  userInfo: {
+    id: number
+    uuid: string
+    nickname: string
+    password: string
+    email: string
+    createdAt: string
+    updateAt: string
+  }
+}
+interface Item {
+  title: string
+  name: string
+  route: string
+  condition?: {
+    operation: string
+    name: string
+    variable: string | boolean
+  }
+}
 
 const AccountDropwdown = () => {
   const router = useRouter()
+  const [showDropdown, setShowDropdown] = useState(false)
   const [isLogged, setIsLogged] = useState<boolean>(false)
+  const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined)
+  const userInfo = useSelector((state: RootState) => state.userInfo)
+
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken')
     const isLoggedIn = accessToken !== null
     setIsLogged(isLoggedIn)
+
+    if (isLoggedIn && accessToken) {
+      accessToken && fetchUserData(accessToken)
+    }
   }, [])
 
-  const handleSignOut = async event => {
-    event.preventDefault()
+  useEffect(() => {
+    userInfo && userInfo?.userInfo && setLoggedInfo(userInfo.userInfo)
+  }, [userInfo])
+
+  const closeDropdown = close => {
+    setShowDropdown(close)
+  }
+
+  const [guestNav, setGuestNav] = useState<Array<Item>>([
+    {
+      title: '로그인',
+      name: 'Signin',
+      route: '/auth/Signin',
+    },
+    {
+      title: '회원가입',
+      name: 'Register',
+      route: '/auth/Register',
+    },
+  ])
+  const [userNav, setUserNav] = useState<Array<Item>>([
+    {
+      title: '마이페이지',
+      name: 'user',
+      route: '/user',
+    },
+    {
+      title: '로그아웃',
+      name: 'Signout',
+      route: '/',
+    },
+    {
+      title: '관리자',
+      name: 'dashboard',
+      route: '/dashboard',
+      condition: {
+        operation: 'equals',
+        name: 'isAdmin',
+        variable: true,
+      },
+    },
+  ])
+
+  const handleSignOut = async () => {
     localStorage.removeItem('accessToken')
     localStorage.removeItem('persist:root')
 
@@ -28,7 +106,7 @@ const AccountDropwdown = () => {
         if (response.status === 200) {
           const callback = await response.json()
           console.log(callback.message)
-          router.push('/')
+          // router.push('/')
         }
 
         if (response.status === 401) {
@@ -44,24 +122,55 @@ const AccountDropwdown = () => {
     }
   }
 
-  const innerAnimation = {
-    open: {
-      opacity: 1,
-      x: '0%',
-      transition: {
-        duration: 0.3,
-      },
-    },
-    close: {
-      opacity: 0,
-      x: '-20%',
-      transition: {
-        duration: 0.2,
-      },
-    },
+  const fetchUserData = async (accessToken: string) => {
+    try {
+      const response = await fetch('/api/auth/refresh', {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
+
+      if (response.ok) {
+        if (response.status === 200) {
+          const userData = await response.json()
+          if (userData.accessToken) {
+            localStorage.setItem('accessToken', userData.accessToken)
+          }
+          if (userData.success === false) {
+            localStorage.removeItem('accessToken')
+            alert(userData.message)
+          }
+        }
+        if (response.status === 401) {
+        }
+      } else {
+        throw new Error('Failed to fetch error: ' + response.status)
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error)
+    }
+  }
+
+  const callbackName = name => {
+    name === 'Signout' && handleSignOut()
   }
   return (
     <>
+      <button onClick={() => setShowDropdown(!showDropdown)}>
+        <Avator username={loggedInfo?.userInfo.nickname} />
+      </button>
+      <Dropdown state={showDropdown} close={closeDropdown}>
+        {isLogged ? (
+          <DefaultList
+            list={userNav}
+            loggedInfo={loggedInfo?.userInfo}
+            callback={callbackName}
+          />
+        ) : (
+          <DefaultList list={guestNav} callback={callbackName} />
+        )}
+      </Dropdown>
+      {/*     
       {isLogged ? (
         <>
           <motion.div className="w-56" variants={innerAnimation}>
@@ -178,7 +287,7 @@ const AccountDropwdown = () => {
 
           <div className="dark:border-dark-700 mx-3 my-2 block border-b border-gray-200/75"></div>
         </>
-      )}
+      )} */}
     </>
   )
 }

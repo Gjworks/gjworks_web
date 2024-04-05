@@ -36,7 +36,7 @@ const FullLayout = ({ children }) => {
             </div>
           </div>
 
-          <div className="relative mx-auto h-full min-h-[calc(100vh-236px)] max-w-screen-2xl md:min-h-[calc(100vh-126px)] px-3 md:px-6">
+          <div className="relative h-full min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-126px)]">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
           </div>
