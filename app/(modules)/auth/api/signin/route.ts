@@ -68,8 +68,6 @@ export async function POST(request: Request) {
         let accessToken
         [accessToken, refreshToken] = await Promise.all([sign(tokenParams), refresh(tokenParams)])
         console.log(accessToken)
-        console.log(refreshToken)
-
         const response = NextResponse.json(
           {
             success: true,
@@ -139,18 +137,19 @@ export async function PUT(request: Request) {
 
   // accessToken이 유효한지 검사
   try {
-    verifyToken = verify(accessToken)
+    verifyToken = await verify(accessToken)
+
     if (verifyToken.ok === false && refreshToken) {
       const refreshVerifyToken = await refreshVerify(refreshToken)
-      console.log('refreshVerifyToken', refreshVerifyToken)
 
       if(refreshVerifyToken) {
-        //refresh token이 유효하다면 accessToken을 재발급 해주자
-
         const decodeToken = await decodeJwt(accessToken);
         if(decodeToken && decodeToken.id) {
-          newAccessToken = await sign(decodeToken.id)
-
+          const tokenParams = {
+            id: decodeToken.id,
+            isAdmin:decodeToken.isAdmin
+          }
+          newAccessToken = await sign(tokenParams)
           const response = NextResponse.json(
             {
               success: true,
@@ -164,12 +163,9 @@ export async function PUT(request: Request) {
           );
           return response
         }
-
       }else{
-        //refreshToken이 만료되었다면 cookie에 저장된 토큰을 삭제하고 로그인 페이지로 유도 하자
         cookies().delete('refreshToken');
         cookies().delete('accessToken');
-
         const response = NextResponse.json(
           {
             success: false,
@@ -202,9 +198,6 @@ export async function DELETE(request: Request) {
   const refreshToken = cookies().get('refreshToken')?.value
   const accessToken = cookies().get('accessToken')?.value
 
-  console.log('test')
-  console.log(refreshToken)
-  console.log(accessToken)
   try {
     if(refreshToken && accessToken) {
       const response = NextResponse.json(

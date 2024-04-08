@@ -98,19 +98,17 @@ const AccountDropwdown = () => {
       const response = await fetch('/auth/api/signin', {
         method: 'DELETE',
       })
-      console.log(response)
       if (response.ok) {
         if (response.status === 200) {
           const callback = await response.json()
-          console.log(callback.message)
           localStorage.removeItem('accessToken')
           localStorage.removeItem('persist:root')
           // router.push('/')
+          window.location.href = '/'
         }
 
         if (response.status === 401) {
           const callback = await response.json()
-          console.log(callback.message)
           alert(callback.message)
         }
       } else {
@@ -137,8 +135,10 @@ const AccountDropwdown = () => {
             localStorage.setItem('accessToken', userData.accessToken)
           }
           if (userData.success === false) {
+            localStorage.removeItem('persist:root')
             localStorage.removeItem('accessToken')
             alert(userData.message)
+            window.location.href = '/'
           }
         }
         if (response.status === 401) {

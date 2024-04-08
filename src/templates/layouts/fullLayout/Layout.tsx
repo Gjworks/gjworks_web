@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Header from '@plextype/templates/layouts/fullLayout/Header'
 import Footer from '@plextype/templates/layouts/fullLayout/Footer'
 import SubNav from '@plextype/templates/layouts/fullLayout/SubNav'
+import FootAlert from '@plextype/templates/layouts/fullLayout/FootAlert'
 
 const FullLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -40,6 +41,7 @@ const FullLayout = ({ children }) => {
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
           </div>
+          <FootAlert />
         </main>
 
         {/* {scrollPosition > 100 && (

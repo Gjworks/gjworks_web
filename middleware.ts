@@ -29,13 +29,13 @@ export async function middleware(request: NextRequest, response: NextResponse) {
     }
     if (!hasAccessToken && request.nextUrl.pathname.startsWith('/user')) {
       return NextResponse.redirect(
-        new URL('/auth/Sigin', request.url),
+        new URL('/auth/Signin', request.url),
       );
       
     }
     if (!hasAccessToken && request.nextUrl.pathname.startsWith('/dashboard')) {
       return NextResponse.redirect(
-        new URL('/auth/Sign', request.url),
+        new URL('/auth/Signin', request.url),
       );
       
     }

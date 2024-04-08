@@ -28,7 +28,7 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
 
   return (
     <>
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto px-3">
         <div className="grid grid-cols-1 gap-12 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           <div className="col-span-1">
             <Link href="/posts/works/view/1" className="group">

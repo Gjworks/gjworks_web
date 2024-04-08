@@ -55,7 +55,7 @@ const Signin = () => {
 
     dispatch(fetchSignIn({ formData })).then(
       (resultAction: ReturnType<typeof dispatch>) => {
-        console.log(resultAction) // 반환 값을 확인
+        // 반환 값을 확인
 
         // 액션의 payload와 type에 대한 타입 정의
         type SignInResult = {

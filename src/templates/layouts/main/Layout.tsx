@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Header from '@plextype/templates/layouts/fullLayout/Header'
 import Footer from '@plextype/templates/layouts/fullLayout/Footer'
+import FootAlert from '@plextype/templates/layouts/fullLayout/FootAlert'
 
 const MainLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
@@ -35,6 +36,7 @@ const MainLayout = ({ children }) => {
         <main className="">
           <div className="relative mx-auto min-h-[calc(100vh-236px)] max-w-screen-2xl overflow-hidden md:min-h-[calc(100vh-126px)] px-3 md:px-6">
             {children}
+            <FootAlert />
           </div>
         </main>
         {/* {scrollPosition > 100 && (

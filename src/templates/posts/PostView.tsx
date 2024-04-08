@@ -73,7 +73,7 @@ const PostView = () => {
       <div className="sticky top-0 bg-white/75 backdrop-blur-lg z-99 pt-1 border-b border-gray-100">
         <div className="mx-auto  max-w-screen-md px-3">
           <div className="flex items-center gap-2">
-            <div className="bg-primary-400 text-black text-xs px-4 py-1 rounded-full">
+            <div className="bg-secondary-400 text-white text-xs px-4 py-1 rounded-full">
               기술공유
             </div>
             <div className="text-base md:text-lg font-light text-gray-950 py-4">

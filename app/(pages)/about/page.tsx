@@ -1,10 +1,10 @@
 'use client'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const Page = () => {
   const variants = {
-    start: {pathLength: 0, fill: 'rgba(0, 0, 0,0)'},
-    end: {pathLength: 1, fill: 'rgba(0,0,0,1)'},
+    start: { pathLength: 0, fill: 'rgba(0, 0, 0,0)' },
+    end: { pathLength: 1, fill: 'rgba(0,0,0,1)' },
   }
   return (
     <>
@@ -34,8 +34,8 @@ const Page = () => {
                       initial="start"
                       animate="end"
                       transition={{
-                        default: {duration: 1.8},
-                        fill: {duration: 1, delay: 1.1},
+                        default: { duration: 1.8 },
+                        fill: { duration: 1, delay: 1.1 },
                       }}
                       id="logoG"
                       d="M910 955 l-74 -75 59 -60 c56 -57 60 -59 77 -43 18 16 25 11 136
@@ -47,11 +47,11 @@ c-128 128 -235 233 -238 233 -3 0 -39 -34 -80 -75z"
                       initial="start"
                       animate="end"
                       transition={{
-                        default: {duration: 1.8},
-                        fill: {duration: 1, delay: 1.1},
+                        default: { duration: 1.8 },
+                        fill: { duration: 1, delay: 1.1 },
                       }}
                       id="logoJ"
-                      stroke-linecap="butt"
+                      strokeLinecap="butt"
                       d="M385 790 l-230 -230 233 -233 232 -232 232 233 233 232 -140 140
 -140 140 -140 -140 -140 -140 55 -55 54 -55 81 80 c44 44 85 80 91 80 6 0 21
 -11 34 -25 l24 -26 -119 -119 -120 -120 -120 120 -120 120 175 175 175 175

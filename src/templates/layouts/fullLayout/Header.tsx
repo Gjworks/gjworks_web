@@ -218,7 +218,7 @@ const Header = () => {
           (showNavigation === true ? '  ' : ' ')
         }
       >
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="">
           <div className="grid grid-cols-4 gap-4 px-3 py-2">
             <div className="col-span-1 flex items-center gap-2">
               <button

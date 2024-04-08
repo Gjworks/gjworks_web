@@ -63,7 +63,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <motion.div className="relative w-full px-3 lg:px-0">
+        <motion.div className="relative w-full">
           <div className="relative max-w-screen-3xl mx-auto">
             <div className=" overflow-hidden rounded-3xl">
               <div className="relative overflow-hidden bg-[url('/assets/images/bg20.jpg')] bg-cover bg-center bg-no-repeat">
