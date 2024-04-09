@@ -1,9 +1,58 @@
 'use client'
 
-import TextInput from 'src/components/form/TextInput'
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import DefaultNav from '@plextype/components/nav/DefaultNav'
+import Warning from '@plextype/components/message/Warning'
 
 const Page = () => {
-  const getEmail = () => {}
+  const router = useRouter()
+  const [error, setError] = useState<any>(false)
+  const [userNav, setUserNav] = useState<object>([
+    {
+      title: '회원목록',
+      route: '/dashboard/user/list',
+    },
+    {
+      title: '그룹별 회원 목록',
+      route: '/dashboard/user/groupUserlist',
+    },
+    {
+      title: '관리자계정',
+      route: '/dashboard/user/adminUserlist',
+    },
+  ])
+
+  const submitHandler = async e => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append('email', e.target.email.value)
+    formData.append('password', e.target.password.value)
+    formData.append('nickname', e.target.nickname.value)
+
+    const postData = async () => {
+      const response = await fetch('/auth/api/register', {
+        method: 'POST',
+        body: formData,
+      })
+      return response.json()
+    }
+    postData()
+      .then(data => {
+        if (data.code === 'error') {
+          console.log(data)
+          setError(data.msg)
+        } else {
+          router.replace('/dashboard/user/list')
+        }
+      })
+      .catch(error => {
+        console.error('Failed to register: ' + error.toString())
+      })
+  }
+
   return (
     <>
       <div className="relative">
@@ -18,30 +67,14 @@ const Page = () => {
             </div>
           </div>
         </div>
-        <div className="sticky top-[60px] border-b bg-white/80 backdrop-blur-lg z-10">
-          <div className="max-w-screen-2xl mx-auto px-3 flex pt-3">
-            <div className="text-sm py-2 px-5 cursor-pointer border-b border-orange-500 text-black -mb-[1px]">
-              기본정보
-            </div>
-            <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-orange-600 -mb-[1px]">
-              작성 글
-            </div>
-            <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-orange-600 -mb-[1px]">
-              댓글
-            </div>
-            <div className="text-sm text-dark-500 py-2 px-5 cursor-pointer hover:border-b hover:border-orange-500 hover:text-orange-600 -mb-[1px]">
-              소셜정보
-            </div>
+        <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
+          <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex gap-8 max-w-screen-2xl mx-auto px-3">
+            <DefaultNav list={userNav} />
           </div>
         </div>
-        <div className="pt-10">
+        <form onSubmit={submitHandler}>
           <div className="max-w-screen-2xl mx-auto">
             <div className="px-3">
-              <div className="flex flex-wrap items-center gap-4">
-                <div className="text-black text-2xl font-semibold">
-                  회원 추가
-                </div>
-              </div>
               <div className="grid grid-cols-4 gap-8 py-10">
                 <div className="col-span-1">
                   <div className="text-lg font-semibold text-gray-600  mb-3">
@@ -51,27 +84,21 @@ const Page = () => {
                     회원의 기본설정을 변경합니다.
                   </div>
                 </div>
-                <div className="col-span-3 rounded-md shadow-sm">
+                <div className="col-span-3">
                   <div className="grid grid-col-span-2 gap-8">
                     <div className="col-span-2 grid grid-cols-3 gap-6">
                       <div className="col-span-3 sm:col-span-2">
                         <label>
                           <div className="text-sm text-black mb-3">이메일</div>
                         </label>
-                        {/* <input
+                        <input
                           type="email"
-                          className="bg-gradient-to-r text-gray-900 outline-none py-2 px-4 text-sm border-b border-gray-300 w-full bg-gray-300/25 dark:bg-dark-800/25 rounded-tl rounded-tr focus:border-orange-500 focus:from-orange-500/25"
-                        ></input> */}
-                        <TextInput
-                          inputType="text"
-                          inputName="nickName"
-                          inputTitle="이메일"
-                          getData={getEmail}
-                          placeholder="Email Adress"
-                          theme="light"
-                          value=""
-                        ></TextInput>
-                        <div className="text-sm text-dark-400 pt-2">
+                          name="email"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                          placeholder="example@mail.com"
+                        />
+
+                        <div className="text-sm text-dark-400 pt-2 font-light">
                           기본로그인이며 계정정보를 찾을 때 사용됩니다.
                         </div>
                       </div>
@@ -81,20 +108,13 @@ const Page = () => {
                         <label>
                           <div className="text-sm text-black mb-3">닉네임</div>
                         </label>
-                        {/* <input
-                          type=""
-                          className="bg-gradient-to-r text-gray-900 outline-none py-2 px-4 text-sm border-b border-gray-300 w-full bg-gray-300/25 dark:bg-dark-800/25 rounded-tl rounded-tr focus:border-orange-500 focus:from-orange-500/25"
-                        ></input> */}
-                        <TextInput
-                          inputType="text"
-                          inputName="nickName"
-                          inputTitle="닉네임"
-                          getData={getEmail}
-                          placeholder="Nick Name"
-                          theme="light"
-                          value=""
-                        ></TextInput>
-                        <div className="text-sm text-dark-400 pt-2">
+                        <input
+                          type="text"
+                          name="nickname"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                        />
+
+                        <div className="text-sm text-dark-400 pt-2 font-light">
                           닉네임은 중복될 수 없는 이름입니다.
                         </div>
                       </div>
@@ -106,16 +126,12 @@ const Page = () => {
                             비밀번호
                           </div>
                         </label>
-                        <TextInput
-                          inputType="text"
-                          inputName="nickName"
-                          inputTitle="비밀번호"
-                          getData={getEmail}
-                          placeholder="Password"
-                          theme="light"
-                          value=""
-                        ></TextInput>
-                        <div className="text-sm text-dark-400 pt-2">
+                        <input
+                          type="password"
+                          name="password"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                        />
+                        <div className="text-sm text-dark-400 pt-2 font-light">
                           비밀번호는 암호화 되어 저장됩니다.
                         </div>
                       </div>
@@ -135,7 +151,7 @@ const Page = () => {
                     회원가입시 입력한 내용 이외의 정보를 기입합니다.
                   </div>
                 </div>
-                <div className="col-span-3 rounded-md shadow-sm">
+                <div className="col-span-3">
                   <div className="grid grid-col-span-2 gap-8">
                     <div className="col-span-2 grid grid-cols-3 gap-6">
                       <div className="col-span-3 sm:col-span-2">
@@ -148,8 +164,9 @@ const Page = () => {
                           <input type="checkbox" className="peer hidden" />
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
                         </label>
-                        <div className="text-sm text-dark-400 pt-2">
-                          기본로그인이며 계정정보를 찾을 때 사용됩니다.
+                        <div className="text-sm text-dark-400 pt-2 font-light">
+                          관리자 페이지에 접근 가능한 계정입니다. (최고 관리자와
+                          동일한 권한을 가지고 있습니다.)
                         </div>
                       </div>
                     </div>
@@ -178,7 +195,7 @@ const Page = () => {
                             </div>
                           </label>
                         </div>
-                        <div className="text-sm text-dark-400 pt-2">
+                        <div className="text-sm text-dark-400 pt-2 font-light">
                           회원은 여러그룹을 중복하여 설정할 수 있습니다.
                         </div>
                       </div>
@@ -199,12 +216,12 @@ const Page = () => {
               <div className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md">
                 뒤로가기
               </div>
-              <div className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md">
+              <button className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md">
                 저장하기
-              </div>
+              </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </>
   )

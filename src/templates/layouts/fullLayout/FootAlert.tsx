@@ -26,15 +26,15 @@ const FootAlert = () => {
         className="transition transform z-100 bottom-0 inset-x-0 pb-2 sm:pb-5 opacity-100 scale-100 translate-y-0 ease-out duration-500 mb-5 lg:mb-0 hover:translate-y-1 hover:transition-all hover:duration-300"
       >
         <div className="max-w-screen-xl mx-auto px-3">
-          <div className="p-3 rounded-xl bg-gray-900 shadow-lg shadow-gray-400 sm:p-4">
+          <div className="p-3 rounded-xl bg-gray-900 shadow-lg shadow-gray-400 sm:p-2">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div className="w-0 flex-1 flex items-center px-3">
                 <div className="inline-block lg:flex gap-4 font-medium text-white truncate">
                   <div className="">
-                    <span className="">Plextype</span> Beta release!
+                    <span className="text-base">Plextype</span> Beta release!
                   </div>
                   <div className="inline text-gray-400">
-                    <span className="">
+                    <span className="text-sm">
                       next.js + prisma + tailwindcss + typescript로 구성된
                       풀스택 웹 애플리케이션 프레임워크 입니다.
                     </span>

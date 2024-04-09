@@ -7,6 +7,10 @@ import { useRouter } from 'next/navigation'
 import Dropdown from '@plextype/components/dropdown/Dropdown'
 import Avator from '@plextype/components/avator/Avator'
 import DefaultList from '@plextype/components/nav/DefaultList'
+import { store } from '@plextype/redux/store'
+import { resetUserInfo } from '@plextype/redux/features/userSlice'
+
+import { Signout, Refresh } from '@plextype/modules/user/controllers/auth'
 
 interface UserInfo {
   code: string
@@ -38,15 +42,21 @@ const AccountDropwdown = () => {
   const [showDropdown, setShowDropdown] = useState(false)
   const [isLogged, setIsLogged] = useState<boolean>(false)
   const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined)
+
   const userInfo = useSelector((state: RootState) => state.userInfo)
 
   useEffect(() => {
+    const dispatch = store.dispatch
     const accessToken = localStorage.getItem('accessToken')
     const isLoggedIn = accessToken !== null
     setIsLogged(isLoggedIn)
 
     if (isLoggedIn && accessToken) {
       accessToken && fetchUserData(accessToken)
+    } else {
+      localStorage.getItem('persist:root') &&
+        localStorage.removeItem('persist:root')
+      dispatch(resetUserInfo())
     }
   }, [])
 
@@ -94,58 +104,57 @@ const AccountDropwdown = () => {
   ])
 
   const handleSignOut = async () => {
-    try {
-      const response = await fetch('/auth/api/signin', {
-        method: 'DELETE',
-      })
-      if (response.ok) {
-        if (response.status === 200) {
-          const callback = await response.json()
-          localStorage.removeItem('accessToken')
-          localStorage.removeItem('persist:root')
-          // router.push('/')
-          window.location.href = '/'
-        }
-
-        if (response.status === 401) {
-          const callback = await response.json()
-          alert(callback.message)
-        }
-      } else {
-        throw new Error('Failed')
+    console.log('logout')
+    const accessToken = localStorage.getItem('accessToken')
+    await Signout(accessToken).then(data => {
+      if (data) {
+        localStorage.removeItem('persist:root')
+        localStorage.removeItem('accessToken')
+        window.location.href = '/'
       }
-    } catch (error) {
-      console.error('Error Event handleSignOut:', error)
-    }
+    })
   }
 
   const fetchUserData = async (accessToken: string) => {
     try {
-      const response = await fetch('/auth/api/signin', {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
+      // const response = await fetch('/auth/api/signin', {
+      //   method: 'PUT',
+      //   headers: {
+      //     Authorization: `Bearer ${accessToken}`,
+      //   },
+      // })
+
+      await Refresh(accessToken).then(response => {
+        console.log(response.accessToken)
+        if (response.success === true && response.accessToken) {
+          localStorage.setItem('accessToken', response.accessToken)
+        }
+        if (response.success === false && response.accessToken === null) {
+          localStorage.removeItem('persist:root')
+          localStorage.removeItem('accessToken')
+          alert(response.data.message)
+          window.location.href = '/'
+        }
       })
 
-      if (response.ok) {
-        if (response.status === 200) {
-          const userData = await response.json()
-          if (userData.accessToken) {
-            localStorage.setItem('accessToken', userData.accessToken)
-          }
-          if (userData.success === false) {
-            localStorage.removeItem('persist:root')
-            localStorage.removeItem('accessToken')
-            alert(userData.message)
-            window.location.href = '/'
-          }
-        }
-        if (response.status === 401) {
-        }
-      } else {
-        throw new Error('Failed to fetch error: ' + response.status)
-      }
+      //   if (response.ok) {
+      //     if (response.status === 200) {
+      //       const userData = await response.json()
+      //       if (userData.accessToken) {
+      //         localStorage.setItem('accessToken', userData.accessToken)
+      //       }
+      //       if (userData.success === false) {
+      //         localStorage.removeItem('persist:root')
+      //         localStorage.removeItem('accessToken')
+      //         alert(userData.message)
+      //         window.location.href = '/'
+      //       }
+      //     }
+      //     if (response.status === 401) {
+      //     }
+      //   } else {
+      //     throw new Error('Failed to fetch error: ' + response.status)
+      //   }
     } catch (error) {
       console.error('Error fetching user data:', error)
     }

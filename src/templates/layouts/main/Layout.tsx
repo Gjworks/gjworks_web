@@ -34,7 +34,7 @@ const MainLayout = ({ children }) => {
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main className="">
-          <div className="relative mx-auto min-h-[calc(100vh-236px)] max-w-screen-2xl overflow-hidden md:min-h-[calc(100vh-126px)] px-3 md:px-6">
+          <div className="relative mx-auto max-w-screen-2xl">
             {children}
             <FootAlert />
           </div>

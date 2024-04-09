@@ -1,6 +1,8 @@
 "use client"
 
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { Signin } from "@plextype/modules/user/controllers/auth";
+import { updateUser } from "@plextype/modules/user/controllers/user";
 
 interface DataInfo {
   // 사용자 정보에 해당하는 인터페이스를 정의합니다.
@@ -47,28 +49,41 @@ interface FetchSignInResponse {
 export const fetchSignIn = createAsyncThunk<FetchSignInResponse, FetchSignInPayload>(
   'userInfo/fetchSignIn',
   async ({formData}: { formData: FormData }):Promise<{ userInfo: DataInfo; accessToken: string }> => {
-    const response = await fetch('/auth/api/signin', {
-      method: 'POST',
-      body: formData,
-    });
-    const result = await response.json();
-    // return data.data.userInfo;
+    let result;
+    await Signin(formData).then((response) => {
+      console.log(response)
+      result = response
+    })
     return { userInfo: result.data, accessToken: result.accessToken };
+    // const response = await fetch('/auth/api/signin', {
+    //   method: 'POST',
+    //   body: formData,
+    // });
+    // const result = await response.json();
+    // return data.data.userInfo;
+    
   }
 );
 
 export const fetchUserInfo = createAsyncThunk<DataInfo, FetchUserInfoPayload>(
   'userInfo/fetchUserInfo',
   async ({accessToken, formData}: { accessToken: string, formData: FormData }):Promise<DataInfo> => {
-    const response = await fetch('/user/api/handler', {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-      method: 'PUT',
-      body: formData,
-    });
-    const result = await response.json();
+
+    let result;
+    await updateUser(accessToken, formData).then((response) => {
+      console.log(response)
+      result = response
+    })
     return result.data;
+    // const response = await fetch('/user/api/handler', {
+    //   headers: {
+    //     Authorization: `Bearer ${accessToken}`,
+    //   },
+    //   method: 'PUT',
+    //   body: formData,
+    // });
+    // const result = await response.json();
+    // return result.data;
   }
 );
 

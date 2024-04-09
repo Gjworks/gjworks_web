@@ -107,7 +107,7 @@ const ChangePassword = props => {
             type="submit"
             className="flex-1 bg-white text-sm border-gray-200 py-4 px-5 hover:bg-blue-500 hover:text-white text-blue-500"
           >
-            변경하기
+            변경하기1
           </button>
         </div>
       </form>

@@ -1,21 +1,18 @@
+'use server';
+
 import { cookies, headers } from "next/headers";
-import { NextResponse } from "next/server";
+
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-import { PrismaClient } from "@prisma/client";
+
 import { decodeJwt } from 'jose';
 import { sign, verify, refresh, refreshVerify } from "@plextype/utils/auth/jwtAuth";
 
-export async function GET(request: Request) {
-  
-}
+import { PrismaClient } from "@prisma/client";
 
-export async function HEAD(request: Request) {}
-
-export async function POST(request: Request) {
+export const Signin = async (formData: FormData) => {
   const prisma = new PrismaClient();
 
   try {
-    const formData = await request.formData();
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
     if (!email) {
@@ -24,10 +21,11 @@ export async function POST(request: Request) {
         element: "email",
         message: "이메일 계정을 입력해주세요.",
       };
-      return NextResponse.json({
-        success: false,
+       const response = {
+        success: true,
         data: data
-      }, { status: 402 });
+      }
+      return response
     }
     if (!password) {
       const data = {
@@ -35,10 +33,11 @@ export async function POST(request: Request) {
         element: "password",
         message: "비밀번호를 입력해주세요.",
       };
-      return NextResponse.json({
-        success: false,
+      const response = {
+        success: true,
         data: data
-      }, { status: 402 });
+      }
+      return response
     }
     try {
       const userInfo = await prisma.user.findUnique({
@@ -68,7 +67,7 @@ export async function POST(request: Request) {
         let accessToken
         [accessToken, refreshToken] = await Promise.all([sign(tokenParams), refresh(tokenParams)])
         console.log(accessToken)
-        const response = NextResponse.json(
+        const response = 
           {
             success: true,
             data: {
@@ -76,12 +75,8 @@ export async function POST(request: Request) {
               userInfo: userInfo
             },
             accessToken: accessToken,
-          },
-          {
-            status: 200,
-            headers: { "content-type": "application/json" },
-          },
-        );
+          }
+
 
         cookies().set({
           name: "accessToken",
@@ -102,7 +97,7 @@ export async function POST(request: Request) {
 
         return response;
       } else {
-        return NextResponse.json(
+        const response = 
           {
             success: false,
             data: {
@@ -110,12 +105,20 @@ export async function POST(request: Request) {
               message : '아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.'
             },
             accessToken:null
-          },
-          { status: 401 },
-        );
+          }
+        return response;
       }
     } catch (e) {
-      throw NextResponse.json({ status: 500 });
+      console.error(e);
+      const response = {
+        success: false,
+        data: {
+          code: "error",
+          message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
+        },
+        accessToken: null,
+      };
+      return response;
     }
     // return NextResponse.json({ code: "success" }, { status: 200 })
   } catch (error) {
@@ -124,15 +127,23 @@ export async function POST(request: Request) {
   }
 }
 
-export async function PUT(request: Request) {
+export const Refresh = async (token:string) => {
   let newAccessToken: string
   let verifyToken:any
   const refreshToken = cookies().get('refreshToken')?.value
-  const authorization = headers().get('authorization')
-  const accessToken = authorization && authorization.split(' ')[1];
+  // const authorization = headers().get('authorization')
+  // const accessToken = authorization && authorization.split(' ')[1];
+  const accessToken = token
   
   if (!accessToken) {
-    return NextResponse.json({ data: 'accessToken Error' }, { status: 201 });
+    return {
+      success: true,
+      data: {
+        code: "error",
+        message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
+      },
+      accessToken:null
+    };
   }
 
   // accessToken이 유효한지 검사
@@ -140,9 +151,11 @@ export async function PUT(request: Request) {
     verifyToken = await verify(accessToken)
 
     if (verifyToken.ok === false && refreshToken) {
+      console.log(11)
       const refreshVerifyToken = await refreshVerify(refreshToken)
 
       if(refreshVerifyToken) {
+        console.log(22)
         const decodeToken = await decodeJwt(accessToken);
         if(decodeToken && decodeToken.id) {
           const tokenParams = {
@@ -150,47 +163,50 @@ export async function PUT(request: Request) {
             isAdmin:decodeToken.isAdmin
           }
           newAccessToken = await sign(tokenParams)
-          const response = NextResponse.json(
+          const response = 
             {
               success: true,
-              name : 'New accessToken',
+              data : {
+                code : 'success',
+                message: 'New accessToken',
+              },
               accessToken: newAccessToken,
-            },
-            {
-              status: 200,
-              headers: { "content-type": "application/json" },
-            },
-          );
+            }
           return response
         }
       }else{
         cookies().delete('refreshToken');
         cookies().delete('accessToken');
-        const response = NextResponse.json(
+        const response = 
           {
             success: false,
-            message: "token이 만료되었습니다. 로그인을 새로 해주세요."
-          },
-          {
-            status: 200,
-            headers: { "content-type": "application/json" },
-          },
-        );
+            data : {
+              code : 'success',
+              message: "token이 만료되었습니다. 로그인을 새로 해주세요."
+            },
+            accessToken: null,
+          }
         return response
       }
+    }else{
+      console.log(4)
     }
     
   // const refreshVerifyToken = refreshVerify(refreshToken)
-  return NextResponse.json({ data: 'success' }, { status: 200 });
+  return {success: true,
+    data: {
+      code: "success",
+      message: "",
+    },
+    accessToken:accessToken};
   } catch (error) {
     console.error(error);
-    throw NextResponse.json({ status: 500 });
+    throw { status: 500 };
   }
-  // 
-  // console.log(verifyToken);
 }
 
-export async function DELETE(request: Request) {
+export const Signout = async (token) => {
+  console.log('Signout')
   cookies().delete('refreshToken');
   cookies().delete('accessToken');
 
@@ -200,39 +216,34 @@ export async function DELETE(request: Request) {
 
   try {
     if(refreshToken && accessToken) {
-      const response = NextResponse.json(
-        {
-          success: false,
-          message: "서버에서 토큰이 삭제되지 않았습니다."
-        },
-        {
-          status: 401,
-          headers: { "content-type": "application/json" },
-        },
-      );
+      const response = {
+        success: true,
+        message: "token이 만료되었습니다. 새로 로그인을 해주세요."
+      }
       return response
     }else{
 
-      const response = NextResponse.json(
-        {
-          success: true,
-          message: "token이 만료되었습니다. 새로 로그인을 해주세요."
-        },
-        {
-          status: 200,
-          headers: { "content-type": "application/json" },
-        },
-      );
+      // const response = NextResponse.json(
+      //   {
+      //     success: true,
+      //     message: "token이 만료되었습니다. 새로 로그인을 해주세요."
+      //   },
+      //   {
+      //     status: 200,
+      //     headers: { "content-type": "application/json" },
+      //   },
+      // );
+      const response = {
+        success: true,
+        message: "token이 만료되었습니다. 새로 로그인을 해주세요."
+      }
+        
+      console.log('Signout response', response)
       return response
     }
     
   } catch (error) {
     console.error(error);
-    throw NextResponse.json({ status: 500 });
+    throw new Response("fail")
   }
 }
-
-export async function PATCH(request: Request) {}
-
-// If `OPTIONS` is not defined, Next.js will automatically implement `OPTIONS` and  set the appropriate Response `Allow` header depending on the other methods defined in the route handler.
-export async function OPTIONS(request: Request) {}
