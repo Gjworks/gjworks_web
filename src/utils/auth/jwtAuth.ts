@@ -21,7 +21,7 @@ const verify = async (token: string) => {
 
 // refresh Token 발급
 const refresh = async (payload: object) => {
-  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime('4h').sign(secret)
+  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime('12h').sign(secret)
 };
 
 const refreshVerify = async (token: string): Promise<boolean> => {

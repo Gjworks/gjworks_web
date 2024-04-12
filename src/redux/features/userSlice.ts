@@ -106,7 +106,10 @@ export const userSlice = createSlice({
       })
       .addCase(fetchUserInfo.fulfilled, (state, action) => {
         state.loading = false;
-        if(action.payload) state.userInfo = action.payload;
+        console.log(action.payload)
+        if(action.payload.code !== 'error') {
+          if(action.payload) state.userInfo = action.payload;
+        }
       })
       .addCase(fetchUserInfo.rejected, (state, action) => {
         state.loading = false;

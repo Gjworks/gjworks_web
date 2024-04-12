@@ -44,6 +44,7 @@ const AccountDropwdown = () => {
   const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined)
 
   const userInfo = useSelector((state: RootState) => state.userInfo)
+  console.log(userInfo)
 
   useEffect(() => {
     const dispatch = store.dispatch
@@ -125,11 +126,14 @@ const AccountDropwdown = () => {
       // })
 
       await Refresh(accessToken).then(response => {
-        console.log(response.accessToken)
-        if (response.success === true && response.accessToken) {
+        console.log(response)
+        if (response.data.code === 'new_accessToken' && response.accessToken) {
           localStorage.setItem('accessToken', response.accessToken)
         }
-        if (response.success === false && response.accessToken === null) {
+        if (
+          response.data.code === 'refreshToken_expires' &&
+          response.accessToken === null
+        ) {
           localStorage.removeItem('persist:root')
           localStorage.removeItem('accessToken')
           alert(response.data.message)

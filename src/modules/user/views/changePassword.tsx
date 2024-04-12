@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Warning from '@plextype/components/message/Warning'
 
+import { PasswordChange } from '@plextype/modules/user/controllers/user'
+
 const ChangePassword = props => {
   const [accessToken, setAccessToken] = useState<string | null>(null)
   const [error, setError] = useState<any>(false)
@@ -20,17 +22,17 @@ const ChangePassword = props => {
       : setError(null)
   }, [accessToken])
 
-  const userData = async data => {
-    console.log(data)
-    const response = await fetch('/user/api/changePassword', {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-      method: 'POST',
-      body: data,
-    })
-    return response.json()
-  }
+  // const userData = async data => {
+  //   console.log(data)
+  //   const response = await fetch('/user/api/changePassword', {
+  //     headers: {
+  //       Authorization: `Bearer ${accessToken}`,
+  //     },
+  //     method: 'POST',
+  //     body: data,
+  //   })
+  //   return response.json()
+  // }
 
   const submitHandler = async e => {
     e.preventDefault()
@@ -39,20 +41,22 @@ const ChangePassword = props => {
     formData.append('nowPasswordValue', e.target.now_password.value)
     formData.append('newPasswordValue', e.target.new_password.value)
     formData.append('renewPasswordValue', e.target.renew_password.value)
-    await userData(formData).then(response => {
-      console.log(response)
-      if (response.data.code === 'fail') {
-        setError(response.data.message)
-      } else {
-        setError(response.data.message)
-        if (response.data.code === 'success') {
-          setTimeout(() => {
-            console.log('이게 어째서?')
-            props.close(false)
-          }, 1000)
+    if (accessToken) {
+      await PasswordChange(accessToken, formData).then(response => {
+        console.log(response)
+        if (response.data.code === 'fail') {
+          setError(response.data.message)
+        } else {
+          setError(response.data.message)
+          if (response.data.code === 'success') {
+            setTimeout(() => {
+              console.log('이게 어째서?')
+              props.close(false)
+            }, 1000)
+          }
         }
-      }
-    })
+      })
+    }
   }
   return (
     <>
@@ -107,7 +111,7 @@ const ChangePassword = props => {
             type="submit"
             className="flex-1 bg-white text-sm border-gray-200 py-4 px-5 hover:bg-blue-500 hover:text-white text-blue-500"
           >
-            변경하기1
+            변경하기
           </button>
         </div>
       </form>

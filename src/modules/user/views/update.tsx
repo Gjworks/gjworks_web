@@ -109,12 +109,12 @@ const UpdateUser = (props: any) => {
                 비밀번호
               </div>
               <div className="col-span-2 flex items-center">
-                <button
-                  className="text-xs border-purple-500 border py-2 px-3 rounded-lg hover:bg-purple-500 hover:text-white text-purple-500"
+                <a
+                  className="text-xs border-purple-500 border py-2 px-3 rounded-lg hover:bg-purple-500 hover:text-white text-purple-500 cursor-pointer"
                   onClick={() => setShowPopup(true)}
                 >
                   비밀번호 변경
-                </button>
+                </a>
               </div>
             </div>
             <div className="grid grid-cols-3 gap-4 py-3 mb-2">

@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation'
 import Warning from '@plextype/components/message/Warning'
 import TextInput from '@plextype/components/form/TextInput'
 
+import { createUser } from '@plextype/modules/user/controllers/user'
+
 const Register = () => {
   const [email, setEmail] = useState<string>()
   const [password, setPassword] = useState<string>()
@@ -32,25 +34,39 @@ const Register = () => {
     formData.append('password', e.target.password.value)
     formData.append('nickname', e.target.nickname.value)
 
-    const postData = async () => {
-      const response = await fetch('/auth/api/register', {
-        method: 'POST',
-        body: formData,
-      })
-      return response.json()
-    }
-    postData()
-      .then(data => {
-        if (data.code === 'error') {
-          console.log(data)
-          setError(data.msg)
+    await createUser(formData)
+      .then(response => {
+        console.log(response)
+        if (response?.data.code === 'fail') {
+          console.log(response)
+          setError(response.data.message)
         } else {
-          router.replace('/dashboard/user/list')
+          router.replace('/auth/Signin')
         }
       })
       .catch(error => {
         console.error('Failed to register: ' + error.toString())
       })
+
+    // const postData = async () => {
+    //   const response = await fetch('/auth/api/register', {
+    //     method: 'POST',
+    //     body: formData,
+    //   })
+    //   return response.json()
+    // }
+    // postData()
+    //   .then(data => {
+    //     if (data.code === 'error') {
+    //       console.log(data)
+    //       setError(data.msg)
+    //     } else {
+    //       router.replace('/dashboard/user/list')
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.error('Failed to register: ' + error.toString())
+    //   })
   }
 
   // const registerUser = async e => {

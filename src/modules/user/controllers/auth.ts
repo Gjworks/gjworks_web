@@ -135,11 +135,12 @@ export const Refresh = async (token:string) => {
   // const accessToken = authorization && authorization.split(' ')[1];
   const accessToken = token
   
-  if (!accessToken) {
+  if (!accessToken && !refreshToken) {
     return {
       success: true,
       data: {
-        code: "error",
+        code: "token_error",
+        type: "fail",
         message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
       },
       accessToken:null
@@ -150,10 +151,12 @@ export const Refresh = async (token:string) => {
   try {
     verifyToken = await verify(accessToken)
 
-    if (verifyToken.ok === false && refreshToken) {
-      console.log(11)
-      const refreshVerifyToken = await refreshVerify(refreshToken)
-
+    if (verifyToken.ok === false) {
+      let refreshVerifyToken
+      if(refreshToken) {
+        refreshVerifyToken = await refreshVerify(refreshToken)
+      }
+      console.log(refreshVerifyToken)
       if(refreshVerifyToken) {
         console.log(22)
         const decodeToken = await decodeJwt(accessToken);
@@ -167,7 +170,8 @@ export const Refresh = async (token:string) => {
             {
               success: true,
               data : {
-                code : 'success',
+                code : 'new_accessToken',
+                type : 'success',
                 message: 'New accessToken',
               },
               accessToken: newAccessToken,
@@ -181,19 +185,19 @@ export const Refresh = async (token:string) => {
           {
             success: false,
             data : {
-              code : 'success',
+              code : 'refreshToken_expires',
+              type : 'fail',
               message: "token이 만료되었습니다. 로그인을 새로 해주세요."
             },
             accessToken: null,
           }
         return response
       }
-    }else{
-      console.log(4)
     }
     
   // const refreshVerifyToken = refreshVerify(refreshToken)
-  return {success: true,
+  return {
+    success: true,
     data: {
       code: "success",
       message: "",

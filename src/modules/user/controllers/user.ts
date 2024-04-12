@@ -4,7 +4,91 @@ import { cookies, headers } from "next/headers";
 import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
+import { getUser } from "@plextype/modules/user/models/user";
 
+export const createUser = async (formData: FormData) => {
+  const prisma = new PrismaClient();
+  let userInfo
+  let response
+
+  const email = formData.get('email') as string;
+  const password = formData.get('password') as string;
+  const nickname = formData.get('nickname') as string;
+  if (!email) {
+    return response = {
+      success: true,
+      data: {
+        code: "error",
+        element: 'email',
+        message : '이메일 값은 필수입니다.'
+      }
+    };
+  }
+  if (!password) {
+    return response ={
+      success: true,
+      data: {
+        code: "error",
+        element: 'password',
+        message : '패스워드 값은 필수입니다.'
+      }
+    };
+  }
+  if (!nickname) {
+    return response = {
+      success: true,
+      data: {
+        code: "error",
+        element: 'nickname',
+        message : '닉네임 값은 필수입니다.'
+      }
+    };
+  }
+
+  const getUserEmail = await getUser({email: email})
+  if(getUserEmail.data) {
+    return response = 
+      {
+        success: true,
+        data: {
+          code: "fail",
+          message : '이미 가입된 이메일입니다.'
+        }
+      }
+  }
+  
+  const getUserNickname = await getUser({nickname: nickname})
+  if(getUserNickname.data) {
+    return response = 
+      {
+        success: true,
+        data: {
+          code: "fail",
+          message : '이미 사용중인 닉네임입니다.'
+        }
+      }
+  }
+
+  try {
+    userInfo = await prisma.user.create({
+      data: {
+        email: email,
+        password: await hashedPassword(password),
+        nickname: nickname,
+      }
+    })
+  } catch (e) {
+    console.log('register error' + e)
+      throw {
+        success: false,
+        data: {
+          code: "fail",
+          message : '회원가입 과정에서 문제가 발생하였습니다.'
+        }
+      };
+  }
+  
+}
 export const updateUser = async (token:string, formData: FormData) => {
   const prisma = new PrismaClient();
   let userInfo
@@ -22,7 +106,7 @@ export const updateUser = async (token:string, formData: FormData) => {
       accessToken:null
     };
   }
-  
+  const userInfoId = formData.get('userInfoId') as string;
   const nickname = formData.get('nickname') as string;
   if (!nickname) {
     return response ={
@@ -33,6 +117,19 @@ export const updateUser = async (token:string, formData: FormData) => {
         message : '닉네임 값은 필수입니다.'
       }
     };
+  }
+  console.log(userInfoId)
+  // const userInfo = await getUser({id:})
+  const getUserNickname = await getUser({nickname:nickname})
+  if(getUserNickname.data) {
+    return response = 
+      {
+        success: true,
+        data: {
+          code: "error",
+          message : '이미 사용중인 닉네임입니다.'
+        }
+      }
   }
   const decodeToken: { id:string, isAdmin:boolean } = await decodeJwt(accessToken);
   console.log(decodeToken)
