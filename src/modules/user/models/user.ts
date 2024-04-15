@@ -37,9 +37,7 @@ export const getUser = async (params:UserParams) => {
     loggedInfo.email = decodeToken.id
   }
   params.id && (obj.id = params.id)
-  params.uuid && (obj.uuid = params.uuid)
-  params.nickname && (obj.nickname = params.nickname)
-  params.email && (obj.email = params.email)
+  params.uuid && (obj.uuid = params.uuid).trim()
 
   if(!obj.id && !obj.uuid && !obj.nickname && !obj.email) {
     obj.email = loggedInfo.email

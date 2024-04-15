@@ -170,7 +170,7 @@ const AccountDropwdown = () => {
   return (
     <>
       <button onClick={() => setShowDropdown(!showDropdown)}>
-        <Avator username={loggedInfo?.userInfo.nickname} />
+        <Avator username={loggedInfo?.userInfo?.nickname} />
       </button>
       <Dropdown state={showDropdown} close={closeDropdown}>
         {isLogged ? (

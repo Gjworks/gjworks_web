@@ -66,9 +66,9 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative max-w-screen-3xl mx-auto px-3">
             <div className="relative rounded-3xl">
-              <div className="relative rounded-3xl bg-[url('/assets/images/bg20.jpg')] bg-cover bg-center bg-no-repeat">
+              <div className="relative rounded-3xl bg-[url('/assets/images/bg19.jpg')] bg-cover bg-center bg-no-repeat">
                 {/*  */}
-                <div className="absolute inset-0 bg-gray-950/75 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gray-950/70 rounded-3xl"></div>
                 {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
                 <div className="relative mx-auto flex max-w-screen-lg items-center gap-8 pb-20 pt-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
@@ -114,7 +114,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-primary-700 px-3 py-2 text-sm text-white hover:bg-primary-600  lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-primary-400 px-3 py-2 text-sm text-black hover:bg-primary-300  lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
@@ -212,10 +212,10 @@ export default function Page() {
               </div>
               <div className="absolute right-0 bottom-0 rounded-tl-3xl bg-white before:w-10 before:h-10 before:absolute before:right-[-2px] before:-top-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:-rotate-90 after:w-10 after:h-10 after:absolute after:-left-[38px] after:-bottom-[2px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:-rotate-90">
                 <div className="pl-2 pt-2">
-                  <div className="block bg-gray-950 rounded-3xl shadow-lg shadow-gray-300/75 hover:shadow-gray-100 cursor-pointer transition-all duration-300 hover:scale-105">
+                  <div className="block bg-yellow-400 rounded-3xl border border-gray-100 shadow-lg shadow-gray-100 hover:shadow-gray-100 cursor-pointer transition-all duration-300 hover:scale-105">
                     <div className="px-6 py-6 w-[270px] md:h-[290px]">
                       <div className="flex-1 w-full">
-                        <div className="text-lg font-bold cursor-pointer text-white">
+                        <div className="text-lg font-bold cursor-pointer text-black">
                           서비스 제안하기
                         </div>
                       </div>

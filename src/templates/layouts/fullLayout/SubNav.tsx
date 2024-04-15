@@ -105,7 +105,7 @@ const SubNav = () => {
             <div className=""></div>
           </div>
           <div className="max-w-32 hidden lg:flex items-center">
-            <div className="bg-blue-700 text-blue-200 hover:text-white rounded-full px-5 py-1 text-xs">
+            <div className="bg-primary-400 text-black hover:bg-primary-300 rounded-full px-5 py-1.5 text-xs">
               Download
             </div>
           </div>

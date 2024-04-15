@@ -58,7 +58,7 @@ const UserDelete = (props: any) => {
   const handlerUserDeleteButton = async event => {
     event.preventDefault()
     if (inputState === true && accessToken) {
-      await deleteUser(accessToken)
+      await deleteUser({ accessToken: accessToken })
         .then(response => {
           if (response.data.code === 'success') {
             dispatch(resetUserInfo())

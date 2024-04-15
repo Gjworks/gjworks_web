@@ -70,7 +70,11 @@ export const fetchUserInfo = createAsyncThunk<DataInfo, FetchUserInfoPayload>(
   async ({accessToken, formData}: { accessToken: string, formData: FormData }):Promise<DataInfo> => {
 
     let result;
-    await updateUser(accessToken, formData).then((response) => {
+    const params = {
+      accessToken: accessToken,
+      nickname: formData.get('nickname') as string
+    }
+    await updateUser(params).then((response) => {
       console.log(response)
       result = response
     })

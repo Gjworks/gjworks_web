@@ -1,20 +1,22 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, FormEvent } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 import { getUser } from '@plextype/modules/user/models/user'
 import { deleteUser, updateUser } from '@plextype/modules/user/controllers/user'
 
 const DashboardUserUpdate = props => {
+  const router = useRouter()
   const accessToken = localStorage.getItem('accessToken')
   console.log(accessToken)
   const [userInfo, setUserInfo] = useState<any>()
 
   useEffect(() => {
-    updateUser()
+    updateDashboardUser()
   }, [])
-  const updateUser = async () => {
+  const updateDashboardUser = async () => {
     await getUser({ id: props.userid, accessToken: accessToken })
       .then(response => {
         console.log(response)
@@ -24,24 +26,37 @@ const DashboardUserUpdate = props => {
         console.error('Failed to get user info: ' + error.toString())
       })
   }
-  const updateUserInfo = async e => {}
-
-  const handlerUserDelete = async () => {
-    await fetch('/user/api/delete', {
-      method: 'DELETE',
-      body: JSON.stringify({ id: props.userid }),
-    })
+  const updateUserInfo = async (formData: FormData) => {
+    const params = {
+      id: props.userid,
+      accessToken: accessToken,
+      nickname: formData.get('nickname') as string,
+    }
+    await updateUser(params)
       .then(response => {
         console.log(response)
+        // router.push('/dashboard/user/list')
       })
       .catch(error => {
-        console.error('Failed to delete user: ' + error.toString())
+        console.error('Failed to get user info: ' + error.toString())
+      })
+  }
+
+  const handlerUserDelete = async () => {
+    console.log('delete user')
+    await deleteUser({ id: props.userid, accessToken: accessToken })
+      .then(response => {
+        console.log(response)
+        router.push('/dashboard/user/list')
+      })
+      .catch(error => {
+        console.error('Failed to get user delete: ' + error.toString())
       })
   }
 
   return (
     userInfo && (
-      <form onSubmit={updateUserInfo}>
+      <form action={updateUserInfo}>
         <input type="hidden" name="userInfoId" defaultValue={props.userid} />
         <div className="max-w-screen-2xl mx-auto">
           <div className="px-3">
@@ -191,12 +206,12 @@ const DashboardUserUpdate = props => {
             >
               뒤로가기
             </a>
-            <button
+            <a
               onClick={handlerUserDelete}
               className="px-5 py-2 text-sm text-white bg-red-600 hover:bg-red-500 rounded-md"
             >
               삭제하기
-            </button>
+            </a>
             <button
               type="submit"
               className="px-5 py-2 text-sm text-white bg-cyan-600 hover:bg-cyan-500 rounded-md"

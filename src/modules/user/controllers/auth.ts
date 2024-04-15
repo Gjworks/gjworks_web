@@ -6,6 +6,7 @@ import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 
 import { decodeJwt } from 'jose';
 import { sign, verify, refresh, refreshVerify } from "@plextype/utils/auth/jwtAuth";
+import { getUser } from "@plextype/modules/user/models/user";
 
 import { PrismaClient } from "@prisma/client";
 
@@ -152,13 +153,29 @@ export const Refresh = async (token:string) => {
     verifyToken = await verify(accessToken)
 
     if (verifyToken.ok === false) {
+      const isLogged = getUser({ accessToken:accessToken })
+      if(!isLogged) {
+        cookies().delete('refreshToken');
+        cookies().delete('accessToken');
+        const response = 
+          {
+            success: false,
+            data : {
+              code : 'user info not found',
+              type : 'fail',
+              message: "회원정보를 찾을 수 없습니다."
+            },
+            accessToken: null,
+          }
+        return response
+      }
       let refreshVerifyToken
       if(refreshToken) {
         refreshVerifyToken = await refreshVerify(refreshToken)
       }
       console.log(refreshVerifyToken)
       if(refreshVerifyToken) {
-        console.log(22)
+
         const decodeToken = await decodeJwt(accessToken);
         if(decodeToken && decodeToken.id) {
           const tokenParams = {

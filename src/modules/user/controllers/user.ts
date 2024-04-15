@@ -4,7 +4,20 @@ import { cookies, headers } from "next/headers";
 import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-import { getUser } from "@plextype/modules/user/models/user";
+import { getUser, getUserByNickname } from "@plextype/modules/user/models/user";
+
+interface UserParams {
+  id? : number | null
+  uuid? : string | null
+  email? : string | null
+  accessToken? : string | null
+  nickname? : string | null
+}
+
+interface LoggedParams {
+  email : string
+  isAdmin? : boolean | null
+}
 
 export const createUser = async (formData: FormData) => {
   const prisma = new PrismaClient();
@@ -89,110 +102,20 @@ export const createUser = async (formData: FormData) => {
   }
   
 }
-export const updateUser = async (token:string, formData: FormData) => {
+export const updateUser = async (params:UserParams) => {
   const prisma = new PrismaClient();
+  let obj: any = {};
+  let loggedInfo:LoggedParams = {
+    email : '',
+    isAdmin : false 
+  }
   let userInfo
   let response
-  const accessToken = token;
-
-  
-  if (!accessToken) {
-    return {
-      success: true,
-      data: {
-        code: "error",
-        message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
-      },
-      accessToken:null
-    };
-  }
-  const userInfoId = formData.get('userInfoId') as string;
-  const nickname = formData.get('nickname') as string;
-  if (!nickname) {
-    return response ={
-      success: true,
-      data: {
-        code: "error",
-        element: 'nickname',
-        message : '닉네임 값은 필수입니다.'
-      }
-    };
-  }
-  console.log(userInfoId)
-  // const userInfo = await getUser({id:})
-  const getUserNickname = await getUser({nickname:nickname})
-  if(getUserNickname.data) {
-    return response = 
-      {
-        success: true,
-        data: {
-          code: "error",
-          message : '이미 사용중인 닉네임입니다.'
-        }
-      }
-  }
-  const decodeToken: { id:string, isAdmin:boolean } = await decodeJwt(accessToken);
-  console.log(decodeToken)
-  if(decodeToken && decodeToken.id) {
-    try {
-      userInfo = await prisma.user.findUnique({
-        where: { email: decodeToken.id },
-        select: {
-          id: true,
-          uuid: true,
-          email: true,
-          password: true,
-          nickname: true,
-          createdAt: true,
-          updateAt:true,
-          isAdmin:true,
-          isManagers:true
-        },
-      });
-      if(!userInfo) {
-        return response =
-          {
-            success: true,
-            data: {
-              code: "fail",
-              message : '회원정보가 없습니다.'
-            }
-          };
-      }else {
-        try {
-          await prisma.user.update({
-            where: {
-              email: decodeToken.id, 
-            },
-            data: {
-              nickname: nickname,
-            }
-          })
-          userInfo.nickname = nickname;
-          return response = 
-            {
-              success: true,
-              data: {
-                code: "success",
-                userInfo : userInfo,
-                message : '닉네임이 성공적으로 변경되었습니다.'
-              }
-            }
-            
-        } catch (error) {
-          console.error('userInfo update error' + error);
-        }
-      }
-    } catch (e) {
-      console.log('userInfo error' + e)
-      throw {
-        success: false,
-        data: {
-          code: "fail",
-          message : '회원정보를 가지고 오는 과정에서 문제가 발생하였습니다.'
-        }
-      };
-    }
+  console.log(params)
+  if(params.accessToken) {
+    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(params.accessToken);
+    loggedInfo.email = decodeToken.id
+    loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
     return response = 
       {
@@ -203,63 +126,172 @@ export const updateUser = async (token:string, formData: FormData) => {
         }
       }
   }
-}
+  params.id && (obj.id = params.id)
+  params.uuid && (obj.uuid = params.uuid).trim()
+  params.nickname && (obj.nickname = params.nickname).trim()
+  params.email && (obj.email = params.email).trim()
 
-export const deleteUser= async (token:string) => {
-  const prisma = new PrismaClient();
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.email) {
+    obj.email = loggedInfo.email
+  }
 
-  let response
-  const accessToken = token;
-  
-  if (!accessToken) {
-    response = {
-      success: true,
-      data: {
-        code: "fail",
-        message : 'accessToken Error'
-      }
+  //관리자가 아닐경우 본인 계정만 삭제 가능
+  if(!loggedInfo.isAdmin) {
+    if(userInfo?.email !== loggedInfo.email) {
+      return response = 
+        {
+          success: true,
+          data: {
+            code: "fail",
+            message : '권한이 없습니다.'
+          }
+        }
     }
-    ;
-  } else {
-    const decodeToken:{ id:string, isAdmin:boolean } = decodeJwt(accessToken);
-    if (!decodeToken || !decodeToken.id) {
-      response = {
+  }
+
+  userInfo = await getUser(params)
+  console.log('deleteUser ',userInfo)
+  if(!userInfo) {
+    response = 
+      {
         success: true,
         data: {
           code: "fail",
-          message: 'Invalid accessToken'
+          message : '회원정보가 없습니다.'
         }
       }
-    } else {
-      const deleteUser = await prisma.user.delete({
-        where: {
-          email: decodeToken.id,
-        },
-      })
-      console.log(deleteUser)
-      if(deleteUser){
-        cookies().delete('refreshToken');
-        cookies().delete('accessToken');
-        response = 
-          {
-            success: true,
-            data: {
-              code: "success",
-              message : '회원 계정정보가 모두 삭제되었습니다.'
-            }
+    }
+
+  if(userInfo.data.nickname !== obj.nickname) {
+    const getUserNickname = await getUserByNickname(obj.nickname)
+    console.log(getUserNickname)
+    if(getUserNickname.data) {
+      return response = 
+        {
+          success: true,
+          data: {
+            code: "error",
+            message : '이미 사용중인 닉네임입니다.'
           }
-      }else{
-        response = 
-          {
-            success: true,
-            data: {
-              code: "fail",
-              message : '회원정보가 없습니다.'
-            }
-          }
-      }
+        }
     }
   }
+  console.log(obj);
+  try {
+    const updateUserInfo = await prisma.user.update({
+      where: {
+        id: userInfo.data.id
+      },
+      data: {
+        nickname: obj.nickname,
+        // password: obj.password,
+      }
+    })
+    console.log(updateUserInfo)
+    userInfo.nickname = updateUserInfo.nickname;
+    return response = 
+      {
+        success: true,
+        data: {
+          code: "success",
+          userInfo : userInfo,
+          message : '회원정보가 성공적으로 변경되었습니다.'
+        }
+      }
+      
+  } catch (error) {
+    console.error('userInfo update error' + error);
+  }
+}
+
+export const deleteUser= async (params:UserParams) => {
+  const prisma = new PrismaClient();
+  let obj: any = {};
+  let loggedInfo:LoggedParams = {
+    email : '',
+    isAdmin : false 
+  }
+  let userInfo
+  let response
+  if(params.accessToken) {
+    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(params.accessToken);
+    loggedInfo.email = decodeToken.id
+    loggedInfo.isAdmin = decodeToken.isAdmin
+  }else{
+    return response = 
+      {
+        success: true,
+        data: {
+          code: "fail",
+          message : '토큰 정보가 잘못되었습니다.'
+        }
+      }
+  }
+  params.id && (obj.id = params.id)
+  params.uuid && (obj.uuid = params.uuid).trim()
+  params.nickname && (obj.nickname = params.nickname).trim()
+  params.email && (obj.email = params.email).trim()
+
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.email) {
+    obj.email = loggedInfo.email
+  }
+
+  //관리자가 아닐경우 본인 계정만 삭제 가능
+  if(!loggedInfo.isAdmin) {
+    if(userInfo?.email !== loggedInfo.email) {
+      return response = 
+        {
+          success: true,
+          data: {
+            code: "fail",
+            message : '권한이 없습니다.'
+          }
+        }
+    }
+  }
+
+  userInfo = await getUser(params)
+  console.log('deleteUser ',userInfo)
+  if(!userInfo) {
+    response = 
+      {
+        success: true,
+        data: {
+          code: "fail",
+          message : '회원정보가 없습니다.'
+        }
+      }
+    }
+  const deleteUser = await prisma.user.delete({
+    where: obj,
+  })
+
+  if(deleteUser){
+    if(loggedInfo.isAdmin === false) {
+      cookies().delete('refreshToken');
+      cookies().delete('accessToken');
+    }
+    response = 
+      {
+        success: true,
+        data: {
+          code: "success",
+          message : '회원 계정정보가 모두 삭제되었습니다.'
+        }
+      }
+  }else{
+    response = 
+      {
+        success: true,
+        data: {
+          code: "fail",
+          message : '회원정보가 없습니다.'
+        }
+      }
+  }
+  
+  // await getUser({nickname:nickname})
+  
   // const nowPasswordValue = request.get('nowPasswordValue') as string;
   // console.log(nowPasswordValue)
   return response
