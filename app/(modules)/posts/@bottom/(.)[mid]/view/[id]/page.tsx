@@ -2,13 +2,12 @@
 
 import Image from 'next/image'
 import Bottom from '@plextype/components/panel/Bottom'
-import PostView from '@plextype/templates/posts/PostView'
-
+import PostsRead from '@plextype/modules/posts/views/read'
 const Page = () => {
   return (
     <>
       <Bottom>
-        <PostView />
+        <PostsRead />
       </Bottom>
     </>
   )

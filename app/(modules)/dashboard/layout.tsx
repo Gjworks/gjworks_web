@@ -121,7 +121,7 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <div className="bg-white border-b border-gray-200 mt-[60px]"></div>
+        <div className="bg-white h-[60px]"></div>
         <div className="fixed w-[300px] bg-white backdrop-blur-lg h-screen overflow-hidden overflow-y-auto border-r border-slate-200">
           <div className="py-6 px-5">
             <div className=" mb-10">
@@ -192,7 +192,9 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <div className="relative top-0 ml-[300px] bg-white">{children}</div>
+        <div className="relative top-0 ml-[300px] bg-white pt-[60px]">
+          {children}
+        </div>
       </div>
     </div>
   )

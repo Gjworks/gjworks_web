@@ -2,14 +2,13 @@
 
 import React, { useState, useEffect } from 'react'
 
-import DashboardUserList from '@plextype/modules/user/dashboard/views/list'
 import DefaultNav from '@plextype/components/nav/DefaultNav'
 
 const Page = () => {
   const [userNav, setUserNav] = useState<object>([
     {
-      title: '회원목록',
-      route: '/dashboard/user/list',
+      title: '그룹목록',
+      route: '/dashboard/user/groupList',
     },
     {
       title: '그룹별 회원 목록',
@@ -20,7 +19,6 @@ const Page = () => {
       route: '/dashboard/user/adminUserlist',
     },
   ])
-
   return (
     <>
       <div className="relative">
@@ -51,13 +49,10 @@ const Page = () => {
           </div>
         </div>
         <div className="py-10">
-          <div className="max-w-screen-2xl mx-auto px-3">
-            <DashboardUserList />
-          </div>
+          <div className="max-w-screen-2xl mx-auto px-3"></div>
         </div>
       </div>
     </>
   )
 }
-
 export default Page

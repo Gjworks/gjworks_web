@@ -3,26 +3,27 @@
  * @author 지제이웍스 (gjworks2@gmail.com)
  * @brief 레이아웃 최상위 파일
  **/
-"use client";
+'use client'
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { motion } from 'framer-motion'
 
 const Layout = ({ children }) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const router = useRouter();
+  const [scrollPosition, setScrollPosition] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     const updatePosition = () => {
-      setScrollPosition(window.pageYOffset);
-    };
+      setScrollPosition(window.pageYOffset)
+    }
 
-    window.addEventListener("scroll", updatePosition);
+    window.addEventListener('scroll', updatePosition)
 
-    return () => window.removeEventListener("scroll", updatePosition);
-  }, []);
+    return () => window.removeEventListener('scroll', updatePosition)
+  }, [])
   const variants = {
     hidden: { opacity: 0, x: 0, y: 25 },
     enter: {
@@ -41,7 +42,7 @@ const Layout = ({ children }) => {
         duration: 0.4,
       },
     },
-  };
+  }
 
   const parentVariants = {
     onscreen: {
@@ -58,14 +59,14 @@ const Layout = ({ children }) => {
         duration: 0.3,
       },
     },
-  };
+  }
 
   const goToTop = () => {
     document.documentElement.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
   return (
     <motion.div className="min-h-full dark:bg-transparent ">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
@@ -74,7 +75,7 @@ const Layout = ({ children }) => {
           transition={{ duration: 0.3 }}
           className="z-101 relative top-0 w-full "
         >
-          <div className="mx-auto max-w-screen-sm">
+          <div className="">
             <div className="flex items-center justify-between py-2 pr-3">
               <a
                 onClick={() => router.back()}
@@ -125,89 +126,88 @@ const Layout = ({ children }) => {
         </motion.header>
         <div className="sticky top-[57px] block w-full shadow-lg shadow-gray-100"></div>
         <motion.main
+          className="h-[calc(100vh-52px)]"
           variants={variants}
           initial="hidden"
           animate="enter"
           exit="exit"
         >
-          {children}
-        </motion.main>
-        {scrollPosition > 100 && (
-          <motion.button
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
-            exit={{ y: 100, opacity: 0, transition: { duration: 0.6 } }}
-            whileHover={{
-              scale: 1.2,
-              transition: { duration: 0.2 },
-            }}
-            whileTap={{ scale: 1 }}
-            onClick={goToTop}
-            className="dark:bg-dark-600/50 dark:hover:bg-dark-500/50 z-101 fixed bottom-10 right-10 cursor-pointer rounded-lg bg-gray-800 p-3 text-white backdrop-blur-lg hover:bg-gray-950 dark:backdrop-blur-lg"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1}
-              stroke="currentColor"
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4.5 15.75l7.5-7.5 7.5 7.5"
-              />
-            </svg>
-          </motion.button>
-        )}
-
-        <footer>
-          <div className="mx-auto max-w-screen-sm px-3 pb-10 pt-5 lg:px-8">
-            <div className="dark:via-dark-600 h-px w-full bg-gradient-to-r from-transparent via-gray-200/50 to-transparent"></div>
-            <div className="pb-8 pt-8 lg:pt-5">
-              <motion.div
-                variants={variants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: false, amount: 0.3 }}
-                className="flex flex-wrap justify-between gap-8"
-              >
-                <motion.div
-                  className="flex w-full items-center justify-center lg:w-auto"
-                  variants={parentVariants}
-                >
-                  <div className="dark:text-dark-200 text-center text-xs text-gray-700 lg:text-left">
-                    ⓒ 지제이웍스
+          <div className="mx-auto max-w-screen-3xl p-5 h-full">
+            <div className="grid grid-cols-5 gap-8 h-full">
+              <div className="col-span-5 lg:col-span-3 h-full">
+                <div className="relative w-full h-[320px] lg:h-full rounded-2xl overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/80 to-gray-950/95 z-10"></div>
+                  <div className="absolute bottom-0 left-0 py-12 px-8 z-20">
+                    <div className="text-white text-2xl lg:text-4xl font-medium mb-5">
+                      Sign in & Sign up
+                    </div>
+                    <div className="text-gray-400 text-sm lg:text-base font-light">
+                      회원가입을 하면 더욱 많은 서비스를 이용할 수 있습니다.
+                    </div>
                   </div>
-                </motion.div>
-                <motion.div className="flex w-full items-center justify-center lg:w-auto lg:justify-end">
-                  <div className="flex flex-wrap gap-4">
-                    <motion.div variants={parentVariants}>
-                      <Link
-                        href="/"
-                        className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
-                      >
-                        Terms of service
-                      </Link>
-                    </motion.div>
-                    <motion.div variants={parentVariants}>
-                      <Link
-                        href="/"
-                        className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
-                      >
-                        Privacy policy
-                      </Link>
-                    </motion.div>
+                  <div>
+                    <Image
+                      src="/assets/images/yellow/yellow_bg3.jpg"
+                      fill
+                      alt="bg"
+                    />
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
+              <div className="col-span-5 lg:col-span-2 flex justify-center items-center">
+                <div className="w-full lg:w-[32rem] px-3">
+                  <div className="w-full">{children}</div>
+                  <footer>
+                    <div className="mx-auto max-w-screen-sm pb-10 pt-5">
+                      <div className="dark:via-dark-600 h-px w-full bg-gradient-to-r from-transparent via-gray-200/50 to-transparent"></div>
+                      <div className="pb-8 pt-8 lg:pt-5">
+                        <motion.div
+                          variants={variants}
+                          initial="offscreen"
+                          whileInView="onscreen"
+                          viewport={{ once: false, amount: 0.3 }}
+                          className="flex flex-wrap justify-between gap-8"
+                        >
+                          <motion.div
+                            className="flex items-center justify-center"
+                            variants={parentVariants}
+                          >
+                            <div className="dark:text-dark-200 text-center text-xs text-gray-700 lg:text-left">
+                              ⓒ 지제이웍스
+                            </div>
+                          </motion.div>
+                          <motion.div className="flex items-center justify-center lg:justify-end">
+                            <div className="flex flex-wrap gap-4">
+                              <motion.div variants={parentVariants}>
+                                <Link
+                                  href="/"
+                                  className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
+                                >
+                                  Terms of service
+                                </Link>
+                              </motion.div>
+                              <motion.div variants={parentVariants}>
+                                <Link
+                                  href="/"
+                                  className="dark:text-dark-400 text-xs text-gray-400 hover:text-black dark:hover:text-white"
+                                >
+                                  Privacy policy
+                                </Link>
+                              </motion.div>
+                            </div>
+                          </motion.div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+              </div>
             </div>
           </div>
-        </footer>
+        </motion.main>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

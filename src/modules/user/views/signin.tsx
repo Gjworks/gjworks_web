@@ -117,7 +117,7 @@ const Signin = () => {
   return (
     <>
       <form onSubmit={submitHandler}>
-        <div className="py-10 text-center">
+        <div className="py-10">
           <div className="dark:text-dark-50 text-2xl font-semibold text-gray-700">
             Request Access
           </div>

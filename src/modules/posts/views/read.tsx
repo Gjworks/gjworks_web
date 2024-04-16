@@ -2,12 +2,12 @@
 
 import Image from 'next/image'
 
-const PostView = () => {
+const PostsRead = () => {
   return (
     <>
-      <div className="relative dark:shadow-dark-950 block rounded-t-lg bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black rounded-t-lg"></div>
-        <div className="relative mx-auto  max-w-screen-lg px-3 pt-20 pb-10 md:pb-20">
+      <div className="relative dark:shadow-dark-950 block bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black"></div>
+        <div className="relative mx-auto max-w-screen-lg px-3 pt-20 pb-10 md:pb-20">
           <div
             className="text-3xl md:text-5xl font-light text-white py-4 text-center pt-20"
             style={{ lineHeight: '140%' }}
@@ -629,4 +629,4 @@ const PostView = () => {
   )
 }
 
-export default PostView
+export default PostsRead

@@ -14,11 +14,11 @@
               "route": "/dashboard/user/list"
           },
           {
-              "title": "그룹별 회원 목록",
-              "name": "groupUserList",
+              "title": "회원 그룹 설정",
+              "name": "groupList",
               "icon": "",
               "parent": "user",
-              "route": "/dashboard/user/groupUserList"
+              "route": "/dashboard/user/groupList"
           },
           {
               "title": "관리자 목록",

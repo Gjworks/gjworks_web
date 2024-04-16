@@ -1,6 +1,6 @@
 'use client'
 
-import PostWrite from '@plextype/templates/posts/Write'
+import PostWrite from '@plextype/modules/posts/views/write'
 
 const Page = () => {
   return (

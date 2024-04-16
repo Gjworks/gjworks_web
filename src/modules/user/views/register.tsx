@@ -102,9 +102,9 @@ const Register = () => {
   // }
 
   return (
-    <>
-      <div className="py-10 text-center">
-        <div className="flex justify-center mb-4">
+    <div className="">
+      <div className="py-10">
+        <div className="flex mb-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -133,15 +133,6 @@ const Register = () => {
       <form onSubmit={submitHandler}>
         <div className="relative mb-5 w-full">
           <div className="flex items-center w-full text-xs">
-            {/* <TextInput
-                  inputType="email"
-                  inputName="email"
-                  inputTitle="이메일"
-                  getData={getEmail}
-                  placeholder="example@mail.com"
-                  theme="light"
-                  value=""
-                ></TextInput> */}
             <div className="group flex items-center w-full border-[0.5px] border-gray-300 dark:border-dark-600/75 dark:hover:border-dark-300 dark:focus:border-dark-300 rounded-full dark:bg-dark-950/20 transition-all duration-300 backdrop-blur-sm bg-gray-50/50">
               <div className="px-5">
                 <span className="text-dark-300">이메일</span>
@@ -171,15 +162,6 @@ const Register = () => {
                 placeholder="User Password"
               />
             </div>
-            {/* <TextInput
-                  inputType="password"
-                  inputName="password"
-                  inputTitle="비밀번호"
-                  getData={getPassword}
-                  placeholder="User Password"
-                  theme="light"
-                  value=""
-                ></TextInput> */}
           </div>
           <div className="text-dark-400 text-xs pt-2 px-2">
             비밀번호는 암호화 되어 안전하게 저장됩니다.
@@ -199,19 +181,10 @@ const Register = () => {
                 placeholder="User nick name"
               />
             </div>
-            {/* <TextInput
-                  inputType="text"
-                  inputName="nickName"
-                  inputTitle="닉네임"
-                  getData={getNickname}
-                  placeholder="User nick name"
-                  theme="light"
-                  value=""
-                ></TextInput> */}
           </div>
         </div>
 
-        <div className="flex mb-2">
+        <div className="mb-2">
           <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-3 px-5 rounded-lg transition duration-300 hover:bg-slate-700 text-sm">
             Register Completed
           </button>
@@ -230,7 +203,7 @@ const Register = () => {
         </div>
       </div>
       <div className="pb-10">
-        <div className="flex flex-wrap">
+        <div className="w-full">
           <div className="w-full">
             <Link href="/auth/Signin" className="group text-sm text-dark-500">
               계정이 이미 있으시다면{' '}
@@ -241,7 +214,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

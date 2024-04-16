@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import PostView from '@plextype/templates/posts/PostView'
+import PostsRead from '@plextype/modules/posts/views/read'
 //
 // interface PageProps {
 //   params: {
@@ -25,7 +25,7 @@ const Page = () => {
 
   return (
     <>
-      <PostView />
+      <PostsRead />
     </>
   )
 }

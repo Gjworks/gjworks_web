@@ -6,7 +6,7 @@ import Link from 'next/link'
 import DefaultNav from '@plextype/components/nav/DefaultNav'
 import Warning from '@plextype/components/message/Warning'
 
-import DashboardUserUpdate from '@plextype/modules/dashboard/user/views/update'
+import DashboardUserUpdate from '@plextype/modules/user/dashboard/views/update'
 
 const Page = params => {
   const [error, setError] = useState<any>(false)

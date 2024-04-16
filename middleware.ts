@@ -11,12 +11,12 @@ export async function middleware(request: NextRequest, response: NextResponse) {
     let decodeToken : { id:string, isAdmin:boolean }
     if(accessToken?.value){
       decodeToken = await decodeJwt(accessToken.value);
-      // if (!decodeToken?.isAdmin && request.nextUrl.pathname.startsWith('/dashboard')) {
-      //   console.log('dashboard not found')
-      //   return NextResponse.redirect(
-      //     new URL('/access', request.url),
-      //   );
-      // }
+      if (!decodeToken?.isAdmin && request.nextUrl.pathname.startsWith('/dashboard')) {
+        console.log('dashboard not found')
+        return NextResponse.redirect(
+          new URL('/access', request.url),
+        );
+      }
       // if (
       //   request.nextUrl.pathname.startsWith('/auth/Signin') || 
       //   request.nextUrl.pathname.startsWith('/auth/Register')
