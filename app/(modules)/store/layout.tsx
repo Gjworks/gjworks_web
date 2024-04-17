@@ -1,4 +1,4 @@
-import FullLayout from '@plextype/templates/layouts/fullLayout/Layout'
+import FullLayout from 'extensions/layouts/fullLayout/Layout'
 
 const PageLayout = ({ children, bottom }) => {
   return (

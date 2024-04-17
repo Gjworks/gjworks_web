@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import DefaultLayout from '@plextype/templates/layouts/fullLayout/Layout'
+import DefaultLayout from 'extensions/layouts/fullLayout/Layout'
 import ProfileComponent from '@plextype/components/account/Profile'
 import DefaultNav from '@plextype/components/nav/DefaultNav'
 import { useSelector } from 'react-redux'

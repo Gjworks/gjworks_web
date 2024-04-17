@@ -6,9 +6,9 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Header from '@plextype/templates/layouts/fullLayout/Header'
-import Footer from '@plextype/templates/layouts/fullLayout/Footer'
-import FootAlert from '@plextype/templates/layouts/fullLayout/FootAlert'
+import Header from 'extensions/layouts/fullLayout/Header'
+import Footer from 'extensions/layouts/fullLayout/Footer'
+import FootAlert from 'extensions/layouts/fullLayout/FootAlert'
 
 const MainLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)

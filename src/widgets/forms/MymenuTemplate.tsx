@@ -1,32 +1,32 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
+'use client'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 
-import Modal from "src/components/modal/Modal";
-import SearchForm from "src/templates/forms/SearchForm";
+import Modal from 'src/components/modal/Modal'
+import SearchForm from '@plextype/widgets/forms/SearchForm'
 
 const MymenuTemplate = () => {
-  const [showModal, setShowModal] = useState(false);
-  const closeModal = (close) => {
-    setShowModal(close);
-  };
+  const [showModal, setShowModal] = useState(false)
+  const closeModal = close => {
+    setShowModal(close)
+  }
   const innerAnimation = {
     open: {
       opacity: 1,
-      x: "0%",
+      x: '0%',
       transition: {
         duration: 0.3,
       },
     },
     close: {
       opacity: 0,
-      x: "-20%",
+      x: '-20%',
       transition: {
         duration: 0.2,
       },
     },
-  };
+  }
   return (
     <>
       <div className="mx-auto min-h-screen max-w-screen-xl border-l border-gray-200 bg-white/90 px-3 pb-10 pt-8 backdrop-blur-lg">
@@ -71,6 +71,6 @@ const MymenuTemplate = () => {
         <SearchForm />
       </Modal>
     </>
-  );
-};
-export default MymenuTemplate;
+  )
+}
+export default MymenuTemplate

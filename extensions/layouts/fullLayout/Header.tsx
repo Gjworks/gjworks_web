@@ -7,14 +7,14 @@ import Image from 'next/image'
 
 import Left from 'src/components/panel/Left'
 
-import AccountDropwdown from 'src/templates/forms/AccountDropwdown'
+import AccountDropwdown from '@plextype/widgets/forms/AccountDropwdown'
 import SideNav from 'src/components/nav/SideNav'
 import nav from '@plextype/res/config/navigation.json'
 import Account from '@plextype/components/account/Account'
 import { motion } from 'framer-motion'
 
 import Right from '@plextype/components/panel/Right'
-import MymenuTemplate from '@plextype/templates/forms/MymenuTemplate'
+import MymenuTemplate from '@plextype/widgets/forms/MymenuTemplate'
 
 export type NavType = {
   name: string
@@ -229,11 +229,11 @@ const Header = () => {
                 className="group flex items-center px-2"
               >
                 <div className="relative flex h-5 w-5 cursor-pointer">
-                  <span>
+                  <div className="z-50">
                     {/* <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div> */}
-                    <div className="absolute left-0 top-[6px] h-[1px] w-4 bg-black transition-all group-hover:w-2 dark:bg-white"></div>
-                    <div className="absolute left-0 top-[12px] h-[1px] w-3 bg-black transition-all group-hover:w-4 dark:bg-white"></div>
-                  </span>
+                    <div className="absolute left-0 top-[6px] h-[1px] w-4 bg-black transition-all group-hover:w-2"></div>
+                    <div className="absolute left-0 top-[12px] h-[1px] w-3 bg-black transition-all group-hover:w-4"></div>
+                  </div>
                 </div>
               </button>
 

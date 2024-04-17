@@ -75,8 +75,8 @@ const Layout = ({ children }) => {
           transition={{ duration: 0.3 }}
           className="z-101 relative top-0 w-full "
         >
-          <div className="">
-            <div className="flex items-center justify-between py-2 pr-3">
+          <div className="max-w-screen-3xl mx-auto">
+            <div className="flex items-center justify-between py-2 px-3">
               <a
                 onClick={() => router.back()}
                 className="dark:text-dark-400 cursor-pointer rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -96,12 +96,7 @@ const Layout = ({ children }) => {
                   />
                 </svg>
               </a>
-              <a
-                href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                className="text-lg font-semibold text-black dark:text-white"
-              >
-                지제이웍스
-              </a>
+
               <a
                 href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                 className="dark:text-dark-400 cursor-pointer rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 dark:hover:text-white"
@@ -132,7 +127,7 @@ const Layout = ({ children }) => {
           animate="enter"
           exit="exit"
         >
-          <div className="mx-auto max-w-screen-3xl p-5 h-full">
+          <div className="mx-auto max-w-screen-3xl px-5 h-full">
             <div className="grid grid-cols-5 gap-8 h-full">
               <div className="col-span-5 lg:col-span-3 h-full">
                 <div className="relative w-full h-[320px] lg:h-full rounded-2xl overflow-hidden">
