@@ -8,7 +8,6 @@ import { motion } from 'framer-motion'
 import MainLayout from 'extensions/layouts/main/Layout'
 import Codehighlighte from '@plextype/components/codehighlight/Codehighlighter'
 import Popup from '@plextype/components/modal/Popup'
-import ArrowLine from '@plextype/components/arrow/ArrowLine'
 
 export default function Page() {
   const [showPopup, setShowPopup] = useState(false)
