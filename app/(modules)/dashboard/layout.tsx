@@ -17,7 +17,7 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
-  console.log(pathname)
+
   return (
     <div className="selection:text-white selection:bg-orange-500 bg-white min-h-screen">
       <div className="h-full">

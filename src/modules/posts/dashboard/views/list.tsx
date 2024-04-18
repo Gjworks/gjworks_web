@@ -109,39 +109,33 @@ const DashboardUserList = () => {
             <tr className="bg-slate-200 bg-opacity-50 backdrop-blur-lg">
               <th
                 scope="col"
-                className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
+                className="text-xs text-gray-600 uppercase py-2 px-3"
               >
                 No
               </th>
               <th
                 scope="col"
-                className="w-auto text-xs text-gray-600 uppercase py-2 px-3 text-left"
+                className="text-xs text-gray-600 uppercase py-2 px-3 text-left"
               >
-                이메일 주소
+                모듈ID
               </th>
               <th
                 scope="col"
-                className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
+                className="text-xs text-gray-600 uppercase py-2 px-3"
               >
-                닉네임
+                게시판이름
               </th>
               <th
                 scope="col"
-                className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
+                className="text-xs text-gray-600 uppercase py-2 px-3"
               >
-                그룹
+                등록일
               </th>
               <th
                 scope="col"
-                className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
+                className="text-xs text-gray-600 uppercase py-2 px-3"
               >
-                최근접속일
-              </th>
-              <th
-                scope="col"
-                className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
-              >
-                조회/수정
+                편집
               </th>
               <th className="py-2 px-3 w-12">
                 <input type="checkbox" className="checked:bg-lime-400"></input>
@@ -168,7 +162,6 @@ const DashboardUserList = () => {
                     <td className="text-gray-500 text-sm py-3 px-3 text-center">
                       준회원
                     </td>
-                    <td className="text-gray-500 text-sm py-3 px-3 text-center"></td>
                     <td className="text-gray-500 text-sm py-3 px-3 text-center">
                       <Link
                         href={`/dashboard/user/update/${item.id}`}

@@ -60,6 +60,7 @@ model Category {
 
 model Module {
     id               Int               @id @default(autoincrement())
+    moduleId         String
     createdAt        DateTime          @default(now())
     updatedAt        DateTime          //@updatedAt
     moduleType       String

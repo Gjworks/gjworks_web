@@ -35,6 +35,49 @@
         "route": "/posts/list",
         "icon": "",
         "subMenu": [
+            {
+                "title": "게시판 목록",
+                "name": "groupList",
+                "icon": "",
+                "parent": "user",
+                "route": "/dashboard/posts/list"
+            },
+            {
+                "title": "신고 목록",
+                "name": "groupList",
+                "icon": "",
+                "parent": "user",
+                "route": "/dashboard/posts/reportList"
+            },
+            {
+                "title": "첨부파일",
+                "name": "groupList",
+                "icon": "",
+                "parent": "user",
+                "route": "/dashboard/posts/attachment"
+            }
+        ]
+      },
+      "settings": {
+        "name": "settings",
+        "title": "사이트 설정",
+        "route": "/dashboard/settings",
+        "icon": "",
+        "subMenu": [
+            {
+                "title": "기본 설정",
+                "name": "groupList",
+                "icon": "",
+                "parent": "user",
+                "route": "/dashboard/settings"
+            },
+            {
+                "title": "고급 설정",
+                "name": "groupList",
+                "icon": "",
+                "parent": "user",
+                "route": "/dashboard/settings/advanced"
+            }
         ]
       }
       

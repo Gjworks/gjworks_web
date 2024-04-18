@@ -21,8 +21,10 @@ const DefaultNav = ({ list }) => {
               key={index}
               href={item.route}
               className={
-                'block whitespace-nowrap py-3 px-1 text-sm border-b-4 text-gray-400 hover:text-gray-950 hover:border-gray-950 ' +
-                (pathname === item.route ? 'border-gray-950' : 'border-white')
+                'block whitespace-nowrap py-3 px-1 text-sm border-b-4 text-gray-400 hover:text-gray-950 hover:border-white ' +
+                (pathname === item.route
+                  ? 'border-gray-950 text-gray-950 '
+                  : 'border-white')
               }
             >
               {item.title}
