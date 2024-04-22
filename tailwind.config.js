@@ -2,11 +2,9 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
   content: [
-    'extensions/**/**/**/*.{html,js,jsx,tsx,ts}',
-    'src/modules/**/**/**/*.{html,js,jsx,tsx,ts}',
-    'src/components/**/*.{html,js,jsx,tsx,ts}',
-    'src/templates/**/**/*.{html,js,jsx,tsx,ts}',
-    'app/**/**/**/*.{js,ts,jsx,tsx}', // <-- Add this line
+    'src/**/**/**/**/*.{html,js,jsx,tsx,ts}',
+    'common/components/**/*.{html,js,jsx,tsx,ts}',
+    'src/app/**/**/**/*.{js,ts,jsx,tsx}', // <-- Add this line
   ],
   darkMode: 'class',
   theme: {
@@ -61,17 +59,16 @@ module.exports = {
       rose: colors.rose,
       // 'dark' : colors.zinc,
       primary: {
-        // 50: "#f5efeb",
-        // 100: "#eae0d8",
-        // 200: "#d5c1b2",
-        // 300: "#cbb2a0",
-        // 400: "#c0a38e",
-        // 500: "#9d8675",
-        // 600: "#7c6a5d",
-        // 700: "#5c4f46",
-        // 800: "#232932",
-        // 900: "#181c21",
-        500: '#ff6224',
+        50: '#f5efeb',
+        100: '#eae0d8',
+        200: '#d5c1b2',
+        300: '#cbb2a0',
+        400: '#c0a38e',
+        500: '#9d8675',
+        600: '#7c6a5d',
+        700: '#5c4f46',
+        800: '#232932',
+        900: '#181c21',
       },
       dark: {
         // 50: '#F3F4F6',
@@ -98,8 +95,8 @@ module.exports = {
         950: '#090b0f',
       },
       // dark: colors.gray,
-      primary: colors.yellow,
-      secondary: colors.amber,
+      // primary: colors.yellow,
+      secondary: colors.yellow,
     },
   },
   plugins: [],

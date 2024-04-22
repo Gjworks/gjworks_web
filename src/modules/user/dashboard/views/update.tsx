@@ -4,8 +4,8 @@ import React, { useState, useEffect, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
-import { getUser } from '@plextype/modules/user/models/user'
-import { deleteUser, updateUser } from '@plextype/modules/user/controllers/user'
+import { getUser } from 'src/modules/user/models/user'
+import { deleteUser, updateUser } from 'src/modules/user/controllers/user'
 
 const DashboardUserUpdate = props => {
   const router = useRouter()

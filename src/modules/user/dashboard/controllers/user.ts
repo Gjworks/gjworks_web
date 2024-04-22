@@ -1,7 +1,7 @@
 'use server';
 
-import { getUser } from "@plextype/modules/user/models/user"
-import { deleteUser } from "@plextype/modules/user/controllers/user"
+import { getUser } from "src/modules/user/models/user"
+import { deleteUser } from "src/modules/user/controllers/user"
 
 import { PrismaClient } from "@prisma/client";
 

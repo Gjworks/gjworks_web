@@ -38,8 +38,8 @@ model Document {
     moduleId         Int
     category         Category?         @relation(fields: [categoryId], references: [id])
     categoryId       Int?
-    createdAt        DateTime?         @default(now())
-    updatedAt        DateTime?         //@updatedAt
+    createdAt        DateTime          @default(now())
+    updatedAt        DateTime          @updatedAt
     published        Boolean?          @default(false)
     author           User?             @relation(fields: [authorId], references: [id])
     authorId         Int?
@@ -60,14 +60,14 @@ model Category {
 
 model Module {
     id               Int               @id @default(autoincrement())
-    moduleId         String
+    moduleId         String            @unique
     createdAt        DateTime          @default(now())
-    updatedAt        DateTime          //@updatedAt
-    moduleType       String
+    updatedAt        DateTime          @updatedAt
+    moduleType       String?           @db.VarChar(45)
     moduleName       String            @unique
     moduleDesc       String?
-    grant            Json              @db.Json
-    config           Json              @db.Json
+    grant            Json?             @db.Json
+    config           Json?             @db.Json
     status           String?           @db.VarChar(45)
     document         Document[]
 }

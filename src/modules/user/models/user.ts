@@ -15,7 +15,6 @@ interface UserParams {
   id? : number | null
   uuid? : string | null
   email? : string | null
-  accessToken? : string | null
   nickname? : string | null
 }
 
@@ -26,14 +25,15 @@ interface LoggedParams {
 
 export const getUser = async (params:UserParams) => {
   const prisma = new PrismaClient();
+  const accessToken = cookies().get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     email : ''
   }
   let userInfo
   let response
-  if(params.accessToken) {
-    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(params.accessToken);
+  if(accessToken) {
+    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
     loggedInfo.email = decodeToken.id
   }
   params.id && (obj.id = params.id)
@@ -86,9 +86,9 @@ export const getUserList = async (params:UserListParams) => {
   const totalPages = Math.ceil(totalItems / listCount);
 
   const where: any = {};
-    if (target && keyword) {
-      where[target as string] = { contains: keyword };
-    }
+  if (target && keyword) {
+    where[target as string] = { contains: keyword };
+  }
 
   const userList = await prisma.user.findMany({
     skip: skipAmount && skipAmount >= 0 ? skipAmount : 0,
@@ -195,8 +195,7 @@ export const getUserByToken = async (token) => {
   const prisma = new PrismaClient();
   let userInfo
   let response
-  const authorization = headers().get('authorization')
-  const accessToken = authorization && authorization.split(' ')[1];
+  const accessToken = cookies().get('accessToken')?.value
   
   if (!accessToken) {
     response =  NextResponse.json({

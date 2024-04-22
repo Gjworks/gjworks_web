@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
-const Editorjs = dynamic(() => import('src/components/editor/Editorjs'), {
+const Editorjs = dynamic(() => import('@plextype/components/editor/Editorjs'), {
   ssr: false,
 })
 

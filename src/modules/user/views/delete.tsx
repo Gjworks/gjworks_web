@@ -9,7 +9,7 @@ import { store } from '@plextype/redux/store'
 import { resetUserInfo } from '@plextype/redux/features/userSlice'
 import Warning from '@plextype/components/message/Warning'
 
-import { deleteUser } from '@plextype/modules/user/controllers/user'
+import { deleteUser } from 'src/modules/user/controllers/user'
 
 interface UserInfo {
   code: string

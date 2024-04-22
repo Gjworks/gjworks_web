@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { decodeJwt } from 'jose';
-// import { decode } from "@plextype/utils/auth/jwtAuth";
+// import { decode } from "src/utils/auth/jwtAuth";
 
 // 미들웨어 생성
 export async function middleware(request: NextRequest, response: NextResponse) {

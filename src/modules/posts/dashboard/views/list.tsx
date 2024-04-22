@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useSearchParams, usePathname } from 'next/navigation'
-import { getUserList } from '@plextype/modules/user/models/user'
+import { getPostList } from 'src/modules/posts/dashboard/models/posts'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
 
 interface PageNavigationInfo {
@@ -16,8 +16,9 @@ interface PageNavigationInfo {
 const DashboardUserList = () => {
   const params = useSearchParams()
   const pathname = usePathname()
-  const [userList, setUserList] = useState<{ [key: string]: any }>()
+  const [postList, setPostList] = useState<{ [key: string]: any }>()
   const [page, setPage] = useState<number>(Number(params.get('page')) || 1)
+  const [message, setMessage] = useState<string>('')
   const [pageNavigation, setPageNavigation] = useState<PageNavigationInfo>({
     totalCount: 0,
     totalPages: 0,
@@ -54,9 +55,14 @@ const DashboardUserList = () => {
     target: string | null
     keyword: string | null
   }) => {
-    items = await getUserList({ page, target, keyword })
-    setUserList(items.userList)
-    setPageNavigation(items.navigation)
+    items = await getPostList({ page, target, keyword })
+    console.log(items)
+    if (items.data.code === 'success') {
+      setPostList(items.data.postList)
+      setPageNavigation(items.data.navigation)
+    } else {
+      setMessage(items.data.message)
+    }
   }
   useEffect(() => {
     const data = {
@@ -71,7 +77,7 @@ const DashboardUserList = () => {
     <>
       <div className="flex flex-wrap items-center gap-4 mb-5">
         <div className="text-gray-700 text-lg font-semibold">
-          회원 목록 ({pageNavigation.totalCount}명)
+          모듈 목록 ({pageNavigation.totalCount})
         </div>
         <div className="flex-1"></div>
         <div className="flex items-center w-full lg:w-auto">
@@ -143,8 +149,8 @@ const DashboardUserList = () => {
             </tr>
           </thead>
           <tbody>
-            {userList &&
-              userList.map((item, index) => {
+            {postList &&
+              postList.map((item, index) => {
                 return (
                   <tr
                     key={index}
@@ -154,17 +160,15 @@ const DashboardUserList = () => {
                       {item.id - 1}
                     </td>
                     <td className="text-gray-500 text-sm py-3 px-3">
-                      {item.email}
+                      {item.moduleId}
                     </td>
                     <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                      {item.nickname}
+                      {item.moduleName}
                     </td>
-                    <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                      준회원
-                    </td>
+                    <td className="text-gray-500 text-sm py-3 px-3 text-center"></td>
                     <td className="text-gray-500 text-sm py-3 px-3 text-center">
                       <Link
-                        href={`/dashboard/user/update/${item.id}`}
+                        href={`/dashboard/posts/update/${item.id}`}
                         className="text-cyan-500 underline"
                       >
                         조회/수정
@@ -195,9 +199,9 @@ const DashboardUserList = () => {
         <div className="col-span-2 xl:col-span-1 flex items-center justify-end gap-2 ">
           <Link
             className="py-2 px-5 text-white rounded text-sm bg-orange-500 hover:bg-orange-600"
-            href="/dashboard/user/create"
+            href="/dashboard/posts/create"
           >
-            회원추가
+            게시판 추가
           </Link>
           <button
             className="py-2 px-5 text-white rounded text-sm bg-gray-800 hover:bg-red-600"

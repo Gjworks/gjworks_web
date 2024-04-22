@@ -25,7 +25,8 @@
       }
     ],
     "paths": {
-        "@plextype/*": ["src/*"],
+        "@plextype/*": ["./common/*"],
+        "@/*": ["./src/*"],
     },
     "strictNullChecks": true
   },

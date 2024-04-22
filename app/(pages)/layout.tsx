@@ -1,7 +1,0 @@
-import DefaultLayout from 'extensions/layouts/fullLayout/Layout'
-
-const PageLayout = ({ children }) => {
-  return <DefaultLayout>{children}</DefaultLayout>
-}
-
-export default PageLayout

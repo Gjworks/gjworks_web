@@ -7,7 +7,7 @@ import { RootState } from '@plextype/redux/store'
 import { store } from '@plextype/redux/store'
 import { fetchUserInfo } from '@plextype/redux/features/userSlice'
 
-import Popup from 'src/components/modal/Popup'
+import Popup from '@plextype/components/modal/Popup'
 import Warning from '@plextype/components/message/Warning'
 import ChangePassword from './changePassword'
 

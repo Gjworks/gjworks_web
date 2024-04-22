@@ -10,7 +10,7 @@ import DefaultList from '@plextype/components/nav/DefaultList'
 import { store } from '@plextype/redux/store'
 import { resetUserInfo } from '@plextype/redux/features/userSlice'
 
-import { Signout, Refresh } from '@plextype/modules/user/controllers/auth'
+import { Signout, Refresh } from 'src/modules/user/controllers/auth'
 
 interface UserInfo {
   code: string
@@ -44,7 +44,6 @@ const AccountDropwdown = () => {
   const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined)
 
   const userInfo = useSelector((state: RootState) => state.userInfo)
-  console.log(userInfo)
 
   useEffect(() => {
     const dispatch = store.dispatch

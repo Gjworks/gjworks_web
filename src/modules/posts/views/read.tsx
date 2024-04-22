@@ -63,8 +63,8 @@ const PostsRead = () => {
                 email-password authentication to a web application. While this
                 method provides a fundamental level of security, its worth
                 considering more advanced options like OAuth or passwordless
-                logins for enhanced protection against common security threats.
-                The authentication flow well discuss is as follows:
+                logins for enhanced protection against @plextype security
+                threats. The authentication flow well discuss is as follows:
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ const PostsRead = () => {
       <div className="sticky top-0 bg-white/75 backdrop-blur-lg z-99 pt-1 border-b border-gray-100">
         <div className="mx-auto  max-w-screen-md px-3">
           <div className="flex items-center gap-2">
-            <div className="bg-secondary-400 text-white text-xs px-4 py-1 rounded-full">
+            <div className="bg-primary-400 text-white text-xs px-4 py-1 rounded-full">
               기술공유
             </div>
             <div className="text-base md:text-lg font-light text-gray-950 py-4">

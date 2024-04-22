@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Warning from '@plextype/components/message/Warning'
 
-import { createUser } from '@plextype/modules/user/controllers/user'
+import { createUser } from 'src/modules/user/controllers/user'
 
 const DashboardUserInsert = () => {
   const router = useRouter()

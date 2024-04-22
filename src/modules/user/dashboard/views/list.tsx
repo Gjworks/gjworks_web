@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useSearchParams, usePathname } from 'next/navigation'
-import { getUserList } from '@plextype/modules/user/models/user'
+import { getUserList } from 'src/modules/user/models/user'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
 import DefaultNav from '@plextype/components/nav/DefaultNav'
 

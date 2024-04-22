@@ -4,7 +4,7 @@ import { cookies, headers } from "next/headers";
 import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-import { getUser, getUserByNickname } from "@plextype/modules/user/models/user";
+import { getUser, getUserByNickname } from "src/modules/user/models/user";
 
 interface UserParams {
   id? : number | null
@@ -104,6 +104,7 @@ export const createUser = async (formData: FormData) => {
 }
 export const updateUser = async (params:UserParams) => {
   const prisma = new PrismaClient();
+  const accessToken = cookies().get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     email : '',
@@ -112,8 +113,8 @@ export const updateUser = async (params:UserParams) => {
   let userInfo
   let response
   console.log(params)
-  if(params.accessToken) {
-    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(params.accessToken);
+  if(accessToken) {
+    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
     loggedInfo.email = decodeToken.id
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
@@ -206,6 +207,7 @@ export const updateUser = async (params:UserParams) => {
 
 export const deleteUser= async (params:UserParams) => {
   const prisma = new PrismaClient();
+  const accessToken = cookies().get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     email : '',
@@ -213,8 +215,8 @@ export const deleteUser= async (params:UserParams) => {
   }
   let userInfo
   let response
-  if(params.accessToken) {
-    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(params.accessToken);
+  if(accessToken) {
+    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
     loggedInfo.email = decodeToken.id
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
@@ -297,11 +299,11 @@ export const deleteUser= async (params:UserParams) => {
   return response
 }
 
-export const PasswordChange = async (token:string, formData: FormData) => {
+export const PasswordChange = async (formData: FormData) => {
   const prisma = new PrismaClient();
   let userInfo
   let response
-  const accessToken = token;
+  const accessToken = cookies().get('accessToken')?.value
   
   if (!accessToken) {
     return {

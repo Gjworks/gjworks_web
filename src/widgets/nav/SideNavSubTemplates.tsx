@@ -1,11 +1,11 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import nav from "src/res/config/navigation.json";
+'use client'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { motion } from 'framer-motion'
+import nav from '@plextype/res/config/navigation.json'
 
-const SideNavTemplate = (props) => {
-  const pathname = usePathname();
+const SideNavTemplate = props => {
+  const pathname = usePathname()
   const variants = {
     onscreen: {
       x: 0,
@@ -18,7 +18,7 @@ const SideNavTemplate = (props) => {
       x: -25,
       opacity: 0,
     },
-  };
+  }
   return (
     <>
       <motion.div className="px-3">
@@ -33,10 +33,10 @@ const SideNavTemplate = (props) => {
                   <Link
                     href={data[1].route}
                     className={
-                      "flex items-center space-x-2 rounded-md px-2 py-2 lg:px-3 " +
+                      'flex items-center space-x-2 rounded-md px-2 py-2 lg:px-3 ' +
                       (pathname === data[1].route
-                        ? "bg-gray-950 text-white dark:text-white"
-                        : "dark:text-dark-400 text-gray-900 hover:bg-gray-200 hover:text-black dark:hover:text-white")
+                        ? 'bg-gray-950 text-white dark:text-white'
+                        : 'dark:text-dark-400 text-gray-900 hover:bg-gray-200 hover:text-black dark:hover:text-white')
                     }
                   >
                     <span>
@@ -61,11 +61,11 @@ const SideNavTemplate = (props) => {
                     <span className="text-sm font-normal">{data[1].title}</span>
                   </Link>
                 </motion.div>
-              );
+              )
             })}
         </motion.div>
       </motion.div>
     </>
-  );
-};
-export default SideNavTemplate;
+  )
+}
+export default SideNavTemplate

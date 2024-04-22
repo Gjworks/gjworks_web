@@ -6,7 +6,7 @@ import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 
 import { decodeJwt } from 'jose';
 import { sign, verify, refresh, refreshVerify } from "@plextype/utils/auth/jwtAuth";
-import { getUser } from "@plextype/modules/user/models/user";
+import { getUser } from "src/modules/user/models/user";
 
 import { PrismaClient } from "@prisma/client";
 
@@ -153,7 +153,7 @@ export const Refresh = async (token:string) => {
     verifyToken = await verify(accessToken)
 
     if (verifyToken.ok === false) {
-      const isLogged = getUser({ accessToken:accessToken })
+      const isLogged = getUser({})
       if(!isLogged) {
         cookies().delete('refreshToken');
         cookies().delete('accessToken');
@@ -183,6 +183,13 @@ export const Refresh = async (token:string) => {
             isAdmin:decodeToken.isAdmin
           }
           newAccessToken = await sign(tokenParams)
+          cookies().delete('accessToken');
+          cookies().set({
+            name: "accessToken",
+            value: newAccessToken,
+            httpOnly: true,
+            sameSite: "strict",
+          });
           const response = 
             {
               success: true,

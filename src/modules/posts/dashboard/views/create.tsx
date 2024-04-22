@@ -4,22 +4,35 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Warning from '@plextype/components/message/Warning'
 
-import { createUser } from '@plextype/modules/user/controllers/user'
+import { createPosts } from 'src/modules/posts/dashboard/controllers/posts'
 
 const DashboardPostCreate = () => {
   const router = useRouter()
+
+  const [accessToken, setAccessToken] = useState<string | null>(null)
   const [error, setError] = useState<any>(false)
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem('accessToken')
+    setAccessToken(accessToken)
+  }, [])
 
   const submitHandler = async e => {
     e.preventDefault()
-
     const formData = new FormData()
-    formData.append('email', e.target.email.value)
-    formData.append('password', e.target.password.value)
-    formData.append('nickname', e.target.nickname.value)
+    formData.append('moduleId', e.target?.moduleId?.value)
+    formData.append('moduleName', e.target?.moduleName.value)
+    formData.append('moduleType', e.target?.moduleType.value)
+    formData.append('listCount', e.target?.listCount?.value)
+    formData.append('pageCount', e.target?.pageCount?.value)
+    formData.append('documentLike', e.target?.documentLike.checked)
+    formData.append('consultingState', e.target?.consultingState.checked)
+    formData.append('commentState', e.target?.commentState.checked)
+    formData.append('commentLike', e.target?.commentLike.checked)
 
-    await createUser(formData)
+    await createPosts(accessToken, formData)
       .then(response => {
+        console.log(response)
         if (response?.data.code === 'error') {
           setError(response?.data.message)
         } else {
@@ -33,6 +46,7 @@ const DashboardPostCreate = () => {
   return (
     <>
       <form onSubmit={submitHandler}>
+        <input type="hidden" name="moduleType" value="posts" />
         <div className="max-w-screen-2xl mx-auto">
           <div className="px-3">
             <div className="grid grid-cols-4 gap-8 py-10">
@@ -45,15 +59,16 @@ const DashboardPostCreate = () => {
                 </div>
               </div>
               <div className="col-span-3">
-                <div className="grid grid-col-span-2 gap-8">
-                  <div className="col-span-2 grid grid-cols-3 gap-6">
+                <div className="grid grid-col-span-2">
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label>
+                      <label htmlFor="moduleId">
                         <div className="text-sm text-black mb-3">모듈ID</div>
                       </label>
                       <input
-                        type="email"
-                        name="email"
+                        type="text"
+                        name="moduleId"
+                        id="moduleId"
                         className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                         placeholder="/?mid=post"
                       />
@@ -63,16 +78,17 @@ const DashboardPostCreate = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-2 grid grid-cols-3 gap-6">
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label>
+                      <label htmlFor="moduleName">
                         <div className="text-sm text-black mb-3">
                           게시판이름
                         </div>
                       </label>
                       <input
                         type="text"
-                        name="nickname"
+                        name="moduleName"
+                        id="moduleName"
                         className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                       />
 
@@ -82,14 +98,15 @@ const DashboardPostCreate = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-2 grid grid-cols-3 gap-6">
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label>
+                      <label htmlFor="listCount">
                         <div className="text-sm text-black mb-3">목록 수</div>
                       </label>
                       <input
                         type="text"
                         name="listCount"
+                        id="listCount"
                         className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                         defaultValue={20}
                       />
@@ -100,14 +117,15 @@ const DashboardPostCreate = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-2 grid grid-cols-3 gap-6">
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label>
+                      <label htmlFor="listCount">
                         <div className="text-sm text-black mb-3">페이지 수</div>
                       </label>
                       <input
                         type="text"
                         name="listCount"
+                        id="listCount"
                         className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                         defaultValue={5}
                       />
@@ -118,15 +136,41 @@ const DashboardPostCreate = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-2 grid grid-cols-3 gap-6">
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label>
+                      <label htmlFor="documentLike">
+                        <div className="text-sm text-black mb-3">
+                          좋아요 사용
+                        </div>
+                      </label>
+                      <label className="m-0">
+                        <input
+                          type="checkbox"
+                          name="documentLike"
+                          id="documentLike"
+                          className="peer hidden"
+                        />
+                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
+                      </label>
+                      <div className="text-sm text-dark-400 pt-2 font-light">
+                        게시글 본문에 좋아요 기능을 사용합니다.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
+                    <div className="col-span-3 sm:col-span-2">
+                      <label htmlFor="consultingState">
                         <div className="text-sm text-black mb-3">
                           상담 기능 사용
                         </div>
                       </label>
                       <label className="m-0">
-                        <input type="checkbox" className="peer hidden" />
+                        <input
+                          type="checkbox"
+                          name="consultingState"
+                          id="consultingState"
+                          className="peer hidden"
+                        />
                         <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
                       </label>
                       <div className="text-sm text-dark-400 pt-2 font-light">
@@ -152,13 +196,18 @@ const DashboardPostCreate = () => {
               </div>
               <div className="col-span-3">
                 <div className="grid grid-col-span-2 gap-8">
-                  <div className="col-span-2 grid grid-cols-3 gap-6">
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label>
+                      <label htmlFor="commentState">
                         <div className="text-sm text-black mb-3">댓글 사용</div>
                       </label>
                       <label className="m-0">
-                        <input type="checkbox" className="peer hidden" />
+                        <input
+                          type="checkbox"
+                          name="commentState"
+                          id="commentState"
+                          className="peer hidden"
+                        />
                         <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
                       </label>
                       <div className="text-sm text-dark-400 pt-2 font-light">
@@ -166,19 +215,24 @@ const DashboardPostCreate = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-2 grid grid-cols-3 gap-6">
+                  <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label>
+                      <label htmlFor="commentLike">
                         <div className="text-sm text-black mb-3">
                           좋아요 사용
                         </div>
                       </label>
                       <label className="m-0">
-                        <input type="checkbox" className="peer hidden" />
+                        <input
+                          type="checkbox"
+                          name="commentLike"
+                          id="commentLike"
+                          className="peer hidden"
+                        />
                         <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
                       </label>
                       <div className="text-sm text-dark-400 pt-2 font-light">
-                        게시글 본문에 좋아요 기능을 사용합니다.
+                        댓글에 좋아요 기능을 사용합니다.
                       </div>
                     </div>
                   </div>

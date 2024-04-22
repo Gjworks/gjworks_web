@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Warning from '@plextype/components/message/Warning'
 
-import { PasswordChange } from '@plextype/modules/user/controllers/user'
+import { PasswordChange } from 'src/modules/user/controllers/user'
 
 const ChangePassword = props => {
   const [accessToken, setAccessToken] = useState<string | null>(null)
@@ -42,7 +42,7 @@ const ChangePassword = props => {
     formData.append('newPasswordValue', e.target.new_password.value)
     formData.append('renewPasswordValue', e.target.renew_password.value)
     if (accessToken) {
-      await PasswordChange(accessToken, formData).then(response => {
+      await PasswordChange(formData).then(response => {
         console.log(response)
         if (response.data.code === 'fail') {
           setError(response.data.message)

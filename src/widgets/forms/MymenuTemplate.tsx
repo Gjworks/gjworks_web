@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-import Modal from 'src/components/modal/Modal'
-import SearchForm from '@plextype/widgets/forms/SearchForm'
+import Modal from '@plextype/components/modal/Modal'
+import SearchForm from 'src/widgets/forms/SearchForm'
 
 const MymenuTemplate = () => {
   const [showModal, setShowModal] = useState(false)
