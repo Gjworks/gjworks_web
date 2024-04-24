@@ -4,10 +4,10 @@ import { cookies, headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
+import { parse } from "path";
 
 interface PostsParams {
   id? : number | null
-  accessToken? : string | null
 }
 
 interface LoggedParams {
@@ -16,8 +16,61 @@ interface LoggedParams {
 }
 
 export const getPost = async (params:PostsParams) => {
+  const accessToken = cookies().get('accessToken')?.value
   const prisma = new PrismaClient();
   let response
+  let postInfo
+  let loggedInfo:LoggedParams = {
+    email : '',
+    isAdmin : false
+  }
+
+  if(!accessToken) {
+    return response = {
+      success: true,
+      data: {
+        code: "error",
+        message : 'accessToken is required.'
+      }
+    }
+  }
+
+  const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
+  loggedInfo.email = decodeToken.id
+  loggedInfo.isAdmin = decodeToken.isAdmin
+  
+  try {
+    let postId = Number(params.id);
+    console.log(typeof params.id)
+    if (!isNaN(postId) && typeof postId === 'number') {
+      postInfo = await prisma.module.findUnique({
+        where : {
+          id : postId
+        }
+      });
+    }
+
+    response = {
+      success: true,
+      data: {
+        code : 'success',
+        message: '게시판 정보를 불러 왔습니다.',
+        postInfo : postInfo,
+      }
+    }
+
+  } catch (e) {
+    console.log('getUser error' + e)
+    response = {
+      success: true,
+      data: {
+        code: "error",
+        message : '게시판 정보를 불러 오는데 실패 했습니다.'
+      }
+    };
+  }
+
+  
 
   return response
 }
@@ -29,7 +82,8 @@ export const getPostList = async (params) => {
   let response
   let postList
   let loggedInfo:LoggedParams = {
-    email : ''
+    email : '',
+    isAdmin : false
   }
 
   const { page, target, keyword } = params;

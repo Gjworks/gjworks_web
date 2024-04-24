@@ -1,5 +1,6 @@
 'use server'
 
+import { cookies, headers } from "next/headers";
 import { PrismaClient } from '@prisma/client';
 import { decodeJwt } from 'jose';
 
@@ -8,7 +9,8 @@ interface LoggedParams {
   isAdmin? : boolean | null
 }
 
-export const createPosts = async (token:string | null, formData:FormData) => {
+export const createPosts = async (formData:FormData) => {
+  const accessToken = cookies().get('accessToken')?.value
   const prisma = new PrismaClient();
   let loggedInfo:LoggedParams = {
     email : '',
@@ -16,8 +18,8 @@ export const createPosts = async (token:string | null, formData:FormData) => {
   }
   let response
 
-  if(token) {
-    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(token);
+  if(accessToken) {
+    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
     loggedInfo.email = decodeToken.id
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
@@ -40,6 +42,7 @@ export const createPosts = async (token:string | null, formData:FormData) => {
         }
       }
   }
+  const postId = formData.get('postId') as string;
   const moduleId = formData.get('moduleId') as string;
   const moduleName = formData.get('moduleName') as string;
   const moduleType = formData.get('moduleType') as string;
@@ -58,18 +61,29 @@ export const createPosts = async (token:string | null, formData:FormData) => {
     commentState: formData.get('commentState') as string ?? '',
     commentLike: formData.get('commentLike') as string ?? '',
   };
-  await prisma.module.create({
-    data: {
-      moduleId : moduleId,
-      moduleName : moduleName,
-      moduleType : moduleType,
-      config : moduleConfig
-    }
-  })
-  console.log(moduleType);
-  console.log(moduleName);
-
-
-
+  console.log(postId)
+  if(postId && postId !== 'null' && postId !== 'undefined') {
+    await prisma.module.update({
+      where: {
+        id: Number(postId)
+      },
+      data: {
+        moduleId : moduleId,
+        moduleName : moduleName,
+        moduleType : moduleType,
+        config : moduleConfig
+      }
+    })
+  }else{
+    await prisma.module.create({
+      data: {
+        moduleId : moduleId,
+        moduleName : moduleName,
+        moduleType : moduleType,
+        config : moduleConfig
+      }
+    })
+  }
+  
   return response
 }

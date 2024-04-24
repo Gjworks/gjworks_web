@@ -17,7 +17,7 @@ const DashboardUserUpdate = props => {
     updateDashboardUser()
   }, [])
   const updateDashboardUser = async () => {
-    await getUser({ id: props.userid, accessToken: accessToken })
+    await getUser({ id: props.userid })
       .then(response => {
         console.log(response)
         setUserInfo(response.data)

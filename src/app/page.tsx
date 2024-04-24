@@ -113,7 +113,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-primary-400 px-3 py-2 text-sm text-black hover:bg-primary-300  lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-primary-400 px-3 py-2 text-sm text-black hover:bg-primary-600  lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
@@ -216,10 +216,10 @@ export default function Page() {
                 className="absolute right-0 bottom-0 rounded-tl-3xl bg-white before:w-10 before:h-10 before:absolute before:right-[-2px] before:-top-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:-rotate-90 after:w-10 after:h-10 after:absolute after:-left-[38px] after:-bottom-[2px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:-rotate-90"
               >
                 <div className="pl-2 pt-2">
-                  <div className="block bg-gray-950 rounded-3xl border border-gray-100 shadow-lg shadow-gray-100 hover:shadow-gray-100 cursor-pointer transition-all duration-300 hover:scale-105">
+                  <div className="block bg-primary-400 rounded-3xl border border-gray-100 shadow-lg shadow-gray-100 hover:shadow-gray-100 cursor-pointer transition-all duration-300 hover:scale-105">
                     <div className="px-6 py-6 w-[270px] md:h-[290px]">
                       <div className="flex-1 w-full">
-                        <div className="text-lg font-bold cursor-pointer text-primary-400">
+                        <div className="text-lg font-bold cursor-pointer text-black">
                           서비스 제안하기
                         </div>
                       </div>

@@ -1,25 +1,42 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, use } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Warning from '@plextype/components/message/Warning'
 
 import { createPosts } from 'src/modules/posts/dashboard/controllers/posts'
+import { getPost } from 'src/modules/posts/dashboard/models/posts'
 
-const DashboardPostCreate = () => {
+interface PostProps {
+  id?: number | null
+}
+
+const DashboardPostCreate = (props: PostProps) => {
   const router = useRouter()
 
-  const [accessToken, setAccessToken] = useState<string | null>(null)
+  const [posts, setPosts] = useState<any>([])
   const [error, setError] = useState<any>(false)
 
   useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken')
-    setAccessToken(accessToken)
-  }, [])
+    if (props.id) {
+      getPost({ id: props.id }).then(response => {
+        if (response.data.code === 'error') {
+          setError(response.data.message)
+        } else {
+          console.log(response.data)
+          if (response.data.postInfo && response.data.code === 'success') {
+            setPosts(response.data.postInfo)
+          }
+        }
+      })
+    }
+  }, [props.id])
 
   const submitHandler = async e => {
     e.preventDefault()
     const formData = new FormData()
+    formData.append('postId', e.target?.postId?.value)
     formData.append('moduleId', e.target?.moduleId?.value)
     formData.append('moduleName', e.target?.moduleName.value)
     formData.append('moduleType', e.target?.moduleType.value)
@@ -30,7 +47,7 @@ const DashboardPostCreate = () => {
     formData.append('commentState', e.target?.commentState.checked)
     formData.append('commentLike', e.target?.commentLike.checked)
 
-    await createPosts(accessToken, formData)
+    await createPosts(formData)
       .then(response => {
         console.log(response)
         if (response?.data.code === 'error') {
@@ -46,6 +63,7 @@ const DashboardPostCreate = () => {
   return (
     <>
       <form onSubmit={submitHandler}>
+        {posts.id && <input type="hidden" name="postId" value={posts.id} />}
         <input type="hidden" name="moduleType" value="posts" />
         <div className="max-w-screen-2xl mx-auto">
           <div className="px-3">
@@ -65,13 +83,16 @@ const DashboardPostCreate = () => {
                       <label htmlFor="moduleId">
                         <div className="text-sm text-black mb-3">모듈ID</div>
                       </label>
-                      <input
-                        type="text"
-                        name="moduleId"
-                        id="moduleId"
-                        className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                        placeholder="/?mid=post"
-                      />
+                      {posts && (
+                        <input
+                          type="text"
+                          name="moduleId"
+                          id="moduleId"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                          placeholder="/?mid=post"
+                          defaultValue={posts?.moduleId}
+                        />
+                      )}
 
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         게시판의 모듈ID는 중복될 수 없는 이름입니다.
@@ -85,12 +106,15 @@ const DashboardPostCreate = () => {
                           게시판이름
                         </div>
                       </label>
-                      <input
-                        type="text"
-                        name="moduleName"
-                        id="moduleName"
-                        className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                      />
+                      {posts && (
+                        <input
+                          type="text"
+                          name="moduleName"
+                          id="moduleName"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                          defaultValue={posts?.moduleName}
+                        />
+                      )}
 
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         게시판이름을 정하세요. 브라우저 타이틀 혹은 게시판의
@@ -103,13 +127,19 @@ const DashboardPostCreate = () => {
                       <label htmlFor="listCount">
                         <div className="text-sm text-black mb-3">목록 수</div>
                       </label>
-                      <input
-                        type="text"
-                        name="listCount"
-                        id="listCount"
-                        className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                        defaultValue={20}
-                      />
+                      {posts && (
+                        <input
+                          type="text"
+                          name="listCount"
+                          id="listCount"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                          defaultValue={
+                            posts.config?.listCount
+                              ? posts.config?.listCount
+                              : '20'
+                          }
+                        />
+                      )}
 
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         한 페이지에 표시될 글 수를 지정할 수 있습니다. (기본
@@ -122,13 +152,19 @@ const DashboardPostCreate = () => {
                       <label htmlFor="listCount">
                         <div className="text-sm text-black mb-3">페이지 수</div>
                       </label>
-                      <input
-                        type="text"
-                        name="listCount"
-                        id="listCount"
-                        className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                        defaultValue={5}
-                      />
+                      {posts && (
+                        <input
+                          type="text"
+                          name="listCount"
+                          id="listCount"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                          defaultValue={
+                            posts.config?.pageCount
+                              ? posts.config?.pageCount
+                              : '10'
+                          }
+                        />
+                      )}
 
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         목록 하단, 페이지를 이동하는 링크 수를 지정할 수
@@ -144,13 +180,18 @@ const DashboardPostCreate = () => {
                         </div>
                       </label>
                       <label className="m-0">
-                        <input
-                          type="checkbox"
-                          name="documentLike"
-                          id="documentLike"
-                          className="peer hidden"
-                        />
-                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
+                        {posts?.config && (
+                          <input
+                            type="checkbox"
+                            name="documentLike"
+                            id="documentLike"
+                            className="peer hidden"
+                            defaultChecked={
+                              posts?.config?.documentLike === 'true'
+                            }
+                          />
+                        )}
+                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                       </label>
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         게시글 본문에 좋아요 기능을 사용합니다.
@@ -165,13 +206,18 @@ const DashboardPostCreate = () => {
                         </div>
                       </label>
                       <label className="m-0">
-                        <input
-                          type="checkbox"
-                          name="consultingState"
-                          id="consultingState"
-                          className="peer hidden"
-                        />
-                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
+                        {posts?.config && (
+                          <input
+                            type="checkbox"
+                            name="consultingState"
+                            id="consultingState"
+                            className="peer hidden"
+                            defaultChecked={
+                              posts?.config?.consultingState === 'true'
+                            }
+                          />
+                        )}
+                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                       </label>
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         관리자와 자신이 쓴 글만 보이도록 하는 기능입니다.
@@ -198,18 +244,28 @@ const DashboardPostCreate = () => {
                 <div className="grid grid-col-span-2 gap-8">
                   <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                     <div className="col-span-3 sm:col-span-2">
-                      <label htmlFor="commentState">
+                      <label>
                         <div className="text-sm text-black mb-3">댓글 사용</div>
                       </label>
-                      <label className="m-0">
-                        <input
-                          type="checkbox"
-                          name="commentState"
-                          id="commentState"
-                          className="peer hidden"
-                        />
-                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
+                      <label htmlFor="commentState" className="m-0">
+                        {posts?.config && (
+                          <input
+                            type="checkbox"
+                            name="commentState"
+                            id="commentState"
+                            className="peer hidden"
+                            defaultChecked={
+                              posts?.config?.commentState === 'true'
+                            }
+                            onChange={e => {
+                              // Handle checkbox state change if needed
+                            }}
+                          />
+                        )}
+
+                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                       </label>
+
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         댓글을 사용할지 여부를 결정합니다.
                       </div>
@@ -223,13 +279,18 @@ const DashboardPostCreate = () => {
                         </div>
                       </label>
                       <label className="m-0">
-                        <input
-                          type="checkbox"
-                          name="commentLike"
-                          id="commentLike"
-                          className="peer hidden"
-                        />
-                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
+                        {posts?.config && (
+                          <input
+                            type="checkbox"
+                            name="commentLike"
+                            id="commentLike"
+                            className="peer hidden"
+                            defaultChecked={
+                              posts?.config?.commentLike === 'true'
+                            }
+                          />
+                        )}
+                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                       </label>
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         댓글에 좋아요 기능을 사용합니다.
@@ -241,9 +302,12 @@ const DashboardPostCreate = () => {
             </div>
           </div>
           <div className="flex gap-4 justify-center bg-slate-100/50 pt-5 pb-10 border-t border-slate-200">
-            <div className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md">
+            <Link
+              href="/dashboard/posts/list"
+              className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md"
+            >
               뒤로가기
-            </div>
+            </Link>
             <button className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md">
               저장하기
             </button>

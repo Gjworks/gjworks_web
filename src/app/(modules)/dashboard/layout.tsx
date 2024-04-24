@@ -192,9 +192,7 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <div className="relative top-0 ml-[300px] bg-white pt-[60px]">
-          {children}
-        </div>
+        <div className="relative top-0 ml-[300px] bg-white">{children}</div>
       </div>
     </div>
   )
