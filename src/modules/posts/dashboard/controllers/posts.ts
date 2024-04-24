@@ -68,7 +68,7 @@ export const createPosts = async (formData:FormData) => {
         id: Number(postId)
       },
       data: {
-        moduleId : moduleId,
+        moduleId : moduleId, 
         moduleName : moduleName,
         moduleType : moduleType,
         config : moduleConfig
@@ -77,7 +77,7 @@ export const createPosts = async (formData:FormData) => {
   }else{
     await prisma.module.create({
       data: {
-        moduleId : moduleId,
+        moduleId : moduleId, 
         moduleName : moduleName,
         moduleType : moduleType,
         config : moduleConfig
