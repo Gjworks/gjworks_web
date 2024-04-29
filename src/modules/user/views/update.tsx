@@ -8,29 +8,34 @@ import { store } from '@plextype/redux/store'
 import { fetchUserInfo } from '@plextype/redux/features/userSlice'
 
 import Popup from '@plextype/components/modal/Popup'
-import Warning from '@plextype/components/message/Warning'
+import Alert from '@plextype/components/message/Alert'
 import ChangePassword from './changePassword'
 
-interface UserInfo {
-  code: string
+interface ResultInfo {
+  type: string
   element: string
   message: string
-  userInfo: {
-    id: number
-    uuid: string
-    nickname: string
-    password: string
-    email: string
-    createdAt: string
-    updateAt: string
+  data: {
+    userInfo: UserInfo
   }
+}
+interface UserInfo {
+  id: number
+  uuid: string
+  nickname: string
+  password: string
+  email: string
+  createdAt: string
+  updateAt: string
 }
 const UpdateUser = (props: any) => {
   const dispatch = store.dispatch
   const [showPopup, setShowPopup] = useState(false)
   const [accessToken, setAccessToken] = useState<string | null>(null)
   const [loggedInfo, setLoggedInfo] = useState<UserInfo>()
-  const [error, setError] = useState<any>(false)
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null
+  )
 
   const userInfo = useSelector((state: RootState) => state.userInfo)
 
@@ -42,23 +47,8 @@ const UpdateUser = (props: any) => {
     const accessToken = localStorage.getItem('accessToken')
     setAccessToken(accessToken)
 
-    userInfo && userInfo.userInfo && setLoggedInfo(userInfo.userInfo)
+    userInfo && setLoggedInfo(userInfo?.session)
   }, [])
-
-  // interface SignData {
-  //   code: string
-  //   element: string
-  //   message: string
-  //   userInfo: {
-  //     id: number
-  //     uuid: string
-  //     nickname: string
-  //     password: string
-  //     email: string
-  //     createdAt: string
-  //     updateAt: string
-  //   }
-  // }
 
   const handleUserInfoSubmit = async e => {
     e.preventDefault()
@@ -67,8 +57,10 @@ const UpdateUser = (props: any) => {
     accessToken &&
       dispatch(fetchUserInfo({ accessToken, formData })).then(
         (resultAction: ReturnType<typeof dispatch>) => {
-          const dataInfo = resultAction.payload as UserInfo
-          dataInfo?.code === 'error' && setError(dataInfo?.message)
+          const dataInfo = resultAction.payload as ResultInfo
+          console.log(dataInfo)
+          dataInfo?.type &&
+            setError({ type: dataInfo.type, message: dataInfo.message })
         }
       )
   }
@@ -76,14 +68,14 @@ const UpdateUser = (props: any) => {
     <>
       <form onSubmit={handleUserInfoSubmit}>
         <div>
-          {error && <Warning message={error} />}
+          {error && <Alert message={error.message} type={error.type} />}
           <div className="border-b border-gray-200">
             <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
               <div className="col-span-1 text-base text-gray-400 p-2">
                 이메일
               </div>
               <div className="col-span-2 text-base text-gray-900 p-2">
-                {loggedInfo && loggedInfo.userInfo && loggedInfo.userInfo.email}
+                {loggedInfo && loggedInfo && loggedInfo.email}
               </div>
             </div>
             <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
@@ -127,11 +119,7 @@ const UpdateUser = (props: any) => {
                   name="nickname"
                   className="w-full py-2 border border-gray-200 hover:border-gray-900 focus:border-gray-900 px-5 rounded-lg outline-none"
                   placeholder="변경할 닉네임을 입력해주세요."
-                  defaultValue={
-                    loggedInfo &&
-                    loggedInfo.userInfo &&
-                    loggedInfo.userInfo.nickname
-                  }
+                  defaultValue={loggedInfo && loggedInfo && loggedInfo.nickname}
                 />
               </div>
             </div>

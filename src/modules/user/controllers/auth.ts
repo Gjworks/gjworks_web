@@ -12,31 +12,29 @@ import { PrismaClient } from "@prisma/client";
 
 export const Signin = async (formData: FormData) => {
   const prisma = new PrismaClient();
-
+  console.log(formData)
   try {
     const email = formData.get("email") as string;
     const password = formData.get("password") as string;
+    console.log(email, password)
     if (!email) {
-      const data = {
-        code: "error",
+
+      const response = {
+        success: true,
+        type: "error",
         element: "email",
         message: "이메일 계정을 입력해주세요.",
-      };
-       const response = {
-        success: true,
-        data: data
+        data : {}
       }
       return response
     }
     if (!password) {
-      const data = {
-        code: "error",
-        element: "password",
-        message: "비밀번호를 입력해주세요.",
-      };
       const response = {
         success: true,
-        data: data
+        type: "error",
+        element: "password",
+        message: "비밀번호를 입력해주세요.",
+        data : {}
       }
       return response
     }
@@ -71,8 +69,8 @@ export const Signin = async (formData: FormData) => {
         const response = 
           {
             success: true,
+            type: "success",
             data: {
-              code: "success",
               userInfo: userInfo
             },
             accessToken: accessToken,
@@ -101,10 +99,9 @@ export const Signin = async (formData: FormData) => {
         const response = 
           {
             success: false,
-            data: {
-              code: "error",
-              message : '아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.'
-            },
+            type: "error",
+            message : '아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.',
+            data: {},
             accessToken:null
           }
         return response;
@@ -113,10 +110,9 @@ export const Signin = async (formData: FormData) => {
       console.error(e);
       const response = {
         success: false,
-        data: {
-          code: "error",
-          message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
-        },
+        type: "error",
+        message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
+        data: {},
         accessToken: null,
       };
       return response;
@@ -139,11 +135,10 @@ export const Refresh = async (token:string) => {
   if (!accessToken && !refreshToken) {
     return {
       success: true,
-      data: {
-        code: "token_error",
-        type: "fail",
-        message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
-      },
+      code: "token_error",
+      type: "error",
+      message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
+      data: {},
       accessToken:null
     };
   }
@@ -160,11 +155,10 @@ export const Refresh = async (token:string) => {
         const response = 
           {
             success: false,
-            data : {
-              code : 'user info not found',
-              type : 'fail',
-              message: "회원정보를 찾을 수 없습니다."
-            },
+            code : 'user info not found',
+            type : 'error',
+            message: "회원정보를 찾을 수 없습니다.",
+            data : {},
             accessToken: null,
           }
         return response
@@ -173,7 +167,7 @@ export const Refresh = async (token:string) => {
       if(refreshToken) {
         refreshVerifyToken = await refreshVerify(refreshToken)
       }
-      console.log(refreshVerifyToken)
+
       if(refreshVerifyToken) {
 
         const decodeToken = await decodeJwt(accessToken);
@@ -193,11 +187,10 @@ export const Refresh = async (token:string) => {
           const response = 
             {
               success: true,
-              data : {
-                code : 'new_accessToken',
-                type : 'success',
-                message: 'New accessToken',
-              },
+              code : 'new_accessToken',
+              type : 'success',
+              message: 'New accessToken',
+              data : {},
               accessToken: newAccessToken,
             }
           return response
@@ -208,11 +201,10 @@ export const Refresh = async (token:string) => {
         const response = 
           {
             success: false,
-            data : {
-              code : 'refreshToken_expires',
-              type : 'fail',
-              message: "token이 만료되었습니다. 로그인을 새로 해주세요."
-            },
+            code : 'refreshToken_expires',
+            type : 'error',
+            message: "token이 만료되었습니다. 로그인을 새로 해주세요.",
+            data : {},
             accessToken: null,
           }
         return response
@@ -222,10 +214,9 @@ export const Refresh = async (token:string) => {
   // const refreshVerifyToken = refreshVerify(refreshToken)
   return {
     success: true,
-    data: {
-      code: "success",
-      message: "",
-    },
+    code: "success",
+    message: "",
+    data: {},
     accessToken:accessToken};
   } catch (error) {
     console.error(error);

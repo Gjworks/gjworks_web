@@ -4,32 +4,33 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { Signin } from "src/modules/user/controllers/auth";
 import { updateUser } from "src/modules/user/controllers/user";
 
+interface UserInfo {
+  id:number;
+  uuid: string;
+  nickname: string;
+  password: string;
+  email: string;
+  createdAt: string;
+  updateAt: string;
+}
 interface DataInfo {
   // 사용자 정보에 해당하는 인터페이스를 정의합니다.
-  code :string
+  type :string
   element : string
   message : string
-  userInfo : {
-    id:number;
-    uuid: string;
-    nickname: string;
-    password: string;
-    email: string;
-    createdAt: string;
-    updateAt: string;
+  data :{
+    userInfo : UserInfo
   }
+  accessToken : string
 }
 
-interface UserState {
-  userInfo: DataInfo | null;
-  loading: boolean,
-  error: string | undefined,
-}
-
-const initialState: UserState = {
-  userInfo: null,
+const initialState = {
+  session: {} as UserInfo,
   loading: false,
-  error: undefined,
+  error: '',
+  type: '',
+  element: '',
+  message: '',
 };
 
 interface FetchSignInPayload {
@@ -42,52 +43,36 @@ interface FetchUserInfoPayload {
 }
 
 interface FetchSignInResponse {
-  userInfo: DataInfo;
+  result: DataInfo;
   accessToken: string;
 }
 
 export const fetchSignIn = createAsyncThunk<FetchSignInResponse, FetchSignInPayload>(
   'userInfo/fetchSignIn',
-  async ({formData}: { formData: FormData }):Promise<{ userInfo: DataInfo; accessToken: string }> => {
+  async ({ formData }: { formData: FormData }):Promise<{ result: DataInfo; accessToken: string }> => {
     let result;
+    console.log(11111111)
     await Signin(formData).then((response) => {
-      console.log(response)
+      console.log(response.type)
       result = response
     })
-    return { userInfo: result.data, accessToken: result.accessToken };
-    // const response = await fetch('/auth/api/signin', {
-    //   method: 'POST',
-    //   body: formData,
-    // });
-    // const result = await response.json();
-    // return data.data.userInfo;
-    
+    return { result: result, accessToken: result.accessToken };
   }
 );
 
 export const fetchUserInfo = createAsyncThunk<DataInfo, FetchUserInfoPayload>(
   'userInfo/fetchUserInfo',
-  async ({accessToken, formData}: { accessToken: string, formData: FormData }):Promise<DataInfo> => {
+  async ({ formData }: { formData: FormData }):Promise<DataInfo> => {
 
     let result;
     const params = {
-      accessToken: accessToken,
       nickname: formData.get('nickname') as string
     }
     await updateUser(params).then((response) => {
       console.log(response)
       result = response
     })
-    return result.data;
-    // const response = await fetch('/user/api/handler', {
-    //   headers: {
-    //     Authorization: `Bearer ${accessToken}`,
-    //   },
-    //   method: 'PUT',
-    //   body: formData,
-    // });
-    // const result = await response.json();
-    // return result.data;
+    return result;
   }
 );
 
@@ -95,13 +80,14 @@ export const userSlice = createSlice({
   name: "userInfo",
   initialState,
   reducers: {
-    // setUserInfo: (state, action: PayloadAction<UserInfo>) => {
-    //   console.log(action.payload)
-    //   state.userInfo = action.payload;
-    // },
     resetUserInfo: (state) => {
-      state.userInfo = null;
+      state.session =  {} as UserInfo;
     },
+    updateInfo: (state, action: PayloadAction<{ type: string; element: string; message: string }>) => {
+      state.type = action.payload.type;
+      state.element = action.payload.element;
+      state.message = action.payload.message;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -111,13 +97,17 @@ export const userSlice = createSlice({
       .addCase(fetchUserInfo.fulfilled, (state, action) => {
         state.loading = false;
         console.log(action.payload)
-        if(action.payload.code !== 'error') {
-          if(action.payload) state.userInfo = action.payload;
+        if(action.payload.type !== 'error') {
+          if (action.payload.data.userInfo) {
+            state.session = action.payload.data.userInfo as UserInfo;
+          }
         }
       })
       .addCase(fetchUserInfo.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
+        if (state !== null) {
+          state.loading = false;
+          action.error?.message as string | null ?? null;
+        }
       })
       .addCase(fetchSignIn.pending, (state) => {
         state.loading = true;
@@ -125,18 +115,25 @@ export const userSlice = createSlice({
       .addCase(fetchSignIn.fulfilled, (state, action) => {
         state.loading = false;
         // 사용자 정보와 accessToken 받아오기
-        const { userInfo, accessToken } = action.payload;
+        const { data, accessToken } = action.payload.result;
         // fetchSignIn에서 받아온 사용자 정보로 덮어쓰기
-        state.userInfo = userInfo;
+        console.log(action.payload)
+        if(data.userInfo) {
+          state.session = data.userInfo as UserInfo;
+        }
+        console.log(action)
+        console.log(state)
         // localStorage에 accessToken 저장
         localStorage.setItem('accessToken', accessToken);
       })
       .addCase(fetchSignIn.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
+        if (state !== null) {
+          state.loading = false;
+          state.error = action.error?.message ?? "Unknown error occurred";
+        }
       });
   },
 })
 
-export const { resetUserInfo } = userSlice.actions;
+export const { resetUserInfo, updateInfo } = userSlice.actions;
 export default userSlice.reducer;

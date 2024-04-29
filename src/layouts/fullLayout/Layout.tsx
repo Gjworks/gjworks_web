@@ -41,7 +41,6 @@ const FullLayout = ({ children }) => {
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
           </div>
-          <FootAlert />
         </main>
 
         {/* {scrollPosition > 100 && (
@@ -73,7 +72,9 @@ const FullLayout = ({ children }) => {
             </svg>
           </motion.button>
         )} */}
-
+        <div className="relative mx-auto max-w-screen-xl">
+          <FootAlert />
+        </div>
         <footer className="pb-8 border-t border-gray-100 pt-6">
           <div className="mx-auto max-w-screen-lg">
             <Footer />

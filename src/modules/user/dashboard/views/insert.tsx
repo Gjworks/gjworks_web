@@ -20,8 +20,8 @@ const DashboardUserInsert = () => {
 
     await createUser(formData)
       .then(response => {
-        if (response?.data.code === 'error') {
-          setError(response?.data.message)
+        if (response?.type === 'error') {
+          setError(response?.message)
         } else {
           router.replace('/dashboard/user/list')
         }

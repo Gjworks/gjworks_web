@@ -57,7 +57,7 @@ const DashboardUserList = () => {
   }) => {
     items = await getPostList({ page, target, keyword })
     console.log(items)
-    if (items.data.code === 'success') {
+    if (items.type === 'success') {
       setPostList(items.data.postList)
       setPageNavigation(items.data.navigation)
     } else {

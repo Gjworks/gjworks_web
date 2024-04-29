@@ -7,7 +7,21 @@ import { persistReducer, persistStore, PersistConfig } from "redux-persist";
 import { userSlice } from "./features/userSlice";
 import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 
+const userInfoTransform = {
+  in: (state, key) => {
+    console.log(state.session)
+      return { session: state.session };
+
+  },
+  out: (state, key) => {
+    // 보관된 상태를 로드할 때는 변환하지 않습니다.
+    return state;
+  },
+};
+
+
 const createNoopStorage = () => {
+
   return {
     getItem(_key: any) {
       return Promise.resolve(null);
@@ -30,11 +44,12 @@ const rootReducer = combineReducers({
 });
 
 const persistConfig: PersistConfig<ReturnType<typeof rootReducer>> = {
-  key: "root",
+  key: "userInfo",
   storage,
   // serialize: false, // Disable serialization
   // serialize: data => JSON.stringify(data), // 객체를 문자열로 변환
-  whitelist: ['userInfo'],
+  // whitelist: ['userInfo'],
+  transforms: [userInfoTransform], 
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

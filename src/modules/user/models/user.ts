@@ -62,10 +62,9 @@ export const getUser = async (params:UserParams) => {
     console.log('getUser error' + e)
     response = {
       success: true,
-      data: {
-        code: "error",
-        message : '회원정보가 없습니다.'
-      }
+      type: "error",
+      message : '회원정보가 없습니다.',
+      data: {}
     };
   }
   response = {
@@ -145,10 +144,9 @@ export const getUserByEmail = async (email:string) => {
     console.log('getUser error' + e)
     response = {
       success: true,
-      data: {
-        code: "error",
-        message : '회원정보가 없습니다.'
-      }
+      type: "error",
+      message : '회원정보가 없습니다.',
+      data: {}
     };
   }
   response = {
@@ -180,10 +178,9 @@ export const getUserByNickname = async (nickname:string) => {
     console.log('getUser error' + e)
     response ={
       success: true,
-      data: {
-        code: "error",
-        message : '회원정보가 없습니다.'
-      }
+      code: "error",
+      message : '회원정보가 없습니다.',
+      data: {}
     };
   }
   response = {
@@ -200,10 +197,9 @@ export const getUserByToken = async (token) => {
   if (!accessToken) {
     response =  NextResponse.json({
       success: true,
-      data: {
-        code: "fail",
-        message : 'accessToken Error'
-      }
+      type: "error",
+        message : 'accessToken Error',
+      data: {}
     },
     {
       status: 200,
@@ -213,10 +209,9 @@ export const getUserByToken = async (token) => {
     if (!decodeToken || !decodeToken.id) {
       response = NextResponse.json({
         success: true,
-        data: {
-          code: "fail",
-          message: 'Invalid accessToken'
-        }
+        type: "error",
+        message: 'Invalid accessToken',
+        data: {}
       }, {
           status: 200,
       });
@@ -240,14 +235,10 @@ export const getUserByToken = async (token) => {
         response = NextResponse.json(
           {
             success: true,
-            data: {
-              code: "fail",
-              message : '회원정보가 없습니다.'
-            }
-          },
-          {
-            status: 200,
-          },
+            type: "error",
+            message : '회원정보가 없습니다.',
+            data: {}
+          }
         );
       }else{
 

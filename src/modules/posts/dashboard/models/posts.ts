@@ -28,10 +28,9 @@ export const getPost = async (params:PostsParams) => {
   if(!accessToken) {
     return response = {
       success: true,
-      data: {
-        code: "error",
-        message : 'accessToken is required.'
-      }
+      type: "error",
+      message : 'accessToken is required.',
+      data: {}
     }
   }
 
@@ -52,9 +51,9 @@ export const getPost = async (params:PostsParams) => {
 
     response = {
       success: true,
+      type : 'success',
+      message: '게시판 정보를 불러 왔습니다.',
       data: {
-        code : 'success',
-        message: '게시판 정보를 불러 왔습니다.',
         postInfo : postInfo,
       }
     }
@@ -63,10 +62,9 @@ export const getPost = async (params:PostsParams) => {
     console.log('getUser error' + e)
     response = {
       success: true,
-      data: {
-        code: "error",
-        message : '게시판 정보를 불러 오는데 실패 했습니다.'
-      }
+      type: "error",
+      message : '게시판 정보를 불러 오는데 실패 했습니다.',
+      data: {}
     };
   }
 
@@ -105,10 +103,9 @@ export const getPostList = async (params) => {
   if(!accessToken) {
     return response = {
       success: true,
-      data: {
-        code: "error",
-        message : 'accessToken is required.'
-      }
+      type: "error",
+      message : 'accessToken is required.',
+      data: {}
     }
   }
 
@@ -130,17 +127,16 @@ export const getPostList = async (params) => {
     console.log('getUser error' + e)
     response = {
       success: true,
-      data: {
-        code: "error",
-        message : '회원정보가 없습니다.'
-      }
+      type: "error",
+        message : '회원정보가 없습니다.',
+      data: {}
     };
   }
 
   const returnData = {
     success: true,
+    type : 'success',
     data: {
-      code : 'success',
       postList : postList,
       navigation : {
         totalCount : totalItems,

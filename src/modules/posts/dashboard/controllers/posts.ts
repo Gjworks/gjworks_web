@@ -26,20 +26,18 @@ export const createPosts = async (formData:FormData) => {
     return response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '토큰 정보가 잘못되었습니다.'
-        }
+        type: "fail",
+        message : '토큰 정보가 잘못되었습니다.',
+        data: {}
       }
   }
   if(!loggedInfo.isAdmin) {
     return response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '관리자 권한이 없습니다.'
-        }
+        type: "fail",
+        message : '관리자 권한이 없습니다.',
+        data: {}
       }
   }
   const postId = formData.get('postId') as string;

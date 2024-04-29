@@ -34,10 +34,7 @@ const MainLayout = ({ children }) => {
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main className="">
-          <div className="relative mx-auto max-w-screen-2xl">
-            {children}
-            <FootAlert />
-          </div>
+          <div className="relative mx-auto max-w-screen-2xl">{children}</div>
         </main>
         {/* {scrollPosition > 100 && (
           <motion.button
@@ -68,7 +65,9 @@ const MainLayout = ({ children }) => {
             </svg>
           </motion.button>
         )} */}
-
+        <div className="relative mx-auto max-w-screen-2xl">
+          <FootAlert />
+        </div>
         <footer className="pb-8 border-t border-gray-100 pt-6">
           <div className="mx-auto max-w-screen-lg">
             <Footer />

@@ -17,11 +17,10 @@ export const deleteDashboardUser = async (id:number) => {
   if(!id) {
     return {
       success: false,
-      data: {
-        code: "error",
-        element: 'id',
-        message : '사용자 ID 값은 필수입니다.'
-      }
+      code: "error",
+      element: 'id',
+      message : '사용자 ID 값은 필수입니다.',
+      data: {}
     };
   }
   const output = await deleteUser({id: id})

@@ -7,7 +7,8 @@ export async function middleware(request: NextRequest, response: NextResponse) {
   try {
     const { cookies } = request;
     const hasAccessToken = cookies.has('accessToken');
-    const accessToken = request.cookies.get('accessToken')
+    const accessToken = cookies.get('accessToken')
+
     let decodeToken : { id:string, isAdmin:boolean }
     if(accessToken?.value){
       decodeToken = await decodeJwt(accessToken.value);

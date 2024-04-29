@@ -30,31 +30,28 @@ export const createUser = async (formData: FormData) => {
   if (!email) {
     return response = {
       success: true,
-      data: {
-        code: "error",
-        element: 'email',
-        message : '이메일 값은 필수입니다.'
-      }
+      type: "error",
+      element: 'email',
+      message : '이메일 값은 필수입니다.',
+      data: {}
     };
   }
   if (!password) {
     return response ={
       success: true,
-      data: {
-        code: "error",
-        element: 'password',
-        message : '패스워드 값은 필수입니다.'
-      }
+      type: "error",
+      element: 'password',
+      message : '패스워드 값은 필수입니다.',
+      data: {}
     };
   }
   if (!nickname) {
     return response = {
       success: true,
-      data: {
-        code: "error",
-        element: 'nickname',
-        message : '닉네임 값은 필수입니다.'
-      }
+      type: "error",
+      element: 'nickname',
+      message : '닉네임 값은 필수입니다.',
+      data: {}
     };
   }
 
@@ -63,10 +60,9 @@ export const createUser = async (formData: FormData) => {
     return response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '이미 가입된 이메일입니다.'
-        }
+        type: "error",
+        message : '이미 가입된 이메일입니다.',
+        data: {}
       }
   }
   
@@ -75,10 +71,9 @@ export const createUser = async (formData: FormData) => {
     return response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '이미 사용중인 닉네임입니다.'
-        }
+        type: "error",
+        message : '이미 사용중인 닉네임입니다.',
+        data: {}
       }
   }
 
@@ -94,10 +89,9 @@ export const createUser = async (formData: FormData) => {
     console.log('register error' + e)
       throw {
         success: false,
-        data: {
-          code: "fail",
-          message : '회원가입 과정에서 문제가 발생하였습니다.'
-        }
+        type: "error",
+        message : '회원가입 과정에서 문제가 발생하였습니다.',
+        data: {}
       };
   }
   
@@ -121,10 +115,9 @@ export const updateUser = async (params:UserParams) => {
     return response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '토큰 정보가 잘못되었습니다.'
-        }
+        type: "error",
+        message : '토큰 정보가 잘못되었습니다.',
+        data: {}
       }
   }
   params.id && (obj.id = params.id)
@@ -136,32 +129,30 @@ export const updateUser = async (params:UserParams) => {
     obj.email = loggedInfo.email
   }
 
-  //관리자가 아닐경우 본인 계정만 삭제 가능
-  if(!loggedInfo.isAdmin) {
-    if(userInfo?.email !== loggedInfo.email) {
-      return response = 
-        {
-          success: true,
-          data: {
-            code: "fail",
-            message : '권한이 없습니다.'
-          }
-        }
-    }
-  }
-
   userInfo = await getUser(params)
-  console.log('deleteUser ',userInfo)
+
   if(!userInfo) {
     response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '회원정보가 없습니다.'
-        }
+        type: "error",
+        message : '회원정보가 없습니다.',
+        data: {}
       }
     }
+
+  //관리자가 아닐경우 본인 계정만 삭제 가능
+  if(!loggedInfo.isAdmin) {
+    if(userInfo?.data?.email !== loggedInfo.email) {
+      return response = 
+        {
+          success: true,
+          type: "error",
+          message : '권한이 없습니다.',
+          data: {}
+        }
+    }
+  }
 
   if(userInfo.data.nickname !== obj.nickname) {
     const getUserNickname = await getUserByNickname(obj.nickname)
@@ -170,14 +161,13 @@ export const updateUser = async (params:UserParams) => {
       return response = 
         {
           success: true,
-          data: {
-            code: "error",
-            message : '이미 사용중인 닉네임입니다.'
-          }
+          type: "error",
+          message : '이미 사용중인 닉네임입니다.',
+          data: {}
         }
     }
   }
-  console.log(obj);
+
   try {
     const updateUserInfo = await prisma.user.update({
       where: {
@@ -188,15 +178,14 @@ export const updateUser = async (params:UserParams) => {
         // password: obj.password,
       }
     })
-    console.log(updateUserInfo)
-    userInfo.nickname = updateUserInfo.nickname;
+    userInfo.data.nickname = updateUserInfo.nickname;
     return response = 
       {
         success: true,
+        type: "success",
+        message : '회원정보가 성공적으로 변경되었습니다.',
         data: {
-          code: "success",
-          userInfo : userInfo,
-          message : '회원정보가 성공적으로 변경되었습니다.'
+          userInfo : userInfo.data,
         }
       }
       
@@ -223,10 +212,9 @@ export const deleteUser= async (params:UserParams) => {
     return response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '토큰 정보가 잘못되었습니다.'
-        }
+        type: "error",
+        message : '토큰 정보가 잘못되었습니다.',
+        data: {}
       }
   }
   params.id && (obj.id = params.id)
@@ -238,32 +226,31 @@ export const deleteUser= async (params:UserParams) => {
     obj.email = loggedInfo.email
   }
 
-  //관리자가 아닐경우 본인 계정만 삭제 가능
-  if(!loggedInfo.isAdmin) {
-    if(userInfo?.email !== loggedInfo.email) {
-      return response = 
-        {
-          success: true,
-          data: {
-            code: "fail",
-            message : '권한이 없습니다.'
-          }
-        }
-    }
-  }
-
   userInfo = await getUser(params)
   console.log('deleteUser ',userInfo)
   if(!userInfo) {
     response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '회원정보가 없습니다.'
-        }
+        type: "error",
+        message : '회원정보가 없습니다.',
+        data: {}
       }
     }
+  //관리자가 아닐경우 본인 계정만 삭제 가능
+  if(!loggedInfo.isAdmin) {
+    if(userInfo?.data?.email !== loggedInfo.email) {
+      return response = 
+        {
+          success: true,
+          type: "error",
+          message : '권한이 없습니다.',
+          data: {}
+        }
+    }
+  }
+
+
   const deleteUser = await prisma.user.delete({
     where: obj,
   })
@@ -276,19 +263,17 @@ export const deleteUser= async (params:UserParams) => {
     response = 
       {
         success: true,
-        data: {
-          code: "success",
-          message : '회원 계정정보가 모두 삭제되었습니다.'
-        }
+        type: "success",
+        message : '회원 계정정보가 모두 삭제되었습니다.',
+        data: {}
       }
   }else{
     response = 
       {
         success: true,
-        data: {
-          code: "fail",
-          message : '회원정보가 없습니다.'
-        }
+        type: "error",
+        message : '회원정보가 없습니다.',
+        data: {}
       }
   }
   
@@ -308,10 +293,9 @@ export const PasswordChange = async (formData: FormData) => {
   if (!accessToken) {
     return {
       success: true,
-      data: {
-        code: "error",
-        message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
-      },
+      type: "error",
+      message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
+      data: {},
       accessToken:null
     };
   }
@@ -342,20 +326,18 @@ export const PasswordChange = async (formData: FormData) => {
     response = 
       {
         success: true,
-        data: {
-          code: "error",
-          message : '회원정보가 없습니다.'
-        }
+        type: "error",
+        message : '회원정보가 없습니다.',
+        data: {}
       }
     }
   if (userInfo! && (await verifyPassword(nowPasswordValue, userInfo!.password))) {
     response = 
       {
         success: true,
-        data: {
-          code: "success",
-          message : '현재 비밀번호와 일치 합니다.'
-        }
+        type: "success",
+        message : '현재 비밀번호와 일치 합니다.',
+        data: {}
       }
     if(newPasswordValue && renewPasswordValue && newPasswordValue === renewPasswordValue) {
     
@@ -371,10 +353,9 @@ export const PasswordChange = async (formData: FormData) => {
         response = 
           {
             success: true,
-            data: {
-              code: "success",
-              message : '비밀번호가 변경되었습니다.'
-            }
+            type: "success",
+            message : '비밀번호가 변경되었습니다.',
+            data: {}
           }
       } catch (error) {
         console.error(error);
@@ -384,20 +365,18 @@ export const PasswordChange = async (formData: FormData) => {
         response = 
           {
             success: true,
-            data: {
-              code: "fail",
-              message : '변경할 비밀번호가 서로 맞지 않습니다.'
-            }
+            type: "warning",
+            message : '변경할 비밀번호가 서로 맞지 않습니다.',
+            data: {}
           }
         }
       if( !newPasswordValue || !renewPasswordValue ) {
         response =
           {
             success: true,
-            data: {
-              code: "fail",
-              message : '변경할 비밀번호를 입력해주세요.'
-            }
+            type: "info",
+            message : '변경할 비밀번호를 입력해주세요.',
+            data: {}
           }
       
     }
@@ -408,19 +387,17 @@ export const PasswordChange = async (formData: FormData) => {
       response = 
         {
           success: true,
-          data: {
-            code: "fail",
-            message : '현재 비밀번호를 입력해주세요.'
-          }
+          type: "warning",
+          message : '현재 비밀번호를 입력해주세요.',
+          data: {}
         }
     } else {
       response = 
         {
           success: true,
-          data: {
-            code: "fail",
-            message : '현재 비밀번호와 맞지 않습니다.'
-          }
+          type: "error",
+          message : '현재 비밀번호와 맞지 않습니다.',
+          data: {}
         }
     }
     

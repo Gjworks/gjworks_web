@@ -21,11 +21,11 @@ const DashboardPostCreate = (props: PostProps) => {
   useEffect(() => {
     if (props.id) {
       getPost({ id: props.id }).then(response => {
-        if (response.data.code === 'error') {
+        if (response.type === 'error') {
           setError(response.data.message)
         } else {
-          console.log(response.data)
-          if (response.data.postInfo && response.data.code === 'success') {
+          console.log(response)
+          if (response.data.postInfo && response.type === 'success') {
             setPosts(response.data.postInfo)
           }
         }

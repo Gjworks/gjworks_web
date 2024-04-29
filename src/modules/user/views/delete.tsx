@@ -12,18 +12,13 @@ import Warning from '@plextype/components/message/Warning'
 import { deleteUser } from 'src/modules/user/controllers/user'
 
 interface UserInfo {
-  code: string
-  element: string
-  message: string
-  userInfo: {
-    id: number
-    uuid: string
-    nickname: string
-    password: string
-    email: string
-    createdAt: string
-    updateAt: string
-  }
+  id: number
+  uuid: string
+  nickname: string
+  password: string
+  email: string
+  createdAt: string
+  updateAt: string
 }
 
 const UserDelete = (props: any) => {
@@ -32,7 +27,9 @@ const UserDelete = (props: any) => {
   const [showPopup, setShowPopup] = useState(false)
   const [accessToken, setAccessToken] = useState<string | null>(null)
   const [loggedInfo, setLoggedInfo] = useState<UserInfo>()
-  const [error, setError] = useState<any>(false)
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null
+  )
   const [inputState, setInputState] = useState<Boolean>(false)
 
   const userInfo = useSelector((state: RootState) => state.userInfo)
@@ -41,7 +38,7 @@ const UserDelete = (props: any) => {
     const accessToken = localStorage.getItem('accessToken')
     setAccessToken(accessToken)
 
-    userInfo && userInfo.userInfo && setLoggedInfo(userInfo.userInfo)
+    userInfo && userInfo.session && setLoggedInfo(userInfo.session)
   }, [])
 
   const handlerUserDeleteInput = event => {
@@ -60,18 +57,18 @@ const UserDelete = (props: any) => {
     if (inputState === true && accessToken) {
       await deleteUser({ accessToken: accessToken })
         .then(response => {
-          if (response.data.code === 'success') {
+          if (response.type === 'success') {
             dispatch(resetUserInfo())
             localStorage.removeItem('accessToken')
             router.replace('/')
           } else {
-            alert(response.data.message)
+            alert(response.message)
           }
         })
         .catch(error => {
           console.log(error)
-          console.log('Error >> ' + error.code, error.response.data.message)
-          setError(error.response.data.message)
+          console.log('Error >> ' + error.code, error.response.message)
+          setError(error.response.message)
           return error.response
         })
       // await fetch('/user/api/handler', {

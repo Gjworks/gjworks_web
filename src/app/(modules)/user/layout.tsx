@@ -9,18 +9,13 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@plextype/redux/store'
 
 interface UserInfo {
-  code: string
-  element: string
-  message: string
-  userInfo: {
-    id: number
-    uuid: string
-    nickname: string
-    password: string
-    email: string
-    createdAt: string
-    updateAt: string
-  }
+  id: number
+  uuid: string
+  nickname: string
+  password: string
+  email: string
+  createdAt: string
+  updateAt: string
 }
 
 const PageLayout = ({ children }) => {
@@ -57,7 +52,7 @@ const PageLayout = ({ children }) => {
   const userInfo = useSelector((state: RootState) => state.userInfo)
 
   useEffect(() => {
-    userInfo && userInfo?.userInfo && setLoggedInfo(userInfo.userInfo)
+    userInfo && userInfo?.session && setLoggedInfo(userInfo.session)
   }, [userInfo])
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken')
@@ -75,12 +70,8 @@ const PageLayout = ({ children }) => {
   return (
     <DefaultLayout>
       <ProfileComponent
-        profileName={
-          loggedInfo && loggedInfo.userInfo && loggedInfo.userInfo.nickname
-        }
-        profileEmail={
-          loggedInfo && loggedInfo.userInfo && loggedInfo.userInfo.email
-        }
+        profileName={loggedInfo && loggedInfo && loggedInfo.nickname}
+        profileEmail={loggedInfo && loggedInfo && loggedInfo.email}
       />
       <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
         <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex justify-start md:justify-center gap-8 px-3">

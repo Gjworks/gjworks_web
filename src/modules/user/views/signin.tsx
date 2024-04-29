@@ -8,11 +8,10 @@ import { useRouter } from 'next/navigation'
 import { store } from '@plextype/redux/store'
 import { fetchSignIn } from '@plextype/redux/features/userSlice'
 
-import TextInput from '@plextype/components/form/TextInput'
-import Warning from '@plextype/components/message/Warning'
+import Alert from '@plextype/components/message/Alert'
 
 interface SignData {
-  code: string
+  type: string
   element: string
   message: string
   userInfo: {
@@ -34,7 +33,9 @@ const Signin = () => {
   const [emailInput, setEmailInput] = useState<string>()
   const [passwordInput, setPasswordInput] = useState<string>()
   const [user, setUser] = useState<SignData>()
-  const [error, setError] = useState<any>(false)
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null
+  )
 
   const refInputEmail = useRef<HTMLInputElement>(null)
   const refInputPassword = useRef<HTMLInputElement>(null)
@@ -52,59 +53,36 @@ const Signin = () => {
 
     formData.append('email', e.target.email.value)
     formData.append('password', e.target.password.value)
-
+    console.log(formData.get('email'))
     dispatch(fetchSignIn({ formData })).then(
       (resultAction: ReturnType<typeof dispatch>) => {
         // 반환 값을 확인
-
+        console.log(resultAction.payload)
         // 액션의 payload와 type에 대한 타입 정의
         type SignInResult = {
-          userInfo: SignData
+          result: SignData
           accessToken: string
-          type: string
         }
 
-        // 반환된 액션에서 accessToken에 접근
-        const accessToken = (resultAction.payload as SignInResult).accessToken
-        const dataInfo = (resultAction.payload as SignInResult).userInfo
+        if (resultAction.payload) {
+          // 반환된 액션에서 accessToken에 접근
+          const accessToken = (resultAction.payload as SignInResult).accessToken
+          const dataInfo = (resultAction.payload as SignInResult).result
 
-        dataInfo && setUser(dataInfo)
+          dataInfo && setUser(dataInfo)
 
-        // dataInfo.code === 'error' && setError(dataInfo.message)
-        // dataInfo.element === 'email' && refInputEmail.current?.focus()
-
-        accessToken && router.replace('/')
+          accessToken && router.replace('/')
+        }
       }
     )
-    // const postData = async () => {
-    //   const response = await fetch('/api/auth/signIn', {
-    //     method: 'POST',
-    //     body: formData,
-    //   })
-    //   // console.log(response)
-    //   return response.json()
-    // }
-    // postData()
-    //   .then(res => {
-    //     if (res.success === false) {
-    //       setError(res.data.msg)
-    //     } else {
-    //       // console.log(res.data)
-    //       localStorage.setItem('accessToken', res.accessToken)
-    //       console.log(res.data.userInfo)
-    //       dispatch(fetchSignIn(res.data.userInfo))
-    //       router.replace('/')
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.error('Failed to register: ' + error.toString())
-    //   })
-    // const userInfo = useSelector((state: RootState) => state.userInfo)
-    // console.log('redux state', userInfo)
   }
 
   useEffect(() => {
-    user?.code === 'error' && setError(user?.message)
+    user?.type === 'error' &&
+      setError({
+        type: user.type,
+        message: user.message,
+      })
 
     refInputEmail.current &&
       user?.element === 'email' &&
@@ -126,7 +104,7 @@ const Signin = () => {
             모든 서비스를 이용 할 수 있습니다.
           </div>
         </div>
-        {error && <Warning message={error} />}
+        {error && <Alert message={error.message} type={error.type} />}
         <div>
           <div className="relative mb-5 flex">
             <div className="flex w-full items-center text-xs">

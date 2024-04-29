@@ -1,13 +1,15 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import Warning from '@plextype/components/message/Warning'
+import Alert from '@plextype/components/message/Alert'
 
 import { PasswordChange } from 'src/modules/user/controllers/user'
 
 const ChangePassword = props => {
   const [accessToken, setAccessToken] = useState<string | null>(null)
-  const [error, setError] = useState<any>(false)
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null
+  )
 
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken')
@@ -18,7 +20,7 @@ const ChangePassword = props => {
 
   useEffect(() => {
     !accessToken
-      ? setError('로그인 상태가 아닙니다. (token access error)')
+      ? setError({ type: 'error', message: '로그인이 필요합니다.' })
       : setError(null)
   }, [accessToken])
 
@@ -43,14 +45,13 @@ const ChangePassword = props => {
     formData.append('renewPasswordValue', e.target.renew_password.value)
     if (accessToken) {
       await PasswordChange(formData).then(response => {
-        console.log(response)
-        if (response.data.code === 'fail') {
-          setError(response.data.message)
+        if (response.type === 'error') {
+          setError({ type: response.type, message: response.message })
         } else {
-          setError(response.data.message)
-          if (response.data.code === 'success') {
+          console.log(response)
+          setError({ type: response.type, message: response.message })
+          if (response.type === 'success') {
             setTimeout(() => {
-              console.log('이게 어째서?')
               props.close(false)
             }, 1000)
           }
@@ -62,7 +63,7 @@ const ChangePassword = props => {
     <>
       <form onSubmit={submitHandler}>
         <div className="px-5">
-          {error && <Warning message={error} />}
+          {error && <Alert message={error.message} type={error.type} />}
           <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
             <div className="col-span-1 text-sm text-gray-400 p-2">
               이전 비밀번호

@@ -10,7 +10,6 @@ import Left from '@plextype/components/panel/Left'
 import AccountDropwdown from 'src/widgets/forms/AccountDropwdown'
 import SideNav from '@plextype/components/nav/SideNav'
 import nav from '@plextype/res/config/navigation.json'
-import Account from '@plextype/components/account/Account'
 import { motion } from 'framer-motion'
 
 import Right from '@plextype/components/panel/Right'

@@ -37,9 +37,9 @@ const Register = () => {
     await createUser(formData)
       .then(response => {
         console.log(response)
-        if (response?.data.code === 'fail') {
+        if (response?.type === 'error') {
           console.log(response)
-          setError(response.data.message)
+          setError(response.message)
         } else {
           router.replace('/auth/Signin')
         }

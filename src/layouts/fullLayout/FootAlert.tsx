@@ -25,7 +25,7 @@ const FootAlert = () => {
         viewport={{ once: false, amount: 0.3 }}
         className="transition transform z-100 bottom-0 inset-x-0 pb-2 sm:py-5 opacity-100 scale-100 translate-y-0 ease-out duration-500 lg:mb-0 hover:translate-y-1 hover:transition-all hover:duration-300"
       >
-        <div className="max-w-screen-xl mx-auto px-3">
+        <div className="px-3">
           <div className="p-3 rounded-xl bg-gray-900 shadow-lg shadow-gray-400">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div className="w-0 flex-1 flex items-center px-3">
