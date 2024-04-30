@@ -3,7 +3,7 @@ const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
 
 // access Token 발급
 const sign = async (payload: object) => {
-  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime('1h').sign(secret)
+  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime(`${process.env.ACCESSTOKEN_EXPIRES_IN}`).sign(secret)
 };
 
 // access Token 검증
@@ -21,7 +21,7 @@ const verify = async (token: string) => {
 
 // refresh Token 발급
 const refresh = async (payload: object) => {
-  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime('12h').sign(secret)
+  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime(`${process.env.REFRESHTOKEN_EXPIRES_IN}`).sign(secret)
 };
 
 const refreshVerify = async (token: string): Promise<boolean> => {
