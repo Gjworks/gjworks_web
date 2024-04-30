@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import { store } from '@plextype/redux/store'
 import { fetchSignIn } from '@plextype/redux/features/userSlice'
 
+import { motion } from 'framer-motion'
 import Alert from '@plextype/components/message/Alert'
 
 interface SignData {
@@ -92,14 +93,39 @@ const Signin = () => {
       user?.element === 'password' &&
       refInputPassword.current.focus()
   }, [user])
+
+  const variants = {
+    hidden: { opacity: 0, x: 125, y: 0 },
+    enter: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.4,
+      },
+    },
+    exit: {
+      opacity: 0,
+      x: 125,
+      y: 0,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  }
   return (
-    <>
+    <motion.div
+      variants={variants}
+      initial="hidden"
+      animate="enter"
+      exit="exit"
+    >
       <form onSubmit={submitHandler}>
         <div className="py-10">
-          <div className="dark:text-dark-50 text-2xl font-semibold text-gray-700">
+          <div className="dark:text-dark-50 text-2xl font-semibold text-gray-700 text-center">
             Request Access
           </div>
-          <div className="dark:text-dark-500 pt-10 text-sm text-gray-600">
+          <div className="dark:text-dark-500 pt-10 text-sm text-gray-600 text-center">
             소셜로그인은 추후에 지원 됩니다. <br></br>일반 회원가입을 이용하셔도
             모든 서비스를 이용 할 수 있습니다.
           </div>
@@ -314,7 +340,7 @@ const Signin = () => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   )
 }
 

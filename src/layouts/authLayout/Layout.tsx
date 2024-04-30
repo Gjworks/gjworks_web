@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
     return () => window.removeEventListener('scroll', updatePosition)
   }, [])
   const variants = {
-    hidden: { opacity: 0, x: 0, y: 25 },
+    hidden: { opacity: 0, x: 125, y: 0 },
     enter: {
       opacity: 1,
       x: 0,
@@ -36,8 +36,8 @@ const Layout = ({ children }) => {
     },
     exit: {
       opacity: 0,
-      x: 0,
-      y: 25,
+      x: 125,
+      y: 0,
       transition: {
         duration: 0.4,
       },
@@ -46,14 +46,14 @@ const Layout = ({ children }) => {
 
   const parentVariants = {
     onscreen: {
-      y: 0,
+      x: 0,
       opacity: 1,
       transition: {
         duration: 0.3,
       },
     },
     offscreen: {
-      y: 15,
+      x: 115,
       opacity: 0,
       transition: {
         duration: 0.3,
@@ -71,15 +71,9 @@ const Layout = ({ children }) => {
     <motion.div className="min-h-full dark:bg-transparent ">
       {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}
       <div className="relative z-20">
-        <motion.main
-          className="h-screen"
-          variants={variants}
-          initial="hidden"
-          animate="enter"
-          exit="exit"
-        >
+        <motion.main className="h-screen">
           <div className="h-full">
-            <div className="grid grid-cols-5 gap-8 h-full">
+            <div className="grid grid-cols-5 h-full">
               <div className="col-span-5 lg:col-span-3 h-full">
                 <div className="relative w-full h-[320px] lg:h-full overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/80 to-gray-950/95 z-10"></div>
@@ -92,16 +86,12 @@ const Layout = ({ children }) => {
                     </div>
                   </div>
                   <div>
-                    <Image
-                      src="/assets/images/yellow/yellow_bg3.jpg"
-                      fill
-                      alt="bg"
-                    />
+                    <Image src="/assets/images/bg23.jpg" fill alt="bg" />
                   </div>
                 </div>
               </div>
-              <div className="col-span-5 lg:col-span-2 flex justify-center items-center">
-                <div className="w-full lg:w-[32rem] px-3">
+              <div className="col-span-5 lg:col-span-2 relative flex justify-center items-center">
+                <div className="absolute left-3 right-3 top-0">
                   <motion.header
                     transition={{ duration: 0.3 }}
                     className="z-101 relative top-0 w-full "
@@ -150,7 +140,17 @@ const Layout = ({ children }) => {
                       </div>
                     </div>
                   </motion.header>
-                  <div className="w-full">{children}</div>
+                </div>
+                <div className="w-full pt-10 lg:pt-0 lg:w-[32rem] px-3 overflow-hidden">
+                  <motion.div
+                    className="w-full"
+                    variants={variants}
+                    initial="hidden"
+                    animate="enter"
+                    exit="exit"
+                  >
+                    {children}
+                  </motion.div>
                   <footer>
                     <div className="mx-auto max-w-screen-sm pb-10 pt-5">
                       <div className="dark:via-dark-600 h-px w-full bg-gradient-to-r from-transparent via-gray-200/50 to-transparent"></div>
