@@ -3,7 +3,10 @@ const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
 
 // access Token 발급
 const sign = async (payload: object) => {
-  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime(`${process.env.ACCESSTOKEN_EXPIRES_IN}`).sign(secret)
+  const accessToken_expiresIn = process.env.ACCESSTOKEN_EXPIRES_IN;
+  console.log(accessToken_expiresIn)
+  if(!accessToken_expiresIn) throw new Error('ACCESSTOKEN_EXPIRES_IN is not defined');
+  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime(accessToken_expiresIn).sign(secret)
 };
 
 // access Token 검증
@@ -21,7 +24,9 @@ const verify = async (token: string) => {
 
 // refresh Token 발급
 const refresh = async (payload: object) => {
-  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime(`${process.env.REFRESHTOKEN_EXPIRES_IN}`).sign(secret)
+  const refreshToken_expiresIn = process.env.REFRESHTOKEN_EXPIRES_IN;
+  if(!refreshToken_expiresIn) throw new Error('REFRESHTOKEN_EXPIRES_IN is not defined');
+  return await new SignJWT({ ...payload }).setProtectedHeader({ alg: 'HS256', typ: 'JWT' }).setExpirationTime(refreshToken_expiresIn).sign(secret)
 };
 
 const refreshVerify = async (token: string): Promise<boolean> => {
