@@ -31,11 +31,7 @@ const FullLayout = ({ children }) => {
       <div className="relative z-20">
         <Header />
         <main className="h-full px-0 ">
-          <div className="border-b border-gray-100">
-            <div className="max-w-screen-xl mx-auto">
-              <SubNav />
-            </div>
-          </div>
+          <SubNav />
 
           <div className="relative h-full">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}

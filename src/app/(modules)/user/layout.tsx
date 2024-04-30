@@ -69,10 +69,12 @@ const PageLayout = ({ children }) => {
 
   return (
     <DefaultLayout>
-      <ProfileComponent
-        profileName={loggedInfo && loggedInfo && loggedInfo.nickname}
-        profileEmail={loggedInfo && loggedInfo && loggedInfo.email}
-      />
+      <div className="pt-16">
+        <ProfileComponent
+          profileName={loggedInfo && loggedInfo && loggedInfo.nickname}
+          profileEmail={loggedInfo && loggedInfo && loggedInfo.email}
+        />
+      </div>
       <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
         <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex justify-start md:justify-center gap-8 px-3">
           <DefaultNav list={userNav} />
