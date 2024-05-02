@@ -30,7 +30,7 @@ const PostsList: React.FC<PageProps> = ({
               <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
               <div className="px-1">
                 <div className="mb-6 w-full">
-                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-primary-400">
+                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-600 group-hover:text-black">
                     Alien: River of Pain Revisions 2.0
                   </div>
                   <div className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-600">
@@ -56,7 +56,7 @@ const PostsList: React.FC<PageProps> = ({
               <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg17.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
               <div className="px-1">
                 <div className="mb-6 w-full">
-                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-primary-400">
+                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-600 group-hover:text-black">
                     Alien: River of Pain Revisions 2.0
                   </div>
                   <div className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-600">
@@ -82,7 +82,7 @@ const PostsList: React.FC<PageProps> = ({
               <div className="dark:shadow-dark-950 mb-10 block h-[360px] rounded-lg bg-[url('/assets/images/bg22.jpg')] bg-cover bg-center shadow-lg shadow-gray-400 transition duration-700 group-hover:scale-[1.08] group-hover:shadow-gray-400"></div>
               <div className="px-1">
                 <div className="mb-6 w-full">
-                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-800 group-hover:text-primary-400">
+                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-600 group-hover:text-black">
                     Alien: River of Pain Revisions 2.0
                   </div>
                   <div className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-600">

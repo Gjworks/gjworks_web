@@ -6,12 +6,16 @@ import Link from 'next/link'
 
 import { getUser } from 'src/modules/user/models/user'
 import { deleteUser, updateUser } from 'src/modules/user/controllers/user'
+import Alert from '@plextype/components/message/Alert'
 
 const DashboardUserUpdate = props => {
   const router = useRouter()
   const accessToken = localStorage.getItem('accessToken')
   console.log(accessToken)
   const [userInfo, setUserInfo] = useState<any>()
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null
+  )
 
   useEffect(() => {
     updateDashboardUser()
@@ -20,7 +24,7 @@ const DashboardUserUpdate = props => {
     await getUser({ id: props.userid })
       .then(response => {
         console.log(response)
-        setUserInfo(response.data)
+        setUserInfo(response)
       })
       .catch(error => {
         console.error('Failed to get user info: ' + error.toString())
@@ -31,10 +35,13 @@ const DashboardUserUpdate = props => {
       id: props.userid,
       accessToken: accessToken,
       nickname: formData.get('nickname') as string,
+      email: formData.get('email') as string,
     }
     await updateUser(params)
       .then(response => {
         console.log(response)
+        response?.type &&
+          setError({ type: response.type, message: response.message })
         // router.push('/dashboard/user/list')
       })
       .catch(error => {
@@ -60,6 +67,7 @@ const DashboardUserUpdate = props => {
         <input type="hidden" name="userInfoId" defaultValue={props.userid} />
         <div className="max-w-screen-2xl mx-auto">
           <div className="px-3">
+            {error && <Alert message={error.message} type={error.type} />}
             <div className="grid grid-cols-4 gap-8 py-10">
               <div className="col-span-1">
                 <div className="text-lg font-semibold text-gray-600  mb-3">
@@ -77,7 +85,7 @@ const DashboardUserUpdate = props => {
                         <div className="text-sm text-black mb-3">이메일</div>
                       </label>
                       <input
-                        type="email"
+                        type="text"
                         name="email"
                         className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                         placeholder="example@mail.com"
@@ -202,7 +210,7 @@ const DashboardUserUpdate = props => {
               onClick={() => {
                 history.back
               }}
-              className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md"
+              className="cursor-pointer px-5 py-2 text-sm text-white bg-dark-500 rounded-md"
             >
               뒤로가기
             </a>

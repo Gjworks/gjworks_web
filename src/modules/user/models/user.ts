@@ -14,11 +14,10 @@ interface UserListParams {
 interface UserParams {
   id? : number | null
   uuid? : string | null
-  email? : string | null
-  nickname? : string | null
 }
 
 interface LoggedParams {
+  id: number
   email : string
   isAdmin? : boolean
 }
@@ -28,13 +27,14 @@ export const getUser = async (params:UserParams) => {
   const accessToken = cookies().get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
+    id: 0,
     email : ''
   }
-  let userInfo
-  let response
+  let userInfo = {} || null
+  let response = {}
   if(accessToken) {
-    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    loggedInfo.email = decodeToken.id
+    const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    loggedInfo.email = decodeToken.userid
   }
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
@@ -42,22 +42,32 @@ export const getUser = async (params:UserParams) => {
   if(!obj.id && !obj.uuid && !obj.nickname && !obj.email) {
     obj.email = loggedInfo.email
   }
-
+  if(!obj) {
+    return response = {
+      success: true,
+      type: "error",
+      message : '데이터가 없습니다.',
+      data: {}
+    };
+  }
   try {
-    userInfo = await prisma.user.findUnique({
-      where: obj,
-      select: {
-        id: true,
-        uuid: true,
-        email: true,
-        password: true,
-        nickname: true,
-        createdAt: true,
-        updateAt:true,
-        isAdmin:true,
-        isManagers:true
-      }
-    });
+    if(obj.id || obj.uuid) {
+      userInfo = await prisma.user.findUnique({
+        where: obj,
+        select: {
+          id: true,
+          uuid: true,
+          email: true,
+          password: true,
+          nickname: true,
+          createdAt: true,
+          updateAt:true,
+          isAdmin:true,
+          isManagers:true
+        }
+        
+      });
+    }
   } catch (e) {
     console.log('getUser error' + e)
     response = {
@@ -67,9 +77,7 @@ export const getUser = async (params:UserParams) => {
       data: {}
     };
   }
-  response = {
-    data: userInfo
-  };
+  response = userInfo || {}
   return response
 }
 
@@ -126,6 +134,7 @@ export const getUserByEmail = async (email:string) => {
   let userInfo
   let response
   try {
+    console.log(email)
     userInfo = await prisma.user.findUnique({
       where: { email: email },
       select: {
@@ -149,9 +158,7 @@ export const getUserByEmail = async (email:string) => {
       data: {}
     };
   }
-  response = {
-    data: userInfo
-  };
+  response = userInfo
   return response
 }
 
@@ -183,9 +190,7 @@ export const getUserByNickname = async (nickname:string) => {
       data: {}
     };
   }
-  response = {
-    data: userInfo
-  };
+  response = userInfo
   return response
 }
 export const getUserByToken = async (token) => {

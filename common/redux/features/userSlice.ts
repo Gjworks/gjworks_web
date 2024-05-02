@@ -51,7 +51,6 @@ export const fetchSignIn = createAsyncThunk<FetchSignInResponse, FetchSignInPayl
   'userInfo/fetchSignIn',
   async ({ formData }: { formData: FormData }):Promise<{ result: DataInfo; accessToken: string }> => {
     let result;
-    console.log(11111111)
     await Signin(formData).then((response) => {
       console.log(response.type)
       result = response
@@ -96,7 +95,7 @@ export const userSlice = createSlice({
       })
       .addCase(fetchUserInfo.fulfilled, (state, action) => {
         state.loading = false;
-        console.log(action.payload)
+        console.log('fetchUserInfo',action.payload)
         if(action.payload.type !== 'error') {
           if (action.payload.data.userInfo) {
             state.session = action.payload.data.userInfo as UserInfo;
