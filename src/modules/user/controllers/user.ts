@@ -223,8 +223,8 @@ export const deleteUser= async (params:UserParams) => {
   let userInfo
   let response
   if(accessToken) {
-    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    loggedInfo.email = decodeToken.id
+    const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    loggedInfo.email = decodeToken.userid
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
     return response = 
