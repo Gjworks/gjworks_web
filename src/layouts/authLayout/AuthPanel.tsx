@@ -46,7 +46,7 @@ const Authpanel = ({ children }) => {
         initial="hidden"
         animate="enter"
         exit="exit"
-        className="lg:fixed right-0 bottom-0 top-0 flex justify-center items-center h-screen"
+        className="lg:fixed right-0 bottom-0 top-0 flex justify-center items-center h-[calc(100vh-320px)] lg:h-screen"
       >
         <svg
           className="hidden lg:block left-0 inset-y-0 h-full w-64 text-white fill-white z-20 scale-x-[-1]"
@@ -57,7 +57,7 @@ const Authpanel = ({ children }) => {
           <polygon points="50,0 100,0 50,100 0,100"></polygon>
         </svg>
         <div className="relative ml-0 lg:-ml-32 flex-1 h-full z-30 bg-white px-0 lg:px-20">
-          <div className="flex items-center h-full">
+          <div className="lg:flex items-center h-full">
             <div className="absolute left-3 right-3 top-0">
               <motion.header
                 transition={{ duration: 0.3 }}
