@@ -50,21 +50,21 @@ const Register = () => {
   }
 
   const variants = {
-    hidden: { opacity: 0, x: 125, y: 0 },
-    enter: {
-      opacity: 1,
+    hidden: { opacity: 0, x: 44 },
+    onscreen: {
       x: 0,
-      y: 0,
+      opacity: 1,
       transition: {
-        duration: 0.4,
+        duration: 0.3,
+        delayChildren: 0.1,
+        staggerChildren: 0.1,
       },
     },
-    exit: {
+    offscreen: {
+      x: 44,
       opacity: 0,
-      x: 125,
-      y: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.3,
       },
     },
   }
@@ -74,8 +74,8 @@ const Register = () => {
       className=""
       variants={variants}
       initial="hidden"
-      animate="enter"
-      exit="exit"
+      animate="onscreen"
+      exit="offscreen"
     >
       <motion.div className="flex justify-center py-10" variants={variants}>
         <div>
