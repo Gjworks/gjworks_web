@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
                     </div>
                   </div>
                   <div key={pathname}>
-                    <Authpanel children={children} />
+                    <Authpanel>{children}</Authpanel>
                   </div>
                 </div>
               </div>
