@@ -21,25 +21,6 @@ const Authpanel = ({ children }) => {
       },
     },
   }
-  const variants = {
-    hidden: { opacity: 0, x: 125, y: 0 },
-    enter: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 0.4,
-      },
-    },
-    exit: {
-      opacity: 0,
-      x: 125,
-      y: 0,
-      transition: {
-        duration: 0.4,
-      },
-    },
-  }
 
   const parentVariants = {
     onscreen: {
@@ -128,21 +109,13 @@ const Authpanel = ({ children }) => {
               </motion.header>
             </div>
             <div className="w-full pt-10 lg:pt-0 lg:w-[32rem] px-3 overflow-hidden z-50 bg-white">
-              <motion.div
-                className="w-full"
-                variants={variants}
-                initial="hidden"
-                animate="enter"
-                exit="exit"
-              >
-                {children}
-              </motion.div>
+              <motion.div className="w-full">{children}</motion.div>
               <footer>
                 <div className="mx-auto max-w-screen-sm pb-10 pt-5">
                   <div className="dark:via-dark-600 h-px w-full bg-gradient-to-r from-transparent via-gray-200/50 to-transparent"></div>
                   <div className="pb-8 pt-8 lg:pt-5">
                     <motion.div
-                      variants={variants}
+                      variants={parentVariants}
                       initial="offscreen"
                       whileInView="onscreen"
                       viewport={{ once: false, amount: 0.3 }}

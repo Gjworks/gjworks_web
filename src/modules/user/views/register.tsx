@@ -77,7 +77,7 @@ const Register = () => {
       animate="enter"
       exit="exit"
     >
-      <div className="flex justify-center py-10">
+      <motion.div className="flex justify-center py-10" variants={variants}>
         <div>
           <div className="mb-4 flex justify-center">
             <svg
@@ -106,7 +106,7 @@ const Register = () => {
             회원님의 정보는 안전하게 저장되어 보관됩니다.
           </div>
         </div>
-      </div>
+      </motion.div>
       {error && <Warning message={error} />}
       <form onSubmit={submitHandler}>
         <div className="relative mb-5 w-full">
@@ -168,19 +168,19 @@ const Register = () => {
           </button>
         </div>
       </form>
-      <div className="divider">
+      <motion.div className="divider" variants={variants}>
         <div className="relative py-4">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-dark-600 to-transparent"></div>
           </div>
           <div className="relative flex justify-center">
-            <span className="backdrop-blur-sm px-4 text-xs text-dark-400">
+            <span className="backdrop-blur-sm px-4 text-xs text-dark-400 bg-white">
               OR
             </span>
           </div>
         </div>
-      </div>
-      <div className="pb-10">
+      </motion.div>
+      <motion.div className="pb-10" variants={variants}>
         <div className="w-full">
           <div className="w-full">
             <Link href="/auth/Signin" className="group text-sm text-dark-500">
@@ -191,7 +191,7 @@ const Register = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   )
 }
