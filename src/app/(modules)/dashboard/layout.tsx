@@ -6,10 +6,13 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
+import DefaultNav from '@plextype/components/nav/DefaultNav'
+
 import 'styles/globals.css'
 import 'styles/tailwindcss.css'
 
 import nav from '@plextype/res/config/settings.json'
+import path from 'path'
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
@@ -17,6 +20,28 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
+  const [dashbaordNav, setDashboardNav] = useState<object>([])
+  const [title, setTitle] = useState<string>('')
+  const [params, setParams] = useState<any[]>([])
+
+  useEffect(() => {
+    const params = pathname?.split('/')
+    setParams(params)
+    Object.entries(nav.navigation).map((item, index) => {
+      if (item[0] === params[2]) {
+        setDashboardNav(item[1].subMenu)
+        setTitle(item[1].title)
+      }
+      if (!params[2]) {
+        setDashboardNav([])
+        setTitle('')
+      }
+    })
+  }, [pathname])
+
+  useEffect(() => {
+    console.log(params)
+  }, [params])
 
   return (
     <div className="selection:text-white selection:bg-orange-500 bg-white min-h-screen">
@@ -124,7 +149,7 @@ export default function DashboardLayout({
         <div className="bg-white h-[60px]"></div>
         <div className="fixed w-[300px] bg-white backdrop-blur-lg h-screen overflow-hidden overflow-y-auto border-r border-slate-200">
           <div className="py-6 px-5">
-            <div className=" mb-10">
+            <div className="">
               <div className="flex items-center mb-1">
                 <Link
                   href="/dashboard"
@@ -154,45 +179,89 @@ export default function DashboardLayout({
               </div>
               <div className="text-gray-500 text-xs">Dashboard 홈으로 가기</div>
             </div>
-            <div className="mb-10">
+          </div>
+          <div className="border-t border-gray-100"></div>
+          <div className="py-6 px-5">
+            <div className="">
+              <div className="text-xs text-gray-400/75 font-semibold mb-5">
+                관리기능
+              </div>
               {nav.navigation &&
                 Object.entries(nav.navigation).map((item, index) => {
                   return (
-                    <div key={index} className="mb-5">
+                    <div key={index} className="mb-1">
                       <>
-                        <div className="text-sm uppercase font-medium text-gray-400 ">
-                          {item[1].title}
-                        </div>
-                        <div className="py-6">
-                          {Object.entries(item[1].subMenu).map(
-                            (item2, index2) => {
-                              return (
-                                <div key={index2} className="mb-1">
-                                  <Link
-                                    href={item2[1].route}
-                                    className={
-                                      'flex gap-4 text-sm hover:text-white hover:bg-cyan-500 dark:hover:text-white py-2.5 px-4 rounded ' +
-                                      (item2[1].route === pathname
-                                        ? ' bg-cyan-500 text-white '
-                                        : '')
-                                    }
-                                  >
-                                    <div></div>
-                                    <div className="px-3">{item2[1].title}</div>
-                                  </Link>
-                                </div>
-                              )
-                            }
-                          )}
-                        </div>
+                        <Link
+                          href={item[1].route}
+                          className={
+                            'flex gap-4 text-sm dark:hover:text-white py-2.5 rounded ' +
+                            (item[1].name === params[2]
+                              ? ' bg-cyan-500 text-white hover:text-white hover:bg-cyan-600 '
+                              : ' hover:text-gray-950 hover:bg-gray-100 ')
+                          }
+                        >
+                          <div></div>
+                          <div className="px-3">{item[1].title}</div>
+                        </Link>
                       </>
                     </div>
                   )
                 })}
             </div>
           </div>
+          <div className="border-t border-gray-100"></div>
+          <div className="py-6 px-5">
+            <div className="text-xs text-gray-400/75 font-semibold mb-5">
+              최근활동 회원
+            </div>
+            <div className="">
+              <div className="px-3 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+                  <div className="text-sm text-gray-500">지제이웍스</div>
+                </div>
+              </div>
+              <div className="px-3 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+                  <div className="text-sm text-gray-500">맥도날드와버거킹</div>
+                </div>
+              </div>
+              <div className="px-3 mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-gray-200 rounded-full"></div>
+                  <div className="text-sm text-gray-500">나이트크로우</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="relative top-0 ml-[300px] bg-white">{children}</div>
+        <div className="relative top-0 ml-[300px] bg-white">
+          <div className="relative">
+            {title && (
+              <div className=" pt-10">
+                <div className="max-w-screen-2xl mx-auto px-3">
+                  <div className="bg-white">
+                    <div className="flex flex-wrap items-center gap-4 mb-5">
+                      <div className="text-black text-2xl font-semibold">
+                        {title}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
+              <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex gap-8 max-w-screen-2xl mx-auto px-3">
+                <DefaultNav list={dashbaordNav} params={params[2]} />
+              </div>
+            </div>
+            <div className="py-10">
+              <div className="max-w-screen-2xl mx-auto px-3">{children}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
