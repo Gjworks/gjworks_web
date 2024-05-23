@@ -55,8 +55,6 @@ const AccountDropwdown = () => {
     // userInfo && console.log(userInfo)
     userInfo && setLoggedInfo(userInfo?.session)
 
-    console.log(userInfo)
-
     if (isLoggedIn && accessToken) {
       accessToken && fetchUserData(accessToken)
     } else {
@@ -124,7 +122,6 @@ const AccountDropwdown = () => {
   const fetchUserData = async (accessToken: string) => {
     try {
       await Refresh(accessToken).then(response => {
-        console.log(response)
         if (response.type === 'new_accessToken' && response.accessToken) {
           localStorage.setItem('accessToken', response.accessToken)
         }
@@ -148,7 +145,10 @@ const AccountDropwdown = () => {
   }
   return (
     <>
-      <button onClick={() => setShowDropdown(!showDropdown)}>
+      <button
+        onClick={() => setShowDropdown(!showDropdown)}
+        className="hover:bg-gray-100 py-2 px-3 rounded-md"
+      >
         <Avator username={loggedInfo?.nickname} />
       </button>
       <Dropdown state={showDropdown} close={closeDropdown}>

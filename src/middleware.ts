@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { PrismaClient } from '@prisma/client';
 import { decodeJwt } from 'jose';
 // import { decode } from "src/utils/auth/jwtAuth";
 
+// const prisma = new PrismaClient();
 // 미들웨어 생성
 export async function middleware(request: NextRequest, response: NextResponse) {
   try {
@@ -9,9 +11,9 @@ export async function middleware(request: NextRequest, response: NextResponse) {
     const hasAccessToken = cookies.has('accessToken');
     const accessToken = cookies.get('accessToken')
 
-    let decodeToken : { id:string, isAdmin:boolean }
+    let decodeToken : { id:string, isAdmin:boolean } | null = null;
     if(accessToken?.value){
-      decodeToken = await decodeJwt(accessToken.value);
+      decodeToken = await decodeJwt(accessToken.value) as { id: string, isAdmin: boolean };
       if (!decodeToken?.isAdmin && request.nextUrl.pathname.startsWith('/dashboard')) {
         console.log('dashboard not found')
         return NextResponse.redirect(
@@ -39,6 +41,24 @@ export async function middleware(request: NextRequest, response: NextResponse) {
         new URL('/auth/Signin', request.url),
       );
       
+    }
+
+
+    //게시판 권한 관련한 미들웨어 로직
+    if (request.nextUrl.pathname.startsWith('/posts/')) {
+      if (!decodeToken) {
+        return NextResponse.redirect(new URL('/auth/Signin', request.url));
+      }
+      // const user = await prisma.user.findUnique({
+      //   where: {
+      //     id: Number(decodeToken.id)
+      //   }
+      // })
+      // if (!user?.isAdmin) {
+      //   return NextResponse.redirect(
+      //     new URL('/access', request.url),
+      //   );
+      // }
     }
   } catch (error) {
     console.error('Error in middleware:', error);

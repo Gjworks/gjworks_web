@@ -1,0 +1,21 @@
+{
+    "version": "1.7",
+    "permission": [
+        {
+            "route": "/posts/:mid/list",
+            "roles": ["admin", "user"]
+        },
+        {
+            "route": "/posts/:mid/create",
+            "roles": ["admin"]
+        },
+        {
+            "route": "/posts/:mid/update",
+            "roles": ["admin"]
+        },
+        {
+            "route": "/posts/delete",
+            "roles": ["admin"]
+        }
+    ]
+}

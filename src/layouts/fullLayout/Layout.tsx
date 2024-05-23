@@ -1,31 +1,9 @@
-'use client'
-
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import Header from 'src/layouts/fullLayout/Header'
 import Footer from 'src/layouts/fullLayout/Footer'
 import SubNav from 'src/layouts/fullLayout/SubNav'
 import FootAlert from 'src/layouts/fullLayout/FootAlert'
 
 const FullLayout = ({ children }) => {
-  const [scrollPosition, setScrollPosition] = useState(0)
-
-  useEffect(() => {
-    const updatePosition = () => {
-      setScrollPosition(window.pageYOffset)
-    }
-
-    window.addEventListener('scroll', updatePosition)
-
-    return () => window.removeEventListener('scroll', updatePosition)
-  }, [])
-
-  const goToTop = () => {
-    document.documentElement.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
-  }
   return (
     <div className="">
       <div className="relative z-20">

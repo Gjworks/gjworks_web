@@ -65,7 +65,7 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative max-w-screen-3xl mx-auto px-3">
             <div className="relative rounded-3xl">
-              <div className="relative rounded-3xl bg-[url('/assets/images/bg19.jpg')] bg-cover bg-center bg-no-repeat">
+              <div className="relative rounded-3xl bg-[url('/assets/images/bg41.jpg')] bg-cover bg-center bg-no-repeat">
                 {/*  */}
                 <div className="absolute inset-0 bg-gray-950/70 rounded-3xl"></div>
                 {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
@@ -113,7 +113,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-gray-950 px-3 py-2 text-sm text-white hover:bg-white hover:text-black lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-primary-500 px-3 py-2 text-sm text-white hover:bg-white hover:text-primary-600 lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
@@ -370,7 +370,7 @@ export default function Page() {
                             Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                             불편함이 없게 UI/UX를 설계 합니다.
                           </motion.div>
-                          <button className="dark:hover:bg-dark-950 dark:bg-dark-950 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-gray-950 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
+                          <button className="">
                             <div className="text-dark-300 relative text-sm group-hover:text-primary-400">
                               Link more
                             </div>
@@ -493,7 +493,7 @@ export default function Page() {
                       variants={variants}
                       className="text-sm text-white"
                     >
-                      <button className="dark:hover:bg-dark-950 dark:bg-dark-900 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-gray-950 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
+                      <button className="dark:hover:bg-dark-950 dark:bg-dark-900 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-white hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
                         <div className="text-dark-300 relative text-sm group-hover:text-white">
                           Link more
                         </div>
@@ -616,8 +616,8 @@ export default function Page() {
                         Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                         불편함이 없게 UI/UX를 설계 합니다.
                       </motion.div>
-                      <button className="dark:hover:bg-dark-950 dark:bg-dark-950 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-gray-950 hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
-                        <div className="text-dark-300 relative text-sm group-hover:text-primary-400">
+                      <button className="group bg-primary-500 px-5 py-2 text-white rounded-md hover:bg-white">
+                        <div className="relative text-sm group-hover:text-primary-500">
                           Link more
                         </div>
                       </button>

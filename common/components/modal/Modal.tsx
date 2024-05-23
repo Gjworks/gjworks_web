@@ -3,22 +3,83 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ModalPortal from '@plextype/components/modal/ModalPortal'
 
-const Modal = ({ state, close, children }) => {
+interface ModalProps {
+  state: boolean
+  close: (state: boolean) => void
+  size?: string
+  position?: string
+  children: React.ReactNode
+}
+
+interface ModalPosition {
+  y: string
+  iniY: string
+  pos: string
+}
+const Modal: React.FC<ModalProps> = ({
+  state,
+  close,
+  size = 'md',
+  position = 'center',
+  children,
+}) => {
   const [modalState, setModalState] = useState(false)
   useEffect(() => {
     setModalState(state)
   }, [state])
 
-  // useEffect(() => {
-  //   if (modalState === true) {
-  //     let $body = document.querySelector('body')
-  //     const overflow = $body?.style.overflow
-  //     if ($body instanceof Element) $body?.style.overflow = 'hidden'
-  //     return () => {
-  //       $body.style.overflow = overflow
-  //     }
-  //   }
-  // }, [modalState])
+  let modalSize
+  switch (size) {
+    case 'sm':
+      modalSize = 'max-w-screen-sm'
+      break
+    case 'md':
+      modalSize = 'max-w-screen-md'
+      break
+    case 'lg':
+      modalSize = 'max-w-screen-lg'
+      break
+    case 'xl':
+      modalSize = 'max-w-screen-xl'
+      break
+    case '2xl':
+      modalSize = 'max-w-screen-2xl'
+      break
+    default:
+      modalSize = 'max-w-screen-md'
+  }
+
+  let modalPosition: ModalPosition = {
+    y: '-50%',
+    iniY: '-60%',
+    pos: 'top-1/2',
+  }
+  switch (position) {
+    case 'center':
+      modalPosition = {
+        y: '-50%',
+        iniY: '-60%',
+        pos: 'top-1/2',
+      }
+      break
+    case 'top':
+      modalPosition = {
+        y: '0%',
+        iniY: '-10%',
+        pos: 'top-5',
+      }
+      break
+    case 'bottom':
+      modalPosition = {
+        y: '0%',
+        iniY: '40%',
+        pos: 'bottom-2',
+      }
+      break
+    default:
+      break
+  }
+
   useEffect(() => {
     if (modalState === true) {
       document.body.style.overflow = 'hidden'
@@ -43,14 +104,13 @@ const Modal = ({ state, close, children }) => {
   const modalVariants = {
     openModal: {
       opacity: 1,
-      y: '0%',
+      y: modalPosition.y,
       x: '-50%',
       transition: { duration: 0.3 },
     },
     closeModal: {
       opacity: 0,
-      y: '-10%',
-      x: '-50%',
+      y: modalPosition.y,
       transition: { duration: 0.3 },
     },
   }
@@ -68,11 +128,11 @@ const Modal = ({ state, close, children }) => {
           <>
             <ModalPortal>
               <motion.div
-                initial={{ opacity: 0, y: '-10%', x: '-50%' }}
+                initial={{ opacity: 0, y: modalPosition.iniY, x: '-50%' }}
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={modalVariants}
                 exit={exit}
-                className="bootom-1 z-101 dark:bg-dark-950/90 dark:border-dark-900/75 dark:border-t-dark-800 fixed left-1/2 top-20 mx-auto mb-2 w-full max-w-screen-md -translate-x-1/2 overflow-hidden rounded-xl bg-white/90 text-white backdrop-blur-lg lg:mb-10 dark:border"
+                className={`bootom-1 z-101 dark:bg-dark-950/90 dark:border-dark-900/75 dark:border-t-dark-800 fixed left-1/2 ${modalPosition.pos} mx-auto mb-2 w-full ${modalSize} overflow-hidden rounded-xl bg-white/95 text-white backdrop-blur-lg lg:mb-10 dark:border`}
               >
                 <div className="" onClick={handleCloseModal}></div>
                 <motion.div
