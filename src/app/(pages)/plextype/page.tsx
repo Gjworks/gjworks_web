@@ -46,6 +46,32 @@ const Page = () => {
     setShowModal2Xl(close)
   }
 
+  const [showModalOverlay, setShowModalOverlay] = useState(false)
+  const closeModalOverlay = close => {
+    setShowModalOverlay(close)
+  }
+
+  const [showModalOverlayClose, setShowModalOverlayClose] = useState(false)
+  const closeModalOverlayClose = close => {
+    setShowModalOverlayClose(close)
+  }
+
+  const [showModalOverlayCloseFalse, setShowModalOverlayCloseFalse] =
+    useState(false)
+  const closeModalOverlayCloseFalse = close => {
+    setShowModalOverlayCloseFalse(close)
+  }
+
+  const [showModalEscClose, setShowModalEscClose] = useState(false)
+  const closeModalEscClose = close => {
+    setShowModalEscClose(close)
+  }
+
+  const [showModalEscCloseFalse, setShowModalEscCloseFalse] = useState(false)
+  const closeModalEscCloseFalse = close => {
+    setShowModalEscCloseFalse(close)
+  }
+
   const modalString = `import { useState } from 'react'
 import Modal from 'src/components/modal/Modal'
 
@@ -62,6 +88,9 @@ const closeModal = (close) => {
   close={closeModal} 
   size="md" 
   position="center" 
+  escClose={true}
+  overlay={true}
+  overlayClose={true}
   day="1" 
   desc"일동안 그만보기"
 >
@@ -81,7 +110,7 @@ const closeModal = (close) => {
             </Link>
             <Link
               href="#"
-              className="block text-sm mb-2 hover:bg-gray-100 py-2 px-4 rounded-lg"
+              className="block text-sm mb-2 bg-gray-100 text-primary-500 hover:bg-gray-100 py-2 px-4 rounded-lg"
             >
               Modal
             </Link>
@@ -118,19 +147,19 @@ const closeModal = (close) => {
               </div>
               <div className="mb-8 flex gap-4">
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalTop(!showModalTop)}
                 >
                   Top Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalCenter(!showModalCenter)}
                 >
                   Center Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalBottom(!showModalBottom)}
                 >
                   Bottom Modal
@@ -208,31 +237,31 @@ const closeModal = (close) => {
               </div>
               <div className="mb-8 flex gap-4">
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalSm(!showModalSm)}
                 >
                   sm Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalMd(!showModalMd)}
                 >
                   md Modal (기본값)
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalLg(!showModalLg)}
                 >
                   lg Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalXl(!showModalXl)}
                 >
                   xl Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md"
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModal2Xl(!showModal2Xl)}
                 >
                   2xl Modal
@@ -345,6 +374,159 @@ const closeModal = (close) => {
                       </tr>
                     </tbody>
                   </table>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <div className="text-gray-950 text-xl font-semibold mb-5">
+                  오버레이
+                </div>
+                <div className="text-sm mb-5 text-gray-500">
+                  오버레이를 사용할 수 있습니다.
+                </div>
+              </div>
+              <div className="mb-8">
+                <div className="border border-gray-200 rounded-lg overflow-hidden">
+                  <table className="w-full">
+                    <thead className="bg-gray-100">
+                      <th className="p-2 text-sm italic font-medium">name</th>
+                      <th className="p-2 text-sm italic font-medium">type</th>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-200">
+                        <td className="py-2 px-3 text-sm text-gray-500">
+                          overlay
+                        </td>
+                        <td className="py-2 px-3 text-sm text-gray-500">
+                          true (기본값), false
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div className="mb-8">
+                <div className="text-gray-950 text-xl font-semibold mb-5">
+                  닫기
+                </div>
+                <div className="text-sm mb-5 text-gray-500">
+                  모달을 닫을 때 사용할 수 있는 방법입니다.
+                </div>
+              </div>
+              <div className="mb-8">
+                <div className="border border-gray-200 rounded-lg overflow-hidden">
+                  <table className="w-full">
+                    <thead className="bg-gray-100">
+                      <th className="p-2 text-sm italic font-medium">name</th>
+                      <th className="p-2 text-sm italic font-medium">type</th>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-200">
+                        <td className="py-2 px-3 text-sm text-gray-500">
+                          escClose
+                        </td>
+                        <td className="py-2 px-3 text-sm text-gray-500">
+                          true(기본값), false
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-200">
+                        <td className="py-2 px-3 text-sm text-gray-500">
+                          overlayClose
+                        </td>
+                        <td className="py-2 px-3 text-sm text-gray-500">
+                          true(기본값), false
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="mb-8 flex gap-4">
+                <button
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  onClick={() => setShowModalEscClose(!showModalEscClose)}
+                >
+                  escClose (true)
+                </button>
+                <Modal
+                  state={showModalEscClose}
+                  close={closeModalEscClose}
+                  size="md"
+                  position="center"
+                >
+                  <div className="p-20 text-center text-gray-950">
+                    escClose (true)
+                  </div>
+                </Modal>
+
+                <button
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  onClick={() =>
+                    setShowModalEscCloseFalse(!showModalEscCloseFalse)
+                  }
+                >
+                  escClose (false)
+                </button>
+                <Modal
+                  state={showModalEscCloseFalse}
+                  close={closeModalEscCloseFalse}
+                  size="md"
+                  position="center"
+                  escClose={false}
+                >
+                  <div className="p-20 text-center text-gray-950">
+                    escClose (false)<br></br>
+                    오버레이를 클릭하여 닫을 수 있습니다.
+                  </div>
+                </Modal>
+
+                <button
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  onClick={() =>
+                    setShowModalOverlayClose(!showModalOverlayClose)
+                  }
+                >
+                  오버레이 닫기 (true)
+                </button>
+                <Modal
+                  state={showModalOverlayClose}
+                  close={closeModalOverlayClose}
+                  size="md"
+                  position="center"
+                >
+                  <div className="p-20 text-center text-gray-950">
+                    오버레이 닫기 (true)
+                  </div>
+                </Modal>
+                <button
+                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  onClick={() =>
+                    setShowModalOverlayCloseFalse(!showModalOverlayCloseFalse)
+                  }
+                >
+                  오버레이 닫기 (true)
+                </button>
+                <Modal
+                  state={showModalOverlayCloseFalse}
+                  close={closeModalOverlayCloseFalse}
+                  size="md"
+                  position="center"
+                  escClose={true}
+                  overlayClose={false}
+                >
+                  <div className="p-20 text-center text-gray-950">
+                    오버레이 닫기 (false) <br></br>
+                    ESC 키를 눌러 닫을 수 있습니다.
+                  </div>
+                </Modal>
+              </div>
+              <div className="mb-8">
+                <div className="text-gray-950 text-xl font-semibold mb-5">
+                  닫기 커스텀
+                </div>
+                <div className="text-sm mb-5 text-gray-500">
+                  모달 버튼을 직접 지정하여 모달을 닫을 수 있습니다.
                 </div>
               </div>
             </div>

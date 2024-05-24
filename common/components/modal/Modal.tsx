@@ -8,6 +8,9 @@ interface ModalProps {
   close: (state: boolean) => void
   size?: string
   position?: string
+  escClose?: boolean
+  overlay?: boolean
+  overlayClose?: boolean
   children: React.ReactNode
 }
 
@@ -21,6 +24,9 @@ const Modal: React.FC<ModalProps> = ({
   close,
   size = 'md',
   position = 'center',
+  escClose = true,
+  overlay = true,
+  overlayClose = true,
   children,
 }) => {
   const [modalState, setModalState] = useState(false)
@@ -121,6 +127,25 @@ const Modal: React.FC<ModalProps> = ({
   const handleCloseModal = () => {
     close(false)
   }
+  const handleOverlayCloseModal = () => {
+    overlayClose && close(false)
+  }
+
+  useEffect(() => {
+    const handleKeyPress = event => {
+      escClose &&
+        event.key === 'Escape' &&
+        // ESC 키를 눌렀을 때 실행할 함수 호출
+        close(false)
+    }
+
+    document.addEventListener('keydown', handleKeyPress)
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너를 정리
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress)
+    }
+  }, []) // useEffect가 처음에 한 번만 호출되도록 빈 배열을 전달
   return (
     <>
       <AnimatePresence>
@@ -157,7 +182,7 @@ const Modal: React.FC<ModalProps> = ({
                 animate={modalState === true ? 'openModal' : 'closeModal'}
                 variants={variants}
                 exit={exit}
-                onClick={handleCloseModal}
+                onClick={handleOverlayCloseModal}
                 className="dark: z-100 fixed inset-0 bg-gray-950/70 backdrop-blur dark:bg-transparent"
               ></motion.div>
             </ModalPortal>

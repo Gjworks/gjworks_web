@@ -46,9 +46,6 @@ const FullLayout = ({ children }) => {
             </svg>
           </motion.button>
         )} */}
-        <div className="relative mx-auto max-w-screen-xl">
-          <FootAlert />
-        </div>
         <footer className="pb-8 border-t border-gray-100 pt-6">
           <div className="mx-auto max-w-screen-lg">
             <Footer />
