@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import PostsRead from 'src/modules/posts/views/read'
+import PostsRead from '@/modules/posts/templates/default/read'
 //
 // interface PageProps {
 //   params: {

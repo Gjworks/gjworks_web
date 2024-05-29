@@ -1,7 +1,7 @@
 'use server';
 
-import { getUser } from "src/modules/user/models/user"
-import { deleteUser } from "src/modules/user/controllers/user"
+import { getUser } from "@/modules/user/scripts/userModel"
+import { deleteUser } from "@/modules/user/scripts/userController"
 
 import { PrismaClient } from "@prisma/client";
 

@@ -1,6 +1,6 @@
 'use client'
 
-import PostsList from 'src/modules/posts/views/list'
+import PostsList from '@/modules/posts/templates/default/list'
 
 interface PageProps {
   params: {

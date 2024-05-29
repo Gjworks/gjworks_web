@@ -1,6 +1,6 @@
 'use client'
 
-import PostWrite from 'src/modules/posts/views/write'
+import PostWrite from '@/modules/posts/templates/default/write'
 
 const Page = () => {
   return (

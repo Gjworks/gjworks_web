@@ -10,7 +10,7 @@ import DefaultList from '@plextype/components/nav/DefaultList'
 import { store } from '@plextype/redux/store'
 import { resetUserInfo } from '@plextype/redux/features/userSlice'
 
-import { Signout, Refresh } from 'src/modules/user/controllers/auth'
+import { Signout, Refresh } from '@/modules/user/scripts/authController'
 
 interface UserInfo {
   id: number

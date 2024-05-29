@@ -1,6 +1,6 @@
 'use client'
 
-import UserDelete from 'src/modules/user/views/delete'
+import UserDelete from '@/modules/user/templates/default/delete'
 
 const Page = (props: any) => {
   return (

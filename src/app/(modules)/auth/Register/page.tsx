@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import Register from 'src/modules/user/views/register'
+import Register from '@/modules/user/templates/default/register'
 
 const Page = () => {
   return <Register />

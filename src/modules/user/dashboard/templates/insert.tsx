@@ -1,73 +1,60 @@
 'use client'
 
-import React, { useState, useEffect, FormEvent } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
+import Warning from '@plextype/components/message/Warning'
 
-import { getUser } from 'src/modules/user/models/user'
-import { deleteUser, updateUser } from 'src/modules/user/controllers/user'
-import Alert from '@plextype/components/message/Alert'
+import { createUser } from '@/modules/user/scripts/userController'
 
-const DashboardUserUpdate = props => {
+const DashboardUserInsert = () => {
   const router = useRouter()
-  const accessToken = localStorage.getItem('accessToken')
-  console.log(accessToken)
-  const [userInfo, setUserInfo] = useState<any>()
-  const [error, setError] = useState<{ type: string; message: string } | null>(
-    null
-  )
+  const [error, setError] = useState<any>(false)
 
-  useEffect(() => {
-    updateDashboardUser()
-  }, [])
-  const updateDashboardUser = async () => {
-    await getUser({ id: props.userid })
+  const submitHandler = async e => {
+    e.preventDefault()
+
+    const formData = new FormData()
+    formData.append('email', e.target.email.value)
+    formData.append('password', e.target.password.value)
+    formData.append('nickname', e.target.nickname.value)
+
+    await createUser(formData)
       .then(response => {
-        console.log(response)
-        setUserInfo(response)
+        if (response?.type === 'error') {
+          setError(response?.message)
+        } else {
+          router.replace('/dashboard/user/list')
+        }
       })
       .catch(error => {
-        console.error('Failed to get user info: ' + error.toString())
+        console.error('Failed to register: ' + error.toString())
       })
-  }
-  const updateUserInfo = async (formData: FormData) => {
-    const params = {
-      id: props.userid,
-      accessToken: accessToken,
-      nickname: formData.get('nickname') as string,
-      email: formData.get('email') as string,
-    }
-    await updateUser(params)
-      .then(response => {
-        console.log(response)
-        response?.type &&
-          setError({ type: response.type, message: response.message })
-        // router.push('/dashboard/user/list')
-      })
-      .catch(error => {
-        console.error('Failed to get user info: ' + error.toString())
-      })
-  }
 
-  const handlerUserDelete = async () => {
-    console.log('delete user')
-    await deleteUser({ id: props.userid, accessToken: accessToken })
-      .then(response => {
-        console.log(response)
-        router.push('/dashboard/user/list')
-      })
-      .catch(error => {
-        console.error('Failed to get user delete: ' + error.toString())
-      })
+    // const postData = async () => {
+    //   const response = await fetch('/auth/api/register', {
+    //     method: 'POST',
+    //     body: formData,
+    //   })
+    //   return response.json()
+    // }
+    // postData()
+    //   .then(data => {
+    //     if (data.code === 'error') {
+    //       console.log(data)
+    //       setError(data.msg)
+    //     } else {
+    //       router.replace('/dashboard/user/list')
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.error('Failed to register: ' + error.toString())
+    //   })
   }
-
   return (
-    userInfo && (
-      <form action={updateUserInfo}>
-        <input type="hidden" name="userInfoId" defaultValue={props.userid} />
+    <>
+      <form onSubmit={submitHandler}>
         <div className="max-w-screen-2xl mx-auto">
           <div className="px-3">
-            {error && <Alert message={error.message} type={error.type} />}
             <div className="grid grid-cols-4 gap-8 py-10">
               <div className="col-span-1">
                 <div className="text-lg font-semibold text-gray-600  mb-3">
@@ -85,11 +72,10 @@ const DashboardUserUpdate = props => {
                         <div className="text-sm text-black mb-3">이메일</div>
                       </label>
                       <input
-                        type="text"
+                        type="email"
                         name="email"
                         className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                         placeholder="example@mail.com"
-                        defaultValue={userInfo.email}
                       />
 
                       <div className="text-sm text-dark-400 pt-2 font-light">
@@ -106,7 +92,6 @@ const DashboardUserUpdate = props => {
                         type="text"
                         name="nickname"
                         className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                        defaultValue={userInfo.nickname}
                       />
 
                       <div className="text-sm text-dark-400 pt-2 font-light">
@@ -154,14 +139,8 @@ const DashboardUserUpdate = props => {
                         </div>
                       </label>
                       <label className="m-0">
-                        <input
-                          type="checkbox"
-                          className="peer hidden"
-                          id="theme_change"
-                          // checked={}
-                          // onChange={}
-                        />
-                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6 "></div>
+                        <input type="checkbox" className="peer hidden" />
+                        <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:trangray-x-6"></div>
                       </label>
                       <div className="text-sm text-dark-400 pt-2 font-light">
                         관리자 페이지에 접근 가능한 계정입니다. (최고 관리자와
@@ -206,31 +185,17 @@ const DashboardUserUpdate = props => {
             </div>
           </div>
           <div className="flex gap-4 justify-center bg-slate-100/50 pt-5 pb-10 border-t border-slate-200">
-            <a
-              onClick={() => {
-                history.back
-              }}
-              className="cursor-pointer px-5 py-2 text-sm text-white bg-dark-500 rounded-md"
-            >
+            <div className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md">
               뒤로가기
-            </a>
-            <a
-              onClick={handlerUserDelete}
-              className="px-5 py-2 text-sm text-white bg-red-600 hover:bg-red-500 rounded-md"
-            >
-              삭제하기
-            </a>
-            <button
-              type="submit"
-              className="px-5 py-2 text-sm text-white bg-cyan-600 hover:bg-cyan-500 rounded-md"
-            >
+            </div>
+            <button className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md">
               저장하기
             </button>
           </div>
         </div>
       </form>
-    )
+    </>
   )
 }
 
-export default DashboardUserUpdate
+export default DashboardUserInsert

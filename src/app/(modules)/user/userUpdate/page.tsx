@@ -1,6 +1,6 @@
 'use client'
 
-import UpdateUser from 'src/modules/user/views/update'
+import UpdateUser from '@/modules/user/templates/default/update'
 const Page = (props: any) => {
   return (
     <div className="max-w-screen-md mx-auto px-3 py-8">

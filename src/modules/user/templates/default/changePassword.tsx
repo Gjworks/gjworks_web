@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Alert from '@plextype/components/message/Alert'
 
-import { PasswordChange } from 'src/modules/user/controllers/user'
+import { PasswordChange } from '@/modules/user/scripts/userController'
 
 const ChangePassword = props => {
   const [accessToken, setAccessToken] = useState<string | null>(null)

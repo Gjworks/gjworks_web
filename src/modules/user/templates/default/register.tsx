@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import Warning from '@plextype/components/message/Warning'
 
 import { motion } from 'framer-motion'
-import { createUser } from 'src/modules/user/controllers/user'
+import { createUser } from '@/modules/user/scripts/userController'
 
 const Register = () => {
   const [email, setEmail] = useState<string>()

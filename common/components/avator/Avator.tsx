@@ -9,16 +9,18 @@ const Avator = props => {
             <div className="absolute bottom-0 right-0 w-2 h-2 bg-green-400 rounded-full"></div>
           </div>
         </div>
-        <div className="flex items-center flex-1 gap-2">
-          <div>
-            <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
-              {props.username}
-            </div>
-            <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
-              {props.email}
+        {props.username && (
+          <div className="flex items-center flex-1 gap-2">
+            <div>
+              <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
+                {props.username}
+              </div>
+              <div className="text-left dark:text-dark-100 text-xs font-medium text-gray-800">
+                {props.email}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   )

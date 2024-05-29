@@ -6,7 +6,7 @@ import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 
 import { decodeJwt } from 'jose';
 import { sign, verify, refresh, refreshVerify } from "@plextype/utils/auth/jwtAuth";
-import { getUser } from "src/modules/user/models/user";
+import { getUser } from "@/modules/user/scripts/userModel";
 
 import { PrismaClient } from "@prisma/client";
 

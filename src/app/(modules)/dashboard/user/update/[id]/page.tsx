@@ -1,6 +1,6 @@
 'use client'
 
-import DashboardUserUpdate from 'src/modules/user/dashboard/views/update'
+import DashboardUserUpdate from '@/modules/user/dashboard/templates/update'
 
 const Page = params => {
   const userId = parseInt(params.params.id)

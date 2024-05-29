@@ -22,6 +22,10 @@ interface LoggedParams {
   isAdmin? : boolean
 }
 
+export const getUserSession = async () => {
+
+}
+
 export const getUser = async (params:UserParams) => {
   const prisma = new PrismaClient();
   const accessToken = cookies().get('accessToken')?.value
@@ -271,5 +275,10 @@ export const getUserByToken = async (token) => {
   // const nowPasswordValue = request.get('nowPasswordValue') as string;
   // console.log(nowPasswordValue)
   return response
+}
+
+
+export const getUserTest = async (params:UserParams) => {
+  return 'state'
 }
 

@@ -1,6 +1,6 @@
 'use client'
 
-import Signin from 'src/modules/user/views/signin'
+import Signin from '@/modules/user/templates/default/signin'
 const Page = () => {
   return (
     <div>

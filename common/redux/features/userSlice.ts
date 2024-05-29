@@ -1,8 +1,8 @@
 "use client"
 
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { Signin } from "src/modules/user/controllers/auth";
-import { updateUser } from "src/modules/user/controllers/user";
+import { Signin } from "@/modules/user/scripts/authController";
+import { updateUser } from "@/modules/user/scripts/userController";
 
 interface UserInfo {
   id:number;

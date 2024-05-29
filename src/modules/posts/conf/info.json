@@ -1,5 +1,8 @@
 {
     "version": "1.7",
+    "author": "Gjworks",
+    "description": "",
+    "name": "posts",
     "permission": [
         {
             "route": "/posts/:mid/list",
