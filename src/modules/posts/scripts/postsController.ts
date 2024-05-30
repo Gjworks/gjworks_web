@@ -4,7 +4,7 @@ import { cookies, headers } from "next/headers";
 import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-import { getUser, getUserByNickname, getUserByEmail } from "@/modules/user/scripts/userModel";
+import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
 import { parse } from "path";
 
 interface UserParams {

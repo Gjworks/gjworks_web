@@ -27,7 +27,7 @@ export const getModuleByName = async (moduleName:string) => {
   }
   moduleInfo = await prisma.module.findUnique({
     where: {
-      moduleId: moduleName
+      mid: moduleName
     }
   })
   console.log(moduleName)
