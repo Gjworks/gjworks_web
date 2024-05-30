@@ -8,16 +8,6 @@ import DefaultNav from '@plextype/components/nav/DefaultNav'
 import { useSelector } from 'react-redux'
 import { RootState } from '@plextype/redux/store'
 
-interface UserInfo {
-  id: number
-  uuid: string
-  nickname: string
-  password: string
-  email: string
-  createdAt: string
-  updateAt: string
-}
-
 const PageLayout = ({ children }) => {
   const route = useRouter()
   const pathname = usePathname()
@@ -77,8 +67,8 @@ const PageLayout = ({ children }) => {
     <DefaultLayout>
       <div className="pt-16">
         <ProfileComponent
-          profileName={loggedInfo && loggedInfo && loggedInfo.nickname}
-          profileEmail={loggedInfo && loggedInfo && loggedInfo.email}
+          profileName={loggedInfo && loggedInfo && loggedInfo.nickName}
+          profileEmail={loggedInfo && loggedInfo && loggedInfo.email_address}
         />
       </div>
       <div className="flex justify-center sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
