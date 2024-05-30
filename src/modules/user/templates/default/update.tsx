@@ -19,15 +19,7 @@ interface ResultInfo {
     userInfo: UserInfo
   }
 }
-interface UserInfo {
-  id: number
-  uuid: string
-  nickname: string
-  password: string
-  email: string
-  createdAt: string
-  updateAt: string
-}
+
 const UpdateUser = (props: any) => {
   const dispatch = store.dispatch
   const [showPopup, setShowPopup] = useState(false)
@@ -53,7 +45,7 @@ const UpdateUser = (props: any) => {
   const handleUserInfoSubmit = async e => {
     e.preventDefault()
     const formData = new FormData()
-    formData.append('nickname', e.target.nickname.value)
+    formData.append('nickName', e.target.nickName.value)
     accessToken &&
       dispatch(fetchUserInfo({ accessToken, formData })).then(
         (resultAction: ReturnType<typeof dispatch>) => {
@@ -75,7 +67,7 @@ const UpdateUser = (props: any) => {
                 이메일
               </div>
               <div className="col-span-2 text-base text-gray-900 p-2">
-                {loggedInfo && loggedInfo && loggedInfo.email}
+                {loggedInfo && loggedInfo && loggedInfo.email_address}
               </div>
             </div>
             <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
@@ -119,7 +111,7 @@ const UpdateUser = (props: any) => {
                   name="nickname"
                   className="w-full py-2 border border-gray-200 hover:border-gray-900 focus:border-gray-900 px-5 rounded-lg outline-none"
                   placeholder="변경할 닉네임을 입력해주세요."
-                  defaultValue={loggedInfo && loggedInfo && loggedInfo.nickname}
+                  defaultValue={loggedInfo && loggedInfo && loggedInfo.nickName}
                 />
               </div>
             </div>

@@ -2,10 +2,16 @@ declare global {
   interface UserInfo {
     id: number
     uuid: string
-    nickname: string
+    accountId: string
+    nickName: string
     password: string
-    email: string
-    createdAt: string
-    updateAt: string
+    email_address: string
+    createdAt?: string
+    updateAt?: string
+    isAdmin?: boolean
+    isManager?: boolean
+    refreshToken?: string
   }
 }
+
+export {};

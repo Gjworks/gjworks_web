@@ -1,6 +1,12 @@
 'use client'
 
+import DashboardUserGroupList from '@/modules/user/dashboard/templates/groupList'
+
 const Page = () => {
-  return <></>
+  return (
+    <>
+      <DashboardUserGroupList />
+    </>
+  )
 }
 export default Page

@@ -11,16 +11,6 @@ import Warning from '@plextype/components/message/Warning'
 
 import { deleteUser } from '@/modules/user/scripts/userController'
 
-interface UserInfo {
-  id: number
-  uuid: string
-  nickname: string
-  password: string
-  email: string
-  createdAt: string
-  updateAt: string
-}
-
 const UserDelete = (props: any) => {
   const router = useRouter()
   const dispatch = store.dispatch

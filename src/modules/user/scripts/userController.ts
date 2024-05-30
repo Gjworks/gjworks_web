@@ -4,19 +4,19 @@ import { cookies, headers } from "next/headers";
 import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-import { getUser, getUserByNickname, getUserByEmail } from "@/modules/user/scripts/userModel";
+import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
 
 interface UserParams {
   id? : number | null
   uuid? : string | null
-  email? : string | null
+  accountId? : string | null
   accessToken? : string | null
-  nickname? : string | null
+  nickName? : string | null
 }
 
 interface LoggedParams {
   id : number
-  email : string
+  accountId : string
   isAdmin? : boolean | null
 }
 
@@ -25,19 +25,20 @@ export const createUser = async (formData: FormData) => {
   let userInfo
   let response
 
-  const email = formData.get('email') as string;
+  const accountId = formData.get('accountId') as string;
   const password = formData.get('password') as string;
-  const nickname = formData.get('nickname') as string;
+  const nickName = formData.get('nickName') as string;
 
-  if (!email) {
+  if (!accountId) {
     return response = {
       success: true,
       type: "error",
-      element: 'email',
-      message : '이메일 값은 필수입니다.',
+      element: 'accountId',
+      message : '계정 아이디 값은 필수입니다.',
       data: {}
     };
   }
+
   if (!password) {
     return response ={
       success: true,
@@ -47,7 +48,7 @@ export const createUser = async (formData: FormData) => {
       data: {}
     };
   }
-  if (!nickname) {
+  if (!nickName) {
     return response = {
       success: true,
       type: "error",
@@ -57,18 +58,18 @@ export const createUser = async (formData: FormData) => {
     };
   }
 
-  const getUserEmail = await getUserByEmail(email)
-  if(getUserEmail) {
+  const getUserAccountId = await getUserByAccountId(accountId)
+  if(getUserAccountId) {
     return response = 
       {
         success: true,
         type: "error",
-        message : '이미 가입된 이메일입니다.',
+        message : '이미 가입된 아이디(혹은 이메일)입니다.',
         data: {}
       }
   }
 
-  const getUserNickname = await getUserByNickname(nickname)
+  const getUserNickname = await getUserByNickname(nickName)
   if(getUserNickname) {
     return response = 
       {
@@ -82,9 +83,10 @@ export const createUser = async (formData: FormData) => {
   try {
     userInfo = await prisma.user.create({
       data: {
-        email: email,
+        accountId: accountId,
         password: await hashedPassword(password),
-        nickname: nickname,
+        email_address: accountId,
+        nickName: nickName,
       }
     })
   } catch (e) {
@@ -104,16 +106,16 @@ export const updateUser = async (params:UserParams) => {
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id : 0,
-    email : '',
+    accountId : '',
     isAdmin : false 
   }
   let userInfo
   let response
 
   if(accessToken) {
-    const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
     loggedInfo.id = decodeToken.id
-    loggedInfo.email = decodeToken.userid
+    loggedInfo.accountId = decodeToken.accountId
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
     return response = 
@@ -126,11 +128,11 @@ export const updateUser = async (params:UserParams) => {
   }
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
-  params.nickname && (obj.nickname = params.nickname).trim()
-  params.email && (obj.email = params.email).trim()
+  params.nickName && (obj.nickName = params.nickName).trim()
+  params.accountId && (obj.accountId = params.accountId).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.email) {
-    obj.email = loggedInfo.email
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
+    obj.accountId = loggedInfo.accountId
     obj.id = loggedInfo.id
     obj.isAdmin = loggedInfo.isAdmin
   }
@@ -149,7 +151,7 @@ export const updateUser = async (params:UserParams) => {
 
   //관리자가 아닐경우 본인 계정만 삭제 가능
   if(!loggedInfo.isAdmin) {
-    if(userInfo?.email !== loggedInfo.email) {
+    if(userInfo?.email !== loggedInfo.accountId) {
       return response = 
         {
           success: true,
@@ -160,9 +162,9 @@ export const updateUser = async (params:UserParams) => {
     }
   }
   
-  if(userInfo.email !== obj.email && obj.email) {
-    const getUserEmail = await getUserByEmail(obj.email)
-    if(getUserEmail) {
+  if(userInfo.accountId !== obj.accountId && obj.accountId) {
+    const getUserAccountId = await getUserByAccountId(obj.accountId)
+    if(getUserAccountId) {
       return response = 
         {
           success: true,
@@ -190,12 +192,12 @@ export const updateUser = async (params:UserParams) => {
         id: userInfo.id
       },
       data: {
-        nickname: obj.nickname,
+        nickName: obj.nickName,
         // password: obj.password,
       }
     })
 
-    userInfo.nickname = updateUserInfo.nickname;
+    userInfo.nickName = updateUserInfo.nickName;
 
     return response = 
       {
@@ -217,14 +219,14 @@ export const deleteUser= async (params:UserParams) => {
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id : 0,
-    email : '',
+    accountId : '',
     isAdmin : false 
   }
   let userInfo
   let response
   if(accessToken) {
-    const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    loggedInfo.email = decodeToken.userid
+    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    loggedInfo.accountId = decodeToken.accountId
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
     return response = 
@@ -237,11 +239,11 @@ export const deleteUser= async (params:UserParams) => {
   }
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
-  params.nickname && (obj.nickname = params.nickname).trim()
-  params.email && (obj.email = params.email).trim()
+  params.nickName && (obj.nickName = params.nickName).trim()
+  params.accountId && (obj.accountId = params.accountId).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.email) {
-    obj.email = loggedInfo.email
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
+    obj.accountId = loggedInfo.accountId
   }
 
   userInfo = await getUser(params)
@@ -257,7 +259,7 @@ export const deleteUser= async (params:UserParams) => {
     }
   //관리자가 아닐경우 본인 계정만 삭제 가능
   if(!loggedInfo.isAdmin) {
-    if(userInfo?.data?.email !== loggedInfo.email) {
+    if(userInfo?.data?.accountId !== loggedInfo.accountId) {
       return response = 
         {
           success: true,
@@ -322,21 +324,10 @@ export const PasswordChange = async (formData: FormData) => {
   const newPasswordValue = formData.get('newPasswordValue') as string;
   const renewPasswordValue = formData.get('renewPasswordValue') as string;
 
-  const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
+  const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
   if(decodeToken && decodeToken.id){
     userInfo = await prisma.user.findUnique({
-      where: { email: decodeToken.userid },
-      select: {
-        id: true,
-        uuid: true,
-        email: true,
-        password: true,
-        nickname: true,
-        createdAt: true,
-        updateAt:true,
-        isAdmin:true,
-        isManagers:true
-      },
+      where: { accountId: decodeToken.accountId },
     });
   }
   
@@ -362,7 +353,7 @@ export const PasswordChange = async (formData: FormData) => {
       try {
         await prisma.user.update({
           where: {
-            email: decodeToken.userid, 
+            accountId: decodeToken.accountId, 
           },
           data: {
             password: await hashedPassword(newPasswordValue),

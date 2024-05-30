@@ -9,30 +9,16 @@ import { motion } from 'framer-motion'
 import { createUser } from '@/modules/user/scripts/userController'
 
 const Register = () => {
-  const [email, setEmail] = useState<string>()
-  const [password, setPassword] = useState<string>()
-  const [nickName, setNickName] = useState<string>()
-
   const [error, setError] = useState<any>(false)
   const router = useRouter()
-
-  const getEmail = (msg: string) => {
-    setEmail(msg)
-  }
-  const getPassword = (msg: string) => {
-    setPassword(msg)
-  }
-  const getNickname = (msg: string) => {
-    setNickName(msg)
-  }
 
   const submitHandler = async e => {
     e.preventDefault()
 
     const formData = new FormData()
-    formData.append('email', e.target.email.value)
+    formData.append('accountId', e.target.accountId.value)
     formData.append('password', e.target.password.value)
-    formData.append('nickname', e.target.nickname.value)
+    formData.append('nickName', e.target.nickName.value)
 
     await createUser(formData)
       .then(response => {
@@ -113,12 +99,12 @@ const Register = () => {
           <div className="flex items-center w-full text-xs">
             <div className="group flex items-center w-full border-[0.5px] border-gray-300 dark:border-dark-600/75 dark:hover:border-dark-300 dark:focus:border-dark-300 rounded-full dark:bg-dark-950/20 transition-all duration-300 backdrop-blur-sm bg-gray-50/50">
               <div className="px-5">
-                <span className="text-dark-300">이메일</span>
+                <span className="text-dark-300">아이디(이메일)</span>
               </div>
               <input
                 type="text"
-                name="email"
-                id=""
+                name="accountId"
+                id="accountId"
                 className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75"
                 placeholder="example@mail.com"
               />
@@ -153,7 +139,7 @@ const Register = () => {
               </div>
               <input
                 type="text"
-                name="nickname"
+                name="nickName"
                 id=""
                 className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75"
                 placeholder="User nick name"

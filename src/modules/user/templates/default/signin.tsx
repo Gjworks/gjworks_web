@@ -18,9 +18,10 @@ interface SignData {
   userInfo: {
     id: number
     uuid: string
-    nickname: string
+    accountId: string
+    nickName: string
     password: string
-    email: string
+    email_address: string
     createdAt: string
     updateAt: string
   }
@@ -29,32 +30,22 @@ interface SignData {
 const Signin = () => {
   const router = useRouter()
   const dispatch = store.dispatch
-  const [formMessage, setFormMessage] = useState<string>()
-  // const emailInputRef = useRef(null)
-  const [emailInput, setEmailInput] = useState<string>()
-  const [passwordInput, setPasswordInput] = useState<string>()
+
   const [user, setUser] = useState<SignData>()
   const [error, setError] = useState<{ type: string; message: string } | null>(
     null
   )
 
-  const refInputEmail = useRef<HTMLInputElement>(null)
+  const refInputAccountId = useRef<HTMLInputElement>(null)
   const refInputPassword = useRef<HTMLInputElement>(null)
-
-  const getData = (x: string) => {
-    setEmailInput(x)
-  }
-  const getPassword = (msg: string) => {
-    setPasswordInput(msg)
-  }
 
   const submitHandler = async e => {
     e.preventDefault()
     const formData = new FormData()
 
-    formData.append('email', e.target.email.value)
+    formData.append('accountId', e.target.accountId.value)
     formData.append('password', e.target.password.value)
-    console.log(formData.get('email'))
+
     dispatch(fetchSignIn({ formData })).then(
       (resultAction: ReturnType<typeof dispatch>) => {
         // 반환 값을 확인
@@ -85,9 +76,9 @@ const Signin = () => {
         message: user.message,
       })
 
-    refInputEmail.current &&
-      user?.element === 'email' &&
-      refInputEmail.current.focus()
+    refInputAccountId.current &&
+      user?.element === 'accountId' &&
+      refInputAccountId.current.focus()
 
     refInputPassword.current &&
       user?.element === 'password' &&
@@ -156,10 +147,10 @@ const Signin = () => {
                   </div>
                   <input
                     type="text"
-                    name="email"
-                    ref={refInputEmail}
+                    name="accountId"
+                    ref={refInputAccountId}
                     className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none"
-                    placeholder="Your email"
+                    placeholder="Your Account ID"
                   />
                 </div>
                 {/* <TextInput
@@ -329,7 +320,7 @@ const Signin = () => {
                 href="/auth/Register"
                 className="text-dark-500 group text-sm"
               >
-                회원가입을 하시려면{' '}
+                회원가입을 하시려면
                 <span className="dark:text-dark-200 dark:hover:text-dark-400 text-gray-500 underline hover:text-gray-600 group-hover:text-gray-600">
                   회원가입 하기
                 </span>
@@ -337,9 +328,9 @@ const Signin = () => {
             </div>
             <div className="w-full">
               <Link href="/" className="text-dark-500 group text-sm">
-                이메일과 비밀번호를 잊어버리 셨나요?{' '}
+                계정ID와 비밀번호를 잊어버리 셨나요?
                 <span className="dark:text-dark-200 dark:hover:text-dark-400 text-gray-500 underline hover:text-gray-600 group-hover:text-gray-600">
-                  Email/비밀번호 찾기
+                  계정ID / 비밀번호 찾기
                 </span>
               </Link>
             </div>

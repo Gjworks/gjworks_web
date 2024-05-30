@@ -12,15 +12,6 @@ import { resetUserInfo } from '@plextype/redux/features/userSlice'
 
 import { Signout, Refresh } from '@/modules/user/scripts/authController'
 
-interface UserInfo {
-  id: number
-  uuid: string
-  nickname: string
-  password: string
-  email: string
-  createdAt: string
-  updateAt: string
-}
 interface Item {
   title: string
   name: string
@@ -149,7 +140,7 @@ const AccountDropwdown = () => {
         onClick={() => setShowDropdown(!showDropdown)}
         className="hover:bg-gray-100 py-2 px-3 rounded-md"
       >
-        <Avator username={loggedInfo?.nickname} />
+        <Avator username={loggedInfo?.nickName} />
       </button>
       <Dropdown state={showDropdown} close={closeDropdown}>
         {isLogged ? (

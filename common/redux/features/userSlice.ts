@@ -4,15 +4,7 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { Signin } from "@/modules/user/scripts/authController";
 import { updateUser } from "@/modules/user/scripts/userController";
 
-interface UserInfo {
-  id:number;
-  uuid: string;
-  nickname: string;
-  password: string;
-  email: string;
-  createdAt: string;
-  updateAt: string;
-}
+
 interface DataInfo {
   // 사용자 정보에 해당하는 인터페이스를 정의합니다.
   type :string
@@ -65,7 +57,7 @@ export const fetchUserInfo = createAsyncThunk<DataInfo, FetchUserInfoPayload>(
 
     let result;
     const params = {
-      nickname: formData.get('nickname') as string
+      nickName: formData.get('nickName') as string
     }
     await updateUser(params).then((response) => {
       console.log(response)
@@ -116,12 +108,9 @@ export const userSlice = createSlice({
         // 사용자 정보와 accessToken 받아오기
         const { data, accessToken } = action.payload.result;
         // fetchSignIn에서 받아온 사용자 정보로 덮어쓰기
-        console.log(action.payload)
         if(data.userInfo) {
           state.session = data.userInfo as UserInfo;
         }
-        console.log(action)
-        console.log(state)
         // localStorage에 accessToken 저장
         localStorage.setItem('accessToken', accessToken);
       })

@@ -18,7 +18,7 @@ interface UserParams {
 
 interface LoggedParams {
   id: number
-  email : string
+  accountId : string
   isAdmin? : boolean
 }
 
@@ -32,19 +32,19 @@ export const getUser = async (params:UserParams) => {
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id: 0,
-    email : ''
+    accountId : ''
   }
   let userInfo = {} || null
   let response = {}
   if(accessToken) {
     const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    loggedInfo.email = decodeToken.userid
+    loggedInfo.accountId = decodeToken.userid
   }
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.email) {
-    obj.email = loggedInfo.email
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
+    obj.accountId = loggedInfo.accountId
   }
   if(!obj) {
     return response = {
@@ -57,19 +57,7 @@ export const getUser = async (params:UserParams) => {
   try {
     if(obj.id || obj.uuid) {
       userInfo = await prisma.user.findUnique({
-        where: obj,
-        select: {
-          id: true,
-          uuid: true,
-          email: true,
-          password: true,
-          nickname: true,
-          createdAt: true,
-          updateAt:true,
-          isAdmin:true,
-          isManagers:true
-        }
-        
+        where: obj
       });
     }
   } catch (e) {
@@ -105,17 +93,6 @@ export const getUserList = async (params:UserListParams) => {
     skip: skipAmount && skipAmount >= 0 ? skipAmount : 0,
     take: listCount,
     where,
-    select: {
-      id: true,
-      uuid: true,
-      email: true,
-      password: true,
-      nickname: true,
-      createdAt: true,
-      updateAt:true,
-      isAdmin:true,
-      isManagers:true
-    },
     orderBy: {
       id: 'desc',
     },
@@ -133,25 +110,14 @@ export const getUserList = async (params:UserListParams) => {
   return returnData
 }
 
-export const getUserByEmail = async (email:string) => {
+export const getUserByAccountId = async (accountId:string) => {
   const prisma = new PrismaClient();
   let userInfo
   let response
   try {
-    console.log(email)
+    console.log(accountId)
     userInfo = await prisma.user.findUnique({
-      where: { email: email },
-      select: {
-        id: true,
-        uuid: true,
-        email: true,
-        password: true,
-        nickname: true,
-        createdAt: true,
-        updateAt:true,
-        isAdmin:true,
-        isManagers:true
-      }
+      where: { accountId: accountId }
     });
   } catch (e) {
     console.log('getUser error' + e)
@@ -166,24 +132,13 @@ export const getUserByEmail = async (email:string) => {
   return response
 }
 
-export const getUserByNickname = async (nickname:string) => {
+export const getUserByNickname = async (nickName:string) => {
   const prisma = new PrismaClient();
   let userInfo
   let response
   try {
     userInfo = await prisma.user.findUnique({
-      where: { nickname: nickname },
-      select: {
-        id: true,
-        uuid: true,
-        email: true,
-        password: true,
-        nickname: true,
-        createdAt: true,
-        updateAt:true,
-        isAdmin:true,
-        isManagers:true
-      }
+      where: { nickName: nickName },
     });
   } catch (e) {
     console.log('getUser error' + e)
@@ -226,18 +181,7 @@ export const getUserByToken = async (token) => {
       });
     } else {
       userInfo = await prisma.user.findUnique({
-        where: { email: decodeToken.id },
-        select: {
-          id: true,
-          uuid: true,
-          email: true,
-          password: true,
-          nickname: true,
-          createdAt: true,
-          updateAt:true,
-          isAdmin:true,
-          isManagers:true
-        }
+        where: { accountId: decodeToken.id },
       });
 
       if(!userInfo) {
