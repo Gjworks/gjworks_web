@@ -14,15 +14,15 @@ export const Signin = async (formData: FormData) => {
   const prisma = new PrismaClient();
   console.log(formData)
   try {
-    const accountId = formData.get("accountId") as string;
+    const userId = formData.get("userId") as string;
     const password = formData.get("password") as string;
-    console.log(accountId, password)
-    if (!accountId) {
+    console.log(userId, password)
+    if (!userId) {
 
       const response = {
         success: true,
         type: "error",
-        element: "accountId",
+        element: "userId",
         message: "계정 아이디 (혹은 이메일)을 입력해주세요.",
         data : {}
       }
@@ -40,7 +40,7 @@ export const Signin = async (formData: FormData) => {
     }
     try {
       const userInfo = await prisma.user.findUnique({
-        where: { accountId: accountId },
+        where: { userId: userId },
       });
       
 
@@ -48,7 +48,7 @@ export const Signin = async (formData: FormData) => {
         // exclude password from json response
         const tokenParams = {
           id: userInfo!.id,
-          accountId:userInfo!.accountId,
+          userId:userInfo!.userId,
           isAdmin:userInfo!.isAdmin
         }
         
@@ -164,7 +164,7 @@ export const Refresh = async (token:string) => {
         if(decodeToken && decodeToken.id) {
           const tokenParams = {
             id: decodeToken.id,
-            accountId : decodeToken.accountId,
+            userId : decodeToken.userId,
             isAdmin:decodeToken.isAdmin
           }
           newAccessToken = await sign(tokenParams)

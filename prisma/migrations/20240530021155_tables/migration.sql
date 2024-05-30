@@ -5,7 +5,7 @@
   - You are about to drop the column `email` on the `User` table. All the data in the column will be lost.
   - You are about to drop the column `nickname` on the `User` table. All the data in the column will be lost.
   - A unique constraint covering the columns `[mid]` on the table `Module` will be added. If there are existing duplicate values, this will fail.
-  - A unique constraint covering the columns `[accountId]` on the table `User` will be added. If there are existing duplicate values, this will fail.
+  - A unique constraint covering the columns `[userId]` on the table `User` will be added. If there are existing duplicate values, this will fail.
   - A unique constraint covering the columns `[email_address]` on the table `User` will be added. If there are existing duplicate values, this will fail.
   - A unique constraint covering the columns `[nickName]` on the table `User` will be added. If there are existing duplicate values, this will fail.
   - Added the required column `moduleId` to the `Category` table without a default value. This is not possible if the table is not empty.
@@ -32,7 +32,7 @@ ALTER TABLE `Module` DROP COLUMN `moduleId`,
 -- AlterTable
 ALTER TABLE `User` DROP COLUMN `email`,
     DROP COLUMN `nickname`,
-    ADD COLUMN `accountId` VARCHAR(191) NULL,
+    ADD COLUMN `userId` VARCHAR(191) NULL,
     ADD COLUMN `email_address` VARCHAR(191) NULL,
     ADD COLUMN `nickName` VARCHAR(191) NULL;
 
@@ -62,7 +62,7 @@ CREATE TABLE `UserGroupUser` (
 CREATE UNIQUE INDEX `Module_mid_key` ON `Module`(`mid`);
 
 -- CreateIndex
-CREATE UNIQUE INDEX `User_accountId_key` ON `User`(`accountId`);
+CREATE UNIQUE INDEX `User_userId_key` ON `User`(`userId`);
 
 -- CreateIndex
 CREATE UNIQUE INDEX `User_email_address_key` ON `User`(`email_address`);

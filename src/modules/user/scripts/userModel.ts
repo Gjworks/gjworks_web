@@ -18,7 +18,7 @@ interface UserParams {
 
 interface LoggedParams {
   id: number
-  accountId : string
+  userId : string
   isAdmin? : boolean
 }
 
@@ -32,19 +32,19 @@ export const getUser = async (params:UserParams) => {
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id: 0,
-    accountId : ''
+    userId : ''
   }
   let userInfo = {} || null
   let response = {}
   if(accessToken) {
     const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    loggedInfo.accountId = decodeToken.userid
+    loggedInfo.userId = decodeToken.userid
   }
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
-    obj.accountId = loggedInfo.accountId
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.userId) {
+    obj.userId = loggedInfo.userId
   }
   if(!obj) {
     return response = {
@@ -110,14 +110,14 @@ export const getUserList = async (params:UserListParams) => {
   return returnData
 }
 
-export const getUserByAccountId = async (accountId:string) => {
+export const getUserByUserId = async (userId:string) => {
   const prisma = new PrismaClient();
   let userInfo
   let response
   try {
-    console.log(accountId)
+    console.log(userId)
     userInfo = await prisma.user.findUnique({
-      where: { accountId: accountId }
+      where: { userId: userId }
     });
   } catch (e) {
     console.log('getUser error' + e)
@@ -169,7 +169,7 @@ export const getUserByToken = async (token) => {
       status: 200,
     },);
   } else {
-    const decodeToken:{ id:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    const decodeToken:{ id:string, userId:string, isAdmin:boolean } = await decodeJwt(accessToken);
     if (!decodeToken || !decodeToken.id) {
       response = NextResponse.json({
         success: true,
@@ -181,7 +181,7 @@ export const getUserByToken = async (token) => {
       });
     } else {
       userInfo = await prisma.user.findUnique({
-        where: { accountId: decodeToken.id },
+        where: { userId: decodeToken.userId },
       });
 
       if(!userInfo) {
