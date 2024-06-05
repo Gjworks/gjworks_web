@@ -1,16 +1,15 @@
+'use client'
+import { useEffect } from 'react'
 import '/styles/globals.css'
 import '/styles/tailwindcss.css'
 import ReduxProviders from '@plextype/redux/Providers'
-
-export const metadata = {
-  title: '지제이웍스',
-  description: 'Building digital experience Creative platform service',
-  icons: {
-    icon: '/gjworks_dark_128.png',
-  },
-}
+import Log from '@plextype/utils/debug/Log'
 
 export default function RootLayout({ children }) {
+  if (typeof globalThis.Log === 'undefined') {
+    globalThis.Log = Log
+  }
+
   return (
     <html className="break-keep selection:bg-black selection:text-white dark:selection:text-white">
       <head />

@@ -29,14 +29,13 @@ const FootAlert = () => {
           <div className="p-3 rounded-xl bg-gray-900 shadow-lg shadow-gray-400">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div className="w-0 flex-1 flex items-center px-3">
-                <div className="inline-block lg:flex gap-4 font-medium text-white">
+                <div className="inline-block lg:flex gap-4 items-center font-medium text-white">
                   <div className="">
                     <span className="text-base">Plextype</span> Beta release!
                   </div>
-                  <div className="hidden md:flex items-center text-gray-400">
+                  <div className="hidden md:flex flex-1 items-center text-gray-400">
                     <span className="text-sm line-clamp-2">
-                      next.js + prisma + tailwindcss + typescript로 구성된
-                      풀스택 웹 애플리케이션 프레임워크 입니다.
+                      손쉽게 사용가능한 UI Components가 업데이트 되었습니다.
                     </span>
                   </div>
                 </div>

@@ -47,7 +47,7 @@ const FullLayout = ({ children }) => {
           </motion.button>
         )} */}
         <footer className="pb-8 border-t border-gray-100 pt-6">
-          <div className="mx-auto max-w-screen-lg">
+          <div className="mx-auto max-w-screen-xl">
             <Footer />
           </div>
         </footer>

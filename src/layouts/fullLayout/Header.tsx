@@ -217,7 +217,7 @@ const Header = () => {
           (showNavigation === true ? '  ' : ' ')
         }
       >
-        <div className="">
+        <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-4 gap-4 px-3 py-2">
             <div className="col-span-1 flex items-center gap-2">
               <button
@@ -225,7 +225,7 @@ const Header = () => {
                   setBackground('dark:bg-dark-950 bg-white')
                   setShowLeft(!showLeft)
                 }}
-                className="group flex items-center px-2"
+                className="group flex lg:hidden items-center px-2"
               >
                 <div className="relative flex h-5 w-5 cursor-pointer">
                   <div className="z-50">
@@ -250,6 +250,18 @@ const Header = () => {
               </button>
 
               <div className="flex items-center">
+                <Link
+                  href="/"
+                  className="hidden lg:flex w-16 items-center justify-center"
+                >
+                  <Image
+                    src="/assets/images/brand/gjworks.svg"
+                    alt="gjworks logo"
+                    width="32"
+                    height="32"
+                    className="block h-8 w-8"
+                  />
+                </Link>
                 <a
                   href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                   className="hidden items-center"
@@ -260,7 +272,7 @@ const Header = () => {
                 </a>
                 <Link
                   href="/plextype"
-                  className="dark:text-dark-100 dark:bg-dark-100/10 flex cursor-pointer rounded-full bg-gray-100/90 px-4 py-1 text-xs text-gray-500 backdrop-blur-lg transition duration-300 hover:bg-gray-200/75 hover:text-black dark:hover:bg-gray-100/20 dark:hover:text-white"
+                  className="hidden dark:text-dark-100 dark:bg-dark-100/10 lg:flex cursor-pointer rounded-full bg-gray-100/90 px-4 py-1 text-xs text-gray-500 backdrop-blur-lg transition duration-300 hover:bg-gray-200/75 hover:text-black dark:hover:bg-gray-100/20 dark:hover:text-white"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -299,18 +311,6 @@ const Header = () => {
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                     // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
                   >
-                    <Link
-                      href="/"
-                      className="flex w-16 items-center justify-center"
-                    >
-                      <Image
-                        src="/assets/images/brand/gjworks.svg"
-                        alt="gjworks logo"
-                        width="32"
-                        height="32"
-                        className="block h-8 w-8"
-                      />
-                    </Link>
                     {nav.header &&
                       Object.entries(nav.header).map((data, index) => {
                         return (

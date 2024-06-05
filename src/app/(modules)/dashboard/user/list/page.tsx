@@ -1,6 +1,6 @@
 'use client'
 
-import DashboardUserList from '@/modules/user/dashboard/templates/list'
+import DashboardUserList from '@/modules/user/admin/templates/list'
 
 const Page = () => {
   return (

@@ -12,7 +12,7 @@ import { PrismaClient } from "@prisma/client";
 
 export const Signin = async (formData: FormData) => {
   const prisma = new PrismaClient();
-  console.log(formData)
+
   try {
     const userId = formData.get("userId") as string;
     const password = formData.get("password") as string;

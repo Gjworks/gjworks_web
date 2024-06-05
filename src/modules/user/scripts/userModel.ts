@@ -22,8 +22,68 @@ interface LoggedParams {
   isAdmin? : boolean
 }
 
-export const getUserSession = async () => {
+interface UserSessionResponse {
+  success: boolean;
+  data: UserInfo | null;
+  type?: string;
+  message?: string;
+}
 
+export const getUserLogged = async () => {
+  const accessToken = cookies().get('accessToken')?.value
+  let tokenInfo:LoggedParams = {
+    id: 0,
+    userId : '',
+    isAdmin : false
+  }
+  if(accessToken) {
+    const decodeToken:{ id:number, userId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    tokenInfo.userId = decodeToken.userId
+    tokenInfo.id = decodeToken.id
+    tokenInfo.isAdmin = decodeToken.isAdmin
+  }
+  return tokenInfo
+}
+
+export const getUserSession = async (): Promise<UserSessionResponse> => {
+  const prisma = new PrismaClient();
+  const tokenInfo = await getUserLogged()
+
+  let userInfo: UserInfo | null = null;
+  let response :UserSessionResponse
+  console.log('tokenInfo', tokenInfo)
+  if(tokenInfo) {
+
+    try {
+        userInfo = await prisma.user.findUnique({
+          where: { userId: tokenInfo.userId },
+        });
+
+        response = {
+          success: true,
+          data: userInfo
+        }
+      
+    } catch (e) {
+      console.log('getUser error' + e)
+      response = {
+        success: true,
+        type: "error",
+        message : '회원정보가 없습니다.',
+        data: null
+      };
+    }
+  }else {
+    response = {
+      success: true,
+      type: "error",
+      message : '토큰 정보가 올바르지 않습니다.',
+      data: null
+    };
+  }
+
+  console.log('response', response)
+  return response
 }
 
 export const getUser = async (params:UserParams) => {
@@ -152,6 +212,7 @@ export const getUserByNickname = async (nickName:string) => {
   response = userInfo
   return response
 }
+
 export const getUserByToken = async (token) => {
   const prisma = new PrismaClient();
   let userInfo
@@ -219,10 +280,5 @@ export const getUserByToken = async (token) => {
   // const nowPasswordValue = request.get('nowPasswordValue') as string;
   // console.log(nowPasswordValue)
   return response
-}
-
-
-export const getUserTest = async (params:UserParams) => {
-  return 'state'
 }
 

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from '@plextype/components/viewer/SafariBrower'
@@ -63,7 +63,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative max-w-screen-3xl mx-auto px-3">
+          <div className="relative max-w-screen-2xl mx-auto px-3">
             <div className="relative rounded-3xl">
               <div className="relative rounded-3xl bg-[url('/assets/images/bg41.jpg')] bg-cover bg-center bg-no-repeat">
                 {/*  */}
@@ -584,7 +584,7 @@ export default function Page() {
             variants={parentVariants}
             className="pt-10"
           >
-            <div className="relative mx-auto max-w-screen-3xl px-3">
+            <div className="relative mx-auto max-w-screen-2xl px-3">
               <motion.div className="grid grid-cols-3 gap-8">
                 <div className="col-span-3 md:col-span-1">
                   <motion.div

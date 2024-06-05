@@ -8,7 +8,7 @@ const Editorjs = dynamic(() => import('@plextype/components/editor/Editorjs'), {
 })
 
 import { createPost } from '@/modules/posts/scripts/postsController'
-import { getModuleByName } from '@/modules/dashboard/scripts/moduleModel'
+import { getModuleByName } from '@/modules/admin/scripts/moduleModel'
 
 import Alert from '@plextype/components/message/Alert'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import DashboardUserInsert from '@/modules/user/dashboard/templates/insert'
+import DashboardUserInsert from '@/modules/user/admin/templates/insert'
 
 const Page = () => {
   return (
