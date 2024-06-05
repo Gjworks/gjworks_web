@@ -16,7 +16,7 @@ const Register = () => {
     e.preventDefault()
 
     const formData = new FormData()
-    formData.append('userId', e.target.userId.value)
+    formData.append('accountId', e.target.accountId.value)
     formData.append('password', e.target.password.value)
     formData.append('nickName', e.target.nickName.value)
 
@@ -103,8 +103,8 @@ const Register = () => {
               </div>
               <input
                 type="text"
-                name="userId"
-                id="userId"
+                name="accountId"
+                id="accountId"
                 className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75"
                 placeholder="example@mail.com"
               />

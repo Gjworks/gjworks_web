@@ -13,7 +13,7 @@ datasource db {
 model User {
     id               Int               @id @default(autoincrement()) // 회원 고유 id
     uuid             String            @default(cuid()) //외부에서 보여질 회원 id
-    userId           String            @unique // 회원 아이디
+    accountId        String            @unique // 회원 아이디
     email_address    String            @unique // 회원 이메일
     nickName         String            @unique // 회원 닉네임
     password         String            // 비밀번호
@@ -30,12 +30,13 @@ model User {
 model Profile {
     id               Int               @id @default(autoincrement())
     phone            String            @unique
-    author           User              @relation(fields: [authorFK], references: [id])
-    authorFK         Int               @unique
+    user             User              @relation(fields: [userId], references: [id])
+    userId           Int               @unique
 }
 
 model UserGroup {
     id               Int               @id @default(autoincrement())
+    groupName        String            @unique
     groupTitle       String            @db.VarChar(45)
     groupDesc        String?
     createdAt        DateTime          @default(now())
@@ -45,25 +46,25 @@ model UserGroup {
 
 model UserGroupUser {
     id               Int               @id @default(autoincrement())
-    group            UserGroup         @relation(fields: [groupFK], references: [id])
-    groupFK          Int
-    user             User              @relation(fields: [userFK], references: [id])
-    userFK           Int
+    group            UserGroup         @relation(fields: [groupId], references: [id])
+    groupId          Int
+    user             User              @relation(fields: [userId], references: [id])
+    userId           Int
     createdAt        DateTime          @default(now())
     updatedAt        DateTime          @updatedAt
 }
 
 model Document {
     id               Int               @id @default(autoincrement())
-    module           Module            @relation(fields: [moduleFK], references: [id])
-    moduleFK         Int
-    category         Category?         @relation(fields: [categoryFK], references: [id])
-    categoryFK       Int?
+    module           Module            @relation(fields: [moduleId], references: [id])
+    moduleId         Int
+    category         Category?         @relation(fields: [categoryId], references: [id])
+    categoryId       Int?
     createdAt        DateTime          @default(now())
     updatedAt        DateTime          @updatedAt
     published        Boolean?          @default(false)
-    author           User?             @relation(fields: [authorFK], references: [id])
-    authorFK         Int?
+    user             User?             @relation(fields: [userId], references: [id])
+    userId           Int?
     authorName       String?           @db.VarChar(45)
     authorPassword   String?
     title            String?           @db.VarChar(255)
@@ -80,8 +81,8 @@ model Category {
     title            String            @db.VarChar(45)
     desc             String?
     color            String?           @db.VarChar(45)
-    module           Module            @relation(fields: [moduleFK], references: [id])
-    moduleFK         Int
+    module           Module            @relation(fields: [moduleId], references: [id])
+    moduleId         Int
     documents         Document[]
 }
 

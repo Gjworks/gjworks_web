@@ -4,19 +4,19 @@ import { cookies, headers } from "next/headers";
 import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-import { getUser, getUserByNickname, getUserByUserId } from "@/modules/user/scripts/userModel";
+import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
 
 interface UserParams {
   id? : number | null
   uuid? : string | null
-  userId? : string | null
+  accountId? : string | null
   accessToken? : string | null
   nickName? : string | null
 }
 
 interface LoggedParams {
   id : number
-  userId : string
+  accountId : string
   isAdmin? : boolean | null
 }
 
@@ -25,15 +25,15 @@ export const createUser = async (formData: FormData) => {
   let userInfo
   let response
 
-  const userId = formData.get('userId') as string;
+  const accountId = formData.get('accountId') as string;
   const password = formData.get('password') as string;
   const nickName = formData.get('nickName') as string;
 
-  if (!userId) {
+  if (!accountId) {
     return response = {
       success: true,
       type: "error",
-      element: 'userId',
+      element: 'accountId',
       message : '계정 아이디 값은 필수입니다.',
       data: {}
     };
@@ -58,8 +58,8 @@ export const createUser = async (formData: FormData) => {
     };
   }
 
-  const getUseruserId = await getUserByUserId(userId)
-  if(getUseruserId) {
+  const getUserAccountId = await getUserByAccountId(accountId)
+  if(getUserAccountId) {
     return response = 
       {
         success: true,
@@ -83,9 +83,9 @@ export const createUser = async (formData: FormData) => {
   try {
     userInfo = await prisma.user.create({
       data: {
-        userId: userId,
+        accountId: accountId,
         password: await hashedPassword(password),
-        email_address: userId,
+        email_address: accountId,
         nickName: nickName,
       }
     })
@@ -106,16 +106,16 @@ export const updateUser = async (params:UserParams) => {
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id : 0,
-    userId : '',
+    accountId : '',
     isAdmin : false 
   }
   let userInfo
   let response
 
   if(accessToken) {
-    const decodeToken:{ id:number, userId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
     loggedInfo.id = decodeToken.id
-    loggedInfo.userId = decodeToken.userId
+    loggedInfo.accountId = decodeToken.accountId
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
     return response = 
@@ -129,10 +129,10 @@ export const updateUser = async (params:UserParams) => {
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
   params.nickName && (obj.nickName = params.nickName).trim()
-  params.userId && (obj.userId = params.userId).trim()
+  params.accountId && (obj.accountId = params.accountId).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.userId) {
-    obj.userId = loggedInfo.userId
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
+    obj.accountId = loggedInfo.accountId
     obj.id = loggedInfo.id
     obj.isAdmin = loggedInfo.isAdmin
   }
@@ -151,7 +151,7 @@ export const updateUser = async (params:UserParams) => {
 
   //관리자가 아닐경우 본인 계정만 삭제 가능
   if(!loggedInfo.isAdmin) {
-    if(userInfo?.email !== loggedInfo.userId) {
+    if(userInfo?.email !== loggedInfo.accountId) {
       return response = 
         {
           success: true,
@@ -162,9 +162,9 @@ export const updateUser = async (params:UserParams) => {
     }
   }
   
-  if(userInfo.userId !== obj.userId && obj.userId) {
-    const getUseruserId = await getUserByUserId(obj.userId)
-    if(getUseruserId) {
+  if(userInfo.accountId !== obj.accountId && obj.accountId) {
+    const getUserAccountId = await getUserByAccountId(obj.accountId)
+    if(getUserAccountId) {
       return response = 
         {
           success: true,
@@ -219,14 +219,14 @@ export const deleteUser= async (params:UserParams) => {
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id : 0,
-    userId : '',
+    accountId : '',
     isAdmin : false 
   }
   let userInfo
   let response
   if(accessToken) {
-    const decodeToken:{ id:number, userId:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    loggedInfo.userId = decodeToken.userId
+    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    loggedInfo.accountId = decodeToken.accountId
     loggedInfo.isAdmin = decodeToken.isAdmin
   }else{
     return response = 
@@ -240,10 +240,10 @@ export const deleteUser= async (params:UserParams) => {
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
   params.nickName && (obj.nickName = params.nickName).trim()
-  params.userId && (obj.userId = params.userId).trim()
+  params.accountId && (obj.accountId = params.accountId).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.userId) {
-    obj.userId = loggedInfo.userId
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
+    obj.accountId = loggedInfo.accountId
   }
 
   userInfo = await getUser(params)
@@ -259,7 +259,7 @@ export const deleteUser= async (params:UserParams) => {
     }
   //관리자가 아닐경우 본인 계정만 삭제 가능
   if(!loggedInfo.isAdmin) {
-    if(userInfo?.data?.userId !== loggedInfo.userId) {
+    if(userInfo?.data?.accountId !== loggedInfo.accountId) {
       return response = 
         {
           success: true,
@@ -324,10 +324,10 @@ export const PasswordChange = async (formData: FormData) => {
   const newPasswordValue = formData.get('newPasswordValue') as string;
   const renewPasswordValue = formData.get('renewPasswordValue') as string;
 
-  const decodeToken:{ id:number, userId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+  const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
   if(decodeToken && decodeToken.id){
     userInfo = await prisma.user.findUnique({
-      where: { userId: decodeToken.userId },
+      where: { accountId: decodeToken.accountId },
     });
   }
   
@@ -353,7 +353,7 @@ export const PasswordChange = async (formData: FormData) => {
       try {
         await prisma.user.update({
           where: {
-            userId: decodeToken.userId, 
+            accountId: decodeToken.accountId, 
           },
           data: {
             password: await hashedPassword(newPasswordValue),

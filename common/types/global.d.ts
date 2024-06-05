@@ -3,7 +3,7 @@ declare global {
   interface UserInfo {
     id: number
     uuid: string
-    userId: string
+    accountId: string
     nickName: string
     password: string
     email_address: string

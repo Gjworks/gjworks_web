@@ -18,7 +18,7 @@ interface UserParams {
 
 interface LoggedParams {
   id: number
-  userId : string
+  accountId : string
   isAdmin? : boolean
 }
 
@@ -33,12 +33,12 @@ export const getUserLogged = async () => {
   const accessToken = cookies().get('accessToken')?.value
   let tokenInfo:LoggedParams = {
     id: 0,
-    userId : '',
+    accountId : '',
     isAdmin : false
   }
   if(accessToken) {
-    const decodeToken:{ id:number, userId:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    tokenInfo.userId = decodeToken.userId
+    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    tokenInfo.accountId = decodeToken.accountId
     tokenInfo.id = decodeToken.id
     tokenInfo.isAdmin = decodeToken.isAdmin
   }
@@ -56,7 +56,7 @@ export const getUserSession = async (): Promise<UserSessionResponse> => {
 
     try {
         userInfo = await prisma.user.findUnique({
-          where: { userId: tokenInfo.userId },
+          where: { accountId: tokenInfo.accountId },
         });
 
         response = {
@@ -92,19 +92,19 @@ export const getUser = async (params:UserParams) => {
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id: 0,
-    userId : ''
+    accountId : ''
   }
   let userInfo = {} || null
   let response = {}
   if(accessToken) {
-    const decodeToken:{ id:number, userid:string, isAdmin:boolean } = await decodeJwt(accessToken);
-    loggedInfo.userId = decodeToken.userid
+    const decodeToken:{ id:number, accountid:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    loggedInfo.accountId = decodeToken.accountid
   }
   params.id && (obj.id = params.id)
   params.uuid && (obj.uuid = params.uuid).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.userId) {
-    obj.userId = loggedInfo.userId
+  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
+    obj.accountId = loggedInfo.accountId
   }
   if(!obj) {
     return response = {
@@ -170,14 +170,14 @@ export const getUserList = async (params:UserListParams) => {
   return returnData
 }
 
-export const getUserByUserId = async (userId:string) => {
+export const getUserByAccountId = async (accountId:string) => {
   const prisma = new PrismaClient();
   let userInfo
   let response
   try {
-    console.log(userId)
+    console.log(accountId)
     userInfo = await prisma.user.findUnique({
-      where: { userId: userId }
+      where: { accountId: accountId }
     });
   } catch (e) {
     console.log('getUser error' + e)
@@ -230,7 +230,7 @@ export const getUserByToken = async (token) => {
       status: 200,
     },);
   } else {
-    const decodeToken:{ id:string, userId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    const decodeToken:{ id:string, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
     if (!decodeToken || !decodeToken.id) {
       response = NextResponse.json({
         success: true,
@@ -242,7 +242,7 @@ export const getUserByToken = async (token) => {
       });
     } else {
       userInfo = await prisma.user.findUnique({
-        where: { userId: decodeToken.userId },
+        where: { accountId: decodeToken.accountId },
       });
 
       if(!userInfo) {

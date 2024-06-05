@@ -14,15 +14,15 @@ export const Signin = async (formData: FormData) => {
   const prisma = new PrismaClient();
 
   try {
-    const userId = formData.get("userId") as string;
+    const accountId = formData.get("accountId") as string;
     const password = formData.get("password") as string;
-    console.log(userId, password)
-    if (!userId) {
+    console.log(accountId, password)
+    if (!accountId) {
 
       const response = {
         success: true,
         type: "error",
-        element: "userId",
+        element: "accountId",
         message: "계정 아이디 (혹은 이메일)을 입력해주세요.",
         data : {}
       }
@@ -40,7 +40,7 @@ export const Signin = async (formData: FormData) => {
     }
     try {
       const userInfo = await prisma.user.findUnique({
-        where: { userId: userId },
+        where: { accountId: accountId },
       });
       
 
@@ -48,7 +48,7 @@ export const Signin = async (formData: FormData) => {
         // exclude password from json response
         const tokenParams = {
           id: userInfo!.id,
-          userId:userInfo!.userId,
+          accountId:userInfo!.accountId,
           isAdmin:userInfo!.isAdmin
         }
         

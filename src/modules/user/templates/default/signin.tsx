@@ -18,7 +18,7 @@ interface SignData {
   userInfo: {
     id: number
     uuid: string
-    userId: string
+    accountId: string
     nickName: string
     password: string
     email_address: string
@@ -43,7 +43,7 @@ const Signin = () => {
     e.preventDefault()
     const formData = new FormData()
 
-    formData.append('userId', e.target.userId.value)
+    formData.append('accountId', e.target.accountId.value)
     formData.append('password', e.target.password.value)
 
     dispatch(fetchSignIn({ formData })).then(
@@ -77,7 +77,7 @@ const Signin = () => {
       })
 
     refInputUserId.current &&
-      user?.element === 'userId' &&
+      user?.element === 'accountId' &&
       refInputUserId.current.focus()
 
     refInputPassword.current &&
@@ -147,7 +147,7 @@ const Signin = () => {
                   </div>
                   <input
                     type="text"
-                    name="userId"
+                    name="accountId"
                     ref={refInputUserId}
                     className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none"
                     placeholder="Your Account ID"

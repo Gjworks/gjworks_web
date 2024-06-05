@@ -8,7 +8,7 @@ import Modal from '@plextype/components/modal/Modal'
 import {
   upsertGroup,
   deleteGroup,
-} from '@/modules/user/scripts/groupController'
+} from '@/modules/user/admin/scripts/groupController'
 
 const DashboardUserGroupList = () => {
   const [showModal, setShowModal] = useState(false)
@@ -18,9 +18,9 @@ const DashboardUserGroupList = () => {
 
   const handleGroupInfo = async (formData: FormData) => {
     const rawFormData = {
+      groupName: formData.get('groupName'),
       groupTitle: formData.get('groupTitle'),
       groupDesc: formData.get('groupDesc'),
-      groupDefault: formData.get('groupDefault'),
     }
 
     await upsertGroup(rawFormData)
@@ -135,6 +135,21 @@ const DashboardUserGroupList = () => {
                   </div>
                   <div className="flex gap-4 items-center py-2">
                     <label
+                      htmlFor="groupTitle"
+                      className="w-32 text-center block text-sm font-medium text-gray-700"
+                    >
+                      그룹이름
+                    </label>
+                    <input
+                      type="text"
+                      name="groupName"
+                      id="groupName"
+                      className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-2/3 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                      placeholder="그룹 이름"
+                    />
+                  </div>
+                  <div className="flex gap-4 items-center py-2">
+                    <label
                       htmlFor="groupDesc"
                       className="w-32 text-center block text-sm font-medium text-gray-700"
                     >
@@ -148,7 +163,7 @@ const DashboardUserGroupList = () => {
                       placeholder="그룹 설명"
                     />
                   </div>
-                  <div className="flex gap-4 items-center py-2">
+                  <div className="hidden gap-4 items-center py-2">
                     <label
                       htmlFor="groupDefault"
                       className="w-32 text-center block text-sm font-medium text-gray-700"
