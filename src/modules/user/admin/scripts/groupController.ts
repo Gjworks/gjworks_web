@@ -3,8 +3,10 @@
 import { PrismaClient } from "@prisma/client";
 import { getUserSession } from "../../scripts/userModel";
 
-export const upsertGroup = async (params) => {
-  const prisma = new PrismaClient();
+const prisma = new PrismaClient();
+
+export const upsertGroup = async (formData: FormData) => {
+
   const sessionInfo = await getUserSession()
 
   if(!sessionInfo?.data?.isAdmin) {
@@ -16,21 +18,42 @@ export const upsertGroup = async (params) => {
     }
   }
 
+  const groupName = formData.get("groupName") as string;
+  const groupTitle = formData.get("groupTitle") as string;
+  const groupDesc = formData.get("groupDesc") as string;
+
+
   const userGroup = await prisma.userGroup.upsert({
     where: {
-      id: params.id
+      groupName: groupName
     },
     update: {
-      groupName: params.groupName,
-      groupTitle: params.groupTitle,
-      groupDesc: params.groupDesc
+      groupName: groupName,
+      groupTitle: groupTitle,
+      groupDesc: groupDesc
     },
     create: {
-      groupName: params.groupName,
-      groupTitle: params.groupTitle,
-      groupDesc: params.groupDesc
+      groupName: groupName,
+      groupTitle: groupTitle,
+      groupDesc: groupDesc
     }
   })
+
+  if(userGroup) {
+    return {
+      success: true,
+      type: "success",
+      message : '그룹이 성공적으로 저장되었습니다.',
+      data: userGroup
+    }
+  }else{
+    return {
+      success: false,
+      type: "error",
+      message : '그룹 저장에 실패하였습니다.',
+      data: {}
+    }
+  }
 
 
 
@@ -40,6 +63,48 @@ export const upsertGroup = async (params) => {
   // const nickName = formData.get('nickName') as string;
 }
 
-export const deleteGroup = async () => {
+export const deleteGroup = async (groupId) => {
+  const sessionInfo = await getUserSession()
+
+  if(!sessionInfo?.data?.isAdmin) {
+    return {
+      success: false,
+      code: "error",
+      message : '권한이 없습니다.',
+      data: {}
+    }
+  }
+  try {
+    const userGroup = await prisma.userGroup.delete({
+      where: {
+        id: groupId
+      }
+    })
+    if(userGroup) {
+      return {
+        success: true,
+        type: "success",
+        message : '그룹이 성공적으로 삭제되었습니다.',
+        data: userGroup
+      }
+    }else{
+      return {
+        success: false,
+        type: "error",
+        message : '그룹 삭제에 실패하였습니다.',
+        data: {}
+      }
+    }
+  } catch (error) {
+    return {
+      success: false,
+      type: "error",
+      message : '그룹 삭제에 실패하였습니다.',
+      data: {}
+    }
+  }
+
+
+
   
 }
