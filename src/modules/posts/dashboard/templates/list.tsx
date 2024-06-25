@@ -150,7 +150,7 @@ const DashboardUserList = () => {
                         {item.id - 1}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3">
-                        {item.moduleId}
+                        {item.mid}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
                         {item.moduleName}

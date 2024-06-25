@@ -119,7 +119,13 @@ const DashboardUserList = () => {
                   scope="col"
                   className="w-auto text-xs text-gray-600 uppercase py-2 px-3 text-left"
                 >
-                  이메일 주소
+                  회원아이디
+                </th>
+                <th
+                  scope="col"
+                  className="w-auto text-xs text-gray-600 uppercase py-2 px-3 text-left"
+                >
+                  이메일
                 </th>
                 <th
                   scope="col"
@@ -165,10 +171,13 @@ const DashboardUserList = () => {
                         {item.id - 1}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3">
-                        {item.email}
+                        {item.accountId}
+                      </td>
+                      <td className="text-gray-500 text-sm py-3 px-3">
+                        {item.email_address}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                        {item.nickname}
+                        {item.nickName}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
                         준회원

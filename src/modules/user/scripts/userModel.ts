@@ -55,14 +55,29 @@ export const getUserSession = async (): Promise<UserSessionResponse> => {
   if(tokenInfo) {
 
     try {
-        userInfo = await prisma.user.findUnique({
-          where: { accountId: tokenInfo.accountId },
-        });
-
-        response = {
-          success: true,
-          data: userInfo
-        }
+      const userInfo = await prisma.user.findUnique({
+        where: { accountId: tokenInfo.accountId },
+        include: {
+          userGroups: {
+            include: {
+              group: {
+                include: {
+                  users: {
+                    include: {
+                      user: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      });
+      console.log(userInfo)
+      response = {
+        success: true,
+        data: userInfo
+      }
       
     } catch (e) {
       console.log('getUser error' + e)
@@ -117,7 +132,22 @@ export const getUser = async (params:UserParams) => {
   try {
     if(obj.id || obj.uuid) {
       userInfo = await prisma.user.findUnique({
-        where: obj
+        where: obj,
+        include: {
+          userGroups: {
+            include: {
+              group: {
+                include: {
+                  users: {
+                    include: {
+                      user: true,
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
       });
     }
   } catch (e) {

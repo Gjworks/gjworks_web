@@ -5,6 +5,7 @@ import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
+import { updateUserGroup, deleteUserGroup } from "@/modules/user/scripts/groupController";
 
 interface UserParams {
   id? : number | null
@@ -12,6 +13,7 @@ interface UserParams {
   accountId? : string | null
   accessToken? : string | null
   nickName? : string | null
+  group? : string[] | null
 }
 
 interface LoggedParams {
@@ -112,6 +114,7 @@ export const updateUser = async (params:UserParams) => {
   let userInfo
   let response
 
+  //토큰 정보를 확인하여 로그인한 사용자 정보를 가져온다.
   if(accessToken) {
     const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
     loggedInfo.id = decodeToken.id
@@ -137,6 +140,7 @@ export const updateUser = async (params:UserParams) => {
     obj.isAdmin = loggedInfo.isAdmin
   }
   
+  //토큰 사용자 정보로 실제 회원 정보를 DB에서 가져온다.
   userInfo = await getUser(loggedInfo)
 
   if(!userInfo) {
@@ -186,6 +190,12 @@ export const updateUser = async (params:UserParams) => {
         }
     }
   }
+
+  // 만약 그룹 정보가 온다면 그룹 정보를 업데이트 한다.
+  if(params.group) {
+    await updateUserGroup(userInfo.id, params.group)
+  }
+
   try {
     const updateUserInfo = await prisma.user.update({
       where: {
@@ -269,6 +279,9 @@ export const deleteUser= async (params:UserParams) => {
         }
     }
   }
+
+  //회원 그룹 정보 삭제
+  await deleteUserGroup(userInfo.id);
 
 
   const deleteUser = await prisma.user.delete({

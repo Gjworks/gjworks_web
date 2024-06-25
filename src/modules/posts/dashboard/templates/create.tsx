@@ -17,6 +17,10 @@ const DashboardPostCreate = (props: PostProps) => {
 
   const [posts, setPosts] = useState<any>([])
   const [error, setError] = useState<any>(false)
+  const [isDocumentLike, setIsDocumentLike] = useState<boolean>(false)
+  const [isCommentLike, setisCommentLike] = useState<boolean>(false)
+  const [isCommentState, setIsCommentState] = useState<boolean>(false)
+  const [isConsultingState, setIsConsultingState] = useState<boolean>(false)
 
   useEffect(() => {
     if (props.id) {
@@ -32,6 +36,35 @@ const DashboardPostCreate = (props: PostProps) => {
       })
     }
   }, [props.id])
+
+  useEffect(() => {
+    console.log(posts?.config)
+    if (posts?.config?.documentLike !== undefined) {
+      setIsDocumentLike(posts.config.documentLike === 'true')
+    }
+    if (posts?.config?.commentLike !== undefined) {
+      setisCommentLike(posts.config.commentLike === 'true')
+    }
+    if (posts?.config?.commentState !== undefined) {
+      setIsCommentState(posts.config.commentState === 'true')
+    }
+    if (posts?.config?.consultingState !== undefined) {
+      setIsConsultingState(posts.config.consultingState === 'true')
+    }
+  }, [posts])
+
+  const handleDocumentLike = event => {
+    setIsDocumentLike(event.target.checked)
+  }
+  const handleCommentLike = event => {
+    setisCommentLike(event.target.checked)
+  }
+  const handleCommentState = event => {
+    setIsCommentState(event.target.checked)
+  }
+  const handleConsultingState = event => {
+    setIsConsultingState(event.target.checked)
+  }
 
   const submitHandler = async e => {
     e.preventDefault()
@@ -91,7 +124,7 @@ const DashboardPostCreate = (props: PostProps) => {
                             id="moduleId"
                             className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                             placeholder="/?mid=post"
-                            defaultValue={posts?.moduleId}
+                            defaultValue={posts?.mid}
                           />
                         )}
 
@@ -183,17 +216,15 @@ const DashboardPostCreate = (props: PostProps) => {
                           </div>
                         </label>
                         <label className="m-0">
-                          {posts?.config && (
-                            <input
-                              type="checkbox"
-                              name="documentLike"
-                              id="documentLike"
-                              className="peer hidden"
-                              defaultChecked={
-                                posts?.config?.documentLike === 'true'
-                              }
-                            />
-                          )}
+                          <input
+                            type="checkbox"
+                            name="documentLike"
+                            id="documentLike"
+                            className="peer hidden"
+                            onChange={handleDocumentLike}
+                            checked={isDocumentLike}
+                          />
+
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
                         <div className="text-sm text-dark-400 pt-2 font-light">
@@ -209,17 +240,15 @@ const DashboardPostCreate = (props: PostProps) => {
                           </div>
                         </label>
                         <label className="m-0">
-                          {posts?.config && (
-                            <input
-                              type="checkbox"
-                              name="consultingState"
-                              id="consultingState"
-                              className="peer hidden"
-                              defaultChecked={
-                                posts?.config?.consultingState === 'true'
-                              }
-                            />
-                          )}
+                          <input
+                            type="checkbox"
+                            name="consultingState"
+                            id="consultingState"
+                            className="peer hidden"
+                            onChange={handleConsultingState}
+                            checked={isConsultingState}
+                          />
+
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
                         <div className="text-sm text-dark-400 pt-2 font-light">
@@ -244,7 +273,7 @@ const DashboardPostCreate = (props: PostProps) => {
                   </div>
                 </div>
                 <div className="col-span-3">
-                  <div className="grid grid-col-span-2 gap-8">
+                  <div className="grid grid-col-span-2">
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3 sm:col-span-2">
                         <label>
@@ -253,20 +282,14 @@ const DashboardPostCreate = (props: PostProps) => {
                           </div>
                         </label>
                         <label htmlFor="commentState" className="m-0">
-                          {posts?.config && (
-                            <input
-                              type="checkbox"
-                              name="commentState"
-                              id="commentState"
-                              className="peer hidden"
-                              defaultChecked={
-                                posts?.config?.commentState === 'true'
-                              }
-                              onChange={e => {
-                                // Handle checkbox state change if needed
-                              }}
-                            />
-                          )}
+                          <input
+                            type="checkbox"
+                            name="commentState"
+                            id="commentState"
+                            className="peer hidden"
+                            onChange={handleCommentState}
+                            checked={isCommentState}
+                          />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
@@ -284,21 +307,136 @@ const DashboardPostCreate = (props: PostProps) => {
                           </div>
                         </label>
                         <label className="m-0">
-                          {posts?.config && (
-                            <input
-                              type="checkbox"
-                              name="commentLike"
-                              id="commentLike"
-                              className="peer hidden"
-                              defaultChecked={
-                                posts?.config?.commentLike === 'true'
-                              }
-                            />
-                          )}
+                          <input
+                            type="checkbox"
+                            name="commentLike"
+                            id="commentLike"
+                            className="peer hidden"
+                            onChange={handleCommentLike}
+                            checked={isCommentLike}
+                          />
+
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
                         <div className="text-sm text-dark-400 pt-2 font-light">
                           댓글에 좋아요 기능을 사용합니다.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full h-px border-b border-gray-200"></div>
+            <div className="px-3">
+              <div className="grid grid-cols-4 gap-8 py-10">
+                <div className="col-span-1">
+                  <div className="text-lg font-semibold text-gray-600  mb-3">
+                    권한설정
+                  </div>
+                  <div className="text-gray-400 text-sm">
+                    생성된 게시판의 권한을 설정합니다.
+                  </div>
+                </div>
+                <div className="col-span-3">
+                  <div className="grid grid-col-span-2">
+                    <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
+                      <div className="col-span-3 sm:col-span-1">
+                        <div className="mb-5">
+                          <label>
+                            <div className="flex gap-2 items-center">
+                              <div className="w-24 text-sm text-black">
+                                게시판 목록
+                              </div>
+                              <div className="flex-1">
+                                <select
+                                  name="list"
+                                  id="list"
+                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                                >
+                                  <option value="1">제한없음</option>
+                                  <option value="1">로그인사용자</option>
+                                  {posts?.config?.list?.map((item, index) => (
+                                    <option key={index} value={item}>
+                                      {item}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div className="mb-5">
+                          <label>
+                            <div className="flex gap-2 items-center">
+                              <div className="w-24 text-sm text-black">
+                                본문
+                              </div>
+                              <div className="flex-1">
+                                <select
+                                  name="list"
+                                  id="list"
+                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                                >
+                                  <option value="1">제한없음</option>
+                                  <option value="1">로그인사용자</option>
+                                  {posts?.config?.list?.map((item, index) => (
+                                    <option key={index} value={item}>
+                                      {item}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div className="mb-5">
+                          <label>
+                            <div className="flex gap-2 items-center">
+                              <div className="w-24 text-sm text-black">
+                                글쓰기
+                              </div>
+                              <div className="flex-1">
+                                <select
+                                  name="list"
+                                  id="list"
+                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                                >
+                                  <option value="1">제한없음</option>
+                                  <option value="1">로그인사용자</option>
+                                  {posts?.config?.list?.map((item, index) => (
+                                    <option key={index} value={item}>
+                                      {item}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                        <div className="mb-5">
+                          <label>
+                            <div className="flex gap-2 items-center">
+                              <div className="w-24 text-sm text-black">
+                                댓글
+                              </div>
+                              <div className="flex-1">
+                                <select
+                                  name="list"
+                                  id="list"
+                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                                >
+                                  <option value="1">제한없음</option>
+                                  <option value="1">로그인사용자</option>
+                                  {posts?.config?.list?.map((item, index) => (
+                                    <option key={index} value={item}>
+                                      {item}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            </div>
+                          </label>
                         </div>
                       </div>
                     </div>

@@ -6,20 +6,40 @@ import Link from 'next/link'
 
 import { getUser } from '@/modules/user/scripts/userModel'
 import { deleteUser, updateUser } from '@/modules/user/scripts/userController'
+import { GroupInfo } from '@/modules/user/admin/scripts/groupModel'
 import Alert from '@plextype/components/message/Alert'
 
+interface GroupInfo {
+  id?: number | null
+  groupTitle: string | undefined
+  groupName: string | undefined
+  groupDesc: string | undefined
+  groupDefault: boolean
+  // 필요한 다른 속성들도 여기에 추가할 수 있습니다.
+}
 const DashboardUserUpdate = props => {
   const router = useRouter()
   const accessToken = localStorage.getItem('accessToken')
-  console.log(accessToken)
   const [userInfo, setUserInfo] = useState<any>()
+  const [groupList, setGroupList] = useState<GroupInfo[]>([])
   const [error, setError] = useState<{ type: string; message: string } | null>(
     null
   )
 
+  const groupListData = () => {
+    GroupInfo().then(response => {
+      console.log(response)
+      if (response.success) {
+        setGroupList(response.data)
+      }
+    })
+  }
+
   useEffect(() => {
     updateDashboardUser()
+    groupListData()
   }, [])
+
   const updateDashboardUser = async () => {
     await getUser({ id: props.userid })
       .then(response => {
@@ -31,11 +51,16 @@ const DashboardUserUpdate = props => {
       })
   }
   const updateUserInfo = async (formData: FormData) => {
+    const selectedGroups = formData.getAll('group') as string[]
+    console.log(selectedGroups)
     const params = {
       id: props.userid,
       accessToken: accessToken,
-      nickname: formData.get('nickname') as string,
-      email: formData.get('email') as string,
+      accountId: formData.get('accountId') as string,
+      nickname: formData.get('nickName') as string,
+      email: formData.get('email_address') as string,
+      isAdmin: formData.get('isAdmin') as string,
+      group: selectedGroups,
     }
     await updateUser(params)
       .then(response => {
@@ -83,6 +108,24 @@ const DashboardUserUpdate = props => {
                     <div className="col-span-2 grid grid-cols-3 gap-6">
                       <div className="col-span-3 sm:col-span-2">
                         <label>
+                          <div className="text-sm text-black mb-3">아이디</div>
+                        </label>
+                        <input
+                          type="text"
+                          name="email"
+                          className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
+                          placeholder="example@mail.com"
+                          defaultValue={userInfo.accountId}
+                        />
+
+                        <div className="text-sm text-dark-400 pt-2 font-light">
+                          기본로그인이며 계정정보를 찾을 때 사용됩니다.
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-span-2 grid grid-cols-3 gap-6">
+                      <div className="col-span-3 sm:col-span-2">
+                        <label>
                           <div className="text-sm text-black mb-3">이메일</div>
                         </label>
                         <input
@@ -90,7 +133,7 @@ const DashboardUserUpdate = props => {
                           name="email"
                           className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                           placeholder="example@mail.com"
-                          defaultValue={userInfo.email}
+                          defaultValue={userInfo.email_address}
                         />
 
                         <div className="text-sm text-dark-400 pt-2 font-light">
@@ -107,7 +150,7 @@ const DashboardUserUpdate = props => {
                           type="text"
                           name="nickname"
                           className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                          defaultValue={userInfo.nickname}
+                          defaultValue={userInfo.nickName}
                         />
 
                         <div className="text-sm text-dark-400 pt-2 font-light">
@@ -180,22 +223,28 @@ const DashboardUserUpdate = props => {
                           </div>
                         </label>
                         <div className="flex flex-wrap gap-4">
-                          <label>
-                            <div className="flex gap-2">
-                              <input type="checkbox" className=""></input>
-                              <div className="text-sm text-dark-400">
-                                준회원
-                              </div>
-                            </div>
-                          </label>
-                          <label>
-                            <div className="flex gap-2">
-                              <input type="checkbox" className=""></input>
-                              <div className="text-sm text-dark-400">
-                                정회원
-                              </div>
-                            </div>
-                          </label>
+                          {groupList.map((group, index) => {
+                            const isChecked = userInfo.userGroups.some(
+                              userGroup => userGroup.groupId === group.id
+                            )
+                            return (
+                              <label key={index}>
+                                <div className="flex gap-2">
+                                  <input
+                                    type="checkbox"
+                                    name="group"
+                                    className=""
+                                    value={String(group.id)}
+                                    checked={isChecked}
+                                    onChange={() => {}} // 필요에 따라 onChange 핸들러 추가
+                                  ></input>
+                                  <div className="text-sm text-dark-400">
+                                    {group.groupTitle}
+                                  </div>
+                                </div>
+                              </label>
+                            )
+                          })}
                         </div>
                         <div className="text-sm text-dark-400 pt-2 font-light">
                           회원은 여러그룹을 중복하여 설정할 수 있습니다.
