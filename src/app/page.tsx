@@ -79,6 +79,25 @@ export default function Page() {
                     >
                       <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
                         <div className="pt-0 lg:pt-12">
+                          <div className="flex justify-center mb-12">
+                            <motion.div
+                              whileTap={{
+                                scale: 0.97,
+                                transition: { duration: 0.3 },
+                              }}
+                              className="from-dark-500/30 via-dark-700/40 to-dark-400/70 h-32 w-32 overflow-hidden rounded-2xl bg-gradient-to-tl p-[0.5px] shadow-md shadow-black"
+                            >
+                              <div className="from-dark-800/90 via-dark-950/75 to-dark-950/90 shadow-dark-900/90 flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-b shadow-inner">
+                                <Image
+                                  src="/assets/images/brand/gjworks_white.svg"
+                                  alt="gjworks logo"
+                                  width="52"
+                                  height="52"
+                                  className="block h-24 w-24"
+                                />
+                              </div>
+                            </motion.div>
+                          </div>
                           <div className="relative flex flex-wrap justify-center px-4">
                             <motion.div
                               variants={variants}
@@ -112,7 +131,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-primary-500 px-3 py-2 text-sm text-white hover:bg-white hover:text-primary-600 lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-rose-600 px-3 py-2 text-sm text-white hover:bg-white hover:text-rose-500 lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg

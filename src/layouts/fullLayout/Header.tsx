@@ -358,7 +358,7 @@ const Header = () => {
                   />
                 </Link>
                 <div className="hidden group-hover:flex absolute top-2 -right-8">
-                  <div className="bg-primary-600 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-600 after:inline-block after:rotate-45 after:z-10 after:content-['']">
+                  <div className="bg-lime-400 text-black py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-lime-400 after:inline-block after:rotate-45 after:z-10 after:content-['']">
                     2.0
                   </div>
                 </div>
@@ -396,7 +396,7 @@ const Header = () => {
             <div className="relative col-span-2 flex items-center justify-end gap-2 lg:gap-4 lg:px-3">
               <div className="flex items-center">
                 <button
-                  className="px-2 py-2 text-gray-950 dark:text-white dark:hover:text-dark-300 hover:bg-gray-100 rounded-md dark:hover:bg-dark-700/75"
+                  className="px-2 py-2 text-gray-950 dark:text-dark-400 dark:hover:text-dark-300 hover:bg-gray-100 rounded-md dark:hover:bg-dark-700/75 dark:hover:text-white"
                   // onClick={() => setShowModal(!showModal)}
                   onClick={() => setShowRight(true)}
                 >
@@ -406,7 +406,7 @@ const Header = () => {
                     viewBox="0 0 24 24"
                     strokeWidth={1.25}
                     stroke="currentColor"
-                    className="h-5 w-5"
+                    className="h-6 w-6"
                   >
                     <path
                       strokeLinecap="round"

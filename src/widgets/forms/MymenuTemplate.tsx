@@ -29,7 +29,7 @@ const MymenuTemplate = () => {
   }
   return (
     <>
-      <div className="mx-auto min-h-screen max-w-screen-xl border-l border-gray-200 bg-white/90 dark:bg-dark-950/5 dark:border-transparent px-3 pb-10 pt-8 backdrop-blur-lg">
+      <div className="mx-auto min-h-screen max-w-screen-xl border-l border-gray-200 bg-white/90 dark:bg-dark-700/50 dark:border-transparent px-3 pb-10 pt-8 backdrop-blur-lg">
         <div className="mb-3">
           <div className="flex gap-4 px-3">
             <div className="text-xl font-semibold text-black dark:text-white">
@@ -40,7 +40,7 @@ const MymenuTemplate = () => {
         <div className="py-4">
           <div className="">
             <button
-              className="flex w-full items-center gap-4 rounded-full bg-gray-400/10 px-3 py-2 text-gray-400 backdrop-blur-lg hover:bg-gray-300/60 hover:text-gray-900"
+              className="flex w-full items-center gap-4 rounded-full bg-gray-400/10 px-3 py-2 text-gray-400 backdrop-blur-lg hover:bg-gray-300/60 hover:text-gray-900 dark:hover:text-white"
               onClick={() => setShowModal(!showModal)}
             >
               <div className="">
@@ -64,7 +64,7 @@ const MymenuTemplate = () => {
           </div>
         </div>
         <div className="h-full py-3">
-          <div className="flex h-[350px] items-center justify-center rounded-xl bg-gray-100 dark:bg-dark-700 p-5">
+          <div className="flex h-[350px] items-center justify-center rounded-xl bg-gray-100 dark:bg-dark-600/20 p-5">
             <div className="text-sm text-gray-400">알림이 없습니다.</div>
           </div>
         </div>
