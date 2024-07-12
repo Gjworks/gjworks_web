@@ -149,7 +149,7 @@ const Signin = () => {
                     type="text"
                     name="accountId"
                     ref={refInputUserId}
-                    className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none"
+                    className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none dark:text-white"
                     placeholder="Your Account ID"
                   />
                 </div>
@@ -189,7 +189,7 @@ const Signin = () => {
                     type="password"
                     name="password"
                     ref={refInputPassword}
-                    className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none"
+                    className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none dark:text-white"
                     placeholder="Your Password"
                   />
                 </div>
@@ -235,7 +235,7 @@ const Signin = () => {
               <div className="dark:via-dark-600 h-px w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
             </div>
             <div className="relative flex justify-center">
-              <span className="px-4 text-xs text-gray-400 bg-white backdrop-blur-sm">
+              <span className="px-4 text-xs text-gray-400 bg-white dark:bg-dark-950 backdrop-blur-sm">
                 OR
               </span>
             </div>

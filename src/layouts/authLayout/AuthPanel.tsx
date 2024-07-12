@@ -49,14 +49,14 @@ const Authpanel = ({ children }) => {
         className="lg:fixed right-0 bottom-0 top-0 flex justify-center items-center h-[calc(100vh-320px)] lg:h-screen"
       >
         <svg
-          className="hidden lg:block left-0 inset-y-0 h-full w-64 text-white fill-white z-20 scale-x-[-1]"
+          className="hidden lg:block left-0 inset-y-0 h-full w-64 text-white fill-white dark:fill-dark-950 z-20 scale-x-[-1]"
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
           <polygon points="50,0 100,0 50,100 0,100"></polygon>
         </svg>
-        <div className="relative ml-0 lg:-ml-32 flex-1 h-full z-30 bg-white px-0 lg:px-20">
+        <div className="relative ml-0 lg:-ml-32 flex-1 h-full z-30 bg-white dark:bg-dark-950 px-0 lg:px-20">
           <div className="lg:flex items-center h-full">
             <div className="absolute left-3 right-3 top-0">
               <motion.header
@@ -67,7 +67,7 @@ const Authpanel = ({ children }) => {
                   <div className="flex items-center justify-between py-2">
                     <a
                       onClick={() => router.back()}
-                      className="dark:text-dark-400 cursor-pointer rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 dark:hover:text-white bg-gray-100 hover:bg-gray-200"
+                      className="dark:text-dark-400 cursor-pointer rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 dark:hover:text-white bg-gray-100 hover:bg-gray-200 dark:bg-dark-700 dark:hover:bg-dark-800"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ const Authpanel = ({ children }) => {
                     {process.env.NEXT_PUBLIC_DEFAULT_URL && (
                       <Link
                         href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                        className="dark:text-dark-400 cursor-pointer rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 dark:hover:text-white bg-gray-100 hover:bg-gray-200"
+                        className="dark:text-dark-400 cursor-pointer rounded-lg px-3 py-2 text-gray-500 hover:text-gray-900 dark:hover:text-white bg-gray-100 hover:bg-gray-200 dark:bg-dark-700 dark:hover:bg-dark-800"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +109,7 @@ const Authpanel = ({ children }) => {
                 </div>
               </motion.header>
             </div>
-            <div className="w-full pt-10 lg:pt-0 lg:w-[32rem] px-3 overflow-hidden z-50 bg-white">
+            <div className="w-full pt-10 lg:pt-0 lg:w-[32rem] px-3 overflow-hidden z-50 bg-white dark:bg-dark-950">
               <motion.div className="w-full">{children}</motion.div>
               <footer>
                 <div className="mx-auto max-w-screen-sm pb-10 pt-5">

@@ -8,7 +8,9 @@ const ProfileComponent = ({ profileName, profileEmail }) => {
           <div className="rounded-full w-24 h-24 bg-gray-200"></div>
         </div>
         <div className="flex items-center justify-center gap-2 pb-2">
-          <div className="text-gray-950 text-xl font-medium">{profileName}</div>
+          <div className="text-gray-950 dark:text-white text-xl font-medium">
+            {profileName}
+          </div>
           <div className="flex items-center border-[0.5px] border-indigo-600 bg-indigo-100 text-indigo-600 py-[0.5px] px-2 rounded-lg text-[12px]">
             PREMIUM
           </div>

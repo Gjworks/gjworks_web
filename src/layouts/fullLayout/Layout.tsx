@@ -9,8 +9,6 @@ const FullLayout = ({ children }) => {
       <div className="relative z-20">
         <Header />
         <main className="h-full px-0 ">
-          <SubNav />
-
           <div className="relative h-full">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
@@ -46,7 +44,7 @@ const FullLayout = ({ children }) => {
             </svg>
           </motion.button>
         )} */}
-        <footer className="pb-8 border-t border-gray-100 pt-6">
+        <footer className="pb-8 pt-6">
           <div className="mx-auto max-w-screen-xl">
             <Footer />
           </div>

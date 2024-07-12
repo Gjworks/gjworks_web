@@ -72,10 +72,10 @@ const DefaultNav = ({ list, params }) => {
                 ref={el => (tabsRef.current[index] = el)}
                 onClick={() => setActiveTabIndex(index)}
                 className={
-                  'block whitespace-nowrap py-4 px-1 text-sm hover:text-gray-950 ' +
+                  'block whitespace-nowrap py-4 px-1 text-sm hover:text-gray-950 dark:hover:text-dark-300 ' +
                   (pathname === item.route
-                    ? 'text-gray-950 hover:text-gray-400'
-                    : 'text-gray-400')
+                    ? 'text-gray-950 hover:text-gray-400 dark:text-white dark:hover:text-dark-200'
+                    : 'text-gray-600 dark:text-dark-300')
                 }
               >
                 {item.title}
@@ -83,7 +83,7 @@ const DefaultNav = ({ list, params }) => {
             )
           })}
         <div
-          className="absolute bottom-0 block h-1 bg-gray-950 transition-all duration-300"
+          className="absolute bottom-0 block h-1 bg-gray-950 dark:bg-white transition-all duration-300"
           style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
         ></div>
       </div>

@@ -7,7 +7,7 @@ const Page = () => {
     <>
       <div className="max-w-screen-xl mx-auto px-3">
         <div className="flex items-center pt-10 pb-16 gap-4">
-          <div>
+          <div className="dark:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -23,7 +23,7 @@ const Page = () => {
               />
             </svg>
           </div>
-          <div>
+          <div className="dark:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -39,25 +39,25 @@ const Page = () => {
               />
             </svg>
           </div>
-          <div className="text-xs font-bold text-gray-400 uppercase">
+          <div className="text-xs font-bold text-gray-400 dark:text-gray-600 uppercase">
             Service
           </div>
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto px-3 pb-20">
-        <div className="text-6xl font-extrabold text-gray-950 uppercase mb-12">
+        <div className="text-6xl font-extrabold text-gray-950 dark:text-white uppercase mb-12">
           Service <span className="font-thin">⌘ ⌥ ⇧</span>
         </div>
-        <div className="text-3xl font-bold text-gray-700">
+        <div className="text-3xl font-bold text-gray-700 dark:text-dark-400">
           효율적인 업무 진행에
         </div>
-        <div className="text-3xl font-bold text-gray-700">
+        <div className="text-3xl font-bold text-gray-700 dark:text-dark-400">
           필요한 모든 것이 한 곳에
         </div>
       </div>
       <div className="pb-20 pt-20">
         <div className="realtive max-w-[2560px] mx-auto">
-          <div className="text-7xl lg:text-9xl font-extrabold text-gray-100 uppercase">
+          <div className="text-7xl lg:text-9xl font-extrabold text-gray-100 dark:text-dark-600/40 uppercase">
             SERVICE Create
           </div>
         </div>

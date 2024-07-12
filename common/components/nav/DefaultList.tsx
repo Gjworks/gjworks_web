@@ -52,6 +52,21 @@ const DefaultList = ({ list, loggedInfo, callback }: DefaultListProps) => {
     <>
       {list &&
         list.map((item, index) => {
+          if (item.name === 'divider') {
+            return (
+              <div key={index} className="block py-2">
+                <div className="h-[1px] bg-gray-200/75 dark:bg-dark-700/75"></div>
+              </div>
+            )
+          }
+          // if (item.route === '#right') {
+          //   return (
+          //     <div key={index} className="block py-2">
+          //       <div className="h-[1px] bg-gray-200/75">
+          //       </div>
+          //     </div>
+          //   )
+          // }
           return (
             <div key={index}>
               <motion.div variants={innerAnimation}>

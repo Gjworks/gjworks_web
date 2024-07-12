@@ -26,10 +26,10 @@ const FootAlert = () => {
         className="transition transform z-100 bottom-0 inset-x-0 pb-2 sm:py-5 opacity-100 scale-100 translate-y-0 ease-out duration-500 lg:mb-0 hover:translate-y-1 hover:transition-all hover:duration-300"
       >
         <div className="px-3">
-          <div className="p-3 rounded-xl bg-gray-900 shadow-lg shadow-gray-400">
+          <div className="p-3 rounded-xl bg-gray-900 dark:bg-dark-700/75 shadow-lg shadow-gray-400 dark:shadow-dark-950">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div className="w-0 flex-1 flex items-center px-3">
-                <div className="inline-block lg:flex gap-4 items-center font-medium text-white">
+                <div className="inline-block lg:flex gap-4 items-center font-medium text-white dark:text-dark-50">
                   <div className="">
                     <span className="text-base">Plextype</span> Beta release!
                   </div>
@@ -45,7 +45,7 @@ const FootAlert = () => {
                   <a
                     href="http://plextype.com"
                     target="_blank"
-                    className="flex items-center gap-2 justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-900 bg-white hover:text-gray-800 focus:outline-none focus:underline"
+                    className="flex items-center gap-2 justify-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-900 bg-white dark:bg-dark-950 dark:text-white hover:text-gray-800 focus:outline-none focus:underline"
                   >
                     Learn more
                     <span>
@@ -67,14 +67,14 @@ const FootAlert = () => {
                   </a>
                 </div>
               </div>
-              <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
+              <div className="order-2 flex-shrink-0 sm:order-3">
                 <button
                   type="button"
-                  className="-mr-1 flex p-2 rounded-md hover:bg-gray-700/70 focus:outline-none focus:bg-gray-800"
+                  className="-mr-1 flex p-2 rounded-md hover:bg-gray-700/70 dark:hover:bg-dark-950 focus:outline-none focus:bg-gray-800 "
                   aria-label="Hide banner"
                 >
                   <svg
-                    className="h-6 w-6 text-white"
+                    className="h-6 w-6 text-white dark:text-white"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"

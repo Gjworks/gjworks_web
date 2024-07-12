@@ -29,10 +29,12 @@ const MymenuTemplate = () => {
   }
   return (
     <>
-      <div className="mx-auto min-h-screen max-w-screen-xl border-l border-gray-200 bg-white/90 px-3 pb-10 pt-8 backdrop-blur-lg">
+      <div className="mx-auto min-h-screen max-w-screen-xl border-l border-gray-200 bg-white/90 dark:bg-dark-950/5 dark:border-transparent px-3 pb-10 pt-8 backdrop-blur-lg">
         <div className="mb-3">
           <div className="flex gap-4 px-3">
-            <div className="text-xl font-semibold text-black">알림센터</div>
+            <div className="text-xl font-semibold text-black dark:text-white">
+              알림센터
+            </div>
           </div>
         </div>
         <div className="py-4">
@@ -62,7 +64,7 @@ const MymenuTemplate = () => {
           </div>
         </div>
         <div className="h-full py-3">
-          <div className="flex h-[350px] items-center justify-center rounded-xl bg-gray-100 p-5">
+          <div className="flex h-[350px] items-center justify-center rounded-xl bg-gray-100 dark:bg-dark-700 p-5">
             <div className="text-sm text-gray-400">알림이 없습니다.</div>
           </div>
         </div>

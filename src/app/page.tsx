@@ -63,12 +63,11 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative max-w-screen-2xl mx-auto px-3">
-            <div className="relative rounded-3xl">
-              <div className="relative rounded-3xl bg-[url('/assets/images/bg41.jpg')] bg-cover bg-center bg-no-repeat">
+          <div className="relative">
+            <div className="relative">
+              <div className="relative bg-[url('/assets/images/bg36.jpg')] bg-cover bg-no-repeat bg-center">
                 {/*  */}
-                <div className="absolute inset-0 bg-gray-950/70 rounded-3xl"></div>
-                {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div> */}
+                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
                 <div className="relative mx-auto flex max-w-screen-lg items-center gap-8 pb-20 pt-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -85,14 +84,14 @@ export default function Page() {
                               variants={variants}
                               className="mb-5 px-1  lg:mb-2"
                             >
-                              <div className="flex flex-wrap gap-2 text-5xl font-semibold !leading-tight tracking-tighter text-white md:text-6xl lg:gap-0 dark:text-white">
+                              <div className="flex flex-wrap gap-2 text-5xl font-semibold !leading-tight tracking-tighter text-black md:text-6xl lg:gap-0 dark:text-white">
                                 Building digital experience
                               </div>
                             </motion.div>
 
                             <motion.div
                               variants={variants}
-                              className="mb-10 pl-0 text-5xl font-semibold tracking-tighter text-white md:text-6xl dark:text-white"
+                              className="mb-10 pl-0 text-5xl font-semibold tracking-tighter text-black md:text-6xl dark:text-white"
                             >
                               Creative platform service
                             </motion.div>
@@ -103,9 +102,9 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto mb-6 max-w-lg py-3"
                           >
-                            <div className="flex gap-8 rounded-full bg-black/20 p-2 backdrop-blur-lg lg:p-3">
+                            <div className="flex gap-8 rounded-full bg-gray-200/75 dark:bg-dark-700/25 p-2 backdrop-blur-lg lg:p-3">
                               <div className="flex flex-1 items-center px-3">
-                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-white/40">
+                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-700">
                                   Launch Your Service.
                                 </div>
                               </div>
@@ -141,7 +140,7 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-2/5"
                           >
-                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-600/40 p-3 ">
+                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-300/40 p-3 ">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 50.44096 49.52621"
@@ -163,7 +162,7 @@ export default function Page() {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <div className="dark:text-dark-300 mb-2 text-left text-sm text-gray-200">
+                              <div className="dark:text-dark-300 mb-2 text-left text-sm text-gray-900">
                                 OpenSource Projects
                               </div>
                               <div className="dark:text-dark-500 text-left text-xs text-gray-500">
@@ -178,55 +177,7 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="absolute left-0 top-0 rounded-br-3xl bg-white before:w-10 before:h-10 before:absolute before:-top-[2px] before:-right-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:rotate-90 after:w-10 after:h-10 after:absolute after:left-[-2px] after:-bottom-[38px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:rotate-90">
-                <div className="pr-2 md:pr-3 pb-3 md:pb-2">
-                  <div className="flex gap-4 cursor-pointer rounded-tr-2xl rounded-br-2xl rounded-bl-2xl hover:bg-gray-100 pb-3 px-8 pt-3">
-                    <button
-                      onClick={() => {
-                        setShowPopup(true)
-                      }}
-                      className="flex text-2xl "
-                    >
-                      <span className="font-extrabold text-gray-950">plex</span>
-                      <span className="font-normal text-gray-400">type</span>
-                    </button>
-                    <div className="flex items-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-4 h-4"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button
-                onClick={() => {
-                  setShowPopup2(true)
-                }}
-                className="absolute right-0 bottom-0 rounded-tl-3xl bg-white before:w-10 before:h-10 before:absolute before:right-[-2px] before:-top-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:-rotate-90 after:w-10 after:h-10 after:absolute after:-left-[38px] after:-bottom-[2px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:-rotate-90"
-              >
-                <div className="pl-2 pt-2">
-                  <div className="block bg-black rounded-3xl border border-gray-900 shadow-lg shadow-gray-400 hover:shadow-gray-500 cursor-pointer transition-all duration-300">
-                    <div className="px-6 py-6 w-[270px] md:h-[290px]">
-                      <div className="flex-1 w-full">
-                        <div className="text-lg font-bold cursor-pointer text-black">
-                          서비스 제안하기
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </button>
+              {/* <div className="absolute left-0 top-0 rounded-br-3xl bg-white dark:bg-dark-950 before:w-10 before:h-10 before:absolute before:-top-[2px] before:-right-[38px] before:bg-[url('/assets/svg/roundBox.svg')] before:bg-no-repeat before:rotate-90 after:w-10 after:h-10 after:absolute after:left-[-2px] after:-bottom-[38px] after:bg-[url('/assets/svg/roundBox.svg')] after:bg-no-repeat after:rotate-90"></div> */}
             </div>
           </div>
           <motion.div
@@ -647,14 +598,14 @@ export default function Page() {
                 <div className="flex justify-center">
                   <motion.div
                     variants={variants}
-                    className="dark:text-dark-200/40 inline text-center text-5xl font-black text-gray-400/20 md:text-[5.5rem]"
+                    className="dark:text-dark-200/40 inline text-center text-5xl font-black text-gray-400/20 dark:text-dark-600/75 md:text-[5.5rem]"
                   >
                     WE ARE CRATEIVE
                   </motion.div>
                 </div>
                 <motion.div
                   variants={variants}
-                  className="-mt-8 text-center text-2xl font-light text-gray-900 xl:text-4xl"
+                  className="-mt-8 text-center text-2xl font-light text-gray-900 dark:text-dark-100 xl:text-4xl"
                 >
                   Responsive everything
                 </motion.div>

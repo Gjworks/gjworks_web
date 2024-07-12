@@ -70,13 +70,13 @@ const PostsRead = () => {
           </div>
         </div>
       </div>
-      <div className="sticky top-0 bg-white/75 backdrop-blur-lg z-99 pt-1 border-b border-gray-100">
+      <div className="sticky top-0 bg-white/75 dark:bg-dark-950/75 backdrop-blur-lg z-99 pt-1 border-b border-gray-100 dark:border-dark-800">
         <div className="mx-auto  max-w-screen-md px-3">
           <div className="flex items-center gap-2">
-            <div className="bg-primary-400 text-white text-xs px-4 py-1 rounded-full">
+            <div className="bg-primary-400 text-white dark:text-white text-xs px-4 py-1 rounded-full">
               기술공유
             </div>
-            <div className="text-base md:text-lg font-light text-gray-950 py-4">
+            <div className="text-base md:text-lg font-light text-gray-950 dark:text-white py-4">
               <div className=" line-clamp-1">
                 To implement authentication in Next.js, familiarize yourself
                 with three foundational concepts
@@ -85,7 +85,7 @@ const PostsRead = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white">
+      <div className="bg-white dark:bg-dark-950">
         <div className="mx-auto max-w-[2560px]">
           <div className="mx-auto max-w-screen-md">
             <div className="flex items-center justify-between gap-8 pt-5 pb-3 px-3">
@@ -127,10 +127,10 @@ const PostsRead = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-4 justify-between border-t border-b border-gray-100 py-2">
+            <div className="flex items-center gap-4 justify-between border-t border-b border-gray-100 dark:border-dark-800 py-2">
               <div className="flex gap-4 px-3">
                 <div className="flex gap-1 items-center">
-                  <div>
+                  <div className=" dark:text-dark-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -146,15 +146,17 @@ const PostsRead = () => {
                       />
                     </svg>
                   </div>
-                  <div className="text-xs text-gray-500">12</div>
+                  <div className="text-xs text-gray-500 dark:text-dark-500">
+                    12
+                  </div>
                 </div>
                 <div className="flex gap-1">
                   <div className="flex items-center">
-                    <span className="w-5 h-5 bg-gray-500 rounded-full inline"></span>
-                    <span className="w-5 h-5 bg-gray-400 rounded-full inline -ml-2"></span>
-                    <span className="w-5 h-5 bg-gray-300 rounded-full inline -ml-2"></span>
-                    <span className="w-5 h-5 bg-gray-200 rounded-full inline -ml-2"></span>
-                    <span className="w-5 h-5 bg-gray-100 rounded-full inline -ml-2"></span>
+                    <span className="w-5 h-5 bg-gray-500 dark:bg-dark-400 rounded-full inline"></span>
+                    <span className="w-5 h-5 bg-gray-400 dark:bg-dark-500 rounded-full inline -ml-2"></span>
+                    <span className="w-5 h-5 bg-gray-300 dark:bg-dark-600 rounded-full inline -ml-2"></span>
+                    <span className="w-5 h-5 bg-gray-200 dark:bg-dark-700 rounded-full inline -ml-2"></span>
+                    <span className="w-5 h-5 bg-gray-100 dark:bg-dark-800 rounded-full inline -ml-2"></span>
                     <span className="-ml-2 text-gray-500 hover:text-primary-600 cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +205,7 @@ const PostsRead = () => {
               </div>
               <div>
                 <div className="flex items-center gap-2 lg:gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300/75 bg-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300/75 bg-white dark:bg-dark-800 dark:text-dark-500 dark:border-dark-600">
                     <div className="">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +223,7 @@ const PostsRead = () => {
                       </svg>
                     </div>
                   </div>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300/75 bg-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300/75 bg-white dark:bg-dark-800 dark:text-dark-500 dark:border-dark-600">
                     <div className="">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -348,7 +350,7 @@ const PostsRead = () => {
                 </div>
                 <div className="hidden order-0 w-full pb-20 lg:order-1">
                   <div className="">
-                    <div className="dark:border-dark-700 rounded-lg border border-gray-200 p-5">
+                    <div className="rounded-lg border border-gray-200 dark:border-dark-800 p-5">
                       <div className="mb-5 text-base text-gray-950 dark:text-white">
                         제품 정보
                       </div>
@@ -389,7 +391,7 @@ const PostsRead = () => {
             </div>
           </div>
         </div>
-        <div className="dark:bg-dark-900 border-t border-gray-100"></div>
+        <div className="dark:bg-dark-900 border-t border-gray-100 dark:border-dark-800"></div>
         <div className="mx-auto max-w-screen-md px-3 pt-10">
           <div className="mb-5 text-lg text-black dark:text-white">
             Comments (6)
@@ -397,7 +399,7 @@ const PostsRead = () => {
           <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl h-full">
             <div className="">
               <textarea
-                className="w-full border-none outline-none text-sm text-gray-900 rounded-xl p-5 focus:shadow-lg focus:shadow-gray-200"
+                className="w-full hover:border outline-none text-sm text-gray-900 dark:text-white rounded-xl p-5 dark:bg-dark-950 dark:border-dark-950 dark:hover:border-primary-600"
                 rows={4}
                 placeholder="Generate a project kickoff presentation for /meeting"
               ></textarea>

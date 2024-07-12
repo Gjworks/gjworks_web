@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html className="break-keep selection:bg-black selection:text-white dark:selection:text-white">
+    <html className="dark break-keep selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
       <head />
       <body>
         <ReduxProviders>{children}</ReduxProviders>

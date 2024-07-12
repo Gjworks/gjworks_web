@@ -105,7 +105,7 @@ const Register = () => {
                 type="text"
                 name="accountId"
                 id="accountId"
-                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75"
+                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
                 placeholder="example@mail.com"
               />
             </div>
@@ -122,7 +122,7 @@ const Register = () => {
                 type="password"
                 name="password"
                 id=""
-                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75"
+                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
                 placeholder="User Password"
               />
             </div>
@@ -141,7 +141,7 @@ const Register = () => {
                 type="text"
                 name="nickName"
                 id=""
-                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75"
+                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
                 placeholder="User nick name"
               />
             </div>
@@ -160,7 +160,7 @@ const Register = () => {
             <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-dark-600 to-transparent"></div>
           </div>
           <div className="relative flex justify-center">
-            <span className="backdrop-blur-sm px-4 text-xs text-dark-400 bg-white">
+            <span className="backdrop-blur-sm px-4 text-xs text-dark-400 bg-white dark:bg-dark-950">
               OR
             </span>
           </div>
