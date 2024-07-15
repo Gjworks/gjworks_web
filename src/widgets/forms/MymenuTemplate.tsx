@@ -29,7 +29,7 @@ const MymenuTemplate = () => {
   }
   return (
     <>
-      <div className="mx-auto min-h-screen max-w-screen-xl border-l border-gray-200 bg-white/90 dark:bg-dark-700/50 dark:border-transparent px-3 pb-10 pt-8 backdrop-blur-lg">
+      <div className="mx-auto min-h-screen max-w-screen-xl border-l border-gray-200 bg-white/90 dark:bg-dark-900/80 dark:border-transparent px-3 pb-10 pt-8 backdrop-blur-lg">
         <div className="mb-3">
           <div className="flex gap-4 px-3">
             <div className="text-xl font-semibold text-black dark:text-white">

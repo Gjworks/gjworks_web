@@ -32,8 +32,8 @@ const SideNavTemplate = props => {
               className={
                 'flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 lg:px-3 ' +
                 (pathname === '/'
-                  ? 'bg-gray-950 text-white'
-                  : 'hover:bg-gray-200 hover:text-black')
+                  ? 'bg-gray-950 text-white dark:bg-dark-950 dark:text-white'
+                  : 'hover:bg-gray-200 hover:text-black dark:text-dark-400 dark:hover:bg-dark-950/80 dark:hover:text-white')
               }
             >
               <span>
@@ -56,7 +56,7 @@ const SideNavTemplate = props => {
           <motion.div variants={variants}>
             <Link
               href="/"
-              className="flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 hover:bg-gray-200 hover:text-black lg:px-3"
+              className="flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 hover:bg-gray-200 hover:text-black lg:px-3 dark:text-dark-400 dark:hover:bg-dark-950/80 dark:hover:text-white"
             >
               <span>
                 <svg
@@ -91,8 +91,8 @@ const SideNavTemplate = props => {
                     className={
                       'flex items-center space-x-2 rounded-md px-2 py-2 lg:px-3 ' +
                       (pathname === data[1].route
-                        ? 'bg-gray-950 text-white dark:text-white'
-                        : 'dark:text-dark-400 text-gray-900 hover:bg-gray-200 hover:text-black dark:hover:text-white')
+                        ? 'bg-gray-950 text-white dark:bg-dark-950 dark:text-white'
+                        : 'dark:text-dark-400 text-gray-900 hover:bg-gray-200 hover:text-black dark:hover:bg-dark-950/80 dark:hover:text-white')
                     }
                   >
                     <span>
@@ -124,12 +124,12 @@ const SideNavTemplate = props => {
       <motion.div className="px-3">
         <div className="space-y-1">
           <motion.div className="mb-1 px-2 pb-2 pt-5 text-xs font-semibold text-gray-950/40 dark:text-white">
-            Default
+            Link
           </motion.div>
           <motion.div variants={variants}>
             <Link
               href="/"
-              className="flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 hover:bg-gray-200 hover:text-black lg:px-3"
+              className="flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 hover:bg-gray-200 hover:text-black lg:px-3 dark:text-dark-400 dark:hover:bg-dark-950/80 dark:hover:text-white"
             >
               <span>
                 <svg
@@ -151,7 +151,7 @@ const SideNavTemplate = props => {
           <motion.div variants={variants}>
             <Link
               href="/"
-              className="flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 hover:bg-gray-200 hover:text-black lg:px-3"
+              className="flex items-center space-x-2 rounded-md px-2 py-2 text-gray-900 hover:bg-gray-200 hover:text-black lg:px-3 dark:text-dark-400 dark:hover:bg-dark-950/80 dark:hover:text-white"
             >
               <span>
                 <svg

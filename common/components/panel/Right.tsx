@@ -99,7 +99,7 @@ const Right = ({ state, close, children }) => {
               variants={variants2}
               exit={exit2}
               onClick={handleClosePanel}
-              className="z-90 fixed inset-0 bg-gray-950/20"
+              className="z-90 fixed inset-0 bg-gray-950/20 dark:bg-dark-800/20"
             ></motion.div>
           </RightPortal>
         )}

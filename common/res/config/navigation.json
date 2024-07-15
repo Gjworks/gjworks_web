@@ -1,31 +1,31 @@
 {
   "header": {
-    "platforms": {
-      "name": "platforms",
-      "title": "My Platforms",
-      "route": "/platforms",
+    "service": {
+      "name": "service",
+      "title": "Service",
+      "route": "/service",
       "icon": "",
       "subMenu": [
         {
-            "title": "Works",
+            "title": "Service",
             "name": "works",
             "icon": "",
-            "parent": "works",
-            "route": "/posts/works"
+            "parent": "service",
+            "route": "/service"
         },
         {
-            "title": "작업이력",
-            "name": "workHistory",
+            "title": "App",
+            "name": "applications",
             "icon": "",
-            "parent": "works",
-            "route": "/posts/workHistory"
+            "parent": "service",
+            "route": "/applications"
         },
         {
-            "title": "개발팁",
-            "name": "devTip",
+            "title": "Maintenance",
+            "name": "maintenance",
             "icon": "",
-            "parent": "works",
-            "route": "/posts/devTip"
+            "parent": "service",
+            "route": "/maintenance"
         }
         ]
     },
@@ -35,15 +35,8 @@
       "route": "/posts/works",
       "icon": "",
       "subMenu": [
+        
         ]
-    },
-    "service": {
-      "name": "service",
-      "title": "Service",
-      "route": "/service",
-      "icon": "",
-      "subMenu": [
-      ]
     },
     "supports": {
       "name": "supports",

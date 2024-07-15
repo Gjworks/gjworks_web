@@ -53,7 +53,7 @@ const Left = ({ state, close, children, width }) => {
           <LeftPortal>
             <motion.div className="bg-transition z-90 fixed inset-0 transform overflow-auto">
               <div
-                className="z-99 absolute inset-0  bg-gray-800/20"
+                className="z-99 absolute inset-0 dark:bg-dark-800/20 bg-gray-800/20"
                 onClick={handleClosePanel}
               ></div>
               <motion.div

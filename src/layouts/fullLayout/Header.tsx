@@ -218,7 +218,7 @@ const Header = () => {
         }
       >
         <div className="mo">
-          <div className="grid grid-cols-5 gap-4 px-3 py-4">
+          <div className="grid grid-cols-5 gap-4 px-3 py-2">
             <div className="relative col-span-2 flex justify-start">
               <button
                 onClick={() => {
@@ -230,8 +230,8 @@ const Header = () => {
                 <div className="relative flex h-5 w-5 cursor-pointer">
                   <div className="z-50">
                     {/* <div className="transition-all absolute left-0 top-[3px] h-[1px] w-2 group-hover:w-3 bg-black dark:bg-white"></div> */}
-                    <div className="absolute left-0 top-[6px] h-[1px] w-4 bg-black transition-all group-hover:w-2"></div>
-                    <div className="absolute left-0 top-[12px] h-[1px] w-3 bg-black transition-all group-hover:w-4"></div>
+                    <div className="absolute left-0 top-[6px] h-[1px] w-4 bg-black dark:bg-white transition-all group-hover:w-2"></div>
+                    <div className="absolute left-0 top-[12px] h-[1px] w-3 bg-black dark:bg-white transition-all group-hover:w-4"></div>
                   </div>
                 </div>
               </button>
@@ -357,7 +357,7 @@ const Header = () => {
                     className="block dark:hidden lg:h-10 lg:w-10 h-8 w-8"
                   />
                 </Link>
-                <div className="hidden group-hover:flex absolute top-2 -right-8">
+                <div className="hidden group-hover:flex absolute top-0.5 lg:top-2 -right-8">
                   <div className="bg-lime-400 text-black py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-lime-400 after:inline-block after:rotate-45 after:z-10 after:content-['']">
                     2.0
                   </div>
