@@ -34,11 +34,8 @@ const Header = () => {
   const pathname = usePathname()
 
   const [showLeft, setShowLeft] = useState(false)
-
+  const [subMenuState, setSubMenuState] = useState(false)
   const [showNavigation, setShowNavigation] = useState(false)
-  const [showNavigationList, setShowNavigationList] = useState<NavType[]>()
-  const [background, setBackground] = useState('')
-  const [scrollPosition, setScrollPosition] = useState(0)
   const [currentPage, setCurrentPage] = useState<Inspage | undefined>()
   const [showRight, setShowRight] = useState(false)
 
@@ -59,23 +56,12 @@ const Header = () => {
     }
   }, [pathname, currentPage])
 
-  useEffect(() => {}, [currentPage])
-
-  useEffect(() => {
-    const updatePosition = () => {
-      setScrollPosition(window.pageYOffset)
-    }
-
-    window.addEventListener('scroll', updatePosition)
-
-    return () => window.removeEventListener('scroll', updatePosition)
-  }, [])
-
   const closeLeft = close => {
     setShowLeft(close)
   }
   const handleClickOutside = () => {
     setShowNavigation(false)
+    setSubMenuState(false)
   }
   useEffect(() => {
     document.addEventListener('click', handleClickOutside, true)
@@ -83,131 +69,37 @@ const Header = () => {
       document.removeEventListener('click', handleClickOutside, true)
     }
   }, [])
-  useEffect(() => {
-    setTimeout(() => {
-      window.addEventListener('scroll', handleScroll)
-    }, 1000)
-    return () => {
-      window.removeEventListener('scroll', handleScroll) //clean up
-    }
-  }, [])
 
-  const handleScroll = () => {
-    setShowNavigation(false)
-    // console.log('scrolled')
-  }
-
-  const headerInitial = {
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-    },
-  }
-  const initial = {
-    opacity: 0,
-    y: '0%',
-    transition: {
-      duration: 0.5,
-    },
-  }
-  const fixedVariants = {
-    open: {
-      opacity: 1,
-      display: 'block',
-      transition: {
-        duration: 0.5,
-      },
-    },
-    close: {
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-      },
-      transitionEnd: {
-        display: 'none',
-      },
-    },
-  }
-  const headerVariants = {
-    open: {
-      opacity: 1,
-      y: '0%',
-      // display: 'block',
-      transition: {
-        duration: 0.5,
-      },
-    },
-    close: {
-      opacity: 0,
-      y: '-100%',
-      transition: {
-        duration: 0.5,
-      },
-      // transitionEnd: {
-      //   display: 'none',
-      // },
-    },
-  }
-  const wrapVariants = {
-    open: {
-      opacity: 1,
-      y: '0%',
-      transition: {
-        duration: 0.5,
-      },
-    },
-    close: {
-      opacity: 0,
-      y: '-100%',
-      transition: {
-        duration: 0.5,
-      },
-    },
+  const handleMouseEnter = () => {
+    setSubMenuState(true)
   }
   const variants = {
-    // open: {
-    //   opacity: 1,
-    //   display: 'block',
-    //   transition: {
-    //     duration: 1.5,
-    //   },
-    // },
-    // close: {
-    //   opacity: 0,
-    //   transition: {
-    //     duration: 0.5,
-    //   },
-    //   transitionEnd: {
-    //     display: 'none',
-    //   },
-    // },
+    openSubMenu: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5, staggerChildren: 0.1 },
+    },
+    closeSubMenu: {
+      x: -25,
+      opacity: 0,
+      transition: { duration: 0.5, staggerChildren: 0.1, staggerDirection: -1 },
+    },
+  }
 
-    onscreen: {
+  const variants2 = {
+    openSubMenu: {
+      x: 0,
       opacity: [0, 1],
       transition: {
-        y: { stiffness: 300, velocity: -100 },
+        duration: 0.4,
       },
     },
-    offscreen: {
+    closeSubMenu: {
+      x: -25,
       opacity: 0,
-      transition: {
-        y: { stiffness: 300 },
-      },
     },
   }
 
-  const subMenuVariants = {
-    onscreen: {
-      transition: { staggerChildren: 0.2, delayChildren: 0.2 },
-    },
-    offscreen: {
-      transition: { staggerChildren: 0.2, staggerDirection: -1 },
-    },
-  }
-
-  const subNavigationView = showNavigationList => {
-    return <></>
-  }
   return (
     <>
       <motion.header
@@ -222,7 +114,6 @@ const Header = () => {
             <div className="relative col-span-2 flex justify-start">
               <button
                 onClick={() => {
-                  setBackground('dark:bg-dark-950 bg-white')
                   setShowLeft(!showLeft)
                 }}
                 className="group flex lg:hidden items-center px-2"
@@ -266,47 +157,131 @@ const Header = () => {
                     // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                     // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
                   >
+                    <Link
+                      href="/service"
+                      onMouseEnter={() => handleMouseEnter()}
+                      className={
+                        'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
+                        (currentPage?.route === '/service'
+                          ? 'text-gray-400 dark:text-white'
+                          : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
+                      }
+                    >
+                      <div>Service</div>
+                      <>
+                        <div className="">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="size-3"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                            />
+                          </svg>
+                        </div>
+                      </>
+                    </Link>
+
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={
+                        subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
+                      }
+                      variants={variants}
+                      className="absolute text-white top-16 w-[430px] dark:bg-dark-900 backdrop-blur-lg rounded-lg border border-dark-700/50 p-6 shadow-lg shadow-dark-950 overflow-hidden"
+                    >
+                      <div className="">
+                        <motion.div className="mb-4" variants={variants}>
+                          <div className="flex gap-4 items-center text-white font-bold mb-2 text-base">
+                            <div>Plextype</div>
+                            <span className="py-0.5 px-3 rounded-md text-xs bg-rose-500 text-white">
+                              0.1.3
+                            </span>
+                          </div>
+                          <div className="text-sm text-gray-400">
+                            Next.js, Prisma.js 등을 활용하여 간단한 웹서비스를
+                            고급스럽게 제작하기 위한 웹 컴포넌트
+                          </div>
+                        </motion.div>
+                        <motion.div className="mb-4" variants={variants}>
+                          <div className="flex gap-4 items-center text-white font-bold mb-2 text-base">
+                            <div>Plextype</div>
+                            <span className="py-0.5 px-3 rounded-md text-xs bg-lime-400 text-black">
+                              0.1.3
+                            </span>
+                          </div>
+                          <div className="text-sm text-gray-400">
+                            Next.js, Prisma.js 등을 활용하여 간단한 웹서비스를
+                            고급스럽게 제작하기 위한 웹 컴포넌트
+                          </div>
+                        </motion.div>
+                        <motion.div className="mb-4" variants={variants}>
+                          <div className="flex gap-4 items-center text-white font-bold mb-2 text-base">
+                            <div>Plextype</div>
+                            <span className="py-0.5 px-3 rounded-md text-xs bg-purple-600 text-white">
+                              0.1.3
+                            </span>
+                          </div>
+                          <div className="text-sm text-gray-400">
+                            Next.js, Prisma.js 등을 활용하여 간단한 웹서비스를
+                            고급스럽게 제작하기 위한 웹 컴포넌트
+                          </div>
+                        </motion.div>
+                      </div>
+                    </motion.div>
+
                     {nav.header &&
                       Object.entries(nav.header).map((data, index) => {
                         return (
-                          <div key={data[1].name} className="flex items-center">
-                            <Link
-                              href={data[1].route}
-                              onMouseEnter={() => {
-                                //   setShowNavigation(true);
-                                // showNavigation &&
-                                //   setShowNavigationList(data[1].subMenu);
-                                // setShowDropdown(!showDropdown);
-                              }}
-                              className={
-                                'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
-                                (currentPage?.route === data[1].route
-                                  ? 'text-gray-400 dark:text-white'
-                                  : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
-                              }
-                            >
-                              <div>{data[1].title}</div>
-                              {data[1].subMenu.length > 0 ? (
-                                <div className="">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth={2}
-                                    stroke="currentColor"
-                                    className="size-3"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                                    />
-                                  </svg>
-                                </div>
-                              ) : (
-                                ''
-                              )}
-                            </Link>
+                          <div
+                            key={data[1].name}
+                            className="relative flex items-center"
+                          >
+                            {data[1].name === 'service' ? (
+                              ''
+                            ) : (
+                              <>
+                                <Link
+                                  href={data[1].route}
+                                  className={
+                                    'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
+                                    (currentPage?.route === data[1].route
+                                      ? 'text-gray-400 dark:text-white'
+                                      : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
+                                  }
+                                >
+                                  <div>{data[1].title}</div>
+                                  {data[1].subMenu.length > 0 ? (
+                                    <>
+                                      <div className="">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          strokeWidth={2}
+                                          stroke="currentColor"
+                                          className="size-3"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                                          />
+                                        </svg>
+                                      </div>
+                                    </>
+                                  ) : (
+                                    ''
+                                  )}
+                                </Link>
+                              </>
+                            )}
                           </div>
                         )
                       })}
@@ -449,185 +424,6 @@ const Header = () => {
       <Right state={showRight} close={closeRight}>
         <MymenuTemplate />
       </Right>
-      <motion.div
-        initial={headerInitial}
-        animate={showNavigation === true ? 'open' : 'close'}
-        variants={fixedVariants}
-        className="z-99 fixed bottom-0 left-0 right-0 top-0 bg-gray-950/70 backdrop-blur-sm dark:bg-transparent"
-      ></motion.div>
-      <motion.div
-        initial={headerInitial}
-        animate={showNavigation === true ? 'open' : 'close'}
-        variants={headerVariants}
-        className="z-99 fixed left-0 right-0 top-0 "
-      >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={showNavigation === true ? 'open' : 'close'}
-          variants={wrapVariants}
-          className={
-            'z-100 dark:bg-dark-950 dark:border-dark-600/50 dark:shadow-dark-950/90 relative border-b-[0.5px] border-gray-200/50 bg-gray-50 shadow-sm shadow-gray-100/75 dark:shadow-xl ' +
-            (scrollPosition > 100 ? ' pt-[86px]' : ' pt-[86px]')
-          }
-        >
-          <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-5">
-            <div className="grid grid-cols-12 pl-3 pr-3 lg:pl-20">
-              <div className="col-span-12 lg:col-span-2">
-                <div className="py-5">
-                  <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
-                    Sub Navigation
-                  </div>
-                  {/* <Link
-                    href="/store"
-                    className="text-black dark:text-white text-2xl font-medium mb-3 w-full block hover:text-primary-600 dark:hover:text-dark-400"
-                  >
-                    Store
-                  </Link> */}
-
-                  {showNavigationList && (
-                    <motion.div
-                      initial="offscreen"
-                      // viewport={{once: true, amount: 0.1}}
-                      // animate={showNavigationList ? 'onscreen' : 'offscreen'}
-                      animate="onscreen"
-                      variants={subMenuVariants}
-                    >
-                      {Object.entries(showNavigationList).map((list, key) => {
-                        return (
-                          <motion.div key={key} variants={variants}>
-                            <Link
-                              href="/store"
-                              className="dark:hover:text-primary-500 mb-3 block w-full text-2xl font-medium text-black hover:text-gray-500 dark:text-white"
-                            >
-                              {list[1].title}
-                            </Link>
-                          </motion.div>
-                        )
-                      })}
-                    </motion.div>
-                  )}
-                </div>
-              </div>
-              <div className="col-span-12 lg:col-span-6">
-                <div className="flex flex-wrap gap-10">
-                  <div className="px-3 py-3  lg:px-5 lg:py-5">
-                    <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
-                      Sitemap
-                    </div>
-                    <Link
-                      href="#"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      개발문서
-                    </Link>
-                    <Link
-                      href="#"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      교육
-                    </Link>
-                    <Link
-                      href="#"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      유지보수/관리
-                    </Link>
-                  </div>
-                  <div className="px-3 py-3  lg:px-5 lg:py-5">
-                    <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
-                      Store
-                    </div>
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      XE/라이믹스 스토어
-                    </a>
-                    <Link
-                      href="#"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      도메인 등록
-                    </Link>
-                    <Link
-                      href="#"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      세금계산서 신청
-                    </Link>
-                    <Link
-                      href="#"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      파트너 신청
-                    </Link>
-                  </div>
-                  <div className="px-3 py-3  lg:px-5 lg:py-5">
-                    <div className="dark:text-dark-400 mb-5 text-sm text-gray-400">
-                      Projects
-                    </div>
-                    <a
-                      href="https://github.com/gjworks"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="dark:hover:text-primary-500 mb-3 block text-sm text-black hover:text-gray-500 dark:text-white"
-                    >
-                      Github
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-span-12 lg:col-span-4">
-                <div className="relative flex h-full gap-8 py-10 lg:py-0">
-                  <div className="dark:via-dark-700 relative hidden h-full w-px items-center justify-center bg-gradient-to-t from-transparent via-gray-200/75 to-transparent lg:flex"></div>
-                  <div className="flex-1">
-                    <div className="">
-                      <motion.div
-                        whileTap={{
-                          scale: 0.97,
-                          transition: { duration: 0.3 },
-                        }}
-                        className="from-dark-500/30 via-dark-700/40 to-dark-400/70 h-20 w-20 overflow-hidden rounded-2xl bg-gradient-to-tl p-[0.5px] shadow-md shadow-black"
-                      >
-                        <div className="from-dark-800/90 via-dark-950/75 to-dark-950/90 shadow-dark-900/90 flex h-full w-full items-center justify-center rounded-2xl bg-gradient-to-b shadow-inner">
-                          <Image
-                            src="/assets/images/brand/gjworks_white.svg"
-                            alt="gjworks logo"
-                            width="32"
-                            height="32"
-                            className="block h-16 w-16"
-                          />
-                        </div>
-                      </motion.div>
-                    </div>
-                    <div className="dark:text-dark-500 mb-4 pt-5 text-xs text-gray-500">
-                      Each subscription goes towards aggressively adding new
-                      features built with customers best interests at heart,
-                      including your privacy.
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      <div className="dark:text-dark-500 dark:border-dark-700/75 dark:bg-dark-900 dark:hover:bg-dark-950 rounded-lg border border-gray-200 bg-gray-100 px-2 py-[2px] text-xs text-gray-400 hover:bg-gray-200">
-                        iOS
-                      </div>
-                      <div className="dark:text-dark-500 dark:border-dark-700/75 dark:bg-dark-900 dark:hover:bg-dark-950 rounded-lg border border-gray-200 bg-gray-100 px-2 py-[2px] text-xs text-gray-400 hover:bg-gray-200">
-                        macOS
-                      </div>
-                      <div className="dark:text-dark-500 dark:border-dark-700/75 dark:bg-dark-900 dark:hover:bg-dark-950 rounded-lg border border-gray-200 bg-gray-100 px-2 py-[2px] text-xs text-gray-400 hover:bg-gray-200">
-                        Android
-                      </div>
-                    </div>
-                    {/* <div className="text-dark-300 hover:text-white text-xs underline">
-                      앱 제작이 궁금하다면?
-                    </div> */}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
     </>
   )
 }
