@@ -131,7 +131,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-rose-600 px-3 py-2 text-sm text-white hover:bg-white hover:text-rose-500 lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-primary-600 px-3 py-2 text-sm text-white hover:bg-primary-500 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
