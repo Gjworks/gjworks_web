@@ -65,9 +65,9 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative">
             <div className="relative">
-              <div className="relative bg-[url('/assets/images/photo.jpg')] bg-cover bg-no-repeat bg-top">
+              <div className="relative bg-[url('/assets/images/bg11.jpg')] bg-cover bg-no-repeat bg-top">
                 {/*  */}
-                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-gray-950/30 via-transparent to-gray-950/5 dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
+                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white via-transparent to-white dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
                 <div className="relative mx-auto flex max-w-screen-lg items-center gap-8 pb-20 pt-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -595,10 +595,12 @@ export default function Page() {
                   </motion.div>
                 </div>
                 <div className="col-span-3 md:col-span-1">
-                  <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"></div>
+                  <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full">
+                    <div className="dark:bg-[url('/assets/imnage')] bg-no-repeat bg-cover"></div>
+                  </div>
                 </div>
                 <div className="col-span-3 md:col-span-1">
-                  <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"></div>
+                  <div className="dark:bg-primary-600 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-primary-600 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"></div>
                 </div>
               </motion.div>
             </div>
@@ -617,7 +619,7 @@ export default function Page() {
                 <div className="flex justify-center">
                   <motion.div
                     variants={variants}
-                    className="dark:text-dark-200/40 inline text-center text-5xl font-black text-gray-400/20 dark:text-dark-600/75 md:text-[5.5rem]"
+                    className="inline text-center text-5xl font-black text-gray-400/20 dark:text-dark-600/75 md:text-[5.5rem]"
                   >
                     WE ARE CRATEIVE
                   </motion.div>

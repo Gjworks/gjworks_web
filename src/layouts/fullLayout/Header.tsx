@@ -105,7 +105,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'z-101 dark:bg-dark-950/10 sticky top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
+          'z-101 dark:bg-dark-950/50 sticky top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
@@ -194,11 +194,11 @@ const Header = () => {
                         subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
                       }
                       variants={variants}
-                      className="absolute text-white top-16 w-[430px] dark:bg-dark-900 backdrop-blur-lg rounded-lg border border-dark-700/50 p-6 shadow-lg shadow-dark-950 overflow-hidden"
+                      className="absolute text-white top-16 w-[430px] bg-white shadow-gray-200 border-gray-200 dark:bg-dark-900 backdrop-blur-lg rounded-lg border border-dark-700/50 p-6 shadow-md dark:shadow-dark-950 overflow-hidden"
                     >
                       <div className="">
                         <motion.div className="mb-4" variants={variants}>
-                          <div className="flex gap-4 items-center text-white font-bold mb-2 text-base">
+                          <div className="flex gap-4 items-center text-black dark:text-white font-bold mb-2 text-base">
                             <div>Plextype</div>
                             <span className="py-0.5 px-3 rounded-md text-xs bg-rose-500 text-white">
                               0.1.3
@@ -210,7 +210,7 @@ const Header = () => {
                           </div>
                         </motion.div>
                         <motion.div className="mb-4" variants={variants}>
-                          <div className="flex gap-4 items-center text-white font-bold mb-2 text-base">
+                          <div className="flex gap-4 items-center text-black dark:text-white font-bold mb-2 text-base">
                             <div>Plextype</div>
                             <span className="py-0.5 px-3 rounded-md text-xs bg-lime-400 text-black">
                               0.1.3
@@ -222,7 +222,7 @@ const Header = () => {
                           </div>
                         </motion.div>
                         <motion.div className="mb-4" variants={variants}>
-                          <div className="flex gap-4 items-center text-white font-bold mb-2 text-base">
+                          <div className="flex gap-4 items-center text-black dark:text-white font-bold mb-2 text-base">
                             <div>Plextype</div>
                             <span className="py-0.5 px-3 rounded-md text-xs bg-purple-600 text-white">
                               0.1.3
