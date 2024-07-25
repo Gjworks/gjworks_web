@@ -6,6 +6,8 @@ import { decodeJwt } from 'jose';
 import { PrismaClient } from "@prisma/client";
 import { parse } from "path";
 
+import { getGroupList } from "@/modules/user/scripts/groupModel";
+
 interface PostsParams {
   id? : number | null
 }
@@ -49,6 +51,10 @@ export const getPost = async (params:PostsParams) => {
       });
     }
 
+    const groupList = await getGroupList()
+    console.log(groupList)
+
+    postInfo.grant = groupList
     response = {
       success: true,
       type : 'success',
@@ -67,9 +73,6 @@ export const getPost = async (params:PostsParams) => {
       data: {}
     };
   }
-
-  
-
   return response
 }
 

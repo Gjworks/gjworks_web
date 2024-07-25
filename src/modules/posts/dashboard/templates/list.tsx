@@ -144,7 +144,7 @@ const DashboardUserList = () => {
                   return (
                     <tr
                       key={index}
-                      className="border-b border-slate-200 hover:bg-slate-200 dark:hover:bg-gray-500 hover:bg-opacity-50 odd:bg-white even:bg-gray-50"
+                      className="border-b border-slate-200 hover:bg-slate-200 hover:bg-opacity-50 odd:bg-white even:bg-gray-50"
                     >
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
                         {item.id - 1}

@@ -42,17 +42,17 @@ export async function middleware(request: NextRequest, response: NextResponse) {
     }
 
       //게시판 권한 관련한 미들웨어 로직
-  if (request.nextUrl.pathname.startsWith('/posts/')) {
-    console.log('postsMiddleware');
+  // if (request.nextUrl.pathname.startsWith('/posts/')) {
+  //   console.log('postsMiddleware');
     
-    if (!decodeToken) {
-      console.log(decodeToken)
-      return NextResponse.redirect(new URL('/auth/Signin', request.url));
-    }else{
+  //   if (!decodeToken) {
+  //     console.log(decodeToken)
+  //     return NextResponse.redirect(new URL('/auth/Signin', request.url));
+  //   }else{
       
-    }
+  //   }
 
-  }
+  // }
 
 
 

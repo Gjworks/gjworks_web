@@ -341,7 +341,7 @@ const DashboardPostCreate = (props: PostProps) => {
                 <div className="col-span-3">
                   <div className="grid grid-col-span-2">
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
-                      <div className="col-span-3 sm:col-span-1">
+                      <div className="col-span-3">
                         <div className="mb-5">
                           <label>
                             <div className="flex gap-2 items-center">
@@ -354,8 +354,8 @@ const DashboardPostCreate = (props: PostProps) => {
                                   id="list"
                                   className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                                 >
-                                  <option value="1">제한없음</option>
-                                  <option value="1">로그인사용자</option>
+                                  <option value="">제한없음</option>
+                                  <option value="0">로그인사용자</option>
                                   {posts?.config?.list?.map((item, index) => (
                                     <option key={index} value={item}>
                                       {item}
@@ -378,8 +378,8 @@ const DashboardPostCreate = (props: PostProps) => {
                                   id="list"
                                   className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                                 >
-                                  <option value="1">제한없음</option>
-                                  <option value="1">로그인사용자</option>
+                                  <option value="">제한없음</option>
+                                  <option value="0">로그인사용자</option>
                                   {posts?.config?.list?.map((item, index) => (
                                     <option key={index} value={item}>
                                       {item}
@@ -402,8 +402,8 @@ const DashboardPostCreate = (props: PostProps) => {
                                   id="list"
                                   className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                                 >
-                                  <option value="1">제한없음</option>
-                                  <option value="1">로그인사용자</option>
+                                  <option value="">제한없음</option>
+                                  <option value="0">로그인사용자</option>
                                   {posts?.config?.list?.map((item, index) => (
                                     <option key={index} value={item}>
                                       {item}
@@ -421,19 +421,25 @@ const DashboardPostCreate = (props: PostProps) => {
                                 댓글
                               </div>
                               <div className="flex-1">
-                                <select
-                                  name="list"
-                                  id="list"
-                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                                >
-                                  <option value="1">제한없음</option>
-                                  <option value="1">로그인사용자</option>
-                                  {posts?.config?.list?.map((item, index) => (
-                                    <option key={index} value={item}>
-                                      {item}
-                                    </option>
+                                <div className="flex gap-2 flex-wrap">
+                                  <div>
+                                    <label className="text-sm flex gap-2 items-center">
+                                      <input type="checkbox" value="" />
+                                      로그인사용자
+                                    </label>
+                                  </div>
+                                  {posts?.grant?.map((item, index) => (
+                                    <div key={index}>
+                                      <label className="text-sm flex gap-2 items-center">
+                                        <input
+                                          type="checkbox"
+                                          value={item.id}
+                                        />
+                                        {item.groupTitle}
+                                      </label>
+                                    </div>
                                   ))}
-                                </select>
+                                </div>
                               </div>
                             </div>
                           </label>
@@ -444,7 +450,7 @@ const DashboardPostCreate = (props: PostProps) => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-4 justify-center bg-slate-100/50 pt-5 pb-10 border-t border-slate-200">
+            <div className="flex gap-4 justify-center pt-5 pb-10 border-t border-slate-200">
               <Link
                 href="/dashboard/posts/list"
                 className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md"

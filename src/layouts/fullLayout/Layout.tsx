@@ -1,9 +1,19 @@
+'use client'
+
+import { useEffect } from 'react'
 import Header from 'src/layouts/fullLayout/Header'
 import Footer from 'src/layouts/fullLayout/Footer'
 import SubNav from 'src/layouts/fullLayout/SubNav'
 import FootAlert from 'src/layouts/fullLayout/FootAlert'
 
 const FullLayout = ({ children }) => {
+  useEffect(() => {
+    const htmlElement = document.documentElement
+    // 조건에 따라 클래스를 추가 또는 제거
+    if (!htmlElement.classList.contains('dark')) {
+      htmlElement.classList.add('dark')
+    }
+  }, []) // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
   return (
     <div className="">
       <div className="relative z-20">

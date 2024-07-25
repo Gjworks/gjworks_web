@@ -25,6 +25,13 @@ export default function DashboardLayout({
   const [params, setParams] = useState<any[]>([])
 
   useEffect(() => {
+    const htmlElement = document.documentElement
+    if (htmlElement.classList.contains('dark')) {
+      htmlElement.classList.remove('dark')
+    }
+  }, []) // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
+
+  useEffect(() => {
     const params = pathname?.split('/')
     setParams(params)
     Object.entries(nav.navigation).map((item, index) => {
@@ -44,9 +51,9 @@ export default function DashboardLayout({
   }, [params])
 
   return (
-    <div className="selection:text-white selection:bg-orange-500 bg-white min-h-screen">
+    <div className="selection:text-white selection:bg-orange-500 min-h-screen">
       <div className="h-full">
-        <div className="fixed w-full top-0 bg-gray-950/90 backdrop-blur-lg h-[60px] z-101">
+        <div className="fixed w-full top-0 bg-gray-950/90 dark:bg-dark-950/90 backdrop-blur-lg h-[60px] z-101">
           <div className="flex">
             <Link href="/" className="flex items-center">
               <div className="flex items-center p-3 text-white">
@@ -146,21 +153,21 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <div className="bg-white h-[60px]"></div>
-        <div className="fixed w-[300px] bg-white backdrop-blur-lg h-screen overflow-hidden overflow-y-auto border-r border-slate-200">
+        <div className="h-[60px]"></div>
+        <div className="fixed w-[300px] backdrop-blur-lg h-screen overflow-hidden overflow-y-auto border-r border-slate-200 dark:border-dark-600">
           <div className="py-6 px-5">
             <div className="">
               <div className="flex items-center mb-1">
                 <Link
                   href="/dashboard"
-                  className="flex flex-1 text-black text-xl font-semibold"
+                  className="flex flex-1 text-black dark:text-white text-xl font-semibold"
                 >
                   Dashboard
                 </Link>
                 <div className="px-3">
                   <div className="rounded-full w-2 h-2 bg-lime-400"></div>
                 </div>
-                <div className="text-black cursor-pointer border border-slate-200 rounded-md py-1 px-2 hover:bg-slate-200/25 dark:hover:bg-gray-800/25">
+                <div className="text-black dark:text-dark-400 cursor-pointer border border-slate-200 dark:border-dark-700 rounded-md py-1 px-2 hover:bg-slate-200/25 dark:hover:bg-gray-800/25">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -180,7 +187,7 @@ export default function DashboardLayout({
               <div className="text-gray-500 text-xs">Dashboard 홈으로 가기</div>
             </div>
           </div>
-          <div className="border-t border-gray-100"></div>
+          <div className="border-t border-gray-100 dark:border-dark-600"></div>
           <div className="py-6 px-5">
             <div className="">
               <div className="text-xs text-gray-400/75 font-semibold mb-5">
@@ -194,10 +201,10 @@ export default function DashboardLayout({
                         <Link
                           href={item[1].route}
                           className={
-                            'flex gap-4 text-sm dark:hover:text-white py-2.5 rounded ' +
+                            'flex gap-4 text-sm py-2.5 rounded ' +
                             (item[1].name === params[2]
                               ? ' bg-cyan-500 text-white hover:text-white hover:bg-cyan-600 '
-                              : ' hover:text-gray-950 hover:bg-gray-100 ')
+                              : ' hover:text-gray-950 hover:bg-gray-200 dark:text-dark-400 dark:hover:text-white dark:hover:bg-dark-700 ')
                           }
                         >
                           <div></div>
@@ -209,7 +216,7 @@ export default function DashboardLayout({
                 })}
             </div>
           </div>
-          <div className="border-t border-gray-100"></div>
+          <div className="border-t border-gray-100 dark:border-dark-600"></div>
           <div className="py-6 px-5">
             <div className="text-xs text-gray-400/75 font-semibold mb-5">
               최근활동 회원
@@ -236,14 +243,14 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <div className="relative top-0 ml-[300px] bg-white">
+        <div className="relative top-0 ml-[300px]">
           <div className="relative">
             {title && (
               <div className=" pt-10">
                 <div className="max-w-screen-2xl mx-auto px-3">
-                  <div className="bg-white">
+                  <div className="">
                     <div className="flex flex-wrap items-center gap-4 mb-5">
-                      <div className="text-black text-2xl font-semibold">
+                      <div className="text-black dark:text-white text-2xl font-semibold">
                         {title}
                       </div>
                     </div>
@@ -252,7 +259,7 @@ export default function DashboardLayout({
               </div>
             )}
 
-            <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 backdrop-blur-lg z-90 border-b border-gray-100">
+            <div className="sticky top-[52px] lg:top-[60px] w-full bg-white/90 dark:bg-dark-950/90 backdrop-blur-lg z-90 border-b border-gray-100 dark:border-dark-700">
               <div className="overflow-scroll-hide overflow-hidden overflow-x-auto flex gap-8 max-w-screen-2xl mx-auto px-3">
                 <DefaultNav list={dashbaordNav} params={params[2]} />
               </div>

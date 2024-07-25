@@ -12,8 +12,8 @@
         @apply min-h-full;
         @apply h-full;
     }
-    html.dark,
-    html.dark body {
+    .dark
+    {
         -webkit-overflow-scrolling: touch;
         @apply bg-dark-950;
     }

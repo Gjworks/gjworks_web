@@ -65,7 +65,7 @@ export const upsertGroup = async (formData: FormData) => {
 
 export const deleteGroup = async (groupId) => {
   const sessionInfo = await getUserSession()
-
+  console.log(groupId)
   if(!sessionInfo?.data?.isAdmin) {
     return {
       success: false,
@@ -80,6 +80,7 @@ export const deleteGroup = async (groupId) => {
         id: groupId
       }
     })
+    console.log(userGroup)
     if(userGroup) {
       return {
         success: true,
@@ -88,6 +89,7 @@ export const deleteGroup = async (groupId) => {
         data: userGroup
       }
     }else{
+      console.log(`Error deleting group:`)
       return {
         success: false,
         type: "error",
@@ -96,6 +98,7 @@ export const deleteGroup = async (groupId) => {
       }
     }
   } catch (error) {
+    console.error(error)
     return {
       success: false,
       type: "error",
