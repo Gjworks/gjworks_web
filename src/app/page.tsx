@@ -65,7 +65,7 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative">
             <div className="relative">
-              <div className="relative bg-[url('/assets/images/bg11.jpg')] bg-cover bg-no-repeat bg-top">
+              <div className="relative bg-[url('/assets/images/bg23.jpg')] bg-cover bg-no-repeat bg-top">
                 {/*  */}
                 <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white via-transparent to-white dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
                 <div className="relative mx-auto flex max-w-screen-lg items-center gap-8 pb-20 pt-20">
