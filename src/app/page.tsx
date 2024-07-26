@@ -551,8 +551,8 @@ export default function Page() {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
-            variants={parentVariants}
-            className="pt-10"
+            variants={variants}
+            className="hidden pt-10"
           >
             <div className="relative mx-auto max-w-screen-2xl px-3">
               <motion.div className="grid grid-cols-3 gap-8">
@@ -595,18 +595,65 @@ export default function Page() {
                   </motion.div>
                 </div>
                 <div className="col-span-3 md:col-span-1">
-                  <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full">
-                    <div className="dark:bg-[url('/assets/imnage')] bg-no-repeat bg-cover"></div>
-                  </div>
+                  <motion.div
+                    variants={variants}
+                    className="relative dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"
+                  >
+                    <motion.div
+                      variants={parentVariants}
+                      initial="offscreen"
+                      whileInView="onscreen"
+                    >
+                      <div className="absolute inset-0 dark:bg-[url('/assets/images/bg23.jpg')] bg-no-repeat bg-cover"></div>
+                      <div className="absolute inset-0 bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/90 dark:to-dark-950 z-10"></div>
+
+                      <motion.div
+                        variants={variants}
+                        className="mb-3 text-xl font-medium text-black lg:text-xl dark:text-white"
+                      >
+                        Coming soon mobile
+                      </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="dark:text-dark-500 mb-10 text-base text-gray-600"
+                      >
+                        Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
+                        불편함이 없게 UI/UX를 설계 합니다.
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
                 </div>
                 <div className="col-span-3 md:col-span-1">
-                  <div className="dark:bg-primary-600 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-primary-600 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"></div>
+                  <motion.div
+                    variants={variants}
+                    className="dark:bg-primary-600 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-primary-600 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"
+                  >
+                    <motion.div
+                      variants={parentVariants}
+                      initial="offscreen"
+                      whileInView="onscreen"
+                    >
+                      <motion.div
+                        variants={variants}
+                        className="mb-3 text-xl font-medium text-black lg:text-xl dark:text-white"
+                      >
+                        Coming soon mobile
+                      </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="dark:text-primary-300 mb-10 text-base text-gray-600"
+                      >
+                        Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
+                        불편함이 없게 UI/UX를 설계 합니다.
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
           </motion.div>
 
-          <div className="relative overflow-hidden pb-5 pt-5">
+          <div className="hidden relative overflow-hidden pb-5 pt-5">
             <div className="relative flex h-[640px] items-center justify-center overflow-hidden rounded-2xl">
               {/* <div className="absolute inset-0 bg-gray-950/75"></div> */}
               <motion.div
