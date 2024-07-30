@@ -110,7 +110,7 @@ const Header = () => {
         }
       >
         <div className="mo">
-          <div className="grid grid-cols-5 gap-4 px-3 py-2">
+          <div className="grid grid-cols-5 gap-4 px-3 py-1">
             <div className="relative col-span-2 flex justify-start">
               <button
                 onClick={() => {
@@ -331,7 +331,7 @@ const Header = () => {
                   />
                 </Link>
                 <div className="hidden group-hover:flex absolute top-0.5 lg:top-2 -right-8">
-                  <div className="bg-lime-400 text-black py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-lime-400 after:inline-block after:rotate-45 after:z-10 after:content-['']">
+                  <div className="bg-primary-500 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-500 after:inline-block after:rotate-45 after:z-10 after:content-['']">
                     2.0
                   </div>
                 </div>

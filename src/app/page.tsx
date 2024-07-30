@@ -65,9 +65,8 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative">
             <div className="relative">
-              <div className="relative bg-[url('/assets/images/bg10.jpg')] bg-cover bg-no-repeat bg-center">
-                {/*  */}
-                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white via-transparent to-white dark:from-dark-950 dark:via-dark-950/60 dark:to-dark-950"></div>
+              <div className="relative bg-gray-50 dark:bg-[url('/assets/images/bg11.jpg')] dark:bg-no-repeat dark:bg-top border-b border-gray-100 dark:border-dark-950">
+                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gray-950/40 dark:bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/5 dark:to-dark-950 backdrop-blur-3xl"></div>
                 <div className="relative mx-auto flex max-w-screen-lg items-center gap-8 pb-20 pt-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -121,9 +120,9 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto mb-6 max-w-lg py-3"
                           >
-                            <div className="flex gap-8 rounded-full bg-gray-200/75 dark:bg-dark-700/25 p-2 backdrop-blur-lg lg:p-3">
+                            <div className="flex gap-8 rounded-full bg-gray-200/60 dark:bg-dark-500/25 p-2 backdrop-blur-lg lg:p-3">
                               <div className="flex flex-1 items-center px-3">
-                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-700">
+                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-900">
                                   Launch Your Service.
                                 </div>
                               </div>
@@ -131,7 +130,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-primary-600 px-3 py-2 text-sm text-white hover:bg-primary-500 hover:text-white lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-white dark:hover:bg-dark-300 dark:text-black px-3 py-2 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
@@ -181,10 +180,10 @@ export default function Page() {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <div className="dark:text-dark-300 mb-2 text-left text-sm text-gray-900">
+                              <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-900">
                                 OpenSource Projects
                               </div>
-                              <div className="dark:text-dark-500 text-left text-xs text-gray-500">
+                              <div className="dark:text-dark-300 text-left text-xs text-gray-400">
                                 다양한 프로젝트를 만나보시고 좋은 의견과
                                 아이디어를 주시면 반영하겠습니다.
                               </div>
@@ -513,7 +512,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="text-lg font-light text-gray-500"
+                        className="text-sm font-light text-gray-500"
                       >
                         지제이웍스만의 방법으로 디지털 플랫폼을 구축하고 최상의
                         디지털 경험을 느낄 수 있도록 최선을 다 하고 있습니다.
