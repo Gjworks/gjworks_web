@@ -11,7 +11,7 @@ const ProfileComponent = ({ profileName, profileEmail }) => {
           <div className="text-gray-950 dark:text-white text-xl font-medium">
             {profileName}
           </div>
-          <div className="flex items-center border-[0.5px] border-indigo-600 bg-indigo-100 text-indigo-600 py-[0.5px] px-2 rounded-lg text-[12px]">
+          <div className="flex items-center border-[0.5px] border-indigo-600 dark:bg-indigo-900/50 bg-indigo-100 text-indigo-600 dark:text-indigo-500 py-[0.5px] px-2 rounded-lg text-[12px]">
             PREMIUM
           </div>
         </div>
