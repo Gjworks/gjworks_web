@@ -65,9 +65,9 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative">
             <div className="relative">
-              <div className="relative bg-[url('/assets/images/photo.jpg')] dark:bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-cover bg-top border-b border-gray-100 dark:border-dark-950">
-                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-white/40 dark:bg-dark-950/40 dark:bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/5 dark:to-dark-950 backdrop-blur-3xl"></div>
-                <div className="relative mx-auto flex max-w-screen-lg items-center gap-8 pb-20 pt-20">
+              <div className="relative dark:bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-cover bg-top">
+                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-white/40 dark:bg-dark-950/40 dark:bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/5 dark:to-dark-950"></div>
+                <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pb-20 pt-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
                       variants={parentVariants}
@@ -77,36 +77,20 @@ export default function Page() {
                       className="grid w-full grid-cols-12 gap-8"
                     >
                       <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
-                        <div className="pt-0">
-                          <div className="flex justify-center mb-12">
-                            <motion.div
-                              whileTap={{
-                                scale: 0.97,
-                                transition: { duration: 0.3 },
-                              }}
-                              className="flex"
-                            >
-                              <Image
-                                src="/assets/svg/cloud-server.svg"
-                                width={200}
-                                height={200}
-                                alt="Clude Server"
-                              />
-                            </motion.div>
-                          </div>
-                          <div className="relative flex flex-wrap justify-center px-4">
+                        <div className="pt-16">
+                          <div className="relative grid grid-cols-1 gap-4 px-4">
                             <motion.div
                               variants={variants}
-                              className="mb-5 px-1  lg:mb-2"
+                              className="col-span-1 px-1 lg:mb-2"
                             >
-                              <div className="flex flex-wrap gap-2 text-5xl font-semibold !leading-tight tracking-tighter text-black md:text-6xl lg:gap-0 dark:text-white">
+                              <div className="flex flex-wrap gap-2 text-4xl font-semibold !leading-tight tracking-tighter text-black lg:text-6xl lg:gap-0 dark:text-white w-full justify-center">
                                 Building digital experience
                               </div>
                             </motion.div>
 
                             <motion.div
                               variants={variants}
-                              className="mb-10 pl-0 text-5xl font-semibold tracking-tighter text-black md:text-6xl dark:text-white"
+                              className="mb-10 pl-0 text-4xl font-semibold tracking-tighter text-black lg:text-6xl dark:text-white text-center"
                             >
                               Creative platform service
                             </motion.div>
@@ -153,7 +137,7 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-2/5"
+                            className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-3/5"
                           >
                             <div className="dark:bg-dark-700/75 rounded-lg bg-gray-300/40 p-3 ">
                               <svg

@@ -331,7 +331,7 @@ const Header = () => {
                   />
                 </Link>
                 <div className="hidden group-hover:flex absolute top-0.5 lg:top-2 -right-8">
-                  <div className="bg-primary-500 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-500 after:inline-block after:rotate-45 after:z-10 after:content-['']">
+                  <div className="bg-primary-600 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-600 after:inline-block after:rotate-45 after:z-10 after:content-['']">
                     2.0
                   </div>
                 </div>
