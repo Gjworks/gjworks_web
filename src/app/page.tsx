@@ -63,9 +63,9 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative">
-            <div className="relative">
-              <div className="relative dark:bg-[url('/assets/images/bg11.jpg')] bg-no-repeat bg-cover bg-top">
+          <div className="relative px-3">
+            <div className="relative bg-gray-200 rounded-2xl">
+              <div className="relative">
                 <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-white/40 dark:bg-dark-950/40 dark:bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/5 dark:to-dark-950"></div>
                 <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pb-20 pt-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
