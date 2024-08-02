@@ -64,9 +64,9 @@ export default function Page() {
 
         <motion.div className="relative w-full">
           <div className="relative px-3">
-            <div className="relative bg-gray-200 rounded-2xl">
-              <div className="relative">
-                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-white/40 dark:bg-dark-950/40 dark:bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/5 dark:to-dark-950"></div>
+            <div className="relative max-w-screen-3xl mx-auto bg-gray-200 rounded-2xl overflow-hidden">
+              <div className="relative bg-[url('/assets/images/bg39.jpg')] bg-no-repeat bg-cover bg-top">
+                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gray-950/40 dark:bg-dark-950/40 dark:bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/5 dark:to-dark-950"></div>
                 <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pb-20 pt-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -83,14 +83,14 @@ export default function Page() {
                               variants={variants}
                               className="col-span-1 px-1 lg:mb-2"
                             >
-                              <div className="flex flex-wrap gap-2 text-4xl font-semibold !leading-tight tracking-tighter text-black lg:text-6xl lg:gap-0 dark:text-white w-full justify-center">
+                              <div className="flex flex-wrap gap-2 text-4xl font-semibold !leading-tight tracking-tighter text-white lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
                                 Building digital experience
                               </div>
                             </motion.div>
 
                             <motion.div
                               variants={variants}
-                              className="mb-10 pl-0 text-4xl font-semibold tracking-tighter text-black lg:text-6xl dark:text-white text-center"
+                              className="mb-10 pl-0 text-4xl font-semibold tracking-tighter text-white lg:text-6xl dark:text-white text-center"
                             >
                               Creative platform service
                             </motion.div>
@@ -101,7 +101,7 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto mb-6 max-w-lg py-3"
                           >
-                            <div className="flex gap-8 rounded-full bg-gray-200/60 dark:bg-dark-500/25 p-2 backdrop-blur-lg lg:p-3">
+                            <div className="flex gap-8 rounded-full bg-gray-200/60 dark:bg-dark-500/25 p-2 backdrop-blur-lg lg:p-2">
                               <div className="flex flex-1 items-center px-3">
                                 <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-900">
                                   Launch Your Service.
@@ -111,7 +111,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-white dark:hover:bg-dark-300 dark:text-black px-3 py-2 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-white dark:hover:bg-dark-300 dark:text-black px-3 py-1.5 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <svg
@@ -139,11 +139,11 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-3/5"
                           >
-                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-300/40 p-3 ">
+                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-900/20 p-3 ">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 50.44096 49.52621"
-                                className="fill-dark-300 stroke-dark-300 h-5 w-5"
+                                className="fill-white stroke-white h-5 w-5"
                               >
                                 <path
                                   d="M1.84644,1.58409C.44163,16.71335-.16235,31.90823,.03716,47.10126c.00547,.41635,.33955,.73511,.75,.75,15.38984,.5582,30.77967,1.1164,46.16951,1.67461,.29945,.01086,.67105-.23858,.72321-.55062,2.52389-15.10011,3.32945-30.44594,2.36732-45.72607-.02773-.44042-.32393-.70122-.75-.75C33.83294,.72875,18.27256-.10258,2.70769,.01009c-.96483,.00698-.96703,1.507,0,1.5,15.56487-.11266,31.12525,.71866,46.58951,2.48908l-.75-.75c.95344,15.14205,.18761,30.36207-2.31374,45.32732l.72321-.55062c-15.38984-.5582-30.77967-1.1164-46.16951-1.67461l.75,.75c-.19951-15.19303,.40447-30.38791,1.80927-45.51717,.08921-.96076-1.41136-.95467-1.5,0h0Z"
@@ -161,10 +161,10 @@ export default function Page() {
                               </svg>
                             </div>
                             <div className="flex-1">
-                              <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-900">
+                              <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-100">
                                 OpenSource Projects
                               </div>
-                              <div className="dark:text-dark-300 text-left text-xs text-gray-400">
+                              <div className="dark:text-dark-300 text-left text-xs text-gray-300">
                                 다양한 프로젝트를 만나보시고 좋은 의견과
                                 아이디어를 주시면 반영하겠습니다.
                               </div>
@@ -456,7 +456,7 @@ export default function Page() {
           </motion.div>
           <div className="py-10">
             <div className="mb-10 overflow-hidden ">
-              <div className="mx-auto max-w-screen-lg px-3 pt-20">
+              <div className="mx-auto max-w-screen-xl px-3 pt-20">
                 <motion.div
                   initial="offscreen"
                   whileInView="onscreen"
@@ -498,6 +498,38 @@ export default function Page() {
                         지제이웍스만의 방법으로 디지털 플랫폼을 구축하고 최상의
                         디지털 경험을 느낄 수 있도록 최선을 다 하고 있습니다.
                       </motion.div>
+                    </div>
+                  </div>
+                  <div className="col-span-12 flex justify-center pt-12">
+                    <div className="flex justify-center items-center gap-8 py-6">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                        <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
+                      </div>
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                        <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
+                      </div>
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                        <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
+                      </div>
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                        <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
+                      </div>
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                        <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
+                      </div>
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                        <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
+                      </div>
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                        <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

@@ -40,16 +40,17 @@ const DashboardPostCreate = (props: PostProps) => {
   useEffect(() => {
     console.log(posts?.config)
     if (posts?.config?.documentLike !== undefined) {
-      setIsDocumentLike(posts.config.documentLike === 'true')
+      console.log(posts.config.documentLike)
+      setIsDocumentLike(posts.config.documentLike)
     }
     if (posts?.config?.commentLike !== undefined) {
-      setisCommentLike(posts.config.commentLike === 'true')
+      setisCommentLike(posts.config.commentLike)
     }
     if (posts?.config?.commentState !== undefined) {
-      setIsCommentState(posts.config.commentState === 'true')
+      setIsCommentState(posts.config.commentState)
     }
     if (posts?.config?.consultingState !== undefined) {
-      setIsConsultingState(posts.config.consultingState === 'true')
+      setIsConsultingState(posts.config.consultingState)
     }
   }, [posts])
 
@@ -66,21 +67,26 @@ const DashboardPostCreate = (props: PostProps) => {
     setIsConsultingState(event.target.checked)
   }
 
-  const submitHandler = async e => {
-    e.preventDefault()
-    const formData = new FormData()
-    formData.append('postId', e.target?.postId?.value)
-    formData.append('moduleId', e.target?.moduleId?.value)
-    formData.append('moduleName', e.target?.moduleName.value)
-    formData.append('moduleType', e.target?.moduleType.value)
-    formData.append('listCount', e.target?.listCount?.value)
-    formData.append('pageCount', e.target?.pageCount?.value)
-    formData.append('documentLike', e.target?.documentLike.checked)
-    formData.append('consultingState', e.target?.consultingState.checked)
-    formData.append('commentState', e.target?.commentState.checked)
-    formData.append('commentLike', e.target?.commentLike.checked)
+  const submitHandler = async (formData: FormData) => {
+    const selectedGroups = formData.getAll('commentGrant') as string[]
 
-    await createPosts(formData)
+    const params = {
+      postId: formData.get('postId') as string,
+      moduleId: formData.get('moduleId') as string,
+      moduleName: formData.get('moduleName') as string,
+      moduleType: formData.get('moduleType') as string,
+      listCount: formData.get('listCount') as string,
+      pageCount: formData.get('pageCount') as string,
+      documentLike: formData.get('documentLike') as string,
+      consultingState: formData.get('consultingState') as string,
+      commentState: formData.get('commentState') as string,
+      commentLike: formData.get('commentLike') as string,
+      grant: {
+        commentGrant: selectedGroups,
+      },
+    }
+    console.log(params)
+    await createPosts(params)
       .then(response => {
         console.log(response)
         if (response?.data.code === 'error') {
@@ -96,7 +102,7 @@ const DashboardPostCreate = (props: PostProps) => {
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
-        <form onSubmit={submitHandler}>
+        <form action={submitHandler}>
           {posts.id && <input type="hidden" name="postId" value={posts.id} />}
           <input type="hidden" name="moduleType" value="posts" />
           <div className="max-w-screen-2xl mx-auto">
@@ -424,21 +430,35 @@ const DashboardPostCreate = (props: PostProps) => {
                                 <div className="flex gap-2 flex-wrap">
                                   <div>
                                     <label className="text-sm flex gap-2 items-center">
-                                      <input type="checkbox" value="" />
+                                      <input
+                                        type="checkbox"
+                                        name="commentGrant"
+                                        value="0"
+                                      />
                                       로그인사용자
                                     </label>
                                   </div>
-                                  {posts?.grant?.map((item, index) => (
-                                    <div key={index}>
-                                      <label className="text-sm flex gap-2 items-center">
-                                        <input
-                                          type="checkbox"
-                                          value={item.id}
-                                        />
-                                        {item.groupTitle}
-                                      </label>
-                                    </div>
-                                  ))}
+                                  {posts?.grant?.map((item, index) => {
+                                    const isChecked = posts.grant.some(
+                                      postGrant =>
+                                        postGrant.groupId === posts.id
+                                    )
+                                    return (
+                                      <div key={index}>
+                                        <label className="text-sm flex gap-2 items-center">
+                                          <input
+                                            type="checkbox"
+                                            name="commentGrant"
+                                            value={item.id}
+                                            checked={
+                                              isChecked ? true : undefined
+                                            }
+                                          />
+                                          {item.groupTitle}
+                                        </label>
+                                      </div>
+                                    )
+                                  })}
                                 </div>
                               </div>
                             </div>

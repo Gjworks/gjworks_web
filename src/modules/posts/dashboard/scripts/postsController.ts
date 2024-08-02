@@ -9,7 +9,7 @@ interface LoggedParams {
   isAdmin? : boolean | null
 }
 
-export const createPosts = async (formData:FormData) => {
+export const createPosts = async (params) => {
   const accessToken = cookies().get('accessToken')?.value
   const prisma = new PrismaClient();
   let loggedInfo:LoggedParams = {
@@ -40,10 +40,10 @@ export const createPosts = async (formData:FormData) => {
         data: {}
       }
   }
-  const postId = formData.get('postId') as string;
-  const moduleId = formData.get('moduleId') as string;
-  const moduleName = formData.get('moduleName') as string;
-  const moduleType = formData.get('moduleType') as string;
+  const postId = params.postId;
+  const moduleId = params.moduleId;
+  const moduleName = params.moduleName;
+  const moduleType = params.moduleType;
   const moduleConfig: {
     listCount: string;
     pageCount: string;
@@ -51,13 +51,15 @@ export const createPosts = async (formData:FormData) => {
     consultingState: string;
     commentState: string;
     commentLike: string;
+    grant : {}
   } = {
-    listCount: (formData.get('listCount') as string | null) ?? '0',
-    pageCount: (formData.get('pageCount') as string | null) ?? '0',
-    documentLike: formData.get('documentLike') as string ?? '',
-    consultingState: formData.get('consultingState') as string ?? '',
-    commentState: formData.get('commentState') as string ?? '',
-    commentLike: formData.get('commentLike') as string ?? '',
+    listCount: params.listCount,
+    pageCount: params.pageCount,
+    documentLike: params.documentLike,
+    consultingState: params.consultingState,
+    commentState: params.commentState,
+    commentLike: params.commentLike,
+    grant : params.grant
   };
   console.log(postId)
   if(postId && postId !== 'null' && postId !== 'undefined') {
