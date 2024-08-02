@@ -502,31 +502,31 @@ export default function Page() {
                   </div>
                   <div className="col-span-12 flex justify-center pt-12">
                     <div className="flex justify-center items-center gap-8 py-6">
-                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden">
                         <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
                       </div>
-                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden">
                         <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
                       </div>
-                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden">
                         <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
                       </div>
-                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden">
                         <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
                       </div>
-                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden">
                         <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
                       </div>
-                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden">
                         <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
                       </div>
-                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden shadow-lg shadow-gray-100">
+                      <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-50 hover:bg-gray-200 p-5 transition-all hover:-translate-y-4 duration-300 cursor-pointer overflow-hidden">
                         <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-100/5 via-gray-1--/20 to-gray-200/80 z-10"></div>
                       </div>
