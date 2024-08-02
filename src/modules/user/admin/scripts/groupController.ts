@@ -18,14 +18,15 @@ export const upsertGroup = async (formData: FormData) => {
     }
   }
 
+  const groupId = Number(formData.get("groupId") as string);
   const groupName = formData.get("groupName") as string;
   const groupTitle = formData.get("groupTitle") as string;
   const groupDesc = formData.get("groupDesc") as string;
-
+  console.log(groupId, groupName, groupTitle, groupDesc)
 
   const userGroup = await prisma.userGroup.upsert({
     where: {
-      groupName: groupName
+      id: groupId
     },
     update: {
       groupName: groupName,

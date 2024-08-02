@@ -235,8 +235,10 @@ const DashboardUserUpdate = props => {
                                     name="group"
                                     className=""
                                     value={String(group.id)}
-                                    checked={isChecked}
-                                    onChange={() => {}} // 필요에 따라 onChange 핸들러 추가
+                                    checked={isChecked ? true : undefined}
+                                    // onChange={() => {
+
+                                    // }} // 필요에 따라 onChange 핸들러 추가
                                   ></input>
                                   <div className="text-sm text-dark-400">
                                     {group.groupTitle}

@@ -50,6 +50,7 @@ const DashboardUserGroupList = () => {
     e.preventDefault()
     const formData = new FormData()
 
+    formData.append('groupId', e.target.groupId.value)
     formData.append('groupName', e.target.groupName.value)
     formData.append('groupTitle', e.target.groupTitle.value)
     formData.append('groupDesc', e.target.groupDesc.value)
@@ -239,6 +240,13 @@ const DashboardUserGroupList = () => {
                 {message && (
                   <Alert message={message.message} type={message.type} />
                 )}
+                <input
+                  type="hidden"
+                  name="groupId"
+                  defaultValue={
+                    groupUpdate?.id != null ? groupUpdate.id.toString() : ''
+                  }
+                />
                 <div className="flex flex-col gap-4">
                   <div className="flex gap-4 items-center py-2">
                     <label
@@ -273,7 +281,8 @@ const DashboardUserGroupList = () => {
                         defaultValue={groupUpdate?.groupName}
                       />
                       <div className="bg-gray-50 text-sm text-gray-600 py-1 px-3 rounded-md">
-                        영문으로 작성해주세요. 고유한 값이어야 합니다.
+                        영문으로 작성해주세요. 고유한 값이어야 합니다. 한번 정한
+                        값은 변경이 불가능합니다.
                       </div>
                     </div>
                   </div>
@@ -318,7 +327,7 @@ const DashboardUserGroupList = () => {
                 </div>
               </div>
               <div className="flex justify-end p-3 bg-gray-100">
-                <button className="text-sm text-white bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-md">
+                <button className="text-sm text-white bg-cyan-500 hover:bg-cyan-600 px-6 py-2 rounded-md">
                   저장하기
                 </button>
               </div>
