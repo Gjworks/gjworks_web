@@ -13,11 +13,11 @@ import FootAlert from 'src/layouts/fullLayout/FootAlert'
 const MainLayout = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0)
   useEffect(() => {
-    // const htmlElement = document.documentElement
-    // // 조건에 따라 클래스를 추가 또는 제거
-    // if (!htmlElement.classList.contains('dark')) {
-    //   htmlElement.classList.add('dark')
-    // }
+    const htmlElement = document.documentElement
+    // 조건에 따라 클래스를 추가 또는 제거
+    if (!htmlElement.classList.contains('dark')) {
+      htmlElement.classList.add('dark')
+    }
     const updatePosition = () => {
       setScrollPosition(window.pageYOffset)
     }

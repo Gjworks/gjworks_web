@@ -28,8 +28,8 @@ const PostsList: React.FC<PageProps> = ({
           <div className="col-span-1">
             <Link href="/posts/works/view/1" className="group">
               <div className="relative dark:shadow-dark-950 mb-10 block shadow-lg rounded-lg shadow-gray-400 group-hover:shadow-gray-400/75 dark:group-hover:shadow-black overflow-hidden duration-700">
-                <div className="h-[360px] rounded-lg bg-[url('/assets/images/bg19.jpg')] bg-cover bg-center transition duration-700 group-hover:scale-[1.08]">
-                  <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/30 to-gray-950/40 dark:from-dark-950/30 dark:via-dark-950/50 dark:to-dark-950"></div>
+                <div className="h-[360px] rounded-lg bg-[url('/assets/images/bg39.jpg')] bg-cover bg-center transition duration-700 group-hover:scale-[1.08]">
+                  <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/30 to-gray-950/40 dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950/75"></div>
                 </div>
               </div>
               <div className="px-1">
