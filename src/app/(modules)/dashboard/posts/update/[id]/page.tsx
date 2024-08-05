@@ -1,6 +1,6 @@
 'use client'
 
-import DashboardPostCreate from '@/modules/posts/dashboard/templates/create'
+import DashboardPostCreate from '@/modules/posts/admin/templates/create'
 
 const Page = params => {
   return (

@@ -14,6 +14,7 @@ import { motion } from 'framer-motion'
 
 import Right from '@plextype/components/panel/Right'
 import MymenuTemplate from 'src/widgets/forms/MymenuTemplate'
+import { BellIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 
 export type NavType = {
   name: string
@@ -105,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'z-101 dark:bg-dark-950/50 sticky top-0 w-full bg-white/95 pt-0 backdrop-blur-lg' +
+          'z-101 dark:bg-dark-950/50 sticky top-0 w-full bg-white pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
@@ -170,20 +171,7 @@ const Header = () => {
                       <div>Service</div>
                       <>
                         <div className="">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={2}
-                            stroke="currentColor"
-                            className="size-3"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                            />
-                          </svg>
+                          <ChevronDownIcon className="h-3 w-3 stroke-2" />
                         </div>
                       </>
                     </Link>
@@ -194,7 +182,7 @@ const Header = () => {
                         subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
                       }
                       variants={variants}
-                      className="absolute text-white top-16 w-[430px] bg-white shadow-gray-200 border-gray-200 dark:bg-dark-800/80 backdrop-blur-lg rounded-lg border dark:border-dark-700/50 p-6 shadow-md dark:shadow-dark-950 overflow-hidden"
+                      className="absolute text-white top-12 w-[430px] bg-white shadow-gray-950/5 border-gray-200 dark:bg-dark-800/80 backdrop-blur-lg rounded-lg border dark:border-dark-700/50 p-6 shadow-md dark:shadow-dark-950 overflow-hidden"
                     >
                       <div className="">
                         <motion.div className="mb-4" variants={variants}>
@@ -373,20 +361,7 @@ const Header = () => {
                   // onClick={() => setShowModal(!showModal)}
                   onClick={() => setShowRight(true)}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.25}
-                    stroke="currentColor"
-                    className="h-6 w-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                    />
-                  </svg>
+                  <BellIcon className="size-6 stroke-1.5" />
                 </button>
                 <div className="lg:pr-3">
                   <AccountDropwdown />

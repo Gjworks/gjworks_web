@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useSearchParams, usePathname } from 'next/navigation'
-import { getPostList } from '@/modules/posts/dashboard/scripts/postsModel'
+import { getPostList } from '@/modules/posts/admin/scripts/postsModel'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
 
 interface PageNavigationInfo {

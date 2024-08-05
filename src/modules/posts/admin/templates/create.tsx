@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Warning from '@plextype/components/message/Warning'
 
-import { createPosts } from '@/modules/posts/dashboard/scripts/postsController'
-import { getPost } from '@/modules/posts/dashboard/scripts/postsModel'
+import { createPosts } from '@/modules/posts/admin/scripts/postsController'
+import { getPost } from '@/modules/posts/admin/scripts/postsModel'
 
 interface PostProps {
   id?: number | null
