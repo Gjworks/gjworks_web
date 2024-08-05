@@ -1,6 +1,6 @@
 'use client'
 
-import DashboardPostsList from '@/modules/posts/dashboard/templates/list'
+import DashboardPostsList from '@/modules/posts/admin/templates/list'
 
 const Page = () => {
   return (
