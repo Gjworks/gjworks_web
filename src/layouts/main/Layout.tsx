@@ -70,9 +70,6 @@ const MainLayout = ({ children }) => {
             </svg>
           </motion.button>
         )} */}
-        <div className="relative mx-auto max-w-screen-xl">
-          <FootAlert />
-        </div>
         <footer className="pb-8 pt-6">
           <div className="mx-auto max-w-screen-xl">
             <Footer />

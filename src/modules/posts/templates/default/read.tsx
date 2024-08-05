@@ -5,8 +5,8 @@ import Image from 'next/image'
 const PostsRead = () => {
   return (
     <>
-      <div className="relative dark:shadow-dark-950 block bg-[url('/assets/images/bg23.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black"></div>
+      <div className="relative dark:shadow-dark-950 block bg-[url('/assets/images/bg19.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/5 via-gray-950/60 to-gray-950/90 dark:from-dark-950/30 dark:via-dark-950/50 dark:to-dark-950"></div>
         <div className="relative mx-auto max-w-screen-lg px-3 pt-20 pb-10 md:pb-20">
           <div
             className="text-3xl md:text-5xl font-light text-white py-4 text-center pt-20"
@@ -41,11 +41,11 @@ const PostsRead = () => {
                   </svg>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <div className="text-gray-500 text-sm">React.js</div>
-                  <div className="text-gray-500 text-sm">Next.js</div>
-                  <div className="text-gray-500 text-sm">Prisma</div>
-                  <div className="text-gray-500 text-sm">FrontEnd</div>
-                  <div className="text-gray-500 text-sm">Redux</div>
+                  <div className="text-gray-300 text-sm">React.js</div>
+                  <div className="text-gray-300 text-sm">Next.js</div>
+                  <div className="text-gray-300 text-sm">Prisma</div>
+                  <div className="text-gray-300 text-sm">FrontEnd</div>
+                  <div className="text-gray-300 text-sm">Redux</div>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ const PostsRead = () => {
                 the application from unauthorized access or fraudulent
                 activities.
               </div>
-              <div className="text-gray-500 font-medium text-sm md:text-base line-clamp-3">
+              <div className="text-gray-400 font-medium text-sm md:text-base line-clamp-3">
                 In this section, well explore the process of adding basic
                 email-password authentication to a web application. While this
                 method provides a fundamental level of security, its worth
@@ -314,7 +314,7 @@ const PostsRead = () => {
                 <div className="dark:bg-dark-600 relative mb-8 overflow-hidden rounded-xl bg-gray-100">
                   <Image
                     alt="content images"
-                    src="/assets/images/bg23.jpg"
+                    src="/assets/images/bg19.jpg"
                     width="768"
                     height="368"
                     loading="lazy"
