@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
   const pathname = usePathname()
   return (
     <>
-      <div className="fixed inset-0 bg-[url('/assets/images/bg23.jpg')] bg-no-repeat bg-cover">
+      <div className="fixed inset-0 bg-[url('/assets/images/bg16.jpg')] bg-no-repeat bg-cover">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/80 to-gray-950/95 z-10"></div>
       </div>
       <motion.div className="min-h-full">

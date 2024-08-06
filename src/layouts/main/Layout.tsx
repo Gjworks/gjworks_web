@@ -35,7 +35,7 @@ const MainLayout = ({ children }) => {
   }
   return (
     <div className="">
-      <div className="relative z-20">
+      <div className="relative z-20 pt-3">
         <Header />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main className="">

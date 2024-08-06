@@ -110,7 +110,7 @@ const Header = () => {
           (showNavigation === true ? '  ' : ' ')
         }
       >
-        <div className="mo">
+        <div className="max-w-screen-3xl mx-auto">
           <div className="grid grid-cols-5 gap-4 px-3 py-1">
             <div className="relative col-span-2 flex justify-start">
               <button
@@ -182,10 +182,10 @@ const Header = () => {
                         subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
                       }
                       variants={variants}
-                      className="absolute text-white top-12 w-[430px] bg-white shadow-gray-950/5 border-gray-200 dark:bg-dark-800/80 backdrop-blur-lg rounded-lg border dark:border-dark-700/50 p-6 shadow-md dark:shadow-dark-950 overflow-hidden"
+                      className="absolute text-white top-12 w-[430px] bg-white shadow-gray-950/5 border-gray-200 dark:bg-dark-800/80 backdrop-blur-lg rounded-lg border dark:border-dark-700/50 p-4 shadow-md dark:shadow-dark-950 overflow-hidden"
                     >
                       <div className="">
-                        <motion.div className="mb-4" variants={variants}>
+                        <motion.div className="mb-0" variants={variants}>
                           <div className="flex gap-4 items-center">
                             <div>
                               <div className="flex items-center justify-center w-10 h-10 bg-gray-700/50 rounded-lg dark:text-dark-200">
@@ -208,7 +208,7 @@ const Header = () => {
                             <div>
                               <div className="flex gap-2 items-center text-black dark:text-white font-medium mb-1">
                                 <div className="text-sm">Plextype</div>
-                                <span className="py-0.5 px-3 rounded-md text-xs bg-rose-500 text-white">
+                                <span className="py-0.5 px-3 rounded-md text-xs bg-teal-700 text-white">
                                   0.1.3
                                 </span>
                               </div>
@@ -319,7 +319,7 @@ const Header = () => {
                   />
                 </Link>
                 <div className="hidden group-hover:flex absolute top-0.5 lg:top-2 -right-8">
-                  <div className="bg-primary-600 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-600 after:inline-block after:rotate-45 after:z-10 after:content-['']">
+                  <div className="bg-primary-700 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-700 after:inline-block after:rotate-45 after:z-10 after:content-['']">
                     2.0
                   </div>
                 </div>
