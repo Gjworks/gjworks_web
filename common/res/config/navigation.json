@@ -14,7 +14,7 @@
             "route": "/service"
         },
         {
-            "title": "App",
+            "title": "Applications",
             "name": "applications",
             "icon": "",
             "parent": "service",

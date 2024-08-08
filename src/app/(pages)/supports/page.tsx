@@ -1,24 +1,17 @@
-"use client";
+'use client'
 
 const Page = () => {
   return (
     <>
-      <div className="relative hidden">
-        <div className="bg-gray-950">
-          <div className="relative mx-auto max-w-screen-md px-3 py-8 lg:px-8 xl:pt-20">
-            <div className="text-2xl font-semibold text-white lg:text-5xl">
-              Supports
-            </div>
-          </div>
-        </div>
-        <div className="bg-gray-200">
-          <div className="relative mx-auto max-w-screen-md px-3 lg:px-8">
-            <div className="py-20">
+      <div className="bg-gray-100 dark:bg-dark-950">
+        <div className="p-2 lg:p-5">
+          <div className="relative mx-auto max-w-screen-md px-3 lg:px-8 bg-white dark:bg-dark-900 border border-gray-200 dark:border-dark-700 shadow-sm shadow-gray-300 dark:shadow-black rounded-xl">
+            <div className="py-8">
               <div className="grid grid-cols-2 gap-8">
                 <div className="lg:order-0 order-1 col-span-2">
                   <div className="grid grid-cols-4 gap-8 py-10">
                     <div className="col-span-4 lg:col-span-1">
-                      <div className="text-lg font-semibold text-black">
+                      <div className="text-lg font-semibold text-black dark:text-white">
                         BUSINESS INFO
                       </div>
                     </div>
@@ -33,26 +26,28 @@ const Page = () => {
                               <span className="text-dark-400">
                                 사업자등록번호:
                               </span>
-                              <span className="mr-3 text-black">
+                              <span className="mr-3 text-black dark:text-white">
                                 892-28-00572
                               </span>
                             </div>
                             <div className="flex w-full gap-2 lg:w-auto">
                               <span className="text-dark-400">대표:</span>
-                              <span className="text-black">김규진</span>
+                              <span className="text-black dark:text-white">
+                                김규진
+                              </span>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="col-span-4 lg:col-span-1">
-                      <div className="text-lg font-semibold text-black">
+                      <div className="text-lg font-semibold text-black dark:text-white">
                         소셜네트워크
                       </div>
                     </div>
                     <div className="col-span-4 lg:col-span-3">
                       <div className="mb-10">
-                        <div className="mb-4 text-base font-semibold text-black">
+                        <div className="mb-4 text-base font-semibold text-black dark:text-white">
                           오픈채팅
                         </div>
                         <div className="mb-2 flex items-center text-sm">
@@ -70,7 +65,7 @@ const Page = () => {
                       </div>
                       <div className="mb-10">
                         <div className="mb-4 flex flex-wrap items-center text-base font-semibold text-black">
-                          <div className="mr-2 w-full text-black lg:w-auto">
+                          <div className="mr-2 w-full text-black dark:text-white lg:w-auto">
                             소셜링크
                           </div>
                           <div className="text-dark-400 w-full text-sm lg:w-auto">
@@ -103,7 +98,7 @@ const Page = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

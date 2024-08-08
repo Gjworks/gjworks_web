@@ -8,16 +8,17 @@ import FootAlert from 'src/layouts/fullLayout/FootAlert'
 
 const FullLayout = ({ children }) => {
   useEffect(() => {
-    const htmlElement = document.documentElement
-    // 조건에 따라 클래스를 추가 또는 제거
-    if (!htmlElement.classList.contains('dark')) {
-      htmlElement.classList.add('dark')
-    }
+    // const htmlElement = document.documentElement
+    // // 조건에 따라 클래스를 추가 또는 제거
+    // if (!htmlElement.classList.contains('dark')) {
+    //   htmlElement.classList.add('dark')
+    // }
   }, []) // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
   return (
     <div className="">
       <div className="relative z-20 pt-3">
         <Header />
+        <SubNav />
         <main className="h-full px-0 ">
           <div className="relative h-full">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}

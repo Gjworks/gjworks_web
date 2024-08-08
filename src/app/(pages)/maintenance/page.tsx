@@ -26,12 +26,12 @@ const Page = props => {
   return (
     <>
       <div className="max-w-screen-lg mx-auto py-8 xl:py-20 px-3">
-        <motion.div className="text-primary-400 text-5xl font-semibold">
-          Web
+        <motion.div className="text-lime-400 text-5xl font-semibold">
+          Maintenance
         </motion.div>
       </div>
       <div className="relative max-w-screen-xl mx-auto px-3">
-        <div className="relative h-[445px] bg-[url('/assets/images/yellow/yellow_bg3.jpg')] bg-no-repeat bg-cover bg-center rounded"></div>
+        <div className="relative h-[645px] bg-[url('/assets/images/bg16.jpg')] bg-no-repeat bg-cover bg-center rounded"></div>
       </div>
     </>
   )

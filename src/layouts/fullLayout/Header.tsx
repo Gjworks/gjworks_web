@@ -106,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'z-101 dark:bg-dark-950/50 sticky top-0 w-full bg-white pt-0 backdrop-blur-lg' +
+          'z-101 dark:bg-dark-950/75 sticky top-0 w-full bg-white pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
@@ -208,7 +208,7 @@ const Header = () => {
                             <div>
                               <div className="flex gap-2 items-center text-black dark:text-white font-medium mb-1">
                                 <div className="text-sm">Plextype</div>
-                                <span className="py-0.5 px-3 rounded-md text-xs bg-teal-700 text-white">
+                                <span className="py-0.5 px-3 rounded-md text-xs bg-teal-500 text-white">
                                   0.1.3
                                 </span>
                               </div>
@@ -319,7 +319,7 @@ const Header = () => {
                   />
                 </Link>
                 <div className="hidden group-hover:flex absolute top-0.5 lg:top-2 -right-8">
-                  <div className="bg-primary-700 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-700 after:inline-block after:rotate-45 after:z-10 after:content-['']">
+                  <div className="bg-primary-500 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-500 after:inline-block after:rotate-45 after:z-10 after:content-['']">
                     2.0
                   </div>
                 </div>

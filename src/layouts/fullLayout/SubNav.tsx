@@ -48,17 +48,19 @@ const SubNav = () => {
       _subMenu = null
       setSubMenu(_subMenu)
     }
-  }, [pathname, currentPage, subMenu])
+
+    console.log(subMenu)
+  }, [pathname, currentPage])
 
   const snav = null
   return (
     <>
       {subMenu && (
-        <div className="border-b border-gray-100 dark:border-dark-600/50">
+        <div className="relative">
           <div className="max-w-screen-xl mx-auto">
             <div className="sticky top-0">
               <div className="flex gap-4 pt-3 px-3">
-                <div className="max-w-32 hidden lg:flex items-center">
+                <div className="max-w-32 hidden items-center">
                   <div className="flex text-xl font-medium text-black dark:text-white uppercase py-3">
                     {currentPage ? currentPage?.title : 'Discovery'}
                   </div>
@@ -67,21 +69,27 @@ const SubNav = () => {
                   <div className="overflow-scroll-hide flex w-full overflow-hidden overflow-x-auto justify-start md:justify-center">
                     <div className="flex gap-8">
                       {subMenu &&
-                        Object.entries(subMenu).map((data, index) => {
-                          return (
-                            <Link
-                              href={data[1].route}
-                              key={data[1].name}
-                              className={
-                                'block whitespace-nowrap px-1 pt-2 pb-3 text-sm text-black hover:text-gray-500 ' +
-                                (currentPage?.name === data[1].name
-                                  ? ' text-gray-900 border-b-2 border-gray-950 '
-                                  : ' text-gray-600 hover:text-gray-100 ')
-                              }
-                            >
-                              {data[1].title}
-                            </Link>
-                          )
+                        Object.entries(subMenu).map(([key, value], index) => {
+                          console.log(value)
+                          if (value.route) {
+                            return (
+                              <div key={value.name}>
+                                <Link
+                                  href={value.route}
+                                  className={
+                                    'block whitespace-nowrap px-1 pt-2 pb-3 text-sm text-black hover:text-gray-500 ' +
+                                    (pathname === value.route
+                                      ? ' text-gray-900 border-b-2 border-gray-950 dark:text-white  '
+                                      : ' text-gray-600 hover:text-gray-100 dark:text-dark-600 dark:hover:text-dark-300')
+                                  }
+                                >
+                                  {value.title}
+                                </Link>
+                              </div>
+                            )
+                          } else {
+                            return null
+                          }
                         })}
                     </div>
                   </div>
