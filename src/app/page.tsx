@@ -69,9 +69,9 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative px-3 pt-3">
             <div className="relative max-w-screen-3xl mx-auto bg-gray-200 rounded-2xl overflow-hidden">
-              <div className="relative bg-[url('/assets/images/bg16.jpg')] bg-no-repeat bg-cover bg-center py-12">
+              <div className="relative bg-[url('/assets/images/bg16.jpg')] bg-no-repeat bg-cover bg-center py-0 lg:py-12">
                 <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-dark-950/30 via-gray-950/40 to-gray-950/50 bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/20 dark:to-dark-950"></div>
-                <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pb-20 pt-20">
+                <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pt-0 lg:py-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
                       variants={parentVariants}
@@ -130,7 +130,7 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-3/5"
                           >
-                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-950/20 p-3 ">
+                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-950/20 p-3 backdrop-blur-2xl">
                               <Square3Stack3DIcon className="size-5 text-gray-300 stroke-1" />
                             </div>
                             <div className="flex-1">
