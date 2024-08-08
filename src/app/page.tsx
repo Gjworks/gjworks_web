@@ -81,20 +81,20 @@ export default function Page() {
                       className="grid w-full grid-cols-12 gap-8"
                     >
                       <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
-                        <div className="pt-16">
+                        <div className="">
                           <div className="relative grid grid-cols-1 gap-4 px-4">
                             <motion.div
                               variants={variants}
                               className="col-span-1 px-1 lg:mb-2"
                             >
-                              <div className="flex flex-wrap gap-2 text-4xl font-semibold !leading-tight tracking-tighter text-white lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
+                              <div className="flex flex-wrap gap-2 text-4xl font-normal md:font-semibold !leading-tight tracking-tighter text-white lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
                                 Building digital experience
                               </div>
                             </motion.div>
 
                             <motion.div
                               variants={variants}
-                              className="mb-10 pl-0 text-4xl font-semibold tracking-tighter text-white lg:text-6xl dark:text-white text-center"
+                              className="mb-10 pl-0 text-4xl font-normal md:font-semibold tracking-tighter text-white lg:text-6xl dark:text-white text-center"
                             >
                               Creative platform service
                             </motion.div>
