@@ -106,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'z-101 dark:bg-dark-950/75 sticky top-0 w-full bg-white pt-0 backdrop-blur-lg' +
+          'z-101 dark:bg-dark-950/75 sticky top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
@@ -182,7 +182,7 @@ const Header = () => {
                         subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
                       }
                       variants={variants}
-                      className="absolute text-white top-12 w-[430px] bg-white shadow-gray-950/5 border-gray-200 dark:bg-dark-800/80 backdrop-blur-lg rounded-lg border dark:border-dark-700/50 p-4 shadow-md dark:shadow-dark-950 overflow-hidden"
+                      className="absolute text-white top-12 w-[430px]  shadow-gray-950/5 border-gray-950/10 dark:bg-dark-800/80  rounded-lg border dark:border-dark-700/50 p-4 shadow-md dark:shadow-dark-950 overflow-hidden before:content-[''] before:backdrop-blur-lg before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 bg-white/90  before:z-[-1]"
                     >
                       <div className="">
                         <motion.div className="mb-0" variants={variants}>
@@ -208,7 +208,7 @@ const Header = () => {
                             <div>
                               <div className="flex gap-2 items-center text-black dark:text-white font-medium mb-1">
                                 <div className="text-sm">Plextype</div>
-                                <span className="py-0.5 px-3 rounded-md text-xs bg-teal-500 text-white">
+                                <span className="py-0.5 px-3 rounded-md text-xs bg-teal-800 text-white">
                                   0.1.3
                                 </span>
                               </div>
@@ -319,7 +319,7 @@ const Header = () => {
                   />
                 </Link>
                 <div className="hidden group-hover:flex absolute top-0.5 lg:top-2 -right-8">
-                  <div className="bg-primary-500 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-500 after:inline-block after:rotate-45 after:z-10 after:content-['']">
+                  <div className="bg-primary-800 text-white py-1 px-2 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:-left-1 after:top-1.5 after:bg-primary-800 after:inline-block after:rotate-45 after:z-10 after:content-['']">
                     2.0
                   </div>
                 </div>

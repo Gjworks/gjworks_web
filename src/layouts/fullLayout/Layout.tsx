@@ -16,7 +16,7 @@ const FullLayout = ({ children }) => {
   }, []) // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
   return (
     <div className="">
-      <div className="relative z-20 pt-3">
+      <div className="relative z-20">
         <Header />
         <SubNav />
         <main className="h-full px-0 ">

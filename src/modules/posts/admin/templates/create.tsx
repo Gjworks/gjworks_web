@@ -30,6 +30,7 @@ const DashboardPostCreate = (props: PostProps) => {
         } else {
           console.log(response)
           if (response.data.postInfo && response.type === 'success') {
+            console.log(response.data.postInfo)
             setPosts(response.data.postInfo)
           }
         }
@@ -38,7 +39,7 @@ const DashboardPostCreate = (props: PostProps) => {
   }, [props.id])
 
   useEffect(() => {
-    console.log(posts?.config)
+    // console.log(posts?.config?.grant.commentGrant)
     if (posts?.config?.documentLike !== undefined) {
       console.log(posts.config.documentLike)
       setIsDocumentLike(posts.config.documentLike)
@@ -99,6 +100,16 @@ const DashboardPostCreate = (props: PostProps) => {
         console.error('Failed to register: ' + error.toString())
       })
   }
+  // const isCheckedComment =
+  //   posts?.grant && posts.config.grant.commentGrant.includes(String(0))
+
+  const handleCheckboxChange = (params: any) => {
+    console.log(params)
+  }
+
+  const isCheckedComment =
+    posts?.grant && posts.config.grant.commentGrant.includes(String(0))
+  console.log(isCheckedComment)
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
@@ -429,36 +440,45 @@ const DashboardPostCreate = (props: PostProps) => {
                               <div className="flex-1">
                                 <div className="flex gap-2 flex-wrap">
                                   <div>
-                                    <label className="text-sm flex gap-2 items-center">
-                                      <input
-                                        type="checkbox"
-                                        name="commentGrant"
-                                        value="0"
-                                      />
-                                      로그인사용자
-                                    </label>
-                                  </div>
-                                  {posts?.grant?.map((item, index) => {
-                                    const isChecked = posts.grant.some(
-                                      postGrant =>
-                                        postGrant.groupId === posts.id
-                                    )
-                                    return (
-                                      <div key={index}>
+                                    <div>
+                                      {isCheckedComment && (
                                         <label className="text-sm flex gap-2 items-center">
                                           <input
                                             type="checkbox"
                                             name="commentGrant"
-                                            value={item.id}
+                                            value="0"
                                             checked={
-                                              isChecked ? true : undefined
+                                              isCheckedComment ? true : false
                                             }
+                                            onChange={handleCheckboxChange}
                                           />
-                                          {item.groupTitle}
+                                          로그인사용자
                                         </label>
-                                      </div>
-                                    )
-                                  })}
+                                      )}
+                                    </div>
+                                  </div>
+                                  {posts?.grant &&
+                                    posts?.grant?.map((item, index) => {
+                                      const isChecked =
+                                        posts.config.grant.commentGrant.includes(
+                                          String(item.id)
+                                        )
+                                      // console.log(isChecked)
+                                      return (
+                                        <div key={item.id}>
+                                          <label className="text-sm flex gap-2 items-center">
+                                            <input
+                                              type="checkbox"
+                                              name="commentGrant"
+                                              value={item.id}
+                                              checked={isChecked ? true : false}
+                                              onChange={handleCheckboxChange}
+                                            />
+                                            {item.groupTitle}
+                                          </label>
+                                        </div>
+                                      )
+                                    })}
                                 </div>
                               </div>
                             </div>
