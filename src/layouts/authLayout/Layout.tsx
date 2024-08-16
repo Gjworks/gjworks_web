@@ -12,10 +12,17 @@ import Authpanel from './AuthPanel'
 
 const Layout = ({ children }) => {
   const pathname = usePathname()
+  useEffect(() => {
+    const htmlElement = document.documentElement
+    // 조건에 따라 클래스를 추가 또는 제거
+    if (!htmlElement.classList.contains('dark')) {
+      htmlElement.classList.add('dark')
+    }
+  }, []) //
   return (
     <>
-      <div className="fixed inset-0 bg-[url('/assets/images/bg16.jpg')] bg-no-repeat bg-cover">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/80 to-gray-950/95 z-10"></div>
+      <div className="fixed inset-0 bg-[url('/assets/images/bg23.jpg')] bg-no-repeat bg-cover">
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/80 to-gray-950/95 dark:from-dark-950/40 dark:via-dark-950/80 dark:to-dark-950/95 z-10"></div>
       </div>
       <motion.div className="min-h-full">
         {/* <div className="absolute block top-0 left-0 right-0 h-[399px] bg-gradient-to-br from-dark-600 via-dark-800 to-dark-800"></div> */}

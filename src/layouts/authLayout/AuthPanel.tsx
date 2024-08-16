@@ -4,13 +4,6 @@ import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 
 const Authpanel = ({ children }) => {
-  useEffect(() => {
-    // const htmlElement = document.documentElement
-    // // 조건에 따라 클래스를 추가 또는 제거
-    // if (!htmlElement.classList.contains('dark')) {
-    //   htmlElement.classList.add('dark')
-    // }
-  }, []) //
   const router = useRouter()
   const fixedvar = {
     hidden: { x: 125, y: 0 },
