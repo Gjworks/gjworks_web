@@ -68,9 +68,9 @@ export default function Page() {
 
         <motion.div className="relative w-full">
           <div className="relative">
-            <div className="relative px-3 overflow-hidden rounded-2xl">
-              <div className="relative max-w-screen-3xl mx-auto border border-gray-200/75 rounded-2xl bg-gray-100 py-0 lg:py-12 shadow-lg shadow-gray-100/90 backdrop-blur-xl bg-[url('/assets/images/bg39.jpg')] bg-no-repeat bg-cover bg-center dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60">
-                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/50 via-gray-950/60 to-gray-950/70 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
+            <div className="relative overflow-hidden">
+              <div className="relative w-full bg-gray-100 border-b border-gray-200/75 py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60">
+                {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/50 via-gray-950/60 to-gray-950/70 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div> */}
                 <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pt-0 lg:py-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -87,14 +87,14 @@ export default function Page() {
                               variants={variants}
                               className="col-span-1 px-1 lg:mb-2"
                             >
-                              <div className="flex flex-wrap gap-2 text-4xl font-normal md:font-semibold !leading-tight tracking-tighter text-white lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
+                              <div className="flex flex-wrap gap-2 text-4xl font-normal md:font-semibold !leading-tight tracking-tighter text-gray-950 lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
                                 Building digital experience
                               </div>
                             </motion.div>
 
                             <motion.div
                               variants={variants}
-                              className="mb-10 pl-0 text-4xl font-normal md:font-semibold tracking-tighter text-white lg:text-6xl dark:text-white text-center"
+                              className="mb-10 pl-0 text-4xl font-normal md:font-semibold tracking-tighter text-gray-950 lg:text-6xl dark:text-white text-center"
                             >
                               Creative platform service
                             </motion.div>
@@ -105,9 +105,9 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto mb-6 max-w-lg py-3"
                           >
-                            <div className="flex gap-8 rounded-full bg-gray-950/20 dark:bg-dark-900/30 p-2 backdrop-blur-lg lg:p-2">
+                            <div className="flex gap-8 rounded-full bg-gray-950/5 dark:bg-dark-900/30 p-2 backdrop-blur-lg lg:p-2">
                               <div className="flex flex-1 items-center px-3">
-                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-100">
+                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-700">
                                   Launch Your Service.
                                 </div>
                               </div>
@@ -115,7 +115,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-cyan-600 dark:bg-dark-700 dark:hover:bg-dark-950 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-cyan-500 hover:text-white lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-dark-700 dark:hover:bg-dark-950 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <PaperAirplaneIcon className="size-5 stroke-1" />
@@ -130,14 +130,14 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-3/5"
                           >
-                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-950/30 p-3 backdrop-blur-2xl">
-                              <Square3Stack3DIcon className="size-5 text-gray-300 stroke-1" />
+                            <div className="dark:bg-dark-700/75 rounded-lg bg-gray-950/10 p-3 backdrop-blur-2xl">
+                              <Square3Stack3DIcon className="size-5 text-gray-600 stroke-1" />
                             </div>
                             <div className="flex-1">
-                              <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-100">
+                              <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-950">
                                 OpenSource Projects
                               </div>
-                              <div className="dark:text-dark-300 text-left text-xs text-gray-300">
+                              <div className="dark:text-dark-300 text-left text-xs text-gray-400">
                                 다양한 프로젝트를 만나보시고 좋은 의견과
                                 아이디어를 주시면 반영하겠습니다.
                               </div>
@@ -238,7 +238,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
-            className=" pt-20"
+            className="hidden pt-20"
           >
             <div className="relative mx-auto max-w-screen-xl px-3">
               <div className="grid grid-cols-12 gap-0 lg:gap-8">
