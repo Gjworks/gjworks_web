@@ -69,7 +69,7 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative">
             <div className="relative px-3 overflow-hidden rounded-2xl">
-              <div className="relative max-w-screen-3xl mx-auto border border-gray-200/75 rounded-2xl bg-gray-100 py-0 lg:py-12 shadow-lg shadow-gray-100/90 backdrop-blur-xl bg-[url('/assets/images/bg39.jpg')] bg-no-repeat bg-cover bg-center overflow-hidden">
+              <div className="relative max-w-screen-3xl mx-auto border border-gray-200/75 rounded-2xl bg-gray-100 py-0 lg:py-12 shadow-lg shadow-gray-100/90 backdrop-blur-xl bg-[url('/assets/images/bg39.jpg')] bg-no-repeat bg-cover bg-center dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60">
                 <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/50 via-gray-950/60 to-gray-950/70 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
                 <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pt-0 lg:py-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
@@ -263,7 +263,7 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="mb-20 pt-10">
+              <div className="pb-10 pt-10">
                 <div className="relative mx-auto max-w-screen-xl px-3">
                   <motion.div className="grid grid-cols-12 gap-y-8 lg:gap-8">
                     <div className="col-span-12 lg:col-span-5">
@@ -335,7 +335,7 @@ export default function Page() {
                           whileInView="onscreen"
                         >
                           <motion.div variants={variants} className="mb-6">
-                            <div className="bg-primary-600 flex h-10 w-10 items-center justify-center rounded-full text-white">
+                            <div className="bg-indigo-600 flex h-10 w-10 items-center justify-center rounded-full text-white">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
