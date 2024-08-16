@@ -69,8 +69,8 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative px-3">
             <div className="relative max-w-screen-3xl mx-auto bg-gray-200 rounded-2xl overflow-hidden">
-              <div className="relative bg-[url('/assets/images/bg15.jpg')] bg-no-repeat bg-cover bg-center py-0 lg:py-12">
-                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-dark-950/30 via-gray-950/40 to-gray-950/50 bg-gradient-to-b dark:from-dark-950/30 dark:via-dark-950/40 dark:to-dark-950/50"></div>
+              <div className="relative bg-[url('/assets/images/bg42.jpg')] bg-no-repeat bg-cover bg-center py-0 lg:py-12">
+                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-dark-950/30 via-gray-950/40 to-gray-950/50 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
                 <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pt-0 lg:py-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -115,7 +115,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-white dark:hover:bg-dark-300 dark:text-black px-3 py-1.5 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-dark-700 dark:hover:bg-dark-950 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <PaperAirplaneIcon className="size-5 stroke-1" />
