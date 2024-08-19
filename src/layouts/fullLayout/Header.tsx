@@ -111,8 +111,8 @@ const Header = () => {
         }
       >
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-5 gap-4 px-3 py-1">
-            <div className="relative col-span-3 flex justify-start">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 px-3 py-3">
+            <div className="relative col-span-1 flex justify-start">
               <button
                 onClick={() => {
                   setShowLeft(!showLeft)
@@ -179,172 +179,171 @@ const Header = () => {
                     </a>
                   </div>
                 </div>
-                <div className="dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full px-4 py-1 lg:flex">
-                  <div
-                    className=" relative flex"
-                    // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
-                    // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
-                  >
-                    <Link
-                      href="/service"
-                      onMouseEnter={() => handleMouseEnter()}
-                      className={
-                        'relative mx-2 flex items-center gap-1 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
-                        (currentPage?.route === '/service'
-                          ? 'text-gray-400 dark:text-white'
-                          : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
-                      }
-                    >
-                      <div>Service</div>
-                      <>
-                        <div className="">
-                          <ChevronDownIcon className="h-3 w-3 stroke-2" />
-                        </div>
-                      </>
-                    </Link>
-
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={
-                        subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
-                      }
-                      variants={variants}
-                      className="flex absolute text-white top-12 w-[430px]  shadow-gray-950/5 border-gray-950/10 dark:bg-dark-800/80  rounded-lg border dark:border-dark-700/50 p-4 shadow-md dark:shadow-dark-950 overflow-hidden before:content-[''] before:backdrop-blur-lg before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 bg-white/90  before:z-[-1]"
-                    >
-                      <div className="">
-                        <motion.div className="mb-0" variants={variants}>
-                          <div className="flex gap-4 items-center">
-                            <div>
-                              <div className="flex items-center justify-center w-10 h-10 bg-gray-700/50 rounded-lg dark:text-dark-200">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  strokeWidth={1.5}
-                                  stroke="currentColor"
-                                  className="size-5"
-                                >
-                                  <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
-                                  />
-                                </svg>
-                              </div>
-                            </div>
-                            <div>
-                              <div className="flex gap-2 items-center text-black dark:text-white font-medium mb-1">
-                                <div className="text-sm">Plextype</div>
-                                <span className="py-0.5 px-3 rounded-md text-xs bg-lime-400 text-black">
-                                  0.1.3
-                                </span>
-                              </div>
-                              <div className="text-sm text-gray-400 line-clamp-1">
-                                Next.js, Prisma.js 등을 활용하여 간단한
-                                웹서비스를 고급스럽게 제작하기 위한 웹 컴포넌트
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      </div>
-                    </motion.div>
-
-                    {nav.header &&
-                      Object.entries(nav.header).map((data, index) => {
-                        return (
-                          <div
-                            key={data[1].name}
-                            className="relative flex items-center"
-                          >
-                            {data[1].name === 'service' ? (
-                              ''
-                            ) : (
-                              <>
-                                <Link
-                                  href={data[1].route}
-                                  className={
-                                    'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
-                                    (currentPage?.route === data[1].route
-                                      ? 'text-gray-400 dark:text-white'
-                                      : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
-                                  }
-                                >
-                                  <div>{data[1].title}</div>
-                                  {data[1].subMenu.length > 0 ? (
-                                    <>
-                                      <div className="">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          fill="none"
-                                          viewBox="0 0 24 24"
-                                          strokeWidth={2}
-                                          stroke="currentColor"
-                                          className="size-3"
-                                        >
-                                          <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                                          />
-                                        </svg>
-                                      </div>
-                                    </>
-                                  ) : (
-                                    ''
-                                  )}
-                                </Link>
-                              </>
-                            )}
-                          </div>
-                        )
-                      })}
-                    <button
-                      onClick={() => {
-                        setShowNavigation(true)
-                      }}
-                      className="hidden items-center rounded-md px-3 hover:bg-gray-100"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1}
-                        stroke="currentColor"
-                        className="h-5 w-5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <Link
-                    href="/plextype"
-                    className="hidden dark:text-dark-100 dark:bg-dark-100/10 cursor-pointer rounded-full bg-gray-100/90 px-4 py-1 text-xs text-gray-500 backdrop-blur-lg transition duration-300 hover:bg-gray-200/75 hover:text-black dark:hover:bg-gray-100/20 dark:hover:text-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1}
-                      stroke="currentColor"
-                      className="mr-2 h-4 w-4"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"
-                      />
-                    </svg>
-                    <span>Plextype 0.1.10.beta</span>
-                  </Link>
-                </div>
               </div>
             </div>
+            <div className="col-span-3 dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full px-4 py-1 lg:flex">
+              <div
+                className=" relative flex"
+                // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
+                // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
+              >
+                <Link
+                  href="/service"
+                  onMouseEnter={() => handleMouseEnter()}
+                  className={
+                    'relative mx-2 flex items-center gap-1 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
+                    (currentPage?.route === '/service'
+                      ? 'text-gray-400 dark:text-white'
+                      : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
+                  }
+                >
+                  <div>Service</div>
+                  <>
+                    <div className="">
+                      <ChevronDownIcon className="h-3 w-3 stroke-2" />
+                    </div>
+                  </>
+                </Link>
 
-            <div className="relative col-span-2 flex items-center justify-end gap-2 lg:gap-4 lg:px-3">
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={
+                    subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
+                  }
+                  variants={variants}
+                  className="flex absolute text-white top-12 w-[430px]  shadow-gray-950/5 border-gray-950/10 dark:bg-dark-800/80  rounded-lg border dark:border-dark-700/50 p-4 shadow-md dark:shadow-dark-950 overflow-hidden before:content-[''] before:backdrop-blur-lg before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 bg-white/90  before:z-[-1]"
+                >
+                  <div className="">
+                    <motion.div className="mb-0" variants={variants}>
+                      <div className="flex gap-4 items-center">
+                        <div>
+                          <div className="flex items-center justify-center w-10 h-10 bg-gray-700/50 rounded-lg dark:text-dark-200">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1.5}
+                              stroke="currentColor"
+                              className="size-5"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div>
+                          <div className="flex gap-2 items-center text-black dark:text-white font-medium mb-1">
+                            <div className="text-sm">Plextype</div>
+                            <span className="py-0.5 px-3 rounded-md text-xs bg-lime-400 text-black">
+                              0.1.3
+                            </span>
+                          </div>
+                          <div className="text-sm text-gray-400 line-clamp-1">
+                            Next.js, Prisma.js 등을 활용하여 간단한 웹서비스를
+                            고급스럽게 제작하기 위한 웹 컴포넌트
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+
+                {nav.header &&
+                  Object.entries(nav.header).map((data, index) => {
+                    return (
+                      <div
+                        key={data[1].name}
+                        className="relative flex items-center"
+                      >
+                        {data[1].name === 'service' ? (
+                          ''
+                        ) : (
+                          <>
+                            <Link
+                              href={data[1].route}
+                              className={
+                                'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
+                                (currentPage?.route === data[1].route
+                                  ? 'text-gray-400 dark:text-white'
+                                  : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
+                              }
+                            >
+                              <div>{data[1].title}</div>
+                              {data[1].subMenu.length > 0 ? (
+                                <>
+                                  <div className="">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      strokeWidth={2}
+                                      stroke="currentColor"
+                                      className="size-3"
+                                    >
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                                      />
+                                    </svg>
+                                  </div>
+                                </>
+                              ) : (
+                                ''
+                              )}
+                            </Link>
+                          </>
+                        )}
+                      </div>
+                    )
+                  })}
+                <button
+                  onClick={() => {
+                    setShowNavigation(true)
+                  }}
+                  className="hidden items-center rounded-md px-3 hover:bg-gray-100"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1}
+                    stroke="currentColor"
+                    className="h-5 w-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <Link
+                href="/plextype"
+                className="hidden dark:text-dark-100 dark:bg-dark-100/10 cursor-pointer rounded-full bg-gray-100/90 px-4 py-1 text-xs text-gray-500 backdrop-blur-lg transition duration-300 hover:bg-gray-200/75 hover:text-black dark:hover:bg-gray-100/20 dark:hover:text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1}
+                  stroke="currentColor"
+                  className="mr-2 h-4 w-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"
+                  />
+                </svg>
+                <span>Plextype 0.1.10.beta</span>
+              </Link>
+            </div>
+            <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4 lg:px-3">
               <div className="flex items-center">
                 <button
                   className="px-2 py-2 text-gray-950 dark:text-dark-400 dark:hover:text-dark-300 hover:bg-gray-100 rounded-md dark:hover:bg-dark-700/75 dark:hover:text-white"
