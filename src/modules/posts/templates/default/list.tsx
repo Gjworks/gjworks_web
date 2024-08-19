@@ -62,7 +62,27 @@ const PostsList: React.FC<PageProps> = ({
             </Link>
           </div>
         </div>
-        <Link href="/posts/works/create">글쓰기</Link>
+        <div className="pb-20">
+          <div className="flex justify-between gap-4 flex-wrap">
+            <div className="w-full flex justify-center">
+              <PageNavigation
+                pathname="/posts/works"
+                totalCount={10}
+                page={1}
+                listCount={10}
+                totalPages={1}
+              />
+            </div>
+            <div className="flex justify-end flex-1">
+              <Link
+                href="/posts/works/create"
+                className="border border-gray-200 bg-white text-sm py-2 px-8 rounded-lg shadow-sm dark:border-dark-800 dark:bg-dark-900 dark:text-dark-200 hover:bg-primary-400"
+              >
+                글쓰기
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

@@ -25,7 +25,7 @@ const PageNavigation = (props: PageNavigationInfo) => {
           className={
             'flex items-center justify-center rounded-md border text-sm w-[2.25rem] h-[2.25rem] bg-gray-50 hover:bg-white text-gray-500 ' +
             (page == i
-              ? 'bg-white text-gray-950 border-gray-950'
+              ? 'bg-white text-gray-950 border-gray-300 hover:border-gray-950 '
               : 'text-gray-500 border-gray-200')
           }
         >
@@ -38,12 +38,12 @@ const PageNavigation = (props: PageNavigationInfo) => {
 
   return (
     <div className="flex items-center">
-      <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+      <div className="flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
           <nav className="flex gap-1" aria-label="Pagination">
             <a
               href="#"
-              className="flex items-center justify-center rounded-md border text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 bg-gray-50 hover:bg-white"
+              className="flex items-center justify-center rounded-md text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 hover:bg-gray-200"
             >
               <span className="sr-only">Previous</span>
               <svg
@@ -63,7 +63,7 @@ const PageNavigation = (props: PageNavigationInfo) => {
             {pageNavationList()}
             <a
               href="#"
-              className="flex items-center justify-center rounded-md border text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 bg-gray-50 hover:bg-white"
+              className="flex items-center justify-center rounded-md  text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 hover:bg-gray-200"
             >
               <span className="sr-only">Next</span>
               <svg

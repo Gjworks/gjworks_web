@@ -18,7 +18,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-8 px-3 pt-10 pb-20">
+      <div className="flex flex-wrap gap-8 px-3 pt-10 pb-20 bg-white">
         <div className="w-full">
           <div className="max-w-screen-md mx-auto">
             <div className="w-full">
