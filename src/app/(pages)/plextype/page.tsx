@@ -110,7 +110,7 @@ const closeModal = (close) => {
             </Link>
             <Link
               href="#"
-              className="block text-sm mb-2 bg-gray-100 text-primary-500 hover:bg-gray-100 py-2 px-4 rounded-lg"
+              className="block text-sm mb-2 hover:bg-gray-100 py-2 px-4 rounded-lg"
             >
               Modal
             </Link>
@@ -147,19 +147,19 @@ const closeModal = (close) => {
               </div>
               <div className="mb-8 flex gap-4">
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalTop(!showModalTop)}
                 >
                   Top Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalCenter(!showModalCenter)}
                 >
                   Center Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalBottom(!showModalBottom)}
                 >
                   Bottom Modal
@@ -195,11 +195,11 @@ const closeModal = (close) => {
               </Modal>
 
               <div className="mb-8">
-                <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <div className="bg-white border border-gray-200 rounded-sm overflow-hidden">
                   <table className="w-full">
-                    <thead className="bg-gray-100">
-                      <th className="p-2 text-sm italic font-medium">name</th>
-                      <th className="p-2 text-sm italic font-medium">type</th>
+                    <thead className="bg-gray-200">
+                      <th className="p-1 text-xs italic font-normal">name</th>
+                      <th className="p-1 text-xs italic font-normal">type</th>
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200">
@@ -237,31 +237,31 @@ const closeModal = (close) => {
               </div>
               <div className="mb-8 flex gap-4">
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalSm(!showModalSm)}
                 >
                   sm Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalMd(!showModalMd)}
                 >
                   md Modal (기본값)
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalLg(!showModalLg)}
                 >
                   lg Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalXl(!showModalXl)}
                 >
                   xl Modal
                 </button>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModal2Xl(!showModal2Xl)}
                 >
                   2xl Modal
@@ -308,11 +308,11 @@ const closeModal = (close) => {
                 <div className="p-20 text-center text-gray-950">lg 모달</div>
               </Modal>
               <div className="mb-8">
-                <div className="border border-gray-200 rounded-lg overflow-hidden">
-                  <table className="w-full border border-gray-200 rounded-lg overflow-hidden ">
-                    <thead className="bg-gray-100">
-                      <th className="p-2 text-sm italic font-medium">name</th>
-                      <th className="p-2 text-sm italic font-medium">type</th>
+                <div className="bg-white border border-gray-200 rounded-sm overflow-hidden">
+                  <table className="w-full">
+                    <thead className="bg-gray-200">
+                      <th className="p-1 text-xs italic font-normal">name</th>
+                      <th className="p-1 text-xs italic font-normal">type</th>
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200">
@@ -351,11 +351,11 @@ const closeModal = (close) => {
               </div>
 
               <div className="mb-8">
-                <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <div className="bg-white border border-gray-200 rounded-sm overflow-hidden">
                   <table className="w-full">
-                    <thead className="bg-gray-100">
-                      <th className="p-2 text-sm italic font-medium">name</th>
-                      <th className="p-2 text-sm italic font-medium">type</th>
+                    <thead className="bg-gray-200">
+                      <th className="p-1 text-xs italic font-normal">name</th>
+                      <th className="p-1 text-xs italic font-normal">type</th>
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200">
@@ -386,11 +386,11 @@ const closeModal = (close) => {
                 </div>
               </div>
               <div className="mb-8">
-                <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <div className="bg-white border border-gray-200 rounded-sm overflow-hidden">
                   <table className="w-full">
-                    <thead className="bg-gray-100">
-                      <th className="p-2 text-sm italic font-medium">name</th>
-                      <th className="p-2 text-sm italic font-medium">type</th>
+                    <thead className="bg-gray-200">
+                      <th className="p-1 text-xs italic font-normal">name</th>
+                      <th className="p-1 text-xs italic font-normal">type</th>
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200">
@@ -415,11 +415,11 @@ const closeModal = (close) => {
                 </div>
               </div>
               <div className="mb-8">
-                <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <div className="bg-white border border-gray-200 rounded-sm overflow-hidden">
                   <table className="w-full">
-                    <thead className="bg-gray-100">
-                      <th className="p-2 text-sm italic font-medium">name</th>
-                      <th className="p-2 text-sm italic font-medium">type</th>
+                    <thead className="bg-gray-200">
+                      <th className="p-1 text-xs italic font-normal">name</th>
+                      <th className="p-1 text-xs italic font-normal">type</th>
                     </thead>
                     <tbody>
                       <tr className="border-b border-gray-200">
@@ -444,7 +444,7 @@ const closeModal = (close) => {
               </div>
               <div className="mb-8 flex gap-4">
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() => setShowModalEscClose(!showModalEscClose)}
                 >
                   escClose (true)
@@ -461,7 +461,7 @@ const closeModal = (close) => {
                 </Modal>
 
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() =>
                     setShowModalEscCloseFalse(!showModalEscCloseFalse)
                   }
@@ -482,7 +482,7 @@ const closeModal = (close) => {
                 </Modal>
 
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() =>
                     setShowModalOverlayClose(!showModalOverlayClose)
                   }
@@ -500,7 +500,7 @@ const closeModal = (close) => {
                   </div>
                 </Modal>
                 <button
-                  className="p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
+                  className="bg-white p-2 px-5 border border-gray-200 hover:bg-gray-50 shadow-sm text-sm rounded-md outline-none hover:border-gray-300"
                   onClick={() =>
                     setShowModalOverlayCloseFalse(!showModalOverlayCloseFalse)
                   }

@@ -111,7 +111,7 @@ const Header = () => {
         }
       >
         <div className="max-w-screen-xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 px-3 py-3">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 px-3 py-1.5">
             <div className="relative col-span-1 flex justify-start">
               <button
                 onClick={() => {
@@ -152,7 +152,7 @@ const Header = () => {
                         alt="gjworks logo"
                         width="32"
                         height="32"
-                        className="block w-[1.6rem] h-[1.6rem] lg:w-[2rem] lg:h-[2rem]"
+                        className="block w-[1.6rem] h-[1.6rem] lg:w-[1.7rem] lg:h-[1.7rem]"
                       />
                       {/* <Image
                         src="/assets/images/brand/gjworks.svg"
@@ -162,7 +162,7 @@ const Header = () => {
                         className="block dark:hidden lg:h-10 lg:w-10 h-8 w-8"
                       /> */}
                     </Link>
-                    <div className="hidden group-hover:flex absolute top-10 lg:top-12 -left-0.5 z-10">
+                    <div className="hidden group-hover:flex absolute top-10 lg:top-10 -left-1 z-10">
                       <div className="bg-pink-400 text-white py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-pink-400 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
                         2.0
                       </div>
