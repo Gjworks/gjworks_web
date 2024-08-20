@@ -106,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'z-101 dark:bg-dark-900/75 sticky top-0 w-full bg-gray-100/90 pt-0 backdrop-blur-lg' +
+          'z-101 dark:bg-dark-900/90 sticky top-0 w-full bg-gray-100/90 pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
@@ -207,70 +207,6 @@ const Header = () => {
                 // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
                 // onMouseLeave={} // 마우스리브 시에는 키값이 지워진다
               >
-                <Link
-                  href="/service"
-                  onMouseEnter={() => handleMouseEnter()}
-                  className={
-                    'relative mx-2 flex items-center gap-1 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
-                    (currentPage?.route === '/service'
-                      ? 'text-gray-400 dark:text-white'
-                      : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
-                  }
-                >
-                  <div>Service</div>
-                  <>
-                    <div className="">
-                      <ChevronDownIcon className="h-3 w-3 stroke-2" />
-                    </div>
-                  </>
-                </Link>
-
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={
-                    subMenuState === true ? 'openSubMenu' : 'closeSubMenu'
-                  }
-                  variants={variants}
-                  className="flex absolute text-white top-12 w-[430px]  shadow-gray-950/5 border-gray-950/10 dark:bg-dark-800/80  rounded-lg border dark:border-dark-700/50 p-4 shadow-md dark:shadow-dark-950 overflow-hidden before:content-[''] before:backdrop-blur-lg before:absolute before:left-0 before:right-0 before:top-0 before:bottom-0 bg-white/90  before:z-[-1]"
-                >
-                  <div className="">
-                    <motion.div className="mb-0" variants={variants}>
-                      <div className="flex gap-4 items-center">
-                        <div>
-                          <div className="flex items-center justify-center w-10 h-10 bg-gray-700/50 rounded-lg dark:text-dark-200">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.5}
-                              stroke="currentColor"
-                              className="size-5"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <div>
-                          <div className="flex gap-2 items-center text-black dark:text-white font-medium mb-1">
-                            <div className="text-sm">Plextype</div>
-                            <span className="py-0.5 px-3 rounded-md text-xs bg-lime-400 text-black">
-                              0.1.3
-                            </span>
-                          </div>
-                          <div className="text-sm text-gray-400 line-clamp-1">
-                            Next.js, Prisma.js 등을 활용하여 간단한 웹서비스를
-                            고급스럽게 제작하기 위한 웹 컴포넌트
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-
                 {nav.header &&
                   Object.entries(nav.header).map((data, index) => {
                     return (
@@ -278,45 +214,28 @@ const Header = () => {
                         key={data[1].name}
                         className="relative flex items-center"
                       >
-                        {data[1].name === 'service' ? (
-                          ''
-                        ) : (
-                          <>
-                            <Link
-                              href={data[1].route}
-                              className={
-                                'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-sm tracking-wider ' +
-                                (currentPage?.route === data[1].route
-                                  ? 'text-gray-400 dark:text-white'
-                                  : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
-                              }
-                            >
-                              <div>{data[1].title}</div>
-                              {data[1].subMenu.length > 0 ? (
-                                <>
-                                  <div className="">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      fill="none"
-                                      viewBox="0 0 24 24"
-                                      strokeWidth={2}
-                                      stroke="currentColor"
-                                      className="size-3"
-                                    >
-                                      <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                                      />
-                                    </svg>
-                                  </div>
-                                </>
-                              ) : (
-                                ''
-                              )}
-                            </Link>
-                          </>
-                        )}
+                        <>
+                          <Link
+                            href={data[1].route}
+                            className={
+                              'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-[0.782rem] tracking-wider ' +
+                              (currentPage?.route === data[1].route
+                                ? 'text-gray-400 dark:text-white'
+                                : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
+                            }
+                          >
+                            <div>{data[1].title}</div>
+                            {data[1].subMenu.length > 0 ? (
+                              <>
+                                <div className="">
+                                  <ChevronDownIcon className="size-3 storke-1" />
+                                </div>
+                              </>
+                            ) : (
+                              ''
+                            )}
+                          </Link>
+                        </>
                       </div>
                     )
                   })}

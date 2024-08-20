@@ -23,10 +23,10 @@ const PageNavigation = (props: PageNavigationInfo) => {
           key={i}
           href={{ pathname: pathname, query: { page: i } }}
           className={
-            'flex items-center justify-center rounded-md border text-sm w-[2.25rem] h-[2.25rem] bg-gray-50 hover:bg-white text-gray-500 ' +
+            'flex items-center justify-center rounded-md  text-sm w-[2.25rem] h-[2.25rem]  text-gray-500 ' +
             (page == i
-              ? 'bg-white text-gray-950 border-gray-300 hover:border-gray-950 '
-              : 'text-gray-500 border-gray-200')
+              ? 'bg-white text-gray-950 border border-gray-300 hover:border-gray-950 '
+              : 'text-gray-500')
           }
         >
           {i}

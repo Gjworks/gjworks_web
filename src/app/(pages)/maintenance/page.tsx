@@ -25,13 +25,20 @@ const Page = props => {
   }
   return (
     <>
-      <div className="max-w-screen-lg mx-auto py-8 xl:py-20 px-3">
-        <motion.div className="text-lime-400 text-5xl font-semibold">
-          Maintenance
-        </motion.div>
+      <div className="max-w-screen-xl mx-auto py-8 xl:pt-20 px-3">
+        <div>
+          <motion.div className="bg-gradient-to-r from-primary-400 via-primary-500 to-black inline-block text-transparent bg-clip-text text-5xl font-semibold mb-4">
+            Maintenance
+          </motion.div>
+        </div>
+        <div>
+          <motion.div className="bg-gradient-to-r from-primary-400 via-primary-500 to-black inline-block text-transparent bg-clip-text text-3xl font-semibold">
+            새로운 세대의 애플리케이션을 위한 플랫폼
+          </motion.div>
+        </div>
       </div>
-      <div className="relative max-w-screen-xl mx-auto px-3">
-        <div className="relative h-[645px] bg-[url('/assets/images/bg16.jpg')] bg-no-repeat bg-cover bg-center rounded"></div>
+      <div className="relative max-w-screen-xl mx-auto px-3 pb-20">
+        <div className="relative h-[645px] bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center rounded"></div>
       </div>
     </>
   )

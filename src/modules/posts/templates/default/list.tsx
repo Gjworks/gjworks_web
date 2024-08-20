@@ -70,7 +70,7 @@ const PostsList: React.FC<PageProps> = ({
                 totalCount={10}
                 page={1}
                 listCount={10}
-                totalPages={1}
+                totalPages={10}
               />
             </div>
             <div className="flex justify-end flex-1">

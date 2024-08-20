@@ -21,18 +21,26 @@
             "route": "/applications"
         },
         {
-            "title": "Maintenance",
-            "name": "maintenance",
+            "title": "License",
+            "name": "license",
             "icon": "",
             "parent": "service",
-            "route": "/maintenance"
+            "route": "/license"
         }
         ]
     },
-    "works": {
-      "name": "works",
-      "title": "Works",
-      "route": "/posts/works",
+    "maintenance": {
+      "name": "maintenance",
+      "title": "Maintenance",
+      "route": "/maintenance",
+      "icon": "",
+      "subMenu": [
+        ]
+    },
+    "develog": {
+      "name": "develog",
+      "title": "Develog",
+      "route": "/posts/develog",
       "icon": "",
       "subMenu": [
         ]
