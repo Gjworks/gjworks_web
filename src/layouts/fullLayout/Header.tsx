@@ -201,7 +201,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-3 dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full px-4 py-1 lg:flex">
+            <div className="col-span-3 dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full py-1 lg:flex">
               <div
                 className=" relative flex"
                 // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -220,8 +220,8 @@ const Header = () => {
                             className={
                               'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-[0.782rem] tracking-wider ' +
                               (currentPage?.route === data[1].route
-                                ? 'text-gray-400 dark:text-white'
-                                : 'dark:text-dark-500 text-gray-950 hover:text-gray-400 dark:hover:text-white')
+                                ? 'text-gray-950 dark:text-white'
+                                : 'dark:text-dark-500 text-gray-500 hover:text-gray-900 dark:hover:text-white')
                             }
                           >
                             <div>{data[1].title}</div>
