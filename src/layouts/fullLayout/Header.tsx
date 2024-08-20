@@ -171,7 +171,7 @@ const Header = () => {
                       href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                       className="hidden lg:flex items-center"
                     >
-                      <div className="mr-4 flex pl-2 text-sm font-bold lg:text-base">
+                      <div className="mr-4 flex pl-2 text-sm font-semibold lg:text-[0.913rem]">
                         <div className="text-black dark:text-white">
                           지제이웍스
                         </div>
