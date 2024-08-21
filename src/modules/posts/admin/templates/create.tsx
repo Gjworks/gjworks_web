@@ -21,6 +21,10 @@ const DashboardPostCreate = (props: PostProps) => {
   const [isCommentLike, setisCommentLike] = useState<boolean>(false)
   const [isCommentState, setIsCommentState] = useState<boolean>(false)
   const [isConsultingState, setIsConsultingState] = useState<boolean>(false)
+  const [writeGrant, setWriteGrant] = useState<string[]>([])
+  const [commentGrant, setCommentGrant] = useState<string[]>([])
+  const [listGrant, setListGrant] = useState<string[]>([])
+  const [readGrant, setReadGrant] = useState<string[]>([])
 
   useEffect(() => {
     if (props.id) {
@@ -28,10 +32,10 @@ const DashboardPostCreate = (props: PostProps) => {
         if (response.type === 'error') {
           setError(response.data.message)
         } else {
-          console.log(response)
           if (response.data.postInfo && response.type === 'success') {
-            console.log(response.data.postInfo)
             setPosts(response.data.postInfo)
+            setWriteGrant(response.data.postInfo.config.grant.writeGrant)
+            setCommentGrant(response.data.postInfo.config.grant.commentGrant)
           }
         }
       })
@@ -69,7 +73,10 @@ const DashboardPostCreate = (props: PostProps) => {
   }
 
   const submitHandler = async (formData: FormData) => {
-    const selectedGroups = formData.getAll('commentGrant') as string[]
+    const selectedCommentGroups = formData.getAll('commentGrant') as string[]
+    const selectedWriteGroups = formData.getAll('writeGrant') as string[]
+    const selectedListGroups = formData.getAll('listGrant') as string[]
+    const selectedReadGroups = formData.getAll('readGrant') as string[]
 
     const params = {
       postId: formData.get('postId') as string,
@@ -83,7 +90,10 @@ const DashboardPostCreate = (props: PostProps) => {
       commentState: formData.get('commentState') as string,
       commentLike: formData.get('commentLike') as string,
       grant: {
-        commentGrant: selectedGroups,
+        commentGrant: selectedCommentGroups,
+        writeGrant: selectedWriteGroups,
+        listGrant: selectedListGroups,
+        readGrant: selectedReadGroups,
       },
     }
     console.log(params)
@@ -103,13 +113,51 @@ const DashboardPostCreate = (props: PostProps) => {
   // const isCheckedComment =
   //   posts?.grant && posts.config.grant.commentGrant.includes(String(0))
 
-  const handleCheckboxChange = (params: any) => {
-    console.log(params)
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value, id, name } = event.target
+
+    name === 'commentGrant' &&
+      setCommentGrant(prev => {
+        if (!Array.isArray(prev)) {
+          return []
+        }
+        return checked ? [...prev, value] : prev.filter(id => id !== value)
+      })
+
+    name === 'writeGrant' &&
+      setWriteGrant(prev => {
+        if (!Array.isArray(prev)) {
+          return []
+        }
+        return checked ? [...prev, value] : prev.filter(id => id !== value)
+      })
+
+    name === 'listGrant' &&
+      setListGrant(prev => {
+        if (!Array.isArray(prev)) {
+          return []
+        }
+        return checked ? [...prev, value] : prev.filter(id => id !== value)
+      })
+
+    name === 'readGrant' &&
+      setReadGrant(prev => {
+        if (!Array.isArray(prev)) {
+          return []
+        }
+        return checked ? [...prev, value] : prev.filter(id => id !== value)
+      })
   }
 
+  const isCheckedWrite =
+    posts.config?.grant?.writeGrant && writeGrant.includes(String('Guest'))
   const isCheckedComment =
-    posts?.grant && posts.config.grant.commentGrant.includes(String(0))
-  console.log(isCheckedComment)
+    posts.config?.grant?.commentGrant && commentGrant.includes(String('Guest'))
+  const isCheckedList =
+    posts.config?.grant?.listGrant && listGrant.includes(String('Guest'))
+  const isCheckedRead =
+    posts.config?.grant?.readGrant && readGrant.includes(String('Guest'))
+
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
@@ -408,81 +456,105 @@ const DashboardPostCreate = (props: PostProps) => {
                           </label>
                         </div>
                         <div className="mb-5">
-                          <label>
-                            <div className="flex gap-2 items-center">
-                              <div className="w-24 text-sm text-black">
-                                글쓰기
-                              </div>
-                              <div className="flex-1">
-                                <select
-                                  name="list"
-                                  id="list"
-                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                                >
-                                  <option value="">제한없음</option>
-                                  <option value="0">로그인사용자</option>
-                                  {posts?.config?.list?.map((item, index) => (
-                                    <option key={index} value={item}>
-                                      {item}
-                                    </option>
-                                  ))}
-                                </select>
+                          <div className="flex gap-2 items-center">
+                            <div className="w-24 text-sm text-black">
+                              글쓰기
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex gap-2 flex-wrap">
+                                <div>
+                                  <label
+                                    htmlFor="writeGrant0"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="writeGrant"
+                                      id="writeGrantGuest"
+                                      value="Guest"
+                                      checked={isCheckedWrite ? true : false}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    로그인사용자
+                                  </label>
+                                </div>
+
+                                {posts?.grant &&
+                                  posts?.grant?.map((item, index) => {
+                                    const isChecked = writeGrant?.includes(
+                                      String(item.groupName)
+                                    )
+                                    // console.log(isChecked)
+                                    return (
+                                      <div key={item.groupName}>
+                                        <label
+                                          htmlFor={`writeGrant${item.groupName}`}
+                                          className="text-sm flex gap-2 items-center"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            name="writeGrant"
+                                            id={`writeGrant${item.groupName}`}
+                                            value={item.groupName}
+                                            checked={isChecked ? true : false}
+                                            onChange={handleCheckboxChange}
+                                          />
+                                          {item.groupTitle}
+                                        </label>
+                                      </div>
+                                    )
+                                  })}
                               </div>
                             </div>
-                          </label>
+                          </div>
                         </div>
                         <div className="mb-5">
-                          <label>
-                            <div className="flex gap-2 items-center">
-                              <div className="w-24 text-sm text-black">
-                                댓글
-                              </div>
-                              <div className="flex-1">
-                                <div className="flex gap-2 flex-wrap">
-                                  <div>
-                                    <div>
-                                      {isCheckedComment && (
-                                        <label className="text-sm flex gap-2 items-center">
+                          <div className="flex gap-2 items-center">
+                            <div className="w-24 text-sm text-black">댓글</div>
+                            <div className="flex-1">
+                              <div className="flex gap-2 flex-wrap">
+                                <div>
+                                  <label className="text-sm flex gap-2 items-center">
+                                    <input
+                                      type="checkbox"
+                                      name="commentGrant"
+                                      id="commentGrantGuest"
+                                      value="Guest"
+                                      checked={isCheckedComment ? true : false}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    로그인사용자
+                                  </label>
+                                </div>
+
+                                {posts?.grant &&
+                                  posts?.grant?.map((item, index) => {
+                                    const isChecked = commentGrant.includes(
+                                      String(item.groupName)
+                                    )
+                                    // console.log(isChecked)
+                                    return (
+                                      <div key={item.groupName}>
+                                        <label
+                                          htmlFor={`commentGrant${item.groupName}`}
+                                          className="text-sm flex gap-2 items-center"
+                                        >
                                           <input
                                             type="checkbox"
                                             name="commentGrant"
-                                            value="0"
-                                            checked={
-                                              isCheckedComment ? true : false
-                                            }
+                                            id={`commentGrant${item.groupName}`}
+                                            value={item.groupName}
+                                            checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
-                                          로그인사용자
+                                          {item.groupTitle}
                                         </label>
-                                      )}
-                                    </div>
-                                  </div>
-                                  {posts?.grant &&
-                                    posts?.grant?.map((item, index) => {
-                                      const isChecked =
-                                        posts.config.grant.commentGrant.includes(
-                                          String(item.id)
-                                        )
-                                      // console.log(isChecked)
-                                      return (
-                                        <div key={item.id}>
-                                          <label className="text-sm flex gap-2 items-center">
-                                            <input
-                                              type="checkbox"
-                                              name="commentGrant"
-                                              value={item.id}
-                                              checked={isChecked ? true : false}
-                                              onChange={handleCheckboxChange}
-                                            />
-                                            {item.groupTitle}
-                                          </label>
-                                        </div>
-                                      )
-                                    })}
-                                </div>
+                                      </div>
+                                    )
+                                  })}
                               </div>
                             </div>
-                          </label>
+                          </div>
                         </div>
                       </div>
                     </div>

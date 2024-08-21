@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SafariBrower from '@plextype/components/viewer/SafariBrower'
 import { motion } from 'framer-motion'
-import MainLayout from 'src/layouts/fullLayout/Layout'
+import MainLayout from 'src/layouts/main/Layout'
 import Codehighlighte from '@plextype/components/codehighlight/Codehighlighter'
 import Popup from '@plextype/components/modal/Popup'
 import {
@@ -66,11 +66,11 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <motion.div className="relative w-full">
+        <motion.div className="relative w-full -mt-[68px]">
           <div className="relative">
             <div className="relative overflow-hidden">
-              <div className="relative w-full bg-gray-100 border-b border-gray-200/75 py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60">
-                {/* <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/50 via-gray-950/60 to-gray-950/70 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div> */}
+              <div className="relative w-full bg-gray-100 border-b border-gray-200/75 py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 bg-[url('/assets/images/yellow/yellow_bg1.jpg')]">
+                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/10 via-gray-950/20 to-gray-950/50 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
                 <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pt-0 lg:py-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -78,7 +78,7 @@ export default function Page() {
                       initial="offscreen"
                       whileInView="onscreen"
                       viewport={{ once: false, amount: 0.3 }}
-                      className="grid w-full grid-cols-12 gap-8"
+                      className="grid w-full grid-cols-12 gap-8 pt-[68px]"
                     >
                       <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
                         <div className="">
@@ -87,14 +87,14 @@ export default function Page() {
                               variants={variants}
                               className="col-span-1 px-1 lg:mb-2"
                             >
-                              <div className="flex flex-wrap gap-2 text-4xl font-normal md:font-semibold !leading-tight tracking-tighter text-gray-950 lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
+                              <div className="flex flex-wrap gap-2 text-4xl font-normal md:font-semibold !leading-tight tracking-tighter text-white lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
                                 Building digital experience
                               </div>
                             </motion.div>
 
                             <motion.div
                               variants={variants}
-                              className="mb-10 pl-0 text-4xl font-normal md:font-semibold tracking-tighter text-gray-950 lg:text-6xl dark:text-white text-center"
+                              className="mb-10 pl-0 text-4xl font-normal md:font-semibold tracking-tighter text-white lg:text-6xl dark:text-white text-center"
                             >
                               Creative platform service
                             </motion.div>
@@ -107,7 +107,7 @@ export default function Page() {
                           >
                             <div className="flex gap-8 rounded-full bg-gray-950/5 dark:bg-dark-900/30 p-2 backdrop-blur-lg lg:p-2">
                               <div className="flex flex-1 items-center px-3">
-                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-700">
+                                <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-100">
                                   Launch Your Service.
                                 </div>
                               </div>
@@ -134,10 +134,10 @@ export default function Page() {
                               <Square3Stack3DIcon className="size-5 text-gray-950 stroke-1" />
                             </div>
                             <div className="flex-1">
-                              <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-950">
+                              <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-50">
                                 OpenSource Projects
                               </div>
-                              <div className="dark:text-dark-300 text-left text-xs text-gray-400">
+                              <div className="dark:text-dark-300 text-left text-xs text-gray-200">
                                 다양한 프로젝트를 만나보시고 좋은 의견과
                                 아이디어를 주시면 반영하겠습니다.
                               </div>
