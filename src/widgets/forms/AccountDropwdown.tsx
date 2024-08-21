@@ -174,7 +174,7 @@ const AccountDropwdown = () => {
     <>
       <button
         onClick={() => setShowDropdown(!showDropdown)}
-        className="hover:bg-gray-100 py-2 px-3 rounded-md dark:hover:bg-dark-700/75"
+        className="hover:bg-gray-100/20 py-2 px-3 rounded-md dark:hover:bg-dark-700/75"
       >
         <Avator username={loggedInfo?.nickName} />
       </button>

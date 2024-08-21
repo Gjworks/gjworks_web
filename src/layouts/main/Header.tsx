@@ -163,7 +163,7 @@ const Header = () => {
                       /> */}
                     </Link>
                     <div className="hidden group-hover:flex absolute top-10 lg:top-10 -left-1 z-10">
-                      <div className="bg-pink-400 text-white py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-pink-400 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
+                      <div className="bg-primary-400 text-black py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-primary-400 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
                         2.0
                       </div>
                     </div>
@@ -172,7 +172,7 @@ const Header = () => {
                       className="hidden lg:flex items-center"
                     >
                       <div className="mr-4 flex pl-2 text-sm font-semibold lg:text-[0.913rem]">
-                        <div className="text-black dark:text-white">
+                        <div className="text-yellow-200 dark:text-white">
                           지제이웍스
                         </div>
                       </div>
@@ -220,8 +220,8 @@ const Header = () => {
                             className={
                               'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-[0.782rem] tracking-wider ' +
                               (currentPage?.route === data[1].route
-                                ? 'text-gray-950 dark:text-white'
-                                : 'dark:text-dark-500 text-gray-950 hover:text-gray-950 dark:hover:text-white')
+                                ? 'text-white dark:text-white'
+                                : 'dark:text-dark-500 text-yellow-200 hover:text-white dark:hover:text-white')
                             }
                           >
                             <div>{data[1].title}</div>
@@ -265,7 +265,7 @@ const Header = () => {
             <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4 lg:px-3">
               <div className="flex items-center">
                 <button
-                  className="px-2 py-2 text-gray-950 dark:text-dark-400 dark:hover:text-dark-300 hover:bg-gray-100 rounded-md dark:hover:bg-dark-700/75 dark:hover:text-white"
+                  className="px-2 py-2 text-yellow-200 dark:text-dark-400 hover:bg-gray-100/20 rounded-md dark:hover:bg-dark-700/25 dark:hover:text-white"
                   // onClick={() => setShowModal(!showModal)}
                   onClick={() => setShowRight(true)}
                 >
@@ -276,7 +276,7 @@ const Header = () => {
                 </div>
               </div>
               <button
-                className="dark:text-dark-200 dark:bg-dark-950 relative hidden rounded-md bg-white px-2 py-1 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:hover:text-white dark:hover:bg-dark-700/75"
+                className="dark:text-dark-200 dark:bg-dark-950 relative hidden rounded-md bg-white px-2 py-1 text-gray-700 hover:bg-gray-100/20 hover:text-gray-900 dark:hover:text-white dark:hover:bg-dark-700/75"
                 onClick={() => {}}
               >
                 <svg
