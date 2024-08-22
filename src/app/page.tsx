@@ -69,7 +69,7 @@ export default function Page() {
         <motion.div className="relative w-full -mt-[68px]">
           <div className="relative">
             <div className="relative overflow-hidden">
-              <div className="relative w-full bg-gray-100 border-b border-gray-200/75 py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 bg-[url('/assets/images/yellow/yellow_bg1.jpg')]">
+              <div className="relative w-full bg-gray-100 border-b border-gray-200/75 py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center">
                 <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/10 via-gray-950/20 to-gray-950/50 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
                 <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pt-0 lg:py-20">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">

@@ -172,7 +172,7 @@ const Header = () => {
                       className="hidden lg:flex items-center"
                     >
                       <div className="mr-4 flex pl-2 text-sm font-semibold lg:text-[0.913rem]">
-                        <div className="text-yellow-200 dark:text-white">
+                        <div className="text-white dark:text-white">
                           지제이웍스
                         </div>
                       </div>
