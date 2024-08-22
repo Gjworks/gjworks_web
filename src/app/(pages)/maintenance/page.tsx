@@ -38,7 +38,7 @@ const Page = props => {
         </div>
       </div>
       <div className="relative max-w-screen-xl mx-auto px-3 pb-20">
-        <div className="relative h-[645px] bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center rounded"></div>
+        <div className="relative h-[645px] bg-[url('/assets/images/yellow/yellow_bg6.jpg')] bg-no-repeat bg-cover bg-center rounded"></div>
       </div>
     </>
   )
