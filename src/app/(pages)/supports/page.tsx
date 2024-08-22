@@ -23,8 +23,21 @@ const Page = () => {
           </div>
         </div>
         <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pb-12">
-          <div className="text-3xl font-bold w-full lg:w-auto text-center lg:text-left">
+          <div className="relative text-3xl font-bold w-full lg:w-auto text-center lg:text-left">
             기술지원
+            <div className="absolute -bottom-1 fill-yellow-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="68.63723"
+                height="5.4181"
+                viewBox="0 0 68.63723 5.4181"
+              >
+                <path
+                  d="M2.41484,5.41803c21.26918-.13932,42.53836-.27864,63.80754-.41797,3.21622-.02107,3.22336-5.02111,0-5L2.41484,.41803c-3.21622,.02107-3.22336,5.02111,0,5h0Z"
+                  origin="undraw"
+                />
+              </svg>
+            </div>
           </div>
           <div className="text-base text-gray-700 w-full lg:w-auto text-center lg:text-left">
             기술지원을 받을 수 있는 곳입니다. <br />
@@ -92,7 +105,7 @@ const Page = () => {
                   </div>
                   <div className="flex items-center">
                     <div className="relative text-rose-600 pr-3 text-sm before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
-                      버그제보
+                      버그제보
                     </div>
                     <div className="relative text-gray-900 text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
                       관리자
