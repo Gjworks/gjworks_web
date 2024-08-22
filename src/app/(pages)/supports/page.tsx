@@ -1,5 +1,9 @@
 'use client'
-import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  ChevronRightIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+} from '@heroicons/react/24/outline'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
 const Page = () => {
   return (
@@ -30,98 +34,142 @@ const Page = () => {
         <div className="bg-white pt-8">
           <div className="max-w-screen-xl mx-auto">
             <div className="border-t-2 border-gray-900">
-              <div className="flex flex-wrap gap-2 lg:gap-8 border-0 lg:border-b border-gray-200">
-                <div className="flex-1 pt-8 pb-2 lg:pt-8 lg:pb-8 px-3">
+              <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 py-4 lg:py-8 px-3">
+                <div className="flex-1">
                   <div className="text-xl font-normal text-gray-950 hover:underline line-clamp-2 mb-2">
                     기술지원을 받을 수 있는 곳입니다. 아이디어를 제안하거나
                     문의사항을 남겨주세요.
                   </div>
-                  <div className="text-gray-500 text-base line-clamp-1 mb-6">
+                  <div className="text-gray-500 text-base line-clamp-1 mb-4">
                     관리자가 남긴 글입니다. 테스트용으로 작성되었습니다.
                   </div>
-                  <div className="flex gap-4">
-                    <div className="text-blue-700 text-sm">질문답변</div>
-                    <div className="text-gray-900 text-sm">관리자</div>
-                    <div className="text-gray-500 text-sm">3일전</div>
-                  </div>
-                </div>
-                <div className="w-full lg:w-1/5 flex items-center border-b border-t border-gray-200 lg:border-t-0 lg:border-b-0 py-3 px-0 lg:px-8">
-                  <div className="flex gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 py-0 lg:py-6">
-                    <div className="flex gap-4 mb-0 lg:mb-2">
-                      <div className="w-auto lg:w-12 text-sm text-gray-400">
-                        댓글
-                      </div>
+                  <div className="flex items-center">
+                    <div className="relative text-teal-600 pr-3 text-sm before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      질문답변
+                    </div>
+                    <div className="relative text-gray-900 text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      관리자
+                    </div>
+                    <div className="relative text-gray-500 text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      3일전
+                    </div>
+                    <div className="relative flex gap-2 px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      <div className="text-sm text-gray-400">댓글</div>
                       <div className="text-sm text-gray-700">4</div>
                     </div>
-                    <div className="flex gap-4">
-                      <div className="w-auto lg:w-12 text-sm text-gray-400">
-                        조회수
-                      </div>
+                    <div className="flex gap-2 px-3">
+                      <div className="text-sm text-gray-400">조회수</div>
                       <div className="text-sm text-gray-700">34</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center w-full lg:w-1/5">
+                  <div className="flex-1 bg-gray-100 lg:bg-white py-2 rounded-md border lg:border-0 border-gray-200">
+                    <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200">
+                      <div className="text-xs text-gray-400 mb-0 lg:mb-3">
+                        <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
+                      </div>
+                      <div className="flex gap-2 mb-0 lg:mb-1">
+                        <div className="text-sm text-gray-900">관리자</div>
+                        <div className="text-gray-500 text-sm">16분전</div>
+                      </div>
+                      <div className="text-sm text-gray-500 line-clamp-1">
+                        테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2 lg:gap-8 border-0 lg:border-b border-gray-200">
-                <div className="flex-1 pt-8 pb-2 lg:pt-8 lg:pb-8 px-3">
+
+              <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 py-4 lg:py-8 px-3">
+                <div className="flex-1">
                   <div className="text-xl font-normal text-gray-950 hover:underline line-clamp-2 mb-2">
                     기술지원을 받을 수 있는 곳입니다. 아이디어를 제안하거나
                     문의사항을 남겨주세요.
                   </div>
-                  <div className="text-gray-500 text-base line-clamp-1 mb-6">
+                  <div className="text-gray-500 text-base line-clamp-1 mb-4">
                     관리자가 남긴 글입니다. 테스트용으로 작성되었습니다.
                   </div>
-                  <div className="flex gap-4">
-                    <div className="text-rose-600 text-sm">버그제보</div>
-                    <div className="text-gray-900 text-sm">관리자</div>
-                    <div className="text-gray-500 text-sm">3일전</div>
-                  </div>
-                </div>
-                <div className="w-full lg:w-1/5 flex items-center border-b border-t border-gray-200 lg:border-t-0 lg:border-b-0 py-3 px-0 lg:px-8">
-                  <div className="flex gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 py-0 lg:py-6">
-                    <div className="flex gap-4 mb-0 lg:mb-2">
-                      <div className="w-auto lg:w-12 text-sm text-gray-400">
-                        댓글
-                      </div>
+                  <div className="flex items-center">
+                    <div className="relative text-rose-600 pr-3 text-sm before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      버그제보
+                    </div>
+                    <div className="relative text-gray-900 text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      관리자
+                    </div>
+                    <div className="relative text-gray-500 text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      3일전
+                    </div>
+                    <div className="relative flex gap-2 px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      <div className="text-sm text-gray-400">댓글</div>
                       <div className="text-sm text-gray-700">4</div>
                     </div>
-                    <div className="flex gap-4">
-                      <div className="w-auto lg:w-12 text-sm text-gray-400">
-                        조회수
-                      </div>
+                    <div className="flex gap-2 px-3">
+                      <div className="text-sm text-gray-400">조회수</div>
                       <div className="text-sm text-gray-700">34</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center w-full lg:w-1/5">
+                  <div className="flex-1 bg-gray-100 lg:bg-white py-2 rounded-md border lg:border-0 border-gray-200">
+                    <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200">
+                      <div className="text-xs text-gray-400 mb-0 lg:mb-3">
+                        <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
+                      </div>
+                      <div className="flex gap-2 mb-0 lg:mb-1">
+                        <div className="text-sm text-gray-900">관리자</div>
+                        <div className="text-gray-500 text-sm">16분전</div>
+                      </div>
+                      <div className="text-sm text-gray-500 line-clamp-1">
+                        테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2 lg:gap-8 border-b-0 lg:border-b border-gray-200">
-                <div className="flex-1 pt-8 pb-2 lg:pt-8 lg:pb-8 px-3">
+
+              <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 py-4 lg:py-8 px-3">
+                <div className="flex-1">
                   <div className="text-xl font-normal text-gray-950 hover:underline line-clamp-2 mb-2">
                     기술지원을 받을 수 있는 곳입니다. 아이디어를 제안하거나
                     문의사항을 남겨주세요.
                   </div>
-                  <div className="text-gray-500 text-base line-clamp-1 mb-6">
+                  <div className="text-gray-500 text-base line-clamp-1 mb-4">
                     관리자가 남긴 글입니다. 테스트용으로 작성되었습니다.
                   </div>
-                  <div className="flex gap-4">
-                    <div className="text-purple-500 text-sm">아이디어</div>
-                    <div className="text-gray-900 text-sm">관리자</div>
-                    <div className="text-gray-500 text-sm">3일전</div>
-                  </div>
-                </div>
-                <div className="w-full lg:w-1/5 flex items-center border-b border-t border-gray-200 lg:border-t-0 lg:border-b-0 py-3 px-0 lg:px-8">
-                  <div className="flex gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 py-0 lg:py-6">
-                    <div className="flex gap-4 mb-0 lg:mb-2">
-                      <div className="w-auto lg:w-12 text-sm text-gray-400">
-                        댓글
-                      </div>
+                  <div className="flex items-center">
+                    <div className="relative text-indigo-500 pr-3 text-sm before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      아이디어
+                    </div>
+                    <div className="relative text-gray-900 text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      관리자
+                    </div>
+                    <div className="relative text-gray-500 text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      3일전
+                    </div>
+                    <div className="relative flex gap-2 px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                      <div className="text-sm text-gray-400">댓글</div>
                       <div className="text-sm text-gray-700">4</div>
                     </div>
-                    <div className="flex gap-4">
-                      <div className="w-auto lg:w-12 text-sm text-gray-400">
-                        조회수
-                      </div>
+                    <div className="flex gap-2 px-3">
+                      <div className="text-sm text-gray-400">조회수</div>
                       <div className="text-sm text-gray-700">34</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center w-full lg:w-1/5">
+                  <div className="flex-1 bg-gray-100 lg:bg-white py-2 rounded-md border lg:border-0 border-gray-200">
+                    <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200">
+                      <div className="text-xs text-gray-400 mb-0 lg:mb-3">
+                        <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
+                      </div>
+                      <div className="flex gap-2 mb-0 lg:mb-1">
+                        <div className="text-sm text-gray-900">관리자</div>
+                        <div className="text-gray-500 text-sm">16분전</div>
+                      </div>
+                      <div className="text-sm text-gray-500 line-clamp-1">
+                        테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
+                      </div>
                     </div>
                   </div>
                 </div>
