@@ -4,6 +4,7 @@ import Link from 'next/link'
 import PostsList from '@/modules/posts/templates/default/list'
 import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
+import { motion } from 'framer-motion'
 
 interface PageProps {
   params: {
@@ -12,6 +13,20 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
+  const pathVariants = {
+    from: {
+      opacity: 0,
+      pathLength: 0,
+    },
+    to: {
+      opacity: 1,
+      pathLength: 1,
+      transition: {
+        duration: 0.7,
+        ease: 'easeInOut',
+      },
+    },
+  }
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-3">
@@ -28,18 +43,15 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap">
-        <div className="relative text-3xl font-bold w-full lg:w-auto text-center lg:text-left">
-          개발로그
-          <div className="absolute -bottom-1 fill-yellow-400">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="68.63723"
-              height="5.4181"
-              viewBox="0 0 68.63723 5.4181"
-            >
-              <path
-                d="M2.41484,5.41803c21.26918-.13932,42.53836-.27864,63.80754-.41797,3.21622-.02107,3.22336-5.02111,0-5L2.41484,.41803c-3.21622,.02107-3.22336,5.02111,0,5h0Z"
-                origin="undraw"
+        <div className="relative lg:w-auto text-center lg:text-left">
+          <div className="relative text-3xl font-bold ">개발로그</div>
+          <div className="absolute -bottom-1.5 stroke-yellow-400 fill-yellow-400 w-32">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 32.61">
+              <motion.path
+                d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
+                initial="from"
+                animate="to"
+                variants={pathVariants}
               />
             </svg>
           </div>

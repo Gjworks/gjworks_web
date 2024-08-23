@@ -37,10 +37,10 @@
       "subMenu": [
         ]
     },
-    "develog": {
-      "name": "develog",
-      "title": "Develog",
-      "route": "/posts/develog",
+    "devlog": {
+      "name": "devlog",
+      "title": "Devlog",
+      "route": "/posts/devlog",
       "icon": "",
       "subMenu": [
         ]
