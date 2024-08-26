@@ -221,7 +221,7 @@ const Header = () => {
                               'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-[0.782rem] tracking-wider ' +
                               (currentPage?.route === data[1].route
                                 ? 'text-white dark:text-white'
-                                : 'dark:text-dark-500 text-yellow-200 hover:text-white dark:hover:text-white')
+                                : 'dark:text-dark-500 text-primary-200 hover:text-white dark:hover:text-white')
                             }
                           >
                             <div>{data[1].title}</div>
@@ -265,7 +265,7 @@ const Header = () => {
             <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4 lg:px-3">
               <div className="flex items-center">
                 <button
-                  className="px-2 py-2 text-yellow-200 dark:text-dark-400 hover:bg-gray-100/20 rounded-md dark:hover:bg-dark-700/25 dark:hover:text-white"
+                  className="px-2 py-2 text-gray-200 dark:text-dark-400 hover:bg-gray-100/20 rounded-md dark:hover:bg-dark-700/25 dark:hover:text-white"
                   // onClick={() => setShowModal(!showModal)}
                   onClick={() => setShowRight(true)}
                 >
