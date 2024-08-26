@@ -35,8 +35,8 @@ const MainLayout = ({ children }) => {
     })
   }
   return (
-    <div className="relative bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center">
-      <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/30 via-gray-950/40 to-black/60 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
+    <div className="relative bg-[url('/assets/images/bg10.jpg')] bg-no-repeat bg-cover bg-center">
+      <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/60 via-gray-950/40 to-black/60 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
       <div className="relative z-20">
         <Header />
         <SubNav />

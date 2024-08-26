@@ -163,7 +163,7 @@ const Header = () => {
                       /> */}
                     </Link>
                     <div className="hidden group-hover:flex absolute top-10 lg:top-10 -left-1 z-10">
-                      <div className="bg-primary-400 text-black py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-primary-400 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
+                      <div className="bg-primary-500 text-white py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-primary-500 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
                         2.0
                       </div>
                     </div>
@@ -221,7 +221,7 @@ const Header = () => {
                               'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-[0.782rem] tracking-wider ' +
                               (currentPage?.route === data[1].route
                                 ? 'text-white dark:text-white'
-                                : 'dark:text-dark-500 text-primary-200 hover:text-white dark:hover:text-white')
+                                : 'dark:text-dark-500 text-gray-300 hover:text-white dark:hover:text-white')
                             }
                           >
                             <div>{data[1].title}</div>
