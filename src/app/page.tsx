@@ -57,7 +57,7 @@ export default function Page() {
   return (
     <MainLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
-      <div className="relative">
+      <div className="relative flex justify-center items-center min-h-[calc(100vh-244px)]">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -66,19 +66,18 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <motion.div className="relative w-full -mt-[68px]">
+        <motion.div className="relative w-full">
           <div className="relative">
             <div className="relative overflow-hidden">
-              <div className="relative w-full bg-gray-100 border-b border-gray-200/75 py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-no-repeat bg-cover bg-center">
-                <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/10 via-gray-950/20 to-gray-950/50 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
-                <div className="relative mx-auto flex max-w-screen-lg justify-center items-center gap-8 pt-0 lg:py-20">
+              <div className="relative w-full py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 ">
+                <div className="relative mx-auto max-w-screen-lg gap-8 pt-0">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
                       variants={parentVariants}
                       initial="offscreen"
                       whileInView="onscreen"
                       viewport={{ once: false, amount: 0.3 }}
-                      className="grid w-full grid-cols-12 gap-8 pt-[68px]"
+                      className="grid w-full grid-cols-12 gap-8"
                     >
                       <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
                         <div className="">
@@ -105,7 +104,7 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto mb-6 max-w-lg py-3"
                           >
-                            <div className="flex gap-8 rounded-full bg-gray-950/5 dark:bg-dark-900/30 p-2 backdrop-blur-lg lg:p-2">
+                            <div className="flex gap-8 rounded-full bg-gray-950/30 dark:bg-dark-900/30 p-2 backdrop-blur-lg lg:p-2">
                               <div className="flex flex-1 items-center px-3">
                                 <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-100">
                                   Launch Your Service.
@@ -160,7 +159,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
-            className="hidden overflow-hidden py-16 lg:py-20"
+            className="hidden bg-gray-100 overflow-hidden py-16 lg:py-20"
           >
             <div className="relative mx-auto flex max-w-screen-xl gap-4 px-3 lg:gap-8">
               <motion.div className="dark:bg-dark-950/75 dark:shadow-dark-950 dark:border-dark-950 relative aspect-[960/520] min-h-[434px] w-[85%] flex-none cursor-pointer overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg shadow-gray-200 lg:w-[65%]">
@@ -170,7 +169,7 @@ export default function Page() {
                       variants={variants}
                       className="mb-2 text-3xl font-semibold text-black lg:text-4xl dark:text-white"
                     >
-                      Pristo
+                      Plextype
                     </motion.div>
                     <motion.div
                       variants={variants}

@@ -12,11 +12,14 @@
         @apply min-h-full;
         @apply h-full;
     }
-    .dark
+    html.dark, html body.dark {
+      @apply bg-dark-950;
+    }
+    /* .dark
     {
         -webkit-overflow-scrolling: touch;
         @apply bg-dark-950;
-    }
+    } */
     h1 {
         @apply text-5xl;
         @apply font-bold;
