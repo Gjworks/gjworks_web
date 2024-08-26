@@ -129,8 +129,8 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-3/5"
                           >
-                            <div className="dark:bg-dark-700/75 rounded-lg bg-primary-600 p-3 backdrop-blur-2xl">
-                              <Square3Stack3DIcon className="size-5 text-gray-100 stroke-1" />
+                            <div className="dark:bg-dark-700/75 rounded-lg bg-white p-3 backdrop-blur-2xl">
+                              <Square3Stack3DIcon className="size-5 text-gray-900 stroke-1" />
                             </div>
                             <div className="flex-1">
                               <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-50">
