@@ -29,7 +29,7 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
   }
   return (
     <>
-      <div className="max-w-screen-xl mx-auto px-3">
+      {/* <div className="max-w-screen-xl mx-auto px-3">
         <div className="flex items-center pt-10 pb-16 gap-2">
           <div className="text-gray-950 dark:text-white">
             <HomeIcon className="size-3.5 stroke-1.5" />
@@ -41,8 +41,8 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
             Works
           </div>
         </div>
-      </div>
-      <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap">
+      </div> */}
+      <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pt-20">
         <div className="relative lg:w-auto text-center lg:text-left">
           <div className="relative text-3xl font-bold text-gray-950 dark:text-white">
             개발로그
@@ -57,9 +57,6 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
               />
             </svg>
           </div> */}
-        </div>
-        <div className="text-base text-gray-700 dark:text-dark-400 w-full lg:w-auto text-center lg:text-left">
-          개발관련 정보 공유
         </div>
       </div>
 

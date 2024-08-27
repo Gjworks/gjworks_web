@@ -221,7 +221,7 @@ const Header = () => {
                               'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-[0.782rem] tracking-wider ' +
                               (currentPage?.route === data[1].route
                                 ? 'text-gray-950 dark:text-white'
-                                : 'dark:text-dark-500 text-gray-500 hover:text-gray-900 dark:hover:text-white')
+                                : 'dark:text-dark-500 text-gray-400 hover:text-gray-900 dark:hover:text-white')
                             }
                           >
                             <div>{data[1].title}</div>

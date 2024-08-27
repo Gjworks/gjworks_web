@@ -18,6 +18,7 @@ const FullLayout = ({ children }) => {
     <div className="">
       <div className="relative z-20">
         <Header />
+        <SubNav />
         <main className="h-full px-0">
           <div className="relative h-full dark:bg-dark-900">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
