@@ -114,7 +114,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-primary-600 dark:hover:bg-primary-700 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-primary-700 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <PaperAirplaneIcon className="size-5 stroke-1" />
