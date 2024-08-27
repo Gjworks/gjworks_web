@@ -48,8 +48,6 @@ const SubNav = () => {
       _subMenu = null
       setSubMenu(_subMenu)
     }
-
-    console.log(subMenu)
   }, [pathname, currentPage])
 
   const snav = null
