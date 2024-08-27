@@ -37,15 +37,17 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
           <div className="text-gray-700 dark:text-white">
             <ChevronRightIcon className="size-3.5 stroke-1.5" />
           </div>
-          <div className="text-xs font-bold text-gray-400 dark:text-gray-600 uppercase">
+          <div className="text-xs font-bold text-gray-400 dark:text-gray-400 uppercase">
             Works
           </div>
         </div>
       </div>
       <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap">
         <div className="relative lg:w-auto text-center lg:text-left">
-          <div className="relative text-3xl font-bold ">개발로그</div>
-          <div className="absolute -bottom-1.5 stroke-primary-400 fill-primary-400 w-32">
+          <div className="relative text-3xl font-bold text-gray-950 dark:text-white">
+            개발로그
+          </div>
+          {/* <div className="absolute -bottom-1.5 stroke-primary-600 fill-primary-600 w-32">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 32.61">
               <motion.path
                 d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
@@ -54,9 +56,9 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
                 variants={pathVariants}
               />
             </svg>
-          </div>
+          </div> */}
         </div>
-        <div className="text-base text-gray-700 w-full lg:w-auto text-center lg:text-left">
+        <div className="text-base text-gray-700 dark:text-dark-400 w-full lg:w-auto text-center lg:text-left">
           개발관련 정보 공유
         </div>
       </div>

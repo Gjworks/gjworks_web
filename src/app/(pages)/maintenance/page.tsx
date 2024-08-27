@@ -27,12 +27,12 @@ const Page = props => {
     <>
       <div className="max-w-screen-xl mx-auto py-8 xl:pt-20 px-3">
         <div>
-          <motion.div className="bg-gradient-to-r from-primary-400 via-primary-600 to-black inline-block text-transparent bg-clip-text text-5xl font-semibold mb-4">
+          <motion.div className="text-black inline-block text-5xl font-semibold mb-4">
             Maintenance
           </motion.div>
         </div>
         <div>
-          <motion.div className="bg-gradient-to-r from-primary-400 via-primary-600 to-black inline-block text-transparent bg-clip-text text-3xl font-semibold">
+          <motion.div className="text-black inline-block text-3xl font-semibold">
             새로운 세대의 애플리케이션을 위한 플랫폼
           </motion.div>
         </div>
@@ -42,7 +42,7 @@ const Page = props => {
         whileInView="onscreen"
         viewport={{ once: false, amount: 0.1 }}
         variants={parentVariants}
-        className="flex bg-gray-100 overflow-hidden py-16 lg:py-20"
+        className="flex bg-gray-100 dark:bg-dark-900 overflow-hidden py-16 lg:py-20"
       >
         <div className="relative mx-auto flex max-w-screen-xl gap-4 px-3 lg:gap-8">
           <motion.div className="dark:bg-dark-950/75 dark:shadow-dark-950 dark:border-dark-950 relative aspect-[960/520] min-h-[434px] w-[85%] flex-none cursor-pointer overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg shadow-gray-200 lg:w-[65%]">

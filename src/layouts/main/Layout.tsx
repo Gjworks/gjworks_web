@@ -6,7 +6,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Header from 'src/layouts/main/Header'
+import Header from 'src/layouts/fullLayout/Header'
 import Footer from 'src/layouts/fullLayout/Footer'
 import SubNav from 'src/layouts/fullLayout/SubNav'
 import FootAlert from 'src/layouts/fullLayout/FootAlert'
@@ -35,14 +35,16 @@ const MainLayout = ({ children }) => {
     })
   }
   return (
-    <div className="relative bg-[url('/assets/images/bg10.jpg')] bg-no-repeat bg-cover bg-center">
-      <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/60 via-gray-950/40 to-black/60 bg-gradient-to-b dark:from-dark-950/70 dark:via-dark-950/70 dark:to-dark-950/70"></div>
+    <div className="">
       <div className="relative z-20">
         <Header />
         <SubNav />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-        <main className="">
-          <div className="relative">{children}</div>
+        <main className="px-3">
+          <div className="relative mx-auto bg-[url('/assets/images/bg39.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden">
+            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/50 via-gray-950/40 to-gray-950/70 bg-gradient-to-b dark:from-gray-950/60 dark:via-gray-950/40 dark:to-gray-950/60"></div>
+            {children}
+          </div>
         </main>
         {/* {scrollPosition > 100 && (
           <motion.button

@@ -18,8 +18,8 @@ const FullLayout = ({ children }) => {
     <div className="">
       <div className="relative z-20">
         <Header />
-        <main className="h-full px-0 bg-gray-100 dark:bg-dark-900">
-          <div className="relative h-full">
+        <main className="h-full px-0">
+          <div className="relative h-full dark:bg-dark-900">
             {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
             {children}
           </div>
@@ -54,7 +54,7 @@ const FullLayout = ({ children }) => {
             </svg>
           </motion.button>
         )} */}
-        <footer className="pb-8 pt-6 bg-white">
+        <footer className="pb-8 pt-6 bg-white dark:bg-dark-950 ">
           <div className="mx-auto max-w-screen-xl">
             <Footer />
           </div>

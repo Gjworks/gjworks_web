@@ -57,7 +57,7 @@ export default function Page() {
   return (
     <MainLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
-      <div className="relative flex justify-center items-center min-h-[calc(100vh-244px)]">
+      <div className="relative flex justify-center items-center min-h-[calc(100vh-64px)]">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -69,7 +69,7 @@ export default function Page() {
         <motion.div className="relative w-full">
           <div className="relative">
             <div className="relative overflow-hidden">
-              <div className="relative w-full py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden dark:bg-dark-900 dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 ">
+              <div className="relative w-full py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden  dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 ">
                 <div className="relative mx-auto max-w-screen-lg gap-8 pt-0">
                   <div className="relative flex items-center justify-center py-20 lg:col-span-8">
                     <motion.div
@@ -114,7 +114,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-dark-700 dark:hover:bg-dark-950 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-gray-950 dark:bg-primary-600 dark:hover:bg-primary-700 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-gray-700 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <PaperAirplaneIcon className="size-5 stroke-1" />
@@ -130,7 +130,7 @@ export default function Page() {
                             className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-3/5"
                           >
                             <div className="dark:bg-dark-700/75 rounded-lg bg-white p-3 backdrop-blur-2xl">
-                              <Square3Stack3DIcon className="size-5 text-gray-900 stroke-1" />
+                              <Square3Stack3DIcon className="size-5 text-gray-900 dark:text-white stroke-1" />
                             </div>
                             <div className="flex-1">
                               <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-50">
