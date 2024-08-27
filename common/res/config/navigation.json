@@ -35,20 +35,7 @@
       "route": "/maintenance",
       "icon": "",
       "subMenu": [
-        {
-            "title": "Maintenance",
-            "name": "maintenance",
-            "icon": "",
-            "parent": "maintenance",
-            "route": "/maintenance"
-        },
-        {
-            "title": "License",
-            "name": "license",
-            "icon": "",
-            "parent": "service",
-            "route": "/license"
-        }
+        
         ]
     },
     "devlog": {
@@ -57,13 +44,7 @@
       "route": "/posts/devlog",
       "icon": "",
       "subMenu": [
-        {
-            "title": "개발로그",
-            "name": "devlog",
-            "icon": "",
-            "parent": "devlog",
-            "route": "/posts/devlog"
-        }
+        
         ]
     },
     "supports": {

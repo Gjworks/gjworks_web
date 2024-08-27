@@ -68,7 +68,7 @@ const SubNav = () => {
                 <div className="flex-1"></div>
                 <div className="relative flex items-center overflow-hidden ">
                   <div className="relative overflow-scroll-hide flex gap-4 w-full items-center overflow-hidden overflow-x-auto justify-start md:justify-center">
-                    {subMenu && (
+                    {subMenu.length > 1 && (
                       <div className="relative pr-4">
                         <div className="flex gap-4 border-gray-100 after:absolute after:right-0 after:top-1 after:h-3 after:w-[1px] after:bg-gray-300">
                           {Object.entries(subMenu).map(
