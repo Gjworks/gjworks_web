@@ -56,7 +56,7 @@ const SubNav = () => {
   return (
     <>
       {subMenu && (
-        <div className="relative">
+        <div className="sticky top-0 bg-white/90 backdrop-blur-lg z-50">
           <div className="max-w-screen-xl mx-auto border-t border-gray-100">
             <div className="sticky top-0">
               <div className="flex gap-4 px-3">
@@ -70,7 +70,7 @@ const SubNav = () => {
                   <div className="relative overflow-scroll-hide flex gap-4 w-full items-center overflow-hidden overflow-x-auto justify-start md:justify-center">
                     {subMenu && (
                       <div className="relative pr-4">
-                        <div className="flex gap-4 border-gray-100 after:absolute after:right-0 after:top-0 after:h-4 after:w-[1px] after:bg-gray-300">
+                        <div className="flex gap-4 border-gray-100 after:absolute after:right-0 after:top-1 after:h-3 after:w-[1px] after:bg-gray-300">
                           {Object.entries(subMenu).map(
                             ([key, value], index) => {
                               if (value.route) {
