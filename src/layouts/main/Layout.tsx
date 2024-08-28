@@ -76,7 +76,7 @@ const MainLayout = ({ children }) => {
           </motion.button>
         )} */}
         <footer className="pb-8 pt-6">
-          <div className="dark mx-auto max-w-screen-xl">
+          <div className="mx-auto max-w-screen-xl">
             <Footer />
           </div>
         </footer>
