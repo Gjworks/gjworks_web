@@ -71,7 +71,7 @@ const PageLayout = ({ children }) => {
           profileEmail={loggedInfo && loggedInfo && loggedInfo.email_address}
         />
       </div>
-      <div className="flex justify-center sticky top-[52px] lg:top-[56px] w-full bg-gray-100/90 dark:bg-dark-950/40 backdrop-blur-lg z-90 border-b border-gray-200 dark:border-dark-700">
+      <div className="flex justify-center sticky top-0 lg:top-0 w-full bg-white/90 dark:bg-dark-950/40 backdrop-blur-lg z-90 border-b border-gray-200 dark:border-dark-700">
         <DefaultNav list={userNav} params={params[0]} />
       </div>
       {children}

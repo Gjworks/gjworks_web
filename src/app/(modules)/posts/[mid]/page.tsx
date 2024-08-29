@@ -75,7 +75,7 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
             </div>
             <div className="flex justify-end flex-1">
               <Link
-                href="/posts/works/create"
+                href="/posts/devlog/create"
                 className="border border-gray-200 bg-white text-sm py-2 px-8 rounded-lg shadow-sm dark:border-dark-800 dark:bg-dark-900 dark:text-dark-200 hover:bg-primary-400"
               >
                 글쓰기

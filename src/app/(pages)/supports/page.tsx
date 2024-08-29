@@ -25,13 +25,13 @@ const Page = () => {
   }
   return (
     <>
-      <div className="pt-8 dark:border-t dark:border-dark-700">
+      <div className="pt-8">
         <div className="max-w-screen-xl mx-auto px-3">
-          <div className="text-lg font-semibold">기술지원</div>
-          <div className="text-sm text-gray-600 mb-6">
+          <div className="text-lg font-semibold dark:text-white">기술지원</div>
+          <div className="text-sm text-gray-600 dark:text-dark-400 mb-6">
             기술지원하는 공간입니다.
           </div>
-          <div className="border-t border-gray-200">
+          <div className="border-t border-gray-200 dark:border-dark-700">
             <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 dark:border-dark-700 py-4 lg:py-8">
               <div className="flex-1">
                 <div className="text-sm lg:text-lg font-normal text-gray-950 dark:text-white hover:underline line-clamp-2 mb-2">

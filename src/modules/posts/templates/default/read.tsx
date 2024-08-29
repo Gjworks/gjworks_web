@@ -73,7 +73,7 @@ const PostsRead = () => {
       <div className="sticky top-0 bg-white/75 dark:bg-dark-950/75 backdrop-blur-lg z-99 pt-1 border-b border-gray-100 dark:border-dark-800">
         <div className="mx-auto  max-w-screen-md px-3">
           <div className="flex items-center gap-2">
-            <div className="bg-primary-400 text-black dark:text-black text-xs px-4 py-1 rounded-full">
+            <div className="bg-primary-600 text-white dark:text-black text-xs px-4 py-1 rounded-full">
               기술공유
             </div>
             <div className="text-base md:text-lg font-light text-gray-950 dark:text-white py-4">

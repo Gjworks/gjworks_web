@@ -54,8 +54,8 @@ const SubNav = () => {
   return (
     <>
       {subMenu && (
-        <div className="sticky top-0 bg-white/90 backdrop-blur-lg z-50">
-          <div className="max-w-screen-xl mx-auto border-t border-gray-100">
+        <div className="sticky top-0 bg-white/90 dark:bg-dark-950/90 backdrop-blur-lg z-50">
+          <div className="max-w-screen-xl mx-auto border-t border-gray-100 dark:border-dark-700">
             <div className="sticky top-0">
               <div className="flex gap-4 px-3">
                 <div className="max-w-32 items-center">

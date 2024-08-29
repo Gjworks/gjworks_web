@@ -106,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'z-101 dark:bg-dark-900/90 relative top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
+          'z-101 dark:bg-dark-950/90 relative top-0 w-full bg-white/90 pt-0 backdrop-blur-lg' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
@@ -163,7 +163,7 @@ const Header = () => {
                       /> */}
                     </Link>
                     <div className="hidden group-hover:flex absolute top-10 lg:top-10 -left-1 z-10">
-                      <div className="bg-primary-400 text-white py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-primary-400 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
+                      <div className="bg-primary-600 text-white py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-primary-600 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
                         2.0
                       </div>
                     </div>
