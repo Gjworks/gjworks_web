@@ -23,6 +23,10 @@ const Page = () => {
   //   fetchData()
   // }, [])
 
-  return <>1111</>
+  return (
+    <>
+      <PostsRead />
+    </>
+  )
 }
 export default Page

@@ -50,7 +50,7 @@
     "supports": {
       "name": "supports",
       "title": "Supports",
-      "route": "/supports",
+      "route": "/posts/supports",
       "icon": "",
       "subMenu": [
         {
@@ -58,7 +58,7 @@
             "name": "supports",
             "icon": "",
             "parent": "supports",
-            "route": "/supports"
+            "route": "/posts/supports"
         },
         {
             "title": "공지사항",
