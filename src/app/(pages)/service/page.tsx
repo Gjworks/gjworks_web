@@ -30,7 +30,7 @@ const Page = () => {
     <>
       <div className="relative overflow-hidden">
         <div className="max-w-screen-xl mx-auto px-3 pt-20 pb-20">
-          <div className="text-3xl font-bold text-gray-700 dark:text-dark-400">
+          <div className="text-3xl font-bold text-gray-700 dark:text-dark-400 mb-1">
             나만의 서비스 만들기
           </div>
           <div className="text-3xl font-bold text-gray-700 dark:text-dark-400">

@@ -26,15 +26,11 @@ const Page = props => {
   return (
     <>
       <div className="max-w-screen-xl mx-auto py-8 xl:pt-20 px-3">
-        <div>
-          <motion.div className="text-black inline-block text-5xl font-semibold mb-4">
-            Maintenance
-          </motion.div>
+        <div className="text-3xl font-bold text-gray-700 dark:text-dark-400 mb-1">
+          새로운 세대의
         </div>
-        <div>
-          <motion.div className="text-black inline-block text-3xl font-semibold">
-            새로운 세대의 애플리케이션을 위한 플랫폼
-          </motion.div>
+        <div className="text-3xl font-bold text-gray-700 dark:text-dark-400">
+          애플리케이션을 위한 플랫폼
         </div>
       </div>
       <motion.div
@@ -58,7 +54,7 @@ const Page = props => {
                   variants={variants}
                   className="text-2xl font-semibold text-black lg:text-2xl dark:text-white"
                 >
-                  나만의 작은 서비스를 구성해보세요.
+                  나만의 서비스를 구성해보세요.
                 </motion.div>
               </div>
               <div className="flex w-full items-end">
