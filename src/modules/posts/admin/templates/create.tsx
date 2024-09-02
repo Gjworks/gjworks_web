@@ -34,6 +34,8 @@ const DashboardPostCreate = (props: PostProps) => {
         } else {
           if (response.data.postInfo && response.type === 'success') {
             setPosts(response.data.postInfo)
+            setListGrant(response.data.postInfo.config.grant.listGrant)
+            setReadGrant(response.data.postInfo.config.grant.readGrant)
             setWriteGrant(response.data.postInfo.config.grant.writeGrant)
             setCommentGrant(response.data.postInfo.config.grant.commentGrant)
           }
@@ -150,13 +152,13 @@ const DashboardPostCreate = (props: PostProps) => {
   }
 
   const isCheckedWrite =
-    posts.config?.grant?.writeGrant && writeGrant.includes(String('Guest'))
+    posts.config?.grant?.writeGrant && writeGrant.includes(String('guest'))
   const isCheckedComment =
-    posts.config?.grant?.commentGrant && commentGrant.includes(String('Guest'))
+    posts.config?.grant?.commentGrant && commentGrant.includes(String('guest'))
   const isCheckedList =
-    posts.config?.grant?.listGrant && listGrant.includes(String('Guest'))
+    posts.config?.grant?.listGrant && listGrant.includes(String('guest'))
   const isCheckedRead =
-    posts.config?.grant?.readGrant && readGrant.includes(String('Guest'))
+    posts.config?.grant?.readGrant && readGrant.includes(String('guest'))
 
   return (
     <>
@@ -408,52 +410,106 @@ const DashboardPostCreate = (props: PostProps) => {
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3">
                         <div className="mb-5">
-                          <label>
-                            <div className="flex gap-2 items-center">
-                              <div className="w-24 text-sm text-black">
-                                게시판 목록
-                              </div>
-                              <div className="flex-1">
-                                <select
-                                  name="list"
-                                  id="list"
-                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                                >
-                                  <option value="">제한없음</option>
-                                  <option value="0">로그인사용자</option>
-                                  {posts?.config?.list?.map((item, index) => (
-                                    <option key={index} value={item}>
-                                      {item}
-                                    </option>
-                                  ))}
-                                </select>
+                          <div className="flex gap-2 items-center">
+                            <div className="w-24 text-sm text-black">목록</div>
+                            <div className="flex-1">
+                              <div className="flex gap-2 flex-wrap">
+                                <div>
+                                  <label
+                                    htmlFor="listGrant0"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="listGrant"
+                                      id="listGrantGuest"
+                                      value="guest"
+                                      checked={isCheckedList ? true : false}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    로그인사용자
+                                  </label>
+                                </div>
+
+                                {posts?.grant &&
+                                  posts?.grant?.map((item, index) => {
+                                    const isChecked = listGrant?.includes(
+                                      String(item.groupName)
+                                    )
+                                    // console.log(isChecked)
+                                    return (
+                                      <div key={item.groupName}>
+                                        <label
+                                          htmlFor={`listGrant${item.groupName}`}
+                                          className="text-sm flex gap-2 items-center"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            name="listGrant"
+                                            id={`listGrant${item.groupName}`}
+                                            value={item.groupName}
+                                            checked={isChecked ? true : false}
+                                            onChange={handleCheckboxChange}
+                                          />
+                                          {item.groupTitle}
+                                        </label>
+                                      </div>
+                                    )
+                                  })}
                               </div>
                             </div>
-                          </label>
+                          </div>
                         </div>
                         <div className="mb-5">
-                          <label>
-                            <div className="flex gap-2 items-center">
-                              <div className="w-24 text-sm text-black">
-                                본문
-                              </div>
-                              <div className="flex-1">
-                                <select
-                                  name="list"
-                                  id="list"
-                                  className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 py-2 px-3 w-full outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                                >
-                                  <option value="">제한없음</option>
-                                  <option value="0">로그인사용자</option>
-                                  {posts?.config?.list?.map((item, index) => (
-                                    <option key={index} value={item}>
-                                      {item}
-                                    </option>
-                                  ))}
-                                </select>
+                          <div className="flex gap-2 items-center">
+                            <div className="w-24 text-sm text-black">본문</div>
+                            <div className="flex-1">
+                              <div className="flex gap-2 flex-wrap">
+                                <div>
+                                  <label
+                                    htmlFor="readGrant0"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="readGrant"
+                                      id="readGrantGuest"
+                                      value="guest"
+                                      checked={isCheckedRead ? true : false}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    로그인사용자
+                                  </label>
+                                </div>
+
+                                {posts?.grant &&
+                                  posts?.grant?.map((item, index) => {
+                                    const isChecked = readGrant?.includes(
+                                      String(item.groupName)
+                                    )
+                                    // console.log(isChecked)
+                                    return (
+                                      <div key={item.groupName}>
+                                        <label
+                                          htmlFor={`readGrant${item.groupName}`}
+                                          className="text-sm flex gap-2 items-center"
+                                        >
+                                          <input
+                                            type="checkbox"
+                                            name="readGrant"
+                                            id={`readGrant${item.groupName}`}
+                                            value={item.groupName}
+                                            checked={isChecked ? true : false}
+                                            onChange={handleCheckboxChange}
+                                          />
+                                          {item.groupTitle}
+                                        </label>
+                                      </div>
+                                    )
+                                  })}
                               </div>
                             </div>
-                          </label>
+                          </div>
                         </div>
                         <div className="mb-5">
                           <div className="flex gap-2 items-center">
@@ -471,7 +527,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                       type="checkbox"
                                       name="writeGrant"
                                       id="writeGrantGuest"
-                                      value="Guest"
+                                      value="guest"
                                       checked={isCheckedWrite ? true : false}
                                       onChange={handleCheckboxChange}
                                     />
@@ -519,7 +575,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                       type="checkbox"
                                       name="commentGrant"
                                       id="commentGrantGuest"
-                                      value="Guest"
+                                      value="guest"
                                       checked={isCheckedComment ? true : false}
                                       onChange={handleCheckboxChange}
                                     />
