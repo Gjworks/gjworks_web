@@ -1,19 +1,75 @@
 'use server';
 
-import { getUser } from "@/modules/user/scripts/userModel"
-import { deleteUser } from "@/modules/user/scripts/userController"
+import { cookies, headers } from "next/headers";
+import { decodeJwt } from 'jose';
+import { getUser, getUserByAccountId, getUserByNickname } from "@/modules/user/scripts/userModel"
+import { deleteUser, updateUser } from "@/modules/user/scripts/userController"
+import { updateUserGroup, deleteUserGroup } from "@/modules/user/scripts/groupController";
 
 import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+
+interface UserParams {
+  id? : number | null
+  uuid? : string | null
+  accountId? : string | null
+  accessToken? : string | null
+  nickName? : string | null
+  group? : string[] | null
+}
+
+interface LoggedParams {
+  id : number
+  accountId : string
+  isAdmin? : boolean | null
+}
+
 
 export const insertUser = async () => {
   
 }
 
-export const updateUser = async () => {
-  
+export const updateAdminUser = async (params:UserParams) => {
+  const accessToken = cookies().get('accessToken')?.value
+  let obj: any = {};
+  let loggedInfo:LoggedParams = {
+    id : 0,
+    accountId : '',
+    isAdmin : false 
+  }
+  let userInfo
+  let response
+
+  //토큰 정보를 확인하여 로그인한 사용자 정보를 가져온다.
+  if(accessToken) {
+    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+    loggedInfo.id = decodeToken.id
+    loggedInfo.accountId = decodeToken.accountId
+    loggedInfo.isAdmin = decodeToken.isAdmin
+  }else{
+    return response = 
+      {
+        success: true,
+        type: "error",
+        message : '토큰 정보가 잘못되었습니다.',
+        data: {}
+      }
+  }
+  if(!loggedInfo.isAdmin) {
+    return response = 
+      {
+        success: true,
+        type: "error",
+        message : '권한이 없습니다.',
+        data: {}
+      }
+  }
+  console.log(params);
+  const output = await updateUser(params)
+  console.log(output)
 }
 
-export const deleteDashboardUser = async (id:number) => {
+export const deleteAdmindUser = async (id:number) => {
   if(!id) {
     return {
       success: false,

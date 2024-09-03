@@ -5,7 +5,10 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 import { getUser } from '@/modules/user/scripts/userModel'
-import { deleteUser, updateUser } from '@/modules/user/scripts/userController'
+import {
+  deleteAdmindUser,
+  updateAdminUser,
+} from '@/modules/user/admin/scripts/userController'
 import { GroupInfo } from '@/modules/user/admin/scripts/groupModel'
 import Alert from '@plextype/components/message/Alert'
 
@@ -62,7 +65,7 @@ const DashboardUserUpdate = props => {
       isAdmin: formData.get('isAdmin') as string,
       group: selectedGroups,
     }
-    await updateUser(params)
+    await updateAdminUser(params)
       .then(response => {
         console.log(response)
         response?.type &&
@@ -76,7 +79,7 @@ const DashboardUserUpdate = props => {
 
   const handlerUserDelete = async () => {
     console.log('delete user')
-    await deleteUser({ id: props.userid, accessToken: accessToken })
+    await deleteAdmindUser(props.userid)
       .then(response => {
         console.log(response)
         router.push('/dashboard/user/list')
@@ -84,6 +87,24 @@ const DashboardUserUpdate = props => {
       .catch(error => {
         console.error('Failed to get user delete: ' + error.toString())
       })
+  }
+
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { checked, value } = event.target
+    setGroupList(prev => {
+      if (!Array.isArray(prev)) {
+        return []
+      }
+
+      if (typeof value === 'object' && value !== null && 'id' in value) {
+        return checked
+          ? [...prev, value as GroupInfo]
+          : prev.filter(group => group.id !== (value as GroupInfo).id)
+      }
+
+      // value가 GroupInfo가 아닌 경우 이전 상태 반환 (변경 없음)
+      return prev
+    })
   }
 
   return (
@@ -234,11 +255,9 @@ const DashboardUserUpdate = props => {
                                     type="checkbox"
                                     name="group"
                                     className=""
-                                    value={String(group.id)}
+                                    value={String(group.groupName)}
                                     checked={isChecked ? true : undefined}
-                                    // onChange={() => {
-
-                                    // }} // 필요에 따라 onChange 핸들러 추가
+                                    onChange={handleCheckboxChange}
                                   ></input>
                                   <div className="text-sm text-dark-400">
                                     {group.groupTitle}

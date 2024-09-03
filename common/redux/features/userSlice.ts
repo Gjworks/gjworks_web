@@ -1,7 +1,5 @@
-"use client"
-
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import { Signin } from "@/modules/user/scripts/authController";
+// import { Signin } from "@/modules/user/scripts/authController";
 import { updateUser } from "@/modules/user/scripts/userController";
 
 
@@ -43,10 +41,17 @@ export const fetchSignIn = createAsyncThunk<FetchSignInResponse, FetchSignInPayl
   'userInfo/fetchSignIn',
   async ({ formData }: { formData: FormData }):Promise<{ result: DataInfo; accessToken: string }> => {
     let result;
-    await Signin(formData).then((response) => {
-      console.log(response.type)
-      result = response
+    // await Signin(formData).then((response) => {
+    //   console.log(response)
+    //   result = response
+    // })
+    const response = await fetch('/api/auth/Signin', {
+      method: 'POST',
+      body: formData
     })
+    result = await response.json();
+    console.log(result)
+    console.log(result.success)
     return { result: result, accessToken: result.accessToken };
   }
 );

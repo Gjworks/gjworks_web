@@ -10,7 +10,7 @@ import DefaultList from '@plextype/components/nav/DefaultList'
 import { store } from '@plextype/redux/store'
 import { resetUserInfo } from '@plextype/redux/features/userSlice'
 
-import { Signout, Refresh } from '@/modules/user/scripts/authController'
+// import { Signout, Refresh } from '@/modules/user/scripts/authController'
 
 interface Item {
   title: string
@@ -135,33 +135,55 @@ const AccountDropwdown = () => {
   ])
 
   const handleSignOut = async () => {
-    console.log('logout')
-    const accessToken = localStorage.getItem('accessToken')
-    await Signout(accessToken).then(data => {
-      if (data) {
-        localStorage.removeItem('persist:userInfo')
-        localStorage.removeItem('accessToken')
-        window.location.href = '/'
-      }
+    // const accessToken = localStorage.getItem('accessToken')
+    const response = await fetch('/api/auth/logout', {
+      method: 'POST',
     })
+    const result = await response.json()
+    if (result) {
+      localStorage.removeItem('persist:userInfo')
+      localStorage.removeItem('accessToken')
+      window.location.href = '/'
+    }
+    // await Signout(accessToken).then(data => {
+    //   if (data) {
+    //     localStorage.removeItem('persist:userInfo')
+    //     localStorage.removeItem('accessToken')
+    //     window.location.href = '/'
+    //   }
+    // })
   }
 
   const fetchUserData = async (accessToken: string) => {
+    const url = '/api/auth/refresh'
+    let options = {
+      method: 'POST',
+      headers: {}, // headers 객체를 미리 초기화
+    }
     try {
-      await Refresh(accessToken).then(response => {
-        if (response.type === 'new_accessToken' && response.accessToken) {
-          localStorage.setItem('accessToken', response.accessToken)
+      if (accessToken) {
+        options.headers = {
+          ...options.headers,
+          Authorization: `Bearer ${accessToken}`,
         }
-        if (
-          response.code === 'refreshToken_expires' &&
-          response.accessToken === null
-        ) {
-          localStorage.removeItem('persist:userInfo')
-          localStorage.removeItem('accessToken')
-          alert(response.message)
-          window.location.href = '/'
-        }
-      })
+      }
+      const response = await fetch(url, options)
+      const result = await response.json()
+
+      // await Refresh(accessToken).then(response => {
+      if (result.code === 'new_accessToken' && result.accessToken) {
+        localStorage.setItem('accessToken', result.accessToken)
+      }
+      if (
+        result.code === 'refreshToken_expires' &&
+        result.accessToken === null
+      ) {
+        localStorage.removeItem('persist:userInfo')
+        localStorage.removeItem('accessToken')
+        alert(result.message)
+        window.location.href = '/'
+      }
+      // })
     } catch (error) {
       console.error('Error fetching user data:', error)
     }

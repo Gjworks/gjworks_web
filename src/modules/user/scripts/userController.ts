@@ -134,11 +134,6 @@ export const updateUser = async (params:UserParams) => {
   params.nickName && (obj.nickName = params.nickName).trim()
   params.accountId && (obj.accountId = params.accountId).trim()
 
-  if(!obj.id && !obj.uuid && !obj.nickname && !obj.accountId) {
-    obj.accountId = loggedInfo.accountId
-    obj.id = loggedInfo.id
-    obj.isAdmin = loggedInfo.isAdmin
-  }
   
   //토큰 사용자 정보로 실제 회원 정보를 DB에서 가져온다.
   userInfo = await getUser(loggedInfo)
@@ -195,7 +190,7 @@ export const updateUser = async (params:UserParams) => {
   if(params.group) {
     await updateUserGroup(userInfo.id, params.group)
   }
-
+  console.log(obj)
   try {
     const updateUserInfo = await prisma.user.update({
       where: {
@@ -203,7 +198,7 @@ export const updateUser = async (params:UserParams) => {
       },
       data: {
         nickName: obj.nickName,
-        // password: obj.password,
+        password: obj.password,
       }
     })
 
