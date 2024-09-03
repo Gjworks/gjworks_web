@@ -1,11 +1,14 @@
 'use client'
 
-import React, { useEffect, useState, Suspense } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import BoardList from '@plextype/components/list/BoardList'
-import PageNavigation from '@plextype/components/nav/PageNavigation'
+import {
+  HomeIcon,
+  ChevronRightIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+} from '@heroicons/react/24/outline'
 
 interface PageProps {
   params: {
@@ -23,43 +26,148 @@ const PostsList: React.FC<PageProps> = ({
 
   return (
     <>
-      <div className="max-w-screen-xl mx-auto px-3">
-        <div className="grid grid-cols-1 gap-12 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-          <div className="col-span-1">
-            <Link href="/posts/devlog/view/1" className="group">
-              <div className="relative dark:shadow-dark-950 mb-10 block shadow-lg rounded-lg shadow-gray-400 group-hover:shadow-gray-400/75 dark:group-hover:shadow-black overflow-hidden duration-700">
-                <div className="h-[360px] rounded-lg bg-[url('/assets/images/bg39.jpg')] bg-cover bg-center transition duration-700 group-hover:scale-[1.08]">
-                  <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/30 to-gray-950/40 dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950/75"></div>
-                </div>
-              </div>
-              <div className="px-1">
-                <div className="mb-6 w-full">
-                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-600 group-hover:text-black dark:group-hover:text-white">
-                    Alien: River of Pain Revisions 2.0
-                  </div>
-                  <div className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-600 dark:group-hover:text-white">
-                    The birth of Rebecca Jorden, Known to her famliy as Newt, is
-                    a cause for celebration. But as the colony grows and
-                    expands, so, too, do the Political struggles between a small
-                    be-tachment of Colonial Marines.
-                  </div>
-                </div>
-
-                <div className="flex items-center">
-                  <div className="flex cursor-pointer items-center gap-2 py-1">
-                    <div className="text-xs text-gray-950 dark:text-dark-200">
-                      Web Design
-                    </div>
-                    <div className="text-xs text-gray-300 dark:text-dark-600">
-                      |
-                    </div>
-                    <div className="text-xs text-gray-400 dark:text-dark-500">
-                      1달전
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div className="border-t border-gray-200 dark:border-dark-700">
+        <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 dark:border-dark-700 py-4 lg:py-8">
+          <div className="flex-1">
+            <Link
+              href="/posts/supports/view/1"
+              className="text-sm lg:text-xl font-medium text-gray-950 dark:text-white hover:underline line-clamp-2 mb-2"
+            >
+              기술지원을 받을 수 있는 곳입니다. 아이디어를 제안하거나 문의사항을
+              남겨주세요.
             </Link>
+
+            <div className="flex items-center">
+              <div className="relative text-primary-500 pr-3 text-xs lg:text-sm before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                질문답변
+              </div>
+              <div className="relative text-gray-900 dark:text-dark-100 text-xs lg:text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                관리자
+              </div>
+              <div className="relative text-gray-500 text-xs lg:text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                3일전
+              </div>
+              <div className="relative flex gap-2 px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                <div className="text-xs lg:text-sm text-gray-400">댓글</div>
+                <div className="text-xs lg:text-sm text-gray-700">4</div>
+              </div>
+              <div className="flex gap-2 px-3">
+                <div className="text-xs lg:text-sm text-gray-400">조회수</div>
+                <div className="text-xs lg:text-sm text-gray-700">34</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center w-full lg:w-1/5">
+            <div className="flex-1 bg-gray-100 dark:bg-dark-800 lg:bg-white dark:lg:bg-dark-900 py-2 rounded-md border lg:border-0 border-gray-200 dark:border-dark-700">
+              <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 dark:border-dark-700">
+                <div className="flex items-center gap-2 mb-0 lg:mb-1">
+                  <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
+                  <div className="text-xs lg:text-sm text-gray-900 dark:text-dark-100">
+                    관리자
+                  </div>
+                  <div className="text-gray-500 text-xs">16분전</div>
+                </div>
+                <div className="text-xs text-gray-500  line-clamp-1">
+                  테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 dark:border-dark-700 py-4 lg:py-8">
+          <div className="flex-1">
+            <Link
+              href="/posts/supports/view/1"
+              className="text-sm lg:text-xl font-medium text-gray-950 dark:text-white hover:underline line-clamp-2 mb-2"
+            >
+              기술지원을 받을 수 있는 곳입니다. 아이디어를 제안하거나 문의사항을
+              남겨주세요.
+            </Link>
+
+            <div className="flex items-center">
+              <div className="relative text-primary-500 pr-3 text-xs lg:text-sm before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                질문답변
+              </div>
+              <div className="relative text-gray-900 dark:text-dark-100 text-xs lg:text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                관리자
+              </div>
+              <div className="relative text-gray-500 text-xs lg:text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                3일전
+              </div>
+              <div className="relative flex gap-2 px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                <div className="text-xs lg:text-sm text-gray-400">댓글</div>
+                <div className="text-xs lg:text-sm text-gray-700">4</div>
+              </div>
+              <div className="flex gap-2 px-3">
+                <div className="text-xs lg:text-sm text-gray-400">조회수</div>
+                <div className="text-xs lg:text-sm text-gray-700">34</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center w-full lg:w-1/5">
+            <div className="flex-1 bg-gray-100 dark:bg-dark-800 lg:bg-white dark:lg:bg-dark-900 py-2 rounded-md border lg:border-0 border-gray-200 dark:border-dark-700">
+              <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 dark:border-dark-700">
+                <div className="flex items-center gap-2 mb-0 lg:mb-1">
+                  <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
+                  <div className="text-xs lg:text-sm text-gray-900 dark:text-dark-100">
+                    관리자
+                  </div>
+                  <div className="text-gray-500 text-xs">16분전</div>
+                </div>
+                <div className="text-xs text-gray-500  line-clamp-1">
+                  테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 dark:border-dark-700 py-4 lg:py-8">
+          <div className="flex-1">
+            <Link
+              href="/posts/supports/view/1"
+              className="text-sm lg:text-xl font-medium text-gray-950 dark:text-white hover:underline line-clamp-2 mb-2"
+            >
+              기술지원을 받을 수 있는 곳입니다. 아이디어를 제안하거나 문의사항을
+              남겨주세요.
+            </Link>
+
+            <div className="flex items-center">
+              <div className="relative text-primary-500 pr-3 text-xs lg:text-sm before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                질문답변
+              </div>
+              <div className="relative text-gray-900 dark:text-dark-100 text-xs lg:text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                관리자
+              </div>
+              <div className="relative text-gray-500 text-xs lg:text-sm px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                3일전
+              </div>
+              <div className="relative flex gap-2 px-3 before:absolute before:h-[12px] before:w-[1px] before:right-0 before:top-[4px] before:bg-gray-300">
+                <div className="text-xs lg:text-sm text-gray-400">댓글</div>
+                <div className="text-xs lg:text-sm text-gray-700">4</div>
+              </div>
+              <div className="flex gap-2 px-3">
+                <div className="text-xs lg:text-sm text-gray-400">조회수</div>
+                <div className="text-xs lg:text-sm text-gray-700">34</div>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center w-full lg:w-1/5">
+            <div className="flex-1 bg-gray-100 dark:bg-dark-800 lg:bg-white dark:lg:bg-dark-900 py-2 rounded-md border lg:border-0 border-gray-200 dark:border-dark-700">
+              <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 dark:border-dark-700">
+                <div className="flex items-center gap-2 mb-0 lg:mb-1">
+                  <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
+                  <div className="text-xs lg:text-sm text-gray-900 dark:text-dark-100">
+                    관리자
+                  </div>
+                  <div className="text-gray-500 text-xs">16분전</div>
+                </div>
+                <div className="text-xs text-gray-500  line-clamp-1">
+                  테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

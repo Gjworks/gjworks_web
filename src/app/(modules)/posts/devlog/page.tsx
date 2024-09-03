@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import PostsList from '@/modules/posts/templates/default/list'
 import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+
+import PostsCategories from '@/modules/posts/templates/default/category'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
 import { motion } from 'framer-motion'
 
@@ -13,54 +14,60 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
-  const pathVariants = {
-    from: {
-      opacity: 0,
-      pathLength: 0,
-    },
-    to: {
-      opacity: 1,
-      pathLength: 1,
-      transition: {
-        duration: 0.7,
-        ease: 'easeInOut',
-      },
-    },
-  }
   return (
     <>
-      {/* <div className="max-w-screen-xl mx-auto px-3">
-        <div className="flex items-center pt-10 pb-16 gap-2">
-          <div className="text-gray-950 dark:text-white">
-            <HomeIcon className="size-3.5 stroke-1.5" />
-          </div>
-          <div className="text-gray-700 dark:text-white">
-            <ChevronRightIcon className="size-3.5 stroke-1.5" />
-          </div>
-          <div className="text-xs font-bold text-gray-400 dark:text-gray-400 uppercase">
-            Works
-          </div>
-        </div>
-      </div> */}
-      <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pt-20">
-        <div className="relative lg:w-auto text-center lg:text-left">
+      <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pt-10">
+        <div className="relative flex justify-center w-full">
           <div className="relative text-3xl font-bold text-gray-950 dark:text-white">
             개발로그
           </div>
-          {/* <div className="absolute -bottom-1.5 stroke-primary-600 fill-primary-600 w-32">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 32.61">
-              <motion.path
-                d="M5 14.11s54-8 125-9 120 5 120 5-200.5-5.5-239.5 17.5"
-                initial="from"
-                animate="to"
-                variants={pathVariants}
-              />
-            </svg>
-          </div> */}
         </div>
       </div>
 
-      <PostsList params={params} />
+      <div className="max-w-screen-xl mx-auto px-3">
+        <div className="pt-10">
+          <PostsCategories />
+        </div>
+        <div className="grid grid-cols-1 gap-12 pb-20 pt-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+          <div className="col-span-1">
+            <Link href="/posts/devlog/view/1" className="group">
+              <div className="relative dark:shadow-dark-950 mb-10 block shadow-lg rounded-lg shadow-gray-400 group-hover:shadow-gray-400/75 dark:group-hover:shadow-black overflow-hidden duration-700">
+                <div className="h-[360px] rounded-lg bg-[url('/assets/images/bg39.jpg')] bg-cover bg-center transition duration-700 group-hover:scale-[1.08]">
+                  <div className="absolute inset-0 bg-gradient-to-b from-gray-950/40 via-gray-950/30 to-gray-950/40 dark:from-dark-950/25 dark:via-dark-950/50 dark:to-dark-950/75"></div>
+                </div>
+              </div>
+              <div className="px-1">
+                <div className="mb-6 w-full">
+                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-600 group-hover:text-black dark:group-hover:text-white">
+                    Alien: River of Pain Revisions 2.0
+                  </div>
+                  <div className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-600 dark:group-hover:text-white">
+                    The birth of Rebecca Jorden, Known to her famliy as Newt, is
+                    a cause for celebration. But as the colony grows and
+                    expands, so, too, do the Political struggles between a small
+                    be-tachment of Colonial Marines.
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="flex cursor-pointer items-center gap-2 py-1">
+                    <div className="text-xs text-gray-950 dark:text-dark-200">
+                      Web Design
+                    </div>
+                    <div className="text-xs text-gray-300 dark:text-dark-600">
+                      |
+                    </div>
+                    <div className="text-xs text-gray-400 dark:text-dark-500">
+                      1달전
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+        {/* <PostsList params={params} /> */}
+      </div>
       <div className="max-w-screen-xl mx-auto px-3">
         <div className="pb-20">
           <div className="flex justify-between gap-4 flex-wrap">
