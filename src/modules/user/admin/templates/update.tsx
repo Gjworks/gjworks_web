@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 import { getUser } from '@/modules/user/scripts/userModel'
 import {
-  deleteAdmindUser,
+  deleteAdminUser,
   updateAdminUser,
 } from '@/modules/user/admin/scripts/userController'
 import { GroupInfo } from '@/modules/user/admin/scripts/groupModel'
@@ -25,6 +25,7 @@ const DashboardUserUpdate = props => {
   const accessToken = localStorage.getItem('accessToken')
   const [userInfo, setUserInfo] = useState<any>()
   const [groupList, setGroupList] = useState<GroupInfo[]>([])
+  const [isAdmin, setIsAdmin] = useState<boolean>(false)
   const [error, setError] = useState<{ type: string; message: string } | null>(
     null
   )
@@ -46,8 +47,9 @@ const DashboardUserUpdate = props => {
   const updateDashboardUser = async () => {
     await getUser({ id: props.userid })
       .then(response => {
-        console.log(response)
+        // console.log(response['isAdmin'])
         setUserInfo(response)
+        setIsAdmin(response['isAdmin'] ?? false)
       })
       .catch(error => {
         console.error('Failed to get user info: ' + error.toString())
@@ -60,14 +62,14 @@ const DashboardUserUpdate = props => {
       id: props.userid,
       accessToken: accessToken,
       accountId: formData.get('accountId') as string,
-      nickname: formData.get('nickName') as string,
-      email: formData.get('email_address') as string,
-      isAdmin: formData.get('isAdmin') as string,
+      nickName: formData.get('nickName') as string,
+      email_address: formData.get('email_address') as string,
+      isAdmin: isAdmin,
       group: selectedGroups,
     }
+    console.log(params)
     await updateAdminUser(params)
       .then(response => {
-        console.log(response)
         response?.type &&
           setError({ type: response.type, message: response.message })
         // router.push('/dashboard/user/list')
@@ -79,9 +81,8 @@ const DashboardUserUpdate = props => {
 
   const handlerUserDelete = async () => {
     console.log('delete user')
-    await deleteAdmindUser(props.userid)
+    await deleteAdminUser(props.userid)
       .then(response => {
-        console.log(response)
         router.push('/dashboard/user/list')
       })
       .catch(error => {
@@ -105,6 +106,10 @@ const DashboardUserUpdate = props => {
       // value가 GroupInfo가 아닌 경우 이전 상태 반환 (변경 없음)
       return prev
     })
+  }
+
+  const handleIsAdminChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsAdmin(event.target.checked)
   }
 
   return (
@@ -133,7 +138,7 @@ const DashboardUserUpdate = props => {
                         </label>
                         <input
                           type="text"
-                          name="email"
+                          name="accountId"
                           className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                           placeholder="example@mail.com"
                           defaultValue={userInfo.accountId}
@@ -151,7 +156,7 @@ const DashboardUserUpdate = props => {
                         </label>
                         <input
                           type="text"
-                          name="email"
+                          name="email_address"
                           className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                           placeholder="example@mail.com"
                           defaultValue={userInfo.email_address}
@@ -169,7 +174,7 @@ const DashboardUserUpdate = props => {
                         </label>
                         <input
                           type="text"
-                          name="nickname"
+                          name="nickName"
                           className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                           defaultValue={userInfo.nickName}
                         />
@@ -223,10 +228,11 @@ const DashboardUserUpdate = props => {
                         <label className="m-0">
                           <input
                             type="checkbox"
+                            name="isAdmin"
                             className="peer hidden"
-                            id="theme_change"
-                            // checked={}
-                            // onChange={}
+                            id="isAdmin"
+                            checked={isAdmin}
+                            onChange={handleIsAdminChange}
                           />
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6 "></div>
                         </label>

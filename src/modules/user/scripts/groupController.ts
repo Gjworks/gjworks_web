@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const updateUserGroup = async (userId:number, groupId:string[]) => {
+export const updateUserGroup = async (userId:number, groupId:number[]) => {
 
   if(!userId) {
     return {

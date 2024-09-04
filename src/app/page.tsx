@@ -127,7 +127,7 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-3/5"
+                            className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-2/5"
                           >
                             <div className="dark:bg-dark-700/75 rounded-lg bg-white p-3 backdrop-blur-2xl">
                               <Square3Stack3DIcon className="size-5 text-gray-900 dark:text-white stroke-1" />

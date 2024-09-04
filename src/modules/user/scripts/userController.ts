@@ -6,13 +6,17 @@ import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
 import { updateUserGroup, deleteUserGroup } from "@/modules/user/scripts/groupController";
+import { getGroupNameById } from "@/modules/user/scripts/groupModel";
 
 interface UserParams {
-  id? : number | null
+  id? : number
   uuid? : string | null
-  accountId? : string | null
+  accountId? : string
+  email_address? : string
   accessToken? : string | null
-  nickName? : string | null
+  nickName? : string | undefined
+  password? : string | undefined
+  isAdmin? : boolean | null
   group? : string[] | null
 }
 
@@ -105,7 +109,7 @@ export const createUser = async (formData: FormData) => {
 export const updateUser = async (params:UserParams) => {
   const prisma = new PrismaClient();
   const accessToken = cookies().get('accessToken')?.value
-  let obj: any = {};
+
   let loggedInfo:LoggedParams = {
     id : 0,
     accountId : '',
@@ -129,10 +133,6 @@ export const updateUser = async (params:UserParams) => {
         data: {}
       }
   }
-  params.id && (obj.id = params.id)
-  params.uuid && (obj.uuid = params.uuid).trim()
-  params.nickName && (obj.nickName = params.nickName).trim()
-  params.accountId && (obj.accountId = params.accountId).trim()
 
   
   //토큰 사용자 정보로 실제 회원 정보를 DB에서 가져온다.
@@ -161,20 +161,20 @@ export const updateUser = async (params:UserParams) => {
     }
   }
   
-  if(userInfo.accountId !== obj.accountId && obj.accountId) {
-    const getUserAccountId = await getUserByAccountId(obj.accountId)
+  if(userInfo.accountId !== params.accountId && params.accountId) {
+    const getUserAccountId = await getUserByAccountId(params.accountId)
     if(getUserAccountId) {
       return response = 
         {
           success: true,
           type: "error",
-          message : '이미 사용중인 이메일입니다.',
+          message : '이미 사용중인 아이디입니다.',
           data: {}
         }
     }
   }
-  if(userInfo.nickname !== obj.nickname && obj.nickname) {
-    const getUserNickname = await getUserByNickname(obj.nickname)
+  if(userInfo.nickName !== params.nickName && params.nickName) {
+    const getUserNickname = await getUserByNickname(params.nickName)
     if(getUserNickname) {
       return response = 
         {
@@ -188,20 +188,33 @@ export const updateUser = async (params:UserParams) => {
 
   // 만약 그룹 정보가 온다면 그룹 정보를 업데이트 한다.
   if(params.group) {
-    await updateUserGroup(userInfo.id, params.group)
+    let groupInfo:number[] = [];
+    const group = params.group;
+    for (const groupItem of params.group) {
+      const item = groupItem.trim();
+      const info = await getGroupNameById(item)
+      console.log(info)
+      info && groupInfo.push(info.id);
+      // console.log(group)
+    }
+    console.log(groupInfo);
+    await updateUserGroup(userInfo.id, groupInfo)
   }
-  console.log(obj)
+  console.log('update user access token', params)
   try {
     const updateUserInfo = await prisma.user.update({
       where: {
         id: userInfo.id
       },
       data: {
-        nickName: obj.nickName,
-        password: obj.password,
+        accountId: params.accountId ?? params.accountId,
+        email_address: params.email_address ?? params.email_address,
+        nickName: params.nickName ?? params.nickName,
+        password: params.password ?? params.password,
+        isAdmin: params.isAdmin ?? params.isAdmin
       }
     })
-
+    console.log(updateUserInfo)
     userInfo.nickName = updateUserInfo.nickName;
 
     return response = 

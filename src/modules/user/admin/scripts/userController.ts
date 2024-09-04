@@ -10,11 +10,11 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 interface UserParams {
-  id? : number | null
+  id? : number
   uuid? : string | null
-  accountId? : string | null
+  accountId? : string
   accessToken? : string | null
-  nickName? : string | null
+  nickName? : string
   group? : string[] | null
 }
 
@@ -69,7 +69,7 @@ export const updateAdminUser = async (params:UserParams) => {
   console.log(output)
 }
 
-export const deleteAdmindUser = async (id:number) => {
+export const deleteAdminUser = async (id:number) => {
   if(!id) {
     return {
       success: false,
