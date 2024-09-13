@@ -6,7 +6,7 @@ import { PrismaClient } from "@prisma/client";
 import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
 import { updateUserGroup, deleteUserGroup } from "@/modules/user/scripts/groupController";
-import { getGroupNameById } from "@/modules/user/scripts/groupModel";
+
 
 interface UserParams {
   id? : number
@@ -17,7 +17,7 @@ interface UserParams {
   nickName? : string | undefined
   password? : string | undefined
   isAdmin? : boolean | null
-  group? : string[] | null
+  group?: { groupId: string; }[];
 }
 
 interface LoggedParams {
@@ -188,17 +188,20 @@ export const updateUser = async (params:UserParams) => {
 
   // 만약 그룹 정보가 온다면 그룹 정보를 업데이트 한다.
   if(params.group) {
-    let groupInfo:number[] = [];
-    const group = params.group;
-    for (const groupItem of params.group) {
-      const item = groupItem.trim();
-      const info = await getGroupNameById(item)
-      console.log(info)
-      info && groupInfo.push(info.id);
-      // console.log(group)
+    console.log("Group: " + params.group)
+    let groupId:number[] = [];
+    console.log(typeof params.group)
+    for (const key in params.group) {
+      const groupItem = params.group[key];
+      if (typeof groupItem === 'object' && groupItem !== null && 'groupId' in groupItem) {
+        console.log(groupItem);
+        groupId.push(Number(groupItem.groupId));
+      } else {
+        console.error('Invalid groupItem:', groupItem); // 오류가 발생한 데이터를 로그에 출력
+      }
     }
-    console.log(groupInfo);
-    await updateUserGroup(userInfo.id, groupInfo)
+    console.log(groupId);
+    await updateUserGroup(userInfo.id, groupId)
   }
   console.log('update user access token', params)
   try {

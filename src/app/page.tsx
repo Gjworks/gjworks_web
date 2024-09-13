@@ -67,11 +67,11 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <motion.div className="relative w-full">
-          <div className="relative overflow-hidden">
+          <div className="relative max-w-screen-xl mx-auto">
             <div className="relative flex justify-center items-center min-h-[calc(100vh-64px)]">
-              <div className="relative w-full py-0 lg:py-12 shadow-gray-100/90 dark:border-0 overflow-hidden  dark:shadow-dark-950/90 dark:border-dark-700/90 dark:border-t-dark-600/60 ">
+              <div className="relative w-full py-0 lg:py-20dark:border-0 overflow-hidden ">
                 <div className="relative mx-auto max-w-screen-lg gap-8 pt-0">
-                  <div className="relative flex items-center justify-center pb-20 lg:col-span-8 z-10">
+                  <div className="relative flex items-center justify-center py-20 lg:col-span-8 z-10">
                     <motion.div
                       variants={parentVariants}
                       initial="offscreen"
@@ -81,19 +81,19 @@ export default function Page() {
                     >
                       <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
                         <div className="">
-                          <div className="relative grid grid-cols-1 gap-4 px-4">
+                          <div className="relative grid grid-cols-1 gap-1 px-4">
                             <motion.div
                               variants={variants}
                               className="col-span-1 px-1 lg:mb-2"
                             >
-                              <div className="flex flex-wrap gap-2 text-4xl font-normal md:font-semibold !leading-tight tracking-tighter text-white lg:text-6xl lg:gap-0 dark:text-white w-full justify-center text-center">
-                                Building digital experience
+                              <div className="flex flex-wrap gap-2 text-4xl font-normal md:font-medium !leading-tight tracking-tight text-white lg:text-5xl lg:gap-0 dark:text-white w-full justify-center text-center">
+                                Building digital experience ✨
                               </div>
                             </motion.div>
 
                             <motion.div
                               variants={variants}
-                              className="mb-10 pl-0 text-4xl font-normal md:font-semibold tracking-tighter text-white lg:text-6xl dark:text-white text-center"
+                              className="mb-10 pl-0 text-4xl font-normal md:font-medium tracking-tight text-white lg:text-5xl dark:text-white text-center"
                             >
                               Creative platform service
                             </motion.div>
@@ -104,7 +104,7 @@ export default function Page() {
                             variants={variants}
                             className="relative mx-auto mb-6 max-w-lg py-3"
                           >
-                            <div className="flex gap-8 rounded-full bg-gray-950/30 dark:bg-dark-900/30 p-2 backdrop-blur-lg lg:p-2">
+                            <div className="flex gap-8 rounded-full bg-gray-950/50 dark:bg-dark-900/30 p-2 backdrop-blur-lg lg:p-2">
                               <div className="flex flex-1 items-center px-3">
                                 <div className="dark:text-dark-400 line-clamp-1 text-sm text-gray-100">
                                   Launch Your Service.
@@ -134,9 +134,9 @@ export default function Page() {
                             </div>
                             <div className="flex-1">
                               <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-50">
-                                OpenSource Projects
+                                Various Projects
                               </div>
-                              <div className="dark:text-dark-300 text-left text-xs text-gray-200">
+                              <div className="dark:text-dark-300 text-left text-xs text-gray-400">
                                 다양한 프로젝트를 만나보시고 좋은 의견과
                                 아이디어를 주시면 반영하겠습니다.
                               </div>
@@ -159,19 +159,27 @@ export default function Page() {
             className="hidden pt-20"
           >
             <div className="relative mx-auto max-w-screen-xl px-3">
-              <div className="grid grid-cols-12 gap-0 lg:gap-8">
+              <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10">
                 <div className="col-span-12">
-                  <div className="flex">
+                  <div className="flex justify-center">
                     <div className="w-full lg:w-3/5">
                       <motion.div
                         variants={variants}
-                        className="mb-4 text-xl font-bold text-black lg:text-3xl dark:text-white"
+                        className="flex justify-center mb-6"
                       >
-                        제품을 구매 하면 컴포넌트와 템플릿을 사용할 수 있습니다.
+                        <span className="border border-gray-200 py-0.5 px-4 rounded-full text-sm text-gray-400">
+                          Premium Quality
+                        </span>
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="dark:text-dark-500 text-sm lg:text-base text-gray-400"
+                        className="mb-4 text-xl font-semibold text-black lg:text-4xl dark:text-white text-center !leading-tight tracking-tight"
+                      >
+                        BEST UI TEMPLATES
+                      </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="dark:text-dark-500 text-sm lg:text-base text-gray-500 text-center"
                       >
                         컴포넌트는 React와 Next.js에서 사용할 수 있습니다. 모든
                         Component는 tailwindcss와 Framer motion을 활용하여
@@ -184,10 +192,10 @@ export default function Page() {
               <div className="pb-10 pt-10">
                 <div className="relative mx-auto max-w-screen-xl px-3">
                   <motion.div className="grid grid-cols-12 gap-y-8 lg:gap-8">
-                    <div className="col-span-12 lg:col-span-5">
+                    <div className="col-span-12 lg:col-span-6">
                       <motion.div
                         variants={variants}
-                        className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10"
+                        className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100/70 p-5 hover:shadow-sm shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -197,35 +205,33 @@ export default function Page() {
                           <motion.div
                             variants={variants}
                             className="relative mb-10 px-3"
-                          >
-                            <div className="h-[350px] bg-[url('/assets/images/Iphone14.png')] bg-cover bg-top bg-no-repeat"></div>
-                          </motion.div>
+                          ></motion.div>
 
                           <motion.div
                             variants={variants}
-                            className="mb-3 text-lg text-black lg:text-xl dark:text-white"
+                            className="mb-3 text-lg text-black lg:text-xl dark:text-white font-medium"
                           >
                             Coming soon mobile
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="dark:text-dark-500 mb-10 text-sm text-gray-600"
+                            className="dark:text-dark-500 mb-10 text-sm text-gray-500"
                           >
                             Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
                             불편함이 없게 UI/UX를 설계 합니다.
                           </motion.div>
                           <button className="">
-                            <div className="text-white relative text-sm bg-primary-600 hover:bg-primary-700 py-1.5 px-5 rounded-md">
+                            <div className="text-white relative text-sm bg-primary-400 hover:bg-primary-500 py-1.5 px-5 rounded-md">
                               Link more
                             </div>
                           </button>
                         </motion.div>
                       </motion.div>
                     </div>
-                    <div className="col-span-12 flex flex-wrap gap-8 lg:col-span-7">
+                    <div className="col-span-12 flex flex-wrap gap-8 lg:col-span-6">
                       <motion.div
                         variants={variants}
-                        className="dark:bg-dark-900 dark:shadow-dark-950/75 hover:shadow-xs dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
+                        className="dark:bg-dark-900 dark:shadow-dark-950/75 hover:shadow-xs dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100/70 p-5 hover:shadow-sm shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
                       >
                         <div className="relative h-full items-center overflow-hidden">
                           <div className="absolute inset-0"></div>
@@ -245,7 +251,7 @@ export default function Page() {
                       </motion.div>
                       <motion.div
                         variants={variants}
-                        className="dark:bg-dark-900 dark:shadow-dark-950/75 hover:shadow-xs dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
+                        className="dark:bg-dark-900 dark:shadow-dark-950/75 hover:shadow-xs dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100/70 p-5 hover:shadow-sm shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
                       >
                         <motion.div
                           variants={parentVariants}
@@ -253,7 +259,7 @@ export default function Page() {
                           whileInView="onscreen"
                         >
                           <motion.div variants={variants} className="mb-6">
-                            <div className="bg-indigo-600 flex h-10 w-10 items-center justify-center rounded-full text-white">
+                            <div className="bg-pink-400 flex h-10 w-10 items-center justify-center rounded-full text-white">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -272,13 +278,13 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="mb-5 text-lg text-black lg:text-xl dark:text-white"
+                            className="mb-5 text-lg text-black lg:text-xl dark:text-white font-medium"
                           >
                             Rhymix 제작 및 유지보수를 해드립니다.
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="dark:text-dark-500 mb-10 text-sm text-gray-600"
+                            className="dark:text-dark-500 mb-10 text-sm text-gray-500"
                           >
                             라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지
                             모든 부분의 제작을 의뢰를 통해 하고 있습니다. 결제

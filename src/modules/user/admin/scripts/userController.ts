@@ -15,7 +15,7 @@ interface UserParams {
   accountId? : string
   accessToken? : string | null
   nickName? : string
-  group? : string[] | null
+  group?: { groupId: string; }[];
 }
 
 interface LoggedParams {

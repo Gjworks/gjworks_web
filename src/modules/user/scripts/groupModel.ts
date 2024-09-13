@@ -27,11 +27,11 @@ export const getGroupList = async () => {
   return groupList
 }
 
-export const getGroupNameById = async (groupName:string) => {
-  const groupInfo = await prisma.userGroup.findFirst({
-    where : {
-      groupName : groupName
-    }
-  })
-  return groupInfo;
-}
+// export const getGroupNameById = async (groupName:string) => {
+//   const groupInfo = await prisma.userGroup.findFirst({
+//     where : {
+//       groupName : groupName
+//     }
+//   })
+//   return groupInfo;
+// }

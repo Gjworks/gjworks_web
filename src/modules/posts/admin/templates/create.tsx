@@ -47,7 +47,6 @@ const DashboardPostCreate = (props: PostProps) => {
   useEffect(() => {
     // console.log(posts?.config?.grant.commentGrant)
     if (posts?.config?.documentLike !== undefined) {
-      console.log(posts.config.documentLike)
       setIsDocumentLike(posts.config.documentLike)
     }
     if (posts?.config?.commentLike !== undefined) {
@@ -447,7 +446,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="listGrant"
                                             id={`listGrant${item.groupName}`}
-                                            value={item.groupName}
+                                            value={item.groupId}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
@@ -498,7 +497,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="readGrant"
                                             id={`readGrant${item.groupName}`}
-                                            value={item.groupName}
+                                            value={item.groupId}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
@@ -527,7 +526,23 @@ const DashboardPostCreate = (props: PostProps) => {
                                       type="checkbox"
                                       name="writeGrant"
                                       id="writeGrantGuest"
-                                      value="guest"
+                                      value="-1"
+                                      checked={isCheckedWrite ? true : false}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    비회원
+                                  </label>
+                                </div>
+                                <div>
+                                  <label
+                                    htmlFor="writeGrant0"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="writeMember"
+                                      id="writeGrantMember"
+                                      value="0"
                                       checked={isCheckedWrite ? true : false}
                                       onChange={handleCheckboxChange}
                                     />
@@ -551,7 +566,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="writeGrant"
                                             id={`writeGrant${item.groupName}`}
-                                            value={item.groupName}
+                                            value={item.groupId}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
@@ -575,7 +590,20 @@ const DashboardPostCreate = (props: PostProps) => {
                                       type="checkbox"
                                       name="commentGrant"
                                       id="commentGrantGuest"
-                                      value="guest"
+                                      value="-1"
+                                      checked={isCheckedComment ? true : false}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    비회원
+                                  </label>
+                                </div>
+                                <div>
+                                  <label className="text-sm flex gap-2 items-center">
+                                    <input
+                                      type="checkbox"
+                                      name="commentMember"
+                                      id="commentGrantMember"
+                                      value="0"
                                       checked={isCheckedComment ? true : false}
                                       onChange={handleCheckboxChange}
                                     />
@@ -599,7 +627,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="commentGrant"
                                             id={`commentGrant${item.groupName}`}
-                                            value={item.groupName}
+                                            value={item.groupId}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />

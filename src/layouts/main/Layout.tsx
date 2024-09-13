@@ -41,8 +41,8 @@ const MainLayout = ({ children }) => {
         <SubNav />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main className="px-3">
-          <div className="relative mx-auto bg-[url('/assets/images/bg45.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden">
-            <div className="absolute top-0 left-0 bottom-0 right-0 overflow-hidden from-gray-950/50 via-gray-950/40 to-gray-950/70 bg-gradient-to-b dark:from-gray-950/60 dark:via-gray-950/40 dark:to-gray-950/60"></div>
+          <div className="relative mx-auto bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
             {children}
           </div>
         </main>

@@ -13,9 +13,9 @@ import { GroupInfo } from '@/modules/user/admin/scripts/groupModel'
 import Alert from '@plextype/components/message/Alert'
 
 interface GroupInfo {
-  id?: number | null
+  id: number
   groupTitle: string | undefined
-  groupName: string | undefined
+  groupName: string
   groupDesc: string | undefined
   groupDefault: boolean
   // 필요한 다른 속성들도 여기에 추가할 수 있습니다.
@@ -25,6 +25,9 @@ const DashboardUserUpdate = props => {
   const accessToken = localStorage.getItem('accessToken')
   const [userInfo, setUserInfo] = useState<any>()
   const [groupList, setGroupList] = useState<GroupInfo[]>([])
+  const [selectedGroups, setSelectedGroups] = useState<{ groupId: string }[]>(
+    []
+  )
   const [isAdmin, setIsAdmin] = useState<boolean>(false)
   const [error, setError] = useState<{ type: string; message: string } | null>(
     null
@@ -32,7 +35,6 @@ const DashboardUserUpdate = props => {
 
   const groupListData = () => {
     GroupInfo().then(response => {
-      console.log(response)
       if (response.success) {
         setGroupList(response.data)
       }
@@ -47,8 +49,9 @@ const DashboardUserUpdate = props => {
   const updateDashboardUser = async () => {
     await getUser({ id: props.userid })
       .then(response => {
-        // console.log(response['isAdmin'])
+        console.log(response)
         setUserInfo(response)
+        setSelectedGroups(response['userGroups'])
         setIsAdmin(response['isAdmin'] ?? false)
       })
       .catch(error => {
@@ -56,8 +59,6 @@ const DashboardUserUpdate = props => {
       })
   }
   const updateUserInfo = async (formData: FormData) => {
-    const selectedGroups = formData.getAll('group') as string[]
-    console.log(selectedGroups)
     const params = {
       id: props.userid,
       accessToken: accessToken,
@@ -92,19 +93,18 @@ const DashboardUserUpdate = props => {
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target
-    setGroupList(prev => {
-      if (!Array.isArray(prev)) {
-        return []
-      }
+    const groupId = value.toString()
 
-      if (typeof value === 'object' && value !== null && 'id' in value) {
-        return checked
-          ? [...prev, value as GroupInfo]
-          : prev.filter(group => group.id !== (value as GroupInfo).id)
+    setSelectedGroups(prevSelectedGroups => {
+      if (checked) {
+        // Add an object with groupId to the array if checked
+        return [...prevSelectedGroups, { groupId }]
+      } else {
+        // Remove the object with matching groupId from the array if unchecked
+        return prevSelectedGroups.filter(
+          group => group.groupId.toString() !== groupId
+        )
       }
-
-      // value가 GroupInfo가 아닌 경우 이전 상태 반환 (변경 없음)
-      return prev
     })
   }
 
@@ -251,9 +251,13 @@ const DashboardUserUpdate = props => {
                         </label>
                         <div className="flex flex-wrap gap-4">
                           {groupList.map((group, index) => {
-                            const isChecked = userInfo.userGroups.some(
-                              userGroup => userGroup.groupId === group.id
+                            console.log(selectedGroups)
+                            const isChecked = selectedGroups.some(
+                              selectedGroup =>
+                                selectedGroup.groupId.toString() ===
+                                group.id.toString()
                             )
+
                             return (
                               <label key={index}>
                                 <div className="flex gap-2">
@@ -261,8 +265,8 @@ const DashboardUserUpdate = props => {
                                     type="checkbox"
                                     name="group"
                                     className=""
-                                    value={String(group.groupName)}
-                                    checked={isChecked ? true : undefined}
+                                    value={group.id.toString()}
+                                    checked={isChecked ? true : false}
                                     onChange={handleCheckboxChange}
                                   ></input>
                                   <div className="text-sm text-dark-400">

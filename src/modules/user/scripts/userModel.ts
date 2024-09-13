@@ -136,15 +136,7 @@ export const getUser = async (params:UserParams) => {
         include: {
           userGroups: {
             include: {
-              group: {
-                include: {
-                  users: {
-                    include: {
-                      user: true,
-                    },
-                  },
-                },
-              },
+              group: true
             },
           },
         },
