@@ -15,7 +15,7 @@ const ProfileComponent = ({ profileName, profileEmail }) => {
             PREMIUM
           </div>
         </div>
-        <div className="flex gap-2 justify-center flex-wrap mb-12">
+        <div className="flex gap-2 justify-center flex-wrap">
           <div className="text-gray-400 text-sm">{profileEmail}</div>
         </div>
       </div>

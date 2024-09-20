@@ -7,13 +7,6 @@
       "icon": "",
       "subMenu": [
         {
-            "title": "Serivce",
-            "name": "service",
-            "icon": "",
-            "parent": "service",
-            "route": "/service"
-        },
-        {
             "title": "Applications",
             "name": "applications",
             "icon": "",

@@ -262,7 +262,7 @@ const Header = () => {
                 </button>
               </div>
             </div>
-            <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4 lg:px-3">
+            <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4">
               <div className="flex items-center">
                 <button
                   className="px-2 py-2 text-gray-950 dark:text-dark-400 dark:hover:text-dark-300 hover:bg-gray-100 rounded-md dark:hover:bg-dark-700/75 dark:hover:text-white"
@@ -271,7 +271,7 @@ const Header = () => {
                 >
                   <BellIcon className="size-6 stroke-1" />
                 </button>
-                <div className="lg:pr-3">
+                <div className="">
                   <AccountDropwdown />
                 </div>
               </div>

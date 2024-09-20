@@ -18,7 +18,7 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-8 px-3 pt-10 pb-20 bg-white">
+      <div className="flex flex-wrap gap-8 px-3 pt-10 pb-20 ">
         <div className="w-full">
           <div className="max-w-screen-md mx-auto">
             <div className="w-full">
@@ -28,7 +28,7 @@ const Page = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="col-span-1">
-                    <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md shadow-gray-200/70 dark:bg-dark-700 dark:shadow-dark-950/70">
+                    <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md shadow-gray-900/20 dark:bg-dark-700 dark:shadow-dark-950/70">
                       <div className="text-black mb-8 font-bold dark:text-white">
                         문자 & 카카오톡
                       </div>
@@ -61,7 +61,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="col-span-1">
-                    <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md shadow-gray-200/70 dark:bg-dark-700 dark:shadow-dark-950/70">
+                    <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md shadow-gray-900/20 dark:bg-dark-700 dark:shadow-dark-950/70">
                       <div className="text-black mb-8 font-bold dark:text-white">
                         홈페이지 수정
                       </div>
@@ -94,7 +94,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="col-span-1">
-                    <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md shadow-gray-200/70 dark:bg-dark-700 dark:shadow-dark-950/70">
+                    <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md shadow-gray-900/20 dark:bg-dark-700 dark:shadow-dark-950/70">
                       <div className="text-black mb-8 font-bold dark:text-white">
                         Store 구매
                       </div>

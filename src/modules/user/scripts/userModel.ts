@@ -140,7 +140,7 @@ export const getUser = async (params:UserParams) => {
             },
           },
         },
-      });
+      })
     }
   } catch (e) {
     console.log('getUser error' + e)

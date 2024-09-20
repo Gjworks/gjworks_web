@@ -108,7 +108,7 @@ const UpdateUser = (props: any) => {
               <div className="col-span-2">
                 <input
                   type="text"
-                  name="nickname"
+                  name="nickName"
                   className="w-full py-2 border border-gray-200 hover:border-gray-900 focus:border-gray-900 px-5 rounded-lg outline-none"
                   placeholder="변경할 닉네임을 입력해주세요."
                   defaultValue={loggedInfo && loggedInfo && loggedInfo.nickName}

@@ -139,7 +139,7 @@ const Footer = () => {
               target="_blank"
               className="group flex flex-1 cursor-pointer justify-center"
             >
-              <motion.div variants={parentVariants} className="pr-3">
+              <motion.div variants={parentVariants} className="px-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="dark:fill-dark-400 dark:group-hover:fill-dark-100 h-6 w-6 fill-gray-900 stroke-1 group-hover:fill-gray-700"
@@ -157,7 +157,7 @@ const Footer = () => {
               target="_blank"
               className="group flex flex-1 cursor-pointer justify-center"
             >
-              <motion.div variants={parentVariants} className="pr-3">
+              <motion.div variants={parentVariants} className="px-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="dark:fill-dark-400 dark:group-hover:fill-dark-100 h-6 w-6 fill-gray-900 stroke-1 group-hover:fill-gray-700"

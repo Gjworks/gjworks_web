@@ -52,9 +52,9 @@ const DefaultNav = ({ list, params }) => {
   }, [params])
 
   useEffect(() => {
-    console.log(prevModule)
     if (!prevModule) {
-      setActiveTabIndex(0)
+      const index = list.findIndex(item => item.route === pathname)
+      setActiveTabIndex(index)
     } else {
       setActiveTabIndex(-1)
     }
