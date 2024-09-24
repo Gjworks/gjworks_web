@@ -7,6 +7,7 @@ import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
 import { updateUserGroup, deleteUserGroup } from "@/modules/user/scripts/groupController";
 
+const prisma = new PrismaClient();
 
 interface UserParams {
   id? : number
@@ -27,7 +28,7 @@ interface LoggedParams {
 }
 
 export const createUser = async (formData: FormData) => {
-  const prisma = new PrismaClient();
+
   let userInfo
   let response
 
@@ -107,7 +108,6 @@ export const createUser = async (formData: FormData) => {
   
 }
 export const updateUser = async (params:UserParams) => {
-  const prisma = new PrismaClient();
   const accessToken = cookies().get('accessToken')?.value
 
   let loggedInfo:LoggedParams = {
@@ -235,7 +235,7 @@ export const updateUser = async (params:UserParams) => {
 }
 
 export const deleteUser= async (params:UserParams) => {
-  const prisma = new PrismaClient();
+
   const accessToken = cookies().get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
@@ -329,7 +329,7 @@ export const deleteUser= async (params:UserParams) => {
 }
 
 export const PasswordChange = async (formData: FormData) => {
-  const prisma = new PrismaClient();
+
   let userInfo
   let response
   const accessToken = cookies().get('accessToken')?.value

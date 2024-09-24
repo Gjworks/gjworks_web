@@ -29,6 +29,8 @@ interface UserSessionResponse {
   message?: string;
 }
 
+const prisma = new PrismaClient();
+
 export const getUserLogged = async () => {
   const accessToken = cookies().get('accessToken')?.value
   let tokenInfo:LoggedParams = {
@@ -46,7 +48,6 @@ export const getUserLogged = async () => {
 }
 
 export const getUserSession = async (): Promise<UserSessionResponse> => {
-  const prisma = new PrismaClient();
   const tokenInfo = await getUserLogged()
 
   let userInfo: UserInfo | null = null;
@@ -102,7 +103,6 @@ export const getUserSession = async (): Promise<UserSessionResponse> => {
 }
 
 export const getUser = async (params:UserParams) => {
-  const prisma = new PrismaClient();
   const accessToken = cookies().get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
@@ -156,7 +156,6 @@ export const getUser = async (params:UserParams) => {
 }
 
 export const getUserList = async (params:UserListParams) => {
-  const prisma = new PrismaClient();
   const { page, target, keyword } = params;
 
   const currentPage = page; // 현재 페이지
@@ -193,7 +192,6 @@ export const getUserList = async (params:UserListParams) => {
 }
 
 export const getUserByAccountId = async (accountId:string) => {
-  const prisma = new PrismaClient();
   let userInfo
   let response
   try {
@@ -215,7 +213,7 @@ export const getUserByAccountId = async (accountId:string) => {
 }
 
 export const getUserByNickname = async (nickName:string) => {
-  const prisma = new PrismaClient();
+
   let userInfo
   let response
   try {
@@ -236,7 +234,6 @@ export const getUserByNickname = async (nickName:string) => {
 }
 
 export const getUserByToken = async (token) => {
-  const prisma = new PrismaClient();
   let userInfo
   let response
   const accessToken = cookies().get('accessToken')?.value

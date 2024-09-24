@@ -17,9 +17,11 @@ interface LoggedParams {
   isAdmin? : boolean
 }
 
+const prisma = new PrismaClient();
+
 export const getPost = async (params:PostsParams) => {
   const accessToken = cookies().get('accessToken')?.value
-  const prisma = new PrismaClient();
+
   let response
   let postInfo
   let loggedInfo:LoggedParams = {
@@ -78,7 +80,6 @@ export const getPost = async (params:PostsParams) => {
 
 export const getPostList = async (params) => {
   const accessToken = cookies().get('accessToken')?.value
-  const prisma = new PrismaClient();
 
   let response
   let postList
@@ -154,7 +155,6 @@ export const getPostList = async (params) => {
 }
 
 export const getDocument = async (params) => {
-  const prisma = new PrismaClient();
   let response
 
   return response

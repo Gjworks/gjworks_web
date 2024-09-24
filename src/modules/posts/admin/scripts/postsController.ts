@@ -9,9 +9,11 @@ interface LoggedParams {
   isAdmin? : boolean | null
 }
 
+const prisma = new PrismaClient();
+
 export const createPosts = async (params) => {
   const accessToken = cookies().get('accessToken')?.value
-  const prisma = new PrismaClient();
+
   let loggedInfo:LoggedParams = {
     email : '',
     isAdmin : false 

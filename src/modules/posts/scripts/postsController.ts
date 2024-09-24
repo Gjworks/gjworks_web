@@ -21,8 +21,10 @@ interface LoggedParams {
   isAdmin? : boolean | null
 }
 
+const prisma = new PrismaClient();
+
 export const createPost = async (formData: FormData) => {
-  const prisma = new PrismaClient();
+
   let userInfo
   let response
 
