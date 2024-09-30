@@ -73,6 +73,9 @@ const DashboardPostCreate = (props: PostProps) => {
     setIsConsultingState(event.target.checked)
   }
 
+  useEffect(() => {
+    console.log(listGrant)
+  }, [listGrant])
   const submitHandler = async (formData: FormData) => {
     const selectedCommentGroups = formData.getAll('commentGrant') as string[]
     const selectedWriteGroups = formData.getAll('writeGrant') as string[]
@@ -116,7 +119,6 @@ const DashboardPostCreate = (props: PostProps) => {
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value, id, name } = event.target
-
     name === 'commentGrant' &&
       setCommentGrant(prev => {
         if (!Array.isArray(prev)) {
@@ -152,12 +154,31 @@ const DashboardPostCreate = (props: PostProps) => {
 
   const isCheckedWrite =
     posts.config?.grant?.writeGrant && writeGrant.includes(String('guest'))
+  const isCheckedWriteMember =
+    posts.config?.grant?.writeGrant && writeGrant.includes(String('member'))
+  const isCheckedWriteAdmin =
+    posts.config?.grant?.writeGrant && writeGrant.includes(String('admin'))
+
   const isCheckedComment =
     posts.config?.grant?.commentGrant && commentGrant.includes(String('guest'))
+  const isCheckedCommentMember =
+    posts.config?.grant?.commentGrant && commentGrant.includes(String('member'))
+  const isCheckedCommentAdmin =
+    posts.config?.grant?.commentGrant && commentGrant.includes(String('admin'))
+
   const isCheckedList =
     posts.config?.grant?.listGrant && listGrant.includes(String('guest'))
+  const isCheckedListMember =
+    posts.config?.grant?.listGrant && listGrant.includes(String('member'))
+  const isCheckedListAdmin =
+    posts.config?.grant?.listGrant && listGrant.includes(String('admin'))
+
   const isCheckedRead =
     posts.config?.grant?.readGrant && readGrant.includes(String('guest'))
+  const isCheckedReadMember =
+    posts.config?.grant?.readGrant && readGrant.includes(String('member'))
+  const isCheckedReadAdmin =
+    posts.config?.grant?.readGrant && readGrant.includes(String('admin'))
 
   return (
     <>
@@ -415,7 +436,7 @@ const DashboardPostCreate = (props: PostProps) => {
                               <div className="flex gap-2 flex-wrap">
                                 <div>
                                   <label
-                                    htmlFor="listGrant0"
+                                    htmlFor="listGrant"
                                     className="text-sm flex gap-2 items-center"
                                   >
                                     <input
@@ -426,14 +447,33 @@ const DashboardPostCreate = (props: PostProps) => {
                                       checked={isCheckedList ? true : false}
                                       onChange={handleCheckboxChange}
                                     />
-                                    로그인사용자
+                                    비회원
+                                  </label>
+                                </div>
+
+                                <div>
+                                  <label
+                                    htmlFor="listGrantMember"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="listGrant"
+                                      id="listGrantMember"
+                                      value="member"
+                                      checked={
+                                        isCheckedListMember ? true : false
+                                      }
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    로그인 사용자
                                   </label>
                                 </div>
 
                                 {posts?.grant &&
                                   posts?.grant?.map((item, index) => {
                                     const isChecked = listGrant?.includes(
-                                      String(item.groupName)
+                                      String(item.id)
                                     )
                                     // console.log(isChecked)
                                     return (
@@ -446,7 +486,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="listGrant"
                                             id={`listGrant${item.groupName}`}
-                                            value={item.groupId}
+                                            value={item.id}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
@@ -455,6 +495,25 @@ const DashboardPostCreate = (props: PostProps) => {
                                       </div>
                                     )
                                   })}
+
+                                <div>
+                                  <label
+                                    htmlFor="listGrantAdmin"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="listGrant"
+                                      id="listGrantAdmin"
+                                      value="admin"
+                                      checked={
+                                        isCheckedListAdmin ? true : false
+                                      }
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    관리자
+                                  </label>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -466,15 +525,34 @@ const DashboardPostCreate = (props: PostProps) => {
                               <div className="flex gap-2 flex-wrap">
                                 <div>
                                   <label
-                                    htmlFor="readGrant0"
+                                    htmlFor="readGrant"
                                     className="text-sm flex gap-2 items-center"
                                   >
                                     <input
                                       type="checkbox"
                                       name="readGrant"
-                                      id="readGrantGuest"
+                                      id="readGrant"
                                       value="guest"
                                       checked={isCheckedRead ? true : false}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    비회원
+                                  </label>
+                                </div>
+
+                                <div>
+                                  <label
+                                    htmlFor="readGrantMember"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="readGrant"
+                                      id="readGrantMember"
+                                      value="member"
+                                      checked={
+                                        isCheckedReadMember ? true : false
+                                      }
                                       onChange={handleCheckboxChange}
                                     />
                                     로그인사용자
@@ -497,7 +575,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="readGrant"
                                             id={`readGrant${item.groupName}`}
-                                            value={item.groupId}
+                                            value={item.id}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
@@ -506,6 +584,25 @@ const DashboardPostCreate = (props: PostProps) => {
                                       </div>
                                     )
                                   })}
+
+                                <div>
+                                  <label
+                                    htmlFor="readGrantAdmin"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="readGrant"
+                                      id="readGrantAdmin"
+                                      value="admin"
+                                      checked={
+                                        isCheckedReadAdmin ? true : false
+                                      }
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    관리자
+                                  </label>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -519,14 +616,14 @@ const DashboardPostCreate = (props: PostProps) => {
                               <div className="flex gap-2 flex-wrap">
                                 <div>
                                   <label
-                                    htmlFor="writeGrant0"
+                                    htmlFor="writeGrantGuest"
                                     className="text-sm flex gap-2 items-center"
                                   >
                                     <input
                                       type="checkbox"
                                       name="writeGrant"
                                       id="writeGrantGuest"
-                                      value="-1"
+                                      value="guest"
                                       checked={isCheckedWrite ? true : false}
                                       onChange={handleCheckboxChange}
                                     />
@@ -535,15 +632,17 @@ const DashboardPostCreate = (props: PostProps) => {
                                 </div>
                                 <div>
                                   <label
-                                    htmlFor="writeGrant0"
+                                    htmlFor="writeGrantMember"
                                     className="text-sm flex gap-2 items-center"
                                   >
                                     <input
                                       type="checkbox"
-                                      name="writeMember"
+                                      name="writeGrant"
                                       id="writeGrantMember"
-                                      value="0"
-                                      checked={isCheckedWrite ? true : false}
+                                      value="member"
+                                      checked={
+                                        isCheckedWriteMember ? true : false
+                                      }
                                       onChange={handleCheckboxChange}
                                     />
                                     로그인사용자
@@ -553,7 +652,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                 {posts?.grant &&
                                   posts?.grant?.map((item, index) => {
                                     const isChecked = writeGrant?.includes(
-                                      String(item.groupName)
+                                      String(item.id)
                                     )
                                     // console.log(isChecked)
                                     return (
@@ -566,7 +665,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="writeGrant"
                                             id={`writeGrant${item.groupName}`}
-                                            value={item.groupId}
+                                            value={item.id}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
@@ -575,6 +674,24 @@ const DashboardPostCreate = (props: PostProps) => {
                                       </div>
                                     )
                                   })}
+                                <div>
+                                  <label
+                                    htmlFor="writeGrantAdmin"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      name="writeGrant"
+                                      id="writeGrantAdmin"
+                                      value="admin"
+                                      checked={
+                                        isCheckedWriteAdmin ? true : false
+                                      }
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    관리자
+                                  </label>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -585,12 +702,15 @@ const DashboardPostCreate = (props: PostProps) => {
                             <div className="flex-1">
                               <div className="flex gap-2 flex-wrap">
                                 <div>
-                                  <label className="text-sm flex gap-2 items-center">
+                                  <label
+                                    htmlFor="commentGrantGuest"
+                                    className="text-sm flex gap-2 items-center"
+                                  >
                                     <input
                                       type="checkbox"
                                       name="commentGrant"
                                       id="commentGrantGuest"
-                                      value="-1"
+                                      value="guest"
                                       checked={isCheckedComment ? true : false}
                                       onChange={handleCheckboxChange}
                                     />
@@ -601,10 +721,12 @@ const DashboardPostCreate = (props: PostProps) => {
                                   <label className="text-sm flex gap-2 items-center">
                                     <input
                                       type="checkbox"
-                                      name="commentMember"
+                                      name="commentGrant"
                                       id="commentGrantMember"
-                                      value="0"
-                                      checked={isCheckedComment ? true : false}
+                                      value="member"
+                                      checked={
+                                        isCheckedCommentMember ? true : false
+                                      }
                                       onChange={handleCheckboxChange}
                                     />
                                     로그인사용자
@@ -614,7 +736,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                 {posts?.grant &&
                                   posts?.grant?.map((item, index) => {
                                     const isChecked = commentGrant.includes(
-                                      String(item.groupName)
+                                      String(item.id)
                                     )
                                     // console.log(isChecked)
                                     return (
@@ -627,7 +749,7 @@ const DashboardPostCreate = (props: PostProps) => {
                                             type="checkbox"
                                             name="commentGrant"
                                             id={`commentGrant${item.groupName}`}
-                                            value={item.groupId}
+                                            value={item.id}
                                             checked={isChecked ? true : false}
                                             onChange={handleCheckboxChange}
                                           />
@@ -636,6 +758,22 @@ const DashboardPostCreate = (props: PostProps) => {
                                       </div>
                                     )
                                   })}
+
+                                <div>
+                                  <label className="text-sm flex gap-2 items-center">
+                                    <input
+                                      type="checkbox"
+                                      name="commentGrant"
+                                      id="commentGrantAdmin"
+                                      value="admin"
+                                      checked={
+                                        isCheckedCommentAdmin ? true : false
+                                      }
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    관리자
+                                  </label>
+                                </div>
                               </div>
                             </div>
                           </div>
