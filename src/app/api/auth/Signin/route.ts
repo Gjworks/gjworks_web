@@ -5,8 +5,10 @@ import { decodeJwt } from 'jose';
 import { sign, verify, refresh, refreshVerify } from "@plextype/utils/auth/jwtAuth";
 import { PrismaClient } from "@prisma/client";
 
+const prisma = new PrismaClient();
+
 export async function POST(request: Request) {
-  const prisma = new PrismaClient();
+
   const formData = await request.formData(); 
   console.log(formData.get('accountId')); 
 

@@ -19,8 +19,8 @@ interface PageProps {
 const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
   return (
     <>
-      <div className="pt-8">
-        <div className="max-w-screen-xl mx-auto px-3">
+      <div className="pt-20">
+        <div className="max-w-screen-lg mx-auto px-3">
           <div className="text-3xl text-center font-semibold dark:text-white py-10">
             기술지원1
           </div>
@@ -47,7 +47,7 @@ const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
           </Suspense>
         </div>
         <div className="pt-10 pb-20">
-          <div className="max-w-screen-xl mx-auto px-3">
+          <div className="max-w-screen-lg mx-auto px-3">
             <div className="">
               <div className="flex justify-between gap-4 flex-wrap">
                 <div className="w-full flex justify-center">

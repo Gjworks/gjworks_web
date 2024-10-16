@@ -16,8 +16,8 @@ interface PageProps {
 const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
   return (
     <>
-      <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pt-10">
-        <div className="relative flex justify-center w-full">
+      <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pt-20">
+        <div className="relative flex justify-center w-full pt-10">
           <div className="relative text-3xl font-bold text-gray-950 dark:text-white">
             개발로그
           </div>

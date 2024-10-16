@@ -28,121 +28,49 @@ const Page = () => {
   }
   return (
     <>
-      <div className="relative overflow-hidden">
-        <div className="max-w-screen-xl mx-auto px-3 pt-20 pb-20">
-          <div className="text-3xl font-bold text-gray-700 dark:text-dark-400 mb-1">
-            나만의 서비스 만들기
-          </div>
-          <div className="text-3xl font-bold text-gray-700 dark:text-dark-400">
-            필요한 모든 것이 한 곳에
-          </div>
-          <div className=" w-full flex justify-center gap-8 pt-20 pb-10">
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-gray-100 sm:w-72 sm:rounded-2xl dark:bg-gray-900 rotate-3 bg-[url('/assets/images/bg14.jpg')] bg-cover bg-center bg-no-repeat hover:rotate-0 transition-all duration-500 hover:scale-110 shadow-lg shadow-gray-400/75 dark:shadow-black"></div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-gray-100 sm:w-72 sm:rounded-2xl dark:bg-gray-900 -rotate-3 bg-[url('/assets/images/bg_phone.jpg')] bg-cover bg-center bg-no-repeat hover:rotate-0 transition-all duration-500 hover:scale-110 shadow-lg shadow-gray-400/75 dark:shadow-black"></div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-gray-100 sm:w-72 sm:rounded-2xl dark:bg-gray-900 rotate-3 bg-[url('/assets/images/bg17.jpg')] bg-cover bg-center bg-no-repeat hover:rotate-0 transition-all duration-500 hover:scale-110 shadow-lg shadow-gray-400/75 dark:shadow-black"></div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-gray-100 sm:w-72 sm:rounded-2xl dark:bg-gray-900 -rotate-3 bg-[url('/assets/images/bg18.jpg')] bg-cover bg-center bg-no-repeat hover:rotate-0 transition-all duration-500 hover:scale-110 shadow-lg shadow-gray-400/75 dark:shadow-black"></div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-gray-100 sm:w-72 sm:rounded-2xl dark:bg-gray-900 rotate-3 bg-[url('/assets/images/bg12.jpg')] bg-cover bg-center bg-no-repeat hover:rotate-0 transition-all duration-500 hover:scale-110 shadow-lg shadow-gray-400/75 dark:shadow-black"></div>
-            <div className="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-gray-100 sm:w-72 sm:rounded-2xl dark:bg-gray-900 -rotate-3 bg-[url('/assets/images/bg19.jpg')] bg-cover bg-center bg-no-repeat hover:rotate-0 transition-all duration-500 hover:scale-110 shadow-lg shadow-gray-400/75 dark:shadow-black"></div>
-          </div>
-        </div>
-      </div>
-
-      <div className=" py-10">
-        <div className="mb-10 overflow-hidden ">
-          <div className="mx-auto max-w-screen-xl px-3">
-            <motion.div
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: false, amount: 0.1 }}
-              variants={parentVariants}
-              className="grid grid-cols-12 gap-4"
-            >
-              <div className="col-span-12 lg:col-span-6">
-                <motion.div
-                  variants={variants}
-                  className="text-4xl font-bold text-black lg:text-5xl dark:text-white"
-                >
-                  Flexible
-                </motion.div>
-                <motion.div
-                  variants={variants}
-                  className="text-4xl font-bold text-black lg:text-5xl dark:text-white"
-                >
-                  Creative and better
-                </motion.div>
-                <motion.div
-                  variants={variants}
-                  className="text-4xl font-bold text-black lg:text-5xl dark:text-white"
-                >
-                  Platform
-                </motion.div>
-              </div>
-              <div className="col-span-12 flex items-center lg:col-span-6">
-                <div className=" pt-5 lg:pt-0">
-                  <motion.div variants={variants} className=" mb-2">
-                    <span className="text-2xl font-semibold text-black  dark:text-white">
-                      WE WORK IT
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0.1 }}
+        variants={parentVariants}
+        className="pt-20 pb-10"
+      >
+        <div className="relative mx-auto max-w-screen-xl px-3">
+          <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10">
+            <div className="col-span-12">
+              <div className="flex justify-center">
+                <div className="w-full lg:w-3/5">
+                  <motion.div
+                    variants={variants}
+                    className="flex justify-center mb-6"
+                  >
+                    <span className="border border-gray-200 py-0.5 px-4 rounded-full text-sm text-gray-400">
+                      Premium Quality
                     </span>
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="text-sm font-light text-gray-500"
+                    className="mb-4 text-xl font-semibold text-black lg:text-4xl dark:text-white text-center !leading-tight tracking-tight"
                   >
-                    지제이웍스만의 방법으로 디지털 플랫폼을 구축하고 최상의
-                    디지털 경험을 느낄 수 있도록 최선을 다 하고 있습니다.
+                    UI COMPONENTS
+                  </motion.div>
+                  <motion.div
+                    variants={variants}
+                    className="dark:text-dark-500 text-sm lg:text-base text-gray-500 text-center"
+                  >
+                    컴포넌트는 React와 Next.js에서 사용할 수 있습니다. 모든
+                    Component는 tailwindcss와 Framer motion을 활용하여
+                    애니메이션과 스타일을 정의했습니다.
                   </motion.div>
                 </div>
               </div>
-              <div className="hidden col-span-12 justify-center pt-12">
-                <div className="flex justify-center items-center gap-8 py-6">
-                  <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-100 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-700 p-5 transition-all hover:-translate-y-4 duration-300 border border-gray-200 dark:border-dark-700 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
-                  </div>
-                  <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-100 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-700 p-5 transition-all hover:-translate-y-4 duration-300 border border-gray-200 dark:border-dark-700 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
-                  </div>
-                  <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-100 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-700 p-5 transition-all hover:-translate-y-4 duration-300 border border-gray-200 dark:border-dark-700 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
-                  </div>
-                  <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-100 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-700 p-5 transition-all hover:-translate-y-4 duration-300 border border-gray-200 dark:border-dark-700 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
-                  </div>
-                  <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-100 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-700 p-5 transition-all hover:-translate-y-4 duration-300 border border-gray-200 dark:border-dark-700 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
-                  </div>
-                  <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-100 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-700 p-5 transition-all hover:-translate-y-4 duration-300 border border-gray-200 dark:border-dark-700 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
-                  </div>
-                  <div className="relative group flex w-[360px] h-[512px] rounded-2xl bg-gray-100 hover:bg-gray-200 dark:bg-dark-900 dark:hover:bg-dark-700 p-5 transition-all hover:-translate-y-4 duration-300 border border-gray-200 dark:border-dark-700 cursor-pointer overflow-hidden">
-                    <div className="absolute inset-0 group-hover:scale-110 group-hover:duration-500 duration-500"></div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-        <div className="overflow-scroll-hide overflow-y-hidden overflow-x-scroll py-20">
-          <div className="mx-auto max-w-screen-lg px-3">
-            <div className="">
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={parentVariants}
-                className="mx-auto max-w-xl"
-              >
-                <motion.div variants={variants} className="">
-                  <Image
-                    src="/assets/images/mac_studio.png"
-                    alt="Macbook Pro"
-                    width={600}
-                    style={{ width: '100%', height: 'auto' }}
-                    height={280}
-                  ></Image>
-                </motion.div>
-              </motion.div>
             </div>
           </div>
+        </div>
+      </motion.div>
+      <div className="pb-20">
+        <div className="max-w-[460px] mx-auto bg-gray-100 rounded-3xl p-12">
+          <img src="/assets/images/Iphone14.png" alt="Iphone14" />
         </div>
       </div>
     </>

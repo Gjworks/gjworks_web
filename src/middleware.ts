@@ -4,11 +4,10 @@ import { decodeJwt } from 'jose';
 // 미들웨어 생성
 export async function middleware(request: NextRequest, response: NextResponse) {
   try {
-
-    
     const { cookies } = request;
     const hasAccessToken = cookies.has('accessToken');
     const accessToken = cookies.get('accessToken')
+    const { pathname } = request.nextUrl;
 
     let decodeToken : { id:string, isAdmin:boolean } | null = null;
     if(accessToken?.value){
@@ -40,19 +39,37 @@ export async function middleware(request: NextRequest, response: NextResponse) {
       );
       
     }
-
       //게시판 권한 관련한 미들웨어 로직
-  // if (request.nextUrl.pathname.startsWith('/posts/')) {
-  //   console.log('postsMiddleware');
-    
-  //   if (!decodeToken) {
-  //     console.log(decodeToken)
-  //     return NextResponse.redirect(new URL('/auth/Signin', request.url));
-  //   }else{
-      
-  //   }
+    // if (request.nextUrl.pathname.startsWith('/posts/')) {
+    //   const pathParts = pathname.split('/');
+    //   const midIndex = pathParts.indexOf('posts') + 1; // 'posts' 뒤의 값을 찾음
+    //   const mid = pathParts[midIndex];
+    //   let action
+    //   try {
+    //     // API 호출로 권한 확인
+    //     if (pathname.includes('write')) {
+    //       action = 'write';
+    //     } else if (pathname.includes('read')) {
+    //       action = 'read';
+    //     }else{
+    //       action = 'list';
+    //     }
+    //     if (!action || !mid) {
+    //       return NextResponse.redirect(new URL('/error', request.url));
+    //     }
+    //     const apiResponse = await fetch(new URL(`/api/posts/${mid}/permission?action=${action}`, request.url), {
+    //       method: 'GET',
+    //       credentials: 'include'
+    //     })
+        
+    //     const data = await apiResponse.json()
+        
+    //     console.log(data)
+    //   } catch (error) {
+    //     console.error('Error in postsMiddleware:', error);
+    //   }
 
-  // }
+    // }
 
 
 

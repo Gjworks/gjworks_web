@@ -66,12 +66,13 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <motion.div className="relative w-full">
-          <div className="relative max-w-screen-xl mx-auto">
-            <div className="relative flex justify-center items-center min-h-[calc(100vh-64px)]">
-              <div className="relative w-full py-0 lg:py-20dark:border-0 overflow-hidden ">
+        <div className="relative max-w-screen-3xl mx-auto px-3">
+          <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-b-3xl overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
+            <div className="relative flex justify-center items-center py-20">
+              <div className="relative w-full py-0 lg:py-20 dark:border-0 overflow-hidden ">
                 <div className="relative mx-auto max-w-screen-lg gap-8 pt-0">
-                  <div className="relative flex items-center justify-center py-20 lg:col-span-8 z-10">
+                  <div className="relative flex items-center justify-center pt-20 pb-[220px] lg:pb-20 lg:col-span-8 z-10">
                     <motion.div
                       variants={parentVariants}
                       initial="offscreen"
@@ -127,7 +128,7 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="relative mx-auto flex items-center justify-center gap-4 px-3 lg:w-2/5"
+                            className="relative mx-auto flex items-center justify-center gap-4 px-3 md:w-3/5 lg:w-2/5"
                           >
                             <div className="dark:bg-dark-700/75 rounded-lg bg-white p-3 backdrop-blur-2xl">
                               <Square3Stack3DIcon className="size-5 text-gray-900 dark:text-white stroke-1" />
@@ -149,6 +150,26 @@ export default function Page() {
                 </div>
               </div>
             </div>
+
+            <div className="absolute -right-0 bottom-0 rounded-tl-3xl pl-3 pt-3 bg-white z-40">
+              <div className="absolute -left-[30px] -bottom-[2px] z-50 bg-[url('')] bg-no-repeat w-8 h-8 -rotate-90">
+                <img src="/assets/svg/roundBox.svg" />
+              </div>
+              <div className="rounded-3xl hover:scale-105 transition-all duration-700">
+                <div className="px-5 py-4">
+                  <div className="text-lg font-semibold">React Components</div>
+                  <div className="text-gray-500 text-sm">
+                    Tailwindcss + Framer motion
+                  </div>
+                  <div className="pt-20 text-sm hover:underline">
+                    자세히보기
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -right-[2px] -top-[30px] z-50 bg-[url('')] bg-no-repeat w-8 h-8 -rotate-90">
+                <img src="/assets/svg/roundBox.svg" />
+              </div>
+            </div>
           </div>
 
           <motion.div
@@ -156,7 +177,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
-            className="hidden pt-20"
+            className="py-20"
           >
             <div className="relative mx-auto max-w-screen-xl px-3">
               <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10">
@@ -189,325 +210,9 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="pb-10 pt-10">
-                <div className="relative mx-auto max-w-screen-xl px-3">
-                  <motion.div className="grid grid-cols-12 gap-y-8 lg:gap-8">
-                    <div className="col-span-12 lg:col-span-6">
-                      <motion.div
-                        variants={variants}
-                        className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100/70 p-5 hover:shadow-sm shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
-                      >
-                        <motion.div
-                          variants={parentVariants}
-                          initial="offscreen"
-                          whileInView="onscreen"
-                        >
-                          <motion.div
-                            variants={variants}
-                            className="relative mb-10 px-3"
-                          ></motion.div>
-
-                          <motion.div
-                            variants={variants}
-                            className="mb-3 text-lg text-black lg:text-xl dark:text-white font-medium"
-                          >
-                            Coming soon mobile
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="dark:text-dark-500 mb-10 text-sm text-gray-500"
-                          >
-                            Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
-                            불편함이 없게 UI/UX를 설계 합니다.
-                          </motion.div>
-                          <button className="">
-                            <div className="text-white relative text-sm bg-primary-400 hover:bg-primary-500 py-1.5 px-5 rounded-md">
-                              Link more
-                            </div>
-                          </button>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                    <div className="col-span-12 flex flex-wrap gap-8 lg:col-span-6">
-                      <motion.div
-                        variants={variants}
-                        className="dark:bg-dark-900 dark:shadow-dark-950/75 hover:shadow-xs dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100/70 p-5 hover:shadow-sm shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
-                      >
-                        <div className="relative h-full items-center overflow-hidden">
-                          <div className="absolute inset-0"></div>
-                          <div className="mx-auto h-36 w-36">
-                            <div className="dark:bg-dark-900 dark:border-dark-800 mx-auto rounded-full border border-gray-100 bg-white"></div>
-                          </div>
-                        </div>
-                        {/* <div className="text-lg lg:text-xl text-black dark:text-white mb-5">
-                      Web UI Components
-                    </div>
-                    <div className="text-base text-gray-400 dark:text-dark-500 mb-10">
-                      Next.js + Prisma + Tailwindcss + Framer Motion등을 활용하여
-                      프론트엔드에서 뛰어난 퍼포먼스와 일관성 있는 UI/UX를
-                      제작합니다.
-                    </div> */}
-                        {/* <div className="flex flex-wrap gap-8 justify-between"></div> */}
-                      </motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="dark:bg-dark-900 dark:shadow-dark-950/75 hover:shadow-xs dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100/70 p-5 hover:shadow-sm shadow-md shadow-gray-100/90 backdrop-blur-xl lg:p-10"
-                      >
-                        <motion.div
-                          variants={parentVariants}
-                          initial="offscreen"
-                          whileInView="onscreen"
-                        >
-                          <motion.div variants={variants} className="mb-6">
-                            <div className="bg-pink-400 flex h-10 w-10 items-center justify-center rounded-full text-white">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth={1.5}
-                                stroke="currentColor"
-                                className="h-6 w-6"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                                />
-                              </svg>
-                            </div>
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="mb-5 text-lg text-black lg:text-xl dark:text-white font-medium"
-                          >
-                            Rhymix 제작 및 유지보수를 해드립니다.
-                          </motion.div>
-                          <motion.div
-                            variants={variants}
-                            className="dark:text-dark-500 mb-10 text-sm text-gray-500"
-                          >
-                            라이믹스 모듈제작과 데이터 이전 그리고 유지보수까지
-                            모든 부분의 제작을 의뢰를 통해 하고 있습니다. 결제
-                            모듈과 카카오톡 메세지 전송까지 다양한 서드파티
-                            모듈을 가지고 있으며 라이믹스의 모든 부분에 해당
-                            기능을 추가하여 코어 수정 없이 지원합니다.
-                          </motion.div>
-                        </motion.div>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
             </div>
           </motion.div>
-          <motion.div
-            variants={parentVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: false, amount: 0.3 }}
-            className="hidden py-20"
-          >
-            <div className=" mx-auto max-w-screen-lg py-5 lg:py-10">
-              <div className="px-3">
-                <div className="grid grid-cols-12 gap-0 lg:gap-20">
-                  <div className="col-span-12 lg:col-span-7">
-                    <motion.div variants={variants} className="">
-                      <Codehighlighte
-                        title="Component Example"
-                        value={codeString}
-                        lang="jsx"
-                      />
-                    </motion.div>
-                  </div>
-                  <div className="col-span-12 lg:col-span-5">
-                    <motion.div
-                      variants={variants}
-                      className="mb-4 text-xl font-semibold text-black lg:text-2xl dark:text-white"
-                    >
-                      UI/UX를 쉽게 처리할 수 있도록 Component를 제공해 드립니다.
-                    </motion.div>
-                    <motion.div
-                      variants={variants}
-                      className="text-sm text-gray-500"
-                    >
-                      완벽한 애니메이션 동작과 심플한 코드로 바로 적용할 수
-                      있습니다.
-                    </motion.div>
-                    <motion.div
-                      variants={variants}
-                      className="mb-5 text-sm text-gray-500"
-                    >
-                      (React와 Next.js 에서만 지원됩니다.)
-                    </motion.div>
-                    <motion.div
-                      variants={variants}
-                      className="text-sm text-white"
-                    >
-                      <button className="dark:hover:bg-dark-950 dark:bg-dark-900 hover:after:from-secondary-500 hover:after:via-dark-900/25 hover:after:to-dark-900 hover:after:-trangray-x-1/2 group relative overflow-hidden rounded-md bg-gray-800 px-8 py-2 backdrop-blur-lg hover:bg-white hover:before:absolute hover:before:inset-0 hover:before:backdrop-blur-md hover:after:absolute hover:after:-bottom-16 hover:after:left-1/2 hover:after:z-[-1] hover:after:h-24 hover:after:w-24 hover:after:transform hover:after:rounded-full hover:after:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] hover:after:backdrop-blur-lg ">
-                        <div className="text-dark-300 relative text-sm group-hover:text-white">
-                          Link more
-                        </div>
-                      </button>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: false, amount: 0.1 }}
-            variants={variants}
-            className="hidden pt-10"
-          >
-            <div className="relative mx-auto max-w-screen-2xl px-3">
-              <motion.div className="grid grid-cols-3 gap-8">
-                <div className="col-span-3 md:col-span-1">
-                  <motion.div
-                    variants={variants}
-                    className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"
-                  >
-                    <motion.div
-                      variants={parentVariants}
-                      initial="offscreen"
-                      whileInView="onscreen"
-                    >
-                      <motion.div
-                        variants={variants}
-                        className="relative mb-10 px-3 md:px-12"
-                      >
-                        <div className="h-[350px] bg-[url('/assets/images/Iphone14.png')] bg-cover bg-top bg-no-repeat"></div>
-                      </motion.div>
-
-                      <motion.div
-                        variants={variants}
-                        className="mb-3 text-lg text-black lg:text-xl dark:text-white"
-                      >
-                        Coming soon mobile
-                      </motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="dark:text-dark-500 mb-10 text-sm text-gray-600"
-                      >
-                        Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
-                        불편함이 없게 UI/UX를 설계 합니다.
-                      </motion.div>
-                      <button className="group bg-primary-500 px-5 py-2 text-white rounded-md hover:bg-white">
-                        <div className="relative text-sm group-hover:text-primary-500">
-                          Link more
-                        </div>
-                      </button>
-                    </motion.div>
-                  </motion.div>
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                  <motion.div
-                    variants={variants}
-                    className="relative dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"
-                  >
-                    <motion.div
-                      variants={parentVariants}
-                      initial="offscreen"
-                      whileInView="onscreen"
-                    >
-                      <div className="absolute inset-0 dark:bg-[url('/assets/images/bg23.jpg')] bg-no-repeat bg-cover"></div>
-                      <div className="absolute inset-0 bg-gradient-to-b dark:from-dark-950/25 dark:via-dark-950/90 dark:to-dark-950 z-10"></div>
-
-                      <motion.div
-                        variants={variants}
-                        className="mb-3 text-xl font-medium text-black lg:text-xl dark:text-white"
-                      >
-                        Coming soon mobile
-                      </motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="dark:text-dark-500 mb-10 text-base text-gray-600"
-                      >
-                        Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
-                        불편함이 없게 UI/UX를 설계 합니다.
-                      </motion.div>
-                    </motion.div>
-                  </motion.div>
-                </div>
-                <div className="col-span-3 md:col-span-1">
-                  <motion.div
-                    variants={variants}
-                    className="dark:bg-primary-600 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-primary-600 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full"
-                  >
-                    <motion.div
-                      variants={parentVariants}
-                      initial="offscreen"
-                      whileInView="onscreen"
-                    >
-                      <motion.div
-                        variants={variants}
-                        className="mb-3 text-xl font-medium text-black lg:text-xl dark:text-white"
-                      >
-                        Coming soon mobile
-                      </motion.div>
-                      <motion.div
-                        variants={variants}
-                        className="dark:text-primary-300 mb-10 text-base text-gray-600"
-                      >
-                        Desktop의 경험과 Mobile에섣의 경험을 어느것 하나도
-                        불편함이 없게 UI/UX를 설계 합니다.
-                      </motion.div>
-                    </motion.div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <div className="hidden relative overflow-hidden pb-5 pt-5">
-            <div className="relative flex h-[640px] items-center justify-center overflow-hidden rounded-2xl">
-              {/* <div className="absolute inset-0 bg-gray-950/75"></div> */}
-              <motion.div
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: false, amount: 0.3 }}
-                variants={parentVariants}
-                className="px-3 py-20 xl:px-8"
-              >
-                <div className="flex justify-center">
-                  <motion.div
-                    variants={variants}
-                    className="inline text-center text-5xl font-black text-gray-400/20 dark:text-dark-600/75 md:text-[5.5rem]"
-                  >
-                    WE ARE CRATEIVE
-                  </motion.div>
-                </div>
-                <motion.div
-                  variants={variants}
-                  className="-mt-8 text-center text-2xl font-light text-gray-900 dark:text-dark-100 xl:text-4xl"
-                >
-                  Responsive everything
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-          <div className="relative mb-12 hidden px-3">
-            <div className="relative block h-[300px]">
-              <motion.div
-                variants={parentVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: false, amount: 0.3 }}
-                className="w-full"
-              >
-                <motion.div
-                  variants={variants}
-                  className="mx-auto h-[300px] max-w-screen-lg py-10"
-                >
-                  <div className=""></div>
-                </motion.div>
-              </motion.div>
-              {/* <div className="block absolute top-0 left-0 bottom-0 right-0 overflow-hidden bg-gradient-to-b from-white/0 via-white/40 to-white dark:from-transparent dark:via-dark-950/20 dark:to-dark-950 z-90"></div> */}
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </div>
       <Popup state={showPopup} close={closePopup}>
         <div className="p-8">

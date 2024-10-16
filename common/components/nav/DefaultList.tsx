@@ -75,7 +75,7 @@ const DefaultList = ({ list, loggedInfo, callback }: DefaultListProps) => {
                     href={item.route}
                     onClick={() => handlerCallback(item.name)}
                     className={
-                      'dark:hover:bg-dark-600/50 block rounded bg-transparent px-4 py-2 text-xs text-gray-800 hover:bg-gray-950 hover:text-white dark:text-white dark:hover:text-white' +
+                      'dark:hover:bg-dark-100/10 block rounded bg-transparent px-4 py-2 text-xs text-gray-800 hover:bg-gray-950 hover:text-white dark:text-white dark:hover:text-white' +
                       (pathname === item.route ? 'bg-gray-950' : 'bg-white')
                     }
                   >

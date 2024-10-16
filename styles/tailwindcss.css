@@ -13,7 +13,7 @@
         @apply h-full;
     }
     html.dark, html body.dark {
-      @apply bg-dark-950;
+      @apply bg-dark-900;
     }
     /* .dark
     {

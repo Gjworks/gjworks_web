@@ -37,15 +37,12 @@ const MainLayout = ({ children }) => {
   return (
     <div className="">
       <div className="relative z-20">
-        <Header />
+        <div className="fixed top-0 max-w-screen-xl w-full left-1/2 -translate-x-1/2 mx-auto px-3 z-999">
+          <Header />
+        </div>
         <SubNav />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
-        <main className="px-3">
-          <div className="relative mx-auto bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
-            {children}
-          </div>
-        </main>
+        <main className="">{children}</main>
         {/* {scrollPosition > 100 && (
           <motion.button
             initial={{y: 100, opacity: 0}}
