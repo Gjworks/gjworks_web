@@ -306,7 +306,7 @@ const Header = () => {
         initial={{ height: '40px' }}
         animate={{ height: subMenuState ? 'auto' : '40px' }}
         onHoverEnd={() => setSubMenuState(false)}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.8, type: 'spring', bounce: 0.35 }}
         className="dark absolute left-3 right-3 bg-dark-950 top-2 rounded-3xl backdrop-blur-lg overflow-hidden shadow-lg shadow-dark-950/20"
       >
         <motion.div
@@ -362,10 +362,24 @@ const Header = () => {
           </div>
           <div className="col-span-2 pt-4 px-5">
             <div className="text-xs text-gray-500 mb-3">Amount used</div>
-            <div className="text-base text-gray-300 mb-1">Partnership</div>
-            <div className="text-xs text-gray-400">
-              지제이웍스의 도움이 필요 하시다면 언제든 문의주세요.
-              기다리겠습니다.
+            <div>
+              <div className="text-black text-sm dark:text-dark-200">
+                전일 대비 사용량 (84회)
+              </div>
+              <div className="flex items-center gap-8 pt-2 pb-4">
+                <div className="relative flex-1">
+                  <div className="rounded-full h-2 w-full bg-primary-200/40"></div>
+                  <motion.div
+                    initial={{ width: '0%' }}
+                    animate={{ width: subMenuState ? '80%' : '0%' }}
+                    transition={{
+                      duration: 0.5,
+                    }}
+                    className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 bg-primary-400 transition-all w-[80%]"
+                  ></motion.div>
+                </div>
+                <div className="text-black text-xs dark:text-white">80%</div>
+              </div>
             </div>
           </div>
         </motion.div>
