@@ -106,18 +106,18 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'dark z-101 dark:bg-dark-900/90 w-full pt-2 pb-2' +
+          'relative dark z-99 dark:bg-dark-900/90 w-full pt-2 pb-2' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
-        <div className=" bg-dark-950/90 backdrop-blur-lg rounded-full shadow-lg shadow-dark-950/20">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 px-3 py-0">
+        <div className=" bg-dark-950/90 backdrop-blur-lg rounded-3xl shadow-lg shadow-dark-950/20">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-0">
             <div className="relative col-span-1 flex justify-start">
               <button
                 onClick={() => {
                   setShowLeft(!showLeft)
                 }}
-                className="group flex lg:hidden items-center px-2"
+                className="group flex md:hidden items-center px-2"
               >
                 <div className="relative flex h-5 w-5 cursor-pointer">
                   <div className="z-50">
@@ -152,7 +152,7 @@ const Header = () => {
                         alt="gjworks logo"
                         width="32"
                         height="32"
-                        className="block w-[1.6rem] h-[1.6rem] lg:w-[1.7rem] lg:h-[1.7rem]"
+                        className="block w-[1.6rem] h-[1.6rem] md:w-[1.7rem] md:h-[1.7rem]"
                       />
                       {/* <Image
                         src="/assets/images/brand/gjworks.svg"
@@ -169,9 +169,9 @@ const Header = () => {
                     </div>
                     <a
                       href={process.env.NEXT_PUBLIC_DEFAULT_URL}
-                      className="hidden lg:flex items-center"
+                      className="hidden md:flex items-center"
                     >
-                      <div className="mr-4 flex pl-2 text-sm font-semibold lg:text-[0.913rem]">
+                      <div className="mr-4 flex pl-2 text-sm font-semibold md:text-[0.913rem]">
                         <div className="text-black dark:text-white">
                           지제이웍스
                         </div>
@@ -201,7 +201,10 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="col-span-3 dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full py-1 lg:flex">
+            <motion.div
+              onHoverStart={() => setSubMenuState(true)}
+              className="col-span-3 dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full py-1 md:flex"
+            >
               <div
                 className=" relative flex"
                 // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -218,7 +221,7 @@ const Header = () => {
                           <Link
                             href={data[1].route}
                             className={
-                              'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 lg:text-[0.782rem] tracking-wider ' +
+                              'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 md:text-[0.782rem] tracking-wider ' +
                               (currentPage?.route === data[1].route
                                 ? 'text-gray-950 dark:text-white'
                                 : 'dark:text-dark-500 text-gray-400 hover:text-gray-900 dark:hover:text-white')
@@ -261,8 +264,8 @@ const Header = () => {
                   </svg>
                 </button>
               </div>
-            </div>
-            <div className="relative col-span-1 flex items-center justify-end gap-2 lg:gap-4">
+            </motion.div>
+            <div className="relative col-span-1 flex items-center justify-end gap-2 md:gap-4">
               <div className="flex items-center">
                 <button
                   className="px-2 py-2 text-gray-950 dark:text-dark-400 hover:bg-gray-100 rounded-md dark:hover:bg-dark-700/75 dark:hover:text-white"
@@ -299,6 +302,74 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
+      <motion.div
+        initial={{ height: '40px' }}
+        animate={{ height: subMenuState ? 'auto' : '40px' }}
+        onHoverEnd={() => setSubMenuState(false)}
+        transition={{ duration: 0.3 }}
+        className="dark absolute left-3 right-3 bg-dark-950 top-2 rounded-3xl backdrop-blur-lg overflow-hidden shadow-lg shadow-dark-950/20"
+      >
+        <motion.div
+          animate={{ opacity: subMenuState ? 1 : 0 }}
+          onHoverEnd={() => setSubMenuState(false)}
+          transition={{ duration: 0.5 }}
+          className="grid grid-cols-2 md:grid-cols-7 gap-4 px-3 pt-12 pb-12"
+        >
+          <div className="col-span-2 pt-4 px-5">
+            <div className="text-xs text-gray-500 mb-3">Notice</div>
+            <div className="mb-1">
+              <Link
+                href="/store"
+                className="text-base text-gray-300 hover:text-white"
+              >
+                2024년 하반기 개발 계획
+              </Link>
+            </div>
+            <div className="text-xs text-gray-400 line-clamp-2">
+              2024년 하반기 개발관련하여 계획을 공지합니다. 지금 진행중인
+              사이트를 연말까지 하여 완성을 하고 2025년엔 라라벨과 더불어
+              Flutter를 활용하여 앱을 개발할 예정입니다.
+            </div>
+          </div>
+          <div className="col-span-3 hidden md:flex items-center justify-center gap-2">
+            {nav.header &&
+              Object.entries(nav.header).map((data, index) => {
+                return (
+                  <div key={data[1].name} className="w-[90px] relative">
+                    <>
+                      {/* <div className="invisible ">{data[1].title}</div> */}
+                      {/* Check if subMenu exists and render it */}
+                      {data[1].subMenu && data[1].subMenu.length > 0 && (
+                        <div className="">
+                          <ul className="py-2">
+                            {data[1].subMenu.map((subItem, subIndex) => (
+                              <li key={subItem.name}>
+                                <Link
+                                  href={subItem.route}
+                                  className="flex justify-center px-4 py-2 text-xs md:text-[0.782rem] text-gray-500 hover:text-gray-300"
+                                >
+                                  {subItem.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </>
+                  </div>
+                )
+              })}
+          </div>
+          <div className="col-span-2 pt-4 px-5">
+            <div className="text-xs text-gray-500 mb-3">Amount used</div>
+            <div className="text-base text-gray-300 mb-1">Partnership</div>
+            <div className="text-xs text-gray-400">
+              지제이웍스의 도움이 필요 하시다면 언제든 문의주세요.
+              기다리겠습니다.
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
       <Left state={showLeft} close={closeLeft} width="320px">
         <SideNav />
       </Left>

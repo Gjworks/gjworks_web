@@ -66,7 +66,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative max-w-screen-3xl mx-auto px-3">
+        <div className="relative max-w-screen-3xl mx-auto px-3 pb-20">
           <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-b-3xl overflow-hidden">
             <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
             <div className="relative flex justify-center items-center py-20">
@@ -151,22 +151,25 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="absolute -right-0 bottom-0 rounded-tl-3xl pl-3 pt-3 bg-white z-40">
-              <div className="absolute -left-[30px] -bottom-[2px] z-50 bg-[url('')] bg-no-repeat w-8 h-8 -rotate-90">
+            <div className="absolute -right-0 bottom-0 rounded-tl-3xl pl-3 pt-3 bg-white z-40 max-w-[410px]">
+              <div className="absolute -left-[30px] -bottom-[2px] z-50 bg-no-repeat w-8 h-8 -rotate-90">
                 <img src="/assets/svg/roundBox.svg" />
               </div>
-              <div className="rounded-3xl hover:scale-105 transition-all duration-700">
+              <div className="rounded-3xl hover:bg-gray-100">
                 <div className="px-5 py-4">
-                  <div className="text-lg font-semibold">React Components</div>
-                  <div className="text-gray-500 text-sm">
-                    Tailwindcss + Framer motion
+                  <div className="text-lg font-semibold">
+                    Self Made React UI Components
                   </div>
-                  <div className="pt-20 text-sm hover:underline">
+                  <div className="text-gray-500 text-sm">
+                    Tailwindcss + Framer motion을 활용하여 자체 제작한 UI
+                    컴포넌트가 있습니다.
+                  </div>
+                  <div className="pt-12 text-sm hover:underline">
                     자세히보기
                   </div>
                 </div>
               </div>
-              <div className="absolute -right-[2px] -top-[30px] z-50 bg-[url('')] bg-no-repeat w-8 h-8 -rotate-90">
+              <div className="absolute -right-[2px] -top-[30px] z-50 bg-no-repeat w-8 h-8 -rotate-90">
                 <img src="/assets/svg/roundBox.svg" />
               </div>
             </div>
