@@ -254,8 +254,31 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="flex-1 flex justify-center">
-                  <div className="relative flex items-center bg-gray-50/50 justify-center border border-gray-200/75 rounded-full h-64 md:w-96 w-64 md:h-96 shadow-2xl shadow-gray-100">
-                    <div className="flex items-center justify-center border border-gray-200/75 rounded-full w-40 md:w-64 h-40 md:h-64 bg-white/50">
+                  <div className="relative flex items-center bg-gray-50/50 dark:bg-dark-950/50 justify-center border border-gray-200/75 dark:border-dark-800/75 rounded-full h-64 md:w-96 w-64 md:h-96 shadow-2xl shadow-gray-100 dark:shadow-dark-900">
+                    <div className="flex items-center justify-center border border-gray-200/75 dark:border-dark-800/75 rounded-full w-40 md:w-64 h-40 md:h-64 bg-white/50 dark:bg-black/50">
+                      <motion.div
+                        animate={{
+                          rotate: -360,
+                        }}
+                        transition={{
+                          duration: 9,
+                          repeat: Infinity,
+                          ease: 'linear',
+                        }}
+                        className="absolute w-40 h-40 rounded-full before:w-4 before:h-4 before:bg-gray-200 before:rounded-full before:absolute before:-left-[2.002rem]"
+                      ></motion.div>
+                      <motion.div
+                        animate={{
+                          rotate: 360,
+                        }}
+                        transition={{
+                          duration: 13,
+                          repeat: Infinity,
+                          ease: 'linear',
+                        }}
+                        className="absolute w-64 h-64 rounded-full before:w-4 before:h-4 before:bg-gray-200 before:rounded-full before:absolute before:-left-[1.812rem]"
+                      ></motion.div>
+
                       <motion.div
                         animate={{
                           x: [0, 0, 0, 0, 0], // x축에서 좌우로 미세한 움직임
@@ -268,7 +291,7 @@ export default function Page() {
                           repeat: Infinity, // 무한 반복
                           repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
                         }}
-                        className="absolute text-center shadow-lg shadow-gray-200 top-10 md:top-16 left-0 rounded-full py-2 px-5 bg-gray-950 text-sm text-white"
+                        className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black top-10 md:top-16 left-0 rounded-full py-2 px-5 bg-gray-950 text-sm text-white"
                       >
                         Components
                       </motion.div>
@@ -284,19 +307,19 @@ export default function Page() {
                           repeat: Infinity, // 무한 반복
                           repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
                         }}
-                        className="absolute text-center shadow-lg shadow-gray-200 top-10 -right-10 rounded-full py-2 px-5 bg-primary-600 text-sm text-white"
+                        className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black top-10 -right-10 rounded-full py-2 px-5 bg-primary-600 text-sm text-white"
                       >
                         Databases
                       </motion.div>
                       <motion.div
                         variants={variants2}
-                        className="absolute text-center shadow-lg shadow-gray-200 -top-10 left-1/2 -translate-x-1/2 rounded-full py-2 px-5 bg-white text-sm text-gray-950"
+                        className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black -top-10 left-1/2 -translate-x-1/2 rounded-full py-2 px-5 bg-white text-sm text-gray-950"
                       >
                         Mobile
                       </motion.div>
                       <motion.div
                         variants={variants2}
-                        className="text-2xl font-semibold"
+                        className="text-2xl font-semibold dark:text-white text-gray-950"
                       >
                         Platform
                       </motion.div>
@@ -312,13 +335,13 @@ export default function Page() {
                           repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
                         }}
                         variants={variants2}
-                        className="absolute text-center shadow-lg shadow-gray-200 bottom-28 -left-10 rounded-full py-2 px-5 bg-white text-sm text-primary-600"
+                        className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black bottom-28 -left-10 rounded-full py-2 px-5 bg-white text-sm text-primary-600"
                       >
                         Service
                       </motion.div>
                       <motion.div
                         variants={variants2}
-                        className="absolute text-center shadow-lg shadow-gray-200 bottom-20 -right-10 rounded-full py-2 px-5 bg-gray-600 text-sm text-white"
+                        className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black bottom-20 -right-10 rounded-full py-2 px-5 bg-gray-600 text-sm text-white"
                       >
                         Dashboard
                       </motion.div>
@@ -334,7 +357,7 @@ export default function Page() {
                           repeat: Infinity, // 무한 반복
                           repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
                         }}
-                        className="absolute text-center shadow-lg shadow-gray-200 bottom-6 right-1/2 -translate-x-1/2 rounded-full py-2 px-5 bg-gray-950 text-sm text-primary-300"
+                        className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black bottom-6 right-1/2 -translate-x-1/2 rounded-full py-2 px-5 bg-gray-950 text-sm text-primary-300"
                       >
                         Animation
                       </motion.div>

@@ -63,10 +63,10 @@ const Page = () => {
       </motion.div>
       <div className="pb-20">
         <div className="flex gap-4 justify-center items-start overflow-hidden">
-          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/120] min-h-[234px] w-[25%] bg-[url('/assets/images/bg38.jpg')] bg-no-repeat bg-cover bg-center"></div>
-          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/220] min-h-[434px] w-[25%]"></div>
-          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/320] min-h-[534px] w-[25%]"></div>
-          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/120] min-h-[334px] w-[25%]"></div>
+          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/120] min-h-[234px] w-[25%] bg-[url('/assets/images/bg38.jpg')] bg-no-repeat bg-cover bg-center"></div>
+          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/220] min-h-[434px] w-[25%]"></div>
+          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/320] min-h-[534px] w-[25%]"></div>
+          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/120] min-h-[334px] w-[25%]"></div>
         </div>
       </div>
     </>
