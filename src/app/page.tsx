@@ -66,7 +66,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative max-w-screen-3xl mx-auto px-3 pb-20">
+        <div className="relative max-w-screen-3xl mx-auto px-0 lg:px-3 pb-20">
           <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-b-3xl overflow-hidden">
             <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
             <div className="relative flex justify-center items-center py-20">
@@ -115,7 +115,7 @@ export default function Page() {
                                 onClick={() => {
                                   setShowPopup(true)
                                 }}
-                                className="flex gap-2 rounded-full bg-primary-500 dark:bg-primary-500 dark:hover:bg-primary-500 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-primary-400 hover:text-white lg:px-5 lg:py-3"
+                                className="flex gap-2 rounded-full bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-500 dark:text-white px-3 py-1.5 text-sm text-white hover:bg-primary-400 hover:text-white lg:px-5 lg:py-3"
                               >
                                 <span>
                                   <PaperAirplaneIcon className="size-5 stroke-1" />
@@ -180,7 +180,7 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
-            className="py-20"
+            className="pt-20"
           >
             <div className="relative mx-auto max-w-screen-xl px-3">
               <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10">
@@ -210,6 +210,160 @@ export default function Page() {
                         애니메이션과 스타일을 정의했습니다.
                       </motion.div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.1 }}
+            variants={parentVariants}
+            className="py-20 w-full"
+          >
+            <div className="max-w-screen-xl mx-auto px-3">
+              <div className="flex justify-center flex-wrap w-full">
+                <div className="w-full md:w-64 flex items-center mb-20 md:mb-0">
+                  <div>
+                    <motion.div
+                      variants={variants}
+                      className="text-base font-semibold mb-3"
+                    >
+                      간편한 명령어로 설치가 가능합니다.
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-xs text-gray-400"
+                    >
+                      여러분의 의견과 아이디어가 필요 합니다.
+                    </motion.div>
+                  </div>
+                </div>
+                <div className="flex-1 flex justify-center">
+                  <div className="relative flex items-center bg-gray-50/50 justify-center border border-gray-200/75 rounded-full h-64 md:w-96 w-64 md:h-96 shadow-2xl shadow-gray-100">
+                    <motion.div className="flex items-center justify-center border border-gray-200/75 rounded-full w-40 md:w-64 h-40 md:h-64 bg-white/50">
+                      <motion.div
+                        animate={{
+                          x: [0, 0, 0, 0, 0], // x축에서 좌우로 미세한 움직임
+                          y: [0, 8, 0, -8, 0], // y축에서 상하로 미세한 움직임
+                        }}
+                        transition={{
+                          duration: 6, // 2초 동안 애니메이션 실행
+                          ease: 'linear',
+                          repeat: Infinity, // 무한 반복
+                          repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
+                        }}
+                        variants={variants}
+                        className="absolute text-center shadow-lg shadow-gray-200 top-10 md:top-16 left-0 rounded-full py-2 px-5 bg-gray-950 text-sm text-white"
+                      >
+                        Components
+                      </motion.div>
+                      <motion.div
+                        animate={{
+                          x: [0, 4, 0, -4, 0], // x축에서 좌우로 미세한 움직임
+                          y: [0, 0, 0, 0, 0], // y축에서 상하로 미세한 움직임
+                        }}
+                        variants={variants}
+                        transition={{
+                          duration: 2, // 2초 동안 애니메이션 실행
+                          ease: 'linear',
+                          repeat: Infinity, // 무한 반복
+                          repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
+                        }}
+                        className="absolute text-center shadow-lg shadow-gray-200 top-10 -right-10 rounded-full py-2 px-5 bg-primary-600 text-sm text-white"
+                      >
+                        Databases
+                      </motion.div>
+                      <motion.div
+                        animate={{
+                          x: [0, -8, 0, 4, 0], // x축에서 좌우로 미세한 움직임
+                          y: [0, 0, 0, 0, 0], // y축에서 상하로 미세한 움직임
+                        }}
+                        transition={{
+                          duration: 3, // 2초 동안 애니메이션 실행
+                          ease: 'linear',
+                          repeat: Infinity, // 무한 반복
+                          repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
+                        }}
+                        variants={variants}
+                        className="absolute text-center shadow-lg shadow-gray-200 -top-10 left-1/2 -translate-x-1/2 rounded-full py-2 px-5 bg-white text-sm text-gray-950"
+                      >
+                        Mobile
+                      </motion.div>
+                      <motion.div
+                        variants={variants}
+                        className="text-2xl font-semibold"
+                      >
+                        Platform
+                      </motion.div>
+                      <motion.div
+                        animate={{
+                          x: [0, 8, 0, -4, 0], // x축에서 좌우로 미세한 움직임
+                          y: [0, 2, 0, -2, 0], // y축에서 상하로 미세한 움직임
+                        }}
+                        transition={{
+                          duration: 5, // 2초 동안 애니메이션 실행
+                          ease: 'linear',
+                          repeat: Infinity, // 무한 반복
+                          repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
+                        }}
+                        variants={variants}
+                        className="absolute text-center shadow-lg shadow-gray-200 bottom-28 -left-10 rounded-full py-2 px-5 bg-white text-sm text-primary-600"
+                      >
+                        Service
+                      </motion.div>
+                      <motion.div
+                        animate={{
+                          x: [0, 1, 0, -1, 0], // x축에서 좌우로 미세한 움직임
+                          y: [0, 6, 0, -6, 0], // y축에서 상하로 미세한 움직임
+                        }}
+                        transition={{
+                          duration: 6, // 2초 동안 애니메이션 실행
+                          ease: 'linear',
+                          repeat: Infinity, // 무한 반복
+                          repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
+                        }}
+                        variants={variants}
+                        className="absolute text-center shadow-lg shadow-gray-200 bottom-20 -right-10 rounded-full py-2 px-5 bg-gray-600 text-sm text-white"
+                      >
+                        Dashboard
+                      </motion.div>
+                      <motion.div
+                        animate={{
+                          x: [0, 0, 0, 0, 0], // x축에서 좌우로 미세한 움직임
+                          y: [0, 4, 0, -6, 0], // y축에서 상하로 미세한 움직임
+                        }}
+                        transition={{
+                          duration: 4, // 2초 동안 애니메이션 실행
+                          ease: 'linear',
+                          repeat: Infinity, // 무한 반복
+                          repeatType: 'loop', // 애니메이션이 끝나면 다시 처음부터 반복
+                        }}
+                        variants={variants}
+                        className="absolute text-center shadow-lg shadow-gray-200 bottom-6 right-1/2 -translate-x-1/2 rounded-full py-2 px-5 bg-gray-950 text-sm text-primary-300"
+                      >
+                        Animation
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                </div>
+                <div className="w-full md:w-64 flex justify-end items-center mt-12 md:mt-0">
+                  <div>
+                    <motion.div
+                      variants={variants}
+                      className="text-base font-semibold mb-3"
+                    >
+                      풀스택을 위한 플랫폼입니다.
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="text-xs text-gray-400"
+                    >
+                      프론트엔드와 백엔드 모두 개발 가능한 개발자라면 손쉽게
+                      웹서비스를 구현할 수 있습니다.
+                    </motion.div>
                   </div>
                 </div>
               </div>

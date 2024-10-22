@@ -106,11 +106,11 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'relative dark z-99 dark:bg-dark-900/90 w-full pt-2 pb-2' +
+          'relative dark z-99 w-full pt-2 pb-2' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
-        <div className=" bg-dark-950/90 backdrop-blur-lg rounded-3xl shadow-lg shadow-dark-950/20">
+        <div className="">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-0">
             <div className="relative col-span-1 flex justify-start">
               <button
@@ -307,7 +307,7 @@ const Header = () => {
         animate={{ height: subMenuState ? 'auto' : '40px' }}
         onHoverEnd={() => setSubMenuState(false)}
         transition={{ duration: 0.8, type: 'spring', bounce: 0.35 }}
-        className="dark absolute left-3 right-3 bg-dark-950 top-2 rounded-3xl backdrop-blur-lg overflow-hidden shadow-lg shadow-dark-950/20"
+        className="dark absolute left-3 right-3 bg-black/90 top-2 rounded-3xl backdrop-blur-lg overflow-hidden shadow-lg shadow-dark-950/20"
       >
         <motion.div
           animate={{ opacity: subMenuState ? 1 : 0 }}
@@ -375,7 +375,7 @@ const Header = () => {
                     transition={{
                       duration: 0.5,
                     }}
-                    className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 bg-primary-400 transition-all w-[80%]"
+                    className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 bg-primary-600 transition-all w-[80%]"
                   ></motion.div>
                 </div>
                 <div className="text-black text-xs dark:text-white">80%</div>

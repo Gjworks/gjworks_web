@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
   let newAccessToken: string
   let verifyToken:any
   const refreshToken = cookies().get('refreshToken')?.value
-  console.log(refreshToken)
+
   // const authorization = headers().get('authorization')
   const authorization = request.headers.get('Authorization');
   const accessToken = authorization && authorization.split(' ')[1];

@@ -37,39 +37,46 @@ export async function middleware(request: NextRequest, response: NextResponse) {
       return NextResponse.redirect(
         new URL('/auth/Signin', request.url),
       );
-      
     }
-      //게시판 권한 관련한 미들웨어 로직
-    // if (request.nextUrl.pathname.startsWith('/posts/')) {
-    //   const pathParts = pathname.split('/');
-    //   const midIndex = pathParts.indexOf('posts') + 1; // 'posts' 뒤의 값을 찾음
-    //   const mid = pathParts[midIndex];
-    //   let action
-    //   try {
-    //     // API 호출로 권한 확인
-    //     if (pathname.includes('write')) {
-    //       action = 'write';
-    //     } else if (pathname.includes('read')) {
-    //       action = 'read';
-    //     }else{
-    //       action = 'list';
-    //     }
-    //     if (!action || !mid) {
-    //       return NextResponse.redirect(new URL('/error', request.url));
-    //     }
-    //     const apiResponse = await fetch(new URL(`/api/posts/${mid}/permission?action=${action}`, request.url), {
-    //       method: 'GET',
-    //       credentials: 'include'
-    //     })
-        
-    //     const data = await apiResponse.json()
-        
-    //     console.log(data)
-    //   } catch (error) {
-    //     console.error('Error in postsMiddleware:', error);
-    //   }
 
-    // }
+      //게시판 권한 관련한 미들웨어 로직
+    if (request.nextUrl.pathname.startsWith('/posts/')) {
+      const pathParts = pathname.split('/');
+      const midIndex = pathParts.indexOf('posts') + 1; // 'posts' 뒤의 값을 찾음
+      const mid = pathParts[midIndex];
+      let action
+      try {
+        // API 호출로 권한 확인
+        if (pathname.includes('write')) {
+          action = 'write';
+        } else if (pathname.includes('read')) {
+          action = 'read';
+        }else{
+          action = 'list';
+          const apiResponse = await fetch(new URL(`/api/posts/${mid}/list?action=${action}`, request.url), {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${accessToken?.value}`, // 토큰을 인증 헤더에 포함
+            }
+          })
+
+          if (!apiResponse.ok) {
+            // API 호출 실패 시 리다이렉트 또는 에러 처리
+            return NextResponse.redirect(new URL('/access', request.url));
+          }
+          const data = await apiResponse.json()
+
+          console.log(data)
+        }
+        if (!action || !mid) {
+          return NextResponse.redirect(new URL('/error', request.url));
+        }
+
+      } catch (error) {
+        console.error('Error in postsMiddleware:', error);
+      }
+
+    }
 
 
 

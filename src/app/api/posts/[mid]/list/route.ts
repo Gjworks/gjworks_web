@@ -12,24 +12,38 @@ export async function GET(request: Request, { params }: { params: { mid: string 
 
   const grantInfo = (postInfo?.config as { grant: any })?.grant;
 
-  console.log(grantInfo.listGrant)
-  if(grantInfo.listGrant.length === 0) {
-    response = {
-      success: true,
-      message: ""
-    }
-    return NextResponse.json(response);
+  // if(grantInfo.listGrant.length === 0) {
+  //   response = {
+  //     success: true,
+  //     message: ""
+  //   }
+  //   return NextResponse.json(response);
+  // }
+
+  const authHeader = request.headers.get('Authorization');
+  let accessToken;
+
+
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    accessToken = authHeader.split(' ')[1]; // Bearer 토큰에서 실제 토큰만 추출
+  } else {
+    // Authorization 헤더가 없을 때 쿠키에서 가져오는 대안 처리 (선택 사항)
+    accessToken = cookies().get('accessToken')?.value;
   }
 
   if(grantInfo.listGrant.includes('member')) {
-    const accessToken = cookies().get('accessToken')?.value
     if (!accessToken) {
       response = {
         success: true,
         message: "권한이 없습니다."
       }
-      return NextResponse.json(response);
     }
+    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
+
+    const userInfo = await prisma.user.findUnique({
+      where: { accountId: decodeToken.accountId },
+    });
+    return NextResponse.json(response);
   }
 
   if(grantInfo.listGrant.includes('admin')) {
@@ -38,18 +52,11 @@ export async function GET(request: Request, { params }: { params: { mid: string 
     if (!accessToken) {
       response = {
         success: true,
-        message: "권한이 없습니다."
+        message: "관리자만 접근권한 할 수 있습니다."
       }
       return NextResponse.json(response);
     }
-
-    const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
-
-    const userInfo = await prisma.user.findUnique({
-      where: { accountId: decodeToken.accountId },
-    });
-
   }
-
+  return NextResponse.json(response);
   
 }
