@@ -35,28 +35,21 @@ const Page = () => {
         variants={parentVariants}
         className="pt-20 pb-10"
       >
-        <div className="relative mx-auto max-w-screen-xl px-3">
+        <div className="relative mx-auto max-w-screen-xl pt-20 px-3">
           <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10">
             <div className="col-span-12">
-              <div className="flex justify-center">
-                <div className="w-full lg:w-3/5">
+              <div className="flex ">
+                <div className="w-full md:w-2/5">
                   <motion.div
                     variants={variants}
-                    className="flex justify-center mb-6"
+                    className="mb-4 text-xl font-semibold text-black lg:text-4xl dark:text-white !leading-tight tracking-tight"
                   >
-                    <span className="border border-gray-200 py-0.5 px-4 rounded-full text-sm text-gray-400">
-                      Premium Quality
-                    </span>
+                    <span className="font-extrabold">지제이웍스</span>는 상호
+                    인터렉션을 통해 사용자 경험을 높이는 솔루션을 제공합니다.
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="mb-4 text-xl font-semibold text-black lg:text-4xl dark:text-white text-center !leading-tight tracking-tight"
-                  >
-                    UI COMPONENTS
-                  </motion.div>
-                  <motion.div
-                    variants={variants}
-                    className="dark:text-dark-500 text-sm lg:text-base text-gray-500 text-center"
+                    className="dark:text-dark-500 text-sm lg:text-base text-gray-500"
                   >
                     컴포넌트는 React와 Next.js에서 사용할 수 있습니다. 모든
                     Component는 tailwindcss와 Framer motion을 활용하여
@@ -69,8 +62,11 @@ const Page = () => {
         </div>
       </motion.div>
       <div className="pb-20">
-        <div className="max-w-[460px] mx-auto bg-gray-100 rounded-3xl p-12">
-          <img src="/assets/images/Iphone14.png" alt="Iphone14" />
+        <div className="flex gap-4 justify-center items-start overflow-hidden">
+          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/120] min-h-[234px] w-[25%] bg-[url('/assets/images/bg38.jpg')] bg-no-repeat bg-cover bg-center"></div>
+          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/220] min-h-[434px] w-[25%]"></div>
+          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/320] min-h-[534px] w-[25%]"></div>
+          <div className="bg-gray-100 rounded-3xl p-5 aspect-[460/120] min-h-[334px] w-[25%]"></div>
         </div>
       </div>
     </>

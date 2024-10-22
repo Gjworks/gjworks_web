@@ -111,7 +111,7 @@ const Header = () => {
         }
       >
         <div className="">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-0">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-1">
             <div className="relative col-span-1 flex justify-start">
               <button
                 onClick={() => {
@@ -304,10 +304,10 @@ const Header = () => {
       </motion.header>
       <motion.div
         initial={{ height: '40px' }}
-        animate={{ height: subMenuState ? 'auto' : '40px' }}
+        animate={{ height: subMenuState ? 'auto' : '48px' }}
         onHoverEnd={() => setSubMenuState(false)}
         transition={{ duration: 0.8, type: 'spring', bounce: 0.35 }}
-        className="dark absolute left-3 right-3 bg-black/90 top-2 rounded-3xl backdrop-blur-lg overflow-hidden shadow-lg shadow-dark-950/20"
+        className="dark absolute left-1 right-1 bg-black/90 top-2 rounded-3xl backdrop-blur-lg overflow-hidden shadow-lg shadow-dark-950/40"
       >
         <motion.div
           animate={{ opacity: subMenuState ? 1 : 0 }}
@@ -331,11 +331,11 @@ const Header = () => {
               Flutter를 활용하여 앱을 개발할 예정입니다.
             </div>
           </div>
-          <div className="col-span-3 hidden md:flex items-center justify-center gap-2">
+          <div className="col-span-3 hidden md:flex  justify-center gap-2">
             {nav.header &&
               Object.entries(nav.header).map((data, index) => {
                 return (
-                  <div key={data[1].name} className="w-[90px] relative">
+                  <div key={data[1].name} className="w-[100px] relative">
                     <>
                       {/* <div className="invisible ">{data[1].title}</div> */}
                       {/* Check if subMenu exists and render it */}
@@ -346,7 +346,7 @@ const Header = () => {
                               <li key={subItem.name}>
                                 <Link
                                   href={subItem.route}
-                                  className="flex justify-center px-4 py-2 text-xs md:text-[0.782rem] text-gray-500 hover:text-gray-300"
+                                  className="flex justify-center py-2 text-xs md:text-[0.782rem] text-gray-500 hover:text-gray-300"
                                 >
                                   {subItem.title}
                                 </Link>

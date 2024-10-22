@@ -1,40 +1,46 @@
 {
   "header": {
-    "service": {
-      "name": "service",
-      "title": "Service",
-      "route": "/service",
+    "features": {
+      "name": "features",
+      "title": "Features",
+      "route": "/features",
       "icon": "",
       "subMenu": [
         {
-            "title": "Applications",
-            "name": "applications",
+            "title": "Components",
+            "name": "components",
             "icon": "",
-            "parent": "service",
-            "route": "/applications"
+            "parent": "features",
+            "route": "/features/components"
         },
         {
-            "title": "License",
-            "name": "license",
+            "title": "CRM",
+            "name": "crm",
             "icon": "",
-            "parent": "service",
-            "route": "/license"
+            "parent": "features",
+            "route": "javascript:alert('준비중입니다.')"
         }
         ]
     },
-    "maintenance": {
-      "name": "maintenance",
-      "title": "Maintenance",
-      "route": "/maintenance",
+    "membership": {
+      "name": "membership",
+      "title": "Membership",
+      "route": "/membership",
       "icon": "",
       "subMenu": [
-        
+        {
+            "title": "멤버쉽 관리",
+            "name": "components",
+            "icon": "",
+            "parent": "membership",
+            "route": "/membership/membership"
+        }
         ]
     },
     "devlog": {
-      "name": "devlog",
-      "title": "Devlog",
-      "route": "/posts/devlog",
+      "name": "update",
+      "title": "Updates",
+      "route": "/posts/update",
       "icon": "",
       "subMenu": [
         
