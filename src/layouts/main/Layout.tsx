@@ -37,9 +37,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className="">
       <div className="relative z-20">
-        <div className="fixed top-0 max-w-screen-xl w-full left-1/2 -translate-x-1/2 mx-auto px-3 z-999">
-          <Header />
-        </div>
+        <Header />
         <SubNav />
         {/* <div className="sticky block top-[57px] w-full shadow-lg shadow-slate-100"></div> */}
         <main className="">{children}</main>

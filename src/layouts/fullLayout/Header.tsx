@@ -106,11 +106,11 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          'relative dark z-99 w-full pt-2 pb-2' +
+          'sticky top-0 z-99 w-full bg-white ' +
           (showNavigation === true ? '  ' : ' ')
         }
       >
-        <div className="">
+        <div className="relative max-w-screen-xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-1">
             <div className="relative col-span-1 flex justify-start">
               <button
@@ -148,11 +148,11 @@ const Header = () => {
                       className="flex items-center justify-center p-[1.5px]"
                     >
                       <Image
-                        src="/assets/images/brand/gjworks_white.svg"
+                        src="/assets/images/brand/gjworks.svg"
                         alt="gjworks logo"
                         width="32"
                         height="32"
-                        className="block w-[1.6rem] h-[1.6rem] md:w-[1.7rem] md:h-[1.7rem]"
+                        className="block w-[1.9rem] h-[1.9rem]"
                       />
                       {/* <Image
                         src="/assets/images/brand/gjworks.svg"
@@ -304,23 +304,23 @@ const Header = () => {
       </motion.header>
       <motion.div
         initial={{ height: '40px' }}
-        animate={{ height: subMenuState ? 'auto' : '48px' }}
+        animate={{ height: subMenuState ? 'auto' : '0px' }}
         onHoverEnd={() => setSubMenuState(false)}
         transition={{ duration: 0.8, type: 'spring', bounce: 0.35 }}
-        className="absolute left-1 right-1 bg-black/90 dark:bg-dark-950 top-2 rounded-3xl backdrop-blur-lg overflow-hidden shadow-lg shadow-dark-950/40 dark:shadow-black/40"
+        className="fixed left-0 right-0 bg-white dark:bg-dark-950/90 top-2 backdrop-blur-lg overflow-hidden z-98 shadow-md shadow-gray-950/10"
       >
         <motion.div
           animate={{ opacity: subMenuState ? 1 : 0 }}
           onHoverEnd={() => setSubMenuState(false)}
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-7 gap-4 px-3 pt-16 pb-12"
+          className="grid grid-cols-2 md:grid-cols-7 gap-4 max-w-screen-xl mx-auto px-3 pt-16 pb-12"
         >
           <div className="col-span-2 pt-4 px-5">
             <div className="text-xs text-gray-500 mb-3">Notice</div>
             <div className="mb-1">
               <Link
                 href="/store"
-                className="text-base text-gray-300 hover:text-white"
+                className="text-base text-gray-900 dark:text-dark-300 hover:text-white"
               >
                 2024년 하반기 개발 계획
               </Link>
@@ -363,7 +363,7 @@ const Header = () => {
           <div className="col-span-2 pt-4 px-5">
             <div className="text-xs text-gray-500 mb-3">Amount used</div>
             <div>
-              <div className="text-white text-sm dark:text-dark-200">
+              <div className="text-black text-sm dark:text-dark-200">
                 전일 대비 사용량 (84회)
               </div>
               <div className="flex items-center gap-8 pt-2 pb-4">
@@ -378,12 +378,19 @@ const Header = () => {
                     className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 bg-primary-600 transition-all w-[80%]"
                   ></motion.div>
                 </div>
-                <div className="text-white text-xs dark:text-white">80%</div>
+                <div className="text-black text-xs dark:text-white">80%</div>
               </div>
             </div>
           </div>
         </motion.div>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: subMenuState ? 1 : 0 }}
+        onHoverEnd={() => setSubMenuState(false)}
+        transition={{ duration: 0.8 }}
+        className="fixed top-0 left-0 right-0 bottom-0 bg-gray-950/40 z-90 backdrop-blur-sm"
+      ></motion.div>
       <Left state={showLeft} close={closeLeft} width="320px">
         <SideNav />
       </Left>

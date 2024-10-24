@@ -78,7 +78,7 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <div className="relative max-w-screen-3xl mx-auto px-0 lg:px-3 pb-20">
-          <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-b-3xl overflow-hidden">
+          <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-3xl overflow-hidden">
             <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
             <div className="relative flex justify-center items-center py-20">
               <div className="relative w-full py-0 lg:py-20 dark:border-0 overflow-hidden ">

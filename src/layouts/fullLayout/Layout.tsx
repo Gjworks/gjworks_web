@@ -17,9 +17,7 @@ const FullLayout = ({ children }) => {
   return (
     <div className="">
       <div className="relative z-20">
-        <div className="fixed top-0 max-w-screen-xl w-full left-1/2 -translate-x-1/2 mx-auto px-1 z-999">
-          <Header />
-        </div>
+        <Header />
 
         <main className="h-full px-0">
           <div className="relative h-full">
