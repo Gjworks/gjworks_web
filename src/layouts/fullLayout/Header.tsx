@@ -311,7 +311,6 @@ const Header = () => {
       >
         <motion.div
           animate={{ opacity: subMenuState ? 1 : 0 }}
-          onHoverEnd={() => setSubMenuState(false)}
           transition={{ duration: 0.5 }}
           className="grid grid-cols-2 md:grid-cols-7 gap-4 max-w-screen-xl mx-auto px-3 pt-16 pb-12"
         >
@@ -320,7 +319,7 @@ const Header = () => {
             <div className="mb-1">
               <Link
                 href="/store"
-                className="text-base text-gray-900 dark:text-dark-300 hover:text-white"
+                className="text-base text-gray-900 dark:text-dark-300 hover:text-gray-600"
               >
                 2024년 하반기 개발 계획
               </Link>
@@ -346,7 +345,7 @@ const Header = () => {
                               <li key={subItem.name}>
                                 <Link
                                   href={subItem.route}
-                                  className="flex justify-center py-2 text-xs md:text-[0.782rem] text-gray-500 hover:text-gray-300"
+                                  className="flex justify-center py-2 text-xs md:text-[0.782rem] text-gray-500 hover:text-gray-950"
                                 >
                                   {subItem.title}
                                 </Link>
@@ -375,7 +374,7 @@ const Header = () => {
                     transition={{
                       duration: 0.5,
                     }}
-                    className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 bg-primary-600 transition-all w-[80%]"
+                    className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 bg-primary-500 transition-all w-[80%]"
                   ></motion.div>
                 </div>
                 <div className="text-black text-xs dark:text-white">80%</div>
@@ -385,11 +384,17 @@ const Header = () => {
         </motion.div>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: subMenuState ? 1 : 0 }}
-        onHoverEnd={() => setSubMenuState(false)}
+        initial={{ opacity: 0, visibility: 'hidden' }}
+        animate={{
+          opacity: subMenuState ? 1 : 0,
+          visibility: subMenuState ? 'visible' : 'hidden',
+        }}
         transition={{ duration: 0.8 }}
-        className="fixed top-0 left-0 right-0 bottom-0 bg-gray-950/40 z-90 backdrop-blur-sm"
+        exit={{
+          opacity: 0,
+          visibility: 'hidden',
+        }}
+        className="fixed top-0 left-0 right-0 bottom-0 bg-gray-950/30 z-90 backdrop-blur-sm"
       ></motion.div>
       <Left state={showLeft} close={closeLeft} width="320px">
         <SideNav />

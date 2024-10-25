@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
 import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
@@ -54,6 +55,17 @@ const Page = () => {
                     Component는 tailwindcss와 Framer motion을 활용하여
                     애니메이션과 스타일을 정의했습니다.
                   </motion.div>
+                  <motion.div
+                    variants={variants}
+                    className="flex justify-center py-8"
+                  >
+                    <Link
+                      href="#"
+                      className="inline-block bg-primary-500 hover:bg-primary-600 text-white py-2 px-8 rounded-full text-sm font-semibold"
+                    >
+                      자세히보기
+                    </Link>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -61,7 +73,9 @@ const Page = () => {
         </div>
       </motion.div>
       <div className="pb-20">
-        <div className="text-gray-950 text"></div>
+        <div className="mx-auto max-w-screen-xl">
+          <div className="rounded-2xl bg-gray-100 p-5"></div>
+        </div>
       </div>
 
       <div className="hidden pb-20">
