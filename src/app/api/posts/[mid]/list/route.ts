@@ -6,12 +6,21 @@ import { decodeJwt } from 'jose';
 const prisma = new PrismaClient();
 
 export async function GET(request: Request, { params }: { params: { mid: string } }) {
-  let response;
+  let response = {};
+  let userInfo
   const { mid } = params;
   const postInfo = await prisma.module.findUnique({where: { mid: mid }});
 
-  const grantInfo = (postInfo?.config as { grant: any })?.grant;
+  if (!postInfo) {
+    response = {
+      success: false,
+      errorCode: "MODULE_NOT_FOUND",
+      message: "게시판 정보가 없습니다."
+    }
+    return NextResponse.json(response);
+  }
 
+  const grantInfo = (postInfo?.config as { grant: any })?.grant;
   // if(grantInfo.listGrant.length === 0) {
   //   response = {
   //     success: true,
@@ -31,32 +40,73 @@ export async function GET(request: Request, { params }: { params: { mid: string 
     accessToken = cookies().get('accessToken')?.value;
   }
 
-  if(grantInfo.listGrant.includes('member')) {
-    if (!accessToken) {
-      response = {
-        success: true,
-        message: "권한이 없습니다."
-      }
-    }
+
+  if(accessToken) {
     const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
 
-    const userInfo = await prisma.user.findUnique({
+    userInfo = await prisma.user.findUnique({
       where: { accountId: decodeToken.accountId },
+      include: {
+        userGroups: { // User와 UserGroupUser의 관계
+          include: {
+            group: {
+              select: {
+                id: true,
+                groupName: true,
+                groupTitle: true,
+                groupDesc: true,
+                createdAt: true,
+                updatedAt: true,
+              },
+            }, // UserGroupUser와 UserGroup의 관계
+          },
+        },
+      },
     });
-    return NextResponse.json(response);
   }
 
-  if(grantInfo.listGrant.includes('admin')) {
-    const accessToken = cookies().get('accessToken')?.value
 
-    if (!accessToken) {
-      response = {
-        success: true,
-        message: "관리자만 접근권한 할 수 있습니다."
+
+  if (grantInfo.listGrant && grantInfo.listGrant.length > 0) {
+    if(grantInfo.listGrant.includes('member')) {
+      if (!accessToken) {
+        response = {
+          success: false,
+          errorCode: "INSUFFICIENT_PERMISSIONS",
+          message: "권한이 없습니다."
+        }
       }
-      return NextResponse.json(response);
+    } else if(grantInfo.listGrant.includes('admin')) {
+      if (!userInfo?.isAdmin) {
+        response = {
+          success: false,
+          errorCode: "INSUFFICIENT_PERMISSIONS",
+          message: "관리자만 접근 가능합니다."
+        }
+      }
+    }else{
+      const listGrantIds = grantInfo.listGrant.map((id) => parseInt(id, 10));
+      console.log('listGrantIds',listGrantIds);
+      const hasGrantPermission = userInfo.userGroups.some((group) => listGrantIds.includes(group.groupId));
+      console.log('hasGrantPermission',hasGrantPermission);
+  
+      if(!hasGrantPermission) {
+        response = {
+          success: false,
+          errorCode: "INSUFFICIENT_PERMISSIONS",
+          message: "접근 권한이 없습니다."
+        }
+      }else {
+        response = {
+          success: true,
+          message: ""
+        }
+      }
     }
+
   }
+
+
   return NextResponse.json(response);
   
 }

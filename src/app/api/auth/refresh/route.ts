@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
         if(decodeToken && decodeToken.id) {
           const tokenParams = {
             id: decodeToken.id,
-            userId : decodeToken.userId,
+            accountId : decodeToken.accountId,
             isAdmin:decodeToken.isAdmin
           }
           newAccessToken = await sign(tokenParams)

@@ -59,13 +59,17 @@ export async function middleware(request: NextRequest, response: NextResponse) {
               Authorization: `Bearer ${accessToken?.value}`, // 토큰을 인증 헤더에 포함
             }
           })
-
           if (!apiResponse.ok) {
             // API 호출 실패 시 리다이렉트 또는 에러 처리
-            return NextResponse.redirect(new URL('/access', request.url));
           }
           const data = await apiResponse.json()
 
+          if(data.success === false && data.errorCode === 'INSUFFICIENT_PERMISSIONS') {
+            return NextResponse.redirect(new URL('/access', request.url));
+          }
+          if(data.success === false && data.errorCode === 'MODULE_NOT_FOUND') {
+            return NextResponse.redirect(new URL('/error', request.url));
+          }
           console.log(data)
         }
         if (!action || !mid) {
