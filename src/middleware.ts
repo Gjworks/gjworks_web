@@ -51,6 +51,12 @@ export async function middleware(request: NextRequest, response: NextResponse) {
           action = 'write';
         } else if (pathname.includes('read')) {
           action = 'read';
+          const apiResponse = await fetch(new URL(`/api/posts/${mid}/read?action=${action}`, request.url), {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${accessToken?.value}`, // 토큰을 인증 헤더에 포함
+            }
+          })
         }else{
           action = 'list';
           const apiResponse = await fetch(new URL(`/api/posts/${mid}/list?action=${action}`, request.url), {
