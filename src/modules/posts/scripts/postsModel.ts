@@ -1,6 +1,6 @@
 'use server';
 
-export const getCategories = () => {
+export const getCategories = async () => {
   return [
     {
       id: 1,

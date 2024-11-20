@@ -5,10 +5,18 @@ import { decodeJwt } from 'jose';
 
 const prisma = new PrismaClient();
 
-export async function GET(request: Request, { params }: { params: { mid: string } }) {
+export async function GET(request: Request, context: { params: { mid: string } }) {
   let response = {};
   let userInfo
-  const { mid } = params;
+  let accessToken;
+  const { params } = context;
+
+  // params.mid를 사용하기 전에 비동기적으로 처리
+  const { mid } = await params;
+
+  if (!mid) {
+    return NextResponse.json({ error: 'Missing Post ID' }, { status: 400 });
+  }
   const postInfo = await prisma.module.findUnique({where: { mid: mid }});
 
   if (!postInfo) {
@@ -21,29 +29,21 @@ export async function GET(request: Request, { params }: { params: { mid: string 
   }
 
   const grantInfo = (postInfo?.config as { grant: any })?.grant;
-  // if(grantInfo.listGrant.length === 0) {
-  //   response = {
-  //     success: true,
-  //     message: ""
-  //   }
-  //   return NextResponse.json(response);
-  // }
-
   const authHeader = request.headers.get('Authorization');
-  let accessToken;
-
 
   if (authHeader && authHeader.startsWith('Bearer ')) {
     accessToken = authHeader.split(' ')[1]; // Bearer 토큰에서 실제 토큰만 추출
   } else {
     // Authorization 헤더가 없을 때 쿠키에서 가져오는 대안 처리 (선택 사항)
-    accessToken = cookies().get('accessToken')?.value;
+    const cookieStore = await cookies(); // 쿠키 객체 가져오기
+    if (cookieStore) {
+      const tokenCookie = cookieStore.get('accessToken'); // 쿠키 읽기
+      accessToken = tokenCookie?.value; // 값 할당
+    }
   }
 
-
-  if(accessToken) {
+  if(accessToken && accessToken !== 'undefined') {
     const decodeToken:{ id:number, accountId:string, isAdmin:boolean } = await decodeJwt(accessToken);
-
     userInfo = await prisma.user.findUnique({
       where: { accountId: decodeToken.accountId },
       include: {
@@ -64,12 +64,9 @@ export async function GET(request: Request, { params }: { params: { mid: string 
       },
     });
   }
-
-
-
   if (grantInfo.listGrant && grantInfo.listGrant.length > 0) {
     if(grantInfo.listGrant.includes('member')) {
-      if (!accessToken) {
+      if (!accessToken || accessToken === 'undefined') {
         response = {
           success: false,
           errorCode: "INSUFFICIENT_PERMISSIONS",
@@ -84,24 +81,28 @@ export async function GET(request: Request, { params }: { params: { mid: string 
           message: "관리자만 접근 가능합니다."
         }
       }
+    //비회원일 경우
+    } else if(grantInfo.listGrant.includes('guest')) {
     }else{
-      const listGrantIds = grantInfo.listGrant.map((id) => parseInt(id, 10));
-      console.log('listGrantIds',listGrantIds);
-      const hasGrantPermission = userInfo.userGroups.some((group) => listGrantIds.includes(group.groupId));
-      console.log('hasGrantPermission',hasGrantPermission);
-  
-      if(!hasGrantPermission) {
-        response = {
-          success: false,
-          errorCode: "INSUFFICIENT_PERMISSIONS",
-          message: "접근 권한이 없습니다."
-        }
-      }else {
-        response = {
-          success: true,
-          message: ""
+      
+      if(userInfo && userInfo !== 'undefined') {
+        const listGrantIds = grantInfo.listGrant.map((id) => parseInt(id, 10));
+        const hasGrantPermission = userInfo.userGroups.some((group) => listGrantIds.includes(group.groupId));
+    
+        if(!hasGrantPermission) {
+          response = {
+            success: false,
+            errorCode: "INSUFFICIENT_PERMISSIONS",
+            message: "접근 권한이 없습니다."
+          }
+        }else {
+          response = {
+            success: true,
+            message: ""
+          }
         }
       }
+      
     }
 
   }
