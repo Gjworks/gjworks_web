@@ -20,7 +20,8 @@ interface LoggedParams {
 const prisma = new PrismaClient();
 
 export const getPost = async (params:PostsParams) => {
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
 
   let response
   let postInfo
@@ -79,7 +80,8 @@ export const getPost = async (params:PostsParams) => {
 }
 
 export const getPostList = async (params) => {
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
 
   let response
   let postList

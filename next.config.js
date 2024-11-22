@@ -5,6 +5,7 @@ const nextConfig = {
   experimental: {
     appDir: 'src/app',
     serverActions: true,
+    serverComponents: true,
   },
 }
 

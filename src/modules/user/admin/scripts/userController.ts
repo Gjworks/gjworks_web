@@ -30,7 +30,8 @@ export const insertUser = async () => {
 }
 
 export const updateAdminUser = async (params:UserParams) => {
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id : 0,

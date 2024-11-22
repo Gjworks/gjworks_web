@@ -8,7 +8,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
-
+  const cookieStore = await cookies()
   const formData = await request.formData(); 
   console.log(formData.get('accountId')); 
 
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
         }
 
 
-      cookies().set({
+      cookieStore.set({
         name: "accessToken",
         value: accessToken,
         httpOnly: true,
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
         sameSite: "strict",
         // maxAge: 3600,
       });
-      cookies().set({
+      cookieStore.set({
         name: "refreshToken",
         value: refreshToken,
         httpOnly: true,

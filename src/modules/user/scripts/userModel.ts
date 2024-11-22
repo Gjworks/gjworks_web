@@ -32,7 +32,8 @@ interface UserSessionResponse {
 const prisma = new PrismaClient();
 
 export const getUserLogged = async () => {
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
   let tokenInfo:LoggedParams = {
     id: 0,
     accountId : '',
@@ -103,7 +104,8 @@ export const getUserSession = async (): Promise<UserSessionResponse> => {
 }
 
 export const getUser = async (params:UserParams) => {
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id: 0,
@@ -236,7 +238,8 @@ export const getUserByNickname = async (nickName:string) => {
 export const getUserByToken = async (token) => {
   let userInfo
   let response
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
   
   if (!accessToken) {
     response =  NextResponse.json({

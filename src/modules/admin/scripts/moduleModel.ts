@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const getModule = (id:number) => {
+export const getModule = async (id:number) => {
   if(!id) return new Error('id is required')
   return prisma.module.findUnique({
     where: {

@@ -7,13 +7,14 @@ import PostsCategories from '@/modules/posts/templates/default/category'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
 import { motion } from 'framer-motion'
 
-interface PageProps {
-  params: {
-    mid: string
-  }
-}
+type Params = Promise<{ slug: string }>
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
 
-const Page: React.FC<PageProps> = ({ params }: { params: { mid: string } }) => {
+const Page = async (props: { params: Params; searchParams: SearchParams }) => {
+  const params = await props.params
+  const searchParams = await props.searchParams
+  const slug = params.slug
+  const query = searchParams.query
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pt-20">

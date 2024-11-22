@@ -8,7 +8,8 @@ import { PrismaClient } from "@prisma/client";
 export async function POST(request: NextRequest) {
   let newAccessToken: string
   let verifyToken:any
-  const refreshToken = cookies().get('refreshToken')?.value
+  const cookieStore = await cookies()
+  const refreshToken = cookieStore.get('refreshToken')?.value
 
   // const authorization = headers().get('authorization')
   const authorization = request.headers.get('Authorization');
@@ -53,8 +54,8 @@ export async function POST(request: NextRequest) {
             isAdmin:decodeToken.isAdmin
           }
           newAccessToken = await sign(tokenParams)
-          cookies().delete('accessToken');
-          cookies().set({
+          cookieStore.delete('accessToken');
+          cookieStore.set({
             name: "accessToken",
             value: newAccessToken,
             httpOnly: true,
@@ -72,8 +73,8 @@ export async function POST(request: NextRequest) {
           return NextResponse.json(response);
         }
       }else{
-        cookies().delete('refreshToken');
-        cookies().delete('accessToken');
+        cookieStore.delete('refreshToken');
+        cookieStore.delete('accessToken');
         const response = 
           {
             success: false,

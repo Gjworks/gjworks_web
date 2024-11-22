@@ -12,7 +12,8 @@ interface LoggedParams {
 const prisma = new PrismaClient();
 
 export const createPosts = async (params) => {
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
 
   let loggedInfo:LoggedParams = {
     email : '',

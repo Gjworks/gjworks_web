@@ -108,7 +108,8 @@ export const createUser = async (formData: FormData) => {
   
 }
 export const updateUser = async (params:UserParams) => {
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
 
   let loggedInfo:LoggedParams = {
     id : 0,
@@ -235,8 +236,8 @@ export const updateUser = async (params:UserParams) => {
 }
 
 export const deleteUser= async (params:UserParams) => {
-
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
   let obj: any = {};
   let loggedInfo:LoggedParams = {
     id : 0,
@@ -301,8 +302,8 @@ export const deleteUser= async (params:UserParams) => {
 
   if(deleteUser){
     if(loggedInfo.isAdmin === false) {
-      cookies().delete('refreshToken');
-      cookies().delete('accessToken');
+      cookieStore.delete('refreshToken');
+      cookieStore.delete('accessToken');
     }
     response = 
       {
@@ -329,10 +330,10 @@ export const deleteUser= async (params:UserParams) => {
 }
 
 export const PasswordChange = async (formData: FormData) => {
-
   let userInfo
   let response
-  const accessToken = cookies().get('accessToken')?.value
+  const cookieStore = await cookies()
+  const accessToken = cookieStore.get('accessToken')?.value
   
   if (!accessToken) {
     return {

@@ -2,12 +2,13 @@ import { NextResponse } from 'next/server';
 import { cookies, headers } from "next/headers";
 
 export async function POST(request: Request) {
-  cookies().delete('refreshToken');
-  cookies().delete('accessToken');
+  const cookieStore = await cookies()
+  cookieStore.delete('refreshToken');
+  cookieStore.delete('accessToken');
 
     // const hasCookie = cookies().has('refreshToken')
-    const refreshToken = cookies().get('refreshToken')?.value
-    const accessToken = cookies().get('accessToken')?.value
+    const refreshToken = cookieStore.get('refreshToken')?.value
+    const accessToken = cookieStore.get('accessToken')?.value
 
     try {
       if(refreshToken && accessToken) {

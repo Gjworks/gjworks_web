@@ -4,15 +4,15 @@ import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from 'jose';
 
 const prisma = new PrismaClient();
-
-export async function GET(request: Request, context: { params: { mid: string } }) {
+type Params = Promise<{ mid: string }>
+export async function GET(request: Request, segmentData: { params: Params }) {
   let response = {};
   let userInfo
   let accessToken;
-  const { params } = context;
+  const { mid } = await segmentData.params;
 
   // params.mid를 사용하기 전에 비동기적으로 처리
-  const { mid } = await params;
+  // const { mid } = params;
 
   if (!mid) {
     return NextResponse.json({ error: 'Missing Post ID' }, { status: 400 });
