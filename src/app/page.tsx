@@ -130,15 +130,15 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="absolute left-0 md:left-auto right-0 bottom-0 rounded-tl-3xl pl-3 pt-3 bg-white z-40 w-full md:max-w-[410px]">
+            <div className="absolute left-0 md:left-auto right-0 bottom-0 rounded-tl-3xl pl-3 pt-3 bg-white dark:bg-dark-950 z-40 w-full md:max-w-[410px]">
               <div className="absolute -left-[30px] -bottom-[2px] z-50 bg-no-repeat w-8 h-8 -rotate-90">
                 <img src="/assets/svg/roundBox.svg" />
               </div>
-              <div className="rounded-3xl hover:bg-gray-100">
+              <div className="rounded-3xl hover:bg-gray-100 hover:bg-dark-900">
                 <div className="px-5 py-4">
-                  <div className="text-lg font-semibold">Self Made React UI Components</div>
+                  <div className="text-lg font-semibold dark:text-white">Self Made React UI Components</div>
                   <div className="text-gray-500 text-sm">Tailwindcss + Framer motion을 활용하여 자체 제작한 UI 컴포넌트가 있습니다.</div>
-                  <div className="pt-12 text-sm hover:underline">자세히보기</div>
+                  <div className="pt-12 text-sm hover:underline dark:text-dark-100">자세히보기</div>
                 </div>
               </div>
               <div className="absolute -right-[2px] -top-[30px] z-50 bg-no-repeat w-8 h-8 -rotate-90">
@@ -174,7 +174,7 @@ export default function Page() {
               <div className="flex justify-center flex-wrap w-full">
                 <div className="w-full md:w-64 flex items-center mb-20 md:mb-0">
                   <div>
-                    <motion.div variants={variants} className="text-base font-semibold mb-3">
+                    <motion.div variants={variants} className="text-base font-semibold mb-3 dark:text-dark-100">
                       다양한 템플릿을 제공합니다.
                     </motion.div>
                     <motion.div variants={variants} className="text-xs text-gray-400">
@@ -286,7 +286,7 @@ export default function Page() {
                 </div>
                 <div className="w-full md:w-64 flex justify-end items-center mt-12 md:mt-0">
                   <div>
-                    <motion.div variants={variants} className="text-base font-semibold mb-3">
+                    <motion.div variants={variants} className="text-base font-semibold mb-3 dark:text-dark-100">
                       풀스택을 위한 플랫폼입니다.
                     </motion.div>
                     <motion.div variants={variants} className="text-xs text-gray-400">

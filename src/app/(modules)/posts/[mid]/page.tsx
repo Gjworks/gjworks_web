@@ -1,5 +1,3 @@
-'use client'
-
 import React, { Suspense } from 'react'
 import Link from 'next/link'
 import PostsList from '@/modules/posts/templates/default/list'
@@ -22,12 +20,9 @@ const Page = async (props: { params: Params; searchParams: SearchParams }) => {
         <div className="max-w-screen-lg mx-auto px-3">
           <div className="text-3xl text-center font-semibold dark:text-white py-10">기술지원1</div>
           <div className="mb-6">
-            <Suspense fallback={<div className="text-4xl font-bold text-red-600">Loading feed...1</div>}>
-              <PostsCategories />
-            </Suspense>
+            <PostsCategories />
           </div>
-
-          <Suspense fallback={<div className="text-4xl font-bold text-red-600">Loading feed...</div>}>
+          <Suspense fallback={<div>Loading posts...</div>}>
             <PostsList params={{ mid: 'supports' }} />
           </Suspense>
         </div>

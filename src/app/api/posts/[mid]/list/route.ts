@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { cookies, headers } from "next/headers";
 import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from 'jose';
+import { validateUserPermissions } from '@/modules/posts/scripts/postsModel'
 
 const prisma = new PrismaClient();
 type Params = Promise<{ mid: string }>
@@ -14,21 +15,9 @@ export async function GET(request: Request, segmentData: { params: Params }) {
   // params.mid를 사용하기 전에 비동기적으로 처리
   // const { mid } = params;
 
-  if (!mid) {
-    return NextResponse.json({ error: 'Missing Post ID' }, { status: 400 });
-  }
-  const postInfo = await prisma.module.findUnique({where: { mid: mid }});
+  
 
-  if (!postInfo) {
-    response = {
-      success: false,
-      errorCode: "MODULE_NOT_FOUND",
-      message: "게시판 정보가 없습니다."
-    }
-    return NextResponse.json(response);
-  }
 
-  const grantInfo = (postInfo?.config as { grant: any })?.grant;
   const authHeader = request.headers.get('Authorization');
 
   if (authHeader && authHeader.startsWith('Bearer ')) {
@@ -64,48 +53,10 @@ export async function GET(request: Request, segmentData: { params: Params }) {
       },
     });
   }
-  if (grantInfo.listGrant && grantInfo.listGrant.length > 0) {
-    if(grantInfo.listGrant.includes('member')) {
-      if (!accessToken || accessToken === 'undefined') {
-        response = {
-          success: false,
-          errorCode: "INSUFFICIENT_PERMISSIONS",
-          message: "권한이 없습니다."
-        }
-      }
-    } else if(grantInfo.listGrant.includes('admin')) {
-      if (!userInfo?.isAdmin) {
-        response = {
-          success: false,
-          errorCode: "INSUFFICIENT_PERMISSIONS",
-          message: "관리자만 접근 가능합니다."
-        }
-      }
-    //비회원일 경우
-    } else if(grantInfo.listGrant.includes('guest')) {
-    }else{
-      
-      if(userInfo && userInfo !== 'undefined') {
-        const listGrantIds = grantInfo.listGrant.map((id) => parseInt(id, 10));
-        const hasGrantPermission = userInfo.userGroups.some((group) => listGrantIds.includes(group.groupId));
-    
-        if(!hasGrantPermission) {
-          response = {
-            success: false,
-            errorCode: "INSUFFICIENT_PERMISSIONS",
-            message: "접근 권한이 없습니다."
-          }
-        }else {
-          response = {
-            success: true,
-            message: ""
-          }
-        }
-      }
-      
-    }
 
-  }
+  const permissionInfo = await validateUserPermissions(mid, 'list', userInfo)
+  console.log(permissionInfo)
+
 
 
   return NextResponse.json(response);

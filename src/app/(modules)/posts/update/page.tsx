@@ -1,11 +1,8 @@
-'use client'
-
 import Link from 'next/link'
 import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 
 import PostsCategories from '@/modules/posts/templates/default/category'
 import PageNavigation from '@plextype/components/nav/PageNavigation'
-import { motion } from 'framer-motion'
 
 type Params = Promise<{ slug: string }>
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>

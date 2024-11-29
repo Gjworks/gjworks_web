@@ -49,6 +49,12 @@ export async function middleware(request: NextRequest, response: NextResponse) {
         // API 호출로 권한 확인
         if (pathname.includes('write')) {
           action = 'write';
+          const apiResponse = await fetch(new URL(`/api/posts/${mid}/write?action=${action}`, request.url), {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${accessToken?.value}`, // 토큰을 인증 헤더에 포함
+            }
+          })
         } else if (pathname.includes('read')) {
           action = 'read';
           const apiResponse = await fetch(new URL(`/api/posts/${mid}/read?action=${action}`, request.url), {
