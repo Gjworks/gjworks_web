@@ -3,7 +3,7 @@ import { cookies, headers } from "next/headers";
 import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from "jose";
 import { validateUserPermissions } from "@/modules/posts/scripts/postsModel";
-import PostPermissions from "src/modules/posts/scripts/PostPermissions";
+import PostPermissions from "@/modules/posts/scripts/PostPermissions";
 
 const prisma = new PrismaClient();
 type Params = Promise<{ mid: string }>;
