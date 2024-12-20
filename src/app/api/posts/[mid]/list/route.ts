@@ -10,7 +10,7 @@ type Params = Promise<{ mid: string }>;
 export async function GET(request: Request, segmentData: { params: Params }) {
   let response = {};
   let userInfo;
-  let accessToken;
+  let accessToken: string | undefined;
   const { mid } = await segmentData.params;
 
   if (!mid) {
@@ -73,7 +73,7 @@ export async function GET(request: Request, segmentData: { params: Params }) {
     userInfo,
   );
 
-  if (permissionsInfo.success === false) {
+  if (!permissionsInfo.success) {
     response = permissionsInfo;
     return NextResponse.json(response);
   }
