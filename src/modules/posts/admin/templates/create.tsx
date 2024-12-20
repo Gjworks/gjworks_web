@@ -21,10 +21,10 @@ const DashboardPostCreate = (props: PostProps) => {
   const [isCommentLike, setisCommentLike] = useState<boolean>(false)
   const [isCommentState, setIsCommentState] = useState<boolean>(false)
   const [isConsultingState, setIsConsultingState] = useState<boolean>(false)
-  const [writeGrant, setWriteGrant] = useState<string[]>([])
-  const [commentGrant, setCommentGrant] = useState<string[]>([])
-  const [listGrant, setListGrant] = useState<string[]>([])
-  const [readGrant, setReadGrant] = useState<string[]>([])
+  const [writePermissions, setWritePermissions] = useState<string[]>([])
+  const [commentPermissions, setCommentPermissions] = useState<string[]>([])
+  const [listPermissions, setListPermissions] = useState<string[]>([])
+  const [readPermissions, setReadPermissions] = useState<string[]>([])
 
   useEffect(() => {
     if (props.id) {
@@ -34,10 +34,10 @@ const DashboardPostCreate = (props: PostProps) => {
         } else {
           if (response.data.postInfo && response.type === 'success') {
             setPosts(response.data.postInfo)
-            setListGrant(response.data.postInfo.config.grant.listGrant)
-            setReadGrant(response.data.postInfo.config.grant.readGrant)
-            setWriteGrant(response.data.postInfo.config.grant.writeGrant)
-            setCommentGrant(response.data.postInfo.config.grant.commentGrant)
+            setListPermissions(response.data.postInfo.config.permissions.list)
+            setReadPermissions(response.data.postInfo.config.permissions.read)
+            setWritePermissions(response.data.postInfo.config.permissions.write)
+            setCommentPermissions(response.data.postInfo.config.permissions.comment)
           }
         }
       })
@@ -45,7 +45,7 @@ const DashboardPostCreate = (props: PostProps) => {
   }, [props.id])
 
   useEffect(() => {
-    // console.log(posts?.config?.grant.commentGrant)
+    // console.log(posts?.config?.grant.commentPermissions)
     if (posts?.config?.documentLike !== undefined) {
       setIsDocumentLike(posts.config.documentLike)
     }
@@ -73,14 +73,11 @@ const DashboardPostCreate = (props: PostProps) => {
     setIsConsultingState(event.target.checked)
   }
 
-  useEffect(() => {
-    console.log(listGrant)
-  }, [listGrant])
   const submitHandler = async (formData: FormData) => {
-    const selectedCommentGroups = formData.getAll('commentGrant') as string[]
-    const selectedWriteGroups = formData.getAll('writeGrant') as string[]
-    const selectedListGroups = formData.getAll('listGrant') as string[]
-    const selectedReadGroups = formData.getAll('readGrant') as string[]
+    const selectedCommentGroups = formData.getAll('commentPermissions') as string[]
+    const selectedWriteGroups = formData.getAll('writePermissions') as string[]
+    const selectedListGroups = formData.getAll('listPermissions') as string[]
+    const selectedReadGroups = formData.getAll('readPermissions') as string[]
 
     const params = {
       postId: formData.get('postId') as string,
@@ -93,11 +90,11 @@ const DashboardPostCreate = (props: PostProps) => {
       consultingState: formData.get('consultingState') as string,
       commentState: formData.get('commentState') as string,
       commentLike: formData.get('commentLike') as string,
-      grant: {
-        commentGrant: selectedCommentGroups,
-        writeGrant: selectedWriteGroups,
-        listGrant: selectedListGroups,
-        readGrant: selectedReadGroups,
+      permissions: {
+        comment: selectedCommentGroups,
+        write: selectedWriteGroups,
+        list: selectedListGroups,
+        read: selectedReadGroups,
       },
     }
     console.log(params)
@@ -115,36 +112,36 @@ const DashboardPostCreate = (props: PostProps) => {
       })
   }
   // const isCheckedComment =
-  //   posts?.grant && posts.config.grant.commentGrant.includes(String(0))
+  //   posts?.grant && posts.config.grant.commentPermissions.includes(String(0))
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value, id, name } = event.target
-    name === 'commentGrant' &&
-      setCommentGrant(prev => {
+    name === 'comment' &&
+      setCommentPermissions(prev => {
         if (!Array.isArray(prev)) {
           return []
         }
         return checked ? [...prev, value] : prev.filter(id => id !== value)
       })
 
-    name === 'writeGrant' &&
-      setWriteGrant(prev => {
+    name === 'write' &&
+      setWritePermissions(prev => {
         if (!Array.isArray(prev)) {
           return []
         }
         return checked ? [...prev, value] : prev.filter(id => id !== value)
       })
 
-    name === 'listGrant' &&
-      setListGrant(prev => {
+    name === 'list' &&
+      setListPermissions(prev => {
         if (!Array.isArray(prev)) {
           return []
         }
         return checked ? [...prev, value] : prev.filter(id => id !== value)
       })
 
-    name === 'readGrant' &&
-      setReadGrant(prev => {
+    name === 'read' &&
+      setReadPermissions(prev => {
         if (!Array.isArray(prev)) {
           return []
         }
@@ -152,33 +149,21 @@ const DashboardPostCreate = (props: PostProps) => {
       })
   }
 
-  const isCheckedWrite =
-    posts.config?.grant?.writeGrant && writeGrant.includes(String('guest'))
-  const isCheckedWriteMember =
-    posts.config?.grant?.writeGrant && writeGrant.includes(String('member'))
-  const isCheckedWriteAdmin =
-    posts.config?.grant?.writeGrant && writeGrant.includes(String('admin'))
+  const isCheckedWrite = posts.config?.permissions?.write && writePermissions.includes(String('guest'))
+  const isCheckedWriteMember = posts.config?.permissions?.write && writePermissions.includes(String('member'))
+  const isCheckedWriteAdmin = posts.config?.permissions?.write && writePermissions.includes(String('admin'))
 
-  const isCheckedComment =
-    posts.config?.grant?.commentGrant && commentGrant.includes(String('guest'))
-  const isCheckedCommentMember =
-    posts.config?.grant?.commentGrant && commentGrant.includes(String('member'))
-  const isCheckedCommentAdmin =
-    posts.config?.grant?.commentGrant && commentGrant.includes(String('admin'))
+  const isCheckedComment = posts.config?.permissions?.comment && commentPermissions.includes(String('guest'))
+  const isCheckedCommentMember = posts.config?.permissions?.comment && commentPermissions.includes(String('member'))
+  const isCheckedCommentAdmin = posts.config?.permissions?.comment && commentPermissions.includes(String('admin'))
 
-  const isCheckedList =
-    posts.config?.grant?.listGrant && listGrant.includes(String('guest'))
-  const isCheckedListMember =
-    posts.config?.grant?.listGrant && listGrant.includes(String('member'))
-  const isCheckedListAdmin =
-    posts.config?.grant?.listGrant && listGrant.includes(String('admin'))
+  const isCheckedList = posts.config?.permissions?.list && listPermissions.includes(String('guest'))
+  const isCheckedListMember = posts.config?.permissions?.list && listPermissions.includes(String('member'))
+  const isCheckedListAdmin = posts.config?.permissions?.list && listPermissions.includes(String('admin'))
 
-  const isCheckedRead =
-    posts.config?.grant?.readGrant && readGrant.includes(String('guest'))
-  const isCheckedReadMember =
-    posts.config?.grant?.readGrant && readGrant.includes(String('member'))
-  const isCheckedReadAdmin =
-    posts.config?.grant?.readGrant && readGrant.includes(String('admin'))
+  const isCheckedRead = posts.config?.permissions?.read && readPermissions.includes(String('guest'))
+  const isCheckedReadMember = posts.config?.permissions?.read && readPermissions.includes(String('member'))
+  const isCheckedReadAdmin = posts.config?.permissions?.read && readPermissions.includes(String('admin'))
 
   return (
     <>
@@ -190,12 +175,8 @@ const DashboardPostCreate = (props: PostProps) => {
             <div className="px-3">
               <div className="grid grid-cols-4 gap-8 py-10">
                 <div className="col-span-1">
-                  <div className="text-lg font-semibold text-gray-600  mb-3">
-                    게시판 기본설정
-                  </div>
-                  <div className="text-gray-400 text-sm">
-                    게시판의 기본설정을 입력합니다.
-                  </div>
+                  <div className="text-lg font-semibold text-gray-600  mb-3">게시판 기본설정</div>
+                  <div className="text-gray-400 text-sm">게시판의 기본설정을 입력합니다.</div>
                 </div>
                 <div className="col-span-3">
                   <div className="grid grid-col-span-2">
@@ -204,43 +185,19 @@ const DashboardPostCreate = (props: PostProps) => {
                         <label htmlFor="moduleId">
                           <div className="text-sm text-black mb-3">모듈ID</div>
                         </label>
-                        {posts && (
-                          <input
-                            type="text"
-                            name="moduleId"
-                            id="moduleId"
-                            className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                            placeholder="/?mid=post"
-                            defaultValue={posts?.mid}
-                          />
-                        )}
+                        {posts && <input type="text" name="moduleId" id="moduleId" className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100" placeholder="/?mid=post" defaultValue={posts?.mid} />}
 
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          게시판의 모듈ID는 중복될 수 없는 이름입니다.
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">게시판의 모듈ID는 중복될 수 없는 이름입니다.</div>
                       </div>
                     </div>
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3 sm:col-span-2">
                         <label htmlFor="moduleName">
-                          <div className="text-sm text-black mb-3">
-                            게시판이름
-                          </div>
+                          <div className="text-sm text-black mb-3">게시판이름</div>
                         </label>
-                        {posts && (
-                          <input
-                            type="text"
-                            name="moduleName"
-                            id="moduleName"
-                            className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                            defaultValue={posts?.moduleName}
-                          />
-                        )}
+                        {posts && <input type="text" name="moduleName" id="moduleName" className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100" defaultValue={posts?.moduleName} />}
 
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          게시판이름을 정하세요. 브라우저 타이틀 혹은 게시판의
-                          명칭을 나타냅니다.
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">게시판이름을 정하세요. 브라우저 타이틀 혹은 게시판의 명칭을 나타냅니다.</div>
                       </div>
                     </div>
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
@@ -248,100 +205,45 @@ const DashboardPostCreate = (props: PostProps) => {
                         <label htmlFor="listCount">
                           <div className="text-sm text-black mb-3">목록 수</div>
                         </label>
-                        {posts && (
-                          <input
-                            type="text"
-                            name="listCount"
-                            id="listCount"
-                            className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                            defaultValue={
-                              posts.config?.listCount
-                                ? posts.config?.listCount
-                                : '20'
-                            }
-                          />
-                        )}
+                        {posts && <input type="text" name="listCount" id="listCount" className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100" defaultValue={posts.config?.listCount ? posts.config?.listCount : '20'} />}
 
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          한 페이지에 표시될 글 수를 지정할 수 있습니다. (기본
-                          20개)
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">한 페이지에 표시될 글 수를 지정할 수 있습니다. (기본 20개)</div>
                       </div>
                     </div>
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3 sm:col-span-2">
                         <label htmlFor="listCount">
-                          <div className="text-sm text-black mb-3">
-                            페이지 수
-                          </div>
+                          <div className="text-sm text-black mb-3">페이지 수</div>
                         </label>
-                        {posts && (
-                          <input
-                            type="text"
-                            name="listCount"
-                            id="listCount"
-                            className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
-                            defaultValue={
-                              posts.config?.pageCount
-                                ? posts.config?.pageCount
-                                : '10'
-                            }
-                          />
-                        )}
+                        {posts && <input type="text" name="listCount" id="listCount" className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100" defaultValue={posts.config?.pageCount ? posts.config?.pageCount : '10'} />}
 
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          목록 하단, 페이지를 이동하는 링크 수를 지정할 수
-                          있습니다. (기본 5개)
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">목록 하단, 페이지를 이동하는 링크 수를 지정할 수 있습니다. (기본 5개)</div>
                       </div>
                     </div>
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3 sm:col-span-2">
                         <label htmlFor="documentLike">
-                          <div className="text-sm text-black mb-3">
-                            좋아요 사용
-                          </div>
+                          <div className="text-sm text-black mb-3">좋아요 사용</div>
                         </label>
                         <label className="m-0">
-                          <input
-                            type="checkbox"
-                            name="documentLike"
-                            id="documentLike"
-                            className="peer hidden"
-                            onChange={handleDocumentLike}
-                            checked={isDocumentLike}
-                          />
+                          <input type="checkbox" name="documentLike" id="documentLike" className="peer hidden" onChange={handleDocumentLike} checked={isDocumentLike} />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          게시글 본문에 좋아요 기능을 사용합니다.
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">게시글 본문에 좋아요 기능을 사용합니다.</div>
                       </div>
                     </div>
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3 sm:col-span-2">
                         <label htmlFor="consultingState">
-                          <div className="text-sm text-black mb-3">
-                            상담 기능 사용
-                          </div>
+                          <div className="text-sm text-black mb-3">상담 기능 사용</div>
                         </label>
                         <label className="m-0">
-                          <input
-                            type="checkbox"
-                            name="consultingState"
-                            id="consultingState"
-                            className="peer hidden"
-                            onChange={handleConsultingState}
-                            checked={isConsultingState}
-                          />
+                          <input type="checkbox" name="consultingState" id="consultingState" className="peer hidden" onChange={handleConsultingState} checked={isConsultingState} />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          관리자와 자신이 쓴 글만 보이도록 하는 기능입니다.
-                          &#40;회원 전용&#41;
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">관리자와 자신이 쓴 글만 보이도록 하는 기능입니다. &#40;회원 전용&#41;</div>
                       </div>
                     </div>
                   </div>
@@ -352,62 +254,36 @@ const DashboardPostCreate = (props: PostProps) => {
             <div className="px-3">
               <div className="grid grid-cols-4 gap-8 py-10">
                 <div className="col-span-1">
-                  <div className="text-lg font-semibold text-gray-600  mb-3">
-                    댓글설정
-                  </div>
-                  <div className="text-gray-400 text-sm">
-                    댓글 관련 설정을 합니다.
-                  </div>
+                  <div className="text-lg font-semibold text-gray-600  mb-3">댓글설정</div>
+                  <div className="text-gray-400 text-sm">댓글 관련 설정을 합니다.</div>
                 </div>
                 <div className="col-span-3">
                   <div className="grid grid-col-span-2">
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3 sm:col-span-2">
                         <label>
-                          <div className="text-sm text-black mb-3">
-                            댓글 사용
-                          </div>
+                          <div className="text-sm text-black mb-3">댓글 사용</div>
                         </label>
                         <label htmlFor="commentState" className="m-0">
-                          <input
-                            type="checkbox"
-                            name="commentState"
-                            id="commentState"
-                            className="peer hidden"
-                            onChange={handleCommentState}
-                            checked={isCommentState}
-                          />
+                          <input type="checkbox" name="commentState" id="commentState" className="peer hidden" onChange={handleCommentState} checked={isCommentState} />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
 
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          댓글을 사용할지 여부를 결정합니다.
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">댓글을 사용할지 여부를 결정합니다.</div>
                       </div>
                     </div>
                     <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                       <div className="col-span-3 sm:col-span-2">
                         <label htmlFor="commentLike">
-                          <div className="text-sm text-black mb-3">
-                            좋아요 사용
-                          </div>
+                          <div className="text-sm text-black mb-3">좋아요 사용</div>
                         </label>
                         <label className="m-0">
-                          <input
-                            type="checkbox"
-                            name="commentLike"
-                            id="commentLike"
-                            className="peer hidden"
-                            onChange={handleCommentLike}
-                            checked={isCommentLike}
-                          />
+                          <input type="checkbox" name="commentLike" id="commentLike" className="peer hidden" onChange={handleCommentLike} checked={isCommentLike} />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
                         </label>
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          댓글에 좋아요 기능을 사용합니다.
-                        </div>
+                        <div className="text-sm text-dark-400 pt-2 font-light">댓글에 좋아요 기능을 사용합니다.</div>
                       </div>
                     </div>
                   </div>
@@ -418,12 +294,8 @@ const DashboardPostCreate = (props: PostProps) => {
             <div className="px-3">
               <div className="grid grid-cols-4 gap-8 py-10">
                 <div className="col-span-1">
-                  <div className="text-lg font-semibold text-gray-600  mb-3">
-                    권한설정
-                  </div>
-                  <div className="text-gray-400 text-sm">
-                    생성된 게시판의 권한을 설정합니다.
-                  </div>
+                  <div className="text-lg font-semibold text-gray-600  mb-3">권한설정</div>
+                  <div className="text-gray-400 text-sm">생성된 게시판의 권한을 설정합니다.</div>
                 </div>
                 <div className="col-span-3">
                   <div className="grid grid-col-span-2">
@@ -435,61 +307,27 @@ const DashboardPostCreate = (props: PostProps) => {
                             <div className="flex-1">
                               <div className="flex gap-2 flex-wrap">
                                 <div>
-                                  <label
-                                    htmlFor="listGrant"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="listGrant"
-                                      id="listGrantGuest"
-                                      value="guest"
-                                      checked={isCheckedList ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="listPermissions" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="listPermissions" id="listPermissionsGuest" value="guest" checked={isCheckedList ? true : false} onChange={handleCheckboxChange} />
                                     비회원
                                   </label>
                                 </div>
 
                                 <div>
-                                  <label
-                                    htmlFor="listGrantMember"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="listGrant"
-                                      id="listGrantMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedListMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="listPermissionsMember" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="listPermissions" id="listPermissionsMember" value="member" checked={isCheckedListMember ? true : false} onChange={handleCheckboxChange} />
                                     로그인 사용자
                                   </label>
                                 </div>
 
                                 {posts?.grant &&
                                   posts?.grant?.map((item, index) => {
-                                    const isChecked = listGrant?.includes(
-                                      String(item.id)
-                                    )
+                                    const isChecked = listPermissions?.includes(String(item.id))
                                     // console.log(isChecked)
                                     return (
                                       <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`listGrant${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="listGrant"
-                                            id={`listGrant${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
+                                        <label htmlFor={`listPermissions${item.groupName}`} className="text-sm flex gap-2 items-center">
+                                          <input type="checkbox" name="listPermissions" id={`listPermissions${item.groupName}`} value={item.id} checked={isChecked ? true : false} onChange={handleCheckboxChange} />
                                           {item.groupTitle}
                                         </label>
                                       </div>
@@ -497,20 +335,8 @@ const DashboardPostCreate = (props: PostProps) => {
                                   })}
 
                                 <div>
-                                  <label
-                                    htmlFor="listGrantAdmin"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="listGrant"
-                                      id="listGrantAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedListAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="listPermissionsAdmin" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="listPermissions" id="listPermissionsAdmin" value="admin" checked={isCheckedListAdmin ? true : false} onChange={handleCheckboxChange} />
                                     관리자
                                   </label>
                                 </div>
@@ -524,61 +350,27 @@ const DashboardPostCreate = (props: PostProps) => {
                             <div className="flex-1">
                               <div className="flex gap-2 flex-wrap">
                                 <div>
-                                  <label
-                                    htmlFor="readGrant"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="readGrant"
-                                      id="readGrant"
-                                      value="guest"
-                                      checked={isCheckedRead ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="readPermissions" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="readPermissions" id="readPermissions" value="guest" checked={isCheckedRead ? true : false} onChange={handleCheckboxChange} />
                                     비회원
                                   </label>
                                 </div>
 
                                 <div>
-                                  <label
-                                    htmlFor="readGrantMember"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="readGrant"
-                                      id="readGrantMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedReadMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="readPermissionsMember" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="readPermissions" id="readPermissionsMember" value="member" checked={isCheckedReadMember ? true : false} onChange={handleCheckboxChange} />
                                     로그인사용자
                                   </label>
                                 </div>
 
                                 {posts?.grant &&
                                   posts?.grant?.map((item, index) => {
-                                    const isChecked = readGrant?.includes(
-                                      String(item.groupName)
-                                    )
+                                    const isChecked = readPermissions?.includes(String(item.groupName))
                                     // console.log(isChecked)
                                     return (
                                       <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`readGrant${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="readGrant"
-                                            id={`readGrant${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
+                                        <label htmlFor={`readPermissions${item.groupName}`} className="text-sm flex gap-2 items-center">
+                                          <input type="checkbox" name="readPermissions" id={`readPermissions${item.groupName}`} value={item.id} checked={isChecked ? true : false} onChange={handleCheckboxChange} />
                                           {item.groupTitle}
                                         </label>
                                       </div>
@@ -586,20 +378,8 @@ const DashboardPostCreate = (props: PostProps) => {
                                   })}
 
                                 <div>
-                                  <label
-                                    htmlFor="readGrantAdmin"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="readGrant"
-                                      id="readGrantAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedReadAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="readPermissionsAdmin" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="readPermissions" id="readPermissionsAdmin" value="admin" checked={isCheckedReadAdmin ? true : false} onChange={handleCheckboxChange} />
                                     관리자
                                   </label>
                                 </div>
@@ -609,86 +389,38 @@ const DashboardPostCreate = (props: PostProps) => {
                         </div>
                         <div className="mb-5">
                           <div className="flex gap-2 items-center">
-                            <div className="w-24 text-sm text-black">
-                              글쓰기
-                            </div>
+                            <div className="w-24 text-sm text-black">글쓰기</div>
                             <div className="flex-1">
                               <div className="flex gap-2 flex-wrap">
                                 <div>
-                                  <label
-                                    htmlFor="writeGrantGuest"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="writeGrant"
-                                      id="writeGrantGuest"
-                                      value="guest"
-                                      checked={isCheckedWrite ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="writePermissionsGuest" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="writePermissions" id="writePermissionsGuest" value="guest" checked={isCheckedWrite ? true : false} onChange={handleCheckboxChange} />
                                     비회원
                                   </label>
                                 </div>
                                 <div>
-                                  <label
-                                    htmlFor="writeGrantMember"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="writeGrant"
-                                      id="writeGrantMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedWriteMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="writePermissionsMember" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="writePermissions" id="writePermissionsMember" value="member" checked={isCheckedWriteMember ? true : false} onChange={handleCheckboxChange} />
                                     로그인사용자
                                   </label>
                                 </div>
 
                                 {posts?.grant &&
                                   posts?.grant?.map((item, index) => {
-                                    const isChecked = writeGrant?.includes(
-                                      String(item.id)
-                                    )
+                                    const isChecked = writePermissions?.includes(String(item.id))
                                     // console.log(isChecked)
                                     return (
                                       <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`writeGrant${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="writeGrant"
-                                            id={`writeGrant${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
+                                        <label htmlFor={`writePermissions${item.groupName}`} className="text-sm flex gap-2 items-center">
+                                          <input type="checkbox" name="writePermissions" id={`writePermissions${item.groupName}`} value={item.id} checked={isChecked ? true : false} onChange={handleCheckboxChange} />
                                           {item.groupTitle}
                                         </label>
                                       </div>
                                     )
                                   })}
                                 <div>
-                                  <label
-                                    htmlFor="writeGrantAdmin"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="writeGrant"
-                                      id="writeGrantAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedWriteAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="writePermissionsAdmin" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="writePermissions" id="writePermissionsAdmin" value="admin" checked={isCheckedWriteAdmin ? true : false} onChange={handleCheckboxChange} />
                                     관리자
                                   </label>
                                 </div>
@@ -702,57 +434,26 @@ const DashboardPostCreate = (props: PostProps) => {
                             <div className="flex-1">
                               <div className="flex gap-2 flex-wrap">
                                 <div>
-                                  <label
-                                    htmlFor="commentGrantGuest"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="commentGrant"
-                                      id="commentGrantGuest"
-                                      value="guest"
-                                      checked={isCheckedComment ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
+                                  <label htmlFor="commentPermissionsGuest" className="text-sm flex gap-2 items-center">
+                                    <input type="checkbox" name="commentPermissions" id="commentPermissionsGuest" value="guest" checked={isCheckedComment ? true : false} onChange={handleCheckboxChange} />
                                     비회원
                                   </label>
                                 </div>
                                 <div>
                                   <label className="text-sm flex gap-2 items-center">
-                                    <input
-                                      type="checkbox"
-                                      name="commentGrant"
-                                      id="commentGrantMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedCommentMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                    <input type="checkbox" name="commentPermissions" id="commentPermissionsMember" value="member" checked={isCheckedCommentMember ? true : false} onChange={handleCheckboxChange} />
                                     로그인사용자
                                   </label>
                                 </div>
 
                                 {posts?.grant &&
                                   posts?.grant?.map((item, index) => {
-                                    const isChecked = commentGrant.includes(
-                                      String(item.id)
-                                    )
+                                    const isChecked = commentPermissions.includes(String(item.id))
                                     // console.log(isChecked)
                                     return (
                                       <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`commentGrant${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="commentGrant"
-                                            id={`commentGrant${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
+                                        <label htmlFor={`commentPermissions${item.groupName}`} className="text-sm flex gap-2 items-center">
+                                          <input type="checkbox" name="commentPermissions" id={`commentPermissions${item.groupName}`} value={item.id} checked={isChecked ? true : false} onChange={handleCheckboxChange} />
                                           {item.groupTitle}
                                         </label>
                                       </div>
@@ -761,16 +462,7 @@ const DashboardPostCreate = (props: PostProps) => {
 
                                 <div>
                                   <label className="text-sm flex gap-2 items-center">
-                                    <input
-                                      type="checkbox"
-                                      name="commentGrant"
-                                      id="commentGrantAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedCommentAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
+                                    <input type="checkbox" name="commentPermissions" id="commentPermissionsAdmin" value="admin" checked={isCheckedCommentAdmin ? true : false} onChange={handleCheckboxChange} />
                                     관리자
                                   </label>
                                 </div>
@@ -785,15 +477,10 @@ const DashboardPostCreate = (props: PostProps) => {
               </div>
             </div>
             <div className="flex gap-4 justify-center pt-5 pb-10 border-t border-slate-200">
-              <Link
-                href="/dashboard/posts/list"
-                className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md"
-              >
+              <Link href="/dashboard/posts/list" className="px-5 py-2 text-sm text-white bg-dark-500 rounded-md">
                 뒤로가기
               </Link>
-              <button className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md">
-                저장하기
-              </button>
+              <button className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md">저장하기</button>
             </div>
           </div>
         </form>

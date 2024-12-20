@@ -37,7 +37,7 @@
         }
         ]
     },
-    "devlog": {
+    "update": {
       "name": "update",
       "title": "Updates",
       "route": "/posts/update",

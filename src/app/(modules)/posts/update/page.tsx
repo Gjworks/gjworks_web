@@ -1,22 +1,24 @@
-import Link from 'next/link'
-import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import Link from "next/link";
+import { HomeIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-import PostsCategories from '@/modules/posts/templates/default/category'
-import PageNavigation from '@plextype/components/nav/PageNavigation'
+import PostsCategories from "@/modules/posts/templates/default/category";
+import PageNavigation from "@plextype/components/nav/PageNavigation";
 
-type Params = Promise<{ slug: string }>
-type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+type Params = Promise<{ slug: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const Page = async (props: { params: Params; searchParams: SearchParams }) => {
-  const params = await props.params
-  const searchParams = await props.searchParams
-  const slug = params.slug
-  const query = searchParams.query
+  const params = await props.params;
+  const searchParams = await props.searchParams;
+  const slug = params.slug;
+  const query = searchParams.query;
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-3 flex items-center gap-2 lg:gap-4 justify-center lg:justify-start flex-wrap pt-20">
         <div className="relative flex justify-center w-full pt-10">
-          <div className="relative text-3xl font-bold text-gray-950 dark:text-white">개발로그</div>
+          <div className="relative text-3xl font-bold text-gray-950 dark:text-white">
+            개발로그
+          </div>
         </div>
       </div>
 
@@ -34,15 +36,28 @@ const Page = async (props: { params: Params; searchParams: SearchParams }) => {
               </div>
               <div className="px-1">
                 <div className="mb-6 w-full">
-                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-600 group-hover:text-black dark:group-hover:text-white">Alien: River of Pain Revisions 2.0</div>
-                  <div className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-600 dark:group-hover:text-white">The birth of Rebecca Jorden, Known to her famliy as Newt, is a cause for celebration. But as the colony grows and expands, so, too, do the Political struggles between a small be-tachment of Colonial Marines.</div>
+                  <div className="dark:text-dark-100 mb-3 line-clamp-2 text-2xl font-light text-gray-600 group-hover:text-black dark:group-hover:text-white">
+                    Alien: River of Pain Revisions 2.0
+                  </div>
+                  <div className="line-clamp-3 text-sm text-gray-400 group-hover:text-gray-600 dark:group-hover:text-white">
+                    The birth of Rebecca Jorden, Known to her famliy as Newt, is
+                    a cause for celebration. But as the colony grows and
+                    expands, so, too, do the Political struggles between a small
+                    be-tachment of Colonial Marines.
+                  </div>
                 </div>
 
                 <div className="flex items-center">
                   <div className="flex cursor-pointer items-center gap-2 py-1">
-                    <div className="text-xs text-gray-950 dark:text-dark-200">Web Design</div>
-                    <div className="text-xs text-gray-300 dark:text-dark-600">|</div>
-                    <div className="text-xs text-gray-400 dark:text-dark-500">1달전</div>
+                    <div className="text-xs text-gray-950 dark:text-dark-200">
+                      Web Design
+                    </div>
+                    <div className="text-xs text-gray-300 dark:text-dark-600">
+                      |
+                    </div>
+                    <div className="text-xs text-gray-400 dark:text-dark-500">
+                      1달전
+                    </div>
                   </div>
                 </div>
               </div>
@@ -55,10 +70,19 @@ const Page = async (props: { params: Params; searchParams: SearchParams }) => {
         <div className="pb-20">
           <div className="flex justify-between gap-4 flex-wrap">
             <div className="w-full flex justify-center">
-              <PageNavigation pathname="/posts/works" totalCount={10} page={1} listCount={10} totalPages={10} />
+              <PageNavigation
+                pathname="/posts/works"
+                totalCount={10}
+                page={1}
+                listCount={10}
+                totalPages={10}
+              />
             </div>
             <div className="flex justify-end flex-1">
-              <Link href="/posts/devlog/create" className="border border-gray-200 bg-white text-sm py-2 px-8 rounded-lg shadow-sm dark:border-dark-800 dark:bg-dark-900 dark:text-dark-200 hover:bg-primary-400">
+              <Link
+                href="/posts/update/create"
+                className="border border-gray-200 bg-white text-sm py-2 px-8 rounded-lg shadow-sm dark:border-dark-800 dark:bg-dark-900 dark:text-dark-200 hover:border-gray-950"
+              >
                 글쓰기
               </Link>
             </div>
@@ -66,7 +90,7 @@ const Page = async (props: { params: Params; searchParams: SearchParams }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
