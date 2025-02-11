@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 import { cookies, headers } from "next/headers";
 import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from "jose";
-import { validateUserPermissions } from "@/modules/posts/scripts/postsModel";
-import PostPermissions from "@/modules/posts/scripts/PostPermissions";
+
+import { validateUserPermissions } from "@/modules/posts/scripts/postPermissions";
+import { createPost } from "@/modules/posts/scripts/postsController";
 
 const prisma = new PrismaClient();
 type Params = Promise<{ mid: string }>;
@@ -66,12 +67,10 @@ export async function GET(request: Request, segmentData: { params: Params }) {
   }
 
   // const permissionInfo = await validateUserPermissions(mid, 'list', userInfo)
-  const permissions = new PostPermissions();
-  const permissionsInfo = await permissions.validateUserPermissions(
-    mid,
-    "list",
-    userInfo,
-  );
+
+  const permissionsInfo = await validateUserPermissions(mid, "list", userInfo);
+
+  console.log(permissionsInfo);
 
   if (!permissionsInfo.success) {
     response = permissionsInfo;

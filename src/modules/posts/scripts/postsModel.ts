@@ -1,39 +1,39 @@
-'use server';
-
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+"use server";
 
 export const getCategories = async () => {
   return [
     {
       id: 1,
-      name: "카테고리1"
+      name: "카테고리1",
     },
     {
       id: 2,
-      name: "카테고리2"
+      name: "카테고리2",
     },
     {
       id: 3,
-      name: "카테고리3"
+      name: "카테고리3",
     },
     {
       id: 4,
-      name: "카테고리4"
+      name: "카테고리4",
     },
     {
       id: 5,
-      name: "카테고리5"
-    }
-  ]
-}
+      name: "카테고리5",
+    },
+  ];
+};
 
-export const validateUserPermissions = async (mid:string, type:string, userInfo) => {
+export const validateUserPermissions = async (
+  mid: string,
+  type: string,
+  userInfo,
+) => {
   // if (!mid) {
   //   return { error: 'Missing Module ID' ,  status: 400 };
   // }
   // const postInfo = await prisma.module.findUnique({where: { mid: mid }});
-
   // if (!postInfo) {
   //   return {
   //     success: false,
@@ -42,7 +42,6 @@ export const validateUserPermissions = async (mid:string, type:string, userInfo)
   //   }
   // }
   // const grantInfo = (postInfo?.config as { grant: any })?.grant;
-
   // if (grantInfo.listGrant && grantInfo.listGrant.length > 0) {
   //   if(grantInfo.listGrant.includes('member')) {
   //     if (!userInfo || userInfo === 'undefined') {
@@ -63,11 +62,9 @@ export const validateUserPermissions = async (mid:string, type:string, userInfo)
   //   //비회원일 경우
   //   } else if(grantInfo.listGrant.includes('guest')) {
   //   }else{
-      
   //     if(userInfo && userInfo !== 'undefined') {
   //       const listGrantIds = grantInfo.listGrant.map((id) => parseInt(id, 10));
   //       const hasGrantPermission = userInfo.userGroups.some((group) => listGrantIds.includes(group.groupId));
-    
   //       if(!hasGrantPermission) {
   //         return {
   //           success: false,
@@ -81,8 +78,6 @@ export const validateUserPermissions = async (mid:string, type:string, userInfo)
   //         }
   //       }
   //     }
-      
   //   }
-
   // }
-}
+};
