@@ -14,17 +14,17 @@ export const createPost = async (args: CreatePost, mid: string) => {
   const moduleInfo = await getModulePostsInfo(mid);
   // const userInfo = await
   console.log(moduleInfo);
-  if (args.title && args.content) {
-    await prisma.document.create({
-      data: {
-        title: args.title,
-        moduleId: moduleInfo.id,
-        content: args.content,
-      },
-    });
-  } else {
-  }
-  return args;
+  // if (args.title && args.content) {
+  //   await prisma.document.create({
+  //     data: {
+  //       title: args.title,
+  //       moduleId: moduleInfo.id,
+  //       content: args.content,
+  //     },
+  //   });
+  // } else {
+  // }
+  // return args;
 };
 
 export const getModulePostsInfo = async (mid: string) => {
