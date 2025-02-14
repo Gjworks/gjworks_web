@@ -68,7 +68,7 @@ model Document {
   authorName     String?   @db.VarChar(45)
   authorPassword String?
   title          String?   @db.VarChar(255)
-  content        String?   @db.LongText
+  content        String?   @db.Text
   isNotice       Boolean?  @default(false)
   isSecrets      Boolean?  @default(false)
   readCount      Int?      @default(0)
