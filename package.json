@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "dotenv -e .env.development next dev -- --port 3000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0 -p 3000",
     "lint": "next lint",
     "migrate:reset": "dotenv -e .env.development -- npx prisma migrate reset",
     "migrate:init": "dotenv -e .env.development -- npx prisma migrate dev --name init",
