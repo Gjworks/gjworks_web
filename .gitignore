@@ -43,3 +43,6 @@ next-env.d.ts
 .env.local
 
 docker-compose.yml
+
+# JetBrains IDE
+.idea/
