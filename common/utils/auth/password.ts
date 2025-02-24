@@ -9,6 +9,7 @@ export async function hashedPassword(password: string): Promise<string> {
     cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
     console.log(cipherText);
   }
+  console.log(cipherText);
   return cipherText.toString();
 }
 
