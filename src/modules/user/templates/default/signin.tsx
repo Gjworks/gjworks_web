@@ -1,89 +1,90 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
-import { store } from '@plextype/redux/store'
-import { fetchSignIn } from '@plextype/redux/features/userSlice'
+import { store } from "@plextype/redux/store";
+import { fetchSignIn } from "@plextype/redux/features/userSlice";
 
-import { motion } from 'framer-motion'
-import Alert from '@plextype/components/message/Alert'
+import { motion } from "framer-motion";
+import Alert from "@plextype/components/message/Alert";
 
 interface SignData {
-  type: string
-  element: string
-  message: string
+  type: string;
+  element: string;
+  message: string;
   userInfo: {
-    id: number
-    uuid: string
-    accountId: string
-    nickName: string
-    password: string
-    email_address: string
-    createdAt: string
-    updateAt: string
-  }
+    id: number;
+    uuid: string;
+    accountId: string;
+    nickName: string;
+    password: string;
+    email_address: string;
+    createdAt: string;
+    updateAt: string;
+  };
 }
 
 const Signin = () => {
-  const router = useRouter()
-  const dispatch = store.dispatch
+  const router = useRouter();
+  const dispatch = store.dispatch;
 
-  const [user, setUser] = useState<SignData>()
+  const [user, setUser] = useState<SignData>();
   const [error, setError] = useState<{ type: string; message: string } | null>(
-    null
-  )
+    null,
+  );
 
-  const refInputUserId = useRef<HTMLInputElement>(null)
-  const refInputPassword = useRef<HTMLInputElement>(null)
+  const refInputUserId = useRef<HTMLInputElement>(null);
+  const refInputPassword = useRef<HTMLInputElement>(null);
 
-  const submitHandler = async e => {
-    e.preventDefault()
-    const formData = new FormData()
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
 
-    formData.append('accountId', e.target.accountId.value)
-    formData.append('password', e.target.password.value)
+    formData.append("accountId", e.target.accountId.value);
+    formData.append("password", e.target.password.value);
 
     dispatch(fetchSignIn({ formData })).then(
       (resultAction: ReturnType<typeof dispatch>) => {
         // 반환 값을 확인
-        console.log(resultAction.payload)
+        console.log(resultAction.payload);
         // 액션의 payload와 type에 대한 타입 정의
         type SignInResult = {
-          result: SignData
-          accessToken: string
-        }
+          result: SignData;
+          accessToken: string;
+        };
 
         if (resultAction.payload) {
           // 반환된 액션에서 accessToken에 접근
-          const accessToken = (resultAction.payload as SignInResult).accessToken
-          const dataInfo = (resultAction.payload as SignInResult).result
+          const accessToken = (resultAction.payload as SignInResult)
+            .accessToken;
+          const dataInfo = (resultAction.payload as SignInResult).result;
 
-          dataInfo && setUser(dataInfo)
+          dataInfo && setUser(dataInfo);
 
-          accessToken && router.replace('/')
+          accessToken && router.replace("/");
         }
-      }
-    )
-  }
+      },
+    );
+  };
 
   useEffect(() => {
-    user?.type === 'error' &&
+    user?.type === "error" &&
       setError({
         type: user.type,
         message: user.message,
-      })
+      });
 
     refInputUserId.current &&
-      user?.element === 'accountId' &&
-      refInputUserId.current.focus()
+      user?.element === "accountId" &&
+      refInputUserId.current.focus();
 
     refInputPassword.current &&
-      user?.element === 'password' &&
-      refInputPassword.current.focus()
-  }, [user])
+      user?.element === "password" &&
+      refInputPassword.current.focus();
+  }, [user]);
 
   const parentVariants = {
     hidden: { opacity: 0, x: 44 },
@@ -103,7 +104,7 @@ const Signin = () => {
         duration: 0.3,
       },
     },
-  }
+  };
 
   return (
     <>
@@ -338,7 +339,7 @@ const Signin = () => {
         </motion.div>
       </motion.div>
     </>
-  )
-}
+  );
+};
 
-export default Signin
+export default Signin;

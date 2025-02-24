@@ -1,39 +1,39 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import Warning from '@plextype/components/message/Warning'
+import React, { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Warning from "@plextype/components/message/Warning";
 
-import { motion } from 'framer-motion'
-import { createUser } from '@/modules/user/scripts/userController'
+import { motion } from "framer-motion";
+import { createUser } from "@/modules/user/scripts/userController";
 
 const Register = () => {
-  const [error, setError] = useState<any>(false)
-  const router = useRouter()
+  const [error, setError] = useState<any>(false);
+  const router = useRouter();
 
-  const submitHandler = async e => {
-    e.preventDefault()
+  const submitHandler = async (e) => {
+    e.preventDefault();
 
-    const formData = new FormData()
-    formData.append('accountId', e.target.accountId.value)
-    formData.append('password', e.target.password.value)
-    formData.append('nickName', e.target.nickName.value)
+    const formData = new FormData();
+    formData.append("accountId", e.target.accountId.value);
+    formData.append("password", e.target.password.value);
+    formData.append("nickName", e.target.nickName.value);
 
     await createUser(formData)
-      .then(response => {
-        console.log(response)
-        if (response?.type === 'error') {
-          console.log(response)
-          setError(response.message)
+      .then((response) => {
+        console.log(response);
+        if (response?.type === "error") {
+          console.log(response);
+          setError(response.message);
         } else {
-          router.replace('/auth/Signin')
+          router.replace("/auth/Signin");
         }
       })
-      .catch(error => {
-        console.error('Failed to register: ' + error.toString())
-      })
-  }
+      .catch((error) => {
+        console.error("Failed to register: " + error.toString());
+      });
+  };
 
   const variants = {
     hidden: { opacity: 0, x: 44 },
@@ -53,7 +53,7 @@ const Register = () => {
         duration: 0.3,
       },
     },
-  }
+  };
 
   return (
     <motion.div
@@ -170,7 +170,7 @@ const Register = () => {
         <div className="w-full">
           <div className="w-full">
             <Link href="/auth/Signin" className="group text-sm text-dark-500">
-              계정이 이미 있으시다면{' '}
+              계정이 이미 있으시다면{" "}
               <span className="group-hover:text-gray-500 text-gray-600 dark:group-hover:text-dark-400 dark:text-dark-200 underline">
                 Sign In
               </span>
@@ -179,7 +179,7 @@ const Register = () => {
         </div>
       </motion.div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

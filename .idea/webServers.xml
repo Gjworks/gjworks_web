@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cec08ca2-f41d-415f-8d17-45ddba08199b" name="irumi">
+        <fileTransfer rootFolder="/home/irumi/www/" accessType="SFTP" host="irumi.kr" port="22" sshConfigId="ac0ba613-9420-418a-a69e-9f13456524fe" sshConfig="irumi@irumi.kr:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="irumi.kr" id="ac0ba613-9420-418a-a69e-9f13456524fe" port="22" nameFormat="DESCRIPTIVE" username="irumi" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>
