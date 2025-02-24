@@ -90,7 +90,9 @@ export const createUser = async (formData: FormData) => {
       data: {},
     });
   }
-
+  console.log(accountId);
+  console.log(password);
+  console.log(nickName);
   try {
     userInfo = await prisma.user.create({
       data: {
