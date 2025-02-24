@@ -93,13 +93,12 @@ export const createUser = async (formData: FormData) => {
 
   const passwd = await hashedPassword(password);
   console.log(accountId);
-  console.log("passwd" + passwd);
-  console.log(nickName);
+
   try {
     userInfo = await prisma.user.create({
       data: {
         accountId: accountId,
-        password: await hashedPassword(password),
+        password: password,
         email_address: accountId,
         nickName: nickName,
       },
