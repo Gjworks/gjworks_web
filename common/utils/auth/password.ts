@@ -4,6 +4,7 @@ const secretKey = process.env.SECRET_KEY;
 export async function hashedPassword(password: string): Promise<string> {
   console.log(password);
   let cipherText;
+  console.log(secretKey);
   if (secretKey) {
     cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
     console.log(cipherText);
