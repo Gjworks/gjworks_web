@@ -6,8 +6,15 @@ export async function hashedPassword(password: string): Promise<string> {
   let cipherText;
   console.log(secretKey);
   if (secretKey) {
-    cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
-    console.log(cipherText);
+    // cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
+    try {
+      const cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
+      console.log("Encrypted Password:", cipherText);
+      return cipherText;
+    } catch (error) {
+      console.error("Encryption Error:", error);
+      throw new Error("Encryption failed");
+    }
   }
   console.log(cipherText);
   return cipherText.toString();
