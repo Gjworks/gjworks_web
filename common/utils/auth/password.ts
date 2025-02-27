@@ -5,20 +5,22 @@ if (!secretKey) {
   throw new Error("SECRET_KEY is not defined");
 }
 
-// AES 키 생성 (32바이트로 패딩)
+// AES 키 생성
 const key = CryptoJS.enc.Utf8.parse(secretKey.padEnd(32, " "));
 
 /**
- * 비밀번호 암호화
+ * 🔐 비밀번호 암호화
  */
 export async function hashedPassword(password: string): Promise<string> {
   try {
-    // AES 암호화 수행
-    const cipherText = CryptoJS.AES.encrypt(password, key, {
+    const encrypted = CryptoJS.AES.encrypt(password, key, {
       mode: CryptoJS.mode.ECB,
       padding: CryptoJS.pad.Pkcs7,
-    }).toString();
+    });
 
+    const cipherText = encrypted.toString(); // 🚀 Base64 문자열 변환
+
+    console.log("🔐 Encrypted Password:", cipherText);
     return cipherText;
   } catch (error) {
     console.error("Encryption Error:", error);
@@ -27,14 +29,23 @@ export async function hashedPassword(password: string): Promise<string> {
 }
 
 /**
- * 비밀번호 검증 (복호화 후 비교)
+ * 🔓 비밀번호 검증 (복호화 후 비교)
  */
 export async function verifyPassword(
-  plainPassword: string, // 사용자가 입력한 원본 비밀번호
-  hashedPassword: string, // 저장된 암호화된 비밀번호
+  plainPassword: string,
+  hashedPassword: string,
 ): Promise<boolean> {
   try {
     console.log("🔐 Received hashedPassword:", hashedPassword);
+
+    // Base64 검증
+    try {
+      const decoded = atob(hashedPassword);
+      console.log("📌 Base64 Decoded:", decoded);
+    } catch (e) {
+      console.error("🚨 Invalid Base64 Encoding:", e);
+      return false;
+    }
 
     // AES 복호화 수행
     const decryptedPassword = CryptoJS.AES.decrypt(hashedPassword, key, {
