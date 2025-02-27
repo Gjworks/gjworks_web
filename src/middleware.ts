@@ -58,7 +58,8 @@ export async function middleware(request: NextRequest, response: NextResponse) {
           );
 
           if (!apiResponse.ok) {
-            // API 호출 실패 시 리다이렉트 또는 에러 처리
+            console.error("❌ API Response Error:", apiResponse.status);
+            throw new Error(`HTTP Error: ${apiResponse.status}`);
           }
           const data = await apiResponse.json();
 
@@ -82,6 +83,11 @@ export async function middleware(request: NextRequest, response: NextResponse) {
               },
             },
           );
+          console.log("🌍 Fetching API URL:", apiResponse.toString());
+          if (!apiResponse.ok) {
+            console.error("❌ API Response Error:", apiResponse.status);
+            throw new Error(`HTTP Error: ${apiResponse.status}`);
+          }
         } else {
           action = "list";
           const apiResponse = await fetch(
@@ -95,7 +101,8 @@ export async function middleware(request: NextRequest, response: NextResponse) {
           );
           console.log("🌍 Fetching API URL:", apiResponse.toString());
           if (!apiResponse.ok) {
-            // API 호출 실패 시 리다이렉트 또는 에러 처리
+            console.error("❌ API Response Error:", apiResponse.status);
+            throw new Error(`HTTP Error: ${apiResponse.status}`);
           }
           const data = await apiResponse.json();
 
