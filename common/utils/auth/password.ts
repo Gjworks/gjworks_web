@@ -34,13 +34,16 @@ export async function verifyPassword(
   hashedPassword: string, // 저장된 암호화된 비밀번호
 ): Promise<boolean> {
   try {
+    console.log("🔐 Received hashedPassword:", hashedPassword);
+
     // AES 복호화 수행
     const decryptedPassword = CryptoJS.AES.decrypt(hashedPassword, key, {
       mode: CryptoJS.mode.ECB,
       padding: CryptoJS.pad.Pkcs7,
     }).toString(CryptoJS.enc.Utf8);
 
-    // 복호화된 비밀번호가 올바른지 확인
+    console.log("🔓 Decrypted Password:", decryptedPassword);
+
     if (!decryptedPassword) {
       console.error("Decryption Error: Empty result");
       return false;
