@@ -6,8 +6,6 @@ export async function hashedPassword(password: string): Promise<string> {
   if (secretKey) {
     // cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
     try {
-      console.log("secretKey = " + secretKey);
-      console.log("password = " + password);
       // const cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
 
       // secretKey를 UTF-8 인코딩으로 변환
@@ -19,7 +17,6 @@ export async function hashedPassword(password: string): Promise<string> {
         padding: CryptoJS.pad.Pkcs7,
       }).toString();
 
-      console.log("Encrypted Password:", cipherText);
       return cipherText;
     } catch (error) {
       console.error("Encryption Error:", error);
@@ -31,19 +28,29 @@ export async function hashedPassword(password: string): Promise<string> {
 }
 
 export async function verifyPassword(
-  cipherText: string,
-  hashedPassword: string,
+  plainPassword: string, // 원래 비밀번호 (사용자가 입력한 값)
+  hashedPassword: string, // 저장된 암호화된 비밀번호
 ): Promise<boolean> {
-  let isValid = false;
-  if (secretKey) {
-    const decryptedPassword = CryptoJS.AES.decrypt(
-      hashedPassword,
-      secretKey,
-    ).toString(CryptoJS.enc.Utf8);
-    isValid = decryptedPassword === cipherText;
+  if (!secretKey) {
+    throw new Error("SECRET_KEY is not defined");
   }
 
-  return isValid;
+  try {
+    // secretKey를 UTF-8로 변환
+    const key = CryptoJS.enc.Utf8.parse(secretKey);
+
+    // AES 복호화 수행
+    const decryptedPassword = CryptoJS.AES.decrypt(hashedPassword, key, {
+      mode: CryptoJS.mode.ECB,
+      padding: CryptoJS.pad.Pkcs7,
+    }).toString(CryptoJS.enc.Utf8);
+
+    // 복호화된 값과 사용자가 입력한 비밀번호 비교
+    return decryptedPassword === plainPassword;
+  } catch (error) {
+    console.error("Decryption Error:", error);
+    return false;
+  }
 }
 
 // function encrypt(plaintext, secret) {
