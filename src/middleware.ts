@@ -8,6 +8,8 @@ export async function middleware(request: NextRequest, response: NextResponse) {
     const hasAccessToken = cookies.has("accessToken");
     const accessToken = cookies.get("accessToken");
     const { pathname } = request.nextUrl;
+    const baseUrl =
+      process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3000";
 
     let decodeToken: { id: string; isAdmin: boolean } | null = null;
     if (accessToken?.value) {
@@ -48,7 +50,10 @@ export async function middleware(request: NextRequest, response: NextResponse) {
         if (pathname.includes("create")) {
           action = "create";
           const apiResponse = await fetch(
-            new URL(`/api/posts/${mid}/create?action=${action}`, request.url),
+            new URL(
+              `${baseUrl}/api/posts/${mid}/create?action=${action}`,
+              request.url,
+            ),
             {
               method: "GET",
               headers: {
@@ -75,7 +80,10 @@ export async function middleware(request: NextRequest, response: NextResponse) {
         } else if (pathname.includes("read")) {
           action = "read";
           const apiResponse = await fetch(
-            new URL(`/api/posts/${mid}/read?action=${action}`, request.url),
+            new URL(
+              `${baseUrl}/api/posts/${mid}/read?action=${action}`,
+              request.url,
+            ),
             {
               method: "GET",
               headers: {
@@ -91,7 +99,10 @@ export async function middleware(request: NextRequest, response: NextResponse) {
         } else {
           action = "list";
           const apiResponse = await fetch(
-            new URL(`/api/posts/${mid}/list?action=${action}`, request.url),
+            new URL(
+              `${baseUrl}/api/posts/${mid}/list?action=${action}`,
+              request.url,
+            ),
             {
               method: "GET",
               headers: {
