@@ -8,7 +8,17 @@ export async function hashedPassword(password: string): Promise<string> {
     try {
       console.log("secretKey = " + secretKey);
       console.log("password = " + password);
-      const cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
+      // const cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
+
+      // secretKey를 UTF-8 인코딩으로 변환
+      const key = CryptoJS.enc.Utf8.parse(secretKey);
+
+      // AES 암호화 실행
+      const cipherText = CryptoJS.AES.encrypt(password, key, {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7,
+      }).toString();
+
       console.log("Encrypted Password:", cipherText);
       return cipherText;
     } catch (error) {
