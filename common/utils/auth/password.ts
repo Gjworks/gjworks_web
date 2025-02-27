@@ -2,12 +2,12 @@ import CryptoJS from "crypto-js";
 
 const secretKey = process.env.SECRET_KEY;
 export async function hashedPassword(password: string): Promise<string> {
-  console.log(password);
   let cipherText;
-  console.log(secretKey);
   if (secretKey) {
     // cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
     try {
+      console.log("secretKey = " + secretKey);
+      console.log("password = " + password);
       const cipherText = CryptoJS.AES.encrypt(password, secretKey).toString();
       console.log("Encrypted Password:", cipherText);
       return cipherText;
