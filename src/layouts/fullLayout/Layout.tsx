@@ -21,7 +21,7 @@ const FullLayout = ({ children }) => {
             <div className="relative max-w-screen-2xl mx-auto">
                 <div
                     className="absolute left-0 top-0 bottom-0 w-8 max-sm:hidden text-gray-950/5 border-x border-x-current bg-[size:10px_10px] bg-fixed bg-[image:repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,_transparent_0,_transparent_50%)]"></div>
-                <main className="relative min-h-[calc(100vh-200px)] sm:px-8">
+                <main className="relative min-h-[calc(100vh-226px)] sm:px-8">
                     {children}
                 </main>
                 <div

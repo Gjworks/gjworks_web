@@ -37,10 +37,10 @@ const Page = () => {
         className="pt-20"
       >
         <div className="relative mx-auto max-w-screen-xl px-3">
-          <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10">
+          <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10 before:absolute before:w-[200vw] before:border-t before:border-gray-100 before:left-[-100vw]">
             <div className="col-span-12">
               <div className="flex justify-center">
-                <div className="w-full lg:w-3/5">
+                <div className="w-full lg:w-3/5 pt-4">
                   <motion.div
                     variants={variants}
                     className="mb-4 text-xl font-semibold text-black lg:text-4xl dark:text-white text-center !leading-tight tracking-tight"
@@ -57,7 +57,7 @@ const Page = () => {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="flex justify-center py-8"
+                    className="flex justify-center pt-8"
                   >
                     <Link
                       href="#"
@@ -72,8 +72,8 @@ const Page = () => {
           </div>
         </div>
       </motion.div>
-      <div className="pb-20">
-        <div className="mx-auto max-w-screen-xl">
+      <div className="before:absolute before:w-[200vw] before:border-t before:border-gray-100 before:left-[-100vw]">
+        <div className="mx-auto max-w-screen-xl py-8">
           <div className="rounded-2xl bg-gray-100 p-5"></div>
         </div>
       </div>

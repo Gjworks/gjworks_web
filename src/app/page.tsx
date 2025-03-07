@@ -23,10 +23,10 @@ export default function Page() {
 
   const parentVariants = {
     onscreen: {
-      transition: { staggerChildren: 0.2 },
+      transition: { staggerChildren: 0.05 },
     },
     offscreen: {
-      transition: { staggerChildren: 0.2, staggerDirection: -1 },
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
     },
   }
   const variants = {
@@ -34,7 +34,7 @@ export default function Page() {
       y: 0,
       opacity: [0, 1],
       transition: {
-        duration: 0.4,
+        duration: 0.5,
       },
     },
     offscreen: {
@@ -46,7 +46,7 @@ export default function Page() {
     onscreen: {
       opacity: [0, 1],
       transition: {
-        duration: 0.4,
+        duration: 0.5,
       },
     },
     offscreen: {
@@ -65,7 +65,7 @@ export default function Page() {
   return (
     <MainLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
-      <div className="relative">
+      <div className="relative pt-8 before:absolute before:w-[200vw] before:border-t before:border-gray-100 before:left-[-100vw]">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -88,15 +88,39 @@ export default function Page() {
                             digital experience ✨
                           </div>
                         </motion.div>
-
                         <motion.div variants={variants}
-                                    className="mb-10 pl-0 text-4xl font-normal md:font-medium tracking-tight text-black lg:text-5xl dark:text-white">
+                                    className="mb-6 pl-0 text-4xl font-normal md:font-medium tracking-tight text-black lg:text-5xl dark:text-white">
                           Creative platform service
+                        </motion.div>
+                        <motion.div variants={variants} className="px-1 lg:mb-2 text-base">
+                          지제이웍스는 웹과 앱을 개발하기 위한 소규모 개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
                         </motion.div>
                       </div>
                     </div>
-                    <div className="w-full px-4 border-b border-gray-100 py-3 mb-8">
-                      <div className="text-sm">Launch Your Service.</div>
+                    <div className="w-full border-b border-gray-100 my-8 border-t">
+                      <div className="flex gap-[1px] bg-gray-200/75 text-sm">
+                        <div className="flex items-center gap-2 flex-1 py-3 px-4 bg-gray-50 cursor-pointer hover:bg-gray-100">
+                          <motion.div variants={variants}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.25}
+                                 stroke="currentColor" className="size-6">
+                              <path strokeLinecap="round" strokeLinejoin="round"
+                                    d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/>
+                            </svg>
+                          </motion.div>
+                          <motion.div variants={variants}>포트폴리오</motion.div>
+                        </div>
+                        <div className="flex items-center gap-2 flex-1 py-3 px-4 bg-gray-50 cursor-pointer hover:bg-gray-100">
+                          <motion.div variants={variants}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.25}
+                                 stroke="currentColor" className="size-6">
+                              <path strokeLinecap="round" strokeLinejoin="round"
+                                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"/>
+                            </svg>
+
+                          </motion.div>
+                          <motion.div variants={variants}>Documentation</motion.div>
+                        </div>
+                      </div>
                     </div>
                     <div className="w-full px-4 border-t border-b border-gray-100 py-3">
                       <motion.div variants={variants}
