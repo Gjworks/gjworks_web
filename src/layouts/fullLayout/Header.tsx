@@ -103,8 +103,8 @@ const Header = () => {
 
   return (
     <>
-      <motion.header transition={{ transition: { duration: 0.3 } }} className={'sticky top-0 z-99 w-full bg-white dark:bg-dark-950 ' + (showNavigation === true ? '  ' : ' ')}>
-        <div className="relative max-w-screen-xl mx-auto">
+      <motion.header transition={{ transition: { duration: 0.3 } }} className={'sticky top-0 z-99 w-full bg-white border-b border-gray-100 dark:bg-dark-950 ' + (showNavigation === true ? '  ' : ' ')}>
+        <div className="relative mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-1">
             <div className="relative col-span-1 flex justify-start">
               <button
@@ -162,7 +162,7 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <motion.div onHoverStart={() => setSubMenuState(true)} className="col-span-3 dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full py-1 md:flex">
+            <motion.div className="col-span-3 dark:before:bg-dark-700 group relative hidden items-center justify-center rounded-full py-1 md:flex">
               <div
                 className=" relative flex"
                 // onMouseEnter={() => setShowNavigation(true)} // 마우스엔터(호버)시 키값이 저장된다
@@ -173,7 +173,7 @@ const Header = () => {
                     return (
                       <div key={data[1].name} className="relative flex items-center">
                         <>
-                          <Link href={data[1].route} className={'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 md:text-[0.782rem] tracking-wider ' + (currentPage?.route === data[1].route ? 'text-gray-950 dark:text-white' : 'dark:text-dark-500 text-gray-400 hover:text-gray-900 dark:hover:text-white')}>
+                          <Link href={data[1].route} className={'relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 md:text-[0.782rem] tracking-wider ' + (currentPage?.route === data[1].route ? 'text-gray-400 dark:text-white' : 'dark:text-dark-500 text-gray-950 hover:text-gray-900 dark:hover:text-white')}>
                             <div>{data[1].title}</div>
                             {data[1].subMenu.length > 0 ? (
                               <>
@@ -224,65 +224,7 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
-      <motion.div initial={{ height: '40px' }} animate={{ height: subMenuState ? 'auto' : '0px' }} onHoverEnd={() => setSubMenuState(false)} transition={{ duration: 0.8, type: 'spring', bounce: 0.35 }} className="fixed left-0 right-0 bg-white dark:bg-dark-950/90 top-2 backdrop-blur-lg overflow-hidden z-98 shadow-md shadow-gray-950/10">
-        <motion.div animate={{ opacity: subMenuState ? 1 : 0 }} transition={{ duration: 0.5 }} className="grid grid-cols-2 md:grid-cols-7 gap-4 max-w-screen-xl mx-auto px-3 pt-16 pb-12">
-          <div className="col-span-2 pt-4 px-5">
-            <div className="text-xs text-gray-500 mb-3">Notice</div>
-            <div className="mb-1">
-              <Link href="/store" className="text-base text-gray-900 dark:text-dark-300 hover:text-gray-600">
-                2024년 하반기 개발 계획
-              </Link>
-            </div>
-            <div className="text-xs text-gray-400 line-clamp-2">2024년 하반기 개발관련하여 계획을 공지합니다. 지금 진행중인 사이트를 연말까지 하여 완성을 하고 2025년엔 라라벨과 더불어 Flutter를 활용하여 앱을 개발할 예정입니다.</div>
-          </div>
-          <div className="col-span-3 hidden md:flex  justify-center gap-2">
-            {nav.header &&
-              Object.entries(nav.header).map((data, index) => {
-                return (
-                  <div key={data[1].name} className="w-[100px] relative">
-                    <>
-                      {/* <div className="invisible ">{data[1].title}</div> */}
-                      {/* Check if subMenu exists and render it */}
-                      {data[1].subMenu && data[1].subMenu.length > 0 && (
-                        <div className="">
-                          <ul className="py-2">
-                            {data[1].subMenu.map((subItem, subIndex) => (
-                              <li key={subItem.name}>
-                                <Link href={subItem.route} className="flex justify-center py-2 text-xs md:text-[0.782rem] text-gray-500 hover:text-gray-950">
-                                  {subItem.title}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                    </>
-                  </div>
-                )
-              })}
-          </div>
-          <div className="col-span-2 pt-4 px-5">
-            <div className="text-xs text-gray-500 mb-3">Amount used</div>
-            <div>
-              <div className="text-black text-sm dark:text-dark-200">전일 대비 사용량 (84회)</div>
-              <div className="flex items-center gap-8 pt-2 pb-4">
-                <div className="relative flex-1">
-                  <div className="rounded-full h-2 w-full bg-primary-200/40"></div>
-                  <motion.div
-                    initial={{ width: '0%' }}
-                    animate={{ width: subMenuState ? '80%' : '0%' }}
-                    transition={{
-                      duration: 0.5,
-                    }}
-                    className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 bg-primary-500 transition-all w-[80%]"
-                  ></motion.div>
-                </div>
-                <div className="text-black text-xs dark:text-white">80%</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
+
       <motion.div
         initial={{ opacity: 0, visibility: 'hidden' }}
         animate={{

@@ -1,10 +1,5 @@
 'use client'
 
-/**
- * @file Footer.js
- * @author 지제이웍스 (gjworks@kakao.com)
- * @brief 레이아웃 Footer 파일
- **/
 
 import React from 'react'
 import Link from 'next/link'

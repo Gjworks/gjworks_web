@@ -804,3 +804,6 @@ pre[class*="language-"]
     background-color: transparent;
   }
 }
+.bg-line {
+  background-image:repeating-linear-gradient(315deg,currentColor 0 1px,#0000 0 50%)
+}
