@@ -1,17 +1,16 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
-import DefaultNav from '@plextype/components/nav/DefaultNav'
+import DefaultNav from "@plextype/components/nav/DefaultNav";
 
-import 'styles/globals.css'
-import 'styles/tailwindcss.css'
+import "styles/globals.css";
 
-import nav from '@plextype/res/config/settings.json'
+import nav from "@plextype/res/config/settings.json";
 import {
   HomeIcon,
   ChatBubbleBottomCenterTextIcon,
@@ -19,43 +18,43 @@ import {
   ArchiveBoxIcon,
   EllipsisHorizontalIcon,
   MagnifyingGlassIcon,
-} from '@heroicons/react/24/outline'
+} from "@heroicons/react/24/outline";
 
 export default function DashboardLayout({
   children, // will be a page or nested layout
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const pathname = usePathname()
-  const [dashbaordNav, setDashboardNav] = useState<object>([])
-  const [title, setTitle] = useState<string>('')
-  const [params, setParams] = useState<any[]>([])
+  const pathname = usePathname();
+  const [dashbaordNav, setDashboardNav] = useState<object>([]);
+  const [title, setTitle] = useState<string>("");
+  const [params, setParams] = useState<any[]>([]);
 
   useEffect(() => {
-    const htmlElement = document.documentElement
-    if (htmlElement.classList.contains('dark')) {
-      htmlElement.classList.remove('dark')
+    const htmlElement = document.documentElement;
+    if (htmlElement.classList.contains("dark")) {
+      htmlElement.classList.remove("dark");
     }
-  }, []) // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
+  }, []); // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
 
   useEffect(() => {
-    const params = pathname?.split('/')
-    setParams(params)
+    const params = pathname?.split("/");
+    setParams(params);
     Object.entries(nav.navigation).map((item, index) => {
       if (item[0] === params[2]) {
-        setDashboardNav(item[1].subMenu)
-        setTitle(item[1].title)
+        setDashboardNav(item[1].subMenu);
+        setTitle(item[1].title);
       }
       if (!params[2]) {
-        setDashboardNav([])
-        setTitle('')
+        setDashboardNav([]);
+        setTitle("");
       }
-    })
-  }, [pathname])
+    });
+  }, [pathname]);
 
   useEffect(() => {
-    console.log(params)
-  }, [params])
+    console.log(params);
+  }, [params]);
 
   return (
     <div className="selection:text-white selection:bg-orange-500 min-h-screen">
@@ -133,10 +132,10 @@ export default function DashboardLayout({
                         <Link
                           href={item[1].route}
                           className={
-                            'flex gap-4 text-sm py-2.5 rounded ' +
+                            "flex gap-4 text-sm py-2.5 rounded " +
                             (item[1].name === params[2]
-                              ? ' bg-cyan-500 text-white hover:text-white hover:bg-cyan-600 '
-                              : ' hover:text-gray-950 hover:bg-gray-200 dark:text-dark-400 dark:hover:text-white dark:hover:bg-dark-700 ')
+                              ? " bg-cyan-500 text-white hover:text-white hover:bg-cyan-600 "
+                              : " hover:text-gray-950 hover:bg-gray-200 dark:text-dark-400 dark:hover:text-white dark:hover:bg-dark-700 ")
                           }
                         >
                           <div></div>
@@ -144,7 +143,7 @@ export default function DashboardLayout({
                         </Link>
                       </>
                     </div>
-                  )
+                  );
                 })}
             </div>
           </div>
@@ -203,5 +202,5 @@ export default function DashboardLayout({
         </div>
       </div>
     </div>
-  )
+  );
 }
