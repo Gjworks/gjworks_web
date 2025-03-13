@@ -1,48 +1,54 @@
-import React, { memo, useEffect, useRef } from 'react'
-import EditorConstants from './EditorConstants'
-import EditorJS, { OutputData } from '@editorjs/editorjs'
+"use client";
+
+import React, { memo, useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
+import EditorJS, { OutputData } from "@editorjs/editorjs";
+import EditorConstants from "./EditorConstants";
 
 type Props = {
-  data?: OutputData
-  onChange(val: OutputData): void
-  holder: string
-}
+  data?: OutputData;
+  onChange: (val: OutputData) => void;
+  holder: string;
+};
 
 const Editor = ({ data, onChange, holder }: Props) => {
-  const ref = useRef<EditorJS>()
+  const editorRef = useRef<EditorJS | null>(null);
+  const isMounted = useRef(false);
 
-  //initialize editorjs
   useEffect(() => {
-    //initialize editor if we don't have a reference
-    if (!ref.current) {
-      const editor = new EditorJS({
-        holder: holder,
-        tools: EditorConstants,
-        // autofocus: true,
-        minHeight: 100,
-        // config: {
-        //   minHeight: 100,
-        // },
-        placeholder: '내용을 입력해주세요.',
-        // theme: 'dark',
-        data,
-        async onChange(api, event) {
-          const data = await api.saver.save()
-          onChange(data)
-        },
-      })
-      ref.current = editor
+    if (!isMounted.current) {
+      isMounted.current = true;
+
+      const initializeEditor = async () => {
+        if (!editorRef.current) {
+          const editor = new EditorJS({
+            holder,
+            tools: EditorConstants,
+            minHeight: 100,
+            placeholder: "내용을 입력해주세요.",
+            data,
+            async onChange(api) {
+              const savedData = await api.saver.save();
+              onChange(savedData);
+            },
+          });
+
+          editorRef.current = editor;
+        }
+      };
+
+      initializeEditor();
     }
 
-    //add a return function handle cleanup
     return () => {
-      if (ref.current && ref.current.destroy) {
-        ref.current.destroy()
+      if (editorRef.current) {
+        editorRef.current.destroy();
+        editorRef.current = null;
       }
-    }
-  }, [])
+    };
+  }, [data, holder, onChange]);
 
-  return <div id={holder} className="prose max-w-full" />
-}
+  return <div id={holder} className="prose max-w-full" />;
+};
 
-export default memo(Editor)
+export default memo(Editor);
