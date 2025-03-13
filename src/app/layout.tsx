@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 import '/styles/globals.css'
-import '/styles/tailwindcss.css'
+import '/styles/style.css'
 import ReduxProviders from '@plextype/redux/Providers'
 import Log from '@plextype/utils/debug/Log'
 

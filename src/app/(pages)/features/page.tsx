@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { HomeIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
-import { motion } from 'framer-motion'
+import Link from "next/link";
+import Image from "next/image";
+import { HomeIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 
 const Page = () => {
   const parentVariants = {
@@ -13,7 +13,7 @@ const Page = () => {
     offscreen: {
       transition: { staggerChildren: 0.2, staggerDirection: -1 },
     },
-  }
+  };
   const variants = {
     onscreen: {
       y: 0,
@@ -26,7 +26,7 @@ const Page = () => {
       y: 25,
       opacity: 0,
     },
-  }
+  };
   return (
     <>
       <motion.div
@@ -37,7 +37,7 @@ const Page = () => {
         className="pt-20"
       >
         <div className="relative mx-auto max-w-screen-xl px-3">
-          <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10 before:absolute before:w-[200vw] before:border-t before:border-gray-100 before:left-[-100vw]">
+          <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10 block-line-t">
             <div className="col-span-12">
               <div className="flex justify-center">
                 <div className="w-full lg:w-3/5 pt-4">
@@ -72,9 +72,11 @@ const Page = () => {
           </div>
         </div>
       </motion.div>
-      <div className="before:absolute before:w-[200vw] before:border-t before:border-gray-100 before:left-[-100vw]">
-        <div className="mx-auto max-w-screen-xl py-8">
-          <div className="rounded-2xl bg-gray-100 p-5"></div>
+      <div className="relative">
+        <div className="block-line-t">
+          <div className="mx-auto max-w-screen-xl py-8">
+            <div className="rounded-2xl bg-gray-100 p-5"></div>
+          </div>
         </div>
       </div>
 
@@ -88,7 +90,7 @@ const Page = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;
