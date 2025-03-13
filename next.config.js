@@ -11,6 +11,7 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  output: "standalone", // PM2 실행 시 필요
+  // output: "standalone", // PM2 실행 시 필요
 };
+
 module.exports = nextConfig;
