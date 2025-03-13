@@ -1,12 +1,19 @@
 /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   reactStrictMode: true,
+//   swcMinify: true,
+//   experimental: {
+//     appDir: 'src/app',
+//     serverActions: true,
+//     serverComponents: true,
+//   },
+// }
+
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  output: "standalone", // PM2 실행 시 필요
   experimental: {
-    appDir: 'src/app',
-    serverActions: true,
-    serverComponents: true,
+    serverActions: {}, // 필요한 경우 유지, 아니면 제거 가능
   },
-}
-
-module.exports = nextConfig
+};
+module.exports = nextConfig;
