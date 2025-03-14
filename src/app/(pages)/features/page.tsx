@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { HomeIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import React from "react";
 
 const Page = () => {
   const parentVariants = {
@@ -36,20 +37,26 @@ const Page = () => {
         variants={parentVariants}
         className="pt-20"
       >
-        <div className="relative mx-auto max-w-screen-xl px-3">
+        <div className="relative mx-auto px-3">
           <div className="grid grid-cols-12 gap-0 lg:gap-8 py-10 block-line-t">
             <div className="col-span-12">
-              <div className="flex justify-center">
-                <div className="w-full lg:w-3/5 pt-4">
+              <div className="">
+                <div className="w-full lg:w-3/5">
                   <motion.div
                     variants={variants}
-                    className="mb-4 text-xl font-semibold text-black lg:text-4xl dark:text-white text-center !leading-tight tracking-tight"
+                    className="text-primary-600 text-sm dark:text-white"
                   >
                     BEST UI TEMPLATES
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="dark:text-dark-500 text-sm lg:text-base text-gray-500 text-center"
+                    className="mb-4 text-xl font-semibold text-black lg:text-4xl dark:text-white !leading-tight tracking-tight"
+                  >
+                    BEST UI TEMPLATES
+                  </motion.div>
+                  <motion.div
+                    variants={variants}
+                    className="dark:text-dark-500 text-sm lg:text-base text-gray-500 "
                   >
                     컴포넌트는 React와 Next.js에서 사용할 수 있습니다. 모든
                     Component는 tailwindcss와 Framer motion을 활용하여
@@ -57,7 +64,7 @@ const Page = () => {
                   </motion.div>
                   <motion.div
                     variants={variants}
-                    className="flex justify-center pt-8"
+                    className="hidden justify-center pt-8"
                   >
                     <Link
                       href="#"
@@ -73,9 +80,15 @@ const Page = () => {
         </div>
       </motion.div>
       <div className="relative">
-        <div className="block-line-t">
-          <div className="mx-auto max-w-screen-xl py-8">
-            <div className="rounded-2xl bg-gray-100 p-5"></div>
+        <div className="block-line">
+          <div className="">
+            <div className="col-span-12 md:col-span-6">
+              <div className="p-2 bg-gray-100 h-[640px]">
+                <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden h-full">
+                  <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -80,16 +80,16 @@ export default function Page() {
         <div className="relative">
           <div className="block-line">
             <div className="grid grid-cols-12 gap-8">
-              <div className="col-span-12 md:col-span-6 border-r border-gray-100  py-0 md:py-40">
+              <div className="col-span-12 md:col-span-6 border-r border-gray-950/5  py-0 md:py-40">
                 <motion.div
                   variants={parentVariants}
                   initial="offscreen"
                   whileInView="onscreen"
                   viewport={{ once: false, amount: 0.3 }}
-                  className="grid w-full grid-cols-12 gap-8 border-t border-gray-100 py-3"
+                  className="grid w-full grid-cols-12 gap-8 border-t border-gray-950/5 py-3"
                 >
                   <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
-                    <div className=" border-b border-gray-100">
+                    <div className=" border-b border-gray-950/5">
                       <div className="relative px-4 ">
                         <motion.div
                           variants={variants}
@@ -107,7 +107,7 @@ export default function Page() {
                         </motion.div>
                         <motion.div
                           variants={variants}
-                          className="px-1 lg:mb-2 text-base"
+                          className="px-1 lg:mb-2 text-base pb-4 lg:pb-0"
                         >
                           지제이웍스는 웹과 앱을 개발하기 위한 소규모
                           개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업,
@@ -116,7 +116,7 @@ export default function Page() {
                         </motion.div>
                       </div>
                     </div>
-                    <div className="w-full border-b border-gray-100 my-8 border-t">
+                    <div className="w-full border-b border-gray-950/5 my-8 border-t">
                       <div className="flex gap-[1px] bg-gray-200/75 text-sm">
                         <div className="flex items-center gap-2 flex-1 py-3 px-4 bg-gray-50 cursor-pointer hover:bg-gray-100">
                           <motion.div variants={variants}>
@@ -162,7 +162,7 @@ export default function Page() {
                         </div>
                       </div>
                     </div>
-                    <div className="w-full px-4 border-t border-b border-gray-100 py-3">
+                    <div className="w-full px-4 border-t border-b border-gray-950/5 py-3">
                       <motion.div
                         variants={variants}
                         className="relative mx-auto flex items-center gap-4 px-3"
@@ -184,8 +184,8 @@ export default function Page() {
                   </div>
                 </motion.div>
               </div>
-              <div className="col-span-12 md:col-span-6 border-l border-gray-100">
-                <div className="p-2 bg-gray-100 h-[440px] md:h-full">
+              <div className="col-span-12 md:col-span-6 border-l border-gray-950/5">
+                <div className="p-2 bg-gray-100 h-[440px] md:h-full border-l border-gray-950/5">
                   <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden h-full">
                     <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
                   </div>
@@ -370,7 +370,7 @@ export default function Page() {
                         </div>
                       </div>
                     </div>
-                    <div className="w-full md:w-64 flex justify-end items-center mt-12 md:mt-0">
+                    <div className="w-full md:w-64 flex justify-end items-center mt-12 md:mt-0 pb-4 md:pb-0">
                       <div>
                         <motion.div
                           variants={variants}
