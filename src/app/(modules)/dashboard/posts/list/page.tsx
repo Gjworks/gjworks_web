@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import DashboardPostsList from '@/modules/posts/admin/templates/list'
+import DashboardPostsList from "@/extentions/posts/admin/templates/list";
 
 const Page = () => {
   return (
     <>
       <DashboardPostsList />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import Bottom from '@plextype/components/panel/Bottom'
-import PostWrite from '@/modules/posts/templates/default/write'
+import Bottom from "@plextype/components/panel/Bottom";
+import PostWrite from "@/extentions/posts/templates/default/write";
 
 const Page = () => {
   return (
@@ -37,7 +37,7 @@ const Page = () => {
         </div>
       </Bottom>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

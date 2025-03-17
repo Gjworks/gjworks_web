@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import DashboardUserList from '@/modules/user/admin/templates/list'
+import DashboardUserList from "@/extentions/user/admin/templates/list";
 
 const Page = () => {
   return (
     <>
       <DashboardUserList />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

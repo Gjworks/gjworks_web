@@ -8,11 +8,11 @@ import {
   getUser,
   getUserByNickname,
   getUserByAccountId,
-} from "@/modules/user/scripts/userModel";
+} from "@/extentions/user/scripts/userModel";
 import {
   updateUserGroup,
   deleteUserGroup,
-} from "@/modules/user/scripts/groupController";
+} from "@/extentions/user/scripts/groupController";
 
 const prisma = new PrismaClient();
 

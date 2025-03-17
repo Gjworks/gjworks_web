@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import UserDelete from '@/modules/user/templates/default/delete'
+import UserDelete from "@/extentions/user/templates/default/delete";
 
 const Page = (props: any) => {
   return (
@@ -9,7 +9,7 @@ const Page = (props: any) => {
         <UserDelete />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

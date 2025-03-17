@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import PostWrite from '@/modules/posts/templates/default/write'
+import PostWrite from "@/extentions/posts/templates/default/write";
 
 const Page = () => {
   return (
@@ -13,7 +13,7 @@ const Page = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

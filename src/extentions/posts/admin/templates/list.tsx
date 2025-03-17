@@ -1,79 +1,70 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { useSearchParams, usePathname } from 'next/navigation'
-import { getUserList } from '@/modules/user/scripts/userModel'
-import PageNavigation from '@plextype/components/nav/PageNavigation'
-import DefaultNav from '@plextype/components/nav/DefaultNav'
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useSearchParams, usePathname } from "next/navigation";
+import { getPostList } from "@/extentions/posts/admin/scripts/postsModel";
+import PageNavigation from "@plextype/components/nav/PageNavigation";
 
 interface PageNavigationInfo {
-  totalCount: number
-  totalPages: number
-  page: number
-  listCount: number
+  totalCount: number;
+  totalPages: number;
+  page: number;
+  listCount: number;
 }
 
 const DashboardUserList = () => {
-  const params = useSearchParams()
-  const pathname = usePathname()
-  const [userList, setUserList] = useState<{ [key: string]: any }>()
-  const [page, setPage] = useState<number>(Number(params.get('page')) || 1)
+  const params = useSearchParams();
+  const pathname = usePathname();
+  const [postList, setPostList] = useState<{ [key: string]: any }>();
+  const [page, setPage] = useState<number>(Number(params.get("page")) || 1);
+  const [message, setMessage] = useState<string>("");
   const [pageNavigation, setPageNavigation] = useState<PageNavigationInfo>({
     totalCount: 0,
     totalPages: 0,
     page: 1,
     listCount: 0,
-  })
-  const [userNav, setUserNav] = useState<object>([
-    {
-      title: '회원목록',
-      route: '/dashboard/user/list',
-    },
-    {
-      title: '그룹별 회원 목록',
-      route: '/dashboard/user/groupUserlist',
-    },
-    {
-      title: '관리자계정',
-      route: '/dashboard/user/adminUserlist',
-    },
-  ])
+  });
 
   useEffect(() => {
-    const newPage = Number(params.get('page')) || 1
-    setPage(newPage)
-  }, [pathname, params])
+    const newPage = Number(params.get("page")) || 1;
+    setPage(newPage);
+  }, [pathname, params]);
 
-  let items
+  let items;
   const fetchData = async ({
     page,
     target,
     keyword,
   }: {
-    page: number | null
-    target: string | null
-    keyword: string | null
+    page: number | null;
+    target: string | null;
+    keyword: string | null;
   }) => {
-    items = await getUserList({ page, target, keyword })
-    setUserList(items.userList)
-    setPageNavigation(items.navigation)
-  }
+    items = await getPostList({ page, target, keyword });
+    console.log(items);
+    if (items.type === "success") {
+      setPostList(items.data.postList);
+      setPageNavigation(items.data.navigation);
+    } else {
+      setMessage(items.data.message);
+    }
+  };
   useEffect(() => {
     const data = {
       page: page,
-      target: params.get('target') as string | null,
-      keyword: params.get('keyword') as string | null,
-    }
-    fetchData(data)
-  }, [page])
+      target: params.get("target") as string | null,
+      keyword: params.get("keyword") as string | null,
+    };
+    fetchData(data);
+  }, [page]);
 
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
         <div className="flex flex-wrap items-center gap-4 mb-5">
           <div className="text-gray-700 text-lg font-semibold">
-            회원 목록 ({pageNavigation.totalCount}명)
+            모듈 목록 ({pageNavigation.totalCount})
           </div>
           <div className="flex-1"></div>
           <div className="flex items-center w-full lg:w-auto">
@@ -111,45 +102,33 @@ const DashboardUserList = () => {
               <tr className="bg-slate-200 bg-opacity-50 backdrop-blur-lg">
                 <th
                   scope="col"
-                  className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
+                  className="text-xs text-gray-600 uppercase py-2 px-3"
                 >
                   No
                 </th>
                 <th
                   scope="col"
-                  className="w-auto text-xs text-gray-600 uppercase py-2 px-3 text-left"
+                  className="text-xs text-gray-600 uppercase py-2 px-3 text-left"
                 >
-                  회원아이디
+                  모듈ID
                 </th>
                 <th
                   scope="col"
-                  className="w-auto text-xs text-gray-600 uppercase py-2 px-3 text-left"
+                  className="text-xs text-gray-600 uppercase py-2 px-3"
                 >
-                  이메일
+                  게시판이름
                 </th>
                 <th
                   scope="col"
-                  className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
+                  className="text-xs text-gray-600 uppercase py-2 px-3"
                 >
-                  닉네임
+                  등록일
                 </th>
                 <th
                   scope="col"
-                  className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
+                  className="text-xs text-gray-600 uppercase py-2 px-3"
                 >
-                  그룹
-                </th>
-                <th
-                  scope="col"
-                  className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
-                >
-                  최근접속일
-                </th>
-                <th
-                  scope="col"
-                  className="text-xs text-gray-600 uppercase py-2 px-3 w-32"
-                >
-                  조회/수정
+                  편집
                 </th>
                 <th className="py-2 px-3 w-12">
                   <input
@@ -160,8 +139,8 @@ const DashboardUserList = () => {
               </tr>
             </thead>
             <tbody>
-              {userList &&
-                userList.map((item, index) => {
+              {postList &&
+                postList.map((item, index) => {
                   return (
                     <tr
                       key={index}
@@ -171,21 +150,15 @@ const DashboardUserList = () => {
                         {item.id - 1}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3">
-                        {item.accountId}
-                      </td>
-                      <td className="text-gray-500 text-sm py-3 px-3">
-                        {item.email_address}
+                        {item.mid}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                        {item.nickName}
-                      </td>
-                      <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                        준회원
+                        {item.moduleName}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center"></td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
                         <Link
-                          href={`/dashboard/user/update/${item.id}`}
+                          href={`/dashboard/posts/update/${item.id}`}
                           className="text-cyan-500 underline"
                         >
                           조회/수정
@@ -198,7 +171,7 @@ const DashboardUserList = () => {
                         ></input>
                       </td>
                     </tr>
-                  )
+                  );
                 })}
             </tbody>
           </table>
@@ -216,9 +189,9 @@ const DashboardUserList = () => {
           <div className="col-span-2 xl:col-span-1 flex items-center justify-end gap-2 ">
             <Link
               className="py-2 px-5 text-white rounded text-sm bg-orange-500 hover:bg-orange-600"
-              href="/dashboard/user/create"
+              href="/dashboard/posts/create"
             >
-              회원추가
+              게시판 추가
             </Link>
             <button
               className="py-2 px-5 text-white rounded text-sm bg-gray-800 hover:bg-red-600"
@@ -230,7 +203,7 @@ const DashboardUserList = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default DashboardUserList
+export default DashboardUserList;

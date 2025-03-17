@@ -1,6 +1,6 @@
 "use client";
 
-import DashboardPostCreate from "@/modules/posts/admin/templates/create";
+import DashboardPostCreate from "@/extentions/posts/admin/templates/create";
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const resolvedParams = await params;

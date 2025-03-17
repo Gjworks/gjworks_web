@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HomeIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
-import PostsCategories from "@/modules/posts/templates/default/category";
+import PostsCategories from "@/extentions/posts/templates/default/category";
 import PageNavigation from "@plextype/components/nav/PageNavigation";
 
 type Params = Promise<{ slug: string }>;

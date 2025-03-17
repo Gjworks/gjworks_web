@@ -1,35 +1,35 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import Warning from '@plextype/components/message/Warning'
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Warning from "@plextype/components/message/Warning";
 
-import { createUser } from '@/modules/user/scripts/userController'
+import { createUser } from "@/extentions/user/scripts/userController";
 
 const DashboardUserInsert = () => {
-  const router = useRouter()
-  const [error, setError] = useState<any>(false)
+  const router = useRouter();
+  const [error, setError] = useState<any>(false);
 
-  const submitHandler = async e => {
-    e.preventDefault()
+  const submitHandler = async (e) => {
+    e.preventDefault();
 
-    const formData = new FormData()
-    formData.append('email', e.target.email.value)
-    formData.append('password', e.target.password.value)
-    formData.append('nickname', e.target.nickname.value)
+    const formData = new FormData();
+    formData.append("email", e.target.email.value);
+    formData.append("password", e.target.password.value);
+    formData.append("nickname", e.target.nickname.value);
 
     await createUser(formData)
-      .then(response => {
-        if (response?.type === 'error') {
-          setError(response?.message)
+      .then((response) => {
+        if (response?.type === "error") {
+          setError(response?.message);
         } else {
-          router.replace('/dashboard/user/list')
+          router.replace("/dashboard/user/list");
         }
       })
-      .catch(error => {
-        console.error('Failed to register: ' + error.toString())
-      })
-  }
+      .catch((error) => {
+        console.error("Failed to register: " + error.toString());
+      });
+  };
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
@@ -185,7 +185,7 @@ const DashboardUserInsert = () => {
         </form>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default DashboardUserInsert
+export default DashboardUserInsert;

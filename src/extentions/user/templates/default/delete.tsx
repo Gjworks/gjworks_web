@@ -1,66 +1,66 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react'
-import { useRouter } from 'next/navigation'
+import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
-import { useSelector } from 'react-redux'
-import { RootState } from '@plextype/redux/store'
-import { store } from '@plextype/redux/store'
-import { resetUserInfo } from '@plextype/redux/features/userSlice'
-import Warning from '@plextype/components/message/Warning'
+import { useSelector } from "react-redux";
+import { RootState } from "@plextype/redux/store";
+import { store } from "@plextype/redux/store";
+import { resetUserInfo } from "@plextype/redux/features/userSlice";
+import Warning from "@plextype/components/message/Warning";
 
-import { deleteUser } from '@/modules/user/scripts/userController'
+import { deleteUser } from "@/extentions/user/scripts/userController";
 
 const UserDelete = (props: any) => {
-  const router = useRouter()
-  const dispatch = store.dispatch
-  const [showPopup, setShowPopup] = useState(false)
-  const [accessToken, setAccessToken] = useState<string | null>(null)
-  const [loggedInfo, setLoggedInfo] = useState<UserInfo>()
+  const router = useRouter();
+  const dispatch = store.dispatch;
+  const [showPopup, setShowPopup] = useState(false);
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [loggedInfo, setLoggedInfo] = useState<UserInfo>();
   const [error, setError] = useState<{ type: string; message: string } | null>(
-    null
-  )
-  const [inputState, setInputState] = useState<Boolean>(false)
+    null,
+  );
+  const [inputState, setInputState] = useState<Boolean>(false);
 
-  const userInfo = useSelector((state: RootState) => state.userInfo)
+  const userInfo = useSelector((state: RootState) => state.userInfo);
 
   useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken')
-    setAccessToken(accessToken)
+    const accessToken = localStorage.getItem("accessToken");
+    setAccessToken(accessToken);
 
-    userInfo && userInfo.session && setLoggedInfo(userInfo.session)
-  }, [])
+    userInfo && userInfo.session && setLoggedInfo(userInfo.session);
+  }, []);
 
-  const handlerUserDeleteInput = event => {
-    event.preventDefault()
-    console.log(event.target.value)
-    if (event.target.value === '회원탈퇴') {
-      console.log('user deleted!!')
-      setInputState(true)
+  const handlerUserDeleteInput = (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
+    if (event.target.value === "회원탈퇴") {
+      console.log("user deleted!!");
+      setInputState(true);
     } else {
-      setInputState(false)
+      setInputState(false);
     }
-  }
+  };
 
-  const handlerUserDeleteButton = async event => {
-    event.preventDefault()
+  const handlerUserDeleteButton = async (event) => {
+    event.preventDefault();
     if (inputState === true && accessToken) {
       await deleteUser({ accessToken: accessToken })
-        .then(response => {
-          if (response.type === 'success') {
-            dispatch(resetUserInfo())
-            localStorage.removeItem('accessToken')
-            router.replace('/')
+        .then((response) => {
+          if (response.type === "success") {
+            dispatch(resetUserInfo());
+            localStorage.removeItem("accessToken");
+            router.replace("/");
           } else {
-            alert(response.message)
+            alert(response.message);
           }
         })
-        .catch(error => {
-          console.log(error)
-          console.log('Error >> ' + error.code, error.response.message)
-          setError(error.response.message)
-          return error.response
-        })
+        .catch((error) => {
+          console.log(error);
+          console.log("Error >> " + error.code, error.response.message);
+          setError(error.response.message);
+          return error.response;
+        });
       // await fetch('/user/api/handler', {
       //   method: 'DELETE',
       //   headers: {
@@ -80,7 +80,7 @@ const UserDelete = (props: any) => {
       //     return error.response
       //   })
     }
-  }
+  };
 
   return (
     <>
@@ -96,10 +96,10 @@ const UserDelete = (props: any) => {
             name="user_delete"
             placeholder="회원 탈퇴 를 입력해주세요."
             className={
-              'block py-2 px-3 rounded-lg w-full border border-gray-300 text-base outline-none' +
+              "block py-2 px-3 rounded-lg w-full border border-gray-300 text-base outline-none" +
               (inputState === false
-                ? ' focus:border-rose-600 text-rose-500 '
-                : ' focus:border-cyan-500 border-cyan-500 text-cyan-600 ')
+                ? " focus:border-rose-600 text-rose-500 "
+                : " focus:border-cyan-500 border-cyan-500 text-cyan-600 ")
             }
           />
         </div>
@@ -129,10 +129,10 @@ const UserDelete = (props: any) => {
         <div className="flex justify-center gap-4 pt-8">
           <button
             className={
-              'text-gray-100 px-8 py-2 rounded-lg ' +
+              "text-gray-100 px-8 py-2 rounded-lg " +
               (inputState === false
-                ? ' bg-gray-400 hover:bg-gray-500 '
-                : ' bg-black ')
+                ? " bg-gray-400 hover:bg-gray-500 "
+                : " bg-black ")
             }
             disabled={inputState === false}
             onClick={handlerUserDeleteButton}
@@ -142,7 +142,7 @@ const UserDelete = (props: any) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default UserDelete
+export default UserDelete;

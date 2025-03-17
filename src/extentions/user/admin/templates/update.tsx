@@ -1,116 +1,116 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, FormEvent } from 'react'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
+import React, { useState, useEffect, FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-import { getUser } from '@/modules/user/scripts/userModel'
+import { getUser } from "@/extentions/user/scripts/userModel";
 import {
   deleteAdminUser,
   updateAdminUser,
-} from '@/modules/user/admin/scripts/userController'
-import { GroupInfo } from '@/modules/user/admin/scripts/groupModel'
-import Alert from '@plextype/components/message/Alert'
+} from "@/extentions/user/admin/scripts/userController";
+import { GroupInfo } from "@/extentions/user/admin/scripts/groupModel";
+import Alert from "@plextype/components/message/Alert";
 
 interface GroupInfo {
-  id: number
-  groupTitle: string | undefined
-  groupName: string
-  groupDesc: string | undefined
-  groupDefault: boolean
+  id: number;
+  groupTitle: string | undefined;
+  groupName: string;
+  groupDesc: string | undefined;
+  groupDefault: boolean;
   // 필요한 다른 속성들도 여기에 추가할 수 있습니다.
 }
-const DashboardUserUpdate = props => {
-  const router = useRouter()
-  const accessToken = localStorage.getItem('accessToken')
-  const [userInfo, setUserInfo] = useState<any>()
-  const [groupList, setGroupList] = useState<GroupInfo[]>([])
+const DashboardUserUpdate = (props) => {
+  const router = useRouter();
+  const accessToken = localStorage.getItem("accessToken");
+  const [userInfo, setUserInfo] = useState<any>();
+  const [groupList, setGroupList] = useState<GroupInfo[]>([]);
   const [selectedGroups, setSelectedGroups] = useState<{ groupId: string }[]>(
-    []
-  )
-  const [isAdmin, setIsAdmin] = useState<boolean>(false)
+    [],
+  );
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [error, setError] = useState<{ type: string; message: string } | null>(
-    null
-  )
+    null,
+  );
 
   const groupListData = () => {
-    GroupInfo().then(response => {
+    GroupInfo().then((response) => {
       if (response.success) {
-        setGroupList(response.data)
+        setGroupList(response.data);
       }
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    updateDashboardUser()
-    groupListData()
-  }, [])
+    updateDashboardUser();
+    groupListData();
+  }, []);
 
   const updateDashboardUser = async () => {
     await getUser({ id: props.userid })
-      .then(response => {
-        console.log(response)
-        setUserInfo(response)
-        setSelectedGroups(response['userGroups'])
-        setIsAdmin(response['isAdmin'] ?? false)
+      .then((response) => {
+        console.log(response);
+        setUserInfo(response);
+        setSelectedGroups(response["userGroups"]);
+        setIsAdmin(response["isAdmin"] ?? false);
       })
-      .catch(error => {
-        console.error('Failed to get user info: ' + error.toString())
-      })
-  }
+      .catch((error) => {
+        console.error("Failed to get user info: " + error.toString());
+      });
+  };
   const updateUserInfo = async (formData: FormData) => {
     const params = {
       id: props.userid,
       accessToken: accessToken,
-      accountId: formData.get('accountId') as string,
-      nickName: formData.get('nickName') as string,
-      email_address: formData.get('email_address') as string,
+      accountId: formData.get("accountId") as string,
+      nickName: formData.get("nickName") as string,
+      email_address: formData.get("email_address") as string,
       isAdmin: isAdmin,
       group: selectedGroups,
-    }
-    console.log(params)
+    };
+    console.log(params);
     await updateAdminUser(params)
-      .then(response => {
+      .then((response) => {
         response?.type &&
-          setError({ type: response.type, message: response.message })
+          setError({ type: response.type, message: response.message });
         // router.push('/dashboard/user/list')
       })
-      .catch(error => {
-        console.error('Failed to get user info: ' + error.toString())
-      })
-  }
+      .catch((error) => {
+        console.error("Failed to get user info: " + error.toString());
+      });
+  };
 
   const handlerUserDelete = async () => {
-    console.log('delete user')
+    console.log("delete user");
     await deleteAdminUser(props.userid)
-      .then(response => {
-        router.push('/dashboard/user/list')
+      .then((response) => {
+        router.push("/dashboard/user/list");
       })
-      .catch(error => {
-        console.error('Failed to get user delete: ' + error.toString())
-      })
-  }
+      .catch((error) => {
+        console.error("Failed to get user delete: " + error.toString());
+      });
+  };
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { checked, value } = event.target
-    const groupId = value.toString()
+    const { checked, value } = event.target;
+    const groupId = value.toString();
 
-    setSelectedGroups(prevSelectedGroups => {
+    setSelectedGroups((prevSelectedGroups) => {
       if (checked) {
         // Add an object with groupId to the array if checked
-        return [...prevSelectedGroups, { groupId }]
+        return [...prevSelectedGroups, { groupId }];
       } else {
         // Remove the object with matching groupId from the array if unchecked
         return prevSelectedGroups.filter(
-          group => group.groupId.toString() !== groupId
-        )
+          (group) => group.groupId.toString() !== groupId,
+        );
       }
-    })
-  }
+    });
+  };
 
   const handleIsAdminChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsAdmin(event.target.checked)
-  }
+    setIsAdmin(event.target.checked);
+  };
 
   return (
     userInfo && (
@@ -251,12 +251,12 @@ const DashboardUserUpdate = props => {
                         </label>
                         <div className="flex flex-wrap gap-4">
                           {groupList.map((group, index) => {
-                            console.log(selectedGroups)
+                            console.log(selectedGroups);
                             const isChecked = selectedGroups.some(
-                              selectedGroup =>
+                              (selectedGroup) =>
                                 selectedGroup.groupId.toString() ===
-                                group.id.toString()
-                            )
+                                group.id.toString(),
+                            );
 
                             return (
                               <label key={index}>
@@ -274,7 +274,7 @@ const DashboardUserUpdate = props => {
                                   </div>
                                 </div>
                               </label>
-                            )
+                            );
                           })}
                         </div>
                         <div className="text-sm text-dark-400 pt-2 font-light">
@@ -297,7 +297,7 @@ const DashboardUserUpdate = props => {
             <div className="flex gap-4 justify-center bg-slate-100/50 pt-5 pb-10 border-t border-slate-200">
               <a
                 onClick={() => {
-                  history.back
+                  history.back;
                 }}
                 className="cursor-pointer px-5 py-2 text-sm text-white bg-dark-500 rounded-md"
               >
@@ -320,7 +320,7 @@ const DashboardUserUpdate = props => {
         </form>
       </div>
     )
-  )
-}
+  );
+};
 
-export default DashboardUserUpdate
+export default DashboardUserUpdate;

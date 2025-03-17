@@ -1,28 +1,28 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react'
-import Alert from '@plextype/components/message/Alert'
+import React, { useState, useEffect, useRef } from "react";
+import Alert from "@plextype/components/message/Alert";
 
-import { PasswordChange } from '@/modules/user/scripts/userController'
+import { PasswordChange } from "@/extentions/user/scripts/userController";
 
-const ChangePassword = props => {
-  const [accessToken, setAccessToken] = useState<string | null>(null)
+const ChangePassword = (props) => {
+  const [accessToken, setAccessToken] = useState<string | null>(null);
   const [error, setError] = useState<{ type: string; message: string } | null>(
-    null
-  )
+    null,
+  );
 
   useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken')
-    setAccessToken(accessToken)
+    const accessToken = localStorage.getItem("accessToken");
+    setAccessToken(accessToken);
 
-    console.log(props.close)
-  }, [])
+    console.log(props.close);
+  }, []);
 
   useEffect(() => {
     !accessToken
-      ? setError({ type: 'error', message: '로그인이 필요합니다.' })
-      : setError(null)
-  }, [accessToken])
+      ? setError({ type: "error", message: "로그인이 필요합니다." })
+      : setError(null);
+  }, [accessToken]);
 
   // const userData = async data => {
   //   console.log(data)
@@ -36,29 +36,29 @@ const ChangePassword = props => {
   //   return response.json()
   // }
 
-  const submitHandler = async e => {
-    e.preventDefault()
-    const formData = new FormData()
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
 
-    formData.append('nowPasswordValue', e.target.now_password.value)
-    formData.append('newPasswordValue', e.target.new_password.value)
-    formData.append('renewPasswordValue', e.target.renew_password.value)
+    formData.append("nowPasswordValue", e.target.now_password.value);
+    formData.append("newPasswordValue", e.target.new_password.value);
+    formData.append("renewPasswordValue", e.target.renew_password.value);
     if (accessToken) {
-      await PasswordChange(formData).then(response => {
-        if (response.type === 'error') {
-          setError({ type: response.type, message: response.message })
+      await PasswordChange(formData).then((response) => {
+        if (response.type === "error") {
+          setError({ type: response.type, message: response.message });
         } else {
-          console.log(response)
-          setError({ type: response.type, message: response.message })
-          if (response.type === 'success') {
+          console.log(response);
+          setError({ type: response.type, message: response.message });
+          if (response.type === "success") {
             setTimeout(() => {
-              props.close(false)
-            }, 1000)
+              props.close(false);
+            }, 1000);
           }
         }
-      })
+      });
     }
-  }
+  };
   return (
     <>
       <form onSubmit={submitHandler}>
@@ -117,7 +117,7 @@ const ChangePassword = props => {
         </div>
       </form>
     </>
-  )
-}
+  );
+};
 
-export default ChangePassword
+export default ChangePassword;

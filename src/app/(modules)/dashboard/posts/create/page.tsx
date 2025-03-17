@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import DashboardPostCreate from '@/modules/posts/admin/templates/create'
+import DashboardPostCreate from "@/extentions/posts/admin/templates/create";
 
 const Page = () => {
   return (
     <>
       <DashboardPostCreate />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

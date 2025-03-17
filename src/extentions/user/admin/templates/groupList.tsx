@@ -1,82 +1,82 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import Alert from '@plextype/components/message/Alert'
-import Modal from '@plextype/components/modal/Modal'
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Alert from "@plextype/components/message/Alert";
+import Modal from "@plextype/components/modal/Modal";
 
 import {
   upsertGroup,
   deleteGroup,
-} from '@/modules/user/admin/scripts/groupController'
+} from "@/extentions/user/admin/scripts/groupController";
 
-import { GroupInfo } from '@/modules/user/admin/scripts/groupModel'
+import { GroupInfo } from "@/extentions/user/admin/scripts/groupModel";
 
 interface GroupInfo {
-  id?: number | null
-  groupTitle: string | undefined
-  groupName: string | undefined
-  groupDesc: string | undefined
-  groupDefault: boolean
+  id?: number | null;
+  groupTitle: string | undefined;
+  groupName: string | undefined;
+  groupDesc: string | undefined;
+  groupDefault: boolean;
   // 필요한 다른 속성들도 여기에 추가할 수 있습니다.
 }
 const DashboardUserGroupList = () => {
-  const [groupList, setGroupList] = useState<GroupInfo[]>([]) // groupList: [{groupId, groupName, groupTitle, groupDesc, groupDefault}
-  const [groupUpdate, setGroupUpdate] = useState<GroupInfo | null>(null)
+  const [groupList, setGroupList] = useState<GroupInfo[]>([]); // groupList: [{groupId, groupName, groupTitle, groupDesc, groupDefault}
+  const [groupUpdate, setGroupUpdate] = useState<GroupInfo | null>(null);
 
   const [message, setMessage] = useState<{
-    type: string
-    message: string
-  } | null>(null)
-  const [showModal, setShowModal] = useState(false)
-  const closeModal = close => {
-    setShowModal(close)
-  }
+    type: string;
+    message: string;
+  } | null>(null);
+  const [showModal, setShowModal] = useState(false);
+  const closeModal = (close) => {
+    setShowModal(close);
+  };
 
   const groupListData = () => {
-    GroupInfo().then(response => {
-      console.log(response)
+    GroupInfo().then((response) => {
+      console.log(response);
       if (response.success) {
-        setGroupList(response.data)
+        setGroupList(response.data);
       }
-    })
-  }
+    });
+  };
 
   useEffect(() => {
-    groupListData()
-  }, [])
+    groupListData();
+  }, []);
 
-  const handleGroupInfo = async e => {
-    e.preventDefault()
-    const formData = new FormData()
+  const handleGroupInfo = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
 
-    formData.append('groupId', e.target.groupId.value)
-    formData.append('groupName', e.target.groupName.value)
-    formData.append('groupTitle', e.target.groupTitle.value)
-    formData.append('groupDesc', e.target.groupDesc.value)
+    formData.append("groupId", e.target.groupId.value);
+    formData.append("groupName", e.target.groupName.value);
+    formData.append("groupTitle", e.target.groupTitle.value);
+    formData.append("groupDesc", e.target.groupDesc.value);
 
     await upsertGroup(formData)
-      .then(response => {
-        if (response.code === 'error') {
-          console.error(response.message)
+      .then((response) => {
+        if (response.code === "error") {
+          console.error(response.message);
         } else {
-          setShowModal(false)
-          response.type === 'success' &&
-            setMessage({ type: response.type, message: response.message })
-          groupListData()
+          setShowModal(false);
+          response.type === "success" &&
+            setMessage({ type: response.type, message: response.message });
+          groupListData();
         }
       })
-      .catch(error => {
-        console.error(error)
-      })
-  }
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   const handleGroupUpdate = async (
     groupId,
     groupTitle,
     groupName,
     groupDesc,
-    groupDefault
+    groupDefault,
   ) => {
     setGroupUpdate({
       id: groupId,
@@ -84,23 +84,23 @@ const DashboardUserGroupList = () => {
       groupName: groupName,
       groupDesc: groupDesc,
       groupDefault: groupDefault,
-    })
-    setShowModal(true)
-    setMessage(null)
-  }
+    });
+    setShowModal(true);
+    setMessage(null);
+  };
 
-  const handleGroupDelete = async groupId => {
-    confirm('정말 삭제하시겠습니까?') &&
-      (await deleteGroup(groupId).then(response => {
-        if (response.type === 'error') {
-          console.error(response.message)
+  const handleGroupDelete = async (groupId) => {
+    confirm("정말 삭제하시겠습니까?") &&
+      (await deleteGroup(groupId).then((response) => {
+        if (response.type === "error") {
+          console.error(response.message);
         } else {
-          response.type === 'success' &&
-            setMessage({ type: response.type, message: response.message })
-          groupListData()
+          response.type === "success" &&
+            setMessage({ type: response.type, message: response.message });
+          groupListData();
         }
-      }))
-  }
+      }));
+  };
 
   return (
     <>
@@ -157,7 +157,7 @@ const DashboardUserGroupList = () => {
                             group.groupTitle,
                             group.groupName,
                             group.groupDesc,
-                            group.groupDefault
+                            group.groupDefault,
                           )
                         }
                         className="text-sm text-cyan-600 underline"
@@ -179,14 +179,14 @@ const DashboardUserGroupList = () => {
         <div className="flex justify-end pt-4 pb-8">
           <button
             onClick={() => {
-              setMessage(null)
+              setMessage(null);
               setGroupUpdate({
-                groupTitle: '',
-                groupName: '',
-                groupDesc: '',
+                groupTitle: "",
+                groupName: "",
+                groupDesc: "",
                 groupDefault: false,
-              })
-              setShowModal(true)
+              });
+              setShowModal(true);
             }}
             className="text-sm text-white bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded-md"
           >
@@ -244,7 +244,7 @@ const DashboardUserGroupList = () => {
                   type="hidden"
                   name="groupId"
                   defaultValue={
-                    groupUpdate?.id != null ? groupUpdate.id.toString() : ''
+                    groupUpdate?.id != null ? groupUpdate.id.toString() : ""
                   }
                 />
                 <div className="flex flex-col gap-4">
@@ -336,7 +336,7 @@ const DashboardUserGroupList = () => {
         </div>
       </Modal>
     </>
-  )
-}
+  );
+};
 
-export default DashboardUserGroupList
+export default DashboardUserGroupList;

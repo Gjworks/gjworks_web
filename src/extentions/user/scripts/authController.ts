@@ -1,8 +1,6 @@
-'use server';
+"use server";
 
-export const authController = async () => {
-
-}
+export const authController = async () => {};
 //////////////////////////////////////// deplicated
 // import { cookies, headers } from "next/headers";
 
@@ -10,7 +8,7 @@ export const authController = async () => {
 
 // import { decodeJwt } from 'jose';
 // import { sign, verify, refresh, refreshVerify } from "@plextype/utils/auth/jwtAuth";
-// import { getUser } from "@/modules/user/scripts/userModel";
+// import { getUser } from "@/extentions/user/scripts/userModel";
 
 // import { PrismaClient } from "@prisma/client";
 
@@ -46,7 +44,6 @@ export const authController = async () => {
 //       const userInfo = await prisma.user.findUnique({
 //         where: { accountId: accountId },
 //       });
-      
 
 //       if (userInfo! && (await verifyPassword(password, userInfo!.password))) {
 //         // exclude password from json response
@@ -55,12 +52,12 @@ export const authController = async () => {
 //           accountId:userInfo!.accountId,
 //           isAdmin:userInfo!.isAdmin
 //         }
-        
+
 //         let refreshToken
 //         let accessToken
 //         [accessToken, refreshToken] = await Promise.all([sign(tokenParams), refresh(tokenParams)])
 //         console.log(accessToken)
-//         const response = 
+//         const response =
 //           {
 //             success: true,
 //             type: "success",
@@ -69,7 +66,6 @@ export const authController = async () => {
 //             },
 //             accessToken: accessToken,
 //           }
-
 
 //         cookies().set({
 //           name: "accessToken",
@@ -90,7 +86,7 @@ export const authController = async () => {
 
 //         return response;
 //       } else {
-//         const response = 
+//         const response =
 //           {
 //             success: false,
 //             type: "error",
@@ -125,7 +121,7 @@ export const authController = async () => {
 //   // const authorization = headers().get('authorization')
 //   // const accessToken = authorization && authorization.split(' ')[1];
 //   const accessToken = token
-  
+
 //   if (!accessToken && !refreshToken) {
 //     return {
 //       success: true,
@@ -146,7 +142,7 @@ export const authController = async () => {
 //       if(!isLogged) {
 //         cookies().delete('refreshToken');
 //         cookies().delete('accessToken');
-//         const response = 
+//         const response =
 //           {
 //             success: false,
 //             code : 'user info not found',
@@ -179,7 +175,7 @@ export const authController = async () => {
 //             httpOnly: true,
 //             sameSite: "strict",
 //           });
-//           const response = 
+//           const response =
 //             {
 //               success: true,
 //               code : 'new_accessToken',
@@ -193,7 +189,7 @@ export const authController = async () => {
 //       }else{
 //         cookies().delete('refreshToken');
 //         cookies().delete('accessToken');
-//         const response = 
+//         const response =
 //           {
 //             success: false,
 //             code : 'refreshToken_expires',
@@ -205,7 +201,7 @@ export const authController = async () => {
 //         return response
 //       }
 //     }
-    
+
 //   // const refreshVerifyToken = refreshVerify(refreshToken)
 //   return {
 //     success: true,
@@ -251,11 +247,11 @@ export const authController = async () => {
 //         success: true,
 //         message: "token이 만료되었습니다. 새로 로그인을 해주세요."
 //       }
-        
+
 //       console.log('Signout response', response)
 //       return response
 //     }
-    
+
 //   } catch (error) {
 //     console.error(error);
 //     throw new Response("fail")

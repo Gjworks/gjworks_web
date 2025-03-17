@@ -41,7 +41,7 @@ export const getModulePostsInfo = async (mid: string) => {
 // import { decodeJwt } from 'jose';
 // import { PrismaClient } from "@prisma/client";
 // import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-// import { getUser, getUserByNickname, getUserByAccountId } from "@/modules/user/scripts/userModel";
+// import { getUser, getUserByNickname, getUserByAccountId } from "@/extentions/user/scripts/userModel";
 // import { parse } from "path";
 //
 // interface UserParams {

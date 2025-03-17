@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import Register from '@/modules/user/templates/default/register'
+import React, { useState } from "react";
+import Register from "@/extentions/user/templates/default/register";
 
 const Page = () => {
-  return <Register />
-}
+  return <Register />;
+};
 
-export default Page
+export default Page;
