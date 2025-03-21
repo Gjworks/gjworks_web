@@ -24,7 +24,7 @@ const FullLayout = ({ children }) => {
             {children}
           </main>
           <div className="absolute right-0 top-0 bottom-0 w-8 max-sm:hidden text-gray-950/5 border-x border-x-current bg-[size:10px_10px] bg-fixed bg-[image:repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,_transparent_0,_transparent_50%)]"></div>
-          <footer className="px-8">
+          <footer className="relative sm:px-8">
             <Footer />
           </footer>
         </div>

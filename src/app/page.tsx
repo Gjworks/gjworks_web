@@ -86,7 +86,7 @@ export default function Page() {
                   initial="offscreen"
                   whileInView="onscreen"
                   viewport={{ once: false, amount: 0.3 }}
-                  className="grid w-full grid-cols-12 gap-8 border-t border-gray-950/5 py-3"
+                  className="grid w-full grid-cols-12 gap-8 py-3"
                 >
                   <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
                     <div className=" border-b border-gray-950/5">
@@ -195,7 +195,7 @@ export default function Page() {
           </div>
         </div>
         <div className="relative">
-          <motion.div className="block-line-b">
+          <motion.div className="">
             <div className="grid grid-cols-12">
               <div className="col-span-12 md:col-span-5 relative px-3 py-8">
                 <motion.div
