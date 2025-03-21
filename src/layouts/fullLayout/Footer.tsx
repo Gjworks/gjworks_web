@@ -39,8 +39,8 @@ const Footer = () => {
   };
   return (
     <>
-      <div className="">
-        <div className="mb-6 flex flex-wrap gap-8 px-4 pt-6">
+      <div className="block-line-t">
+        <div className="mb-6 flex flex-wrap gap-8 px-3 pt-6">
           <motion.div
             variants={variants}
             initial="offscreen"
