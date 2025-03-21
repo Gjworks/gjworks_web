@@ -1,20 +1,24 @@
-'use client'
-import { useEffect } from 'react'
-import '/styles/globals.css'
-import '/styles/style.css'
-import ReduxProviders from '@plextype/redux/Providers'
-import Log from '@plextype/utils/debug/Log'
+"use client";
+
+import { useEffect } from "react";
+import "/styles/globals.css";
+import "/styles/style.css";
+import ReduxProviders from "@plextype/redux/Providers";
+import ReactQueryProvider from "@plextype/providers/ReactQueryProvider";
+import Log from "@plextype/utils/debug/Log";
 
 export default function RootLayout({ children }) {
-  if (typeof globalThis.Log === 'undefined') {
-    globalThis.Log = Log
+  if (typeof globalThis.Log === "undefined") {
+    globalThis.Log = Log;
   }
 
   return (
     <html className="break-keep selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
       <head />
       <body>
-        <ReduxProviders>{children}</ReduxProviders>
+        <ReactQueryProvider>
+          <ReduxProviders>{children}</ReduxProviders>
+        </ReactQueryProvider>
         <div id="toast"></div>
         <div id="left"></div>
         <div id="right"></div>
@@ -22,5 +26,5 @@ export default function RootLayout({ children }) {
         <div id="modal"></div>
       </body>
     </html>
-  )
+  );
 }

@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import { cookies, headers } from "next/headers";
 import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from "jose";
-import { getAuthenticatedUser } from "@/modules/posts/scripts/authenticateUser";
-import { validateUserPermissions } from "@/modules/posts/scripts/postPermissions";
-import { createPost } from "@/modules/posts/scripts/postsController";
+import { getAuthenticatedUser } from "@/extentions/posts/scripts/authenticateUser";
+import { validateUserPermissions } from "@/extentions/posts/scripts/postPermissions";
+import { createPost } from "@/extentions/posts/scripts/postsController";
 
 const prisma = new PrismaClient();
 

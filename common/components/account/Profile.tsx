@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 const ProfileComponent = ({ profileName, profileEmail }) => {
   return (
@@ -16,11 +16,11 @@ const ProfileComponent = ({ profileName, profileEmail }) => {
           </div>
         </div>
         <div className="flex gap-2 justify-center flex-wrap">
-          <div className="text-gray-400 text-sm">{profileEmail}</div>
+          <div className="text-gray-400 text-sm">@{profileEmail}</div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProfileComponent
+export default ProfileComponent;

@@ -1,35 +1,21 @@
-import { NextResponse } from 'next/server';
-import { cookies, headers } from "next/headers";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  const cookieStore = await cookies()
-  cookieStore.delete('refreshToken');
-  cookieStore.delete('accessToken');
+  try {
+    // 쿠키에서 accessToken, refreshToken을 가져와서 삭제
+    const response = NextResponse.json({ message: "Logged out successfully" });
 
-    // const hasCookie = cookies().has('refreshToken')
-    const refreshToken = cookieStore.get('refreshToken')?.value
-    const accessToken = cookieStore.get('accessToken')?.value
+    // accessToken, refreshToken 쿠키 삭제
+    response.cookies.delete("accessToken");
+    response.cookies.delete("refreshToken");
 
-    try {
-      if(refreshToken && accessToken) {
-        const response = {
-          success: true,
-          message: "token이 만료되었습니다. 새로 로그인을 해주세요."
-        }
-        return NextResponse.json(response);
-      }else{
-        const response = {
-          success: true,
-          message: "token이 만료되었습니다. 새로 로그인을 해주세요."
-        }
-          
-        console.log('Signout response', response)
-        return NextResponse.json(response);
-      }
-      
-    } catch (error) {
-      console.error(error);
-      throw new Response("fail")
-    }
-
+    // 로그아웃 후 응답 반환
+    return response;
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { error: "Server error during logout" },
+      { status: 500 },
+    );
+  }
 }

@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,27 +8,27 @@ datasource db {
 }
 
 model User {
-  id            Int             @id @default(autoincrement()) // 회원 고유 id
-  uuid          String          @default(cuid()) //외부에서 보여질 회원 id
-  accountId     String          @unique // 회원 아이디
-  email_address String          @unique // 회원 이메일
-  nickName      String          @unique // 회원 닉네임
-  password      String // 비밀번호
-  refreshToken  String? // 로그인 유지를 위한 refreshToken
-  createdAt     DateTime        @default(now()) // 회원가입 일
-  updateAt      DateTime        @updatedAt // 회원정보 수정 일
-  isAdmin       Boolean? // 관리자 유무
-  isManagers    Boolean? // 매니저 유무
+  id            Int             @id @default(autoincrement())
+  uuid          String          @default(cuid())
+  accountId     String          @unique
+  email_address String          @unique
+  nickName      String          @unique
+  password      String
+  refreshToken  String?
+  createdAt     DateTime        @default(now())
+  updateAt      DateTime        @updatedAt
+  isAdmin       Boolean?
+  isManagers    Boolean?
   documents     Document[]
   profile       Profile?
-  userGroups    UserGroupUser[] // UserGroup과의 관계 필드 추가
+  userGroups    UserGroupUser[]
 }
 
 model Profile {
   id     Int    @id @default(autoincrement())
   phone  String @unique
-  user   User   @relation(fields: [userId], references: [id])
   userId Int    @unique
+  user   User   @relation(fields: [userId], references: [id])
 }
 
 model UserGroup {
@@ -41,39 +38,39 @@ model UserGroup {
   groupDesc  String?
   createdAt  DateTime        @default(now())
   updatedAt  DateTime        @updatedAt
-  users      UserGroupUser[] // UserGroupUser를 통한 다대다 관계 설정
+  users      UserGroupUser[]
 }
 
 model UserGroupUser {
   id        Int       @id @default(autoincrement())
-  group     UserGroup @relation(fields: [groupId], references: [id])
   groupId   Int
-  user      User      @relation(fields: [userId], references: [id])
   userId    Int
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
+  group     UserGroup @relation(fields: [groupId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
 }
 
 model Document {
   id             Int       @id @default(autoincrement())
-  module         Module    @relation(fields: [moduleId], references: [id])
   moduleId       Int
-  category       Category? @relation(fields: [categoryId], references: [id])
   categoryId     Int?
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
   published      Boolean?  @default(false)
-  user           User?     @relation(fields: [userId], references: [id])
   userId         Int?
   authorName     String?   @db.VarChar(45)
   authorPassword String?
   title          String?   @db.VarChar(255)
-  content        String?   @db.Text
+  content        String?
   isNotice       Boolean?  @default(false)
   isSecrets      Boolean?  @default(false)
   readCount      Int?      @default(0)
   commentCount   Int?      @default(0)
   voteCount      Int?      @default(0)
+  category       Category? @relation(fields: [categoryId], references: [id])
+  module         Module    @relation(fields: [moduleId], references: [id])
+  user           User?     @relation(fields: [userId], references: [id])
 }
 
 model Category {
@@ -81,8 +78,8 @@ model Category {
   title     String     @db.VarChar(45)
   desc      String?
   color     String?    @db.VarChar(45)
-  module    Module     @relation(fields: [moduleId], references: [id])
   moduleId  Int
+  module    Module     @relation(fields: [moduleId], references: [id])
   documents Document[]
 }
 
@@ -97,6 +94,6 @@ model Module {
   grant      Json?      @db.Json
   config     Json?      @db.Json
   status     String?    @db.VarChar(45)
-  documents  Document[]
   categories Category[]
+  documents  Document[]
 }
