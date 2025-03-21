@@ -1,61 +1,74 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from "react";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
 
-import { useSelector } from 'react-redux'
-import { RootState } from '@plextype/redux/store'
-import { store } from '@plextype/redux/store'
-import { fetchUserInfo } from '@plextype/redux/features/userSlice'
+import Popup from "@plextype/components/modal/Popup";
+import Alert from "@plextype/components/message/Alert";
+import ChangePassword from "./changePassword";
 
-import Popup from '@plextype/components/modal/Popup'
-import Alert from '@plextype/components/message/Alert'
-import ChangePassword from './changePassword'
+import { useUser } from "@plextype/hooks/auth/useAuth";
 
 interface ResultInfo {
-  type: string
-  element: string
-  message: string
+  type: string;
+  element: string;
+  message: string;
   data: {
-    userInfo: UserInfo
-  }
+    userInfo: UserInfo;
+  };
 }
 
 const UpdateUser = (props: any) => {
-  const dispatch = store.dispatch
-  const [showPopup, setShowPopup] = useState(false)
-  const [accessToken, setAccessToken] = useState<string | null>(null)
-  const [loggedInfo, setLoggedInfo] = useState<UserInfo>()
+  const queryClient = useQueryClient();
+  const [showPopup, setShowPopup] = useState(false);
+  const [loggedInfo, setLoggedInfo] = useState<UserInfo>();
   const [error, setError] = useState<{ type: string; message: string } | null>(
-    null
-  )
+    null,
+  );
 
-  const userInfo = useSelector((state: RootState) => state.userInfo)
-
-  const closePopup = close => {
-    setShowPopup(close)
-  }
+  const { data: user, isLoading } = useUser();
 
   useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken')
-    setAccessToken(accessToken)
+    if (user) {
+      setLoggedInfo(user);
+    }
+  }, [user]);
 
-    userInfo && setLoggedInfo(userInfo?.session)
-  }, [])
+  const closePopup = (close) => {
+    setShowPopup(close);
+  };
 
-  const handleUserInfoSubmit = async e => {
-    e.preventDefault()
-    const formData = new FormData()
-    formData.append('nickName', e.target.nickName.value)
-    accessToken &&
-      dispatch(fetchUserInfo({ accessToken, formData })).then(
-        (resultAction: ReturnType<typeof dispatch>) => {
-          const dataInfo = resultAction.payload as ResultInfo
-          console.log(dataInfo)
-          dataInfo?.type &&
-            setError({ type: dataInfo.type, message: dataInfo.message })
-        }
-      )
-  }
+  const mutation = useMutation({
+    mutationFn: async (formData?: FormData) => {
+      const response = await fetch("/api/user", {
+        method: "PUT",
+        body: formData,
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "수정 실패");
+      }
+
+      return response.json();
+    },
+    onSuccess: async () => {
+      // 성공하면 user 데이터 다시 불러오기
+      await queryClient.invalidateQueries({ queryKey: ["user"] });
+    },
+    onError: (error) => {
+      console.error("회원 정보 수정 실패:", error);
+    },
+  });
+
+  const handleUserInfoSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("nickName", e.target.nickName.value);
+
+    mutation.mutate(formData);
+  };
   return (
     <>
       <form onSubmit={handleUserInfoSubmit}>
@@ -130,7 +143,7 @@ const UpdateUser = (props: any) => {
         <ChangePassword close={closePopup} />
       </Popup>
     </>
-  )
-}
+  );
+};
 
-export default UpdateUser
+export default UpdateUser;

@@ -12,7 +12,7 @@ export const authController = async () => {};
 
 // import { PrismaClient } from "@prisma/client";
 
-// export const Signin = async (formData: FormData) => {
+// export const signin = async (formData: FormData) => {
 //   const prisma = new PrismaClient();
 
 //   try {

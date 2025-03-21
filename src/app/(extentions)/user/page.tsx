@@ -1,20 +1,15 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useSelector } from 'react-redux'
-import { RootState } from '@plextype/redux/store'
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@plextype/redux/store";
 
 const Page = () => {
-  const [isLogged, setIsLogged] = useState<boolean>(false)
+  const [isLogged, setIsLogged] = useState<boolean>(false);
 
-  const userInfo = useSelector((state: RootState) => state.userInfo)
-  useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken')
-    const isLoggedIn = accessToken !== null
-    setIsLogged(isLoggedIn)
-  }, [])
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -40,7 +35,7 @@ const Page = () => {
                           <div className="rounded-full h-2 w-full bg-blue-200/40"></div>
                           <div
                             className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-blue-400 transition-all"
-                            style={{ width: '80%' }}
+                            style={{ width: "80%" }}
                           ></div>
                         </div>
                         <div className="text-black text-xs dark:text-white">
@@ -73,7 +68,7 @@ const Page = () => {
                           <div className="rounded-full h-2 w-full bg-lime-200/40"></div>
                           <div
                             className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-lime-400 transition-all"
-                            style={{ width: '80%' }}
+                            style={{ width: "80%" }}
                           ></div>
                         </div>
                         <div className="text-black text-xs dark:text-white">
@@ -106,7 +101,7 @@ const Page = () => {
                           <div className="rounded-full h-2 w-full bg-rose-200/40"></div>
                           <div
                             className="absolute left-0 top-0 rounded-full h-2 hover:-top-1 hover:h-4 w-full bg-rose-400 transition-all"
-                            style={{ width: '80%' }}
+                            style={{ width: "80%" }}
                           ></div>
                         </div>
                         <div className="text-black text-xs dark:text-white">
@@ -148,7 +143,7 @@ const Page = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

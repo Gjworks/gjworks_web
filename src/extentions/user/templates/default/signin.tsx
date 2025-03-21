@@ -5,8 +5,9 @@ import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 
-import { store } from "@plextype/redux/store";
-import { fetchSignIn } from "@plextype/redux/features/userSlice";
+// import { store } from "@plextype/redux/store";
+// import { fetchSignIn } from "@plextype/redux/features/userSlice";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
 
 import { motion } from "framer-motion";
 import Alert from "@plextype/components/message/Alert";
@@ -29,7 +30,8 @@ interface SignData {
 
 const Signin = () => {
   const router = useRouter();
-  const dispatch = store.dispatch;
+  const queryClient = useQueryClient();
+  // const dispatch = store.dispatch;
 
   const [user, setUser] = useState<SignData>();
   const [error, setError] = useState<{ type: string; message: string } | null>(
@@ -39,6 +41,48 @@ const Signin = () => {
   const refInputUserId = useRef<HTMLInputElement>(null);
   const refInputPassword = useRef<HTMLInputElement>(null);
 
+  const signIn = async (formData: FormData) => {
+    const response = await fetch("/api/auth/signin", {
+      method: "POST",
+      body: formData,
+      credentials: "include", // 쿠키 포함
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "로그인 실패");
+    }
+
+    return response.json(); // { result, accessToken }
+  };
+
+  const mutation = useMutation({
+    mutationFn: signIn,
+    onSuccess: async (res) => {
+      // onSuccess를 async 함수로 변경
+      const { type, message, data, accessToken, element } = res;
+
+      if (type === "error") {
+        setError({ type, message });
+        if (element === "accountId" && refInputUserId.current) {
+          refInputUserId.current.focus();
+        }
+        if (element === "password" && refInputPassword.current) {
+          refInputPassword.current.focus();
+        }
+        return;
+      }
+
+      if (data) {
+        setUser(res);
+      }
+      router.replace("/");
+    },
+    onError: (error) => {
+      console.error("로그인 실패:", error);
+    },
+  });
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -46,45 +90,30 @@ const Signin = () => {
     formData.append("accountId", e.target.accountId.value);
     formData.append("password", e.target.password.value);
 
-    dispatch(fetchSignIn({ formData })).then(
-      (resultAction: ReturnType<typeof dispatch>) => {
-        // 반환 값을 확인
-        console.log(resultAction.payload);
-        // 액션의 payload와 type에 대한 타입 정의
-        type SignInResult = {
-          result: SignData;
-          accessToken: string;
-        };
-
-        if (resultAction.payload) {
-          // 반환된 액션에서 accessToken에 접근
-          const accessToken = (resultAction.payload as SignInResult)
-            .accessToken;
-          const dataInfo = (resultAction.payload as SignInResult).result;
-
-          dataInfo && setUser(dataInfo);
-
-          accessToken && router.replace("/");
-        }
-      },
-    );
+    mutation.mutate(formData);
+    // dispatch(fetchSignIn({ formData })).then(
+    //   (resultAction: ReturnType<typeof dispatch>) => {
+    //     // 반환 값을 확인
+    //     console.log(resultAction.payload);
+    //     // 액션의 payload와 type에 대한 타입 정의
+    //     type SignInResult = {
+    //       result: SignData;
+    //       accessToken: string;
+    //     };
+    //
+    //     if (resultAction.payload) {
+    //       // 반환된 액션에서 accessToken에 접근
+    //       const accessToken = (resultAction.payload as SignInResult)
+    //         .accessToken;
+    //       const dataInfo = (resultAction.payload as SignInResult).result;
+    //
+    //       dataInfo && setUser(dataInfo);
+    //
+    //       accessToken && router.replace("/");
+    //     }
+    //   },
+    // );
   };
-
-  useEffect(() => {
-    user?.type === "error" &&
-      setError({
-        type: user.type,
-        message: user.message,
-      });
-
-    refInputUserId.current &&
-      user?.element === "accountId" &&
-      refInputUserId.current.focus();
-
-    refInputPassword.current &&
-      user?.element === "password" &&
-      refInputPassword.current.focus();
-  }, [user]);
 
   const parentVariants = {
     hidden: { opacity: 0, x: 44 },
@@ -318,7 +347,7 @@ const Signin = () => {
           <div className="flex flex-wrap">
             <div className="w-full">
               <Link
-                href="/auth/Register"
+                href="/auth/register"
                 className="text-dark-500 group text-sm"
               >
                 회원가입을 하시려면

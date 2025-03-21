@@ -6,35 +6,9 @@ import Alert from "@plextype/components/message/Alert";
 import { PasswordChange } from "@/extentions/user/scripts/userController";
 
 const ChangePassword = (props) => {
-  const [accessToken, setAccessToken] = useState<string | null>(null);
   const [error, setError] = useState<{ type: string; message: string } | null>(
     null,
   );
-
-  useEffect(() => {
-    const accessToken = localStorage.getItem("accessToken");
-    setAccessToken(accessToken);
-
-    console.log(props.close);
-  }, []);
-
-  useEffect(() => {
-    !accessToken
-      ? setError({ type: "error", message: "로그인이 필요합니다." })
-      : setError(null);
-  }, [accessToken]);
-
-  // const userData = async data => {
-  //   console.log(data)
-  //   const response = await fetch('/user/api/changePassword', {
-  //     headers: {
-  //       Authorization: `Bearer ${accessToken}`,
-  //     },
-  //     method: 'POST',
-  //     body: data,
-  //   })
-  //   return response.json()
-  // }
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -43,19 +17,28 @@ const ChangePassword = (props) => {
     formData.append("nowPasswordValue", e.target.now_password.value);
     formData.append("newPasswordValue", e.target.new_password.value);
     formData.append("renewPasswordValue", e.target.renew_password.value);
-    if (accessToken) {
-      await PasswordChange(formData).then((response) => {
-        if (response.type === "error") {
-          setError({ type: response.type, message: response.message });
-        } else {
-          console.log(response);
-          setError({ type: response.type, message: response.message });
-          if (response.type === "success") {
-            setTimeout(() => {
-              props.close(false);
-            }, 1000);
-          }
-        }
+
+    try {
+      const response = await fetch("/api/user/password", {
+        method: "PUT",
+        body: formData,
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "수정 실패");
+      }
+
+      setError({
+        type: "success",
+        message: "성공적으로 비밀번호가 변경되었습니다.",
+      });
+    } catch (error) {
+      console.error("패스워드 변경 오류:", error);
+      setError({
+        type: "error",
+        message: "패스워드 변경에 실패했습니다.",
       });
     }
   };

@@ -194,6 +194,20 @@ export const getUserList = async (params: UserListParams) => {
   return returnData;
 };
 
+export const getUserById = async (id: number) => {
+  try {
+    const userInfo = await prisma.user.findUnique({
+      where: { id: id },
+    });
+
+    if (!userInfo) {
+      return false;
+    }
+
+    return userInfo;
+  } catch (e) {}
+};
+
 export const getUserByAccountId = async (accountId: string) => {
   let userInfo;
   let response;

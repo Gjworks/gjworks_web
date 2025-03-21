@@ -9,6 +9,7 @@ import {
   refreshVerify,
 } from "@plextype/utils/auth/jwtAuth";
 import { PrismaClient } from "@prisma/client";
+import { timeToSeconds } from "@plextype/utils/date/timeToSeconds";
 
 const prisma = new PrismaClient();
 
@@ -46,9 +47,9 @@ export async function POST(request: Request) {
       where: { accountId: accountId },
     });
 
-    console.log(userInfo);
-    const vpass = await verifyPassword(password, userInfo!.password);
-    console.log(vpass);
+    // console.log(userInfo);
+    // const vpass = await verifyPassword(password, userInfo!.password);
+    // console.log(vpass);
 
     if (userInfo! && (await verifyPassword(password, userInfo!.password))) {
       // exclude password from json response
@@ -71,8 +72,14 @@ export async function POST(request: Request) {
         data: {
           userInfo: userInfo,
         },
-        accessToken: accessToken,
       };
+
+      const accessTokenExpire = timeToSeconds(
+        process.env.ACCESSTOKEN_EXPIRES_IN || "1h",
+      ); // "1h" 기본값
+      const refreshTokenExpire = timeToSeconds(
+        process.env.REFRESHTOKEN_EXPIRES_IN || "4h",
+      ); // "4h" 기본값
 
       cookieStore.set({
         name: "accessToken",
@@ -80,7 +87,7 @@ export async function POST(request: Request) {
         httpOnly: true,
         // secure: true,
         sameSite: "strict",
-        // maxAge: 3600,
+        maxAge: accessTokenExpire,
       });
       cookieStore.set({
         name: "refreshToken",
@@ -88,12 +95,11 @@ export async function POST(request: Request) {
         httpOnly: true,
         // secure: true,
         sameSite: "strict",
-        // maxAge: 3600 * 24 * 7,
+        maxAge: refreshTokenExpire,
       });
 
       return NextResponse.json(response);
     } else {
-      console.log(111111111);
       const response = {
         success: false,
         type: "error",

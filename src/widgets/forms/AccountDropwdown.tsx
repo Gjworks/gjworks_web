@@ -1,16 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "@plextype/redux/store";
 import { useRouter } from "next/navigation";
 import Dropdown from "@plextype/components/dropdown/Dropdown";
 import Avator from "@plextype/components/avator/Avator";
 import DefaultList from "@plextype/components/nav/DefaultList";
-import { store } from "@plextype/redux/store";
-import { resetUserInfo } from "@plextype/redux/features/userSlice";
-
-// import { Signout, Refresh } from '@/extentions/user/scripts/authController'
+import { useUser } from "@plextype/hooks/auth/useAuth";
 
 interface Item {
   title: string;
@@ -28,36 +23,15 @@ const AccountDropwdown = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [isLogged, setIsLogged] = useState<boolean>(false);
   const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined);
-  const userInfo = useSelector((state: RootState) => state.userInfo);
+
+  const { data: user, isLoading } = useUser();
 
   useEffect(() => {
-    const dispatch = store.dispatch;
-
-    const accessToken = localStorage.getItem("accessToken");
-    const isLoggedIn = accessToken !== null;
-
-    // if (userInfoString) {
-    //   const parsedUserInfo = JSON.parse(userInfoString)
-    //   const userInfoObject = JSON.parse(parsedUserInfo.userInfo)
-    //   setLoggedInfo(userInfoObject.userInfo)
-    // }
-    setIsLogged(isLoggedIn);
-
-    // userInfo && console.log(userInfo)
-    userInfo && setLoggedInfo(userInfo?.session);
-
-    if (isLoggedIn && accessToken) {
-      accessToken && fetchUserData(accessToken);
-    } else {
-      localStorage.getItem("persist:userInfo") &&
-        localStorage.removeItem("persist:userInfo");
-      dispatch(resetUserInfo());
+    if (user) {
+      setLoggedInfo(user);
+      setIsLogged(true);
     }
-  }, []);
-
-  useEffect(() => {
-    userInfo && userInfo?.session && setLoggedInfo(userInfo.session);
-  }, [userInfo]);
+  }, [user]);
 
   const closeDropdown = (close) => {
     setShowDropdown(close);
@@ -67,12 +41,12 @@ const AccountDropwdown = () => {
     {
       title: "로그인",
       name: "Signin",
-      route: "/auth/Signin",
+      route: "/auth/signin",
     },
     {
       title: "회원가입",
       name: "Register",
-      route: "/auth/Register",
+      route: "/auth/register",
     },
     {
       title: "",
@@ -138,11 +112,13 @@ const AccountDropwdown = () => {
     // const accessToken = localStorage.getItem('accessToken')
     const response = await fetch("/api/auth/logout", {
       method: "POST",
+      credentials: "include",
     });
     const result = await response.json();
     if (result) {
-      localStorage.removeItem("persist:userInfo");
-      localStorage.removeItem("accessToken");
+      // 로그아웃 성공 시
+      setLoggedInfo(undefined); // loggedInfo 초기화
+      setIsLogged(false); // 로그인 상태도 false로 변경
       window.location.href = "/";
     }
     // await Signout(accessToken).then(data => {
@@ -152,41 +128,6 @@ const AccountDropwdown = () => {
     //     window.location.href = '/'
     //   }
     // })
-  };
-
-  const fetchUserData = async (accessToken: string) => {
-    const url = "/api/auth/refresh";
-    let options = {
-      method: "POST",
-      headers: {}, // headers 객체를 미리 초기화
-    };
-    try {
-      if (accessToken) {
-        options.headers = {
-          ...options.headers,
-          Authorization: `Bearer ${accessToken}`,
-        };
-      }
-      const response = await fetch(url, options);
-      const result = await response.json();
-
-      // await Refresh(accessToken).then(response => {
-      if (result.code === "new_accessToken" && result.accessToken) {
-        localStorage.setItem("accessToken", result.accessToken);
-      }
-      if (
-        result.code === "refreshToken_expires" &&
-        result.accessToken === null
-      ) {
-        localStorage.removeItem("persist:userInfo");
-        localStorage.removeItem("accessToken");
-        alert(result.message);
-        window.location.href = "/";
-      }
-      // })
-    } catch (error) {
-      console.error("Error fetching user data:", error);
-    }
   };
 
   const callbackName = (name) => {

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-// import { Signin } from "@/extentions/user/scripts/authController";
+// import { signin } from "@/extentions/user/scripts/authController";
 import { updateUser } from "@/extentions/user/scripts/userController";
 
 interface DataInfo {
@@ -47,7 +47,7 @@ export const fetchSignIn = createAsyncThunk<
     formData: FormData;
   }): Promise<{ result: DataInfo; accessToken: string }> => {
     let result;
-    // await Signin(formData).then((response) => {
+    // await signin(formData).then((response) => {
     //   console.log(response)
     //   result = response
     // })

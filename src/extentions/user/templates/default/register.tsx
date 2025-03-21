@@ -27,7 +27,7 @@ const Register = () => {
           console.log(response);
           setError(response.message);
         } else {
-          router.replace("/auth/Signin");
+          router.replace("/auth/signin");
         }
       })
       .catch((error) => {
