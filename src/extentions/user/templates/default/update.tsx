@@ -77,7 +77,7 @@ const UpdateUser = (props: any) => {
           <div className="border-b border-gray-200">
             <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
               <div className="col-span-1 text-base text-gray-400 p-2">
-                이메일
+                아이디
               </div>
               <div className="col-span-2 text-base text-gray-900 p-2">
                 {loggedInfo && loggedInfo && loggedInfo.email_address}

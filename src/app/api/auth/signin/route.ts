@@ -106,7 +106,6 @@ export async function POST(request: Request) {
         message:
           "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
         data: {},
-        accessToken: null,
       };
       return NextResponse.json(response);
     }
@@ -117,7 +116,6 @@ export async function POST(request: Request) {
       type: "error",
       message: "아이디 혹은 비밀번호가 맞지 않거나 존재 하지 않은 계정입니다.",
       data: {},
-      accessToken: null,
     };
     return NextResponse.json(response);
   }

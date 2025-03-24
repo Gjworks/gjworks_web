@@ -4,6 +4,7 @@ import { PrismaClient } from "@prisma/client";
 import { verify } from "@plextype/utils/auth/jwtAuth";
 
 import { getUserById } from "@/extentions/user/scripts/userModel";
+import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 
 const prisma = new PrismaClient();
 
@@ -25,9 +26,57 @@ export async function PUT(request: NextRequest) {
       const nowPasswordValue = formData.get("nowPasswordValue") as string;
       const newPasswordValue = formData.get("newPasswordValue") as string;
       const renewPasswordValue = formData.get("renewPasswordValue") as string;
+
+      if (!nowPasswordValue || !newPasswordValue || !renewPasswordValue) {
+        return NextResponse.json(
+          {
+            success: false,
+            type: "warning",
+            message: "모든 필드를 입력하세요.",
+          },
+          { status: 400 },
+        );
+      }
+
+      if (newPasswordValue !== renewPasswordValue) {
+        return NextResponse.json(
+          {
+            success: false,
+            type: "error",
+            message: "새 비밀번호가 일치하지 않습니다.",
+          },
+          { status: 400 },
+        );
+      }
+
+      if (user! && (await verifyPassword(nowPasswordValue, user!.password))) {
+        console.log(2345234234);
+        await prisma.user.update({
+          where: {
+            accountId: verifyToken.accountId,
+          },
+          data: {
+            password: await hashedPassword(newPasswordValue),
+          },
+        });
+        return NextResponse.json({
+          success: true,
+          type: "success",
+          message: "비밀번호가 성공적으로 변경되었습니다.",
+        });
+      } else {
+        return NextResponse.json(
+          {
+            success: false,
+            type: "error",
+            message: "현재 비밀번호가 일치하지 않습니다.",
+          },
+          { status: 400 },
+        );
+      }
     } else {
       return NextResponse.json(
-        { error: "Invalid or expired token" },
+        { success: false, type: "error", message: "Invalid or expired token" },
         { status: 401 },
       );
     }

@@ -25,20 +25,24 @@ const ChangePassword = (props) => {
         credentials: "include",
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "수정 실패");
-      }
+      let responseData = null; // 응답 데이터를 저장할 변수
 
-      setError({
-        type: "success",
-        message: "성공적으로 비밀번호가 변경되었습니다.",
-      });
-    } catch (error) {
+      try {
+        responseData = await response.json(); // 한 번만 실행
+      } catch (jsonError) {
+        console.error("JSON 파싱 오류:", jsonError);
+      }
+      console.log(responseData);
+      // setError({
+      //   type: "success",
+      //   message: "성공적으로 비밀번호가 변경되었습니다.",
+      // });
+      setError(responseData);
+    } catch (error: any) {
       console.error("패스워드 변경 오류:", error);
       setError({
         type: "error",
-        message: "패스워드 변경에 실패했습니다.",
+        message: error.message || "패스워드 변경에 실패했습니다.",
       });
     }
   };
