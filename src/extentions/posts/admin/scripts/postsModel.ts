@@ -48,7 +48,7 @@ export const getPost = async (params: PostsParams) => {
     let postId = Number(params.id);
     console.log(typeof params.id);
     if (!isNaN(postId) && typeof postId === "number") {
-      postInfo = await prisma.module.findUnique({
+      postInfo = await prisma.posts.findUnique({
         where: {
           id: postId,
         },
@@ -96,7 +96,7 @@ export const getPostList = async (params) => {
   const listCount = 20; // 페이지당 항목 수
   const skipAmount = currentPage && (currentPage - 1) * listCount;
 
-  const totalItems = await prisma.module.count();
+  const totalItems = await prisma.posts.count();
   console.log("totalItems", totalItems);
   const totalPages = Math.ceil(totalItems / listCount);
 
@@ -120,7 +120,7 @@ export const getPostList = async (params) => {
   loggedInfo.isAdmin = decodeToken.isAdmin;
 
   try {
-    postList = await prisma.module.findMany({
+    postList = await prisma.posts.findMany({
       skip: skipAmount && skipAmount >= 0 ? skipAmount : 0,
       take: listCount,
       where,
