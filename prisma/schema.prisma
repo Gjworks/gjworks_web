@@ -25,10 +25,11 @@ model User {
 }
 
 model Profile {
-  id     Int    @id @default(autoincrement())
-  phone  String @unique
-  userId Int    @unique
-  user   User   @relation(fields: [userId], references: [id])
+  id           Int     @id @default(autoincrement())
+  phone        String  @unique
+  userId       Int     @unique
+  profileImage String?
+  user         User    @relation(fields: [userId], references: [id])
 }
 
 model UserGroup {
@@ -53,7 +54,7 @@ model UserGroupUser {
 
 model Document {
   id             Int       @id @default(autoincrement())
-  moduleId       Int
+  postId         Int
   categoryId     Int?
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
@@ -69,7 +70,7 @@ model Document {
   commentCount   Int?      @default(0)
   voteCount      Int?      @default(0)
   category       Category? @relation(fields: [categoryId], references: [id])
-  module         Module    @relation(fields: [moduleId], references: [id])
+  post           Posts     @relation(fields: [postId], references: [id])
   user           User?     @relation(fields: [userId], references: [id])
 }
 
@@ -78,19 +79,18 @@ model Category {
   title     String     @db.VarChar(45)
   desc      String?
   color     String?    @db.VarChar(45)
-  moduleId  Int
-  module    Module     @relation(fields: [moduleId], references: [id])
+  postId    Int
+  post      Posts      @relation(fields: [postId], references: [id])
   documents Document[]
 }
 
-model Module {
+model Posts {
   id         Int        @id @default(autoincrement())
-  mid        String     @unique
+  pid        String     @unique
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
-  moduleType String?    @db.VarChar(45)
-  moduleName String     @unique
-  moduleDesc String?
+  postName   String     @unique
+  postDesc   String?
   grant      Json?      @db.Json
   config     Json?      @db.Json
   status     String?    @db.VarChar(45)
