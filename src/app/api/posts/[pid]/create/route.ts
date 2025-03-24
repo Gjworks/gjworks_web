@@ -4,20 +4,19 @@ import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from "jose";
 import { getAuthenticatedUser } from "@/extentions/posts/scripts/authenticateUser";
 import { validateUserPermissions } from "@/extentions/posts/scripts/postPermissions";
-import { createPost } from "@/extentions/posts/scripts/postsController";
 
 const prisma = new PrismaClient();
 
-type Params = Promise<{ mid: string }>;
+type Params = Promise<{ pid: string }>;
 
 export async function GET(request: Request, segmentData: { params: Params }) {
   let response = {};
-  const { mid } = await segmentData.params;
+  const { pid } = await segmentData.params;
 
-  if (!mid) {
+  if (!pid) {
     return NextResponse.json({ error: "Missing Post ID" }, { status: 400 });
   }
-  const postInfo = await prisma.module.findUnique({ where: { mid: mid } });
+  const postInfo = await prisma.posts.findUnique({ where: { pid: pid } });
 
   if (!postInfo) {
     response = {
@@ -29,7 +28,7 @@ export async function GET(request: Request, segmentData: { params: Params }) {
   }
 
   const userInfo = await getAuthenticatedUser(request);
-  const permissionsInfo = await validateUserPermissions(mid, "write", userInfo);
+  const permissionsInfo = await validateUserPermissions(pid, "write", userInfo);
 
   if (!permissionsInfo.success) {
     response = permissionsInfo;
@@ -47,15 +46,15 @@ export async function GET(request: Request, segmentData: { params: Params }) {
 
 export async function POST(request: Request, segmentData: { params: Params }) {
   let response = {};
-  const { mid } = await segmentData.params;
+  const { pid } = await segmentData.params;
   const postData = await request.json();
 
   const userInfo = await getAuthenticatedUser(request);
   console.log(userInfo);
-  const permissionsInfo = await validateUserPermissions(mid, "write", userInfo);
+  const permissionsInfo = await validateUserPermissions(pid, "write", userInfo);
   console.log(permissionsInfo);
-  const postCreate = await createPost(postData, mid);
-  console.log(" postCreate ", postCreate);
+  // const postCreate = await createPost(postData, pid);
+  // console.log(" postCreate ", postCreate);
 
   response = {
     success: true,

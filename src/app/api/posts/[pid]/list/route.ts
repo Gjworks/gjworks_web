@@ -4,20 +4,19 @@ import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from "jose";
 
 import { validateUserPermissions } from "@/extentions/posts/scripts/postPermissions";
-import { createPost } from "@/extentions/posts/scripts/postsController";
 
 const prisma = new PrismaClient();
-type Params = Promise<{ mid: string }>;
+type Params = Promise<{ pid: string }>;
 export async function GET(request: Request, segmentData: { params: Params }) {
   let response = {};
   let userInfo;
   let accessToken: string | undefined;
-  const { mid } = await segmentData.params;
+  const { pid } = await segmentData.params;
 
-  if (!mid) {
+  if (!pid) {
     return NextResponse.json({ error: "Missing Post ID" }, { status: 400 });
   }
-  const postInfo = await prisma.module.findUnique({ where: { mid: mid } });
+  const postInfo = await prisma.posts.findUnique({ where: { pid: pid } });
 
   if (!postInfo) {
     response = {
@@ -66,9 +65,9 @@ export async function GET(request: Request, segmentData: { params: Params }) {
     });
   }
 
-  // const permissionInfo = await validateUserPermissions(mid, 'list', userInfo)
+  // const permissionInfo = await validateUserPermissions(pid, 'list', userInfo)
 
-  const permissionsInfo = await validateUserPermissions(mid, "list", userInfo);
+  const permissionsInfo = await validateUserPermissions(pid, "list", userInfo);
 
   console.log(permissionsInfo);
 

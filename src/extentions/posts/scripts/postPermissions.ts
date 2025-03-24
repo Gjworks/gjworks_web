@@ -16,11 +16,11 @@ interface UserInfo {
 }
 
 export const validateUserPermissions = async (
-  mid: string,
+  pid: string,
   type: "member" | "admin" | "guest" | string,
   userInfo?: UserInfo,
 ): Promise<PermissionsInfo> => {
-  if (!mid) {
+  if (!pid) {
     return {
       success: false,
       status: 400,
@@ -30,8 +30,8 @@ export const validateUserPermissions = async (
   }
 
   try {
-    const postInfo = await prisma.module.findUnique({
-      where: { mid },
+    const postInfo = await prisma.posts.findUnique({
+      where: { pid },
     });
 
     if (!postInfo) {
