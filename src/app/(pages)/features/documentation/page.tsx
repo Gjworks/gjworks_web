@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { HomeIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -79,29 +77,6 @@ const Page = () => {
           </div>
         </div>
       </motion.div>
-      <div className="relative">
-        <div className="block-line">
-          <div className="">
-            <div className="col-span-12 md:col-span-6">
-              <div className="p-2 bg-gray-100 h-[640px] dark:bg-gray-900/50">
-                <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden h-full">
-                  <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="hidden pb-20">
-        <div className="flex gap-4 justify-center items-start overflow-hidden">
-          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/120] min-h-[234px] w-[306px]"></div>
-          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/220] min-h-[434px] w-[306px]"></div>
-          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/320] min-h-[534px] w-[306px]"></div>
-          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/120] min-h-[334px] w-[306px]"></div>
-          <div className="bg-gray-100 dark:bg-dark-900 rounded-3xl p-5 aspect-[460/120] min-h-[384px] w-[306px]"></div>
-        </div>
-      </div>
     </>
   );
 };

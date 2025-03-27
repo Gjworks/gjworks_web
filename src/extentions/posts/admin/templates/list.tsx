@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
@@ -41,13 +39,33 @@ const DashboardUserList = () => {
     target: string | null;
     keyword: string | null;
   }) => {
-    items = await getPostList({ page, target, keyword });
-    console.log(items);
-    if (items.type === "success") {
-      setPostList(items.data.postList);
-      setPageNavigation(items.data.navigation);
-    } else {
-      setMessage(items.data.message);
+    try {
+      const queryParams = new URLSearchParams();
+      if (page !== null) queryParams.append("page", page.toString());
+      if (target) queryParams.append("target", target);
+      if (keyword) queryParams.append("keyword", keyword);
+      const response = await fetch(
+        `/api/admin/posts?${queryParams.toString()}`,
+        {
+          method: "GET",
+          credentials: "include",
+        },
+      );
+
+      let responseData = null; // 응답 데이터를 저장할 변수
+
+      try {
+        responseData = await response.json(); // 한 번만 실행
+      } catch (jsonError) {
+        console.error("JSON 파싱 오류:", jsonError);
+      }
+      console.log(responseData);
+      // setError({
+      //   type: "success",
+      //   message: "성공적으로 비밀번호가 변경되었습니다.",
+      // });
+    } catch (error: any) {
+      console.error("패스워드 변경 오류:", error);
     }
   };
   useEffect(() => {

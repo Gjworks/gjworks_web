@@ -1,4 +1,3 @@
-'use client'
 const Loading = () => {
   return (
     <>
@@ -17,7 +16,7 @@ const Loading = () => {
         <div className="spinner-blade"></div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;
