@@ -11,10 +11,12 @@
 }
 html,
 html body {
-
     -webkit-overflow-scrolling: touch;
     @apply min-h-full;
     @apply h-full;
+}
+html.dark{
+    @apply bg-gray-950
 }
 
 .block-line-t:after {
@@ -51,6 +53,25 @@ html body {
     @apply w-[200vw];
     @apply h-[1px];
     @apply bg-gray-950/5;
+    @apply left-[-100vw];
+}
+
+.dark .block-line-t:after {
+    content: ''; /* 가상 요소 활성화 */
+    top: 0;
+    @apply absolute;
+    @apply w-[200vw];
+    @apply h-[1px];
+    @apply bg-white/10;
+    @apply left-[-100vw];
+}
+.dark .block-line-b:after {
+    content: ''; /* 가상 요소 활성화 */
+    bottom: 0;
+    @apply absolute;
+    @apply w-[200vw];
+    @apply h-[1px];
+    @apply bg-white/10;
     @apply left-[-100vw];
 }
 /*Editor.js*/

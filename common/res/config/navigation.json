@@ -14,18 +14,18 @@
             "route": "/features/components"
         },
         {
-            "title": "CRM",
-            "name": "crm",
+            "title": "Documentation",
+            "name": "documentation",
             "icon": "",
             "parent": "features",
-            "route": "javascript:alert('준비중입니다.')"
+            "route": "/features/documentation"
         }
         ]
     },
-    "membership": {
-      "name": "membership",
-      "title": "Membership",
-      "route": "/membership",
+    "store": {
+      "name": "store",
+      "title": "Store",
+      "route": "/store",
       "icon": "",
       "subMenu": [
         {
