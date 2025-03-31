@@ -4,10 +4,9 @@ import SubNav from "src/layouts/fullLayout/SubNav";
 
 const FullLayout = ({ children }) => {
   return (
-    <div className="">
-      <div className="relative z-20 overflow-hidden">
-        <Header />
-
+    <>
+      <Header />
+      <div className="overflow-hidden">
         <div className="relative max-w-screen-2xl mx-auto">
           <SubNav />
           <div className="absolute left-0 top-0 bottom-0 w-8 max-sm:hidden dark:text-white/10 text-gray-950/5 border-x border-x-current bg-[size:10px_10px] bg-fixed bg-[image:repeating-linear-gradient(315deg,currentColor_0,currentColor_1px,_transparent_0,_transparent_50%)]"></div>
@@ -20,7 +19,7 @@ const FullLayout = ({ children }) => {
           </footer>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

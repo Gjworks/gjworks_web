@@ -110,7 +110,7 @@ const Header = () => {
           (showNavigation === true ? "  " : " ")
         }
       >
-        <div className="relative mx-auto">
+        <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-1">
             <div className="relative col-span-1 flex justify-start">
               <button
