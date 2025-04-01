@@ -6,33 +6,54 @@ import { useRouter } from "next/navigation";
 import Warning from "@plextype/components/message/Warning";
 
 import { motion } from "framer-motion";
-import { createUser } from "@/extentions/user/scripts/userController";
+import Alert from "@plextype/components/message/Alert";
+// import { createUser } from "@/extentions/user/scripts/userController";
 
 const Register = () => {
-  const [error, setError] = useState<any>(false);
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null,
+  );
   const router = useRouter();
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setError(null);
 
     const formData = new FormData();
     formData.append("accountId", e.target.accountId.value);
     formData.append("password", e.target.password.value);
     formData.append("nickName", e.target.nickName.value);
 
-    await createUser(formData)
-      .then((response) => {
-        console.log(response);
-        if (response?.type === "error") {
-          console.log(response);
-          setError(response.message);
-        } else {
-          router.replace("/auth/signin");
-        }
-      })
-      .catch((error) => {
-        console.error("Failed to register: " + error.toString());
-      });
+    const response = await fetch("/api/user", {
+      method: "POST",
+      body: formData,
+      credentials: "include", // 쿠키 포함
+    });
+
+    const res = await response.json();
+    const { type, message, data, accessToken, element } = res;
+
+    console.log(type);
+    if (res.type === "error") {
+      setError({ type, message });
+    }
+
+    if (res.type === "success") {
+      router.replace("/auth/signin");
+    }
+    // await createUser(formData)
+    //   .then((response) => {
+    //     console.log(response);
+    //     if (response?.type === "error") {
+    //       console.log(response);
+    //       setError(response.message);
+    //     } else {
+    //       router.replace("/auth/signin");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error("Failed to register: " + error.toString());
+    //   });
   };
 
   const variants = {
@@ -93,7 +114,7 @@ const Register = () => {
           </div>
         </div>
       </motion.div>
-      {error && <Warning message={error} />}
+      {error && <Alert message={error.message} type={error.type} />}
       <form onSubmit={submitHandler}>
         <div className="relative mb-5 w-full">
           <div className="flex items-center w-full text-xs">

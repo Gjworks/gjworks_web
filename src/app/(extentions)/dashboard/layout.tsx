@@ -195,7 +195,7 @@ export default function DashboardLayout({
                 <DefaultNav list={dashbaordNav} params={params[2]} />
               </div>
             </div>
-            <div className="py-10">
+            <div className="">
               <div className="">{children}</div>
             </div>
           </div>

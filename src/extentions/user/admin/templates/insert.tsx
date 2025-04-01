@@ -2,37 +2,58 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Warning from "@plextype/components/message/Warning";
+import Alert from "@plextype/components/message/Alert";
 
 import { createUser } from "@/extentions/user/scripts/userController";
 
 const DashboardUserInsert = () => {
   const router = useRouter();
-  const [error, setError] = useState<any>(false);
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null,
+  );
 
   const submitHandler = async (e) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("email", e.target.email.value);
+    formData.append("accountId", e.target.accountId.value);
     formData.append("password", e.target.password.value);
     formData.append("nickname", e.target.nickname.value);
 
-    await createUser(formData)
-      .then((response) => {
-        if (response?.type === "error") {
-          setError(response?.message);
-        } else {
-          router.replace("/dashboard/user/list");
-        }
-      })
-      .catch((error) => {
-        console.error("Failed to register: " + error.toString());
-      });
+    const response = await fetch("/api/admin/user", {
+      method: "POST",
+      body: formData,
+      credentials: "include", // 쿠키 포함
+    });
+
+    const res = await response.json();
+    const { type, message, data, accessToken, element } = res;
+
+    console.log(type);
+    if (res.type === "error") {
+      setError({ type, message });
+    }
+
+    if (res.type === "success") {
+      router.replace("/auth/signin");
+    }
+
+    // await createUser(formData)
+    //   .then((response) => {
+    //     if (response?.type === "error") {
+    //       setError(response?.message);
+    //     } else {
+    //       router.replace("/dashboard/user/list");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error("Failed to register: " + error.toString());
+    //   });
   };
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
+        {error && <Alert message={error.message} type={error.type} />}
         <form onSubmit={submitHandler}>
           <div className="max-w-screen-2xl mx-auto">
             <div className="px-3">
@@ -50,11 +71,11 @@ const DashboardUserInsert = () => {
                     <div className="col-span-2 grid grid-cols-3 gap-6">
                       <div className="col-span-3 sm:col-span-2">
                         <label>
-                          <div className="text-sm text-black mb-3">이메일</div>
+                          <div className="text-sm text-black mb-3">아이디</div>
                         </label>
                         <input
-                          type="email"
-                          name="email"
+                          type="text"
+                          name="accountId"
                           className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                           placeholder="example@mail.com"
                         />
