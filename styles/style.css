@@ -74,6 +74,14 @@ html.dark{
     @apply bg-white/10;
     @apply left-[-100vw];
 }
+
+.cross-line-tl {
+    @apply before:absolute before:-left-[80px] before:-top-[1px] before:h-[1px] before:w-[160px] before:bg-gradient-to-r before:from-transparent before:via-primary-500 before:to-transparent after:absolute after:-left-[80px] after:top-0 after:h-[1px] after:w-[160px] after:bg-gradient-to-r after:from-transparent after:via-primary-500 after:to-transparent after:rotate-90
+}
+
+.cross-line-br {
+    @apply before:absolute before:-right-[80px] before:-bottom-[1px] before:h-[1px] before:w-[160px] before:bg-gradient-to-r before:from-transparent before:via-primary-500 before:to-transparent after:absolute after:-right-[80px] after:bottom-0 after:h-[1px] after:w-[160px] after:bg-gradient-to-r after:from-transparent after:via-primary-500 after:to-transparent after:rotate-90
+}
 /*Editor.js*/
 .ce-block__content,
 .ce-toolbar__content {

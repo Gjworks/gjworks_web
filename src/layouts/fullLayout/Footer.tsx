@@ -182,7 +182,7 @@ const Footer = () => {
                     className="order-4 flex w-full items-center justify-center md:order-1 md:pt-0 lg:w-auto"
                     variants={parentVariants}
                   >
-                    <div className="dark:text-dark-200 text-center text-xs text-gray-700 lg:text-left">
+                    <div className="dark:text-dark-200 text-center text-xs text-gray-700 lg:text-left pt-1">
                       ⓒ 지제이웍스
                     </div>
                   </motion.div>
@@ -192,7 +192,7 @@ const Footer = () => {
                   >
                     <Link
                       href="/about"
-                      className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
+                      className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white hover:underline"
                     >
                       ABOUT
                     </Link>
@@ -203,7 +203,7 @@ const Footer = () => {
                   >
                     <Link
                       href="/terms"
-                      className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
+                      className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white hover:underline"
                     >
                       Terms of service
                     </Link>
@@ -214,7 +214,7 @@ const Footer = () => {
                   >
                     <Link
                       href="/privacy"
-                      className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white"
+                      className="dark:text-dark-400 text-xs text-gray-950 hover:text-gray-400 dark:hover:text-white hover:underline"
                     >
                       Privacy policy
                     </Link>

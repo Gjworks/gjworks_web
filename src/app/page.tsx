@@ -68,7 +68,7 @@ export default function Page() {
   return (
     <MainLayout>
       {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
-      <div className="relative pt-8">
+      <div className="relative">
         {/* <motion.div
         className="absolute inset-0"
         initial={{ opacity: 0, y: '3%' }}
@@ -78,36 +78,38 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <div className="relative">
-          <div className="block-line">
+          <div className="border-b border-gray-950/10">
             <div className="grid grid-cols-12 gap-8">
-              <div className="col-span-12 md:col-span-6 border-r border-gray-950/5  py-0 md:py-40">
-                <motion.div
-                  variants={parentVariants}
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="grid w-full grid-cols-12 gap-8 py-3"
-                >
-                  <div className="md:order-0 z-10 order-1 col-span-12 md:col-span-12">
-                    <div className=" border-b border-gray-950/5">
-                      <div className="relative px-4 ">
+              <div className="col-span-12 md:col-span-12">
+                <div className="p-2 bg-gray-100  md:h-full">
+                  <div className="relative flex justify-center items-center bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden  md:h-[660px]">
+                    <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
+
+                    <motion.div
+                      variants={parentVariants}
+                      initial="offscreen"
+                      whileInView="onscreen"
+                      viewport={{ once: false, amount: 0.3 }}
+                      className="max-w-screen-lg mx-auto py-20"
+                    >
+                      <div className="relative px-4 mb-12 ">
                         <motion.div
                           variants={variants}
                           className="px-1 lg:mb-2"
                         >
-                          <div className="flex flex-wrap text-4xl font-normal md:font-medium !leading-tight tracking-tight text-black lg:text-5xl lg:gap-0 dark:text-white w-full">
+                          <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-white lg:text-5xl lg:gap-0 dark:text-white w-full">
                             Building digital experience ✨
                           </div>
                         </motion.div>
                         <motion.div
                           variants={variants}
-                          className="mb-6 pl-0 text-4xl font-normal md:font-medium tracking-tight text-black lg:text-5xl dark:text-white"
+                          className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight text-white lg:text-5xl dark:text-white mb-16"
                         >
                           Creative platform service
                         </motion.div>
                         <motion.div
                           variants={variants}
-                          className="px-1 lg:mb-2 text-base pb-4 lg:pb-0"
+                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-400 max-w-screen-sm mx-auto"
                         >
                           지제이웍스는 웹과 앱을 개발하기 위한 소규모
                           개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업,
@@ -115,79 +117,27 @@ export default function Page() {
                           연구하고 개발합니다.
                         </motion.div>
                       </div>
-                    </div>
-                    <div className="w-full border-b border-gray-950/5 my-8 border-t">
-                      <div className="flex gap-[1px] bg-gray-200/75 text-sm">
-                        <div className="flex items-center gap-2 flex-1 py-3 px-4 bg-gray-50 cursor-pointer hover:bg-gray-100">
-                          <motion.div variants={variants}>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.25}
-                              stroke="currentColor"
-                              className="size-6"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-                              />
-                            </svg>
-                          </motion.div>
-                          <motion.div variants={variants}>
-                            포트폴리오
-                          </motion.div>
-                        </div>
-                        <div className="flex items-center gap-2 flex-1 py-3 px-4 bg-gray-50 cursor-pointer hover:bg-gray-100">
-                          <motion.div variants={variants}>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth={1.25}
-                              stroke="currentColor"
-                              className="size-6"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
-                              />
-                            </svg>
-                          </motion.div>
-                          <motion.div variants={variants}>
-                            Documentation
-                          </motion.div>
-                        </div>
+
+                      <div className="w-full md:w-3/5 mx-auto px-4 border-t border-b border-gray-950/5 py-3">
+                        <motion.div
+                          variants={variants}
+                          className="relative mx-auto flex items-center gap-4 px-3"
+                        >
+                          <div className="dark:bg-dark-700/75 rounded-lg bg-gray-950 p-3 backdrop-blur-2xl">
+                            <Square3Stack3DIcon className="size-5 text-gray-100 dark:text-white stroke-1" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-50">
+                              Various Projects
+                            </div>
+                            <div className="dark:text-dark-300 text-left text-xs text-gray-400">
+                              다양한 프로젝트를 만나보시고 좋은 의견과
+                              아이디어를 주시면 반영하겠습니다.
+                            </div>
+                          </div>
+                        </motion.div>
                       </div>
-                    </div>
-                    <div className="w-full px-4 border-t border-b border-gray-950/5 py-3">
-                      <motion.div
-                        variants={variants}
-                        className="relative mx-auto flex items-center gap-4 px-3"
-                      >
-                        <div className="dark:bg-dark-700/75 rounded-lg bg-gray-100 p-3 backdrop-blur-2xl">
-                          <Square3Stack3DIcon className="size-5 text-gray-900 dark:text-white stroke-1" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-950">
-                            Various Projects
-                          </div>
-                          <div className="dark:text-dark-300 text-left text-xs text-gray-400">
-                            다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
-                            주시면 반영하겠습니다.
-                          </div>
-                        </div>
-                      </motion.div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-              <div className="col-span-12 md:col-span-6 border-l border-gray-950/5">
-                <div className="p-2 bg-gray-100 h-[440px] md:h-full border-l border-gray-950/5">
-                  <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden h-full">
-                    <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
