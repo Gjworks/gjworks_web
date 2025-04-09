@@ -44,7 +44,7 @@ const Page = () => {
                 <div className="w-full lg:w-3/5">
                   <motion.div
                     variants={variants}
-                    className="text-primary-600 text-sm dark:text-white"
+                    className="text-purple-600 text-sm dark:text-white"
                   >
                     BEST UI TEMPLATES
                   </motion.div>
@@ -68,7 +68,7 @@ const Page = () => {
                   >
                     <Link
                       href="#"
-                      className="inline-block bg-primary-500 hover:bg-primary-600 text-white py-2 px-8 rounded-full text-sm font-semibold"
+                      className="inline-block bg-purple-500 hover:bg-purple-600 text-white py-2 px-8 rounded-full text-sm font-semibold"
                     >
                       자세히보기
                     </Link>
@@ -84,7 +84,7 @@ const Page = () => {
           <div className="">
             <div className="col-span-12 md:col-span-6">
               <div className="p-2 bg-gray-100 h-[640px] dark:bg-gray-900/50">
-                <div className="relative bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden h-full">
+                <div className="relative bg-[url('/assets/images/bg23.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden h-full">
                   <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
                 </div>
               </div>

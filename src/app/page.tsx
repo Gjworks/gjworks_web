@@ -81,8 +81,8 @@ export default function Page() {
           <div className="border-b border-gray-950/10">
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-12 md:col-span-12">
-                <div className="p-2 bg-gray-100  md:h-full">
-                  <div className="relative flex justify-center items-center bg-[url('/assets/images/bg46.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden  md:h-[660px]">
+                <div className="p-2 bg-gray-100 dark:bg-gray-900 md:h-full">
+                  <div className="relative flex justify-center items-center bg-[url('/assets/images/bg47.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden  md:h-[660px]">
                     <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
 
                     <motion.div
@@ -109,7 +109,7 @@ export default function Page() {
                         </motion.div>
                         <motion.div
                           variants={variants}
-                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-400 max-w-screen-sm mx-auto"
+                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-300 max-w-screen-sm mx-auto"
                         >
                           지제이웍스는 웹과 앱을 개발하기 위한 소규모
                           개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업,
@@ -123,14 +123,14 @@ export default function Page() {
                           variants={variants}
                           className="relative mx-auto flex items-center gap-4 px-3"
                         >
-                          <div className="dark:bg-dark-700/75 rounded-lg bg-gray-950 p-3 backdrop-blur-2xl">
-                            <Square3Stack3DIcon className="size-5 text-gray-100 dark:text-white stroke-1" />
+                          <div className="dark:bg-dark-700/75 rounded-lg bg-white/75 p-3 backdrop-blur-2xl">
+                            <Square3Stack3DIcon className="size-5 text-gray-950 dark:text-white stroke-1" />
                           </div>
                           <div className="flex-1">
                             <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-50">
                               Various Projects
                             </div>
-                            <div className="dark:text-dark-300 text-left text-xs text-gray-400">
+                            <div className="dark:text-dark-300 text-left text-xs text-gray-300">
                               다양한 프로젝트를 만나보시고 좋은 의견과
                               아이디어를 주시면 반영하겠습니다.
                             </div>
@@ -147,40 +147,42 @@ export default function Page() {
         <div className="relative">
           <motion.div className="">
             <div className="grid grid-cols-12">
-              <div className="col-span-12 md:col-span-5 relative px-3 py-8">
-                <motion.div
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: false, amount: 0.1 }}
-                  variants={parentVariants}
-                  className="flex items-center h-full"
-                >
-                  <div className="">
-                    <div className="flex">
-                      <div className="w-full">
-                        <motion.div variants={variants} className="mb-4">
-                          <span className="text-sm text-primary-600">
-                            Premium Quality
-                          </span>
-                        </motion.div>
-                        <motion.div
-                          variants={variants}
-                          className="mb-4 text-xl font-semibold text-black lg:text-2xl dark:text-white !leading-tight tracking-tight"
-                        >
-                          BEST UI TEMPLATES
-                        </motion.div>
-                        <motion.div
-                          variants={variants}
-                          className="dark:text-dark-500 text-sm text-gray-500"
-                        >
-                          컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
-                          모든 Component는 tailwindcss와 Framer motion을
-                          활용하여 애니메이션과 스타일을 정의했습니다.
-                        </motion.div>
+              <div className="col-span-12 bg-white/25">
+                <div className="w-full md:w-2/5 relative px-3 py-8">
+                  <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: false, amount: 0.1 }}
+                    variants={parentVariants}
+                    className="flex items-center h-full"
+                  >
+                    <div className="">
+                      <div className="flex">
+                        <div className="w-full">
+                          <motion.div variants={variants} className="mb-4">
+                            <span className="text-sm text-primary-500">
+                              Premium Quality
+                            </span>
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="mb-4 text-xl font-semibold text-black lg:text-2xl dark:text-white !leading-tight tracking-tight"
+                          >
+                            BEST UI TEMPLATES
+                          </motion.div>
+                          <motion.div
+                            variants={variants}
+                            className="dark:text-dark-500 text-sm text-gray-500"
+                          >
+                            컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
+                            모든 Component는 tailwindcss와 Framer motion을
+                            활용하여 애니메이션과 스타일을 정의했습니다.
+                          </motion.div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               </div>
               <div className="col-span-7"></div>
               <motion.div
@@ -263,7 +265,7 @@ export default function Page() {
                               repeat: Infinity, // 무한 반복
                               repeatType: "loop", // 애니메이션이 끝나면 다시 처음부터 반복
                             }}
-                            className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black top-10 -right-10 rounded-full py-2 px-5 bg-primary-600 text-sm text-white"
+                            className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black top-10 -right-10 rounded-full py-2 px-5 bg-primary-400 text-sm text-white"
                           >
                             Databases
                           </motion.div>
@@ -291,7 +293,7 @@ export default function Page() {
                               repeatType: "loop", // 애니메이션이 끝나면 다시 처음부터 반복
                             }}
                             variants={variants2}
-                            className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black bottom-28 -left-10 rounded-full py-2 px-5 bg-white text-sm text-primary-600"
+                            className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black bottom-28 -left-10 rounded-full py-2 px-5 bg-white text-sm text-primary-500"
                           >
                             Service
                           </motion.div>

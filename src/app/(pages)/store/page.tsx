@@ -44,7 +44,7 @@ const Page = () => {
                 <div className="w-full lg:w-3/5">
                   <motion.div
                     variants={variants}
-                    className="text-primary-600 text-sm dark:text-white"
+                    className="text-rose-500 text-sm dark:text-white"
                   >
                     BEST UI TEMPLATES
                   </motion.div>
@@ -68,7 +68,7 @@ const Page = () => {
                   >
                     <Link
                       href="#"
-                      className="inline-block bg-primary-500 hover:bg-primary-600 text-white py-2 px-8 rounded-full text-sm font-semibold"
+                      className="inline-block bg-rose-500 hover:bg-rose-600 text-white py-2 px-8 rounded-full text-sm font-semibold"
                     >
                       자세히보기
                     </Link>

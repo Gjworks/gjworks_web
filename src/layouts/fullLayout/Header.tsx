@@ -106,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          "sticky top-0 z-99 w-full  bg-white border-b border-gray-950/5 dark:bg-dark-950 dark:border-b dark:border-white/10 " +
+          "sticky top-0 w-full  bg-white border-b border-gray-950/5 dark:bg-dark-950 dark:border-b dark:border-white/10 z-20 " +
           (showNavigation === true ? "  " : " ")
         }
       >
