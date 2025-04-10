@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { ChevronLeftIcon } from '@heroicons/react/24/outline'
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 const PostsRead = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
-      <div className="relative dark:shadow-dark-950 block bg-[url('/assets/images/bg39.jpg')] bg-cover bg-center">
+      <div className="relative dark:shadow-dark-950 block bg-[url('/assets/images/bg39.jpg')] bg-cover bg-center block-line-b">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-950/5 via-gray-950/60 to-gray-950/90 dark:from-dark-950/30 dark:via-dark-950/50 dark:to-dark-950"></div>
         <div className="relative mx-auto max-w-screen-lg px-3 pt-20 pb-10 md:pb-20">
           <div
             className="text-3xl md:text-5xl font-light text-white py-4 text-center pt-20"
-            style={{ lineHeight: '140%' }}
+            style={{ lineHeight: "140%" }}
           >
             To implement authentication in Next.js, familiarize yourself with
             three foundational concepts.
@@ -72,10 +72,10 @@ const PostsRead = () => {
           </div>
         </div>
       </div>
-      <div className="sticky top-0 bg-white/75 dark:bg-dark-950/75 backdrop-blur-lg z-99 pt-1 border-b border-gray-100 dark:border-dark-800">
+      <div className="sticky top-0 bg-white/75 dark:bg-dark-950/75 backdrop-blur-lg z-10 pt-1 block-line-b">
         <div className="mx-auto  max-w-screen-lg px-3">
           <div className="flex items-center gap-2">
-            <div className="bg-primary-600 text-white dark:text-black text-xs px-4 py-1 rounded-full">
+            <div className="bg-primary-500 text-white dark:text-black text-xs px-4 py-1 rounded-full">
               기술공유
             </div>
             <div className="text-base md:text-lg font-light text-gray-950 dark:text-white py-4">
@@ -93,7 +93,7 @@ const PostsRead = () => {
             <div className="hidden md:flex sticky top-[64px] py-4">
               <button
                 onClick={() => {
-                  router.back()
+                  router.back();
                 }}
                 className="flex items-center gap-4"
               >
@@ -106,7 +106,7 @@ const PostsRead = () => {
               </button>
             </div>
           </div>
-          <div className="col-span-12 md:col-span-10">
+          <div className="col-span-12 md:col-span-10 border-l border-gray-950/5">
             <div className="mx-auto max-w-screen-md">
               <div className="flex items-center justify-between gap-8 pt-5 pb-3 px-3">
                 <div className="flex items-center gap-4">
@@ -339,9 +339,8 @@ const PostsRead = () => {
               </div>
             </div>
 
-            <div className="dark:bg-dark-900 border-t border-gray-100 dark:border-dark-800"></div>
-            <div className="mx-auto max-w-screen-md px-3 pt-10">
-              <div className="mb-5 text-lg text-black dark:text-white">
+            <div className="mx-auto max-w-screen-md px-3 pt-10 relative">
+              <div className="mb-5 text-lg text-black dark:text-white block-line-t">
                 Comments (6)
               </div>
               <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl h-full">
@@ -578,7 +577,7 @@ const PostsRead = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PostsRead
+export default PostsRead;
