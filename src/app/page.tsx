@@ -118,12 +118,12 @@ export default function Page() {
                         </motion.div>
                       </div>
 
-                      <div className="w-full md:w-3/5 mx-auto px-4 border-t border-b border-gray-950/5 py-3">
+                      <div className="w-full md:w-3/5 mx-auto px-4 pt-4">
                         <motion.div
                           variants={variants}
                           className="relative mx-auto flex items-center gap-4 px-3"
                         >
-                          <div className="dark:bg-dark-700/75 rounded-lg bg-white/75 p-3 backdrop-blur-2xl">
+                          <div className="dark:bg-dark-700/75 rounded-lg bg-white p-3 backdrop-blur-2xl">
                             <Square3Stack3DIcon className="size-5 text-gray-950 dark:text-white stroke-1" />
                           </div>
                           <div className="flex-1">
@@ -147,7 +147,7 @@ export default function Page() {
         <div className="relative">
           <motion.div className="">
             <div className="grid grid-cols-12">
-              <div className="col-span-12 bg-white/25">
+              <div className="col-span-12">
                 <div className="w-full md:w-2/5 relative px-3 py-8">
                   <motion.div
                     initial="offscreen"
