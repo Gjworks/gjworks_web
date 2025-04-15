@@ -110,7 +110,7 @@ const Header = () => {
           (showNavigation === true ? "  " : " ")
         }
       >
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-1">
             <div className="relative col-span-1 flex justify-start">
               <button
@@ -148,11 +148,11 @@ const Header = () => {
                       className="flex items-center justify-center p-[1.5px]"
                     >
                       <Image
-                        src="/assets/images/brand/gjworks.svg"
+                        src="/assets/images/brand/logo2.svg"
                         alt="gjworks logo"
-                        width="32"
-                        height="32"
-                        className="block w-[1.9rem] h-[1.9rem]"
+                        width="16"
+                        height="16"
+                        className="block w-[1.25rem] h-[1.25rem]"
                       />
                       {/* <Image
                         src="/assets/images/brand/gjworks.svg"
