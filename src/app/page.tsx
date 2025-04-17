@@ -77,12 +77,13 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative">
-          <div className="block-line-b">
+        <div className="relative bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat">
+          <div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>
+          <div className="bg-gradient-to-b from-dark-950 via-dark-950/60  to-dark-950">
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-12 md:col-span-12">
                 <div className="p-2 md:h-full">
-                  <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:h-[660px]">
+                  <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[calc(100vh-226px)]">
                     <motion.div
                       variants={parentVariants}
                       initial="offscreen"
