@@ -42,9 +42,20 @@ const DashboardUserUpdate = (props) => {
   };
 
   useEffect(() => {
-    updateDashboardUser();
+    if (!props.userId) {
+      setError({ type: "error", message: "잘못된 접근입니다." });
+      return;
+    }
+    fetch(`/api/admin/user/${props.userId}`)
+      .then((res) => {
+        if (!res.ok) throw new Error("회원 정보를 찾을 수 없습니다.");
+        return res.json();
+      })
+      .then((data) => setUserInfo(data))
+      .catch((err) => setError(err.message));
+    // .finally(() => setLoading(false));
     groupListData();
-  }, []);
+  }, [props.userId]);
 
   const updateDashboardUser = async () => {
     await getUser({ id: props.userid })

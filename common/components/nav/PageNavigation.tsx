@@ -24,9 +24,9 @@ const PageNavigation = (props: PageNavigationInfo) => {
           key={i}
           href={{ pathname: pathname, query: { page: i } }}
           className={
-            "flex items-center justify-center rounded-md  text-sm w-[2.25rem] h-[2.25rem]  text-gray-500 " +
+            "flex items-center justify-center rounded-md  text-sm w-[2.25rem] h-[2.25rem]  text-gray-500 hover:text-white " +
             (page == i
-              ? "bg-white text-gray-950 border border-gray-300 hover:border-gray-950 "
+              ? "bg-white dark:bg-dark-900 text-gray-950 dark:text-white border border-gray-300 dark:border-dark-700 hover:border-gray-950 "
               : "text-gray-500")
           }
         >
@@ -44,7 +44,7 @@ const PageNavigation = (props: PageNavigationInfo) => {
           <nav className="flex gap-1" aria-label="Pagination">
             <a
               href="#"
-              className="flex items-center justify-center rounded-md text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 hover:bg-gray-200"
+              className="flex items-center justify-center rounded-md text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 hover:bg-gray-200 dark:hover:text-white dark:hover:bg-dark-900"
             >
               <span className="sr-only">Previous</span>
               <svg
@@ -64,7 +64,7 @@ const PageNavigation = (props: PageNavigationInfo) => {
             {pageNavationList()}
             <a
               href="#"
-              className="flex items-center justify-center rounded-md  text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 hover:bg-gray-200"
+              className="flex items-center justify-center rounded-md  text-sm w-[2.25rem] h-[2.25rem] text-gray-500 hover:text-gray-950 hover:bg-gray-200 dark:hover:text-white dark:hover:bg-dark-900"
             >
               <span className="sr-only">Next</span>
               <svg

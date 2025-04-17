@@ -106,12 +106,12 @@ const Header = () => {
       <motion.header
         transition={{ transition: { duration: 0.3 } }}
         className={
-          "sticky top-0 w-full  bg-white border-b border-gray-950/5 dark:bg-dark-950 dark:border-b dark:border-white/10 z-20 " +
+          "relative top-0 w-full  bg-white/75 backdrop-blur-lg dark:bg-dark-950/5 z-20 " +
           (showNavigation === true ? "  " : " ")
         }
       >
-        <div className="">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-1">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-3 py-3">
             <div className="relative col-span-1 flex justify-start">
               <button
                 onClick={() => {
@@ -163,7 +163,7 @@ const Header = () => {
                       /> */}
                     </Link>
                     <div className="hidden group-hover:flex absolute top-10 lg:top-10 -left-1 z-10">
-                      <div className="bg-primary-500 text-white py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-primary-500 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
+                      <div className="bg-primary-500 text-black py-1 px-3 rounded-md text-xs after:w-3 after:h-3 after:rounded-sm after:absolute after:left-3.5 after:-top-1 after:bg-primary-500 after:inline-block after:rotate-45 after:content-[''] z-10 after:z-[-1]">
                         2.0
                       </div>
                     </div>
@@ -171,7 +171,7 @@ const Header = () => {
                       href={process.env.NEXT_PUBLIC_DEFAULT_URL}
                       className="hidden md:flex items-center"
                     >
-                      <div className="mr-4 flex pl-2 text-sm font-semibold md:text-[0.913rem]">
+                      <div className="mr-4 flex text-sm font-semibold md:text-[0.913rem]">
                         <div className="text-black dark:text-white">
                           지제이웍스
                         </div>

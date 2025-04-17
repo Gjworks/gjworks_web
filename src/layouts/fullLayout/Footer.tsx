@@ -39,7 +39,7 @@ const Footer = () => {
   };
   return (
     <>
-      <div className="block-line-t">
+      <div className="max-w-screen-xl mx-auto">
         <div className="mb-6 flex flex-wrap gap-8 px-3 pt-6">
           <motion.div
             variants={variants}

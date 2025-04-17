@@ -19,69 +19,6 @@ html.dark{
     @apply bg-gray-950
 }
 
-.block-line-t:after {
-    content: ''; /* 가상 요소 활성화 */
-    top: 0;
-    @apply absolute;
-    @apply w-[200vw];
-    @apply h-[1px];
-    @apply bg-gray-950/5;
-    @apply left-[-100vw];
-}
-.block-line-b:after {
-    content: ''; /* 가상 요소 활성화 */
-    bottom: 0;
-    @apply absolute;
-    @apply w-[200vw];
-    @apply h-[1px];
-    @apply bg-gray-950/5;
-    @apply left-[-100vw];
-}
-.block-line:after {
-    content: ''; /* 가상 요소 활성화 */
-    bottom: 0;
-    @apply absolute;
-    @apply w-[200vw];
-    @apply h-[1px];
-    @apply bg-gray-950/5;
-    @apply left-[-100vw];
-}
-.block-line:before {
-    content: ''; /* 가상 요소 활성화 */
-    top: 0;
-    @apply absolute;
-    @apply w-[200vw];
-    @apply h-[1px];
-    @apply bg-gray-950/5;
-    @apply left-[-100vw];
-}
-
-.dark .block-line-t:after {
-    content: ''; /* 가상 요소 활성화 */
-    top: 0;
-    @apply absolute;
-    @apply w-[200vw];
-    @apply h-[1px];
-    @apply bg-white/10;
-    @apply left-[-100vw];
-}
-.dark .block-line-b:after {
-    content: ''; /* 가상 요소 활성화 */
-    bottom: 0;
-    @apply absolute;
-    @apply w-[200vw];
-    @apply h-[1px];
-    @apply bg-white/10;
-    @apply left-[-100vw];
-}
-
-.cross-line-tl {
-    @apply before:absolute before:-left-[10px] before:-top-[1px] before:h-[0.5px] before:w-[20px] before:bg-gray-950 after:bg-gray-950 after:absolute after:-left-[10px] after:top-0 after:h-[0.5px] after:w-[20px] after:rotate-90
-}
-
-.cross-line-br {
-    @apply before:absolute before:-right-[10px] before:-bottom-[1px] before:h-[0.5px] before:w-[20px] before:bg-gray-950 after:bg-gray-950 after:absolute after:-right-[10px] after:bottom-0 after:h-[0.5px] after:w-[20px] after:rotate-90
-}
 /*Editor.js*/
 .ce-block__content,
 .ce-toolbar__content {

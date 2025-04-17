@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html className="break-keep selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <html className="break-keep selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black dark">
       <head />
       <body>
         <ReactQueryProvider>

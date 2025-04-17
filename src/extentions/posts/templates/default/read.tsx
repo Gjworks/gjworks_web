@@ -87,7 +87,7 @@ const PostsRead = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white dark:bg-dark-950">
+      <div className="">
         <div className="grid grid-cols-12 max-w-screen-lg mx-auto">
           <div className="col-span-12 md:col-span-2">
             <div className="hidden md:flex sticky top-[64px] py-4">

@@ -20,13 +20,13 @@ const PostsCategories = () => {
   return (
     <>
       <div className="flex gap-4 items-center flex-wrap justify-center">
-        <div className="flex rounded-full px-6 py-1 text-sm bg-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100">
+        <div className="flex rounded-full px-6 py-1 text-sm bg-gray-100 dark:bg-dark-900 dark:text-white cursor-pointer hover:bg-gray-700 hover:text-gray-100">
           전체
         </div>
         {Category.map((category) => (
           <div
             key={category.id}
-            className="flex rounded-full px-6 py-1 text-sm bg-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100"
+            className="flex rounded-full px-6 py-1 text-sm bg-gray-100 cursor-pointer hover:bg-gray-700 hover:text-gray-100 dark:bg-dark-900 dark:text-white"
           >
             {category.name}
           </div>

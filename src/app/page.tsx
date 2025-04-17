@@ -67,7 +67,7 @@ export default function Page() {
 
   return (
     <MainLayout>
-      {/* <div className="-mt-[111px] h-[111px] bg-black/80 w-full"></div> */}
+      {/* <div className="-mt-[111px] h-[111px] bg-dark-950/80 w-full"></div> */}
       <div className="relative">
         {/* <motion.div
         className="absolute inset-0"
@@ -78,13 +78,11 @@ export default function Page() {
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
         <div className="relative">
-          <div className="border-b border-gray-950/10">
+          <div className="block-line-b">
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-12 md:col-span-12">
-                <div className="p-2 bg-gray-100 dark:bg-gray-900 md:h-full">
-                  <div className="relative flex justify-center items-center bg-[url('/assets/images/bg47.jpg')] bg-no-repeat bg-cover bg-center rounded-2xl overflow-hidden  md:h-[660px]">
-                    <div className="absolute inset-0 overflow-hidden bg-[url('/assets/images/scene_bg_dot.png')]"></div>
-
+                <div className="p-2 md:h-full">
+                  <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:h-[660px]">
                     <motion.div
                       variants={parentVariants}
                       initial="offscreen"
@@ -97,19 +95,19 @@ export default function Page() {
                           variants={variants}
                           className="px-1 lg:mb-2"
                         >
-                          <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-white lg:text-5xl lg:gap-0 dark:text-white w-full">
+                          <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-black lg:text-5xl lg:gap-0 dark:text-white w-full">
                             Building digital experience ✨
                           </div>
                         </motion.div>
                         <motion.div
                           variants={variants}
-                          className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight text-white lg:text-5xl dark:text-white mb-16"
+                          className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight text-black lg:text-5xl dark:text-white mb-16"
                         >
                           Creative platform service
                         </motion.div>
                         <motion.div
                           variants={variants}
-                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-300 max-w-screen-sm mx-auto"
+                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 max-w-screen-sm mx-auto"
                         >
                           지제이웍스는 웹과 앱을 개발하기 위한 소규모
                           개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업,
@@ -123,14 +121,14 @@ export default function Page() {
                           variants={variants}
                           className="relative mx-auto flex items-center gap-4 px-3"
                         >
-                          <div className="dark:bg-dark-700/75 rounded-lg bg-white p-3 backdrop-blur-2xl">
-                            <Square3Stack3DIcon className="size-5 text-gray-950 dark:text-white stroke-1" />
+                          <div className="dark:bg-dark-700/75 rounded-lg bg-dark-950 p-3 backdrop-blur-2xl">
+                            <Square3Stack3DIcon className="size-5 text-gray-50 dark:text-white stroke-1" />
                           </div>
                           <div className="flex-1">
-                            <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-50">
+                            <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-950">
                               Various Projects
                             </div>
-                            <div className="dark:text-dark-300 text-left text-xs text-gray-300">
+                            <div className="dark:text-dark-300 text-left text-xs text-gray-400">
                               다양한 프로젝트를 만나보시고 좋은 의견과
                               아이디어를 주시면 반영하겠습니다.
                             </div>
@@ -144,7 +142,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="hidden max-w-screen-xl mx-auto">
           <motion.div className="">
             <div className="grid grid-cols-12">
               <div className="col-span-12">
@@ -166,13 +164,13 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="mb-4 text-xl font-semibold text-black lg:text-2xl dark:text-white !leading-tight tracking-tight"
+                            className="mb-4 text-xl font-semibold text-white lg:text-2xl dark:text-white !leading-tight tracking-tight"
                           >
                             BEST UI TEMPLATES
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="dark:text-dark-500 text-sm text-gray-500"
+                            className="dark:text-dark-500 text-sm text-gray-400"
                           >
                             컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
                             모든 Component는 tailwindcss와 Framer motion을
@@ -190,7 +188,7 @@ export default function Page() {
                 whileInView="onscreen"
                 viewport={{ once: false, amount: 0.1 }}
                 variants={parentVariants}
-                className="col-span-12 relative"
+                className="hidden col-span-12 relative"
               >
                 <div className="max-w-screen-xl mx-auto px-3 md:py-20 block-line-t">
                   <div className="flex justify-center flex-wrap w-full pt-20">
@@ -212,8 +210,8 @@ export default function Page() {
                       </div>
                     </div>
                     <div className="flex-1 flex justify-center">
-                      <div className="relative flex items-center bg-gray-50/50 dark:bg-dark-950/50 justify-center border border-gray-200/75 dark:border-dark-800/75 rounded-full h-64 md:w-96 w-64 md:h-96 shadow-2xl shadow-gray-100 dark:shadow-dark-900">
-                        <div className="flex items-center justify-center border border-gray-200/75 dark:border-dark-800/75 rounded-full w-40 md:w-64 h-40 md:h-64 bg-white/50 dark:bg-black/50">
+                      <div className="relative flex items-center bg-gray-50/50 dark:bg-dark-950/50 justify-center border border-gray-200/75 dark:border-dark-800/75 rounded-full h-64 md:w-96 w-64 md:h-96 shadow-2xl shadow-gray-100 dark:shadow-dark-900/40">
+                        <div className="flex items-center justify-center border border-gray-200/75 dark:border-dark-800/75 rounded-full w-40 md:w-64 h-40 md:h-64 bg-white/50 dark:bg-dark-950/50">
                           <motion.div
                             animate={{
                               rotate: -360,
@@ -265,7 +263,7 @@ export default function Page() {
                               repeat: Infinity, // 무한 반복
                               repeatType: "loop", // 애니메이션이 끝나면 다시 처음부터 반복
                             }}
-                            className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black top-10 -right-10 rounded-full py-2 px-5 bg-primary-400 text-sm text-white"
+                            className="absolute text-center shadow-lg shadow-gray-950/20 dark:shadow-black top-10 -right-10 rounded-full py-2 px-5 bg-primary-400 text-sm text-black"
                           >
                             Databases
                           </motion.div>
