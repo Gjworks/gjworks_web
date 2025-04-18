@@ -77,9 +77,9 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative bg-[url('/assets/images/bg39.jpg')] bg-cover bg-top bg-no-repeat">
-          <div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>
-          <div className="bg-gradient-to-b from-dark-950 via-dark-950/60  to-dark-950">
+        <div className="relative bg-[url('/assets/images/bg45.jpg')] bg-cover bg-top bg-no-repeat">
+          {/*<div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>*/}
+          <div className="bg-gradient-to-b from-dark-950 via-dark-950/70  to-dark-950">
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-12 md:col-span-12">
                 <div className="p-2 md:h-full">
@@ -142,6 +142,9 @@ export default function Page() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="py-20">
+          <div className="max-w-screen-xl mx-auto p-5 rounded-lg flex gap-4 flex-wrap bg-dark-900/75 border border-gray-950"></div>
         </div>
         <div className="hidden max-w-screen-xl mx-auto">
           <motion.div className="">

@@ -16,7 +16,7 @@ html body {
     @apply h-full;
 }
 html.dark{
-    @apply bg-gray-950
+    @apply bg-dark-950
 }
 
 /*Editor.js*/
