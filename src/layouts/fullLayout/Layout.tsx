@@ -6,8 +6,8 @@ const FullLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="relative min-h-[calc(100vh-226px)]">{children}</main>
-      <footer className="relative sm:px-8">
+      <main className="relative min-h-[calc(100vh-236px)]">{children}</main>
+      <footer className="relative">
         <Footer />
       </footer>
     </>

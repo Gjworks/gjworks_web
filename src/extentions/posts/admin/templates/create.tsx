@@ -3,202 +3,115 @@
 import React, { useState, useEffect, use } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Warning from "@plextype/components/message/Warning";
 
-import { createPosts } from "@/extentions/posts/admin/scripts/postsController";
-import { getPost } from "@/extentions/posts/admin/scripts/postsModel";
-
-interface PostProps {
-  id?: number | null;
+interface Group {
+  id: number;
+  groupName: string;
+  groupTitle: string;
+  groupDesc?: string;
 }
 
-const DashboardPostCreate = (props: PostProps) => {
+const DashboardPostCreate = () => {
   const router = useRouter();
 
   const [posts, setPosts] = useState<any>([]);
   const [error, setError] = useState<any>(false);
-  const [isDocumentLike, setIsDocumentLike] = useState<boolean>(false);
-  const [isCommentLike, setisCommentLike] = useState<boolean>(false);
-  const [isCommentState, setIsCommentState] = useState<boolean>(false);
-  const [isConsultingState, setIsConsultingState] = useState<boolean>(false);
-  const [writePermissions, setWritePermissions] = useState<string[]>([]);
-  const [commentPermissions, setCommentPermissions] = useState<string[]>([]);
-  const [listPermissions, setListPermissions] = useState<string[]>([]);
-  const [readPermissions, setReadPermissions] = useState<string[]>([]);
+  const [groups, setGroups] = useState<Group[]>([]);
+  const [selectedGroupIds, setSelectedGroupIds] = useState<number[]>([]);
 
   useEffect(() => {
-    if (props.id) {
-      getPost({ id: props.id }).then((response) => {
-        if (response.type === "error") {
-          setError(response.data.message);
-        } else {
-          if (response.data.postInfo && response.type === "success") {
-            setPosts(response.data.postInfo);
-            setListPermissions(response.data.postInfo.config.permissions.list);
-            setReadPermissions(response.data.postInfo.config.permissions.read);
-            setWritePermissions(
-              response.data.postInfo.config.permissions.write,
-            );
-            setCommentPermissions(
-              response.data.postInfo.config.permissions.comment,
-            );
-          }
-        }
-      });
-    }
-  }, [props.id]);
+    // @ts-ignore
+    fetch("/api/user/groups")
+      .then((res) => res.json())
+      .then((res) => setGroups(res.data));
+  }, []);
 
-  useEffect(() => {
-    // console.log(posts?.config?.grant.commentPermissions)
-    if (posts?.config?.documentLike !== undefined) {
-      setIsDocumentLike(posts.config.documentLike);
-    }
-    if (posts?.config?.commentLike !== undefined) {
-      setisCommentLike(posts.config.commentLike);
-    }
-    if (posts?.config?.commentState !== undefined) {
-      setIsCommentState(posts.config.commentState);
-    }
-    if (posts?.config?.consultingState !== undefined) {
-      setIsConsultingState(posts.config.consultingState);
-    }
-  }, [posts]);
-
-  const handleDocumentLike = (event) => {
-    setIsDocumentLike(event.target.checked);
-  };
-  const handleCommentLike = (event) => {
-    setisCommentLike(event.target.checked);
-  };
-  const handleCommentState = (event) => {
-    setIsCommentState(event.target.checked);
-  };
-  const handleConsultingState = (event) => {
-    setIsConsultingState(event.target.checked);
+  const toggleGroup = (id: number) => {
+    setSelectedGroupIds((prev) =>
+      prev.includes(id) ? prev.filter((g) => g !== id) : [...prev, id],
+    );
   };
 
-  const submitHandler = async (formData: FormData) => {
-    const selectedCommentGroups = formData.getAll(
-      "commentPermissions",
-    ) as string[];
-    const selectedWriteGroups = formData.getAll("writePermissions") as string[];
-    const selectedListGroups = formData.getAll("listPermissions") as string[];
-    const selectedReadGroups = formData.getAll("readPermissions") as string[];
+  const permissions = [
+    { label: "목록", permissionsType: "listPermissions" },
+    { label: "본문", permissionsType: "readPermissions" },
+    { label: "글쓰기", permissionsType: "writePermissions" },
+    { label: "댓글", permissionsType: "commentPermissions" },
+  ];
 
-    const params = {
-      postId: formData.get("postId") as string,
-      moduleId: formData.get("moduleId") as string,
-      moduleName: formData.get("moduleName") as string,
-      moduleType: formData.get("moduleType") as string,
-      listCount: formData.get("listCount") as string,
-      pageCount: formData.get("pageCount") as string,
-      documentLike: formData.get("documentLike") as string,
-      consultingState: formData.get("consultingState") as string,
-      commentState: formData.get("commentState") as string,
-      commentLike: formData.get("commentLike") as string,
-      permissions: {
-        comment: selectedCommentGroups,
-        write: selectedWriteGroups,
-        list: selectedListGroups,
-        read: selectedReadGroups,
+  const permissionGroups = [
+    { label: "비회원", value: "guest" },
+    { label: "로그인 사용자", value: "member" },
+    { label: "관리자", value: "admin" },
+  ];
+
+  const handleSubmit = async () => {
+    const res = await fetch("/api/posts", {
+      method: "POST",
+      body: JSON.stringify({
+        title: "게시판 제목",
+        selectedGroups: selectedGroupIds,
+        // 기타 게시판 설정
+      }),
+      headers: {
+        "Content-Type": "application/json",
       },
-    };
-    console.log(params);
-    await createPosts(params)
-      .then((response) => {
-        console.log(response);
-        if (response?.data.code === "error") {
-          setError(response?.data.message);
-        } else {
-          router.replace("/dashboard/posts/list");
-        }
-      })
-      .catch((error) => {
-        console.error("Failed to register: " + error.toString());
-      });
-  };
-  // const isCheckedComment =
-  //   posts?.grant && posts.config.grant.commentPermissions.includes(String(0))
+    });
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { checked, value, id, name } = event.target;
-    name === "comment" &&
-      setCommentPermissions((prev) => {
-        if (!Array.isArray(prev)) {
-          return [];
-        }
-        return checked ? [...prev, value] : prev.filter((id) => id !== value);
-      });
-
-    name === "write" &&
-      setWritePermissions((prev) => {
-        if (!Array.isArray(prev)) {
-          return [];
-        }
-        return checked ? [...prev, value] : prev.filter((id) => id !== value);
-      });
-
-    name === "list" &&
-      setListPermissions((prev) => {
-        if (!Array.isArray(prev)) {
-          return [];
-        }
-        return checked ? [...prev, value] : prev.filter((id) => id !== value);
-      });
-
-    name === "read" &&
-      setReadPermissions((prev) => {
-        if (!Array.isArray(prev)) {
-          return [];
-        }
-        return checked ? [...prev, value] : prev.filter((id) => id !== value);
-      });
+    const data = await res.json();
+    console.log(data);
   };
 
-  const isCheckedWrite =
-    posts.config?.permissions?.write &&
-    writePermissions.includes(String("guest"));
-  const isCheckedWriteMember =
-    posts.config?.permissions?.write &&
-    writePermissions.includes(String("member"));
-  const isCheckedWriteAdmin =
-    posts.config?.permissions?.write &&
-    writePermissions.includes(String("admin"));
-
-  const isCheckedComment =
-    posts.config?.permissions?.comment &&
-    commentPermissions.includes(String("guest"));
-  const isCheckedCommentMember =
-    posts.config?.permissions?.comment &&
-    commentPermissions.includes(String("member"));
-  const isCheckedCommentAdmin =
-    posts.config?.permissions?.comment &&
-    commentPermissions.includes(String("admin"));
-
-  const isCheckedList =
-    posts.config?.permissions?.list &&
-    listPermissions.includes(String("guest"));
-  const isCheckedListMember =
-    posts.config?.permissions?.list &&
-    listPermissions.includes(String("member"));
-  const isCheckedListAdmin =
-    posts.config?.permissions?.list &&
-    listPermissions.includes(String("admin"));
-
-  const isCheckedRead =
-    posts.config?.permissions?.read &&
-    readPermissions.includes(String("guest"));
-  const isCheckedReadMember =
-    posts.config?.permissions?.read &&
-    readPermissions.includes(String("member"));
-  const isCheckedReadAdmin =
-    posts.config?.permissions?.read &&
-    readPermissions.includes(String("admin"));
+  const PermissionSection = ({ permissionType, label }) => (
+    <div className="mb-5">
+      <div className="flex gap-2 items-center">
+        <div className="w-24 text-sm text-black">{label}</div>
+        <div className="flex-1">
+          <div className="flex gap-2 flex-wrap">
+            {permissionGroups.map(({ label, value }) => (
+              <div key={value}>
+                <label
+                  htmlFor={`${permissionType}-${value}`}
+                  className="text-sm flex gap-2 items-center"
+                >
+                  <input
+                    type="checkbox"
+                    name={permissionType}
+                    id={`${permissionType}-${value}`}
+                    value={value}
+                  />
+                  {label}
+                </label>
+              </div>
+            ))}
+            {groups.map((group) => (
+              <div key={group.id}>
+                <label
+                  htmlFor={`${permissionType}-group-${group.id}`}
+                  className="text-sm flex gap-2 items-center"
+                >
+                  <input
+                    type="checkbox"
+                    name={permissionType}
+                    id={`${permissionType}-group-${group.id}`}
+                    value={group.id}
+                    checked={selectedGroupIds.includes(group.id)}
+                    onChange={() => toggleGroup(group.id)}
+                  />
+                  {group.groupTitle}
+                </label>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
-        <form action={submitHandler}>
+        <form>
           {posts.id && <input type="hidden" name="postId" value={posts.id} />}
           <input type="hidden" name="moduleType" value="posts" />
           <div className="max-w-screen-2xl mx-auto">
@@ -323,8 +236,6 @@ const DashboardPostCreate = (props: PostProps) => {
                             name="documentLike"
                             id="documentLike"
                             className="peer hidden"
-                            onChange={handleDocumentLike}
-                            checked={isDocumentLike}
                           />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
@@ -347,8 +258,6 @@ const DashboardPostCreate = (props: PostProps) => {
                             name="consultingState"
                             id="consultingState"
                             className="peer hidden"
-                            onChange={handleConsultingState}
-                            checked={isConsultingState}
                           />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
@@ -389,8 +298,6 @@ const DashboardPostCreate = (props: PostProps) => {
                             name="commentState"
                             id="commentState"
                             className="peer hidden"
-                            onChange={handleCommentState}
-                            checked={isCommentState}
                           />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
@@ -414,8 +321,6 @@ const DashboardPostCreate = (props: PostProps) => {
                             name="commentLike"
                             id="commentLike"
                             className="peer hidden"
-                            onChange={handleCommentLike}
-                            checked={isCommentLike}
                           />
 
                           <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
@@ -441,361 +346,15 @@ const DashboardPostCreate = (props: PostProps) => {
                   </div>
                 </div>
                 <div className="col-span-3">
-                  <div className="grid grid-col-span-2">
-                    <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
-                      <div className="col-span-3">
-                        <div className="mb-5">
-                          <div className="flex gap-2 items-center">
-                            <div className="w-24 text-sm text-black">목록</div>
-                            <div className="flex-1">
-                              <div className="flex gap-2 flex-wrap">
-                                <div>
-                                  <label
-                                    htmlFor="listPermissions"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="listPermissions"
-                                      id="listPermissionsGuest"
-                                      value="guest"
-                                      checked={isCheckedList ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    비회원
-                                  </label>
-                                </div>
-
-                                <div>
-                                  <label
-                                    htmlFor="listPermissionsMember"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="listPermissions"
-                                      id="listPermissionsMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedListMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    로그인 사용자
-                                  </label>
-                                </div>
-
-                                {posts?.grant &&
-                                  posts?.grant?.map((item, index) => {
-                                    const isChecked = listPermissions?.includes(
-                                      String(item.id),
-                                    );
-                                    // console.log(isChecked)
-                                    return (
-                                      <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`listPermissions${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="listPermissions"
-                                            id={`listPermissions${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
-                                          {item.groupTitle}
-                                        </label>
-                                      </div>
-                                    );
-                                  })}
-
-                                <div>
-                                  <label
-                                    htmlFor="listPermissionsAdmin"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="listPermissions"
-                                      id="listPermissionsAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedListAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    관리자
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mb-5">
-                          <div className="flex gap-2 items-center">
-                            <div className="w-24 text-sm text-black">본문</div>
-                            <div className="flex-1">
-                              <div className="flex gap-2 flex-wrap">
-                                <div>
-                                  <label
-                                    htmlFor="readPermissions"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="readPermissions"
-                                      id="readPermissions"
-                                      value="guest"
-                                      checked={isCheckedRead ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    비회원
-                                  </label>
-                                </div>
-
-                                <div>
-                                  <label
-                                    htmlFor="readPermissionsMember"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="readPermissions"
-                                      id="readPermissionsMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedReadMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    로그인사용자
-                                  </label>
-                                </div>
-
-                                {posts?.grant &&
-                                  posts?.grant?.map((item, index) => {
-                                    const isChecked = readPermissions?.includes(
-                                      String(item.groupName),
-                                    );
-                                    // console.log(isChecked)
-                                    return (
-                                      <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`readPermissions${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="readPermissions"
-                                            id={`readPermissions${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
-                                          {item.groupTitle}
-                                        </label>
-                                      </div>
-                                    );
-                                  })}
-
-                                <div>
-                                  <label
-                                    htmlFor="readPermissionsAdmin"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="readPermissions"
-                                      id="readPermissionsAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedReadAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    관리자
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mb-5">
-                          <div className="flex gap-2 items-center">
-                            <div className="w-24 text-sm text-black">
-                              글쓰기
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex gap-2 flex-wrap">
-                                <div>
-                                  <label
-                                    htmlFor="writePermissionsGuest"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="writePermissions"
-                                      id="writePermissionsGuest"
-                                      value="guest"
-                                      checked={isCheckedWrite ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    비회원
-                                  </label>
-                                </div>
-                                <div>
-                                  <label
-                                    htmlFor="writePermissionsMember"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="writePermissions"
-                                      id="writePermissionsMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedWriteMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    로그인사용자
-                                  </label>
-                                </div>
-
-                                {posts?.grant &&
-                                  posts?.grant?.map((item, index) => {
-                                    const isChecked =
-                                      writePermissions?.includes(
-                                        String(item.id),
-                                      );
-                                    // console.log(isChecked)
-                                    return (
-                                      <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`writePermissions${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="writePermissions"
-                                            id={`writePermissions${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
-                                          {item.groupTitle}
-                                        </label>
-                                      </div>
-                                    );
-                                  })}
-                                <div>
-                                  <label
-                                    htmlFor="writePermissionsAdmin"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="writePermissions"
-                                      id="writePermissionsAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedWriteAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    관리자
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mb-5">
-                          <div className="flex gap-2 items-center">
-                            <div className="w-24 text-sm text-black">댓글</div>
-                            <div className="flex-1">
-                              <div className="flex gap-2 flex-wrap">
-                                <div>
-                                  <label
-                                    htmlFor="commentPermissionsGuest"
-                                    className="text-sm flex gap-2 items-center"
-                                  >
-                                    <input
-                                      type="checkbox"
-                                      name="commentPermissions"
-                                      id="commentPermissionsGuest"
-                                      value="guest"
-                                      checked={isCheckedComment ? true : false}
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    비회원
-                                  </label>
-                                </div>
-                                <div>
-                                  <label className="text-sm flex gap-2 items-center">
-                                    <input
-                                      type="checkbox"
-                                      name="commentPermissions"
-                                      id="commentPermissionsMember"
-                                      value="member"
-                                      checked={
-                                        isCheckedCommentMember ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    로그인사용자
-                                  </label>
-                                </div>
-
-                                {posts?.grant &&
-                                  posts?.grant?.map((item, index) => {
-                                    const isChecked =
-                                      commentPermissions.includes(
-                                        String(item.id),
-                                      );
-                                    // console.log(isChecked)
-                                    return (
-                                      <div key={item.groupName}>
-                                        <label
-                                          htmlFor={`commentPermissions${item.groupName}`}
-                                          className="text-sm flex gap-2 items-center"
-                                        >
-                                          <input
-                                            type="checkbox"
-                                            name="commentPermissions"
-                                            id={`commentPermissions${item.groupName}`}
-                                            value={item.id}
-                                            checked={isChecked ? true : false}
-                                            onChange={handleCheckboxChange}
-                                          />
-                                          {item.groupTitle}
-                                        </label>
-                                      </div>
-                                    );
-                                  })}
-
-                                <div>
-                                  <label className="text-sm flex gap-2 items-center">
-                                    <input
-                                      type="checkbox"
-                                      name="commentPermissions"
-                                      id="commentPermissionsAdmin"
-                                      value="admin"
-                                      checked={
-                                        isCheckedCommentAdmin ? true : false
-                                      }
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    관리자
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                  <div className="grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
+                    <div className="col-span-3">
+                      {permissions.map(({ label, permissionsType }) => (
+                        <PermissionSection
+                          key={permissionsType}
+                          label={label}
+                          permissionType={permissionsType}
+                        />
+                      ))}
                     </div>
                   </div>
                 </div>

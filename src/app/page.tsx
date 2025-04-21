@@ -83,7 +83,7 @@ export default function Page() {
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-12 md:col-span-12">
                 <div className="p-2 md:h-full">
-                  <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[calc(100vh-226px)]">
+                  <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]">
                     <motion.div
                       variants={parentVariants}
                       initial="offscreen"
