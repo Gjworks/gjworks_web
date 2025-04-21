@@ -12,7 +12,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const postId = Number(resolvedParams.id);
   return (
     <>
-      <DashboardPostCreate id={postId} />
+      <DashboardPostCreate />
     </>
   );
 };
