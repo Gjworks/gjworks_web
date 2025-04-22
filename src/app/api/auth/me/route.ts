@@ -1,14 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
-import { cookies, headers } from "next/headers";
-import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
-import { decodeJwt } from "jose";
-import {
-  sign,
-  verify,
-  refresh,
-  refreshVerify,
-} from "@plextype/utils/auth/jwtAuth";
-import { PrismaClient } from "@prisma/client";
+
+import { sign, verify, refreshVerify } from "@plextype/utils/auth/jwtAuth";
 
 import { getUserById } from "@/extentions/user/scripts/userModel";
 import { timeToSeconds } from "@plextype/utils/date/timeToSeconds";

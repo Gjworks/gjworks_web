@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import prisma from "@plextype/utils/db/prisma"; // Prisma 클라이언트 경로 확인
+import prisma from "@plextype/utils/db/prisma";
+import { verify } from "@plextype/utils/auth/jwtAuth";
+import { jsonResponse } from "@plextype/utils/helper/jsonResponse"; // Prisma 클라이언트 경로 확인
 
-export async function GET(req: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
     // URL에서 쿼리 파라미터 가져오기
-    const { searchParams } = new URL(req.url);
+    const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") || "1", 10);
     const target = searchParams.get("target") || "";
     const keyword = searchParams.get("keyword") || "";
@@ -46,8 +48,33 @@ export async function GET(req: NextRequest) {
   }
 }
 
-export async function POST(req: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
+    const accessToken = request.cookies.get("accessToken")?.value;
+    if (!accessToken) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const verifyToken = await verify(accessToken!);
+    if (!verifyToken || verifyToken.isAdmin !== true) {
+      return jsonResponse(
+        403,
+        "Access denied. You do not have administrator privileges.",
+      );
+    } else {
+      const formData = await request.formData();
+      console.log(formData);
+      const moduleId = formData.get("moduleId")?.toString();
+      console.log(moduleId);
+      return NextResponse.json(
+        {
+          success: true,
+          type: "success",
+          message: "게시판 생성에 성공하였습니다.",
+        },
+        { status: 200 },
+      );
+    }
   } catch (error) {
     console.error("게시판 생성 API 오류:", error);
     return NextResponse.json(

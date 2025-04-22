@@ -74,22 +74,22 @@ const UpdateUser = (props: any) => {
       <form onSubmit={handleUserInfoSubmit}>
         <div>
           {error && <Alert message={error.message} type={error.type} />}
-          <div className="border-b border-gray-200">
-            <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
+          <div className="border-b border-gray-200 dark:border-dark-800">
+            <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100 dark:border-dark-800">
               <div className="col-span-1 text-base text-gray-400 p-2">
                 아이디
               </div>
-              <div className="col-span-2 text-base text-gray-900 p-2">
+              <div className="col-span-2 text-base text-gray-900 dark:text-dark-200 p-2">
                 {loggedInfo && loggedInfo && loggedInfo.email_address}
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
+            <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100 dark:border-dark-800">
               <div className="col-span-1 text-base text-gray-400 p-2">
                 프로필 이미지
               </div>
               <div className="col-span-2">
                 <div className="flex items-center gap-8">
-                  <div className="relative text-gray-300 rounded-full w-20 h-20 bg-gray-200 hover:bg-gray-300"></div>
+                  <div className="relative text-gray-300 rounded-full w-20 h-20 bg-gray-200 hover:bg-gray-300 dark:bg-dark-800 dark:hover:bg-dark-700"></div>
                   <div className="flex gap-2">
                     <button className="text-xs border-green-500 border py-1 px-3 rounded-lg hover:bg-green-500 hover:text-white text-green-500">
                       변경하기
@@ -101,7 +101,7 @@ const UpdateUser = (props: any) => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100">
+            <div className="grid grid-cols-3 gap-4 py-3 mb-2 border-b border-gray-100 dark:border-dark-800">
               <div className="col-span-1 text-base text-gray-400 p-2">
                 비밀번호
               </div>
@@ -122,7 +122,7 @@ const UpdateUser = (props: any) => {
                 <input
                   type="text"
                   name="nickName"
-                  className="w-full py-2 border border-gray-200 hover:border-gray-900 focus:border-gray-900 px-5 rounded-lg outline-none"
+                  className="w-full py-2 border border-gray-200 hover:border-gray-900 focus:border-gray-900 px-5 rounded-lg outline-none dark:bg-dark-900 dark:border-dark-700 dark:text-white"
                   placeholder="변경할 닉네임을 입력해주세요."
                   defaultValue={loggedInfo && loggedInfo && loggedInfo.nickName}
                 />

@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 const Page = () => {
   return (
@@ -8,12 +8,12 @@ const Page = () => {
       <div className="">
         <div className="max-w-screen-sm mx-auto px-3 pt-10 pb-20">
           <div className="">
-            <div className="py-3 relative before:absolute before:left-8 before:w-1 before:h-full before:bg-gray-200 before:top-0">
-              <div className="relative w-full rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl"></div>
+            <div className="py-3 relative before:absolute before:left-8 before:w-1 before:h-full before:bg-gray-200 dark:before:bg-dark-800 before:top-0">
+              <div className="relative w-full rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl dark:bg-dark-800 dark:border-dark-700 dark:shadow-dark-900/70"></div>
             </div>
 
-            <div className="py-3 relative before:absolute before:left-8 before:w-1 before:h-full before:bg-gray-200 before:top-0">
-              <div className="relative w-full rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl">
+            <div className="py-3 relative before:absolute before:left-8 before:w-1 before:h-full before:bg-gray-200 dark:before:bg-dark-800 before:top-0">
+              <div className="relative w-full rounded-xl border border-gray-200/75 bg-gray-100 dark:bg-dark-800 dark:border-dark-700 dark:shadow-dark-900/70 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl">
                 <div className="flex gap-8">
                   <div className="rounded-lg bg-white w-12 h-12 flex items-center justify-center text-gray-600 shadow shadow-gray-200">
                     <div>
@@ -34,7 +34,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium text-base mb-3">
+                    <div className="font-medium text-base dark:text-white mb-3">
                       Alien: River of Pain Revisions 2.0
                     </div>
                     <div className="line-clamp-2 text-sm text-gray-400">
@@ -77,9 +77,9 @@ const Page = () => {
               </div>
             </div>
 
-            <div className="pb-3 pt-12 relative before:absolute before:left-8 before:w-1 before:h-full before:bg-gray-200 before:top-0">
+            <div className="pb-3 pt-12 relative before:absolute before:left-8 before:w-1 before:h-full before:bg-gray-200 dark:before:bg-dark-800 before:top-0">
               <div className="flex justify-center">
-                <div className="flex items-center gap-2 justify-center text-sm text-gray-400 hover:text-gray-900 hover:border-gray-700 w-36 relative rounded-xl border border-gray-200/75 bg-white py-2 px-5 cursor-pointer">
+                <div className="flex items-center gap-2 justify-center text-sm text-gray-400 hover:text-gray-900 hover:border-gray-700 w-36 relative rounded-xl border border-gray-200/75 bg-white dark:bg-dark-900 dark:border-dark-700 dark:hover:text-white py-2 px-5 cursor-pointer">
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -171,6 +171,6 @@ const Page = () => {
         </div>
       </div>
     </>
-  )
-}
-export default Page
+  );
+};
+export default Page;

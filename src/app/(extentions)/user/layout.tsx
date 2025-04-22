@@ -57,7 +57,7 @@ const PageLayout = ({ children }) => {
   return (
     <DefaultLayout>
       <div className="">
-        <div className="bg-white rounded-t-2xl">
+        <div className="bg-white dark:bg-dark-950 rounded-t-2xl">
           <div className="py-16">
             <ProfileComponent
               profileName={loggedInfo && loggedInfo && loggedInfo.nickName}

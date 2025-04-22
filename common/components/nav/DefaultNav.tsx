@@ -77,8 +77,8 @@ const DefaultNav = ({ list, params }) => {
                 className={
                   "block whitespace-nowrap py-4 px-1 text-sm hover:text-gray-950 dark:hover:text-dark-300 " +
                   (pathname === item.route
-                    ? "text-gray-950 hover:text-gray-400 dark:text-white dark:hover:text-dark-200"
-                    : "text-gray-600 dark:text-dark-300")
+                    ? "text-gray-950 hover:text-gray-400 dark:text-white dark:hover:text-white"
+                    : "text-gray-600 dark:text-dark-300 dark:hover:text-white")
                 }
               >
                 {item.title}

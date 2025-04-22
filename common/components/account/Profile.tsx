@@ -5,7 +5,7 @@ const ProfileComponent = ({ profileName, profileEmail }) => {
     <>
       <div className="w-full">
         <div className="flex justify-center py-10">
-          <div className="rounded-full w-24 h-24 bg-gray-200"></div>
+          <div className="rounded-full w-24 h-24 bg-gray-200 dark:bg-dark-800"></div>
         </div>
         <div className="flex items-center justify-center gap-2 pb-2">
           <div className="text-gray-950 dark:text-white text-xl font-medium">

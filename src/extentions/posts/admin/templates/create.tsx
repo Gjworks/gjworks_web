@@ -18,6 +18,14 @@ const DashboardPostCreate = () => {
   const [error, setError] = useState<any>(false);
   const [groups, setGroups] = useState<Group[]>([]);
   const [selectedGroupIds, setSelectedGroupIds] = useState<number[]>([]);
+  const [permissionsMap, setPermissionsMap] = useState<{
+    [key: string]: { subjectType: string; subjectId?: number }[];
+  }>({
+    listPermissions: [],
+    readPermissions: [],
+    writePermissions: [],
+    commentPermissions: [],
+  });
 
   useEffect(() => {
     // @ts-ignore
@@ -26,10 +34,34 @@ const DashboardPostCreate = () => {
       .then((res) => setGroups(res.data));
   }, []);
 
-  const toggleGroup = (id: number) => {
-    setSelectedGroupIds((prev) =>
-      prev.includes(id) ? prev.filter((g) => g !== id) : [...prev, id],
-    );
+  const togglePermission = (
+    type: string,
+    subjectType: string,
+    subjectId?: number,
+  ) => {
+    setPermissionsMap((prev) => {
+      const alreadyChecked = prev[type]?.some(
+        (p) => p.subjectType === subjectType && p.subjectId === subjectId,
+      );
+
+      if (alreadyChecked) {
+        return {
+          ...prev,
+          [type]: prev[type].filter(
+            (p) =>
+              !(p.subjectType === subjectType && p.subjectId === subjectId),
+          ),
+        };
+      }
+
+      return {
+        ...prev,
+        [type]: [
+          ...(prev[type] || []),
+          { subjectType, ...(subjectId ? { subjectId } : {}) },
+        ],
+      };
+    });
   };
 
   const permissions = [
@@ -45,17 +77,33 @@ const DashboardPostCreate = () => {
     { label: "관리자", value: "admin" },
   ];
 
-  const handleSubmit = async () => {
-    const res = await fetch("/api/posts", {
+  const handleSubmit = async (e) => {
+    console.log("선택된 그룹 ID들:", selectedGroupIds);
+    e.preventDefault();
+    setError(null);
+
+    const permissions = Object.entries(permissionsMap).flatMap(([type, list]) =>
+      list.map((p) => ({
+        resource: "posts:board:notice",
+        action: type.replace("Permissions", ""),
+        ...p,
+      })),
+    );
+
+    const formData = new FormData();
+    formData.append("moduleId", e.target.moduleId.value);
+    formData.append("moduleName", e.target.moduleName.value);
+    formData.append("listCount", e.target.listCount.value);
+    formData.append("pageCount", e.target.pageCount.value);
+    formData.append("documentLike", e.target.documentLike.value);
+    formData.append("consultingState", e.target.consultingState.value);
+    formData.append("commentState", e.target.commentState.value);
+    formData.append("permissions", JSON.stringify(permissions));
+
+    const res = await fetch("/api/admin/posts", {
       method: "POST",
-      body: JSON.stringify({
-        title: "게시판 제목",
-        selectedGroups: selectedGroupIds,
-        // 기타 게시판 설정
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      body: formData,
+      credentials: "include", // 쿠키 포함
     });
 
     const data = await res.json();
@@ -70,33 +118,31 @@ const DashboardPostCreate = () => {
           <div className="flex gap-2 flex-wrap">
             {permissionGroups.map(({ label, value }) => (
               <div key={value}>
-                <label
-                  htmlFor={`${permissionType}-${value}`}
-                  className="text-sm flex gap-2 items-center"
-                >
+                <label>
                   <input
                     type="checkbox"
-                    name={permissionType}
-                    id={`${permissionType}-${value}`}
-                    value={value}
+                    onChange={() => togglePermission(permissionType, value)}
+                    checked={permissionsMap[permissionType]?.some(
+                      (p) => p.subjectType === value,
+                    )}
                   />
                   {label}
                 </label>
               </div>
             ))}
+
             {groups.map((group) => (
               <div key={group.id}>
-                <label
-                  htmlFor={`${permissionType}-group-${group.id}`}
-                  className="text-sm flex gap-2 items-center"
-                >
+                <label>
                   <input
                     type="checkbox"
-                    name={permissionType}
-                    id={`${permissionType}-group-${group.id}`}
-                    value={group.id}
-                    checked={selectedGroupIds.includes(group.id)}
-                    onChange={() => toggleGroup(group.id)}
+                    onChange={() =>
+                      togglePermission(permissionType, "group", group.id)
+                    }
+                    checked={permissionsMap[permissionType]?.some(
+                      (p) =>
+                        p.subjectType === "group" && p.subjectId === group.id,
+                    )}
                   />
                   {group.groupTitle}
                 </label>
@@ -111,7 +157,7 @@ const DashboardPostCreate = () => {
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
-        <form>
+        <form onSubmit={handleSubmit}>
           {posts.id && <input type="hidden" name="postId" value={posts.id} />}
           <input type="hidden" name="moduleType" value="posts" />
           <div className="max-w-screen-2xl mx-auto">
@@ -206,8 +252,8 @@ const DashboardPostCreate = () => {
                         {posts && (
                           <input
                             type="text"
-                            name="listCount"
-                            id="listCount"
+                            name="pageCount"
+                            id="pageCount"
                             className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-16 py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                             defaultValue={
                               posts.config?.pageCount
@@ -308,28 +354,6 @@ const DashboardPostCreate = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
-                      <div className="col-span-3 sm:col-span-2">
-                        <label htmlFor="commentLike">
-                          <div className="text-sm text-black mb-3">
-                            좋아요 사용
-                          </div>
-                        </label>
-                        <label className="m-0">
-                          <input
-                            type="checkbox"
-                            name="commentLike"
-                            id="commentLike"
-                            className="peer hidden"
-                          />
-
-                          <div className="block relative rounded-full cursor-pointer bg-gray-200 w-12 h-6 after:content-[''] after:absolute top-[1px] after:rounded-full after:h-6 after:w-6 after:shadow-md after:bg-white dark:after:bg-white after:transition-all peer-checked:bg-cyan-500 after:peer-checked:translate-x-6"></div>
-                        </label>
-                        <div className="text-sm text-dark-400 pt-2 font-light">
-                          댓글에 좋아요 기능을 사용합니다.
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -367,7 +391,10 @@ const DashboardPostCreate = () => {
               >
                 뒤로가기
               </Link>
-              <button className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md">
+              <button
+                type="submit"
+                className="px-5 py-2 text-sm text-white bg-orange-500 hover:bg-cyan-600 rounded-md"
+              >
                 저장하기
               </button>
             </div>

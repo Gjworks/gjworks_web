@@ -7,6 +7,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum PermissionSubject {
+  guest
+  member
+  admin
+  group
+}
+
 model User {
   id            Int             @id @default(autoincrement())
   uuid          String          @default(cuid())
@@ -96,4 +103,16 @@ model Posts {
   status     String?    @db.VarChar(45)
   categories Category[]
   documents  Document[]
+}
+
+model Permission {
+  id          Int               @id @default(autoincrement())
+  module      String // 예: "posts", "shop", "user"
+  resource    String // 예: "board:notice", "document:123", "product:123"
+  action      String // 예: "read", "write", "delete"
+  subjectType PermissionSubject
+  subjectId   Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

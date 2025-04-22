@@ -84,8 +84,10 @@ const UserDelete = (props: any) => {
 
   return (
     <>
-      <div className="relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl lg:p-10 h-full mb-6">
-        <div className="text-xl font-semibold mb-6">회원 탈퇴</div>
+      <div className="relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 dark:bg-dark-800 dark:border-dark-700 dark:shadow-dark-900/70 backdrop-blur-xl lg:p-10 h-full mb-6">
+        <div className="text-xl font-semibold mb-6 dark:text-white">
+          회원 탈퇴
+        </div>
         <div>
           <Warning message="한번 탈퇴된 회원은 복구가 되지 않습니다. 신중하게 선택하시기 바랍니다." />
         </div>
@@ -96,7 +98,7 @@ const UserDelete = (props: any) => {
             name="user_delete"
             placeholder="회원 탈퇴 를 입력해주세요."
             className={
-              "block py-2 px-3 rounded-lg w-full border border-gray-300 text-base outline-none" +
+              "block py-2 px-3 rounded-lg w-full border border-gray-300 text-base outline-none dark:bg-dark-700 dark:border-dark-600 dark:focus:border-dark-400 " +
               (inputState === false
                 ? " focus:border-rose-600 text-rose-500 "
                 : " focus:border-cyan-500 border-cyan-500 text-cyan-600 ")
