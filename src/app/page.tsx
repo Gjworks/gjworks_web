@@ -77,9 +77,9 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative bg-[url('/assets/images/bg45.jpg')] bg-cover bg-top bg-no-repeat">
+        <div className="relative bg-[url('/assets/images/bg48.jpg')] bg-cover bg-center bg-no-repeat">
           {/*<div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>*/}
-          <div className="bg-gradient-to-b from-dark-950 via-dark-950/70  to-dark-950">
+          <div className="bg-gradient-to-b from-dark-950 via-dark-950/40  to-dark-950">
             <div className="grid grid-cols-12 gap-8">
               <div className="col-span-12 md:col-span-12">
                 <div className="p-2 md:h-full">
@@ -108,7 +108,7 @@ export default function Page() {
                         </motion.div>
                         <motion.div
                           variants={variants}
-                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 max-w-screen-sm mx-auto"
+                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 dark:text-dark-300 max-w-screen-sm mx-auto text-center"
                         >
                           지제이웍스는 웹과 앱을 개발하기 위한 소규모
                           개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업,
