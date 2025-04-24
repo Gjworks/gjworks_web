@@ -3,22 +3,22 @@
  * @author 지제이웍스 (gjworks2@gmail.com)
  * @brief 레이아웃 최상위 파일
  **/
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
-import Authpanel from './AuthPanel'
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import Authpanel from "./AuthPanel";
 
 const Layout = ({ children }) => {
-  const pathname = usePathname()
+  const pathname = usePathname();
   useEffect(() => {
-    // const htmlElement = document.documentElement
-    // // 조건에 따라 클래스를 추가 또는 제거
-    // if (!htmlElement.classList.contains('dark')) {
-    //   htmlElement.classList.add('dark')
-    // }
-  }, []) //
+    const htmlElement = document.documentElement;
+    // 조건에 따라 클래스를 추가 또는 제거
+    if (!htmlElement.classList.contains("dark")) {
+      htmlElement.classList.add("dark");
+    }
+  }, []); //
   return (
     <>
       <div className="fixed inset-0 bg-[url('/assets/images/bg23.jpg')] bg-no-repeat bg-cover">
@@ -51,7 +51,7 @@ const Layout = ({ children }) => {
         </div>
       </motion.div>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

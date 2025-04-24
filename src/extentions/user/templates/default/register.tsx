@@ -126,7 +126,7 @@ const Register = () => {
                 type="text"
                 name="accountId"
                 id="accountId"
-                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
+                className="autofill:bg-transparent outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
                 placeholder="example@mail.com"
               />
             </div>
@@ -143,7 +143,7 @@ const Register = () => {
                 type="password"
                 name="password"
                 id=""
-                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
+                className="autofill:bg-transparent outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
                 placeholder="User Password"
               />
             </div>
@@ -162,7 +162,7 @@ const Register = () => {
                 type="text"
                 name="nickName"
                 id=""
-                className="outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
+                className="autofill:bg-transparent outline-none bg-transparent text-sm py-3 pr-3 text-black flex-1 placeholder:text-dark-500/75 dark:text-white"
                 placeholder="User nick name"
               />
             </div>

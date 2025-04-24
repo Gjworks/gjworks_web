@@ -1,28 +1,28 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import {
   HomeIcon,
   ChevronRightIcon,
   ChatBubbleOvalLeftEllipsisIcon,
-} from '@heroicons/react/24/outline'
+} from "@heroicons/react/24/outline";
 
 interface PageProps {
   params: {
-    mid: string
-  }
+    mid: string;
+  };
 }
 
 const PostsList: React.FC<PageProps> = ({
   params,
 }: {
-  params: { mid: string }
+  params: { mid: string };
 }) => {
-  const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>()
-  console.log(params.mid)
+  const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>();
+  console.log(params.mid);
 
   return (
     <>
@@ -58,14 +58,14 @@ const PostsList: React.FC<PageProps> = ({
             </div>
           </div>
           <div className="flex items-center w-full lg:w-1/5">
-            <div className="flex-1 bg-gray-100 dark:bg-dark-800 lg:bg-white dark:lg:bg-dark-900 py-2 rounded-md border lg:border-0 border-gray-200 dark:border-dark-700">
-              <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 dark:border-dark-700">
+            <div className="flex-1 bg-gray-100 dark:bg-dark-900 dark:lg:bg-transparent lg:bg-white py-2 rounded-md border lg:border-0 border-gray-200 dark:border-dark-800">
+              <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 dark:border-dark-800">
                 <div className="flex items-center gap-2 mb-0 lg:mb-1">
                   <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
                   <div className="text-xs lg:text-sm text-gray-900 dark:text-dark-100">
                     관리자
                   </div>
-                  <div className="text-gray-500 text-xs">16분전</div>
+                  <div className="text-gray-500 text-xs">26분전</div>
                 </div>
                 <div className="text-xs text-gray-500  line-clamp-1">
                   테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
@@ -172,7 +172,7 @@ const PostsList: React.FC<PageProps> = ({
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default PostsList
+export default PostsList;

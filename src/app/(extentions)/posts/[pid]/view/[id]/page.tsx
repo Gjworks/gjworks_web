@@ -30,7 +30,7 @@ const Page = () => {
           <div className="text-center">
             <div className="text-sm mb-4 text-gray-400">질문답변</div>
             <h1
-              className="inline-block text-3xl md:text-4xl font-medium text-black py-4 text-center leading-10"
+              className="inline-block text-3xl md:text-4xl font-medium text-black py-4 dark:text-white text-center leading-10"
               style={{ lineHeight: "140%" }}
             >
               기술지원을 받을 수 있는 곳입니다. 아이디어를 제안하거나 문의사항을

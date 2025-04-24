@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   HomeIcon,
   ChevronRightIcon,
   ChatBubbleOvalLeftEllipsisIcon,
-} from '@heroicons/react/24/outline'
-import PageNavigation from '@plextype/components/nav/PageNavigation'
+} from "@heroicons/react/24/outline";
+import PageNavigation from "@plextype/components/nav/PageNavigation";
 const Page = () => {
   const pathVariants = {
     from: {
@@ -19,10 +19,10 @@ const Page = () => {
       pathLength: 1,
       transition: {
         duration: 0.7,
-        ease: 'easeInOut',
+        ease: "easeInOut",
       },
     },
-  }
+  };
   return (
     <>
       <div className="pt-8">
@@ -64,7 +64,7 @@ const Page = () => {
                 </div>
               </div>
               <div className="flex items-center w-full lg:w-1/5">
-                <div className="flex-1 bg-gray-100 dark:bg-dark-800 lg:bg-white dark:lg:bg-dark-900 py-2 rounded-md border lg:border-0 border-gray-200 dark:border-dark-700">
+                <div className="flex-1 bg-gray-100 dark:bg-dark-100 lg:dark:bg-dark-950 lg:bg-white py-2 rounded-md border lg:border-0 border-gray-200 dark:border-dark-700">
                   <div className="flex items-center gap-4 lg:block pl-3 lg:pl-8 border-l border-gray-200 dark:border-dark-700">
                     <div className="text-xs text-gray-400 mb-0 lg:mb-3">
                       <ChatBubbleOvalLeftEllipsisIcon className="size-5 stroke-1 text-gray-400" />
@@ -73,7 +73,7 @@ const Page = () => {
                       <div className="text-xs lg:text-sm text-gray-900 dark:text-dark-100">
                         관리자
                       </div>
-                      <div className="text-gray-500 text-xs">16분전</div>
+                      <div className="text-gray-500 text-xs">1분전</div>
                     </div>
                     <div className="text-xs text-gray-500  line-clamp-1">
                       테스트용으로 작성된 댓글입니다. 테스트용으로 작성된
@@ -213,7 +213,7 @@ const Page = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

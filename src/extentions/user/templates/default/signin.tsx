@@ -179,7 +179,7 @@ const Signin = () => {
                     type="text"
                     name="accountId"
                     ref={refInputUserId}
-                    className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none dark:text-white"
+                    className="autofill:bg-transparent placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none dark:text-white"
                     placeholder="Your Account ID"
                   />
                 </div>
@@ -219,7 +219,7 @@ const Signin = () => {
                     type="password"
                     name="password"
                     ref={refInputPassword}
-                    className="placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none dark:text-white"
+                    className="autofill:bg-transparent placeholder:text-dark-500/75 flex-1 bg-transparent py-3 pr-3 text-sm text-black outline-none dark:text-white"
                     placeholder="Your Password"
                   />
                 </div>
