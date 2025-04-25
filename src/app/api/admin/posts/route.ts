@@ -1,7 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import prisma from "@plextype/utils/db/prisma";
+import prisma, { PermissionSubject } from "@plextype/utils/db/prisma";
 import { verify } from "@plextype/utils/auth/jwtAuth";
 import { jsonResponse } from "@plextype/utils/helper/jsonResponse"; // Prisma 클라이언트 경로 확인
+
+interface FormDataFields {
+  moduleId: string;
+  moduleName: string;
+  listCount: number;
+  pageCount: number;
+  documentLike: boolean;
+  consultingState: boolean;
+  commentState: boolean;
+  permissions: object | null;
+}
 
 export async function GET(request: NextRequest) {
   try {
@@ -57,15 +68,82 @@ export async function POST(request: NextRequest) {
 
     const verifyToken = await verify(accessToken!);
     if (!verifyToken || verifyToken.isAdmin !== true) {
-      return jsonResponse(
-        403,
-        "Access denied. You do not have administrator privileges.",
+      return NextResponse.json(
+        {
+          success: true,
+          type: "warning",
+          message: "Access denied. You do not have administrator privileges.",
+        },
+        { status: 403 },
       );
     } else {
       const formData = await request.formData();
-      console.log(formData);
-      const moduleId = formData.get("moduleId")?.toString();
-      console.log(moduleId);
+      const data = Object.fromEntries(formData.entries());
+      const {
+        moduleId,
+        moduleName,
+        listCount,
+        pageCount,
+        documentLike,
+        consultingState,
+        commentState,
+        permissions,
+      } = data as Record<keyof FormDataFields, string>;
+
+      // 🚧 중복 게시판 확인
+      const existingPost = await prisma.posts.findFirst({
+        where: {
+          OR: [{ pid: moduleId }, { postName: moduleName }],
+        },
+      });
+
+      if (existingPost) {
+        return NextResponse.json(
+          {
+            success: false,
+            type: "warning",
+            message:
+              "Duplicate board ID or name detected. Please use unique values.",
+          },
+          { status: 409 },
+        );
+      }
+
+      const newPost = await prisma.posts.create({
+        data: {
+          pid: moduleId,
+          postName: moduleName,
+          postDesc: "",
+          config: JSON.stringify({
+            listCount: Number(listCount),
+            pageCount: Number(pageCount),
+            documentLike: documentLike === "true",
+            consultingState: consultingState === "true",
+            commentState: commentState === "true",
+          }),
+          status: "active",
+        },
+      });
+
+      // Step 2: 권한 생성
+      if (permissions) {
+        const parsedPermissions = JSON.parse(permissions) as {
+          resource: string;
+          action: string;
+          subjectType: "USER" | "ROLE"; // 예시
+          subjectId?: number;
+        }[];
+
+        await prisma.permission.createMany({
+          data: parsedPermissions.map((perm) => ({
+            module: "posts",
+            resource: `post:${newPost.id}`, // 예: post:42
+            action: perm.action,
+            subjectType: PermissionSubject[perm.subjectType],
+            subjectId: perm.subjectId,
+          })),
+        });
+      }
       return NextResponse.json(
         {
           success: true,

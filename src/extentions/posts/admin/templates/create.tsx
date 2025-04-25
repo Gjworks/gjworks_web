@@ -3,6 +3,7 @@
 import React, { useState, useEffect, use } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Alert from "@plextype/components/message/Alert";
 
 interface Group {
   id: number;
@@ -15,7 +16,9 @@ const DashboardPostCreate = () => {
   const router = useRouter();
 
   const [posts, setPosts] = useState<any>([]);
-  const [error, setError] = useState<any>(false);
+  const [error, setError] = useState<{ type: string; message: string } | null>(
+    null,
+  );
   const [groups, setGroups] = useState<Group[]>([]);
   const [selectedGroupIds, setSelectedGroupIds] = useState<number[]>([]);
   const [permissionsMap, setPermissionsMap] = useState<{
@@ -100,14 +103,21 @@ const DashboardPostCreate = () => {
     formData.append("commentState", e.target.commentState.value);
     formData.append("permissions", JSON.stringify(permissions));
 
-    const res = await fetch("/api/admin/posts", {
+    const response = await fetch("/api/admin/posts", {
       method: "POST",
       body: formData,
       credentials: "include", // 쿠키 포함
     });
 
-    const data = await res.json();
-    console.log(data);
+    const res = await response.json();
+    const { type, message, data, element } = res;
+    console.log(type);
+    if (type === "error" || type === "warning") {
+      setError({ type, message });
+    }
+    if (type === "success") {
+      router.replace("/dashboard/posts/list");
+    }
   };
 
   const PermissionSection = ({ permissionType, label }) => (
@@ -157,6 +167,7 @@ const DashboardPostCreate = () => {
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-3">
+        {error && <Alert message={error.message} type={error.type} />}
         <form onSubmit={handleSubmit}>
           {posts.id && <input type="hidden" name="postId" value={posts.id} />}
           <input type="hidden" name="moduleType" value="posts" />
