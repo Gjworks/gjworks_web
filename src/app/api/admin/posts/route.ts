@@ -22,8 +22,10 @@ export async function GET(request: NextRequest) {
     const target = searchParams.get("target") || "";
     const keyword = searchParams.get("keyword") || "";
 
-    const pageSize = 10; // 한 페이지당 게시글 수
-    const skip = (page - 1) * pageSize;
+    const listCount = 10; // 한 페이지당 게시글 수
+    const skip = (page - 1) * listCount;
+    const totalCount = await prisma.posts.count();
+    const totalPages = Math.ceil(totalCount / listCount);
 
     // 게시글 조회
     const posts = await prisma.posts.findMany({
@@ -34,24 +36,22 @@ export async function GET(request: NextRequest) {
         ],
       },
       skip,
-      take: pageSize,
+      take: listCount,
       orderBy: { createdAt: "desc" }, // 최신순 정렬
     });
-
-    // 게시판 전체 수
-    const totalCount = await prisma.posts.count();
 
     return NextResponse.json({
       success: true,
       data: posts,
       pagination: {
         page,
-        totalPages: Math.ceil(totalCount / pageSize),
-        totalCount,
+        listCount: listCount,
+        totalCount: totalCount,
+        totalPages: totalPages,
       },
     });
   } catch (error) {
-    console.error("게시판 리스트 API 오류:", error);
+    console.error("Post List API Error:", error);
     return NextResponse.json(
       { success: false, message: "게시판 목록을 불러오는 중 오류 발생" },
       { status: 500 },

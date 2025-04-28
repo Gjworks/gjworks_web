@@ -1,9 +1,33 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
-import { getPostList } from "@/extentions/posts/admin/scripts/postsModel";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
 import PageNavigation from "@plextype/components/nav/PageNavigation";
 
+interface PostApiResponse {
+  success: boolean;
+  data: PostListInfo[];
+  pagination: {
+    page: number;
+    listCount: number;
+    totalCount: number;
+    totalPages: number;
+  };
+}
+
+interface PostListInfo {
+  id: number;
+  pid: string;
+  postName: string;
+  postDesc: string;
+  config: object;
+  status: string;
+  createdAt: string;
+}
 interface PageNavigationInfo {
   totalCount: number;
   totalPages: number;
@@ -11,12 +35,19 @@ interface PageNavigationInfo {
   listCount: number;
 }
 
+dayjs.extend(relativeTime);
+
+const useRelativeTime = (date: string) => {
+  return dayjs(date).fromNow();
+};
+
 const DashboardUserList = () => {
   const params = useSearchParams();
   const pathname = usePathname();
-  const [postList, setPostList] = useState<{ [key: string]: any }>();
+  const [postList, setPostList] = useState<PostListInfo[]>([]);
   const [page, setPage] = useState<number>(Number(params.get("page")) || 1);
   const [message, setMessage] = useState<string>("");
+  const [timeAgoList, setTimeAgoList] = useState<string[]>([]);
   const [pageNavigation, setPageNavigation] = useState<PageNavigationInfo>({
     totalCount: 0,
     totalPages: 0,
@@ -29,7 +60,6 @@ const DashboardUserList = () => {
     setPage(newPage);
   }, [pathname, params]);
 
-  let items;
   const fetchData = async ({
     page,
     target,
@@ -53,9 +83,12 @@ const DashboardUserList = () => {
       );
 
       let responseData = null; // 응답 데이터를 저장할 변수
-
       try {
-        responseData = await response.json(); // 한 번만 실행
+        const responseData = (await response.json()) as PostApiResponse;
+        if (responseData && responseData.success) {
+          setPostList(responseData.data || []);
+          setPageNavigation(responseData.pagination || {});
+        }
       } catch (jsonError) {
         console.error("JSON 파싱 오류:", jsonError);
       }
@@ -158,7 +191,8 @@ const DashboardUserList = () => {
             </thead>
             <tbody>
               {postList &&
-                postList.map((item, index) => {
+                postList?.map((item, index) => {
+                  const timeAgo = useRelativeTime(item.createdAt);
                   return (
                     <tr
                       key={index}
@@ -168,12 +202,14 @@ const DashboardUserList = () => {
                         {item.id - 1}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3">
-                        {item.mid}
+                        {item.pid}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                        {item.moduleName}
+                        {item.postName}
                       </td>
-                      <td className="text-gray-500 text-sm py-3 px-3 text-center"></td>
+                      <td className="text-gray-500 text-sm py-3 px-3 text-center">
+                        {timeAgo}
+                      </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
                         <Link
                           href={`/dashboard/posts/update/${item.id}`}

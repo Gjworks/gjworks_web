@@ -77,7 +77,7 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative bg-[url('/assets/images/bg48.jpg')] bg-center bg-no-repeat">
+        <div className="relative bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-center bg-no-repeat">
           {/*<div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>*/}
           <div className="bg-gradient-to-b from-dark-950 via-dark-950/40  to-dark-950">
             <div className="grid grid-cols-12 gap-8">
