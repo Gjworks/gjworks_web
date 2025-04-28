@@ -29,7 +29,7 @@ const UserDelete = (props: any) => {
     setAccessToken(accessToken);
 
     userInfo && userInfo.session && setLoggedInfo(userInfo.session);
-  }, []);
+  }, [userInfo]);
 
   const handlerUserDeleteInput = (event) => {
     event.preventDefault();

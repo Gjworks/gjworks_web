@@ -1,19 +1,10 @@
-'use client'
+"use client";
 
-import {useState, useEffect} from 'react'
-
-const Description = (props: any) => {
-  const [desc, setDesc] = useState<{[key: string]: any}>()
-
-  useEffect(() => {
-    props.desc && setDesc(desc)
-  }, [])
+const Description = () => {
   return (
     <>
-      <div className="pb-8">
-        <div dangerouslySetInnerHTML={{__html: props.desc}} />
-      </div>
+      <div className="pb-8"></div>
     </>
-  )
-}
-export default Description
+  );
+};
+export default Description;

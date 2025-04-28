@@ -28,7 +28,7 @@ const PostWrite = () => {
 
   useEffect(() => {
     dataFetch().then((r) => {});
-  }, []);
+  }, [dataFetch]);
 
   const handleContentChange = (newContent: object) => {
     setContent(JSON.stringify(newContent));

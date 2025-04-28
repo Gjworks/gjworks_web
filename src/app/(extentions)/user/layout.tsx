@@ -45,14 +45,14 @@ const PageLayout = ({ children }) => {
   useEffect(() => {
     const params = pathname?.split("/");
     setParams(params);
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (user) {
       setLoggedInfo(user);
       setIsLogged(true);
     }
-  }, [user]);
+  }, [user, user?.data]);
 
   return (
     <DefaultLayout>

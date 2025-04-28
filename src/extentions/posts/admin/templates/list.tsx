@@ -108,7 +108,7 @@ const DashboardUserList = () => {
       keyword: params.get("keyword") as string | null,
     };
     fetchData(data);
-  }, [page]);
+  }, [page, params]);
 
   return (
     <>
@@ -192,7 +192,7 @@ const DashboardUserList = () => {
             <tbody>
               {postList &&
                 postList?.map((item, index) => {
-                  const timeAgo = useRelativeTime(item.createdAt);
+                  // const timeAgo = useRelativeTime(item.createdAt);
                   return (
                     <tr
                       key={index}
@@ -208,7 +208,7 @@ const DashboardUserList = () => {
                         {item.postName}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                        {timeAgo}
+                        {/*{timeAgo}*/}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
                         <Link

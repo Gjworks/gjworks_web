@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
 import { getUserList } from "@/extentions/user/scripts/userModel";
@@ -46,19 +46,30 @@ const DashboardUserList = () => {
   }, [pathname, params]);
 
   let items;
-  const fetchData = async ({
-    page,
-    target,
-    keyword,
-  }: {
-    page: number | null;
-    target: string | null;
-    keyword: string | null;
-  }) => {
-    items = await getUserList({ page, target, keyword });
-    setUserList(items.userList);
-    setPageNavigation(items.navigation);
-  };
+  const fetchData = useCallback(
+    async ({
+      page,
+      target,
+      keyword,
+    }: {
+      page: number | null;
+      target: string | null;
+      keyword: string | null;
+    }) => {
+      // 페이지가 null인 경우 1로 설정
+      const currentPage = page ?? 1;
+      const items = await getUserList({ page: currentPage, target, keyword });
+      setUserList(items.userList);
+      setPageNavigation({
+        totalCount: items.navigation.totalCount,
+        totalPages: items.navigation.totalPages,
+        page: currentPage, // 현재 페이지가 null이 아니도록 처리
+        listCount: items.navigation.listCount,
+      });
+    },
+    [],
+  );
+
   useEffect(() => {
     const data = {
       page: page,
@@ -66,7 +77,7 @@ const DashboardUserList = () => {
       keyword: params.get("keyword") as string | null,
     };
     fetchData(data);
-  }, [page]);
+  }, [page, params, fetchData]);
 
   return (
     <>
