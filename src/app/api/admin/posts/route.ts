@@ -161,3 +161,67 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
+export async function DELETE(request: NextRequest) {
+  try {
+    const accessToken = request.cookies.get("accessToken")?.value;
+    if (!accessToken) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+    const verifyToken = await verify(accessToken!);
+    if (!verifyToken || verifyToken.isAdmin !== true) {
+      return NextResponse.json(
+        {
+          success: true,
+          type: "warning",
+          message: "Access denied. You do not have administrator privileges.",
+        },
+        { status: 403 },
+      );
+    } else {
+      const body = await request.json();
+      console.log(body);
+      const { ids } = body;
+      console.log(ids);
+
+      if (!Array.isArray(ids))
+        return NextResponse.json(
+          {
+            success: true,
+            type: "danger",
+            message: "Invalid request: 'ids' must be a non-empty array",
+          },
+          { status: 400 },
+        );
+
+      try {
+        await prisma.posts.deleteMany({
+          where: { id: { in: ids } },
+        });
+        return NextResponse.json(
+          {
+            success: true,
+            type: "success",
+            message: "Selected posts have been successfully deleted.",
+          },
+          { status: 200 },
+        );
+      } catch (error) {
+        return NextResponse.json(
+          {
+            success: false,
+            type: "danger",
+            message: "An error occurred while deleting posts.",
+          },
+          { status: 500 },
+        );
+      }
+    }
+  } catch (error) {
+    console.error("게시판 삭제 API 오류:", error);
+    return NextResponse.json(
+      { success: false, message: "게시판 삭제 중 오류 발생" },
+      { status: 500 },
+    );
+  }
+}

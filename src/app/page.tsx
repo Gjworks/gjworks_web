@@ -77,74 +77,68 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative bg-[url('/assets/images/yellow/yellow_bg1.jpg')] bg-center bg-no-repeat">
+        <div className="relative px-3">
           {/*<div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>*/}
-          <div className="bg-gradient-to-b from-dark-950 via-dark-950/40  to-dark-950">
-            <div className="grid grid-cols-12 gap-8">
-              <div className="col-span-12 md:col-span-12">
-                <div className="p-2 md:h-full">
-                  <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]">
-                    <motion.div
-                      variants={parentVariants}
-                      initial="offscreen"
-                      whileInView="onscreen"
-                      viewport={{ once: false, amount: 0.3 }}
-                      className="max-w-screen-lg mx-auto py-20"
-                    >
-                      <div className="relative px-4 mb-12 ">
-                        <motion.div
-                          variants={variants}
-                          className="px-1 lg:mb-2"
-                        >
-                          <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-black lg:text-5xl lg:gap-0 dark:text-white w-full">
-                            Building digital experience ✨
-                          </div>
-                        </motion.div>
-                        <motion.div
-                          variants={variants}
-                          className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight text-black lg:text-5xl dark:text-white mb-16"
-                        >
-                          Creative platform service
-                        </motion.div>
-                        <motion.div
-                          variants={variants}
-                          className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 dark:text-dark-300 max-w-screen-sm mx-auto text-center"
-                        >
-                          지제이웍스는 웹과 앱을 개발하기 위한 소규모
-                          개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업,
-                          신생 기업 및 비즈니스와 협력하여 매력적인 제품을
-                          연구하고 개발합니다.
-                        </motion.div>
+          <div className="max-w-screen-xl mx-auto px-3 bg-primary-600 rounded-2xl">
+            <div className="p-2 md:h-full">
+              <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]">
+                <motion.div
+                  variants={parentVariants}
+                  initial="offscreen"
+                  whileInView="onscreen"
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="max-w-screen-lg mx-auto py-20"
+                >
+                  <div className="relative px-4 mb-12 ">
+                    <motion.div variants={variants} className="px-1 lg:mb-2">
+                      <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-black lg:text-5xl lg:gap-0 dark:text-white w-full">
+                        Building digital experience ✨
                       </div>
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight text-black lg:text-5xl dark:text-white mb-16"
+                    >
+                      Creative platform service
+                    </motion.div>
+                    <motion.div
+                      variants={variants}
+                      className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 dark:text-primary-300 max-w-screen-sm mx-auto text-center"
+                    >
+                      지제이웍스는 웹과 앱을 개발하기 위한 소규모 개발팀입니다.
+                      우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및
+                      비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
+                    </motion.div>
+                  </div>
 
-                      <div className="w-full md:w-3/5 mx-auto px-4 pt-4">
-                        <motion.div
-                          variants={variants}
-                          className="relative mx-auto flex items-center gap-4 px-3"
-                        >
-                          <div className="dark:bg-dark-700/75 rounded-lg bg-dark-950 p-3 backdrop-blur-2xl">
-                            <Square3Stack3DIcon className="size-5 text-gray-50 dark:text-white stroke-1" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="dark:text-dark-100 mb-2 text-left text-sm text-gray-950">
-                              Various Projects
-                            </div>
-                            <div className="dark:text-dark-300 text-left text-xs text-gray-400">
-                              다양한 프로젝트를 만나보시고 좋은 의견과
-                              아이디어를 주시면 반영하겠습니다.
-                            </div>
-                          </div>
-                        </motion.div>
+                  <div className="w-full md:w-3/5 mx-auto px-4 pt-4">
+                    <motion.div
+                      variants={variants}
+                      className="relative mx-auto flex items-center gap-4 px-3"
+                    >
+                      <div className="dark:bg-primary-800 rounded-lg bg-primary-600 p-3 backdrop-blur-2xl">
+                        <Square3Stack3DIcon className="size-5 text-gray-50 dark:text-white stroke-1" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="dark:text-white mb-2 text-left text-sm text-gray-100">
+                          Various Projects
+                        </div>
+                        <div className="dark:text-primary-400 text-left text-xs text-gray-200">
+                          다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
+                          주시면 반영하겠습니다.
+                        </div>
                       </div>
                     </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
         </div>
         <div className="py-20">
-          <div className="max-w-screen-xl mx-auto p-5 rounded-lg flex gap-4 flex-wrap bg-dark-900/75 border border-gray-950"></div>
+          <div className="grid grid-cols-3 gap-8 max-w-screen-xl mx-auto p-5 rounded-lg flex-wrap bg-dark-900/75 border border-gray-950">
+            <div className="col-span-1"></div>
+          </div>
         </div>
         <div className="hidden max-w-screen-xl mx-auto">
           <motion.div className="">

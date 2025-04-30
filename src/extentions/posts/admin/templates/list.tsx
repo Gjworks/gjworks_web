@@ -7,9 +7,12 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 import PageNavigation from "@plextype/components/nav/PageNavigation";
+import Alert from "@plextype/components/message/Alert";
 
 interface PostApiResponse {
   success: boolean;
+  type: string | null;
+  message: string | null;
   data: PostListInfo[];
   pagination: {
     page: number;
@@ -37,17 +40,16 @@ interface PageNavigationInfo {
 
 dayjs.extend(relativeTime);
 
-const useRelativeTime = (date: string) => {
-  return dayjs(date).fromNow();
-};
-
 const DashboardUserList = () => {
   const params = useSearchParams();
   const pathname = usePathname();
   const [postList, setPostList] = useState<PostListInfo[]>([]);
   const [page, setPage] = useState<number>(Number(params.get("page")) || 1);
-  const [message, setMessage] = useState<string>("");
-  const [timeAgoList, setTimeAgoList] = useState<string[]>([]);
+  const [selectedIds, setSelectedIds] = useState<number[]>([]);
+  const [error, setError] = useState<{
+    type: string | null;
+    message: string | null;
+  } | null>(null);
   const [pageNavigation, setPageNavigation] = useState<PageNavigationInfo>({
     totalCount: 0,
     totalPages: 0,
@@ -92,11 +94,6 @@ const DashboardUserList = () => {
       } catch (jsonError) {
         console.error("JSON 파싱 오류:", jsonError);
       }
-      console.log(responseData);
-      // setError({
-      //   type: "success",
-      //   message: "성공적으로 비밀번호가 변경되었습니다.",
-      // });
     } catch (error: any) {
       console.error("패스워드 변경 오류:", error);
     }
@@ -110,9 +107,56 @@ const DashboardUserList = () => {
     fetchData(data);
   }, [page, params]);
 
+  const getRelativeTime = (date: string) => {
+    return dayjs(date).fromNow();
+  };
+
+  const handleCheck = (id: number) => {
+    setSelectedIds((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id],
+    );
+  };
+
+  const handleDelete = async () => {
+    if (
+      !window.confirm("Are you sure you want to delete the selected posts?")
+    ) {
+      return; // 사용자가 취소한 경우 함수 종료
+    }
+    if (!selectedIds.length) return;
+
+    const response = await fetch("/api/admin/posts", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ids: selectedIds }),
+    });
+
+    try {
+      const responseData = (await response.json()) as PostApiResponse;
+      console.log(responseData);
+      if (responseData && responseData.success) {
+        setError({ type: responseData.type, message: responseData.message });
+        // setPostList(responseData.data || []);
+        // setPageNavigation(responseData.pagination || {});
+      }
+    } catch (jsonError) {
+      console.error("JSON 파싱 오류:", jsonError);
+    }
+
+    fetchData({
+      page, // 혹은 필요한 페이지로 재조정
+      target: params.get("target"),
+      keyword: params.get("keyword"),
+    });
+    setSelectedIds([]);
+  };
+
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto px-3">
+      <div className="max-w-screen-2xl mx-auto px-3 pt-6 pb-12">
+        {error && <Alert message={error.message} type={error.type} />}
         <div className="flex flex-wrap items-center gap-4 mb-5">
           <div className="text-gray-700 text-lg font-semibold">
             모듈 목록 ({pageNavigation.totalCount})
@@ -192,7 +236,7 @@ const DashboardUserList = () => {
             <tbody>
               {postList &&
                 postList?.map((item, index) => {
-                  // const timeAgo = useRelativeTime(item.createdAt);
+                  const timeAgo = getRelativeTime(item.createdAt);
                   return (
                     <tr
                       key={index}
@@ -208,7 +252,7 @@ const DashboardUserList = () => {
                         {item.postName}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
-                        {/*{timeAgo}*/}
+                        {timeAgo}
                       </td>
                       <td className="text-gray-500 text-sm py-3 px-3 text-center">
                         <Link
@@ -221,6 +265,8 @@ const DashboardUserList = () => {
                       <td className="px-3 py-3 text-center">
                         <input
                           type="checkbox"
+                          checked={selectedIds.includes(item.id)}
+                          onChange={() => handleCheck(item.id)}
                           className="checked:bg-lime-400"
                         ></input>
                       </td>
@@ -242,14 +288,14 @@ const DashboardUserList = () => {
           </div>
           <div className="col-span-2 xl:col-span-1 flex items-center justify-end gap-2 ">
             <Link
-              className="py-2 px-5 text-white rounded text-sm bg-orange-500 hover:bg-orange-600"
+              className="py-2 px-5 text-white rounded text-sm bg-cyan-500 hover:bg-cyan-600"
               href="/dashboard/posts/create"
             >
               게시판 추가
             </Link>
             <button
-              className="py-2 px-5 text-white rounded text-sm bg-gray-800 hover:bg-red-600"
-              // href="/dashboard/user/delete"
+              onClick={handleDelete}
+              className="py-2 px-5 text-white rounded text-sm bg-orange-500 hover:bg-orange-600 disabled:bg-gray-500 disabled:text-gray-300 "
             >
               삭제
             </button>

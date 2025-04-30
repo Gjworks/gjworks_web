@@ -7,4 +7,4 @@ const prisma = globalForPrisma.prisma || new PrismaClient();
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 export default prisma;
-export { PermissionSubject }; // 이렇게 export 해도 됨
+export { PermissionSubject };
