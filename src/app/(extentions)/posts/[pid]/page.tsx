@@ -4,7 +4,7 @@ import PageNavigation from "@plextype/components/nav/PageNavigation";
 
 import PostsCategories from "@/extentions/posts/templates/default/category";
 
-type Params = Promise<{ slug: string }>;
+type Params = Promise<{ pid: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 const Page = async (props: { params: Params; searchParams: SearchParams }) => {
