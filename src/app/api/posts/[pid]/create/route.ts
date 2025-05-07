@@ -3,7 +3,6 @@ import { cookies, headers } from "next/headers";
 import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from "jose";
 import { getAuthenticatedUser } from "@/extentions/posts/scripts/authenticateUser";
-import { validateUserPermissions } from "@/extentions/posts/scripts/postPermissions";
 
 const prisma = new PrismaClient();
 
@@ -28,12 +27,6 @@ export async function GET(request: Request, segmentData: { params: Params }) {
   }
 
   const userInfo = await getAuthenticatedUser(request);
-  const permissionsInfo = await validateUserPermissions(pid, "write", userInfo);
-
-  if (!permissionsInfo.success) {
-    response = permissionsInfo;
-    return NextResponse.json(response);
-  }
 
   response = {
     success: true,
@@ -45,22 +38,22 @@ export async function GET(request: Request, segmentData: { params: Params }) {
 }
 
 export async function POST(request: Request, segmentData: { params: Params }) {
-  let response = {};
-  const { pid } = await segmentData.params;
-  const postData = await request.json();
-
-  const userInfo = await getAuthenticatedUser(request);
-  console.log(userInfo);
-  const permissionsInfo = await validateUserPermissions(pid, "write", userInfo);
-  console.log(permissionsInfo);
-  // const postCreate = await createPost(postData, pid);
-  // console.log(" postCreate ", postCreate);
-
-  response = {
-    success: true,
-    errorCode: "",
-    message: "",
-  };
+  // let response = {};
+  // const { pid } = await segmentData.params;
+  // const postData = await request.json();
+  //
+  // const userInfo = await getAuthenticatedUser(request);
+  // console.log(userInfo);
+  // const permissionsInfo = await validateUserPermissions(pid, "write", userInfo);
+  // console.log(permissionsInfo);
+  // // const postCreate = await createPost(postData, pid);
+  // // console.log(" postCreate ", postCreate);
+  //
+  // response = {
+  //   success: true,
+  //   errorCode: "",
+  //   message: "",
+  // };
 
   return NextResponse.json(response);
 }

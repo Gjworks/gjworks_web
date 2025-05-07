@@ -3,7 +3,6 @@ import { cookies, headers } from "next/headers";
 import { PrismaClient } from "@prisma/client";
 import { decodeJwt } from "jose";
 
-import { validateUserPermissions } from "@/extentions/posts/scripts/postPermissions";
 import { verify } from "@plextype/utils/auth/jwtAuth";
 import { getUserById } from "@/extentions/user/scripts/userModel";
 
