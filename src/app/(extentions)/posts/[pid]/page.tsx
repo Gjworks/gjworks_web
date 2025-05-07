@@ -10,7 +10,6 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 const Page = async (props: { params: Params; searchParams: SearchParams }) => {
   const params = await props.params;
   const searchParams = await props.searchParams;
-  const slug = params.slug;
   const query = searchParams.query;
   console.log(params);
   return (
