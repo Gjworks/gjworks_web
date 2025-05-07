@@ -56,14 +56,6 @@ export default function Page() {
       opacity: 0,
     },
   };
-  const codeString = `import Dropdown from 'src/components/dropdown/Dropdown'
-
-<button onClick={() => setShowDropdown(!showDropdown)}>
-  Dropdown
-</button>
-<Dropdown state={showDropdown}>
-  <AccountDropwdown />
-</Dropdown>`;
 
   return (
     <MainLayout>
@@ -79,7 +71,7 @@ export default function Page() {
 
         <div className="relative px-3">
           {/*<div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>*/}
-          <div className="max-w-screen-xl mx-auto px-3 bg-primary-600 rounded-2xl">
+          <div className="max-w-screen-xl mx-auto px-3 rounded-2xl">
             <div className="p-2 md:h-full">
               <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]">
                 <motion.div
@@ -91,19 +83,19 @@ export default function Page() {
                 >
                   <div className="relative px-4 mb-12 ">
                     <motion.div variants={variants} className="px-1 lg:mb-2">
-                      <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-black lg:text-5xl lg:gap-0 dark:text-white w-full">
-                        Building digital experience ✨
+                      <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-rose-500 lg:text-5xl lg:gap-0  w-full">
+                        Flexible Type System ✨
                       </div>
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight text-black lg:text-5xl dark:text-white mb-16"
+                      className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight  text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-rose-500 lg:text-5xl  mb-16"
                     >
                       Creative platform service
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 dark:text-primary-300 max-w-screen-sm mx-auto text-center"
+                      className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 dark:text-dark-300 max-w-screen-sm mx-auto text-center"
                     >
                       지제이웍스는 웹과 앱을 개발하기 위한 소규모 개발팀입니다.
                       우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및
@@ -116,14 +108,14 @@ export default function Page() {
                       variants={variants}
                       className="relative mx-auto flex items-center gap-4 px-3"
                     >
-                      <div className="dark:bg-primary-800 rounded-lg bg-primary-600 p-3 backdrop-blur-2xl">
+                      <div className="dark:bg-dark-800 rounded-lg bg-dark-600 p-3 backdrop-blur-2xl">
                         <Square3Stack3DIcon className="size-5 text-gray-50 dark:text-white stroke-1" />
                       </div>
                       <div className="flex-1">
                         <div className="dark:text-white mb-2 text-left text-sm text-gray-100">
-                          Various Projects
+                          Platform Extensible
                         </div>
-                        <div className="dark:text-primary-400 text-left text-xs text-gray-200">
+                        <div className="dark:text-dark-400 text-left text-xs text-gray-200">
                           다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
                           주시면 반영하겠습니다.
                         </div>
@@ -133,11 +125,6 @@ export default function Page() {
                 </motion.div>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="py-20">
-          <div className="grid grid-cols-3 gap-8 max-w-screen-xl mx-auto p-5 rounded-lg flex-wrap bg-dark-900/75 border border-gray-950">
-            <div className="col-span-1"></div>
           </div>
         </div>
         <div className="hidden max-w-screen-xl mx-auto">
@@ -342,28 +329,6 @@ export default function Page() {
           </motion.div>
         </div>
       </div>
-      <Popup state={showPopup} close={closePopup}>
-        <div className="p-8">
-          <div className="mb-5 text-2xl font-bold text-gray-950">
-            안녕하세요^^
-          </div>
-          <div className="text-sm font-normal text-gray-700">
-            팝업의 역할을 할 것입니다. 팝업의 기능은 언제든 이런 형태로 호출이
-            가능하게 할것이며 모달과는 다르게 아래에서 팝업이되며 바탕을
-            누른다고 없어지지 않습니다. 그리고 기간의 값을 입력하면 해당 기간
-            동안 팝업이 뜨지 않을 것입니다.
-          </div>
-        </div>
-      </Popup>
-      <Popup state={showPopup2} title="서비스 제안하기" close={closePopup2}>
-        <div className="p-8">
-          <div className="text-sm font-normal text-gray-700">
-            <div className="flex justify-center items-center rounded-2xl bg-gray-100 p-8 text-sm text-gray-400">
-              서비스 제안서 작성
-            </div>
-          </div>
-        </div>
-      </Popup>
     </MainLayout>
   );
 }

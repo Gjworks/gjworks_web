@@ -14,8 +14,17 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 const Page = (props: { params: Params; searchParams: SearchParams }) => {
   const params = props.params;
   const searchParams = props.searchParams;
-  type Params = { slug: string };
-  type SearchParams = { [key: string]: string | string[] | undefined };
+  // type Params = { slug: string };
+  // type SearchParams = { [key: string]: string | string[] | undefined };
+
+  console.log(params);
+  // const canRead = await hasPermission({
+  //   userId: user?.id,
+  //   isAdmin: user?.isAdmin,
+  //   action: "read",
+  //   module: "posts",
+  //   resource: `board:${pid}`,
+  // });
 
   const parentVariants = {
     onscreen: {

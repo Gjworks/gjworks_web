@@ -47,17 +47,11 @@ export const fetchSignIn = createAsyncThunk<
     formData: FormData;
   }): Promise<{ result: DataInfo; accessToken: string }> => {
     let result;
-    // await signin(formData).then((response) => {
-    //   console.log(response)
-    //   result = response
-    // })
     const response = await fetch("/api/auth/Signin", {
       method: "POST",
       body: formData,
     });
     result = await response.json();
-    console.log(result);
-    console.log(result.success);
     return { result: result, accessToken: result.accessToken };
   },
 );
@@ -70,7 +64,6 @@ export const fetchUserInfo = createAsyncThunk<DataInfo, FetchUserInfoPayload>(
       nickName: formData.get("nickName") as string,
     };
     await updateUser(params).then((response) => {
-      console.log(response);
       result = response;
     });
     return result;
@@ -100,7 +93,6 @@ export const userSlice = createSlice({
       })
       .addCase(fetchUserInfo.fulfilled, (state, action) => {
         state.loading = false;
-        console.log("fetchUserInfo", action.payload);
         if (action.payload.type !== "error") {
           if (action.payload.data.userInfo) {
             state.session = action.payload.data.userInfo as UserInfo;

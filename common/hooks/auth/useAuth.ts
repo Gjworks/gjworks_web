@@ -1,5 +1,3 @@
-"use client";
-
 import { useQuery, UseQueryOptions } from "@tanstack/react-query";
 
 // 로그인 후 사용자의 정보를 가져오는 함수

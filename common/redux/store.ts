@@ -1,17 +1,15 @@
-"use client"
+"use client";
 
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { persistReducer, persistStore, PersistConfig } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 import { userSlice } from "./features/userSlice";
-import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
+import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
 const userInfoTransform = {
   in: (state, key) => {
-    console.log(state.session)
-      return { session: state.session };
-
+    return { session: state.session };
   },
   out: (state, key) => {
     // 보관된 상태를 로드할 때는 변환하지 않습니다.
@@ -19,9 +17,7 @@ const userInfoTransform = {
   },
 };
 
-
 const createNoopStorage = () => {
-
   return {
     getItem(_key: any) {
       return Promise.resolve(null);
@@ -35,9 +31,9 @@ const createNoopStorage = () => {
   };
 };
 const storage =
-  typeof window === 'undefined'
+  typeof window === "undefined"
     ? createNoopStorage()
-    : createWebStorage('local');
+    : createWebStorage("local");
 
 const rootReducer = combineReducers({
   userInfo: userSlice.reducer,
@@ -49,7 +45,7 @@ const persistConfig: PersistConfig<ReturnType<typeof rootReducer>> = {
   // serialize: false, // Disable serialization
   // serialize: data => JSON.stringify(data), // 객체를 문자열로 변환
   // whitelist: ['userInfo'],
-  transforms: [userInfoTransform], 
+  transforms: [userInfoTransform],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -59,7 +55,8 @@ export const store = configureStore({
   //   userInfo: userSlice.reducer,
   // },
   reducer: persistedReducer,
-  middleware: getDefaultMiddleware => getDefaultMiddleware({ serializableCheck: false }),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck: false }),
 });
 
 export const persistor = persistStore(store);

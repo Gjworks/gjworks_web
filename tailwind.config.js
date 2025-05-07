@@ -98,7 +98,7 @@ module.exports = {
       //   // 950: '#663d12',
       // },
       // dark: colors.gray,
-      primary: colors.indigo,
+      primary: colors.sky,
       // secondary: colors.purple,
     },
   },
