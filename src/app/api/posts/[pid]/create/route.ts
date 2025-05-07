@@ -38,7 +38,7 @@ export async function GET(request: Request, segmentData: { params: Params }) {
 }
 
 export async function POST(request: Request, segmentData: { params: Params }) {
-  // let response = {};
+  let response = {};
   // const { pid } = await segmentData.params;
   // const postData = await request.json();
   //
