@@ -49,11 +49,11 @@ export async function POST(request: Request, segmentData: { params: Params }) {
   // // const postCreate = await createPost(postData, pid);
   // // console.log(" postCreate ", postCreate);
   //
-  // response = {
-  //   success: true,
-  //   errorCode: "",
-  //   message: "",
-  // };
+  response = {
+    success: true,
+    errorCode: "",
+    message: "",
+  };
 
   return NextResponse.json(response);
 }
