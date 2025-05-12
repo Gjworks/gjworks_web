@@ -54,7 +54,7 @@ const SubNav = () => {
   return (
     <>
       {subMenu && (
-        <div className="bg-white/90 dark:bg-dark-950/5 backdrop-blur-lg z-50 block-line-b">
+        <div className="bg-white/90 dark:bg-dark-900 backdrop-blur-lg z-50 block-line-b">
           <div className="w-full px-0 sm:px-8">
             <div className="flex justify-center gap-4 px-3 w-full">
               <div className="relative overflow-scroll-hide flex gap-4 w-full items-center overflow-hidden overflow-x-auto justify-center">

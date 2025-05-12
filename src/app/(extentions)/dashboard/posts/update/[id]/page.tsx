@@ -1,13 +1,7 @@
-"use client";
-
 import DashboardPostCreate from "@/extentions/posts/admin/templates/create";
 
-const Page = () => {
-  return (
-    <>
-      <DashboardPostCreate />
-    </>
-  );
+const Page = async () => {
+  return <DashboardPostCreate />;
 };
 
 export default Page;

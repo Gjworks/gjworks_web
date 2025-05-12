@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, use } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import Alert from "@plextype/components/message/Alert";
 
 interface Group {
@@ -12,9 +12,14 @@ interface Group {
   groupDesc?: string;
 }
 
-const DashboardPostCreate = () => {
-  const router = useRouter();
+interface Props {
+  id: string;
+}
 
+const DashboardPostCreate = () => {
+  const params = useParams();
+  const id = params?.id;
+  const router = useRouter();
   const [posts, setPosts] = useState<any>([]);
   const [error, setError] = useState<{ type: string; message: string } | null>(
     null,
@@ -36,6 +41,30 @@ const DashboardPostCreate = () => {
       .then((res) => res.json())
       .then((res) => setGroups(res.data));
   }, []);
+
+  useEffect(() => {
+    if (!id) return;
+
+    fetch(`/api/admin/posts/${id}`)
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.type === "success") {
+          const data = res.data;
+          console.log(data);
+          // 입력 값 상태로 셋팅
+          // 예시 (필요에 따라 조정):
+          // e.target.moduleId.value = data.moduleId;
+          // e.target.moduleName.value = data.moduleName;
+          // // etc...
+          //
+          // // 권한 및 그룹도 셋팅
+          // setPermissionsMap(data.permissionsMap);
+          // setSelectedGroupIds(data.groupIds || []);
+        } else {
+          setError({ type: res.type, message: res.message });
+        }
+      });
+  }, [id]);
 
   const togglePermission = (
     type: string,
@@ -81,7 +110,6 @@ const DashboardPostCreate = () => {
   ];
 
   const handleSubmit = async (e) => {
-    console.log("선택된 그룹 ID들:", selectedGroupIds);
     e.preventDefault();
     setError(null);
 
@@ -103,15 +131,18 @@ const DashboardPostCreate = () => {
     formData.append("commentState", e.target.commentState.value);
     formData.append("permissions", JSON.stringify(permissions));
 
-    const response = await fetch("/api/admin/posts", {
-      method: "POST",
-      body: formData,
-      credentials: "include", // 쿠키 포함
-    });
+    const response = await fetch(
+      id ? `/api/admin/posts/${id}` : "/api/admin/posts",
+      {
+        method: id ? "PUT" : "POST",
+        body: formData,
+        credentials: "include", // 쿠키 포함
+      },
+    );
 
     const res = await response.json();
     const { type, message, data, element } = res;
-    console.log(type);
+
     if (type === "error" || type === "warning") {
       setError({ type, message });
     }

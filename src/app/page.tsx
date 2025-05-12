@@ -1,29 +1,18 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import SafariBrower from "@plextype/components/viewer/SafariBrower";
 import { motion } from "framer-motion";
 import MainLayout from "src/layouts/fullLayout/Layout";
-import Codehighlighte from "@plextype/components/codehighlight/Codehighlighter";
-import Popup from "@plextype/components/modal/Popup";
-import {
-  PaperAirplaneIcon,
-  Square3Stack3DIcon,
-} from "@heroicons/react/24/outline";
+import { Square3Stack3DIcon } from "@heroicons/react/24/outline";
+import { createMetadata } from "@plextype/utils/metadata/createMetadata";
+import type { Metadata } from "next";
+
+// export const metadata: Metadata = createMetadata({
+//   title: "지제이웍스(Gjworks)",
+//   description: "지제이웍스 홈페이지에 오신걸 환영합니다.",
+//   url: "https://gjworks.dev",
+// });
 
 export default function Page() {
-  const [showPopup, setShowPopup] = useState(false);
-  const closePopup = (close) => {
-    setShowPopup(close);
-  };
-
-  const [showPopup2, setShowPopup2] = useState(false);
-  const closePopup2 = (close) => {
-    setShowPopup2(close);
-  };
-
   const parentVariants = {
     onscreen: {
       transition: { staggerChildren: 0.05 },
@@ -69,10 +58,10 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative px-3">
+        <div className="relative">
           {/*<div className="absolute inset-0 bg-[url('/assets/images/scene_bg_dot.png')] "></div>*/}
           <div className="max-w-screen-xl mx-auto px-3 rounded-2xl">
-            <div className="p-2 md:h-full">
+            <div className="md:h-full">
               <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]">
                 <motion.div
                   variants={parentVariants}
@@ -81,7 +70,7 @@ export default function Page() {
                   viewport={{ once: false, amount: 0.3 }}
                   className="max-w-screen-lg mx-auto py-20"
                 >
-                  <div className="relative px-4 mb-12 ">
+                  <div className="relative mb-12 ">
                     <motion.div variants={variants} className="px-1 lg:mb-2">
                       <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-rose-500 lg:text-5xl lg:gap-0  w-full">
                         Flexible Type System ✨

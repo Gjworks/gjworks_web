@@ -11,7 +11,6 @@ interface TokenPayload {
 // access Token 발급
 const sign = async (payload: object) => {
   const accessToken_expiresIn = process.env.ACCESSTOKEN_EXPIRES_IN;
-  console.log(accessToken_expiresIn);
   if (!accessToken_expiresIn)
     throw new Error("ACCESSTOKEN_EXPIRES_IN is not defined");
   return await new SignJWT({ ...payload })

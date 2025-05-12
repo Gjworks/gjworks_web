@@ -5,9 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Page = () => {
-  useEffect(() => {
-    console.log(1);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <>
       <div className="max-w-screen-xl mx-auto px-3">
