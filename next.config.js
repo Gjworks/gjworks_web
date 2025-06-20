@@ -13,7 +13,7 @@ const nextConfig = {
   reactStrictMode: true,
   // output: "standalone", // PM2 실행 시 필요
   experimental: {
-    nodeMiddleware: true, // 미들웨어 사용 활성화
+    // nodeMiddleware: true, // 미들웨어 사용 활성화
   },
 };
 
