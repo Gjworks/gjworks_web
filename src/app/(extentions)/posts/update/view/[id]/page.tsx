@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import PostsRead from "@/extentions/posts/templates/default/read";
 //
-// interface PageProps {
+// interface PageViewProps {
 //   params: {
 //     postId: string
 //   }

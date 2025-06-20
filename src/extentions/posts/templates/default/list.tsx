@@ -1,12 +1,12 @@
 import PostsListClient from "./listClient";
 
-interface PageProps {
+interface PostsListProps {
   params: {
     pid: string;
   };
 }
 
-const PostsList: React.FC<PageProps> = ({
+const PostsList: React.FC<PostsListProps> = ({
   params,
 }: {
   params: { pid: string };

@@ -10,13 +10,13 @@ import {
   ChatBubbleOvalLeftEllipsisIcon,
 } from "@heroicons/react/24/outline";
 
-interface PageProps {
+interface PostsListClientProps {
   params: {
     pid: string;
   };
 }
 
-const PostsListClient: React.FC<PageProps> = ({
+const PostsListClient: React.FC<PostsListClientProps> = ({
   params,
 }: {
   params: { pid: string };
