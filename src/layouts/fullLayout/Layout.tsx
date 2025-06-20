@@ -6,12 +6,12 @@ import SubNav from "src/layouts/fullLayout/SubNav";
 import { useEffect } from "react";
 
 const FullLayout = ({ children }) => {
-  useEffect(() => {
-    const htmlElement = document.documentElement;
-    if (!htmlElement.classList.contains("dark")) {
-      htmlElement.classList.add("dark");
-    }
-  }, []); // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
+  // useEffect(() => {
+  //   const htmlElement = document.documentElement;
+  //   if (!htmlElement.classList.contains("dark")) {
+  //     htmlElement.classList.add("dark");
+  //   }
+  // }, []); // 빈 배열을 두 번째 인수로 전달하면 컴포넌트가 처음 마운트될 때만 실행됩니다.
   return (
     <>
       <Header />

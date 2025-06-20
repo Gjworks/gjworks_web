@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <>
       <div className="flex items-center min-h-[calc(100vh-236px)] md:min-h-[calc(100vh-162px)]">
-        <div className="fixed inset-0 bg-[url('/assets/images/tile_pattern.png')] z-[-1]">
+        <div className="">
           {/* <div className="w-full h-full bg-dark-950/5 backdrop-grayscale "></div> */}
         </div>
         <div className="relative max-w-screen-sm mx-auto px-3 h-full">
@@ -26,7 +26,7 @@ const Page = () => {
                 >
                   <g
                     transform="translate(0.000000,400.000000) scale(0.100000,-0.100000)"
-                    fill="#000000"
+                    fill="#ffffff"
                     stroke="none"
                   >
                     <path d="M2213 2995 c-124 -27 -228 -109 -281 -223 -34 -72 -43 -224 -18 -298 23 -67 403 -723 445 -767 47 -50 141 -95 225 -108 119 -19 240 16 333 96 39 33 92 115 229 355 26 47 76 135 111 195 35 61 63 116 63 123 0 9 -67 12 -299 12 -165 0 -302 -4 -305 -8 -2 -4 20 -50 51 -102 30 -52 58 -101 60 -108 6 -13 -87 -183 -120 -219 -28 -31 -86 -31 -115 0 -17 18 -152 248 -343 583 -35 61 -37 94 -6 129 l22 26 605 -1 c333 0 614 3 625 6 22 6 198 301 189 316 -3 4 -321 8 -707 7 -552 0 -715 -4 -764 -14z" />
@@ -35,11 +35,11 @@ const Page = () => {
                 </svg>
               </div>
               <div className=" text-center mb-10">
-                <span className="text-black text-3xl font-normal">
+                <span className="text-white text-3xl font-normal">
                   Simple & Creative
                 </span>
               </div>
-              <div className="text-black text-base font-light text-center break-keep">
+              <div className="text-gray-400cd text-base font-light text-center break-keep">
                 지제이웍스는 2018 년 처음시작한 웹과 앱을 개발하기 위한 소규모
                 개발팀입니다. 우리는 혁신적이고 미래 지향적 인 기업, 신생 기업
                 및 비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.

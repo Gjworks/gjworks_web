@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
           documents: true,
         },
       });
-      console.log(post);
+
       if (!post) {
         return NextResponse.json(
           { success: false, message: "게시물을 찾을 수 없습니다." },
@@ -39,12 +39,35 @@ export async function GET(request: NextRequest) {
         );
       }
 
+      const userId = verifyToken.id;
+      console.log(userId);
+      // 유저가 속한 그룹 ID들 조회
+      const userGroupLinks = await prisma.userGroupUser.findMany({
+        where: { userId },
+        select: { groupId: true },
+      });
+      console.log(userGroupLinks);
+      const groupIds = userGroupLinks.map((g) => g.groupId);
+      console.log(groupIds);
+      // 해당 게시물에 대한 그룹 권한 조회
+      const permissions = await prisma.permission.findMany({
+        where: {
+          module: "posts",
+          resource: `post:${id}`,
+          subjectType: "group",
+          subjectId: { in: groupIds },
+        },
+      });
+      console.log(permissions);
       return NextResponse.json(
         {
           success: true,
           type: "success",
           message: "",
-          data: [],
+          data: {
+            post,
+            permissions,
+          },
         },
         { status: 200 },
       );

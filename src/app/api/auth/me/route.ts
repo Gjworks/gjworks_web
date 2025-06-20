@@ -20,11 +20,12 @@ export async function GET(request: NextRequest) {
         if (!user) {
           return NextResponse.json(
             { error: "User not found" },
-            { status: 404 },
+            { status: 401 },
           );
         }
 
         return NextResponse.json({
+          isLoggedIn: true,
           id: user.id,
           accountId: user.accountId,
           nickName: user.nickName,
@@ -47,6 +48,7 @@ export async function GET(request: NextRequest) {
         );
         console.log(newAccessToken);
         const response = NextResponse.json({
+          isLoggedIn: true,
           id: refreshVerifyToken.id,
           message: "New access token issued",
         });
@@ -78,7 +80,7 @@ export async function GET(request: NextRequest) {
       });
       return response;
     } else {
-      return NextResponse.json({}, { status: 200 });
+      return NextResponse.json({ isLoggedIn: false }, { status: 200 });
     }
   } catch (error) {
     console.error(error);

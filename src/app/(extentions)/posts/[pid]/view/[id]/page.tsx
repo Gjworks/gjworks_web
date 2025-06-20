@@ -259,7 +259,7 @@ const Page = () => {
         <div className="dark:bg-dark-900 dark:shadow-dark-950 dark:border-dark-700/90 dark:border-t-dark-600/60 relative w-full overflow-hidden rounded-xl border border-gray-200/75 bg-gray-100 p-5 shadow-lg shadow-gray-100/90 backdrop-blur-xl h-full">
           <div className="">
             <textarea
-              className="w-full hover:border outline-none text-sm text-gray-900 dark:text-white rounded-xl p-5 dark:bg-dark-950 dark:border-dark-950 dark:hover:border-primary-600"
+              className="w-full outline-none text-sm text-gray-900 dark:text-white rounded-xl p-5 dark:bg-dark-950 dark:border-dark-950 dark:border dark:hover:border-primary-600"
               rows={4}
               placeholder="Generate a project kickoff presentation for /meeting"
             ></textarea>

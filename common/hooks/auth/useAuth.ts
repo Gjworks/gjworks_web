@@ -7,9 +7,13 @@ const fetchUser = async () => {
     credentials: "include", // 쿠키 포함
   });
 
-  if (!response.ok) throw new Error("사용자 정보를 불러오는 데 실패했습니다.");
+  // 로그인 안 된 상태는 401로 내려온다고 가정
 
-  return response.json();
+  const data = await response.json();
+  console.log(data);
+  if (!data.isLoggedIn) return null; // 로그인 안 된 상태는 null 반환
+
+  return data;
 };
 
 export const useUser = () => {

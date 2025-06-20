@@ -12,13 +12,13 @@ import Authpanel from "./AuthPanel";
 
 const Layout = ({ children }) => {
   const pathname = usePathname();
-  useEffect(() => {
-    const htmlElement = document.documentElement;
-    // 조건에 따라 클래스를 추가 또는 제거
-    if (!htmlElement.classList.contains("dark")) {
-      htmlElement.classList.add("dark");
-    }
-  }, []); //
+  // useEffect(() => {
+  //   const htmlElement = document.documentElement;
+  //   // 조건에 따라 클래스를 추가 또는 제거
+  //   if (!htmlElement.classList.contains("dark")) {
+  //     htmlElement.classList.add("dark");
+  //   }
+  // }, []); //
   return (
     <>
       <div className="fixed inset-0 bg-[url('/assets/images/bg23.jpg')] bg-no-repeat bg-cover">

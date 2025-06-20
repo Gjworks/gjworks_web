@@ -6,7 +6,7 @@ const SearchForm = () => {
   return (
     <>
       <div className=" ">
-        <div className="dark:border-dark-900 flex border-b border-gray-200 p-3">
+        <div className="dark:border-dark-700 flex border-b border-gray-200 p-3">
           <input
             type="text"
             className="dark:text-dark-200 dark:placeholder:text-dark-500 group flex-1 bg-transparent px-3 py-2 text-base text-gray-600 outline-none placeholder:font-light placeholder:text-gray-500 focus:text-black"
@@ -39,7 +39,7 @@ const SearchForm = () => {
           }}
         >
           <div className="flex items-center gap-4">
-            <div className="dark:text-dark-100 text-xs text-gray-500">
+            <div className="dark:text-dark-400 text-xs text-gray-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -53,7 +53,7 @@ const SearchForm = () => {
                 />
               </svg>
             </div>
-            <div className="dark:bg-primary-500 dark:hover:bg-primary-600 flex cursor-pointer rounded-full bg-gray-950 px-3 py-1 text-xs text-white hover:bg-gray-950 hover:text-white dark:text-black dark:hover:text-white">
+            <div className="dark:bg-primary-500 dark:hover:bg-primary-400 flex cursor-pointer rounded-full bg-gray-950 px-3 py-1 text-xs text-white hover:bg-gray-950 hover:text-white dark:text-white dark:hover:text-white">
               <div className="px-2">React</div>
               <div className="pl-1">
                 <svg
@@ -72,7 +72,7 @@ const SearchForm = () => {
                 </svg>
               </div>
             </div>
-            <div className="dark:bg-primary-500 dark:hover:bg-primary-600 flex cursor-pointer rounded-full bg-gray-300 px-3 py-1 text-xs text-gray-700 hover:bg-gray-950 hover:text-white dark:text-black dark:hover:text-white">
+            <div className="dark:bg-primary-500 dark:hover:bg-primary-400 flex cursor-pointer rounded-full bg-gray-300 px-3 py-1 text-xs text-gray-700 hover:bg-gray-950 hover:text-white dark:text-white dark:hover:text-white">
               <div className="px-2">Framer Motion</div>
               <div className="pl-1">
                 <svg
@@ -105,15 +105,15 @@ const SearchForm = () => {
           <div className="mb-3 text-sm font-semibold text-black dark:text-white">
             검색기록
           </div>
-          <div className="dark:border-dark-700 dark:text-dark-500 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:bg-gray-950 hover:text-white dark:hover:bg-primary-500 dark:hover:text-black">
+          <div className="dark:border-dark-700 dark:text-dark-500 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:bg-gray-950 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white">
             <div className="flex-1">tailwind 설정하는 방법</div>
             <div>22.05.23</div>
           </div>
-          <div className="dark:border-dark-700 dark:text-dark-500 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:bg-gray-950 hover:text-white dark:hover:bg-primary-500 dark:hover:text-black">
+          <div className="dark:border-dark-700 dark:text-dark-500 flex cursor-pointer rounded-sm border-b border-gray-300/50 px-3 py-3 text-sm text-gray-600 hover:bg-gray-950 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white">
             <div className="flex-1">Prisma Create Schemas</div>
             <div>22.05.23</div>
           </div>
-          <div className="dark:text-dark-500 flex cursor-pointer rounded-sm px-3 py-3 text-sm text-gray-600 hover:bg-gray-950 hover:text-white dark:hover:bg-primary-500 dark:hover:text-black">
+          <div className="dark:text-dark-500 flex cursor-pointer rounded-sm px-3 py-3 text-sm text-gray-600 hover:bg-gray-950 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white">
             <div className="flex-1">postfix 메일 설정</div>
             <div>22.05.23</div>
           </div>

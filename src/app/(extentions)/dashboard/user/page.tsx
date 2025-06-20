@@ -1,5 +1,11 @@
-const Page = () => {
-  return <>1</>
-}
+import DashboardUserList from "@/extentions/user/admin/templates/list";
 
-export default Page
+const Page = () => {
+  return (
+    <>
+      <DashboardUserList />
+    </>
+  );
+};
+
+export default Page;

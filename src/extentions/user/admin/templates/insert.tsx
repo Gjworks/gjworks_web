@@ -4,8 +4,6 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Alert from "@plextype/components/message/Alert";
 
-import { createUser } from "@/extentions/user/scripts/userController";
-
 const DashboardUserInsert = () => {
   const router = useRouter();
   const [error, setError] = useState<{ type: string; message: string } | null>(
@@ -37,18 +35,6 @@ const DashboardUserInsert = () => {
     if (res.type === "success") {
       router.replace("/auth/signin");
     }
-
-    // await createUser(formData)
-    //   .then((response) => {
-    //     if (response?.type === "error") {
-    //       setError(response?.message);
-    //     } else {
-    //       router.replace("/dashboard/user/list");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error("Failed to register: " + error.toString());
-    //   });
   };
   return (
     <>

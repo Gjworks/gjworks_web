@@ -170,7 +170,7 @@ const Register = () => {
         </div>
 
         <div className="mb-2">
-          <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-500 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-3 px-5 rounded-lg transition duration-300 hover:bg-slate-700 text-sm">
+          <button className="flex justify-center items-center w-full bg-slate-900 dark:bg-primary-700 dark:hover:bg-primary-600 hover:text-white dark:hover:text-white dark:text-white text-white py-3 px-5 rounded-lg transition duration-300 hover:bg-slate-700 text-sm">
             Register Completed
           </button>
         </div>

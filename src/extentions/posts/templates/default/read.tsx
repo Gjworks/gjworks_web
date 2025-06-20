@@ -8,7 +8,7 @@ const PostsRead = () => {
   return (
     <>
       <div className="relative dark:shadow-dark-950 block bg-[url('/assets/images/bg39.jpg')] bg-cover bg-center block-line-b">
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/5 via-gray-950/60 to-gray-950/90 dark:from-dark-950/30 dark:via-dark-950/50 dark:to-dark-950"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/70 via-gray-950/60 to-gray-950/90 dark:from-dark-950 dark:via-dark-950/50 dark:to-dark-950"></div>
         <div className="relative mx-auto max-w-screen-lg px-3 pt-20 pb-10 md:pb-20">
           <div
             className="text-3xl md:text-5xl font-light text-white py-4 text-center pt-20"
@@ -75,7 +75,7 @@ const PostsRead = () => {
       <div className="sticky top-0 bg-white/75 dark:bg-dark-950/75 backdrop-blur-lg z-10 pt-1 block-line-b">
         <div className="mx-auto  max-w-screen-lg px-3">
           <div className="flex items-center gap-2">
-            <div className="bg-primary-500 text-white dark:text-black text-xs px-4 py-1 rounded-full">
+            <div className="bg-primary-700 text-white text-xs px-4 py-1 rounded-full">
               기술공유
             </div>
             <div className="text-base md:text-lg font-light text-gray-950 dark:text-white py-4">
@@ -106,7 +106,7 @@ const PostsRead = () => {
               </button>
             </div>
           </div>
-          <div className="col-span-12 md:col-span-10 border-l border-gray-950/5">
+          <div className="col-span-12 md:col-span-10">
             <div className="mx-auto max-w-screen-md">
               <div className="flex items-center justify-between gap-8 pt-5 pb-3 px-3">
                 <div className="flex items-center gap-4">

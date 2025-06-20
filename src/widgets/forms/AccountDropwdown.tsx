@@ -21,23 +21,14 @@ interface Item {
 const AccountDropwdown = () => {
   const router = useRouter();
   const [showDropdown, setShowDropdown] = useState(false);
-  const [isLogged, setIsLogged] = useState<boolean>(false);
-  const [loggedInfo, setLoggedInfo] = useState<UserInfo | undefined>(undefined);
 
-  const { data: user, isLoading } = useUser();
-
-  useEffect(() => {
-    if (user) {
-      setLoggedInfo(user);
-      setIsLogged(true);
-    }
-  }, [user]);
+  const { data: user, isLoading, isError } = useUser();
 
   const closeDropdown = (close) => {
     setShowDropdown(close);
   };
 
-  const [guestNav, setGuestNav] = useState<Array<Item>>([
+  const guestNav: Array<Item> = [
     {
       title: "로그인",
       name: "Signin",
@@ -58,8 +49,9 @@ const AccountDropwdown = () => {
       name: "settings",
       route: "#right",
     },
-  ]);
-  const [userNav, setUserNav] = useState<Array<Item>>([
+  ];
+
+  const userNav: Array<Item> = [
     {
       title: "내 정보",
       name: "user",
@@ -100,13 +92,16 @@ const AccountDropwdown = () => {
       name: "divider",
       route: "",
     },
-
     {
       title: "로그아웃",
       name: "Signout",
       route: "/",
     },
-  ]);
+  ];
+
+  if (isLoading) return null; // 혹은 로딩 스피너
+
+  const isLoggedIn = !!user;
 
   const handleSignOut = async () => {
     // const accessToken = localStorage.getItem('accessToken')
@@ -117,19 +112,10 @@ const AccountDropwdown = () => {
     const result = await response.json();
     if (result) {
       // 로그아웃 성공 시
-      setLoggedInfo(undefined); // loggedInfo 초기화
-      setIsLogged(false); // 로그인 상태도 false로 변경
       window.location.href = "/";
     }
-    // await Signout(accessToken).then(data => {
-    //   if (data) {
-    //     localStorage.removeItem('persist:userInfo')
-    //     localStorage.removeItem('accessToken')
-    //     window.location.href = '/'
-    //   }
-    // })
   };
-
+  console.log(user);
   const callbackName = (name) => {
     name === "Signout" && handleSignOut();
   };
@@ -139,13 +125,13 @@ const AccountDropwdown = () => {
         onClick={() => setShowDropdown(!showDropdown)}
         className="hover:bg-gray-100/20 py-2 px-3 rounded-md dark:hover:bg-dark-700/75"
       >
-        <Avator username={loggedInfo?.nickName} />
+        <Avator username={user?.nickName} isLoggedIn={isLoggedIn} />
       </button>
       <Dropdown state={showDropdown} close={closeDropdown}>
-        {isLogged ? (
+        {isLoading ? null : user ? (
           <DefaultList
             list={userNav}
-            loggedInfo={loggedInfo}
+            loggedInfo={user}
             callback={callbackName}
           />
         ) : (
