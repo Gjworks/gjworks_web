@@ -104,10 +104,10 @@ const Header = () => {
   return (
     <>
       <motion.header
-        transition={{ transition: { duration: 0.3 } }}
+        transition={{ duration: 0.3 }}
         className={
           "relative top-0 w-full  bg-gray-50/75 backdrop-blur-lg dark:bg-dark-950/5 z-20 " +
-          (showNavigation === true ? "  " : " ")
+          (showNavigation ? "  " : " ")
         }
       >
         <div className="max-w-screen-xl mx-auto">
