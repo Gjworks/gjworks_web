@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { decodeJwt } from "jose";
 
 export const config = {
-  runtime: "nodejs",
+  // runtime: "nodejs",
 };
 // 미들웨어 생성
 export async function middleware(request: NextRequest, response: NextResponse) {
