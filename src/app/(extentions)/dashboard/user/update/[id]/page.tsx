@@ -1,7 +1,8 @@
 import DashboardUserUpdate from "@/extentions/user/admin/templates/update";
 
-const Page = ({ params }: { params: { id: string } }) => {
-  return <DashboardUserUpdate id={params.id} />;
+const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  return <DashboardUserUpdate id={id} />;
 };
 
 export default Page;
