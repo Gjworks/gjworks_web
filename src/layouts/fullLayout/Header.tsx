@@ -106,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          "relative top-0 w-full  bg-gray-50/75 backdrop-blur-lg dark:bg-dark-950/5 z-20 " +
+          "relative top-0 w-full  bg-white/95 backdrop-blur-lg dark:bg-dark-950/95 z-20 " +
           (showNavigation ? "  " : " ")
         }
       >
@@ -220,8 +220,8 @@ const Header = () => {
                             className={
                               "relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 md:text-[0.782rem] tracking-wider " +
                               (currentPage?.route === data[1].route
-                                ? "text-gray-950 dark:text-white font-medium"
-                                : "dark:text-dark-500 text-gray-400 hover:text-gray-900 dark:hover:text-white")
+                                ? "text-primary-500 dark:text-white font-medium"
+                                : "dark:text-dark-500 text-gray-950 hover:text-primary-600 dark:hover:text-white")
                             }
                           >
                             <div>{data[1].title}</div>

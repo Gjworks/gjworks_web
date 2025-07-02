@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   }
 
   return (
-    <html className="break-keep selection:bg-black selection:text-white dark:selection:bg-primary-400 dark:selection:text-white dark">
+    <html className="break-keep selection:bg-black selection:text-white dark:selection:bg-primary-400 dark:selection:text-white">
       <body>
         <ReactQueryProvider>
           <ReduxProviders>{children}</ReduxProviders>
