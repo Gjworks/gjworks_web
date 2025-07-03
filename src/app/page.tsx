@@ -59,11 +59,11 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative">
-          {/*<div className="absolute inset-0 bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/40 dark:to-dark-950"></div>*/}
-          <div className="max-w-screen-2xl mx-auto px-5 rounded-2xl">
+        <div className="relative bg-[url(/assets/images/bg46.jpg)] bg-no-repeat bg-cover bg-center py-20">
+          <div className="absolute inset-0 bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/40 dark:to-dark-950"></div>
+          <div className="max-w-screen-xl mx-auto px-3 rounded-2xl">
             <div className="md:h-full">
-              <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]   bg-gray-100 rounded-2xl">
+              <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]">
                 <motion.div
                   variants={parentVariants}
                   initial="offscreen"
@@ -71,21 +71,21 @@ export default function Page() {
                   viewport={{ once: false, amount: 0.3 }}
                   className="max-w-screen-lg mx-auto py-20"
                 >
-                  <div className="relative mb-12">
+                  <div className="relative mb-12 ">
                     <motion.div variants={variants} className="px-1 lg:mb-2">
-                      <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-black lg:text-5xl lg:gap-0  w-full">
+                      <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-white lg:text-5xl lg:gap-0  w-full">
                         Flexible Type System ✨
                       </div>
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight  text-black lg:text-5xl  mb-16"
+                      className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight  text-white lg:text-5xl  mb-16"
                     >
                       Creative platform service
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-800 dark:text-dark-100 max-w-screen-sm mx-auto text-center"
+                      className="flex justify-center px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-100 dark:text-dark-100 max-w-screen-sm mx-auto text-center"
                     >
                       지제이웍스는 웹과 앱을 개발하기 위한 소규모 개발팀입니다.
                       우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및
@@ -98,14 +98,14 @@ export default function Page() {
                       variants={variants}
                       className="relative mx-auto flex items-center gap-4 px-3"
                     >
-                      <div className="dark:bg-dark-800 rounded-lg bg-gray-200 p-3 backdrop-blur-2xl">
-                        <Square3Stack3DIcon className="size-5 text-gray-900 dark:text-white stroke-1" />
+                      <div className="dark:bg-dark-800 rounded-lg bg-gray-100/5 p-3 backdrop-blur-2xl">
+                        <Square3Stack3DIcon className="size-5 text-gray-100 dark:text-white stroke-1" />
                       </div>
                       <div className="flex-1">
-                        <div className="dark:text-white mb-2 text-left text-sm text-gray-800">
+                        <div className="dark:text-white mb-2 text-left text-sm text-gray-200">
                           Platform Extensible
                         </div>
-                        <div className="dark:text-dark-400 text-left text-xs text-gray-500">
+                        <div className="dark:text-dark-400 text-left text-xs text-gray-400">
                           다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
                           주시면 반영하겠습니다.
                         </div>

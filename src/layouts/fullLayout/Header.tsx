@@ -148,7 +148,7 @@ const Header = () => {
                       className="flex items-center justify-center p-[1.5px]"
                     >
                       <Image
-                        src="/assets/images/brand/logo2.svg"
+                        src="/logo2.svg"
                         alt="gjworks logo"
                         width="16"
                         height="16"
@@ -218,10 +218,10 @@ const Header = () => {
                           <Link
                             href={data[1].route}
                             className={
-                              "relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 md:text-[0.782rem] tracking-wider " +
+                              "relative mx-2 flex items-center gap-2 px-1 py-0 text-xs font-normal lg:px-3 lg:py-2 md:text-[0.762rem] tracking-wider " +
                               (currentPage?.route === data[1].route
-                                ? "text-primary-500 dark:text-white font-medium"
-                                : "dark:text-dark-500 text-gray-950 hover:text-primary-600 dark:hover:text-white")
+                                ? "text-gray-500 dark:text-white font-medium"
+                                : "dark:text-dark-500 text-gray-950 hover:text-gray-600 dark:hover:text-white")
                             }
                           >
                             <div>{data[1].title}</div>
