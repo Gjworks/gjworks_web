@@ -59,11 +59,11 @@
       }
 
       .cls-21 {
-        stroke: #f1f2f3;
+        stroke: #ecedef;
       }
 
       .cls-22 {
-        stroke: #f1f2f3;
+        stroke: #ecedef;
       }
 
       .cls-23 {
@@ -75,7 +75,7 @@
       }
 
       .cls-13 {
-        fill: #f1f2f3;
+        fill: #ecedef;
       }
 
       .cls-14 {
@@ -83,7 +83,7 @@
       }
 
       .cls-15 {
-        fill: #f1f2f3;
+        fill: #ecedef;
       }
 
       .cls-16 {
@@ -95,7 +95,7 @@
       }
 
       .cls-18 {
-        fill: #f1f2f3;
+        fill: #ecedef;
       }
 
       .cls-19 {
@@ -103,12 +103,12 @@
       }
     </style>
     <linearGradient id="_무제_그라디언트_12" data-name="무제 그라디언트 12" x1="1052.59" y1="-254.25" x2="1180" y2="-254.25" gradientTransform="translate(0 -86.4) scale(1 -1)" gradientUnits="userSpaceOnUse">
-      <stop offset=".6" stop-color="#f1f2f3"/>
+      <stop offset=".6" stop-color="#ecedef"/>
       <stop offset="1" stop-color="#fbfbfc"/>
     </linearGradient>
     <linearGradient id="_무제_그라디언트_7" data-name="무제 그라디언트 7" x1="167.6" y1="-278" x2="283.42" y2="-278" gradientTransform="translate(0 -86.4) scale(1 -1)" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fbfbfc"/>
-      <stop offset=".4" stop-color="#f1f2f3"/>
+      <stop offset=".4" stop-color="#ecedef"/>
     </linearGradient>
     <linearGradient id="_무제_그라디언트_7-2" data-name="무제 그라디언트 7" x1="123.8" y1="-345.55" x2="241.2" y2="-345.55" xlink:href="#_무제_그라디언트_7"/>
     <linearGradient id="_무제_그라디언트_7-3" data-name="무제 그라디언트 7" x1="174.59" y1="-478.85" x2="292.39" y2="-478.85" xlink:href="#_무제_그라디언트_7"/>
