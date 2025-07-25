@@ -15,7 +15,7 @@
       }
 
       .cls-3 {
-        fill: #334155;
+        fill: #9ca3af;
       }
 
       .cls-4 {
@@ -35,7 +35,7 @@
       }
 
       .cls-20 {
-        stroke: #334155;
+        stroke: #6b7280;
       }
 
       .cls-20, .cls-8, .cls-21, .cls-22 {
@@ -59,7 +59,7 @@
       }
 
       .cls-21 {
-        stroke: #d1d5db;
+        stroke: #f1f2f3;
       }
 
       .cls-22 {
