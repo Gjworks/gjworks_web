@@ -59,8 +59,12 @@ export default function Page() {
       </motion.div>
       <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
 
-        <div className="relative ">
-          {/*<div className="absolute inset-0 bg-gradient-to-b dark:from-dark-950 dark:via-dark-950/40 dark:to-dark-950"></div>*/}
+        <div className="relative">
+          <div className="absolute left-1/2 -translate-x-1/2 w-full mx-auto h-[660px] ">
+            <div className="relative h-[660px]  bg-[url(/assets/svg/bg.svg)] bg-cover xl:bg-contain bg-center bg-no-repeat"></div>
+          </div>
+          <div className="absolute left-1/2 z-[-1] -translate-x-1/2 top-0 w-[400px] h-[200px] bg-[url(/assets/svg/dotted.svg)] bg-center bg-no-repeat"></div>
+          <div className="absolute left-1/2 z-[-1] -translate-x-1/2 bottom-0 w-[400px] h-[200px] bg-[url(/assets/svg/dotted.svg)] bg-center bg-no-repeat"></div>
           <div className="">
             <div className="max-w-screen-xl mx-auto px-3 rounded-2xl">
               <div className="relative flex justify-center items-center rounded-2xl overflow-hidden md:min-h-[660px]">
@@ -71,17 +75,28 @@ export default function Page() {
                   viewport={{ once: false, amount: 0.3 }}
                   className="max-w-screen-lg mx-auto py-20"
                 >
-                  <div className="relative mb-12 ">
+                  <div className="relative pt-12 mb-12 ">
                     <motion.div variants={variants} className="px-1 lg:mb-2">
-                      <div className="flex flex-wrap justify-center text-4xl font-normal md:font-medium !leading-tight tracking-tight text-black lg:text-5xl lg:gap-0  w-full">
-                        Flexible Type System ✨
+                      <div className="flex gap-0 sm:gap-2 flex-wrap justify-start md:justify-center text-4xl font-normal md:font-semibold  lg:text-6xl  w-full">
+                        <div className="!leading-tight tracking-tight text-black">
+                          Flexible Type
+                        </div>
+                        <div className="!leading-tight tracking-tight text-gray-400">
+                          {" "}
+                          System
+                        </div>
                       </div>
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="flex justify-center pl-0 text-4xl font-normal md:font-medium tracking-tight  text-black lg:text-5xl  mb-16"
+                      className="flex gap-0 sm:gap-2 flex-wrap justify-start md:justify-center pl-0 text-4xl font-normal md:font-semibold  lg:text-6xl  mb-16"
                     >
-                      Creative platform service
+                      <div className="!leading-tight tracking-tight text-gray-400">
+                        Creative platform
+                      </div>
+                      <div className="!leading-tight tracking-tight text-black">
+                        service
+                      </div>
                     </motion.div>
                     <motion.div
                       variants={variants}
@@ -117,7 +132,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className=" max-w-screen-xl mx-auto">
+        <div className=" max-w-screen-xl mx-auto pt-20">
           <motion.div className="">
             <div className="grid grid-cols-12">
               <div className="col-span-12">

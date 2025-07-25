@@ -17,7 +17,7 @@ enum PermissionSubject {
 
 model User {
   id            Int             @id @default(autoincrement())
-  uuid          String          @default(cuid())
+  uuid          String          @unique @default(cuid())
   accountId     String          @unique
   email_address String          @unique
   nickName      String          @unique

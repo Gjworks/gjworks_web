@@ -1,7 +1,4 @@
-import {
-  getUserDetail,
-  getAllGroups,
-} from "@/extentions/user/admin/scripts/group";
+import { getUserUpdateData } from "@/extentions/user/admin/scripts/actions/getUserUpdateData";
 import UpdateFormClient from "./updateClient";
 
 type Props = {
@@ -9,8 +6,7 @@ type Props = {
 };
 
 const DashboardUserUpdate = async ({ id }: Props) => {
-  const user = await getUserDetail(id);
-  const groupList = await getAllGroups();
+  const { user, groupList } = await getUserUpdateData(id);
 
   return (
     <div className="max-w-screen-2xl mx-auto px-3">
