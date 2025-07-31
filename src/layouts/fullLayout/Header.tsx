@@ -106,7 +106,7 @@ const Header = () => {
       <motion.header
         transition={{ duration: 0.3 }}
         className={
-          "relative top-0 w-full  bg-white/95 backdrop-blur-lg dark:bg-dark-950/95 z-20 " +
+          "relative top-0 w-full  backdrop-blur-lg dark:bg-dark-950/95 z-20 " +
           (showNavigation ? "  " : " ")
         }
       >
