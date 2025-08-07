@@ -49,25 +49,12 @@ export default function Page() {
 
   return (
     <MainLayout>
-      {/* <div className="-mt-[111px] h-[111px] bg-dark-950/80 w-full"></div> */}
       <div className="relative">
-        {/* <motion.div
-        className="absolute inset-0"
-        initial={{ opacity: 0, y: '3%' }}
-        animate={{ opacity: 1, y: '0%', transition: { duration: 1 } }}
-      >
-      </motion.div>
-      <div className="absolute inset-0 overflow-hidden bg-dark-900/90 backdrop-blur-2xl"></div> */}
-
-        <div className="relative">
-          {/*<div className="absolute left-1/2 -translate-x-1/2 w-full mx-auto h-[660px] ">*/}
-          {/*  /!*<div className="relative h-[660px]  bg-[url(/assets/svg/world_map.svg)] bg-center bg-no-repeat"></div>*!/*/}
-          {/*</div>*/}
-          {/*<div className="absolute invisible md:visible left-1/2 -translate-x-1/2 top-0 w-[380px] h-[120px] bg-[url(/assets/svg/dotted.svg)] bg-cover bg-center bg-no-repeat"></div>*/}
-
-          <div className="py-20">
+        <div className="relative px-3">
+          <div className="relative py-20 bg-[url(/assets/images/bg52.jpg)] bg-no-repeat bg-cover bg-center rounded-2xl">
+            <div className="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-950/40 to-gray-950/90 rounded-2xl"></div>
             <div className="max-w-screen-xl mx-auto px-3 rounded-2xl">
-              <div className="relative flex justify-center items-center rounded-2xl overflow-hidden">
+              <div className="relative flex justify-center items-center rounded-2xl overflow-hidden h-[calc(100vh-232px)]">
                 <motion.div
                   variants={parentVariants}
                   initial="offscreen"
@@ -77,11 +64,11 @@ export default function Page() {
                 >
                   <div className="relative mb-12">
                     <motion.div variants={variants} className="px-1 lg:mb-2">
-                      <div className="flex gap-0 sm:gap-2 flex-wrap justify-start text-4xl font-normal md:font-semibold  lg:text-6xl  w-full">
-                        <div className="!leading-tight tracking-tight text-black">
+                      <div className="flex gap-0 sm:gap-2 flex-wrap justify-center text-4xl font-normal md:font-semibold  lg:text-6xl  w-full">
+                        <div className="!leading-tight tracking-tight text-white">
                           Flexible Type
                         </div>
-                        <div className="!leading-tight tracking-tight text-black">
+                        <div className="!leading-tight tracking-tight text-white">
                           {" "}
                           System
                         </div>
@@ -89,44 +76,44 @@ export default function Page() {
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="flex gap-0 sm:gap-2 flex-wrap justify-start pl-0 text-4xl font-normal md:font-semibold  lg:text-6xl  mb-12"
+                      className="flex gap-0 sm:gap-2 flex-wrap justify-center pl-0 text-4xl font-normal md:font-semibold  lg:text-6xl  mb-12"
                     >
-                      <div className="!leading-tight tracking-tight text-black">
+                      <div className="!leading-tight tracking-tight text-white">
                         Creative Platform
                       </div>
-                      <div className="!leading-tight tracking-tight text-black">
+                      <div className="!leading-tight tracking-tight text-white">
                         Service
                       </div>
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="w-full px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 dark:text-dark-100"
+                      className="w-full px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-white/75 dark:text-dark-100 text-center"
                     >
                       지제이웍스는 웹과 앱을 개발하기 위한 소규모 개발팀입니다.
                     </motion.div>
                     <motion.div
                       variants={variants}
-                      className="w-full px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-gray-500 dark:text-dark-100"
+                      className="w-full px-1 lg:mb-2 text-sm md:text-base pb-4 lg:pb-0 text-white/75 dark:text-dark-100 text-center"
                     >
                       우리는 혁신적이고 미래 지향적 인 기업, 신생 기업 및
                       비즈니스와 협력하여 매력적인 제품을 연구하고 개발합니다.
                     </motion.div>
                   </div>
 
-                  <div className="flex items-center w-full md:w-2/5 h-[80px]">
+                  <div className="flex items-center w-full md:w-2/5 mx-auto h-[80px]">
                     <motion.div
                       variants={variants}
                       className="relative mx-auto flex items-center gap-4"
                     >
                       <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[380px] h-[80px] bg-[url(/assets/svg/dotted.svg)] bg-cover bg-center bg-no-repeat"></div>
-                      <div className="dark:bg-dark-800 rounded-lg bg-gray-100 p-3 backdrop-blur-2xl">
-                        <Square3Stack3DIcon className="size-5 text-gray-700 dark:text-white stroke-1" />
+                      <div className="dark:bg-dark-800 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm p-3">
+                        <Square3Stack3DIcon className="size-5 text-white dark:text-white stroke-1" />
                       </div>
                       <div className="flex-1">
-                        <div className="dark:text-white mb-2 text-left text-sm text-gray-900 bg-white">
+                        <div className="dark:text-white mb-2 text-left text-sm text-white">
                           Platform Extensible
                         </div>
-                        <div className="dark:text-dark-400 text-left text-xs text-gray-400 bg-white">
+                        <div className="dark:text-dark-400 text-left text-xs text-white/75">
                           다양한 프로젝트를 만나보시고 좋은 의견과 아이디어를
                           주시면 반영하겠습니다.
                         </div>
@@ -138,7 +125,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="pt-20">
           <div className="max-w-screen-xl mx-auto px-3">
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-12">
