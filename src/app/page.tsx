@@ -49,9 +49,9 @@ export default function Page() {
 
   return (
     <MainLayout>
-      <div className="relative">
+      <div className="relative overflow-hidden">
         <div className="relative px-3">
-          <div className="relative py-20 bg-[url(/assets/images/bg52.jpg)] bg-no-repeat bg-cover bg-center rounded-2xl">
+          <div className="relative py-20 bg-[url(/assets/images/bg46.jpg)] bg-no-repeat bg-cover bg-center rounded-2xl">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-950/40 to-gray-950/90 rounded-2xl"></div>
             <div className="max-w-screen-xl mx-auto px-3 rounded-2xl">
               <div className="relative flex justify-center items-center rounded-2xl overflow-hidden h-[calc(100vh-232px)]">
@@ -125,22 +125,91 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="pt-20">
+        <div className="-mt-32 pt-6 pb-20">
           <div className="max-w-screen-xl mx-auto px-3">
-            <div className="grid grid-cols-12 gap-4">
-              <div className="col-span-12">
-                <div
-                  className={`bg-gray-200/75 hover:bg-gray-300/75 rounded-2xl p-10 h-[478px]`}
-                ></div>
+            <div className="flex justify-center gap-12 md:gap-12 px-3">
+              <div className="relative w-64 flex-none -rotate-[24deg] translate-y-52">
+                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
+                  <div className="grid place-content-between h-full gap-4">
+                    <div className="text-xl font-light text-gray-400">
+                      Approach expanding{" "}
+                      <span className="font-semibold text-gray-950">
+                        workplace
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-600">Sessions</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-64 flex-none -rotate-[16deg] translate-y-24">
+                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg46.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/50">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-gray-950/30 via-gray-950/40 to-gray-950/70"></div>
+                </div>
+              </div>
+              <div className="relative w-64 flex-none -rotate-[10deg] translate-y-6">
+                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
+                  <div className="grid place-content-between h-full gap-4">
+                    <div className="text-xl font-light text-gray-400">
+                      Approach expanding{" "}
+                      <span className="font-semibold text-gray-950">
+                        workplace
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-600">Sessions</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-64 flex-none">
+                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg39.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/50">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-gray-950/50 via-gray-950/40 to-gray-950/70"></div>
+                  <div className="relative grid place-content-between h-full gap-4">
+                    <div className="text-xl font-light text-white/70">
+                      find{" "}
+                      <span className="font-semibold text-white">your</span>{" "}
+                      possibilities
+                    </div>
+                    <div className="text-xs text-white/50">Loquence</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-64 flex-none rotate-[10deg] translate-y-6">
+                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
+                  <div className="grid place-content-between h-full gap-4">
+                    <div className="text-xl font-light text-gray-400">
+                      find{" "}
+                      <span className="font-semibold text-gray-950">your</span>{" "}
+                      possibilities
+                    </div>
+                    <div className="text-xs text-gray-600">Loquence</div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-64 flex-none rotate-[16deg] translate-y-24">
+                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg41.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/50">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-gray-950/30 via-gray-950/40 to-gray-950/70"></div>
+                </div>
+              </div>
+              <div className="relative w-64 flex-none rotate-[24deg] translate-y-52">
+                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
+                  <div className="grid place-content-between h-full gap-4">
+                    <div className="text-xl font-light text-gray-400">
+                      Approach expanding{" "}
+                      <span className="font-semibold text-gray-950">
+                        workplace
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-600">Sessions</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="max-w-screen-xl mx-auto pt-20">
+        <div className="max-w-screen-xl mx-auto -mt-6">
           <motion.div className="">
             <div className="grid grid-cols-12">
               <div className="col-span-12">
-                <div className="w-full md:w-2/5 relative px-3 py-8">
+                <div className="w-full md:w-2/5 mx-auto relative px-3 py-8">
                   <motion.div
                     initial="offscreen"
                     whileInView="onscreen"
@@ -151,20 +220,20 @@ export default function Page() {
                     <div className="">
                       <div className="flex">
                         <div className="w-full">
-                          <motion.div variants={variants} className="mb-4">
-                            <span className="text-sm text-gray-500">
-                              Premium Quality
-                            </span>
-                          </motion.div>
                           <motion.div
                             variants={variants}
-                            className="mb-4 text-xl font-semibold text-black lg:text-2xl dark:text-white !leading-tight tracking-tight"
+                            className="mb-4 text-xl font-thin text-black lg:text-4xl dark:text-white !leading-tight tracking-tight text-center"
                           >
-                            BEST UI TEMPLATES
+                            6 best things for
+                            <br />{" "}
+                            <span className={`text-primary-500`}>
+                              employees
+                            </span>{" "}
+                            & what they deserve!
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="dark:text-dark-500 text-sm text-gray-400"
+                            className="dark:text-dark-500 text-sm text-gray-400 text-center"
                           >
                             컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
                             모든 Component는 tailwindcss와 Framer motion을
@@ -181,7 +250,7 @@ export default function Page() {
           </motion.div>
         </div>
 
-        <div className="pb-20 overflow-hidden">
+        <div className="pt-12 pb-20 overflow-hidden">
           <motion.div
             initial="offscreen"
             whileInView="onscreen"
@@ -189,21 +258,16 @@ export default function Page() {
             variants={parentVariants}
             className="max-w-screen-xl mx-auto "
           >
-            <div className="flex justify-start gap-4 md:gap-8 px-3">
-              <div className="relative aspect-9/10 w-64 flex-none overflow-hidden sm:w-[480px]">
-                <div className="rounded-2xl p-5 bg-gray-200/75 hover:bg-gray-300/75 transition-all duration-700 h-64"></div>
+            <div className={`grid grid-cols-12 gap-8`}>
+              <div className="col-span-6">
+                <div className="text-sm font-semibold text-gray-700 border-b border-gray-200/75 pb-2 pt-2">
+                  News
+                </div>
               </div>
-              <div className="relative aspect-9/10 w-64 flex-none overflow-hidden sm:w-[480px]">
-                <div className="rounded-2xl p-5 bg-gray-200/75 hover:bg-gray-300/75 transition-all duration-700 h-64"></div>
-              </div>
-              <div className="relative aspect-9/10 w-64 flex-none overflow-hidden sm:w-[480px]">
-                <div className="rounded-2xl p-5 bg-gray-200/75 hover:bg-gray-300/75 transition-all duration-700 h-64"></div>
-              </div>
-              <div className="relative aspect-9/10 w-64 flex-none overflow-hidden sm:w-[480px]">
-                <div className="rounded-2xl p-5 bg-gray-200/75 hover:bg-gray-300/75 transition-all duration-700 h-64"></div>
-              </div>
-              <div className="relative aspect-9/10 w-64 flex-none overflow-hidden sm:w-[480px]">
-                <div className="rounded-2xl p-5 bg-gray-200/75 hover:bg-gray-300/75 transition-all duration-700 h-64"></div>
+              <div className="col-span-6">
+                <div className="text-sm font-semibold text-gray-700 border-b border-gray-200/75 pb-2 pt-2">
+                  Update
+                </div>
               </div>
             </div>
           </motion.div>
