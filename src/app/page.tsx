@@ -54,7 +54,7 @@ export default function Page() {
           <div className="relative py-20 bg-[url(/assets/images/bg46.jpg)] bg-no-repeat bg-cover bg-center rounded-2xl">
             <div className="absolute inset-0 bg-gradient-to-b from-gray-950/90 via-gray-950/40 to-gray-950/90 rounded-2xl"></div>
             <div className="max-w-screen-xl mx-auto px-3 rounded-2xl">
-              <div className="relative flex justify-center items-center rounded-2xl overflow-hidden h-[calc(100vh-232px)]">
+              <div className="relative flex justify-center items-center rounded-2xl overflow-hidden h-[560px] md:h-[calc(100vh-232px)]">
                 <motion.div
                   variants={parentVariants}
                   initial="offscreen"
@@ -125,10 +125,10 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="-mt-32 pt-6 pb-20">
+        <div className="-mt-32 pt-6">
           <div className="max-w-screen-xl mx-auto px-3">
-            <div className="flex justify-center gap-12 md:gap-12 px-3">
-              <div className="relative w-64 flex-none -rotate-[24deg] translate-y-52">
+            <div className="flex justify-center gap-6 md:gap-12 px-3">
+              <div className="relative w-44 md:w-64 flex-none -rotate-[24deg] translate-y-52">
                 <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
                   <div className="grid place-content-between h-full gap-4">
                     <div className="text-xl font-light text-gray-400">
@@ -141,13 +141,13 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="relative w-64 flex-none -rotate-[16deg] translate-y-24">
-                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg46.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/50">
+              <div className="relative w-44 md:w-64 flex-none -rotate-[16deg] translate-y-24">
+                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg46.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-60 md:h-80 hover:shadow-lg hover:shadow-gray-950/50">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-gray-950/30 via-gray-950/40 to-gray-950/70"></div>
                 </div>
               </div>
-              <div className="relative w-64 flex-none -rotate-[10deg] translate-y-6">
-                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
+              <div className="relative w-44 md:w-64 flex-none -rotate-[10deg] translate-y-6">
+                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-60 md:h-80 hover:shadow-lg hover:shadow-gray-950/10">
                   <div className="grid place-content-between h-full gap-4">
                     <div className="text-xl font-light text-gray-400">
                       Approach expanding{" "}
@@ -159,8 +159,8 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="relative w-64 flex-none">
-                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg39.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/50">
+              <div className="relative w-44 md:w-64 flex-none">
+                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg39.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-60 md:h-80 hover:shadow-lg hover:shadow-gray-950/50">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-gray-950/50 via-gray-950/40 to-gray-950/70"></div>
                   <div className="relative grid place-content-between h-full gap-4">
                     <div className="text-xl font-light text-white/70">
@@ -172,8 +172,8 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="relative w-64 flex-none rotate-[10deg] translate-y-6">
-                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
+              <div className="relative w-44 md:w-64 flex-none rotate-[10deg] translate-y-6">
+                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-60 md:h-80 hover:shadow-lg hover:shadow-gray-950/10">
                   <div className="grid place-content-between h-full gap-4">
                     <div className="text-xl font-light text-gray-400">
                       find{" "}
@@ -184,13 +184,13 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className="relative w-64 flex-none rotate-[16deg] translate-y-24">
-                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg41.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/50">
+              <div className="relative w-44 md:w-64 flex-none rotate-[16deg] translate-y-24">
+                <div className="relative rounded-2xl p-5 bg-gray-50 bg-[url(/assets/images/bg41.jpg)] bg-no-repeat bg-cover bg-center transition-all duration-700 hover:-translate-y-6 h-60 md:h-80 hover:shadow-lg hover:shadow-gray-950/50">
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-gray-950/30 via-gray-950/40 to-gray-950/70"></div>
                 </div>
               </div>
-              <div className="relative w-64 flex-none rotate-[24deg] translate-y-52">
-                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-80 hover:shadow-lg hover:shadow-gray-950/10">
+              <div className="relative w-44 md:w-64 flex-none rotate-[24deg] translate-y-52">
+                <div className="relative rounded-2xl p-5 bg-gray-50 transition-all duration-700 hover:-translate-y-6 h-60 md:h-80 hover:shadow-lg hover:shadow-gray-950/10">
                   <div className="grid place-content-between h-full gap-4">
                     <div className="text-xl font-light text-gray-400">
                       Approach expanding{" "}
@@ -205,7 +205,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="max-w-screen-xl mx-auto -mt-6">
+        <div className="max-w-screen-xl mx-auto">
           <motion.div className="">
             <div className="grid grid-cols-12">
               <div className="col-span-12">
@@ -222,7 +222,7 @@ export default function Page() {
                         <div className="w-full">
                           <motion.div
                             variants={variants}
-                            className="mb-4 text-xl font-thin text-black lg:text-4xl dark:text-white !leading-tight tracking-tight text-center"
+                            className="mb-4 text-2xl font-thin text-black md:text-4xl dark:text-white !leading-tight tracking-tight text-center"
                           >
                             6 best things for
                             <br />{" "}
@@ -233,7 +233,7 @@ export default function Page() {
                           </motion.div>
                           <motion.div
                             variants={variants}
-                            className="dark:text-dark-500 text-sm text-gray-400 text-center"
+                            className="dark:text-dark-500 text-xs md:text-sm text-gray-400 text-center"
                           >
                             컴포넌트는 React와 Next.js에서 사용할 수 있습니다.
                             모든 Component는 tailwindcss와 Framer motion을
@@ -256,15 +256,15 @@ export default function Page() {
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
             variants={parentVariants}
-            className="max-w-screen-xl mx-auto "
+            className="max-w-screen-xl mx-auto px-3"
           >
             <div className={`grid grid-cols-12 gap-8`}>
-              <div className="col-span-6">
+              <div className="col-span-12 md:col-span-6">
                 <div className="text-sm font-semibold text-gray-700 border-b border-gray-200/75 pb-2 pt-2">
                   News
                 </div>
               </div>
-              <div className="col-span-6">
+              <div className="col-span-12 md:col-span-6">
                 <div className="text-sm font-semibold text-gray-700 border-b border-gray-200/75 pb-2 pt-2">
                   Update
                 </div>
