@@ -4,14 +4,6 @@ import { motion } from "framer-motion";
 import MainLayout from "src/layouts/fullLayout/Layout";
 import { Square3Stack3DIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { createMetadata } from "@plextype/utils/metadata/createMetadata";
-import type { Metadata } from "next";
-
-// export const metadata: Metadata = createMetadata({
-//   title: "지제이웍스(Gjworks)",
-//   description: "지제이웍스 홈페이지에 오신걸 환영합니다.",
-//   url: "https://gjworks.dev",
-// });
 
 export default function Page() {
   const parentVariants = {
@@ -259,12 +251,12 @@ export default function Page() {
             className="max-w-screen-xl mx-auto px-3"
           >
             <div className={`grid grid-cols-12 gap-8`}>
-              <div className="col-span-12 md:col-span-6">
+              <div className="col-span-12  ㅊ md:col-span-6">
                 <div className="text-sm font-semibold text-gray-700 border-b border-gray-200/75 pb-2 pt-2">
                   News
                 </div>
               </div>
-              <div className="col-span-12 md:col-span-6">
+              <div className="col-span-12  ㅊ md:col-span-6">
                 <div className="text-sm font-semibold text-gray-700 border-b border-gray-200/75 pb-2 pt-2">
                   Update
                 </div>

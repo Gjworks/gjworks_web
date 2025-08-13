@@ -7,7 +7,7 @@ type Props = {
 
 const DashboardUserUpdate = async ({ id }: Props) => {
   const { user, groupList } = await getUserUpdateData(id);
-
+  console.log(user);
   return (
     <div className="max-w-screen-2xl mx-auto px-3">
       {user ? (

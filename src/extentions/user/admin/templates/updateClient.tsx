@@ -1,14 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import Alert from "@plextype/components/message/Alert";
+
+import { updateUserAction } from "@/extentions/user/admin/scripts/actions/updateUser";
 
 const UpdateFormClient = ({ user, groupList }) => {
   const router = useRouter();
   const [error, setError] = useState(null);
-  const [selectedGroups, setSelectedGroups] = useState(user?.groups ?? []);
+  const initialGroups = user?.userGroups?.map((ug) => ug.group.id) ?? [];
+  const [selectedGroups, setSelectedGroups] = useState(initialGroups);
   const [isAdmin, setIsAdmin] = useState(user?.isAdmin ?? false);
+  const [isPending, startTransition] = useTransition();
 
   const handleGroupChange = (groupId) => {
     setSelectedGroups((prev) =>
@@ -20,28 +24,22 @@ const UpdateFormClient = ({ user, groupList }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // const formData = new FormData(e.target);
-    // formData.append("isAdmin", isAdmin.toString());
-    // selectedGroups.forEach((id) => formData.append("groups[]", id));
-    //
-    // const res = await fetch(`/api/admin/user/${user.id}`, {
-    //   method: "PUT",
-    //   body: formData,
-    //   credentials: "include",
-    // });
-    //
-    // const result = await res.json();
-    // if (result.type === "error") {
-    //   setError(result);
-    // } else {
-    //   router.replace("/dashboard/user");
-    // }
+    const formData = new FormData(e.target);
+    formData.append("isAdmin", isAdmin.toString());
+    selectedGroups.forEach((id) => formData.append("groups[]", id));
+
+    startTransition(async () => {
+      const res = await updateUserAction(formData);
+      if (res.success) {
+        alert("저장 완료");
+      }
+    });
   };
 
   return (
     <form onSubmit={submitHandler}>
       {/*{error && <Alert type={error.type} message={error.message} />}*/}
-
+      <input type="hidden" name="id" value={user.id} />
       {/* 회원 기본설정 */}
       <div className="grid grid-cols-4 gap-8 py-10">
         <div className="col-span-1">
@@ -69,7 +67,7 @@ const UpdateFormClient = ({ user, groupList }) => {
               <input
                 type="text"
                 name="nickname"
-                defaultValue={user.nickname}
+                defaultValue={user.nickName}
                 className="border w-full py-2 px-3 rounded-md text-sm"
               />
             </div>
@@ -123,7 +121,7 @@ const UpdateFormClient = ({ user, groupList }) => {
                       checked={selectedGroups.includes(group.id)}
                       onChange={() => handleGroupChange(group.id)}
                     />
-                    <span className="text-sm">{group.name}</span>
+                    <span className="text-sm">{group.groupTitle}</span>
                   </label>
                 ))}
               </div>
