@@ -820,3 +820,13 @@ pre[class*="language-"]
 .bg-line {
     background-image:repeating-linear-gradient(315deg,currentColor 0 1px,#0000 0 50%)
 }
+
+.bg-radial {
+    /*background-image : radial-gradient(circle, rgb(42, 43, 48) 1px, rgb(42, 43, 48) 1px, transparent 1px, transparent 100%);*/
+    background-image: radial-gradient(circle, rgb(222, 223, 228) 1px, rgb(222, 223, 228) 1px, transparent 1px, transparent 100%);
+    background-repeat: repeat;
+    background-position: left center;
+    background-size: 8px 8px;
+    mask-image: radial-gradient(rgb(0, 0, 0), transparent 50%);
+    opacity: 0.8;
+}
