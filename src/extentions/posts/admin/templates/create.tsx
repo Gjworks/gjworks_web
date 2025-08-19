@@ -33,7 +33,7 @@ const DashboardPostCreate = () => {
   const [loading, setLoading] = useState(true);
   const [groups, setGroups] = useState<Group[]>([]);
   const params = useParams();
-  const id: string = params?.id;
+  const id = params?.id as string;
   const router = useRouter();
 
   const [formData, setFormData] = useState<FormData>({
