@@ -11,6 +11,7 @@ export type PostInfoData = {
     writePermissions: any[];
     commentPermissions: any[];
   };
+  id: number;
   moduleId: string; // Posts.pid
   moduleName: string; // Posts.postName
   listCount: number; // config.listCount
@@ -25,6 +26,7 @@ export type PostInfoData = {
 async function mapPostToPostInfoData(post: any): Promise<PostInfoData | null> {
   const cfg = (post.config as any) || {};
   return {
+    id: post.id,
     moduleId: post.pid,
     moduleName: post.postName,
     listCount: cfg.listCount ?? 20,
@@ -60,6 +62,7 @@ export async function findPostByModuleId(
   const post = await prisma.posts.findFirst({
     where: { pid: moduleId },
   });
+  console.log(post);
   if (!post) return null;
   return mapPostToPostInfoData(post);
 }

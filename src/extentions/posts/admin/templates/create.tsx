@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 
 import { getPostInfo } from "@/extentions/posts/admin/scripts/actions/getPostInfo";
-import { updatePostInfo } from "@/extentions/posts/admin/scripts/actions/updatePostInfo";
+import { upsertPostInfo } from "@/extentions/posts/admin/scripts/actions/upsertPostInfo";
 import { getGroups } from "@/extentions/posts/admin/scripts/actions/getGroups";
 
 import type { PostInfoData } from "@/extentions/posts/admin/scripts/data/post";
@@ -68,6 +68,7 @@ const DashboardPostCreate = () => {
         const data = await getPostInfo(id);
         if (data) {
           // permissions 없으면 초기값 사용
+          console.log(data);
           setFormData({
             postInfo: {
               ...data,
@@ -105,7 +106,7 @@ const DashboardPostCreate = () => {
 
   const handleSubmit = async () => {
     try {
-      await updatePostInfo(Number(id), formData.postInfo);
+      await upsertPostInfo(Number(id), formData.postInfo);
       console.log("저장 성공!");
       // router.push("/dashboard/posts/list");
     } catch (error) {

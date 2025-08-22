@@ -3,12 +3,14 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import PostsHeader from "./header";
 
 import {
   HomeIcon,
   ChevronRightIcon,
   ChatBubbleOvalLeftEllipsisIcon,
 } from "@heroicons/react/24/outline";
+import PageNavigation from "@plextype/components/nav/PageNavigation";
 
 interface PostsListClientProps {
   params: {
@@ -22,10 +24,10 @@ const PostsListClient: React.FC<PostsListClientProps> = ({
   params: { pid: string };
 }) => {
   const [documentInfo, setDocumentInfo] = useState<{ [key: string]: any }>();
-  console.log(params.pid);
 
   return (
     <>
+      <PostsHeader />
       <div className="border-t border-gray-200 dark:border-dark-700">
         <div className="flex flex-wrap gap-4 lg:gap-2 border-b border-gray-200 dark:border-dark-700 py-4 lg:py-8">
           <div className="flex-1">
@@ -168,6 +170,22 @@ const PostsListClient: React.FC<PostsListClientProps> = ({
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="pt-10 pb-20">
+        <div className="">
+          <div className="flex justify-between gap-4 flex-wrap">
+            <div className="w-full flex justify-center">
+              <PageNavigation
+                pathname="/posts/works"
+                totalCount={10}
+                page={1}
+                listCount={10}
+                totalPages={10}
+              />
+            </div>
+            <div className="flex justify-end flex-1"></div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use server";
 
 import {
-  findPostById,
+  findPostByModuleId,
   PostInfoData,
 } from "@/extentions/posts/admin/scripts/data/post";
 
@@ -10,26 +10,18 @@ import {
  * @param id 게시판 ID
  * @returns PostInfoData | null
  */
-const getPostInfo = async (id: string): Promise<PostInfoData | null> => {
-  const postId = Number(id);
-
-  if (isNaN(postId)) {
-    console.warn("Invalid post ID:", id);
-    return null;
-  }
-
+const getPostInfo = async (pid: string): Promise<PostInfoData | null> => {
   // 게시판 기본 정보 조회
-  const postInfo = await findPostById(postId);
+  const postInfo = await findPostByModuleId(pid);
   if (!postInfo) return null;
 
-  // 게시판 권한 조회 (Permission 테이블)
+  // 권한 조회
+  console.log(postInfo);
   const permissions = await prisma.permission.findMany({
-    where: { resourceType: "posts", resourceId: postId },
+    where: { resourceType: "posts", resourceId: postInfo.id },
   });
 
-  console.log(permissions);
-
-  // PostInfoData.permissions 형식으로 매핑
+  // PostInfoData.permissions 형태로 변환
   const mappedPermissions = {
     listPermissions: permissions
       .filter((p) => p.action === "list")

@@ -201,7 +201,7 @@ export default function Page() {
           <motion.div className="">
             <div className="grid grid-cols-12">
               <div className="col-span-12">
-                <div className="w-full md:w-2/5 mx-auto relative px-3 py-8">
+                <div className="w-full md:w-2/5 mx-auto relative px-3 pt-6 md:pt-20 pb-8">
                   <motion.div
                     initial="offscreen"
                     whileInView="onscreen"
