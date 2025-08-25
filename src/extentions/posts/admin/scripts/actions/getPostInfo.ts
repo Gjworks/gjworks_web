@@ -1,5 +1,5 @@
 "use server";
-
+import prisma from "@plextype/utils/db/prisma";
 import {
   findPostById,
   PostInfoData,
