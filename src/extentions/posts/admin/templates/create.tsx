@@ -38,6 +38,7 @@ const DashboardPostCreate = () => {
 
   const [formData, setFormData] = useState<FormData>({
     postInfo: {
+      id: 0,
       moduleId: "",
       moduleName: "",
       listCount: 20,

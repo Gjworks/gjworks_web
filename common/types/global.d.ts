@@ -1,4 +1,11 @@
 declare global {
+  interface AuthUser {
+    id: number;
+    accountId: string;
+    isAdmin: boolean;
+    groups: [];
+    exp: date;
+  }
   interface UserGroupInfo {
     groupId: number;
     groupTitle: string;

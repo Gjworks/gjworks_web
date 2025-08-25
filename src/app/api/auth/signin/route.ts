@@ -52,16 +52,22 @@ export async function POST(request: Request) {
     // console.log(vpass);
 
     if (userInfo! && (await verifyPassword(password, userInfo!.password))) {
+      // DB에서 사용자 그룹 정보 가져오기
+      const userGroups = await prisma.userGroupUser.findMany({
+        where: { userId: userInfo!.id },
+        select: { groupId: true },
+      });
+      const groupIds = userGroups.map((g) => g.groupId);
+
       // exclude password from json response
       const tokenParams = {
         id: userInfo!.id,
         accountId: userInfo!.accountId,
         isAdmin: userInfo!.isAdmin,
+        groups: groupIds, // 그룹 ID 배열 추가
       };
 
-      let refreshToken;
-      let accessToken;
-      [accessToken, refreshToken] = await Promise.all([
+      let [accessToken, refreshToken] = await Promise.all([
         sign(tokenParams),
         refresh(tokenParams),
       ]);

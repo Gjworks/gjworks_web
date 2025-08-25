@@ -1,5 +1,6 @@
 "use server";
 
+import prisma from "@plextype/utils/db/prisma";
 import {
   findPostByModuleId,
   PostInfoData,
@@ -16,7 +17,7 @@ const getPostInfo = async (pid: string): Promise<PostInfoData | null> => {
   if (!postInfo) return null;
 
   // 권한 조회
-  console.log(postInfo);
+
   const permissions = await prisma.permission.findMany({
     where: { resourceType: "posts", resourceId: postInfo.id },
   });

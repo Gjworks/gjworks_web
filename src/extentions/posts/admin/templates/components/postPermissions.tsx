@@ -11,7 +11,7 @@ interface Group {
 
 interface Permission {
   subjectType: string;
-  subjectId?: number;
+  subjectId?: number | null;
 }
 interface PostPermissionsProps {
   id: string | number;
@@ -58,25 +58,32 @@ const PostPermissions: React.FC<PostPermissionsProps> = ({
     { label: "댓글", permissionsType: "commentPermissions" },
   ];
 
-  const togglePermission = (
-    type: string,
+  function togglePermission(
+    permissionType: string,
     subjectType: string,
-    subjectId?: number,
-  ) => {
-    const prevList = localPermissions[type] ?? [];
-    const alreadyChecked = prevList.some(
-      (p) => p.subjectType === subjectType && p.subjectId === subjectId,
-    );
-    const newList = alreadyChecked
-      ? prevList.filter(
-          (p) => !(p.subjectType === subjectType && p.subjectId === subjectId),
-        )
-      : [...prevList, { subjectType, ...(subjectId ? { subjectId } : {}) }];
+    subjectId: number | null = null,
+  ) {
+    const current = value[permissionType] ?? [];
 
-    const updated = { ...localPermissions, [type]: newList };
-    setLocalPermissions(updated);
-    onChange(updated); // 부모에도 전달
-  };
+    const exists = current.some(
+      (p) =>
+        p.subjectType === subjectType &&
+        Number(p.subjectId) === Number(subjectId),
+    );
+
+    const updated = exists
+      ? current.filter(
+          (p) =>
+            !(
+              p.subjectType === subjectType &&
+              Number(p.subjectId) === Number(subjectId)
+            ),
+        )
+      : [...current, { subjectType, subjectId }];
+
+    // ✅ 부모로만 알림
+    onChange({ ...value, [permissionType]: updated });
+  }
 
   const PermissionSection: React.FC<PermissionSectionProps> = ({
     permissionType,
@@ -95,9 +102,11 @@ const PostPermissions: React.FC<PostPermissionsProps> = ({
               <input
                 type="checkbox"
                 checked={(localPermissions[permissionType] ?? []).some(
-                  (p) => p.subjectType === groupValue,
+                  (p) => p.subjectType === groupValue && p.subjectId === null,
                 )}
-                onChange={() => togglePermission(permissionType, groupValue)}
+                onChange={() =>
+                  togglePermission(permissionType, groupValue, undefined)
+                }
               />
               {label}
             </label>
@@ -108,10 +117,12 @@ const PostPermissions: React.FC<PostPermissionsProps> = ({
               <input
                 type="checkbox"
                 checked={(localPermissions[permissionType] ?? []).some(
-                  (p) => p.subjectType === "group" && p.subjectId === group.id,
+                  (p) =>
+                    p.subjectType === "group" &&
+                    Number(p.subjectId) === Number(group.id),
                 )}
                 onChange={() =>
-                  togglePermission(permissionType, "group", group.id)
+                  togglePermission(permissionType, "group", Number(group.id))
                 }
               />
               {group.groupTitle}
