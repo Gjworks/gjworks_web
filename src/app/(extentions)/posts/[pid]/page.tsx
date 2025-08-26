@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import PostsList from "@/extentions/posts/templates/default/list";
+import PostsList from "@/extentions/posts/templates/default/listAction";
 
 type Params = Promise<{ pid: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;

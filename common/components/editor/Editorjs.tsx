@@ -1,54 +1,49 @@
 "use client";
 
-import React, { memo, useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
+import React, { useEffect, useRef } from "react";
 import EditorJS, { OutputData } from "@editorjs/editorjs";
-import EditorConstants from "./EditorConstants";
 
-type Props = {
+interface EditorjsProps {
+  holder?: string;
+  onChange: (data: OutputData) => void;
   data?: OutputData;
-  onChange: (val: OutputData) => void;
-  holder: string;
-};
+}
 
-const Editor = ({ data, onChange, holder }: Props) => {
+const Editorjs: React.FC<EditorjsProps> = ({
+  holder = "editorjs",
+  onChange,
+  data,
+}) => {
   const editorRef = useRef<EditorJS | null>(null);
-  const isMounted = useRef(false);
 
   useEffect(() => {
-    if (!isMounted.current) {
-      isMounted.current = true;
+    if (!editorRef.current) {
+      const editor = new EditorJS({
+        holder,
+        autofocus: true,
+        placeholder: "내용을 입력하세요...",
+        data: data || { blocks: [] }, // ✅ 기본값 올바르게 지정
+        async onChange(api) {
+          const savedData = await api.saver.save();
+          onChange(savedData);
+        },
+      });
 
-      const initializeEditor = async () => {
-        if (!editorRef.current) {
-          const editor = new EditorJS({
-            holder,
-            tools: EditorConstants,
-            minHeight: 100,
-            placeholder: "내용을 입력해주세요.",
-            data,
-            async onChange(api) {
-              const savedData = await api.saver.save();
-              onChange(savedData);
-            },
-          });
-
-          editorRef.current = editor;
-        }
-      };
-
-      initializeEditor();
+      editorRef.current = editor;
     }
 
     return () => {
-      if (editorRef.current) {
+      if (
+        editorRef.current &&
+        typeof editorRef.current.destroy === "function"
+      ) {
         editorRef.current.destroy();
         editorRef.current = null;
       }
     };
-  }, [data, holder, onChange]);
+  }, [holder, data, onChange]);
 
-  return <div id={holder} className="prose max-w-full" />;
+  return <div id={holder} className="min-h-[300px] border rounded-md p-2" />;
 };
 
-export default memo(Editor);
+export default Editorjs;
