@@ -4,7 +4,7 @@ import { verify } from "@plextype/utils/auth/jwtAuth";
 import { jsonResponse } from "@plextype/utils/helper/jsonResponse";
 import prisma, { PermissionSubject } from "@plextype/utils/db/prisma";
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     console.log(accessToken);
@@ -45,8 +45,9 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<Response> {
   try {
+    return NextResponse.json({ success: true, message: "POST OK" });
   } catch (error) {
     console.error("Server error:", error);
     return jsonResponse(500, "Internal server error. Please try again later.");

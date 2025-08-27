@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@plextype/utils/db/prisma";
+import { PermissionSubject } from "@prisma/client"; // enum 타입 import
 
 // Permission 데이터 타입 정의
 export type PermissionData = {
@@ -8,7 +9,7 @@ export type PermissionData = {
   resourceType: string; // 예: "post"
   resourceId: number; // 리소스 id
   action: string; // "read", "write", "list", "comment" 등
-  subjectType: string; // "user", "group", "role" 등
+  subjectType: PermissionSubject; // "user", "group", "role" 등
   subjectId?: number;
 };
 
@@ -37,7 +38,7 @@ export async function findPermissionsByResource(
  * 특정 대상(subjectType + subjectId) 권한 조회
  */
 export async function findPermissionsBySubject(
-  subjectType: string,
+  subjectType: PermissionSubject,
   subjectId?: number,
 ): Promise<PermissionData[]> {
   const permissions = await prisma.permission.findMany({

@@ -8,7 +8,10 @@ const prisma = new PrismaClient();
 
 type Params = Promise<{ pid: string }>;
 
-export async function GET(request: Request, segmentData: { params: Params }) {
+export async function GET(
+  request: Request,
+  segmentData: { params: Params },
+): Promise<Response> {
   let response = {};
   const { pid } = await segmentData.params;
 

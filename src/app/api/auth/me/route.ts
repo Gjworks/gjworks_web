@@ -5,7 +5,7 @@ import { sign, verify, refreshVerify } from "@plextype/utils/auth/jwtAuth";
 import { getUserById } from "@/extentions/user/scripts/userModel";
 import { timeToSeconds } from "@plextype/utils/date/timeToSeconds";
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     const refreshToken = request.cookies.get("refreshToken")?.value;

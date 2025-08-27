@@ -10,7 +10,7 @@ import {
 } from "@plextype/utils/auth/jwtAuth";
 import { PrismaClient } from "@prisma/client";
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<Response> {
   let newAccessToken: string;
   let verifyToken: any;
   const cookieStore = await cookies();
@@ -97,11 +97,17 @@ export async function POST(request: NextRequest) {
       accessToken: accessToken,
     };
     return NextResponse.json(response);
-  } catch (err) {}
-
-  // try {
-  //   verifyToken = await verify(accessToken)
-  // } catch (err) {
-  // }
-  // return NextResponse.json(response);
+  } catch (err) {
+    return NextResponse.json(
+      {
+        success: false,
+        code: "server_error",
+        type: "error",
+        message: "서버 오류가 발생했습니다.",
+        data: {},
+        accessToken: null,
+      },
+      { status: 500 },
+    );
+  }
 }

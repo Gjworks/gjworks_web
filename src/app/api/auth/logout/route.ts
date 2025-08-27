@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<Response> {
   try {
     // 쿠키에서 accessToken, refreshToken을 가져와서 삭제
     const response = NextResponse.json({ message: "Logged out successfully" });

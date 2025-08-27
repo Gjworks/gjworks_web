@@ -12,7 +12,7 @@ import { hashedPassword } from "@plextype/utils/auth/password";
 
 const prisma = new PrismaClient();
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     if (!accessToken) {
@@ -47,7 +47,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<Response> {
   try {
     const formData = await request.formData();
     const accountId = formData.get("accountId")?.toString();
@@ -159,6 +159,14 @@ export async function POST(request: NextRequest) {
         { status: 500 },
       );
     }
+    return NextResponse.json(
+      {
+        success: true,
+        type: "success",
+        message: "User registered successfully.",
+      },
+      { status: 201 },
+    );
   } catch (error) {
     console.error(error);
     return NextResponse.json(
@@ -216,8 +224,12 @@ export async function PUT(request: NextRequest) {
   }
 }
 
-export async function DELETE(request: NextRequest) {
+export async function DELETE(request: NextRequest): Promise<Response> {
   try {
+    return NextResponse.json({
+      success: true,
+      type: "success",
+    });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: "Server error" }, { status: 500 });

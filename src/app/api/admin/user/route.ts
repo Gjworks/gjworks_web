@@ -13,7 +13,7 @@ import { hashedPassword } from "@plextype/utils/auth/password";
 
 const prisma = new PrismaClient();
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     if (!accessToken)
@@ -29,13 +29,15 @@ export async function GET(request: NextRequest) {
         "Access denied. You do not have administrator privileges.",
       );
     }
+    // ✅ 정상 관리자 접근 시에도 반드시 Response 반환
+    return jsonResponse(200, "Access granted. Admin verified.");
   } catch (error) {
     console.error("Server error:", error);
     return jsonResponse(500, "Internal server error. Please try again later.");
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     if (!accessToken)

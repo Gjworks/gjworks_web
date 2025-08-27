@@ -1,5 +1,3 @@
-"use client";
-
 import Signin from "@/extentions/user/templates/default/signin";
 const Page = () => {
   return (

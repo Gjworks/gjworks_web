@@ -87,6 +87,7 @@ export async function findPosts(keyword?: string): Promise<PostInfoData[]> {
   const postInfos: PostInfoData[] = posts.map((post) => {
     const cfg = (post.config as any) || {};
     return {
+      id: post.id, // ← 필수
       moduleId: post.pid,
       moduleName: post.postName,
       listCount: cfg.listCount ?? 20,

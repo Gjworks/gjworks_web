@@ -23,19 +23,20 @@ export async function GET(request: NextRequest) {
       );
     } else {
       const post = await prisma.posts.findUnique({
-        where: {
-          id: Number(id),
-        },
+        where: { id: Number(id) },
         include: {
-          categories: true,
-          documents: true,
+          categories: {
+            include: {
+              documents: true, // Category 안의 Document를 가져옴
+            },
+          },
         },
       });
 
       if (!post) {
         return NextResponse.json(
           { success: false, message: "게시물을 찾을 수 없습니다." },
-          { status: 402 },
+          { status: 404 },
         );
       }
 
@@ -52,8 +53,8 @@ export async function GET(request: NextRequest) {
       // 해당 게시물에 대한 그룹 권한 조회
       const permissions = await prisma.permission.findMany({
         where: {
-          module: "posts",
-          resource: `post:${id}`,
+          resourceType: "posts",
+          resourceId: Number(id),
           subjectType: "group",
           subjectId: { in: groupIds },
         },
@@ -83,6 +84,11 @@ export async function GET(request: NextRequest) {
 
 export async function POST(req: NextRequest) {
   try {
+    // 아직 로직은 없지만 무조건 Response를 리턴해야 함
+    return NextResponse.json(
+      { success: true, message: "아직 구현되지 않음" },
+      { status: 200 },
+    );
   } catch (error) {
     console.error("게시판 생성 API 오류:", error);
     return NextResponse.json(

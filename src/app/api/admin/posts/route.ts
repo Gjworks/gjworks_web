@@ -14,12 +14,11 @@ interface FormDataFields {
   permissions: object | null;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<Response> {
   try {
     // URL에서 쿼리 파라미터 가져오기
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") || "1", 10);
-    const target = searchParams.get("target") || "";
     const keyword = searchParams.get("keyword") || "";
 
     const listCount = 10; // 한 페이지당 게시글 수
@@ -31,8 +30,8 @@ export async function GET(request: NextRequest) {
     const posts = await prisma.posts.findMany({
       where: {
         OR: [
-          { pid: { contains: keyword, mode: "insensitive" } }, // 제목 검색
-          { postName: { contains: keyword, mode: "insensitive" } }, // 내용 검색
+          { pid: { contains: keyword, mode: "insensitive" } }, // 게시판 ID 검색
+          { postName: { contains: keyword, mode: "insensitive" } }, // 게시판 이름 검색
         ],
       },
       skip,
@@ -40,16 +39,19 @@ export async function GET(request: NextRequest) {
       orderBy: { createdAt: "desc" }, // 최신순 정렬
     });
 
-    return NextResponse.json({
-      success: true,
-      data: posts,
-      pagination: {
-        page,
-        listCount: listCount,
-        totalCount: totalCount,
-        totalPages: totalPages,
+    return NextResponse.json(
+      {
+        success: true,
+        data: posts,
+        pagination: {
+          page,
+          listCount,
+          totalCount,
+          totalPages,
+        },
       },
-    });
+      { status: 200 },
+    );
   } catch (error) {
     console.error("Post List API Error:", error);
     return NextResponse.json(
@@ -59,7 +61,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     if (!accessToken) {

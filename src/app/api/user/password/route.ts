@@ -8,7 +8,7 @@ import { hashedPassword, verifyPassword } from "@plextype/utils/auth/password";
 
 const prisma = new PrismaClient();
 
-export async function PUT(request: NextRequest) {
+export async function PUT(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     if (!accessToken) {

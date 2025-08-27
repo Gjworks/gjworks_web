@@ -5,7 +5,7 @@ import { getUserById } from "@/extentions/user/scripts/userModel";
 
 const prisma = new PrismaClient();
 
-export async function GET(request: NextRequest) {
+export async function GET(request: NextRequest): Promise<Response> {
   try {
     const accessToken = request.cookies.get("accessToken")?.value;
     if (!accessToken) {

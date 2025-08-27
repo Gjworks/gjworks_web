@@ -11,7 +11,7 @@ type Params = Promise<{ pid: string }>;
 export async function GET(
   request: NextRequest,
   segmentData: { params: Params },
-) {
+): Promise<Response> {
   const accessToken = request.cookies.get("accessToken")?.value;
   if (!accessToken) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

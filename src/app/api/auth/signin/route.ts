@@ -13,7 +13,7 @@ import { timeToSeconds } from "@plextype/utils/date/timeToSeconds";
 
 const prisma = new PrismaClient();
 
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<Response> {
   const cookieStore = await cookies();
   const formData = await request.formData();
 
