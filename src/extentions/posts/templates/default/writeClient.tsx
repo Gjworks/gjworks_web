@@ -3,22 +3,28 @@
 import React, { useState } from "react";
 import Editorjs from "@plextype/components/editor/Editorjs";
 
-const PostWriteClient = () => {
-  const [content, setContent] = useState({});
+const PostWriteClient = ({
+  savePost,
+}: {
+  savePost: (formData: FormData) => Promise<void>;
+}) => {
+  const [content, setContent] = useState<object>({});
 
   const handleContentChange = (data: object) => {
     setContent(data);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("저장할 데이터:", content);
 
-    await fetch("/api/posts/create", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(content),
-    });
+    const formData = new FormData(e.currentTarget);
+
+    // JSON 객체를 문자열로 변환
+    formData.append("content", JSON.stringify(content));
+
+    await savePost(formData);
+
+    // 이제 여기에서 저장할꺼야
   };
 
   return (

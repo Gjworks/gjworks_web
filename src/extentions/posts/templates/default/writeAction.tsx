@@ -3,9 +3,11 @@ import { decodeJwt } from "jose";
 
 import { getPostInfo } from "@/extentions/posts/scripts/actions/getPostInfo";
 import { checkPermissions } from "@/extentions/posts/scripts/actions/hasPermission";
+import { upsertPost } from "@/extentions/posts/scripts/actions/upsertPost";
+
 import PostNotFound from "./notFound";
 import PostNotPermission from "./notPermission";
-import PostWriteClient from "@/extentions/posts/templates/default/write";
+import PostWriteClient from "@/extentions/posts/templates/default/writeClient";
 
 interface PageProps {
   params: {
@@ -57,12 +59,17 @@ const PostWrite = async ({ params }: PageProps) => {
     return <PostNotPermission />;
   }
 
+  const savePost = async (formData: FormData) => {
+    "use server"; // <-- 중요
+    await upsertPost(pid, formData);
+  };
+
   // 권한 통과 → 글쓰기 화면 렌더링
   return (
     <div className="max-w-screen-lg mx-auto px-3">
       <div className="py-5 px-8 rounded-2xl">
         <div className="pt-8 mb-6">
-          <PostWriteClient />
+          <PostWriteClient savePost={savePost} />
         </div>
       </div>
     </div>
