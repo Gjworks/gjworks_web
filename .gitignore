@@ -48,3 +48,7 @@ docker-compose.yml
 .idea/
 
 package-lock.json
+
+.env
+.env.development
+.env.production
