@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 type PostInfoData = {
-  moduleId: string;
-  moduleName: string;
+  pid: string;
+  postName: string;
+  postDesc?: string | null; // <-- 수정
   listCount: number;
   pageCount: number;
   documentLike: boolean;
@@ -35,7 +36,7 @@ const PostInfo: React.FC<PostInfoProps> = ({ id, value, onChange }) => {
             <div className="grid grid-col-span-2">
               <div className="col-span-2 grid grid-cols-3 gap-6 hover:bg-gray-50 p-5">
                 <div className="col-span-3 sm:col-span-2">
-                  <label htmlFor="moduleId">
+                  <label htmlFor="pId">
                     <div className="text-sm text-black mb-3">모듈ID</div>
                   </label>
 
@@ -46,9 +47,9 @@ const PostInfo: React.FC<PostInfoProps> = ({ id, value, onChange }) => {
                     className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                     placeholder="/?mid=post"
                     // defaultValue={posts?.mid}
-                    value={value.moduleId}
+                    value={value.pid}
                     onChange={(e) =>
-                      onChange({ ...value, moduleId: e.target.value })
+                      onChange({ ...value, pid: e.target.value })
                     }
                   />
 
@@ -69,9 +70,9 @@ const PostInfo: React.FC<PostInfoProps> = ({ id, value, onChange }) => {
                     id="moduleName"
                     className="border border-gray-200 hover:border-gray-950 focus:border-gray-950 w-full py-2 px-3 outline-none rounded-md text-sm shadow-sm shadow-gray-100"
                     // defaultValue={posts?.moduleName}
-                    value={value.moduleName}
+                    value={value.postName}
                     onChange={(e) =>
-                      onChange({ ...value, moduleName: e.target.value })
+                      onChange({ ...value, postName: e.target.value })
                     }
                   />
 
