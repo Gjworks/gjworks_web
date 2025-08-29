@@ -3,6 +3,7 @@ import { decodeJwt } from "jose";
 
 import PostsListClient from "./listClient";
 import { getPostInfo } from "@/extentions/posts/scripts/actions/getPostInfo";
+import { getPosts } from "@/extentions/posts/scripts/actions/getPosts";
 import { checkPermissions } from "@/extentions/posts/scripts/actions/hasPermission";
 import PostNotFound from "./notFound";
 import PostNotPermission from "./notPermission";
@@ -52,6 +53,14 @@ const PostsList = async ({ params }: PostsListProps) => {
     return <PostNotFound />;
   }
 
+  // 서버에서 받은 postInfo를 PostsListClient 타입에 맞춰 직렬화
+  const serializedPostInfo = {
+    id: postInfo.id,
+    pid: postInfo.pid,
+    postName: postInfo.postName,
+    postDesc: postInfo.postDesc ?? null,
+  };
+
   // list 권한 체크 (예: guest, member, admin 등)
   const permissionResult = checkPermissions(postInfo.permissions, currentUser);
 
@@ -59,7 +68,16 @@ const PostsList = async ({ params }: PostsListProps) => {
     return <PostNotPermission />;
   }
 
-  return <PostsListClient params={{ pid }} />;
+  // ✅ 게시글 목록 가져오기
+  const posts = await getPosts(pid);
+
+  return (
+    <PostsListClient
+      posts={posts}
+      postInfo={serializedPostInfo}
+      currentUser={currentUser}
+    />
+  );
 };
 
 export default PostsList;

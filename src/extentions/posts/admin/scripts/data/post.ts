@@ -12,8 +12,9 @@ export type PostInfoData = {
     commentPermissions: any[];
   };
   id: number;
-  moduleId: string; // Posts.pid
-  moduleName: string; // Posts.postName
+  pid: string; // Posts.pid
+  postName: string; // Posts.postName
+  postDesc?: string | null; // Posts.posteDesc
   listCount: number; // config.listCount
   pageCount: number; // config.pageCount
   documentLike: boolean; // config.documentLike
@@ -27,8 +28,9 @@ async function mapPostToPostInfoData(post: any): Promise<PostInfoData | null> {
   const cfg = (post.config as any) || {};
   return {
     id: post.id,
-    moduleId: post.pid,
-    moduleName: post.postName,
+    pid: post.pid,
+    postName: post.postName,
+    postDesc: post.postDesc ?? "",
     listCount: cfg.listCount ?? 20,
     pageCount: cfg.pageCount ?? 10,
     documentLike: cfg.documentLike ?? false,
@@ -88,8 +90,9 @@ export async function findPosts(keyword?: string): Promise<PostInfoData[]> {
     const cfg = (post.config as any) || {};
     return {
       id: post.id, // ← 필수
-      moduleId: post.pid,
-      moduleName: post.postName,
+      pid: post.pid,
+      postName: post.postName,
+      postDesc: post.postDesc ?? null,
       listCount: cfg.listCount ?? 20,
       pageCount: cfg.pageCount ?? 10,
       documentLike: cfg.documentLike ?? false,
@@ -112,8 +115,9 @@ export async function findPosts(keyword?: string): Promise<PostInfoData[]> {
 export async function createPost(data: PostInfoData) {
   return prisma.posts.create({
     data: {
-      pid: data.moduleId,
-      postName: data.moduleName,
+      pid: data.pid,
+      postName: data.postName,
+      postDesc: data.postDesc ?? null, // postDesc도 포함
       config: {
         listCount: data.listCount,
         pageCount: data.pageCount,
@@ -131,8 +135,9 @@ export async function updatePost(id: number, data: PostInfoData) {
   return prisma.posts.update({
     where: { id },
     data: {
-      pid: data.moduleId,
-      postName: data.moduleName,
+      pid: data.pid,
+      postName: data.postName,
+      postDesc: data.postDesc ?? null, // postDesc도 포함
       config: {
         listCount: data.listCount,
         pageCount: data.pageCount,
