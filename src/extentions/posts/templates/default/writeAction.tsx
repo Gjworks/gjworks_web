@@ -61,6 +61,7 @@ const PostWrite = async ({ params }: PageProps) => {
 
   const savePost = async (formData: FormData) => {
     "use server"; // <-- 중요
+    console.log(formData);
     await upsertPost(pid, formData);
   };
 

@@ -21,7 +21,7 @@ const PostWriteClient = ({
 
     // JSON 객체를 문자열로 변환
     formData.append("content", JSON.stringify(content));
-
+    console.log(formData);
     await savePost(formData);
 
     // 이제 여기에서 저장할꺼야

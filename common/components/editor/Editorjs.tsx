@@ -17,31 +17,34 @@ const Editorjs: React.FC<EditorjsProps> = ({
   const editorRef = useRef<EditorJS | null>(null);
 
   useEffect(() => {
-    if (!editorRef.current) {
-      const editor = new EditorJS({
-        holder,
-        autofocus: true,
-        placeholder: "내용을 입력하세요...",
-        data: data || { blocks: [] }, // ✅ 기본값 올바르게 지정
-        async onChange(api) {
-          const savedData = await api.saver.save();
-          onChange(savedData);
-        },
-      });
+    if (typeof window === "undefined") return;
 
-      editorRef.current = editor;
-    }
+    // 이미 초기화된 경우 다시 실행 방지
+    if (editorRef.current) return;
+
+    const editor = new EditorJS({
+      holder,
+      autofocus: true,
+      placeholder: "내용을 입력하세요...",
+      data: data || { blocks: [] },
+      async onChange(api) {
+        const savedData = await api.saver.save();
+        onChange(savedData);
+      },
+    });
+
+    editorRef.current = editor;
 
     return () => {
-      if (
-        editorRef.current &&
-        typeof editorRef.current.destroy === "function"
-      ) {
-        editorRef.current.destroy();
+      if (editorRef.current) {
+        // destroy()는 async → 안전하게 await 처리
+        editorRef.current.isReady
+          .then(() => editorRef.current?.destroy())
+          .catch(() => {});
         editorRef.current = null;
       }
     };
-  }, [holder, data, onChange]);
+  }, []); // 의존성 최소화
 
   return <div id={holder} className="min-h-[300px] border rounded-md p-2" />;
 };

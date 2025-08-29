@@ -56,6 +56,7 @@ export async function POST(request: NextRequest): Promise<Response> {
             id: decodeToken.id,
             accountId: decodeToken.accountId,
             isAdmin: decodeToken.isAdmin,
+            groups: decodeToken.groupIds, // 그룹 ID 배열 추가
           };
           newAccessToken = await sign(tokenParams);
           cookieStore.delete("accessToken");
