@@ -191,13 +191,6 @@ const Page = () => {
             <div className="">
               <div className="flex justify-between gap-4 flex-wrap">
                 <div className="w-full flex justify-center">
-                  <PageNavigation
-                    pathname="/posts/works"
-                    totalCount={10}
-                    page={1}
-                    listCount={10}
-                    totalPages={10}
-                  />
                 </div>
                 <div className="flex justify-end flex-1">
                   <Link
