@@ -9,7 +9,7 @@ const Page = () => {
     <div className="hidden relative max-w-screen-2xl mx-auto px-3 h-full items-center justify-center w-full uppercase pt-16 pb-6">
 
     </div>
-    <div className="relative flex items-center justify-center min-h-[calc(100vh-228px)]">
+    <div className="relative flex items-center justify-center min-h-[calc(100vh-228px)] py-10">
       <div className="absolute inset-0 overflow-hidden">
         <div className="flex items-center justify-center h-full">
           <div className="text-black text-[11rem] lg:text-[13rem] xl:text-[16rem] 2xl:text-[18rem] font-bold uppercase rotate-90  sm:rotate-0 tracking-tight">Documentations</div>
@@ -19,7 +19,7 @@ const Page = () => {
       <div className="relative max-w-screen-2xl mx-auto px-3 h-full flex items-center justify-center w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 w-full">
           <div className="col-span-1">
-            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-600/90 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
+            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-500 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
               <div className="flex flex-wrap flex-col h-full">
                 <div>
                   <div className="mb-8 group-hover:text-white">
@@ -61,7 +61,7 @@ const Page = () => {
           </div>
           <div className="col-span-1">
             <div
-              className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-600/90 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
+              className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-500 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
               <div className="mb-8 group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.25}
                      stroke="currentColor" className="size-5">
@@ -80,7 +80,7 @@ const Page = () => {
           </div>
 
           <div className="col-span-1">
-            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-600/90 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
+            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-500 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
               <div className="mb-8 group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.25}
                      stroke="currentColor" className="size-5">
@@ -95,7 +95,7 @@ const Page = () => {
             </div>
           </div>
           <div className="col-span-1">
-            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-600/90 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
+            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-500 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
               <div className="mb-8 group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.25}
                      stroke="currentColor" className="size-5">
@@ -110,7 +110,7 @@ const Page = () => {
             </div>
           </div>
           <div className="col-span-1">
-            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-600/90 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
+            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-500 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
               <div className="mb-8 group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.25}
                      stroke="currentColor" className="size-5">
@@ -128,7 +128,7 @@ const Page = () => {
 
           </div>
           <div className="col-span-1">
-            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-600/90 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
+            <div className="group bg-gray-200/80 backdrop-blur-lg hover:bg-primary-500 rounded-2xl p-5 w-full h-[300px] transition duration-500 hover:scale-105  hover:shadow-lg hover:shadow-primary-900/40">
               <div className="mb-8 group-hover:text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.25}
                      stroke="currentColor" className="size-5">
